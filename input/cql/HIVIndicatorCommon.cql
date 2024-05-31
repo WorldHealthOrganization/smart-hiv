@@ -1,17 +1,17 @@
-library HIVIndicatorCommon version '0.01' 
+library HIVIndicatorCommon version '0.0.1' 
 
 using FHIR version '4.0.1'
 
 
 codesystem "ObservationValue": 'http://terminology.hl7.org/CodeSystem/observation-value'
-codesystem "HIV_DAK_Codes": 'http://fhir.org/guides/itech-uw/who-smart-hiv-dak/CodeSystem/concept-codes'
+codesystem "HIV_DAK_Codes": 'http://fhir.org/guides/who/hiv-dak/CodeSystem/HIV-DAKConcepts'
 codesystem "ConditionClinicalStatusCodes": 'http://terminology.hl7.org/CodeSystem/condition-clinical'
 codesystem "ConditionCategoryCodes": 'http://terminology.hl7.org/CodeSystem/condition-category'
 codesystem "ObservationStatusCodes": 'http://hl7.org/fhir/observation-status'
 
-codesystem "Keypopulationmembertype*Codes": 'http://fhir.org/guides/itech-uw/ValueSet/hiv-b-de51'
-codesystem "HIVstatusCodes": 'http://fhir.org/guides/itech-uw/ValueSet/hiv-b-de116'
-codesystem "HIVtreatmentoutcomeCodes": 'http://fhir.org/guides/itech-uw/ValueSet/hiv-h-de42'
+codesystem "Keypopulationmembertype*Codes": 'http://fhir.org/guides/who/hiv-dak/ValueSet/hiv-b-de51'
+codesystem "HIVstatusCodes": 'http://fhir.org/guides/who/hiv-dak/ValueSet/hiv-b-de116'
+codesystem "HIVtreatmentoutcomeCodes": 'http://fhir.org/guides/who/hiv-dak/ValueSet/hiv-h-de42'
 codesystem "ObservationCategoryCodes": 'http://terminology.hl7.org/CodeSystem/observation-category'
 
 include FHIRHelpers version '4.0.1'
@@ -36,7 +36,7 @@ codesystem ARTCodes: 'http://example.org/fhir/CodeSystem/art-codes'
 valueset "On ART": 'http://example.org/fhir/ValueSet/on-art'
 valueset "encounter-diagnosis": 'http://example.org/fhir/ValueSet/encounter-diagnosis'
 valueset "social-history": 'http://example.org/fhir/ValueSet/social-history'
-valueset "HIVtesttypeCodes": 'http://fhir.org/guides/itech-uw/ValueSet/hiv-b-de82'
+valueset "HIVtesttypeCodes": 'http://fhir.org/guides/who/hiv-dak/ValueSet/hiv-b-de82'
 valueset "Community-level testing" : 'http://example.org/fhir/ValueSet/HIV.B.DE16'
 valueset "Facility-level testing" : 'http://example.org/fhir/ValueSet/HIV.B.DE17'
 valueset "ANC contact during pregnancy" : 'http://example.org/fhir/ValueSet/HIV.E.DE39'
