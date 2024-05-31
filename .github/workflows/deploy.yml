@@ -36,39 +36,8 @@ jobs:
           # Run the publisher - don't run the batch script but run the line directly
           args: java -Xms1g -Xmx7g -jar ./input-cache/publisher.jar publisher -ig .
 
-      - name: Install Git LFS
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y git-lfs
-          git lfs install   
-
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./output
-      #     keep_files: true  # Ensures LFS files are preserved
-
-      - name: Configure Git
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Deploy to GitHub Pages
-        run: |
-          # Navigate to the directory to publish, e.g., ./output
-          cd ./output
-          # Initialize a new Git repository
-          git init
-          git remote add origin https://github.com/${{ github.repository }}.git
-          git checkout -b gh-pages
-          
-          # Add and commit all files
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          
-          # Force push to the gh-pages branch
-          git push --force origin gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
