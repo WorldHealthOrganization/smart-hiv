@@ -4,7 +4,7 @@
 
 # WHO SMART GUIDELINES - HIV Implementation Guide
 
-Click to visit the Implementation Guide [here](https://i-tech-uw.github.io/smart-hiv)
+Click to visit the Implementation Guide [here](https://worldhealthorganization.github.io/smart-hiv/)
 
 
 ## Changes and feedback
