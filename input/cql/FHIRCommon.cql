@@ -279,3 +279,11 @@ is more than one extension on the given resource with the specified url.
 */
 define function BaseModifierExtension(element BackboneElement, id String):
   singleton from BaseModifierExtensions(element, id)
+
+
+
+define fluent function references(reference FHIR.Reference, resource FHIR.Resource):
+  resource.id = Last(Split(reference.reference, '/'))  
+
+define fluent function references(references List<FHIR.Reference>, resource FHIR.Resource):
+  exists (references R where R.references(resource))
