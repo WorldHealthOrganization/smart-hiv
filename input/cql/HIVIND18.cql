@@ -60,5 +60,17 @@ define "Geographic Region Stratifier":
 	HIC."By Geographic Region Stratifier"
 
 define "patientGroups Stratifier":
-	HIC."patientGroups_2"
+	HIC."patientGroups"
 
+define "ANC Stratifier":
+    HIC."anc"
+
+/*
+ * Combined stratifiers
+ * NEED TO DISCUSS WITH BRYNN
+ */
+
+//define "Stratification":
+ // HIC."By Administrative Gender Stratifier".code 
+  //  + ':' + HIC."By Age Stratifier 2".code 
+//	+ ':' + HIC."By Geographic Region Stratifier"

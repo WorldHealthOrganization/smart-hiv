@@ -65,4 +65,12 @@ define "Geographic Region Stratifier":
 	HIC."By Geographic Region Stratifier"
 
 define "patientGroups Stratifier":
-	HIC."patientGroups_3"
+	HIC."patientGroups"
+
+define "Setting":
+    HIC."setting"
+
+define "TB Stratifier":
+    HIC."tb"
+
+

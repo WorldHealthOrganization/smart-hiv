@@ -21,9 +21,6 @@
  *      *** Where feasible and data security and confidentiality can be ensured (see monitoring considerations in section 3.8 of WHO's 2022 HIV SI Guidelines on key
  *          populations for further guidance and section 6.4 on maintaining data privacy, security and confidential).
  * 
- * Data Elements: 
- *   - HIV status
- *   - On ART
  * 
  * Reference: Consolidated guidelines on person-centred HIV strategic information: strengthening routine data for impact. Geneva: World Health Organization; 2022 
  */
@@ -58,6 +55,7 @@ define "numerator":
     and (H.effective ends after start of "Measurement Period"
     or end of H.effective  ~  null)
    )
+
 define "denominator":
    (exists(HIC."HIV Positive Condition" C
 	where C.onset before end of "Measurement Period")
@@ -66,3 +64,22 @@ define "denominator":
 	where (O.issued before end of "Measurement Period" and
     O.issued after start of "Measurement Period")
 	))
+
+/*
+ * Disaggregators
+ */
+
+define "Administrative Gender Stratifier":
+	HIC."By Administrative Gender Stratifier"
+
+define "Age Stratifier":
+	HIC."By Age Stratifier"
+
+define "Geographic Region Stratifier":
+	HIC."By Geographic Region Stratifier"
+
+define "patientGroups Stratifier":
+	HIC."patientGroups"
+
+define "TB Stratifier":
+    HIC."tb"

@@ -34,6 +34,7 @@ code "Presumptive TB": 'HIV.D.DE945' from "HIVstatusCodes" display 'Presumptive 
 
 codesystem ARTCodes: 'http://example.org/fhir/CodeSystem/art-codes'
 valueset "On ART": 'http://example.org/fhir/ValueSet/on-art'
+valueset "PREP": 'http://example.org/fhir/ValueSet/prep'
 valueset "encounter-diagnosis": 'http://example.org/fhir/ValueSet/encounter-diagnosis'
 valueset "social-history": 'http://example.org/fhir/ValueSet/social-history'
 valueset "HIVtesttypeCodes": 'http://fhir.org/guides/who/hiv-dak/ValueSet/hiv-b-de82'
@@ -107,6 +108,12 @@ define "HIV Treatment Active":
     and MS.reasonCode in "On ART"
 
 
+define "HIV PREP Active":
+[MedicationStatement] MS
+    where MS.status = 'recorded'
+    and MS.reasonCode in "PREP"
+
+
 define "Patient Deceased before end of Measurement Period":
   case 
     when Patient.deceased is FHIR.boolean and Patient.deceased ~ true then (Patient.meta.lastUpdated before end of "Measurement Period")
@@ -172,6 +179,15 @@ define "By Age Stratifier 2":
         when AgeInYearsAt(start of "Measurement Period") <= 14 then '10–14'
         when AgeInYearsAt(start of "Measurement Period") <= 19 then '15–19'
         when AgeInYearsAt(start of "Measurement Period") <= 24 then '20–24'
+        when AgeInYearsAt(start of "Measurement Period") <= 49 then '25–49'
+        when AgeInYearsAt(start of "Measurement Period") >= 50 then '50+'
+        else null
+    end
+
+define "By Age Stratifier 3":
+    case 
+        when AgeInYearsAt(start of "Measurement Period") >= 15 and AgeInYearsAt(start of "Measurement Period") <= 19 then '15-19'
+        when AgeInYearsAt(start of "Measurement Period") <= 24 then '20-24'
         when AgeInYearsAt(start of "Measurement Period") <= 49 then '25–49'
         when AgeInYearsAt(start of "Measurement Period") >= 50 then '50+'
         else null
@@ -298,8 +314,6 @@ exists(
     )
 
 
-  //define ANC
-
   define patientGroups:
   List<String>{
     if SW then 'SW' else null,
@@ -309,31 +323,26 @@ exists(
     if Prisoner then 'Prisoner' else null
   }
 
-  define patientGroups_2:
+  define setting:
   List<String>{
-    if SW then 'SW' else null,
-    if MSM then 'MSM' else null,
-    if Trans then 'Trans' else null,
-    if PWID then 'PWID' else null,
-    if Prisoner then 'Prisoner' else null,
-    if ANC_case then 'ANC' else null
-  }
-
-  define patientGroups_3:
-  List<String>{
-    if SW then 'SW' else null,
-    if MSM then 'MSM' else null,
-    if Trans then 'Trans' else null,
-    if PWID then 'PWID' else null,
-    if Prisoner then 'Prisoner' else null,
-    if TB_diagnosed then 'Diagnosed TB' else null,
-    if TB_presumptive then 'Presumptive TB' else null,
     if Community_testing then 'Community-level testing' else null,
     if Facility_testing then 'Facility-level testing' else null
   }
 
+  define anc:
+  List<String>{
+    if ANC_case then 'ANC case' else null
+  }
 
+  define tb:
+  List<String>{
+    if TB_diagnosed then 'Diagnosed TB' else null,
+    if TB_presumptive then 'Presumptive TB' else null
+  }
 
+//need to add Time to start ART (within 7, 30 or 90 days of diagnosis, as per country guidelines)
+//need to add Disaggregation by time since diagnosis
+  
 
 
 /* 
