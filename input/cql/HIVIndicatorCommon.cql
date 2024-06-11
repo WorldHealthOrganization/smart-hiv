@@ -109,7 +109,7 @@ define "HIV Treatment Active":
 
 define "Patient Deceased before end of Measurement Period":
   case 
-    when Patient.deceased is FHIR.boolean and Patient.deceased ~ true then Patient.meta.lastUpdated  before end of "Measurement Period"
+    when Patient.deceased is FHIR.boolean and Patient.deceased ~ true then (Patient.meta.lastUpdated before end of "Measurement Period")
     when Patient.deceased is FHIR.dateTime then Patient.deceased as FHIR.dateTime before end of "Measurement Period"
     else false
   end
@@ -260,19 +260,22 @@ define "By Administrative Gender Stratifier":
     and C.onset during "Measurement Period")
   )
 
+/*@triggeredBy Encounter with location = community level testing*/
+
 define "Community_testing":
   exists([Observation] O
-  //with [O.encounter -> Encounter] E
-     // such that (E.location in "Community-level testing")
+    with [Encounter] E
+      such that O.encounter.references(E) and E.location.physicalType in  "Community-level testing" 
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes"
   and O.issued during "Measurement Period")
   )
 
+/*@triggeredBy Encounter with location = facility level testing*/
 define "Facility_testing":
   exists([Observation] O
-  //with [O.encounter -> Encounter] E
-      //such that (E.location in "Facility-level testing")
+    with [Encounter] E
+      such that O.encounter.references(E) and E.location.physicalType in  "Facility-level testing"
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes"
   and O.issued during "Measurement Period")

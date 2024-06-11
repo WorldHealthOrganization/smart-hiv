@@ -35,8 +35,13 @@ parameter "Measurement Period" Interval<Date> default Interval[@2020-01-01, @202
  
 context Unfiltered
 
-//define "numerator":
-  //  AnyTrue(HIC."People tested positive for HIV before end of measurement period") 
+define "numerator":
+    exists(HIC."HIV Positive Condition" C
+	where C.onset before end of "Measurement Period")
+	or 
+	exists(HIC."HIV Positive Observation" O
+	where O.issued before end of "Measurement Period"
+	) 
 
 //define denominator?
 //How to bring in data from external sources
@@ -57,4 +62,3 @@ define "Geographic Region Stratifier":
 define "patientGroups Stratifier":
 	HIC."patientGroups_2"
 
-// define ANC attendee
