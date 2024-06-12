@@ -1,11 +1,14 @@
 /*
- * Library: HIV.IND.2
- * Total PrEP recipients
- * Number of people who received PrEP at least once during the reporting period
+ * Library: HIV.IND.3
+ * PrEP coverage
+ * % of people prescribed PrEP among those identified as being at elevated risk for HIV acquisition
  * 
- * Numerator: COUNT of clients with "Medications prescribed"='PrEP for HIV prevention' with "Date medications prescribed" in the reporting period
+ * Numerator: Count of clients with "Date medications prescribed" within reporting period AND "Medications prescribed"='PrEP for HIV prevention'
  * Numerator Exclusions: 
  * 
+ * Denominator: Programme/service provider level: 
+ * COUNT of clients with "HIV test date" within reporting period AND "HIV test result"='HIV-negative' AND "At elevated risk for HIV acquisition"=True †
+ *
  * Disaggregation:
  * • Age (15–19, 20–24, 25–49, 50+ years)
  * • Gender (female, male, other*)
@@ -23,7 +26,7 @@
  * Reference: Consolidated guidelines on person-centred HIV strategic information: strengthening routine data for impact. Geneva: World Health Organization; 2022 
  */
 
-library HIVIND2
+library HIVIND3
 
 using FHIR version '4.0.1'
 
@@ -37,6 +40,7 @@ parameter "Measurement Period" Interval<Date> default Interval[@2020-01-01, @202
 
 context Patient
 
+
 define "numerator":
    exists(HIC."HIV PREP Active" H
    where H.effective starts before end of "Measurement Period"
@@ -44,6 +48,16 @@ define "numerator":
     or end of H.effective  ~  null)
    )
 
+define "denominator":
+	exists(HIC."HIV Negative Observation" O
+	where (O.issued before end of "Measurement Period"
+	and O.issued after start of "Measurement Period")
+	) and 
+    exists(HIC."Client is at elevated risk for HIV acquisition" O
+	where O.issued before end of "Measurement Period"
+	and O.issued after start of "Measurement Period")
+
+    
 /*
  * Disaggregators
  */

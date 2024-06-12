@@ -27,14 +27,30 @@ code "People who inject drugs": 'HIV.B.DE54' from "Keypopulationmembertype*Codes
 code "People living in prisons and other closed settings": 'HIV.B.DE55' from "Keypopulationmembertype*Codes" display 'Prisoner'
 
 code "HIV-positive": 'HIV.B.DE116' from "HIVstatusCodes" display 'HIV Positive'
+code "HIV-negative": 'HIV.B.DE117' from "HIVstatusCodes" display 'HIV Negative'
 code "Diagnosed TB": 'HIV.D.DE940' from "HIVstatusCodes" display 'Diagnosed TB'
 code "Presumptive TB": 'HIV.D.DE945' from "HIVstatusCodes" display 'Presumptive TB'
+
+code "At elevated risk for HIV acquisition": 'HIV.B.DE225' from "HIV_DAK_Codes" display 'At elevated risk for HIV acquisition'
 
 //code "On ART": 'HIV.D.DE38' from "HIV_DAK_Codes" display 'On ART'
 
 codesystem ARTCodes: 'http://example.org/fhir/CodeSystem/art-codes'
 valueset "On ART": 'http://example.org/fhir/ValueSet/on-art'
 valueset "PREP": 'http://example.org/fhir/ValueSet/prep'
+
+valueset "Oral PrEP": 'http://example.org/fhir/ValueSet/OralPrEP'
+valueset "Dapivirine vaginal ring (DVR)": 'http://example.org/fhir/ValueSet/dvrprep'
+valueset "CAB-LA": 'http://example.org/fhir/ValueSet/cablaprep'
+
+valueset "First-time user": 'http://example.org/fhir/ValueSet/first time'
+valueset "Continuing user": 'http://example.org/fhir/ValueSet/continuing'
+valueset "Restarting following a period of not taking medication": 'http://example.org/fhir/ValueSet/restarting'
+
+valueset "Daily oral PrEP": 'http://example.org/fhir/ValueSet/dailyPrEP'
+valueset "Event-driven PrEP (2+1+1)": 'http://example.org/fhir/ValueSet/eventprep'
+valueset "Other PrEP dosing type": 'http://example.org/fhir/ValueSet/otherprep'
+
 valueset "encounter-diagnosis": 'http://example.org/fhir/ValueSet/encounter-diagnosis'
 valueset "social-history": 'http://example.org/fhir/ValueSet/social-history'
 valueset "HIVtesttypeCodes": 'http://fhir.org/guides/who/hiv-dak/ValueSet/hiv-b-de82'
@@ -96,6 +112,11 @@ define "HIV Positive Observation":
     and O.code in "HIVtesttypeCodes"
     and O.value ~ "HIV-positive"
 
+define "HIV Negative Observation":
+[Observation] O
+    where O.status in {'final', 'amended'}
+    and O.code in "HIVtesttypeCodes"
+    and O.value ~ "HIV-negative"
 
 define "HIV test resulted":
   [Observation] O
@@ -112,6 +133,12 @@ define "HIV PREP Active":
 [MedicationStatement] MS
     where MS.status = 'recorded'
     and MS.reasonCode in "PREP"
+
+ define "Client is at elevated risk for HIV acquisition":
+    [Observation] O
+    where O.status in { 'final', 'amended', 'corrected' }
+    and O.category in "social-history"
+    and O.code ~ "At elevated risk for HIV acquisition"
 
 
 define "Patient Deceased before end of Measurement Period":
@@ -312,6 +339,70 @@ exists(
     )
     )
     )
+  
+
+  define "PREP Product Oral":
+  exists([MedicationStatement] MS
+    where MS.status = 'recorded'
+    and MS.reasonCode in "PREP"
+    and MS.medication in "Oral PrEP"
+  )
+
+  define "PREP Product long-acting device":
+  exists([MedicationStatement] MS
+    where MS.status = 'recorded'
+    and MS.reasonCode in "PREP"
+    and MS.medication in "Dapivirine vaginal ring (DVR)"
+  )
+
+  define "PREP Product long-acting injectable":
+  exists([MedicationStatement] MS
+    where MS.status = 'recorded'
+    and MS.reasonCode in "PREP"
+    and MS.medication in "CAB-LA"
+  )
+  
+  define "PREP first time":
+  exists([MedicationStatement] MS
+    where MS.status = 'recorded'
+    and MS.reasonCode in "PREP"
+    and MS.statusReason in "First-time user"
+  )
+
+  define "PREP Continuing user":
+  exists([MedicationStatement] MS
+    where MS.status = 'recorded'
+    and MS.reasonCode in "PREP"
+    and MS.statusReason in "Continuing user"
+  )
+  
+  define "PREP Restarting":
+  exists([MedicationStatement] MS
+    where MS.status = 'recorded'
+    and MS.reasonCode in "PREP"
+    and MS.statusReason in "Restarting following a period of not taking medication"
+  )
+
+  define "Daily_oral_PrEP":
+  exists([MedicationStatement] MS
+    where MS.status = 'recorded'
+    and MS.reasonCode in "PREP"
+    and MS.dosage.additionalInstruction in "Daily oral PrEP"
+  )
+
+  define "Event_driven_PrEP":
+  exists([MedicationStatement] MS
+    where MS.status = 'recorded'
+    and MS.reasonCode in "PREP"
+    and MS.dosage.additionalInstruction in "Event-driven PrEP (2+1+1)"
+  )
+
+  define "other_dosing_PrEP":
+  exists([MedicationStatement] MS
+    where MS.status = 'recorded'
+    and MS.reasonCode in "PREP"
+    and MS.dosage.additionalInstruction in "Other PrEP dosing type"
+  )
 
 
   define patientGroups:
@@ -338,6 +429,27 @@ exists(
   List<String>{
     if TB_diagnosed then 'Diagnosed TB' else null,
     if TB_presumptive then 'Presumptive TB' else null
+  }
+
+  define prep_product:
+  List<String>{
+    if `PREP Product Oral` then 'PREP Product Oral' else null,
+    if `PREP Product long-acting device` then 'PREP Product long-acting device' else null,
+    if `PREP Product long-acting injectable` then 'PREP Product long-acting injectable' else null
+  }
+
+  define prep_experience:
+  List<String>{
+    if `PREP first time` then 'PREP first time' else null,
+    if `PREP Continuing user` then 'PREP Continuing user' else null,
+    if `PREP Restarting` then 'PREP Restarting' else null
+  }
+
+  define prep_dosing:
+  List<String>{
+    if `Daily_oral_PrEP` then 'Daily oral PrEP' else null,
+    if `Event_driven_PrEP` then 'Event driven PrEP' else null,
+    if `other_dosing_PrEP` then 'Other PrEP dosing type' else null
   }
 
 //need to add Time to start ART (within 7, 30 or 90 days of diagnosis, as per country guidelines)

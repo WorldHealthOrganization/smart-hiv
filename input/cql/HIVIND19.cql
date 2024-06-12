@@ -34,7 +34,7 @@ include FHIRCommon called FC
 
 parameter "Measurement Period" Interval<Date> default Interval[@2020-01-01, @2020-01-31]
  
-context Unfiltered
+context Patient
 
 //Exclusion happens automatically through test type valueset = excludes self test
 define "numerator":
