@@ -32,7 +32,7 @@ include FHIRCommon called FC
 
 parameter "Measurement Period" Interval<Date> default Interval[@2020-01-01, @2020-01-31]
  
-context Unfiltered
+context Patient
 
 
 // From BRYN
@@ -72,4 +72,10 @@ define "Geographic Region Stratifier":
 	HIC."By Geographic Region Stratifier"
 
 define "patientGroups Stratifier":
-	HIC."patientGroups_3"
+	HIC."patientGroups"
+
+define "Setting":
+    HIC."setting"
+
+define "TB Stratifier":
+    HIC."tb"

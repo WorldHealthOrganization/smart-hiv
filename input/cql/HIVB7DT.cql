@@ -49,21 +49,22 @@ define "Age_greater_than_18_months":
 
 define "Report as HIV-negative":
   [Observation] O
-  //triggeredBy ~ order for Assay 1
-  with [O.basedOn -> ServiceRequest] SR
-      such that (SR.code in "Assay 1")
+  //@triggeredBy order for Assay 1
+  with [ServiceRequest] SR
+      such that O.basedOn.references(SR) and SR.code in "Assay 1"
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes"
   and O.value in "Non-reactive"
   and "Age_greater_than_18_months")
 
 /* Output observation as HIV negative */
+/*@triggeredBy Assay 1 */
 
-define "Continue with performing HIV 'Assay 2'":
+define "Should Continue with Performing HIV Assay 2":
   [Observation] O
-  //triggeredBy ~ order for Assay 1
-  with [O.basedOn -> ServiceRequest] SR
-      such that (SR.code in "Assay 1")
+  //@triggeredBy  ~ order for Assay 1
+ with [ServiceRequest] SR
+      such that O.basedOn.references(SR) and SR.code in "Assay 1"
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes"
   and O.value in  "Reactive" 
@@ -71,12 +72,11 @@ define "Continue with performing HIV 'Assay 2'":
 
 /* Output Service Request for Assay 2 */
 
-define "Continue with performing HIV 'Assay 1 repeated'":
+define "Should Continue with Performing HIV Assay 1 repeated":
   [Observation] O
-  //triggeredBy ~ "Continue with performing HIV 'Assay 2'"
-  with [O.basedOn -> ServiceRequest] SR
-      such that (SR.reasonCode in "Assay 1 reactive" and
-       SR.code in "Assay 2")
+  //@triggeredBy  ~ "Continue with performing HIV 'Assay 2'"
+  with [ServiceRequest] SR
+      such that O.basedOn.references(SR) and SR.reasonCode in "Assay 1 reactive" and SR.code in "Assay 2"
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes"
   and O.value in "Non-reactive"
@@ -84,12 +84,11 @@ define "Continue with performing HIV 'Assay 1 repeated'":
 
 /* Output Service Request for Continue with performing HIV 'Assay 1 repeated' */
 
-  define "Continue with performing HIV 'Assay 3'":
+  define "Should Continue with Performing HIV Assay 3":
   [Observation] O
-  //triggeredBy ~ "Continue with performing HIV 'Assay 2'"
-  with [O.basedOn -> ServiceRequest] SR
-      such that (SR.reasonCode in "Assay 1 reactive"
-      and SR.code in "Assay 2")
+  //@triggeredBy  ~ "Continue with performing HIV 'Assay 2'"
+  with [ServiceRequest] SR
+      such that O.basedOn.references(SR) and SR.reasonCode in "Assay 1 reactive" and SR.code in "Assay 2"
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes" 
   and O.value in "Reactive"
@@ -99,10 +98,9 @@ define "Continue with performing HIV 'Assay 1 repeated'":
 
 define "Report as HIV-negative after assay 1 repeated":
   [Observation] O
-  //triggeredBy ~ "Continue with performing HIV 'Assay 1 repeated'"
-  with [O.basedOn -> ServiceRequest] SR
-      such that (SR.reasonCode in "Assay 2 non-reactive"
-      and SR.code in "Assay 1 repeated")
+  //@triggeredBy  ~ "Continue with performing HIV 'Assay 1 repeated'"
+    with [ServiceRequest] SR
+      such that O.basedOn.references(SR) and SR.reasonCode in "Assay 2 non-reactive" and SR.code in "Assay 1 repeated"
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes" 
   and O.value in "Non-reactive"
@@ -112,10 +110,9 @@ define "Report as HIV-negative after assay 1 repeated":
 
 define "Report as HIV-inconclusive after assay 1 repeated":
   [Observation] O
-  //triggeredBy ~ "Continue with performing HIV 'Assay 1 repeated'"
-  with [O.basedOn -> ServiceRequest] SR
-      such that (SR.reasonCode in "Assay 2 non-reactive"
-      and SR.code in "Assay 1 repeated")
+  //@triggeredBy  ~ "Continue with performing HIV 'Assay 1 repeated'"
+    with [ServiceRequest] SR
+      such that O.basedOn.references(SR) and SR.reasonCode in "Assay 2 non-reactive" and SR.code in "Assay 1 repeated"
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes"
   and O.value in "Reactive"
@@ -126,10 +123,9 @@ define "Report as HIV-inconclusive after assay 1 repeated":
 
 define "Report as HIV-inconclusive after assay 3":
   [Observation] O
-  //triggeredBy ~ "Continue with performing HIV 'Assay 3'"
-  with [O.basedOn -> ServiceRequest] SR
-      such that (SR.reasonCode in "Assay 2 reactive"
-      and SR.code in "Assay 3")
+  //@triggeredBy  ~ "Continue with performing HIV 'Assay 3'"
+      with [ServiceRequest] SR
+      such that O.basedOn.references(SR) and SR.reasonCode in "Assay 2 reactive" and SR.code in "Assay 3"
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes"
   and O.value in "Non-reactive"
@@ -140,10 +136,9 @@ define "Report as HIV-inconclusive after assay 3":
 
 define "Report as HIV-positive":
   [Observation] O
-  //triggeredBy ~ "Continue with performing HIV 'Assay 3'"
-  with [O.basedOn -> ServiceRequest] SR
-      such that (SR.reasonCode in "Assay 2 reactive"
-      and SR.code in "Assay 3")
+  //@triggeredBy  ~ "Continue with performing HIV 'Assay 3'"
+        with [ServiceRequest] SR
+      such that O.basedOn.references(SR) and SR.reasonCode in "Assay 2 reactive" and SR.code in "Assay 3"
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes"
   and O.value in "Reactive"
