@@ -1,5 +1,5 @@
 /*
- * Library: HIV.B2.DT
+ * Library: HIV.IND.27 Logic
  * People living with HIV on ART
  * Number and % of people on ART among all people living with HIV at the end of the reporting period
  * 
@@ -37,7 +37,7 @@
 
 
 
-library HIVIND27
+library HIVIND27Logic
 
 using FHIR version '4.0.1'
  
