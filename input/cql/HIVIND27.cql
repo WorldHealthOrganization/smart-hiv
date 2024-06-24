@@ -68,6 +68,7 @@ define "numerator":
    where H.effective starts before end of "Measurement Period"
     and (H.effective ends after start of "Measurement Period"
     or end of H.effective  ~  null)
+	and (H.effective ends after (end of "Measurement Period" - 28 days))
    )
    and not exists (HIC."Patient Deceased before end of Measurement Period")
    and not exists (HIC."Stopped ART at Facility during the measurement period")
