@@ -1,5 +1,5 @@
 /*
-HIV.IND.20
+HIV.IND.20 Logic
 Individuals testing positive for HIV
 % testing positive among people who received an HIV test in the reporting period
 
