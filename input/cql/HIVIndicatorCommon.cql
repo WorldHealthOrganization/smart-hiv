@@ -36,12 +36,18 @@ code "At elevated risk for HIV acquisition": 'HIV.B.DE225' from "HIV_DAK_Codes" 
 //code "On ART": 'HIV.D.DE38' from "HIV_DAK_Codes" display 'On ART'
 
 codesystem ARTCodes: 'http://example.org/fhir/CodeSystem/art-codes'
-valueset "On ART": 'http://example.org/fhir/ValueSet/on-art'
-valueset "PREP": 'http://example.org/fhir/ValueSet/prep'
+//valueset "On ART": 'http://example.org/fhir/ValueSet/on-art'
+//HIV.H.DE47
+//valueset "PREP": 'http://example.org/fhir/ValueSet/prep'
 
-valueset "Oral PrEP": 'http://example.org/fhir/ValueSet/OralPrEP'
-valueset "Dapivirine vaginal ring (DVR)": 'http://example.org/fhir/ValueSet/dvrprep'
-valueset "CAB-LA": 'http://example.org/fhir/ValueSet/cablaprep'
+code "Currently on PrEP": 'HIV.C.DE10' from HIV_DAK_Codes
+code "Oral PrEP": 'HIV.C.DE12' from HIV_DAK_Codes
+code "Dapivirine vaginal ring (DVR)": 'HIV.C.DE22' from HIV_DAK_Codes
+code "CAB-LA": 'HIV.C.DE23' from HIV_DAK_Codes
+
+//valueset "Oral PrEP": 'http://example.org/fhir/ValueSet/OralPrEP'
+//valueset "Dapivirine vaginal ring (DVR)": 'http://example.org/fhir/ValueSet/dvrprep'
+//valueset "CAB-LA": 'http://example.org/fhir/ValueSet/cablaprep'
 
 valueset "First-time user": 'http://example.org/fhir/ValueSet/first time'
 valueset "Continuing user": 'http://example.org/fhir/ValueSet/continuing'
@@ -54,9 +60,17 @@ valueset "Other PrEP dosing type": 'http://example.org/fhir/ValueSet/otherprep'
 valueset "encounter-diagnosis": 'http://example.org/fhir/ValueSet/encounter-diagnosis'
 valueset "social-history": 'http://example.org/fhir/ValueSet/social-history'
 valueset "HIVtesttypeCodes": 'http://fhir.org/guides/who/hiv-dak/ValueSet/hiv-b-de82'
-valueset "Community-level testing" : 'http://example.org/fhir/ValueSet/HIV.B.DE16'
-valueset "Facility-level testing" : 'http://example.org/fhir/ValueSet/HIV.B.DE17'
-valueset "ANC contact during pregnancy" : 'http://example.org/fhir/ValueSet/HIV.E.DE39'
+
+
+//valueset "Community-level testing" : 'http://example.org/fhir/ValueSet/HIV.B.DE16'
+//valueset "Facility-level testing" : 'http://example.org/fhir/ValueSet/HIV.B.DE17'
+
+code "Community-level testing": 'HIV.B.DE16' from HIV_DAK_Codes
+code "Facility-level testing": 'HIV.B.DE17' from HIV_DAK_Codes
+
+//valueset "ANC contact during pregnancy" : 'http://example.org/fhir/ValueSet/HIV.E.DE39'
+
+code "ANC contact during pregnancy": 'HIV.E.DE39' from HIV_DAK_Codes
 
 //valueset "hiv positive": 'http://example.org/fhir/ValueSet/social-history'
 
@@ -73,7 +87,7 @@ code "Other" : 'other' from "Administrative Gender Codes" display 'Other/NA'
 code "Trans Males" : 'transgender male' from "Administrative Gender Codes" display 'Trans Males'
 code "Trans Females" : 'transgender female' from "Administrative Gender Codes" display 'Trans Females'
 
-
+code "On ART": 'HIV.H.DE47' from HIV_DAK_Codes
 
 // Condition Clinical Status Codes - Consider value sets for these
 code "active": 'active' from "ConditionClinicalStatusCodes"
@@ -126,13 +140,13 @@ define "HIV test resulted":
 define "HIV Treatment Active":
 [MedicationStatement] MS
     where MS.status = 'recorded'
-    and MS.reasonCode in "On ART"
+    and exists(MS.reasonCode C where C ~ "On ART")
 
 
 define "HIV PREP Active":
 [MedicationStatement] MS
     where MS.status = 'recorded'
-    and MS.reasonCode in "PREP"
+    and exists(MS.reasonCode C where C ~ "Currently on PrEP")
 
  define "Client is at elevated risk for HIV acquisition":
     [Observation] O
@@ -159,16 +173,16 @@ define "Patient Deceased during Measurement Period":
 
 define "Stopped ART at Facility during the measurement period":
     exists(
-    [EpisodeOfCare] EOS
-    where EOS.type in "On ART"
+    [EpisodeOfCare] EOC
+    where exists(EOC.type T where T ~ "On ART") 
     and (exists (
-      EOS.statusHistory H
+      EOC.statusHistory H
       where H.status = 'finished'
       and H.period ends during "Measurement Period"
     ) 
     or (
-      EOS.status = 'finished'
-      and EOS.period ends during "Measurement Period"
+      EOC.status = 'finished'
+      and EOC.period ends during "Measurement Period"
     )
     )
     )
@@ -308,7 +322,7 @@ define "By Administrative Gender Stratifier":
 define "Community_testing":
   exists([Observation] O
     with [Encounter] E
-      such that O.encounter.references(E) and E.location.physicalType in  "Community-level testing" 
+      such that O.encounter.references(E) and exists(E.location.physicalType PT where PT ~  "Community-level testing") 
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes"
   and O.issued during "Measurement Period")
@@ -318,7 +332,7 @@ define "Community_testing":
 define "Facility_testing":
   exists([Observation] O
     with [Encounter] E
-      such that O.encounter.references(E) and E.location.physicalType in  "Facility-level testing"
+      such that O.encounter.references(E) and exists(E.location.physicalType PT where PT ~  "Facility-level testing")
   where (O.status in { 'final', 'amended' }
   and O.code in "HIVtesttypeCodes"
   and O.issued during "Measurement Period")
@@ -328,14 +342,14 @@ define "Facility_testing":
 //ANC SMART doesn't take into account time period
 define "ANC_case":
 exists(
-    [EpisodeOfCare] EOS
-    where EOS.type in "ANC contact during pregnancy"
+    [EpisodeOfCare] EOC
+    where exists(EOC.type T where T ~ "ANC contact during pregnancy")
     and (exists (
-      EOS.statusHistory H
+      EOC.statusHistory H
       where H.period overlaps "Measurement Period"
     ) 
     or (
-      EOS.period overlaps "Measurement Period"
+      EOC.period overlaps "Measurement Period"
     )
     )
     )
@@ -344,63 +358,63 @@ exists(
   define "PREP Product Oral":
   exists([MedicationStatement] MS
     where MS.status = 'recorded'
-    and MS.reasonCode in "PREP"
-    and MS.medication in "Oral PrEP"
+    and exists(MS.reasonCode C where C ~ "Currently on PrEP")
+    and exists(MS.medication M where M ~ "Oral PrEP")  
   )
 
   define "PREP Product long-acting device":
   exists([MedicationStatement] MS
     where MS.status = 'recorded'
-    and MS.reasonCode in "PREP"
+    and exists(MS.reasonCode C where C ~ "Currently on PrEP")
     and MS.medication in "Dapivirine vaginal ring (DVR)"
   )
 
   define "PREP Product long-acting injectable":
   exists([MedicationStatement] MS
     where MS.status = 'recorded'
-    and MS.reasonCode in "PREP"
+    and exists(MS.reasonCode C where C ~ "Currently on PrEP")
     and MS.medication in "CAB-LA"
   )
   
   define "PREP first time":
   exists([MedicationStatement] MS
     where MS.status = 'recorded'
-    and MS.reasonCode in "PREP"
+    and exists(MS.reasonCode C where C ~ "Currently on PrEP")
     and MS.statusReason in "First-time user"
   )
 
   define "PREP Continuing user":
   exists([MedicationStatement] MS
     where MS.status = 'recorded'
-    and MS.reasonCode in "PREP"
+    and exists(MS.reasonCode C where C ~ "Currently on PrEP")
     and MS.statusReason in "Continuing user"
   )
   
   define "PREP Restarting":
   exists([MedicationStatement] MS
     where MS.status = 'recorded'
-    and MS.reasonCode in "PREP"
+    and exists(MS.reasonCode C where C ~ "Currently on PrEP")
     and MS.statusReason in "Restarting following a period of not taking medication"
   )
 
   define "Daily_oral_PrEP":
   exists([MedicationStatement] MS
     where MS.status = 'recorded'
-    and MS.reasonCode in "PREP"
+    and exists(MS.reasonCode C where C ~ "Currently on PrEP")
     and MS.dosage.additionalInstruction in "Daily oral PrEP"
   )
 
   define "Event_driven_PrEP":
   exists([MedicationStatement] MS
     where MS.status = 'recorded'
-    and MS.reasonCode in "PREP"
+    and exists(MS.reasonCode C where C ~ "Currently on PrEP")
     and MS.dosage.additionalInstruction in "Event-driven PrEP (2+1+1)"
   )
 
   define "other_dosing_PrEP":
   exists([MedicationStatement] MS
     where MS.status = 'recorded'
-    and MS.reasonCode in "PREP"
+    and exists(MS.reasonCode C where C ~ "Currently on PrEP")
     and MS.dosage.additionalInstruction in "Other PrEP dosing type"
   )
 
@@ -508,63 +522,3 @@ exists(
  * Should intend to use when patient.deceased FHIR boolean was updated to TRUE if no other date is available
  * Kenya EMR example does not account for when deceased is just a boolean
  */
-
-
-/* to delete*/
-
-define "HIV Positive before end of measurement period":
-   exists ([Condition] C
-    where C.clinicalStatus ~ "active"
-    and C.category in "encounter-diagnosis"
-    and C.code ~ "HIV-positive"
-    and C.onset before end of "Measurement Period")
-    or 
-   exists ([Observation] O
-    where O.status in {'final', 'amended'}
-    and O.code in "HIVtesttypeCodes"
-    and O.value ~ "HIV-positive"
-    and O.issued before end of "Measurement Period")
-
-//last measurement period is defined as same length as current measurement period  
-define "HIV Positive before end of last measurement period":
-    exists ([Condition] C
-    where C.clinicalStatus ~ "active"
-    and C.category in "encounter-diagnosis"
-    and C.code ~ "HIV-positive"
-    and C.onset before (end of "Measurement Period" - duration in days of "Measurement Period"))
-    or 
-    exists ([Observation] O
-    where O.status in {'final', 'amended'}
-    and O.code in "HIVtesttypeCodes"
-    and O.value ~ "HIV-positive"
-    and O.issued before end of "Measurement Period" - duration in days of "Measurement Period")
-
-define "HIV Treatment Active during the measurement period":
-   exists(
-    [MedicationStatement] MS
-    where MS.status = 'recorded'
-    and MS.reasonCode in "On ART"
-    and MS.effective starts before end of "Measurement Period"
-    and (MS.effective ends after start of "Measurement Period"
-    or end of MS.effective  ~  null)
-   )
-
-   //last measurement period is defined as same length as current measurement period  
-define "HIV Treatment Active during last measurement period":
-   exists(
-    [MedicationStatement] MS
-    where MS.status = 'recorded'
-    and MS.reasonCode in "On ART"
-    and MS.effective starts before (end of "Measurement Period" - duration in days of "Measurement Period")
-    and (MS.effective ends after (start of "Measurement Period" - duration in days of "Measurement Period")
-    or end of MS.effective  ~  null)
-   )
-
-
- define "HIV Treatment Started during the measurement period":
-   exists(
-    [MedicationStatement] MS
-    where MS.status = 'recorded'
-    and MS.reasonCode in "On ART"
-    and MS.effective starts during "Measurement Period"
-   )
