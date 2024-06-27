@@ -7,3 +7,4 @@ Description: "Value set of the optimal regimen for transition to DTG-based regim
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE82"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE82"

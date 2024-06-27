@@ -7,6 +7,7 @@ Description: "Value set of type of treatment-limiting toxicity experienced by cl
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE466"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE466"
 
 * HIVConcepts#HIV.D.DE467 "Gastrointestinal"
 * HIVConcepts#HIV.D.DE468 "Skin issues"

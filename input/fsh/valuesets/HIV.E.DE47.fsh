@@ -7,6 +7,7 @@ Description: "Value set of outcome of current pregnancy"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVEDE47"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.E.DE47"
 
 * HIVConcepts#HIV.E.DE48 "Live birth"
 * HIVConcepts#HIV.E.DE49 "Early fetal loss/miscarriage"

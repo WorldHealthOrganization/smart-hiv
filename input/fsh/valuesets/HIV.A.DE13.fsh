@@ -7,3 +7,4 @@ Description: "Value set of country where the client was born"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVADE13"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.A.DE13"

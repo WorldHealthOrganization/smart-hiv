@@ -7,3 +7,4 @@ Description: "Value set of other populations of priority of HIV prevention and c
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVConfigDE19"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.Config.DE19"

@@ -7,3 +7,4 @@ Description: "Value set of this should be a context-specific list of administrat
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVADE43"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.A.DE43"

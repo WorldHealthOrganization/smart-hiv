@@ -7,6 +7,7 @@ Description: "Value set of signs the client is at a substantial risk of HIV infe
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVCDE36"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.C.DE36"
 
 * HIVConcepts#HIV.C.DE37 "No condom use during sex with more than one partner in the past 6 months"
 * HIVConcepts#HIV.C.DE38 "STI in the past 6 months"

@@ -7,3 +7,4 @@ Description: "Value set of the service delivery location where the vaccine admin
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE606"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE606"

@@ -7,3 +7,4 @@ Description: "Value set of early infant diagnosis (EID) sample number"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVEDE180"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.E.DE180"

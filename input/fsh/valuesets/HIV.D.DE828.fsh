@@ -7,6 +7,7 @@ Description: "Value set of type of diagnostic test used for Neisseria gonorrhoea
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE828"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE828"
 
 * HIVConcepts#HIV.D.DE829 "NAAT"
 * HIVConcepts#HIV.D.DE830 "POC Test"

@@ -7,6 +7,7 @@ Description: "Value set of probable route(s) of transmission of HIV to client"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVBDE121"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.B.DE121"
 
 * HIVConcepts#HIV.B.DE122 "Heterosexual sex"
 * HIVConcepts#HIV.B.DE123 "Sex between men"

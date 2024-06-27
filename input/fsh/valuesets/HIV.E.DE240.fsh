@@ -7,3 +7,4 @@ Description: "Value set of the infant's cause of death"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVEDE240"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.E.DE240"

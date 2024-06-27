@@ -7,3 +7,4 @@ Description: "Value set of the number of the assay (test kit) in the HIV testing
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVBDE88"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.B.DE88"

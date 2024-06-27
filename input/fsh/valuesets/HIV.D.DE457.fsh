@@ -7,3 +7,4 @@ Description: "Value set of name or regimen code of all other medications prescri
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE457"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE457"

@@ -5,6 +5,7 @@ Description: "This code system defines the concepts used in the World Health Org
 * ^meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem"
 * ^experimental = true
 * ^caseSensitive = false
+* ^url = "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
 
 * #HIV.A.DE1 "First name" "Client's first or given name"
 * #HIV.A.DE2 "Family name" "Client's family name or last name"

@@ -7,3 +7,4 @@ Description: "Value set of name or identifier of health facility where HIV test 
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVBDE120"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.B.DE120"

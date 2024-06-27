@@ -7,6 +7,7 @@ Description: "Value set of whether counselling was provided to a client during t
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVBDE142"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.B.DE142"
 
 * HIVConcepts#HIV.B.DE143 "HIV-positive counselling conducted"
 * HIVConcepts#HIV.B.DE144 "Hepatitis B positive counselling conducted"

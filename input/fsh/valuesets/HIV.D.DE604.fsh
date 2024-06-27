@@ -7,3 +7,4 @@ Description: "Value set of type of vaccine received (such as IPV, OPV)"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE604"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE604"

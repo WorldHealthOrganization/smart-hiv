@@ -7,6 +7,7 @@ Description: "Value set of way in which pre-exposure prophylaxis (PrEP) is taken
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVCDE11"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.C.DE11"
 
 * HIVConcepts#HIV.C.DE12 "Daily oral PrEP"
 * HIVConcepts#HIV.C.DE13 "Event-driven PrEP (2+1+1)"

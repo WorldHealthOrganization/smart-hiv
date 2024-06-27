@@ -7,6 +7,7 @@ Description: "Value set of how the client would like to receive family planning 
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVADE46"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.A.DE46"
 
 * HIVConcepts#HIV.A.DE47 "Text message/SMS"
 * HIVConcepts#HIV.A.DE48 "Voice call"

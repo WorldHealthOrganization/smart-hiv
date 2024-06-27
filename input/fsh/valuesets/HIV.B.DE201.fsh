@@ -7,3 +7,4 @@ Description: "Value set of severity of the adverse event associated with volunta
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVBDE201"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.B.DE201"

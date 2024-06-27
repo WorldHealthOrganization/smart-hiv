@@ -7,3 +7,4 @@ Description: "Value set of name of health facility client was transferred to"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVHDE50"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.H.DE50"

@@ -7,3 +7,4 @@ Description: "Value set of new ART regimen after switch to second-line ART regim
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE485"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE485"

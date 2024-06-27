@@ -7,6 +7,7 @@ Description: "Value set of maternal and child health service visit attended by a
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVEDE173"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.E.DE173"
 
 * HIVConcepts#HIV.E.DE174 "12-month visit"
 * HIVConcepts#HIV.E.DE175 "24-month visit"

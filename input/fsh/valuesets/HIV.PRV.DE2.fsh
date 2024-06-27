@@ -7,6 +7,7 @@ Description: "Value set of HIV prevention intervention that client accessed"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVPRVDE2"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.PRV.DE2"
 
 * HIVConcepts#HIV.PRV.DE3 "PrEP service"
 * HIVConcepts#HIV.PRV.DE4 "OAMT"

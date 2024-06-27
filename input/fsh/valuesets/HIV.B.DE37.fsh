@@ -7,6 +7,7 @@ Description: "Value set of client's partner is a member of a key population, tha
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVBDE37"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.B.DE37"
 
 * HIVConcepts#HIV.B.DE38 "Sex worker"
 * HIVConcepts#HIV.B.DE39 "Men who have sex with men"

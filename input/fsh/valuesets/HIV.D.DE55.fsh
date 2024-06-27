@@ -7,3 +7,4 @@ Description: "Value set of facility where the client first enrolled in HIV care"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE55"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE55"

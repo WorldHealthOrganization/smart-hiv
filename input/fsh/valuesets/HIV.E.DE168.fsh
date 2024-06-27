@@ -7,6 +7,7 @@ Description: "Value set of type of HIV test"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVEDE168"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.E.DE168"
 
 * HIVConcepts#HIV.E.DE169 "Rapid diagnostic test for HIV"
 * HIVConcepts#HIV.E.DE170 "Enzyme immunoassay for HIV"

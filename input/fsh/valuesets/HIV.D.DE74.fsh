@@ -7,3 +7,4 @@ Description: "Value set of original full, first-line ARV drug regimen patient st
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE74"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE74"

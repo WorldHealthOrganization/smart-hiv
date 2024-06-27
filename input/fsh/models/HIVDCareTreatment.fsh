@@ -358,7 +358,7 @@ Description: "This tab describes the data that may be collected during care and 
   * ^code[+] = HIVConcepts#HIV.D.DE415
 * receivedViralLoadTestResults 0..1 boolean "Received viral load test results" "Client received results from viral load test"
   * ^code[+] = HIVConcepts#HIV.D.DE416
-* dateViralLoadTestResultsReceivedByClient 0..1 date "Date viral load test results received by client" "The date on which the client received results from a viral load test"
+* dateViralLoadTestResultsReceivedByClient1 0..1 date "Date viral load test results received by client" "The date on which the client received results from a viral load test"
   * ^code[+] = HIVConcepts#HIV.D.DE417
 * reasonForArvDrugRegimenSubstitution 0..* Coding "Reason for ARV drug regimen substitution" "Reason why a substitution was made to the antiretroviral (ARV) drug regimen"
   * ^code[+] = HIVConcepts#HIV.D.DE418

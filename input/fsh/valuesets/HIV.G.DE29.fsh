@@ -7,6 +7,7 @@ Description: "Value set of client's hepatitis B diagnosis"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVGDE29"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.G.DE29"
 
 * HIVConcepts#HIV.G.DE30 "Hepatitis B positive"
 * HIVConcepts#HIV.G.DE31 "Hepatitis B negative"

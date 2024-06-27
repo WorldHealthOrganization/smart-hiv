@@ -7,6 +7,7 @@ Description: "Value set of type of triage test for cervical cancer"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE681"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE681"
 
 * HIVConcepts#HIV.D.DE682 "VIA"
 * HIVConcepts#HIV.D.DE683 "Colposcopy"

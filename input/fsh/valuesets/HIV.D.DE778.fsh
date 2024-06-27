@@ -7,6 +7,7 @@ Description: "Value set of syndrome or STI for which client is diagnosed"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE778"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE778"
 
 * HIVConcepts#HIV.D.DE779 "Urethral discharge syndrome"
 * HIVConcepts#HIV.D.DE780 "Vaginal discharge syndrome"

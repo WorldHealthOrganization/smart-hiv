@@ -7,3 +7,4 @@ Description: "Value set of reason(s) why client changed drug regimen (within the
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE488"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE488"

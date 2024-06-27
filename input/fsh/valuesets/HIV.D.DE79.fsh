@@ -7,3 +7,4 @@ Description: "Value set of the first-line ART regimen for the client under speci
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE79"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE79"

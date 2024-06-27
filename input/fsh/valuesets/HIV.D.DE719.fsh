@@ -7,6 +7,7 @@ Description: "Value set of treatment method for cervical precancer lesions"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE719"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE719"
 
 * HIVConcepts#HIV.D.DE720 "Cryotherapy"
 * HIVConcepts#HIV.D.DE721 "Thermal ablation"

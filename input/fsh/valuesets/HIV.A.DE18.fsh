@@ -7,6 +7,7 @@ Description: "Value set of gender of the client"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVADE18"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.A.DE18"
 
 * HIVConcepts#HIV.A.DE19 "Female"
 * HIVConcepts#HIV.A.DE20 "Male"

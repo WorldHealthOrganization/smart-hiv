@@ -7,6 +7,7 @@ Description: "Value set of client's current marital status "
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVADE30"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.A.DE30"
 
 * HIVConcepts#HIV.A.DE31 "Unmarried"
 * HIVConcepts#HIV.A.DE32 "Never married"

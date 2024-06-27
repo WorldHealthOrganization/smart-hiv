@@ -7,3 +7,4 @@ Description: "Value set of hepatitis B virus treatment regimen prescribed"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE168"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE168"

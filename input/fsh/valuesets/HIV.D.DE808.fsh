@@ -7,6 +7,7 @@ Description: "Value set of result from Gonorrhoea test"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE808"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE808"
 
 * HIVConcepts#HIV.D.DE809 "Positive"
 * HIVConcepts#HIV.D.DE810 "Negative"

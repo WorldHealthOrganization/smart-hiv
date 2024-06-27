@@ -7,3 +7,4 @@ Description: "Value set of the facility where the client received an HIV-positiv
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVBDE66"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.B.DE66"

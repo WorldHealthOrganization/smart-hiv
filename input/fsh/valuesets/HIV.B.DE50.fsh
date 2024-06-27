@@ -7,6 +7,7 @@ Description: "Value set of the type of key population that the client is include
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVBDE50"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.B.DE50"
 
 * HIVConcepts#HIV.B.DE51 "Sex worker"
 * HIVConcepts#HIV.B.DE52 "Men who have sex with men"

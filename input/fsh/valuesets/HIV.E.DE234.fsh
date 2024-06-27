@@ -7,6 +7,7 @@ Description: "Value set of the outcome for the infant does not have a final outc
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVEDE234"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.E.DE234"
 
 * HIVConcepts#HIV.E.DE235 "Lost to follow-up"
 * HIVConcepts#HIV.E.DE236 "Transferred out"

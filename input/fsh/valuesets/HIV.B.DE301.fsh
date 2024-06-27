@@ -7,6 +7,7 @@ Description: "Value set of type of diagnostic test used for herpes simplex virus
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVBDE301"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.B.DE301"
 
 * HIVConcepts#HIV.B.DE302 "NAAT"
 * HIVConcepts#HIV.B.DE303 "Antibody test"

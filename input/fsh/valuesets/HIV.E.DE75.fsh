@@ -7,3 +7,4 @@ Description: "Value set of the woman's cause of death"
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVEDE75"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.E.DE75"

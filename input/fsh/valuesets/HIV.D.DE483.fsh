@@ -7,3 +7,4 @@ Description: "Value set of new antiretroviral (ARV) drugs after client changed r
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE483"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE483"

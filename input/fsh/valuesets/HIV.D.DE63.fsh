@@ -7,3 +7,4 @@ Description: "Value set of health facility (or other location) where ARV drugs w
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE63"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE63"

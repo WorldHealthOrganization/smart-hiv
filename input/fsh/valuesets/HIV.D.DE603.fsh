@@ -7,3 +7,4 @@ Description: "Value set of the brand or trade name used to refer to the vaccine 
 * ^status = #active
 * ^experimental = true
 * ^name = "HIVDDE603"
+* ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE603"
