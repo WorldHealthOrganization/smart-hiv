@@ -1,20 +1,20 @@
-Instance: WHOCommon
+
+Instance: WHOCommonLogic
 InstanceOf: Library
-Title: "WHOCommon"
-Description: "This library defines common terminologies and functions used throughout WHO SMART Guidelines content"
+Title: "WHOCommon Logic"
+Description: "Description not yet available for WHOCommonLogic."
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary"
 * meta.profile[+] = "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library"
 * meta.profile[+] = "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module"
-* url = "http://smart.who.int/base-clinical/Library/WHOCommon"
+* url = "http://smart.who.int/immunizations-measles/Library/WHOCommonLogic"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"
   * valueCode = #computable
-* version = "0.1.0"
-* name = "WHOCommon"
+* name = "WHOCommonLogic"
 * status = #draft
 * experimental = true
 * publisher = "World Health Organization (WHO)"
 * type = $library-type#logic-library
-* content.id = "ig-loader-WHOCommon.cql"
+* content.id = "ig-loader-WHOCommonLogic.cql"

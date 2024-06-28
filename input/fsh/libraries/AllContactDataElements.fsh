@@ -1,7 +1,7 @@
 
 Instance: AllContactDataElementsLogic
 InstanceOf: Library
-Title: "AllContactDataElementsLogic Logic"
+Title: "AllContactDataElements Logic"
 Description: "Description not yet available for AllContactDataElementsLogic."
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"

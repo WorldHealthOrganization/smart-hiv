@@ -1,7 +1,7 @@
 
 Instance: HIVB7DTLogic
 InstanceOf: Library
-Title: "HIVB7DTLogic Logic"
+Title: "HIVB7DT Logic"
 Description: "Description not yet available for HIVB7DTLogic."
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"

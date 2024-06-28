@@ -1,7 +1,7 @@
 
 Instance: AllConceptsLogic
 InstanceOf: Library
-Title: "AllConceptsLogic Logic"
+Title: "AllConcepts Logic"
 Description: "Description not yet available for AllConceptsLogic."
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"

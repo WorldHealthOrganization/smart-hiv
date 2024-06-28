@@ -1,7 +1,7 @@
 
 Instance: FHIRHelpersLogic
 InstanceOf: Library
-Title: "FHIRHelpersLogic Logic"
+Title: "FHIRHelpers Logic"
 Description: "Description not yet available for FHIRHelpersLogic."
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"

@@ -1,7 +1,7 @@
 
 Instance: HIVIndicatorCommonLogic
 InstanceOf: Library
-Title: "HIVIndicatorCommonLogic Logic"
+Title: "HIVIndicatorCommon Logic"
 Description: "Description not yet available for HIVIndicatorCommonLogic."
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"

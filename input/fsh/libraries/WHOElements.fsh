@@ -1,20 +1,20 @@
-Instance: WHOElements
+
+Instance: WHOElementsLogic
 InstanceOf: Library
-Title: "WHOElements"
-Description: "This library defines context-independent elements used throughout WHO SMART Guidelines content"
+Title: "WHOElements Logic"
+Description: "Description not yet available for WHOElementsLogic."
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary"
 * meta.profile[+] = "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library"
 * meta.profile[+] = "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module"
-* url = "http://smart.who.int/base-clinical/Library/WHOElements"
+* url = "http://smart.who.int/immunizations-measles/Library/WHOElementsLogic"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"
   * valueCode = #computable
-* version = "0.1.0"
-* name = "WHOElements"
+* name = "WHOElementsLogic"
 * status = #draft
 * experimental = true
 * publisher = "World Health Organization (WHO)"
 * type = $library-type#logic-library
-* content.id = "ig-loader-WHOElements.cql"
+* content.id = "ig-loader-WHOElementsLogic.cql"

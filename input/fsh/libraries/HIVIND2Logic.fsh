@@ -1,8 +1,8 @@
 
 Instance: HIVIND2Logic
 InstanceOf: Library
-Title: "HIVIND2Logic Logic"
-Description: "Description not yet available for HIVIND2Logic."
+Title: "HIV.IND.2 Logic"
+Description: "Number of people who received PrEP at least once during the reporting period"
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary"

@@ -1,11 +1,11 @@
 CodeSystem: HIVConcepts
-Title: "WHO HIV DAK Concepts CodeSystem"
+Title: "WHO SMART HIV Concepts CodeSystem"
 Description: "This code system defines the concepts used in the World Health Organization SMART HIV DAK"
 * ^meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecodesystem"
 * ^meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem"
+* ^meta.profile[+] = "http://smart.who.int/base/StructureDefinition/SGCodeSystem"
 * ^experimental = true
 * ^caseSensitive = false
-* ^url = "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
 
 * #HIV.A.DE1 "First name" "Client's first or given name"
 * #HIV.A.DE2 "Family name" "Client's family name or last name"

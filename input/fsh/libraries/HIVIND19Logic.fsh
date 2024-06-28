@@ -1,8 +1,8 @@
 
 Instance: HIVIND19Logic
 InstanceOf: Library
-Title: "HIVIND19Logic Logic"
-Description: "Description not yet available for HIVIND19Logic."
+Title: "HIV.IND.19 Logic"
+Description: "Number of HIV tests performed (volume) and the % of HIV-positive results returned to people (positivity)"
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary"

@@ -1,8 +1,8 @@
 
 Instance: HIVIND3Logic
 InstanceOf: Library
-Title: "HIVIND3Logic Logic"
-Description: "Description not yet available for HIVIND3Logic."
+Title: "HIV.IND.3 Logic"
+Description: "% of people prescribed PrEP among those identified as being at elevated risk for HIV acquisition"
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary"

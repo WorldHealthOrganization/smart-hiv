@@ -1,7 +1,7 @@
 Instance: HIV.I1EmergencyReferral
 InstanceOf: sdc-questionnaire-extr-smap
 Title: "Emergency referral?"
-Description: "<NOT IMPLEMENTED>"
+Description: "Questionnaire for emergency referral?"
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablequestionnaire"
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablequestionnaire"
@@ -10,8 +10,10 @@ Usage: #definition
 * status = #draft
 * experimental = true
 * item[+]
+  * id = "HIV.I.DE1"
   * linkId = "HIV.I.DE1"
   * type = #boolean
   * text = "Emergency referral"
   * required = true
   * repeats = false
+  * readOnly = false
