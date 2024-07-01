@@ -6,7 +6,7 @@ include FHIRHelpers version '4.0.1'
 include WHOCommon called WCom
 include FHIRCommon called FC
 include HIVConcepts called HC
-include HIVConcepts_custom called HCC
+include HIVConceptsCustom called HCC
 
 parameter "Measurement Period" Interval<Date> default Interval[@2020-01-01, @2020-12-31]
 
