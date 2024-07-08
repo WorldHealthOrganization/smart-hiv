@@ -9,6 +9,127 @@ Usage: #definition
 * language = #en
 * status = #draft
 * experimental = true
+
+* item[+]
+  * id = "HIV.B.DE68"
+  * linkId = "HIV.B.DE68"
+  * type = #choice
+  * text = "HIV serotype"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE79"
+  * linkId = "HIV.B.DE79"
+  * type = #boolean
+  * text = "HIV test ordered"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE80"
+  * linkId = "HIV.B.DE80"
+  * type = #boolean
+  * text = "HIV test conducted"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE81"
+  * linkId = "HIV.B.DE81"
+  * type = #choice
+  * text = "HIV test type"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE87"
+  * linkId = "HIV.B.DE87"
+  * type = #dateTime
+  * text = "Date HIV test sent"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE88"
+  * linkId = "HIV.B.DE88"
+  * type = #choice
+  * text = "Assay number in testing strategy"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE94"
+  * linkId = "HIV.B.DE94"
+  * type = #choice
+  * text = "Test result of HIV assay 1"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE98"
+  * linkId = "HIV.B.DE98"
+  * type = #choice
+  * text = "Test result of HIV assay 2"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE102"
+  * linkId = "HIV.B.DE102"
+  * type = #choice
+  * text = "Test result of HIV assay 3"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE106"
+  * linkId = "HIV.B.DE106"
+  * type = #choice
+  * text = "Test result of HIV assay 1 repeated"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE110"
+  * linkId = "HIV.B.DE110"
+  * type = #date
+  * text = "HIV test date"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE111"
+  * linkId = "HIV.B.DE111"
+  * type = #choice
+  * text = "HIV test result"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE115"
+  * linkId = "HIV.B.DE115"
+  * type = #choice
+  * text = "HIV status"
+  * required = true
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE119"
+  * linkId = "HIV.B.DE119"
+  * type = #date
+  * text = "Date positive HIV test confirmed"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.B.DE120"
+  * linkId = "HIV.B.DE120"
+  * type = #choice
+  * text = "Site where positive HIV test confirmed"
+  * required = false
+  * repeats = false
+  * readOnly = false
 * item[+]
   * id = "HIV.B.DE129"
   * linkId = "HIV.B.DE129"

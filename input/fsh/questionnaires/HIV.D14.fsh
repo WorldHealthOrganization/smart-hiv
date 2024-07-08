@@ -9,6 +9,23 @@ Usage: #definition
 * language = #en
 * status = #draft
 * experimental = true
+
+* item[+]
+  * id = "HIV.D.DE259"
+  * linkId = "HIV.D.DE259"
+  * type = #choice
+  * text = "Risk factors, comorbidities and coinfections signs and symptoms"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE288"
+  * linkId = "HIV.D.DE288"
+  * type = #string
+  * text = "Other (specify)"
+  * required = false
+  * repeats = false
+  * readOnly = false
 * item[+]
   * id = "HIV.D.DE1017"
   * linkId = "HIV.D.DE1017"

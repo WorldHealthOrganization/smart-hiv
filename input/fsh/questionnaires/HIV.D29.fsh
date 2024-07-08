@@ -9,6 +9,39 @@ Usage: #definition
 * language = #en
 * status = #draft
 * experimental = true
+
+* item[+]
+  * id = "HIV.D.DE524"
+  * linkId = "HIV.D.DE524"
+  * type = #dateTime
+  * text = "Date/time of follow-up appointment"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE525"
+  * linkId = "HIV.D.DE525"
+  * type = #choice
+  * text = "Type of follow-up appointment"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE530"
+  * linkId = "HIV.D.DE530"
+  * type = #string
+  * text = "Other (specify)"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE531"
+  * linkId = "HIV.D.DE531"
+  * type = #date
+  * text = "Follow-up test recommended date"
+  * required = false
+  * repeats = false
+  * readOnly = false
 * item[+]
   * id = "HIV.D.DE776"
   * linkId = "HIV.D.DE776"

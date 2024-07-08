@@ -9,6 +9,23 @@ Usage: #definition
 * language = #en
 * status = #draft
 * experimental = true
+
+* item[+]
+  * id = "HIV.D.DE1"
+  * linkId = "HIV.D.DE1"
+  * type = #choice
+  * text = "Reason for visit"
+  * required = true
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE8"
+  * linkId = "HIV.D.DE8"
+  * type = #boolean
+  * text = "Scheduled visit"
+  * required = true
+  * repeats = false
+  * readOnly = false
 * item[+]
   * id = "HIV.D.DE746"
   * linkId = "HIV.D.DE746"

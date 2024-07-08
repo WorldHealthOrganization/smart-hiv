@@ -9,6 +9,103 @@ Usage: #definition
 * language = #en
 * status = #draft
 * experimental = true
+
+* item[+]
+  * id = "HIV.D.DE956"
+  * linkId = "HIV.D.DE956"
+  * type = #choice
+  * text = "TB screening algorithm"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE971"
+  * linkId = "HIV.D.DE971"
+  * type = #string
+  * text = "Other TB screening algorithm (specify)"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE972"
+  * linkId = "HIV.D.DE972"
+  * type = #boolean
+  * text = "TB screening conducted"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE973"
+  * linkId = "HIV.D.DE973"
+  * type = #choice
+  * text = "Symptoms of TB"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE985"
+  * linkId = "HIV.D.DE985"
+  * type = #boolean
+  * text = "History of contact with a person with TB"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE986"
+  * linkId = "HIV.D.DE986"
+  * type = #choice
+  * text = "TB screening result"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE990"
+  * linkId = "HIV.D.DE990"
+  * type = #date
+  * text = "TB screening date"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE991"
+  * linkId = "HIV.D.DE991"
+  * type = #date
+  * text = "TB screening result date"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE992"
+  * linkId = "HIV.D.DE992"
+  * type = #choice
+  * text = "TB diagnostic test category"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE997"
+  * linkId = "HIV.D.DE997"
+  * type = #date
+  * text = "TB diagnostic test date"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE998"
+  * linkId = "HIV.D.DE998"
+  * type = #date
+  * text = "Test sample collection date"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE999"
+  * linkId = "HIV.D.DE999"
+  * type = #date
+  * text = "TB diagnostic test result date"
+  * required = false
+  * repeats = false
+  * readOnly = false
 * item[+]
   * id = "HIV.D.DE1025"
   * linkId = "HIV.D.DE1025"

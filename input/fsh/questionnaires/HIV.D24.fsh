@@ -9,6 +9,47 @@ Usage: #definition
 * language = #en
 * status = #draft
 * experimental = true
+
+* item[+]
+  * id = "HIV.D.DE446"
+  * linkId = "HIV.D.DE446"
+  * type = #choice
+  * text = "Coinfection status at ART start"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE449"
+  * linkId = "HIV.D.DE449"
+  * type = #choice
+  * text = "Pregnant and breastfeeding status at ART start"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE454"
+  * linkId = "HIV.D.DE454"
+  * type = #date
+  * text = "Delivery date of infant"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE455"
+  * linkId = "HIV.D.DE455"
+  * type = #boolean
+  * text = "Serodiscordant partner at ART start"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE465"
+  * linkId = "HIV.D.DE465"
+  * type = #boolean
+  * text = "Adherence counselling provided"
+  * required = false
+  * repeats = false
+  * readOnly = false
 * item[+]
   * id = "HIV.D.DE496"
   * linkId = "HIV.D.DE496"

@@ -9,6 +9,39 @@ Usage: #definition
 * language = #en
 * status = #draft
 * experimental = true
+
+* item[+]
+  * id = "HIV.H.DE23"
+  * linkId = "HIV.H.DE23"
+  * type = #choice
+  * text = "Outcome from outreach attempt"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.H.DE30"
+  * linkId = "HIV.H.DE30"
+  * type = #boolean
+  * text = "Moved from catchment area"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.H.DE31"
+  * linkId = "HIV.H.DE31"
+  * type = #date
+  * text = "Date client moved from catchment area"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.H.DE32"
+  * linkId = "HIV.H.DE32"
+  * type = #string
+  * text = "New catchment area"
+  * required = false
+  * repeats = false
+  * readOnly = false
 * item[+]
   * id = "HIV.H.DE38"
   * linkId = "HIV.H.DE38"

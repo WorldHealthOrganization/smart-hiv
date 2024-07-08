@@ -9,6 +9,31 @@ Usage: #definition
 * language = #en
 * status = #draft
 * experimental = true
+
+* item[+]
+  * id = "HIV.D.DE289"
+  * linkId = "HIV.D.DE289"
+  * type = #choice
+  * text = "WHO HIV clinical stage condition or symptom"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE358"
+  * linkId = "HIV.D.DE358"
+  * type = #choice
+  * text = "Clinical stage at start of ART"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE363"
+  * linkId = "HIV.D.DE363"
+  * type = #date
+  * text = "Date of clinical status change"
+  * required = false
+  * repeats = false
+  * readOnly = false
 * item[+]
   * id = "HIV.D.DE934"
   * linkId = "HIV.D.DE934"

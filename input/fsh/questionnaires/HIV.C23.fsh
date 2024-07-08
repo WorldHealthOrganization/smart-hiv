@@ -9,6 +9,111 @@ Usage: #definition
 * language = #en
 * status = #draft
 * experimental = true
+
+* item[+]
+  * id = "HIV.C.DE73"
+  * linkId = "HIV.C.DE73"
+  * type = #date
+  * text = "Date medications dispensed"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE74"
+  * linkId = "HIV.C.DE74"
+  * type = #date
+  * text = "Date medications prescribed"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE75"
+  * linkId = "HIV.C.DE75"
+  * type = #choice
+  * text = "Medications prescribed"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE79"
+  * linkId = "HIV.C.DE79"
+  * type = #string
+  * text = "Other (specify)"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE80"
+  * linkId = "HIV.C.DE80"
+  * type = #choice
+  * text = "PrEP product prescribed"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE85"
+  * linkId = "HIV.C.DE85"
+  * type = #string
+  * text = "Other (specify)"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE86"
+  * linkId = "HIV.C.DE86"
+  * type = #date
+  * text = "Date PrEP prescribed"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE87"
+  * linkId = "HIV.C.DE87"
+  * type = #date
+  * text = "Date PrEP dispensed"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE88"
+  * linkId = "HIV.C.DE88"
+  * type = #integer
+  * text = "Volume of PrEP product prescribed/dispensed"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE89"
+  * linkId = "HIV.C.DE89"
+  * type = #date
+  * text = "Date PEP prescribed"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE90"
+  * linkId = "HIV.C.DE90"
+  * type = #date
+  * text = "Date PEP course completion"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE91"
+  * linkId = "HIV.C.DE91"
+  * type = #choice
+  * text = "Preferred PEP backbone regimen"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.C.DE99"
+  * linkId = "HIV.C.DE99"
+  * type = #choice
+  * text = "Preferred third PEP drug"
+  * required = false
+  * repeats = false
+  * readOnly = false
 * item[+]
   * id = "HIV.C.DE106"
   * linkId = "HIV.C.DE106"

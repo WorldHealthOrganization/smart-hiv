@@ -9,6 +9,71 @@ Usage: #definition
 * language = #en
 * status = #draft
 * experimental = true
+
+* item[+]
+  * id = "HIV.D.DE9"
+  * linkId = "HIV.D.DE9"
+  * type = #integer
+  * text = "Body temperature"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE10"
+  * linkId = "HIV.D.DE10"
+  * type = #integer
+  * text = "Respiratory rate"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE11"
+  * linkId = "HIV.D.DE11"
+  * type = #integer
+  * text = "Heart rate"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE12"
+  * linkId = "HIV.D.DE12"
+  * type = #integer
+  * text = "Body height"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE13"
+  * linkId = "HIV.D.DE13"
+  * type = #integer
+  * text = "Body weight"
+  * required = true
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE14"
+  * linkId = "HIV.D.DE14"
+  * type = #integer
+  * text = "Systolic blood pressure"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE15"
+  * linkId = "HIV.D.DE15"
+  * type = #integer
+  * text = "Diastolic blood pressure"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.D.DE16"
+  * linkId = "HIV.D.DE16"
+  * type = #boolean
+  * text = "Blood pressure cannot be taken"
+  * required = false
+  * repeats = false
+  * readOnly = false
 * item[+]
   * id = "HIV.D.DE532"
   * linkId = "HIV.D.DE532"

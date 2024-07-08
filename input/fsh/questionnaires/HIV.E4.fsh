@@ -9,6 +9,47 @@ Usage: #definition
 * language = #en
 * status = #draft
 * experimental = true
+
+* item[+]
+  * id = "HIV.E.DE101"
+  * linkId = "HIV.E.DE101"
+  * type = #boolean
+  * text = "Mother HIV test conducted"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.E.DE102"
+  * linkId = "HIV.E.DE102"
+  * type = #boolean
+  * text = "Mother HIV test ordered"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.E.DE103"
+  * linkId = "HIV.E.DE103"
+  * type = #dateTime
+  * text = "Mother HIV test date"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.E.DE104"
+  * linkId = "HIV.E.DE104"
+  * type = #choice
+  * text = "Maternal HIV test result"
+  * required = false
+  * repeats = false
+  * readOnly = false
+* item[+]
+  * id = "HIV.E.DE168"
+  * linkId = "HIV.E.DE168"
+  * type = #choice
+  * text = "HIV test type"
+  * required = false
+  * repeats = false
+  * readOnly = false
 * item[+]
   * id = "HIV.E.DE194"
   * linkId = "HIV.E.DE194"
