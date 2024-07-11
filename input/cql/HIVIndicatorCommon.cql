@@ -4,6 +4,7 @@ using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
 include WHOCommon called WCom
+include WHOCommonV2 called WComV2
 include FHIRCommon called FC
 include HIVConcepts called HC
 include HIVConceptsCustom called HCC
@@ -29,7 +30,13 @@ define "HIV Positive Condition":
 define "HIV Positive Observation":
 [Observation] O
     where O.status in {'final', 'amended'}
-    and O.code ~ HC."Rapid diagnostic test for HIV - HIV.B.DE82"
+    and O.code ~ HC."HIV status"
+    and O.value ~ HC."HIV-positive - HIV.B.DE116"
+
+define "HIV Positive Observation - HIV Self Test":
+[Observation] O
+    where O.status in {'final', 'amended'}
+    and O.code ~ HC."HIV self-test"
     and O.value ~ HC."HIV-positive - HIV.B.DE116"
 
 define "HIV Negative Observation":
@@ -52,7 +59,7 @@ define "HIV Treatment Active":
 define "HIV PREP Active":
 [MedicationStatement] MS
     where MS.status = 'recorded'
-    and exists(MS.reasonCode C where C ~ HC."Currently on PrEP")
+    and exists(MS.reasonCode C where C ~ HC."PrEP for HIV prevention")
 
  define "Client is at elevated risk for HIV acquisition":
     [Observation] O
@@ -60,7 +67,70 @@ define "HIV PREP Active":
     and exists(O.category OC where OC ~ HCC."social-history")
     and O.code ~ HC."At elevated risk for HIV acquisition - HIV.B.DE225"
 
+define "PREP Prescription":
+    [MedicationRequest] MR
+        where MR.status = 'completed'
+        and MR.intent = 'order'
+        and MR.medication ~ HC."PrEP for HIV prevention"
 
+define "PEP Prescription":
+    [MedicationRequest] MR
+        where MR.status = 'completed'
+        and MR.intent = 'order'
+        and MR.medication ~ HC."PEP for HIV prevention"
+
+define "PEP Prescribed before start of Measurement Period and Completed":
+  [MedicationStatement] MS
+    with [MedicationRequest] MR
+      such that MS.basedOn.references(MR) and MR.status = 'completed'
+        and MR.intent = 'order'
+        and MR.medication ~ HC."PEP for HIV prevention"
+        and MR.authoredOn before end of "Measurement Period"
+  where (MS.status = 'recorded'
+  and exists(MS.reasonCode C where C ~ HC."PrEP for HIV prevention")
+  )
+
+define "PEP Prescribed during Measurement Period and Completed":
+  [MedicationStatement] MS
+    with [MedicationRequest] MR
+      such that MS.basedOn.references(MR) and MR.status = 'completed'
+        and MR.intent = 'order'
+        and MR.medication ~ HC."PEP for HIV prevention"
+        and MR.authoredOn after start of "Measurement Period"
+        and MR.authoredOn before end of "Measurement Period"
+  where (MS.status = 'recorded'
+  and exists(MS.reasonCode C where C ~ HC."PrEP for HIV prevention")
+  )
+
+define "HIV Test Positive After PEP Prescribed during Measurement Period":
+  [Observation: HC."HIV test result - HIV.B.DE111"] O
+    with [MedicationRequest] MR
+      such that O.basedOn.references(MR) and MR.status = 'completed'
+        and MR.intent = 'order'
+        and MR.medication ~ HC."PEP for HIV prevention"
+        and MR.authoredOn after start of "Measurement Period"
+        and MR.authoredOn before end of "Measurement Period"
+        and O.issued before (MR.authoredOn + 3 months)
+  where ( O.status in {'final', 'amended'}
+    and O.value ~ HC."HIV-positive - HIV.B.DE112"
+  )
+
+define "Needle Syringe Dispensed":  
+  [DeviceUseStatement] DUS
+  with [Observation: HC."Key population member* - HIV.E.DE113"] O
+      such that DUS.reasonReference.references(O) 
+        and O.status in { 'final', 'amended', 'corrected' }
+        and exists(O.category OC where OC ~ HCC."social-history")
+        and O.value ~ HC."People who inject drugs - HIV.B.DE54"
+  where DUS.status = 'completed'
+
+  define PWID_person:
+    [Observation: HC."Key population member* - HIV.E.DE113"] O
+    where O.status in { 'final', 'amended', 'corrected' }
+    and exists(O.category OC where OC ~ HCC."social-history")
+    and O.value ~ HC."People who inject drugs - HIV.B.DE54"
+
+  
 define "Patient Deceased before end of Measurement Period":
   case 
     when Patient.deceased is FHIR.boolean and Patient.deceased ~ true then (Patient.meta.lastUpdated before end of "Measurement Period")
@@ -174,42 +244,42 @@ define "By Administrative Gender Stratifier":
 
  define SW:
   exists (
-    [Observation] O
+    [Observation: HC."Key population member* - HIV.E.DE113"] O
     where O.status in { 'final', 'amended', 'corrected' }
     and exists(O.category OC where OC ~ HCC."social-history")
-    and O.code ~ HC."Sex worker - HIV.B.DE51"
+    and O.value ~ HC."Sex worker - HIV.B.DE51"
   )
 
  define MSM:
   exists (
-    [Observation] O
+    [Observation: HC."Key population member* - HIV.E.DE113"] O
     where O.status in { 'final', 'amended', 'corrected' }
     and exists(O.category OC where OC ~ HCC."social-history")
-    and O.code ~ HC."Men who have sex with men"
+    and O.value ~ HC."Men who have sex with men"
   )
 
   define Trans:
   exists (
-    [Observation] O
+    [Observation: HC."Key population member* - HIV.E.DE113"] O
     where O.status in { 'final', 'amended', 'corrected' }
     and exists(O.category OC where OC ~ HCC."social-history")
-    and O.code ~ HC."Trans and gender-diverse people - HIV.B.DE53"
+    and O.value ~ HC."Trans and gender-diverse people - HIV.B.DE53"
   )
 
   define PWID:
   exists (
-    [Observation] O
+    [Observation: HC."Key population member* - HIV.E.DE113"] O
     where O.status in { 'final', 'amended', 'corrected' }
     and exists(O.category OC where OC ~ HCC."social-history")
-    and O.code ~ HC."People who inject drugs - HIV.B.DE54"
+    and O.value ~ HC."People who inject drugs - HIV.B.DE54"
   )
 
   define Prisoner:
   exists (
-    [Observation] O
+    [Observation: HC."Key population member* - HIV.E.DE113"] O
     where O.status in { 'final', 'amended', 'corrected' }
     and exists(O.category OC where OC ~ HCC."social-history")
-    and O.code ~ HC."People living in prisons and other closed settings"
+    and O.value ~ HC."People living in prisons and other closed settings"
   )
 
   define TB_diagnosed:
@@ -229,6 +299,38 @@ define "By Administrative Gender Stratifier":
     and C.code ~ HC."Presumptive TB - HIV.D.DE945"
     and C.onset during "Measurement Period")
   )
+
+
+define Exposure_Occupational:
+  exists (
+    [Observation: HC."HIV exposure type*"] O
+    where O.status in { 'final', 'amended', 'corrected' }
+    and exists(O.category OC where OC ~ HCC."social-history")
+    and O.value ~ HC."Occupational"
+  )
+
+define Exposure_Non_Occupational_violent:
+  exists (
+    [Observation: HC."HIV exposure type*"] O
+    where O.status in { 'final', 'amended', 'corrected' }
+    and exists(O.category OC where OC ~ HCC."social-history")
+    and O.value ~ HC."Non-occupational violent"
+  )
+
+define Exposure_Non_Occupational_consensual_sex:
+  exists (
+    [Observation: HC."HIV exposure type*"] O
+    where O.status in { 'final', 'amended', 'corrected' }
+    and exists(O.category OC where OC ~ HCC."social-history")
+    and O.value ~ HC."Non-occupational consensual sex"
+  )
+
+define hiv_exposure_type:
+  List<String>{
+    if Exposure_Occupational then 'Occupational' else null,
+    if Exposure_Non_Occupational_violent then 'Non-occupational violent' else null,
+    if Exposure_Non_Occupational_consensual_sex then 'Non-occupational consensual sex' else null
+  }
 
 /*@triggeredBy Encounter with location = community level testing*/
 
@@ -437,3 +539,20 @@ exists(
  * Should intend to use when patient.deceased FHIR boolean was updated to TRUE if no other date is available
  * Kenya EMR example does not account for when deceased is just a boolean
  */
+
+
+/*
+define "PREP Prescription Days":
+  Sum(
+    (
+      collapse (
+        [MedicationRequest] MR
+          where MR.status = 'completed'
+          and MR.intent = 'order'
+          and MR.medication ~ HC."PrEP for HIV prevention"
+        return WComV2."Prescription Relevant Period"( MR ) intersect "Measurement Period"
+      )
+    ) PREPUseInterval
+      return days between start of PREPUseInterval and end of PREPUseInterval
+  )
+*/
