@@ -26,4 +26,4 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.E.DE75
+  * answerValueSet = "#HIV.E.DE75"

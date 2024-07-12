@@ -50,7 +50,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE201
+  * answerValueSet = "#HIV.B.DE201"
 * item[+]
   * id = "HIV.B.DE204"
   * linkId = "HIV.B.DE204"
@@ -59,7 +59,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE204
+  * answerValueSet = "#HIV.B.DE204"
 * item[+]
   * id = "HIV.B.DE207"
   * linkId = "HIV.B.DE207"
@@ -68,7 +68,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE207
+  * answerValueSet = "#HIV.B.DE207"
 * item[+]
   * id = "HIV.B.DE223"
   * linkId = "HIV.B.DE223"

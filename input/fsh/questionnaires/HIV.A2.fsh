@@ -50,4 +50,4 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.A.DE5
+  * answerValueSet = "#HIV.A.DE5"

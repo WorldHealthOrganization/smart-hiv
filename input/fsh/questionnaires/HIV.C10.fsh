@@ -18,7 +18,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.C.DE131
+  * answerValueSet = "#HIV.C.DE131"
 * item[+]
   * id = "HIV.C.DE136"
   * linkId = "HIV.C.DE136"
@@ -43,7 +43,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.C.DE138
+  * answerValueSet = "#HIV.C.DE138"
 * item[+]
   * id = "HIV.C.DE141"
   * linkId = "HIV.C.DE141"
@@ -68,7 +68,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.C.DE143
+  * answerValueSet = "#HIV.C.DE143"
 * item[+]
   * id = "HIV.C.DE149"
   * linkId = "HIV.C.DE149"
@@ -77,7 +77,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.C.DE149
+  * answerValueSet = "#HIV.C.DE149"
 * item[+]
   * id = "HIV.C.DE157"
   * linkId = "HIV.C.DE157"
@@ -86,7 +86,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.C.DE157
+  * answerValueSet = "#HIV.C.DE157"
 * item[+]
   * id = "HIV.C.DE164"
   * linkId = "HIV.C.DE164"
@@ -95,4 +95,4 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.C.DE164
+  * answerValueSet = "#HIV.C.DE164"

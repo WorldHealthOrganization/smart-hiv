@@ -50,7 +50,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE33
+  * answerValueSet = "#HIV.B.DE33"
 * item[+]
   * id = "HIV.B.DE37"
   * linkId = "HIV.B.DE37"
@@ -59,7 +59,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE37
+  * answerValueSet = "#HIV.B.DE37"
 * item[+]
   * id = "HIV.B.DE43"
   * linkId = "HIV.B.DE43"
@@ -76,7 +76,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE44
+  * answerValueSet = "#HIV.B.DE44"
 * item[+]
   * id = "HIV.B.DE48"
   * linkId = "HIV.B.DE48"
@@ -101,7 +101,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE50
+  * answerValueSet = "#HIV.B.DE50"
 * item[+]
   * id = "HIV.B.DE56"
   * linkId = "HIV.B.DE56"
@@ -150,7 +150,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE61
+  * answerValueSet = "#HIV.B.DE61"
 * item[+]
   * id = "HIV.B.DE65"
   * linkId = "HIV.B.DE65"
@@ -167,7 +167,7 @@ Usage: #definition
   * required = true
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE66
+  * answerValueSet = "#HIV.B.DE66"
 * item[+]
   * id = "HIV.B.DE67"
   * linkId = "HIV.B.DE67"
@@ -184,7 +184,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE136
+  * answerValueSet = "#HIV.B.DE136"
 * item[+]
   * id = "HIV.B.DE140"
   * linkId = "HIV.B.DE140"
@@ -225,4 +225,4 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.H.DE34
+  * answerValueSet = "#HIV.H.DE34"

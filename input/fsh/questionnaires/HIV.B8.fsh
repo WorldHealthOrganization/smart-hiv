@@ -42,7 +42,7 @@ Usage: #definition
   * required = false
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE121
+  * answerValueSet = "#HIV.B.DE121"
 * item[+]
   * id = "HIV.B.DE142"
   * linkId = "HIV.B.DE142"
@@ -51,4 +51,4 @@ Usage: #definition
   * required = true
   * repeats = false
   * readOnly = false
-  * answerValueSet = http://smart.who.int/hiv/ValueSet/HIV.B.DE142
+  * answerValueSet = "#HIV.B.DE142"
