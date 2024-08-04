@@ -45,7 +45,7 @@ define "Elevated Viral load test during Measurement Period":
   HE."Viral load test result D.DE387" VL
     with "viral load sample collection" P 
     such that VL.partOf.references(P) and P.performed.toInterval() during "Measurement Period"
-    where VL.value > 1000 'copies/ml'
+    where VL.value > 1000 
     sort by start of effective.toInterval()
 
 

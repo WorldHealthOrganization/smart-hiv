@@ -11564,11 +11564,9 @@ define "Date of TB diagnosis Value":
 */
 // TODO: Replace placeholder with relevant CQL logic
 define "TB preventive treatment TPT start date":
-  [Observation: Concepts."TB preventive treatment TPT start date"] O
-    where O.status in { 'final', 'amended', 'corrected' }
-define "TB preventive treatment TPT start date Value":
-  "TB preventive treatment TPT start date" O
-  return O.value
+  "TPT regimen" MS
+  return start of MS.effective.toInterval()
+  
 /* End of TB preventive treatment TPT start date */
 
 /*
@@ -12270,98 +12268,14 @@ define "C reactive protein test result Value":
 @activity: HIV.D4 Screen for TB
 @description: Type of TPT regimen the client is currently on
 */
-// TODO: Replace placeholder with relevant CQL logic
+define "TPT regimen":
+  [MedicationStatement: Concepts."TPT regimen type Choices"] MS
+    where MS.status in { 'active', 'completed' }
+
 define "TPT regimen type":
-  exists "TPT regimen type Observation"
-define "TPT regimen type Observation":
-  [Observation: Concepts."TPT regimen type"] O
-    where O.status in { 'final', 'amended', 'corrected' }
+  "TPT regimen" MS
+  return MS.medication
 /* End of TPT regimen type */
-
-/*
-@dataElement: HIV.D.DE1029 - 3HP
-@activity: HIV.D4 Screen for TB
-@description: The client's current TPT regimen is 3HP
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "3HP":
-  exists "3HP Condition"
-    or exists "3HP Observation"
-define "3HP Condition":
-  [Condition: Concepts."3HP"]
-define "3HP Observation":
-  "TPT regimen type Observation" O
-    where O.status in { 'final', 'amended', 'corrected' }
-      and O.value ~ Concepts."3HP"
-/* End of 3HP */
-
-/*
-@dataElement: HIV.D.DE1030 - 1HP
-@activity: HIV.D4 Screen for TB
-@description: The client's current TPT regimen is 1HP
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "1HP":
-  exists "1HP Condition"
-    or exists "1HP Observation"
-define "1HP Condition":
-  [Condition: Concepts."1HP"]
-define "1HP Observation":
-  "TPT regimen type Observation" O
-    where O.status in { 'final', 'amended', 'corrected' }
-      and O.value ~ Concepts."1HP"
-/* End of 1HP */
-
-/*
-@dataElement: HIV.D.DE1031 - 6H
-@activity: HIV.D4 Screen for TB
-@description: The client's current TPT regimen is 6H
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "6H":
-  exists "6H Condition"
-    or exists "6H Observation"
-define "6H Condition":
-  [Condition: Concepts."6H"]
-define "6H Observation":
-  "TPT regimen type Observation" O
-    where O.status in { 'final', 'amended', 'corrected' }
-      and O.value ~ Concepts."6H"
-/* End of 6H */
-
-/*
-@dataElement: HIV.D.DE1032 - Six months of levofloxacin daily
-@activity: HIV.D4 Screen for TB
-@description: The client's current TPT regimen is six months of levofloxacin daily
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "Six months of levofloxacin daily":
-  exists "Six months of levofloxacin daily Condition"
-    or exists "Six months of levofloxacin daily Observation"
-define "Six months of levofloxacin daily Condition":
-  [Condition: Concepts."Six months of levofloxacin daily"]
-define "Six months of levofloxacin daily Observation":
-  "TPT regimen type Observation" O
-    where O.status in { 'final', 'amended', 'corrected' }
-      and O.value ~ Concepts."Six months of levofloxacin daily"
-/* End of Six months of levofloxacin daily */
-
-/*
-@dataElement: HIV.D.DE1033 - Other TB preventive treatment TPT regimen
-@activity: HIV.D4 Screen for TB
-@description: The client's current TPT regimen is another regimen than those listed above
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "Other TB preventive treatment TPT regimen":
-  exists "Other TB preventive treatment TPT regimen Condition"
-    or exists "Other TB preventive treatment TPT regimen Observation"
-define "Other TB preventive treatment TPT regimen Condition":
-  [Condition: Concepts."Other TB preventive treatment TPT regimen"]
-define "Other TB preventive treatment TPT regimen Observation":
-  "TPT regimen type Observation" O
-    where O.status in { 'final', 'amended', 'corrected' }
-      and O.value ~ Concepts."Other TB preventive treatment TPT regimen"
-/* End of Other TB preventive treatment TPT regimen */
 
 /*
 @dataElement: HIV.D.DE1034 - TB preventive treatment TPT status

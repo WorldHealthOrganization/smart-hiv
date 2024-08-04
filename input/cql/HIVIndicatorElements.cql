@@ -5056,13 +5056,10 @@ define "Date of TB diagnosis Value":
 @activity: HIV.D8 Capture or update client history
 @description: The date on which the client began taking TPT
 */
-// TODO: Replace placeholder with relevant CQL logic
-define "TB preventive treatment TPT start date":
-  Elements."TB preventive treatment TPT start date" O
-    where O.effective.toInterval() during "Measurement Period"
-define "TB preventive treatment TPT start date Value":
-  "TB preventive treatment TPT start date" O
-  return O.value
+define "TB preventive treatment TPT start date in measurement period":
+  Elements."TB preventive treatment TPT start date" D
+    where D in "Measurement Period"
+
 /* End of TB preventive treatment TPT start date */
 
 /*
@@ -5277,103 +5274,13 @@ define "Eligible for TB preventive treatment Observation":
 @activity: HIV.D4 Screen for TB
 @description: Type of TPT regimen the client is currently on
 */
-// TODO: Replace placeholder with relevant CQL logic
-define "TPT regimen type":
-  exists "TPT regimen type Observation"
-define "TPT regimen type Observation":
-  Elements."TPT regimen type Observation" O
-    where O.effective.toInterval() during "Measurement Period"
+define "On TPT regimen":
+  exists "TPT regimen"
+
+define "TPT regimen":
+  Elements."TPT regimen" MS
+    where MS.effective.toInterval() during "Measurement Period"
 /* End of TPT regimen type */
-
-/*
-@dataElement: HIV.D.DE1029 - 3HP
-@activity: HIV.D4 Screen for TB
-@description: The client's current TPT regimen is 3HP
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "3HP":
-  exists "3HP Condition"
-    or exists "3HP Observation"
-define "3HP Condition":
-  Elements."3HP Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "3HP Observation":
-  Elements."3HP Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of 3HP */
-
-/*
-@dataElement: HIV.D.DE1030 - 1HP
-@activity: HIV.D4 Screen for TB
-@description: The client's current TPT regimen is 1HP
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "1HP":
-  exists "1HP Condition"
-    or exists "1HP Observation"
-define "1HP Condition":
-  Elements."1HP Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "1HP Observation":
-  Elements."1HP Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of 1HP */
-
-/*
-@dataElement: HIV.D.DE1031 - 6H
-@activity: HIV.D4 Screen for TB
-@description: The client's current TPT regimen is 6H
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "6H":
-  exists "6H Condition"
-    or exists "6H Observation"
-define "6H Condition":
-  Elements."6H Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "6H Observation":
-  Elements."6H Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of 6H */
-
-/*
-@dataElement: HIV.D.DE1032 - Six months of levofloxacin daily
-@activity: HIV.D4 Screen for TB
-@description: The client's current TPT regimen is six months of levofloxacin daily
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "Six months of levofloxacin daily":
-  exists "Six months of levofloxacin daily Condition"
-    or exists "Six months of levofloxacin daily Observation"
-define "Six months of levofloxacin daily Condition":
-  Elements."Six months of levofloxacin daily Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Six months of levofloxacin daily Observation":
-  Elements."Six months of levofloxacin daily Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of Six months of levofloxacin daily */
-
-/*
-@dataElement: HIV.D.DE1033 - Other TB preventive treatment TPT regimen
-@activity: HIV.D4 Screen for TB
-@description: The client's current TPT regimen is another regimen than those listed above
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "Other TB preventive treatment TPT regimen":
-  exists "Other TB preventive treatment TPT regimen Condition"
-    or exists "Other TB preventive treatment TPT regimen Observation"
-define "Other TB preventive treatment TPT regimen Condition":
-  Elements."Other TB preventive treatment TPT regimen Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Other TB preventive treatment TPT regimen Observation":
-  Elements."Other TB preventive treatment TPT regimen Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of Other TB preventive treatment TPT regimen */
 
 /*
 @dataElement: HIV.D.DE1034 - TB preventive treatment TPT status
