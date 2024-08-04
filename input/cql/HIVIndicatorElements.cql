@@ -5060,6 +5060,10 @@ define "TB preventive treatment TPT start date in measurement period":
   Elements."TB preventive treatment TPT start date" D
     where D in "Measurement Period"
 
+define "TB preventive treatment TPT completed in measurement period":
+  Elements."TPT regimen" MS
+    where start of MS.effective.toInterval() in "Measurement Period"
+      and MS.status = 'completed'
 /* End of TB preventive treatment TPT start date */
 
 /*

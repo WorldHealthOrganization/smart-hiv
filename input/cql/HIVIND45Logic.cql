@@ -79,6 +79,8 @@ include FHIRHelpers version '4.0.1'
 include FHIRCommon called FC
 include WHOCommon called WCom
 
+include HIVElements called HE
+include HIVIndicatorElements called HIE
 // Indicator Definition
 parameter "Measurement Period" Interval<Date> default Interval[@2023-01-01, @2023-01-30]
 
@@ -100,8 +102,7 @@ define "Initial Population":
  */
 
 define "Numerator":
-  true
-
+  HIE."HIV-positive B.DE116" and (HIE."On ART D.DE38" or HIE."On ART H.DE47") and exists(HIE."TB preventive treatment TPT completed in measurement period")
 
 /**
  * Denominator
@@ -111,7 +112,7 @@ define "Numerator":
  */
 
 define "Denominator":
-  true
+  HIE."HIV-positive B.DE116" and (HIE."On ART D.DE38" or HIE."On ART H.DE47") and exists(HIE."TB preventive treatment TPT start date in measurement period")
     
 
 /* end Populations */
