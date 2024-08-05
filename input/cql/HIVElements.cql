@@ -25,6 +25,20 @@ context Patient
  * HIV Elements
  */
 
+// Umbrella Element Definitions
+
+/* On ART - includes "On ART - HIV.B.DE47" and "On ART - HIV.B.DE48" */
+define "ART Medication Statement":
+  [MedicationStatement: Concepts."ART regimen Choices"] MS
+  sort by start of effective.toInterval()
+
+define "On ART":
+  exists "ART Medication Statement"
+
+define "ART start date":
+  "ART Medication Statement" MS
+  return start of MS.effective.toInterval()
+
 // Auto-generated Elements from DAK Data Dictionary
 //   Entries based on DAK Data Dictionary for Data Elements marked as used
 //   in at least one Decision Support Table or Aggregate Indicator
@@ -5402,13 +5416,9 @@ define "On ART D.DE38":
 @activity: HIV.D8 Capture or update client history
 @description: The date on which the client started or restarted ART
 */
-// TODO: Replace placeholder with relevant CQL logic
 define "ART start date D.DE39":
-  [Observation: Concepts."ART start date - HIV.D.DE39"] O
-    where O.status in { 'final', 'amended', 'corrected' }
-define "ART start date D.DE39 Value":
-  "ART start date D.DE39" O
-  return O.value
+  "On ART D.DE38" MS
+  return start of MS.effective.toInterval()
 /* End of ART start date D.DE39 */
 
 /*

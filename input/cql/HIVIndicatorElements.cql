@@ -20,6 +20,39 @@ context Patient
  * HIV Elements
  */
 
+/*
+ * Umbrella Data Elements
+ */
+
+// ART Status
+
+define "ART Medication Statement":
+  Elements."ART Medication Statement" MS
+  where MS.effective.toInterval() overlaps "Measurement Period"
+  sort by start of effective.toInterval()
+
+define "On ART":
+  exists "ART Medication Statement"
+
+define "ART Start Date":
+  "ART Medication Statement" MS
+  return start of MS.effective.toInterval()
+
+define "ART Duration in Months":
+  "ART Medication Statement" MS
+  return duration in months of MS.effective.toInterval()
+
+define "By ART initiation":
+  case
+    when Sum("ART Duration in Months") < 12 then '<12 months on ART'
+    when Sum("ART Duration in Months") >= 12 then '12+ months on ART'
+    else 'Unknown'
+  end
+
+// Geographic Region
+define "By Geographic Region Stratifier":
+    First(Patient.address A where A.use in { 'home' }).state
+
 // Auto-generated Elements from DAK Data Dictionary
 //   Entries based on DAK Data Dictionary for Data Elements marked as used
 //   in at least one Decision Support Table or Aggregate Indicator
@@ -52,6 +85,55 @@ define "Age In Months":
 define "Age In Days":
   AgeInDaysAt(start of "Measurement Period")
 
+
+
+/*
+ * By Age Stratifiers
+ * (0–4, 5–9, 10–14, 15–19, 20–24, 25–29, 30–34, 35–39, 40–44, 45–49, 50+ years)
+ * 
+ */
+define "By Age Stratifier":
+  case 
+      when "Age In Years" <= 4 then '0-4'
+      when "Age In Years" <= 9 then '5-9'
+      when "Age In Years" <= 14 then '10–14'
+      when "Age In Years" <= 19 then '15–19'
+      when "Age In Years" <= 24 then '20–24'
+      when "Age In Years" <= 29 then '25–29'
+      when "Age In Years" <= 34 then '30–34'
+      when "Age In Years" <= 39 then '35–39'
+      when "Age In Years" <= 44 then '40–44'
+      when "Age In Years" <= 49 then '45–49'
+      when "Age In Years" >= 50 then '50+'
+      else null
+  end
+  
+  /*
+ * By Age Stratifiers
+ * Age (0–4, 5–9, 10–14, 15–19, 20–24, 25–49, 50+ years)
+ * 
+ */
+define "By Age Stratifier 2":
+  case 
+      when "Age In Years" <= 4 then '0-4'
+      when "Age In Years" <= 9 then '5-9'
+      when "Age In Years" <= 14 then '10–14'
+      when "Age In Years" <= 19 then '15–19'
+      when "Age In Years" <= 24 then '20–24'
+      when "Age In Years" <= 49 then '25–49'
+      when "Age In Years" >= 50 then '50+'
+      else null
+  end
+
+define "By Age Stratifier 3":
+  case 
+      when "Age In Years" >= 15 and "Age In Years"<= 19 then '15-19'
+      when "Age In Years" <= 24 then '20-24'
+      when "Age In Years" <= 49 then '25–49'
+      when "Age In Years" >= 50 then '50+'
+      else null
+  end
+
 /* End of Age */
 
 /*
@@ -59,103 +141,20 @@ define "Age In Days":
 @activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record
 @description: Gender of the client
 */
-// TODO: Replace placeholder with relevant CQL logic
-define "Gender":
-  exists "Gender Observation"
-define "Gender Observation":
-  Elements."Gender Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of Gender */
 
 /*
-@dataElement: HIV.A.DE19 - Female
-@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record
-@description: Client identifies as female
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "Female":
-  exists "Female Condition"
-    or exists "Female Observation"
-define "Female Condition":
-  Elements."Female Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Female Observation":
-  Elements."Female Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of Female */
+ * By Administrative Gender of Patient Stratifier
+ * Need to expand codes
+ */
 
-/*
-@dataElement: HIV.A.DE20 - Male
-@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record
-@description: Client identifies as male
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "Male":
-  exists "Male Condition"
-    or exists "Male Observation"
-define "Male Condition":
-  Elements."Male Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Male Observation":
-  Elements."Male Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of Male */
-
-/*
-@dataElement: HIV.A.DE21 - Transgender male
-@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record
-@description: Client identifies as transgender male
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "Transgender male":
-  exists "Transgender male Condition"
-    or exists "Transgender male Observation"
-define "Transgender male Condition":
-  Elements."Transgender male Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Transgender male Observation":
-  Elements."Transgender male Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of Transgender male */
-
-/*
-@dataElement: HIV.A.DE22 - Transgender female
-@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record
-@description: Client identifies as transgender female
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "Transgender female":
-  exists "Transgender female Condition"
-    or exists "Transgender female Observation"
-define "Transgender female Condition":
-  Elements."Transgender female Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Transgender female Observation":
-  Elements."Transgender female Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of Transgender female */
-
-/*
-@dataElement: HIV.A.DE23 - Other
-@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record
-@description: Additional category
-*/
-// TODO: Replace placeholder with relevant CQL logic
-define "Other A.DE23":
-  exists "Other A.DE23 Condition"
-    or exists "Other A.DE23 Observation"
-define "Other A.DE23 Condition":
-  Elements."Other A.DE23 Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Other A.DE23 Observation":
-  Elements."Other A.DE23 Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of Other A.DE23 */
+define "By Administrative Gender Stratifier":
+  case 
+      when Patient.gender = 'male' then Concepts."Male"
+      when Patient.gender = 'female' then Concepts."Female"
+      when Patient.gender = 'transgender female' then Concepts."Transgender female"
+      when Patient.gender = 'transgender male' then Concepts."Transgender male"
+      else Concepts."Other - HIV.A.DE23"
+  end
 
 /*
 @dataElement: HIV.B.DE5 - Referred through partner services

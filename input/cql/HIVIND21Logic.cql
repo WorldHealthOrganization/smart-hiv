@@ -122,13 +122,13 @@ define "denominator":
  */
 
 define "Administrative Gender Stratifier":
-	HIC."By Administrative Gender Stratifier"
+	HIE."By Administrative Gender Stratifier"
 
 define "Age Stratifier":
-	HIC."By Age Stratifier"
+	HIE."By Age Stratifier"
 
 define "Geographic Region Stratifier":
-	HIC."By Geographic Region Stratifier"
+	HIE."By Geographic Region Stratifier"
 
 define "patientGroups Stratifier":
 	HIC."patientGroups"
@@ -140,10 +140,10 @@ define "Time to start ART":
 	HIC."Time to start ART"
 
 define "Stratification":
- HIC."By Administrative Gender Stratifier".code 
+ HIE."By Administrative Gender Stratifier".code 
  //not working
  //+ ':' + HIC."Time to start ART".code
-  + ':' + HIC."By Age Stratifier"
-+ ':' + HIC."By Geographic Region Stratifier"
+  + ':' + HIE."By Age Stratifier"
++ ':' + HIE."By Geographic Region Stratifier"
 + Combine(HIC.patientGroups, ':')
 + Combine(HIC.tb, ':')

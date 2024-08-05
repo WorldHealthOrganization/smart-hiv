@@ -14,7 +14,7 @@
  * Denominator Exclusions: 
  *
  * Disaggregations:
- * • Gender (female, male, other*) 
+ *  • Gender (female, male, other*) 
  *  • Age (0–4, 5–9, 10–14, 15–19, 20–24, 25–29, 30–34, 35–39, 40–44, 45–49, 50+ years)** 
  *  • Type of TPT regimen 
  *  • Cities and other administrative regions of epidemiologic importance
@@ -94,7 +94,7 @@ define "Initial Population":
  */
 
 define "Numerator":
-  HIE."HIV-positive B.DE116" and (HIE."On ART D.DE38" or HIE."On ART H.DE47") and exists(HIE."TB preventive treatment TPT start date in measurement period")
+  HIE."HIV-positive B.DE116" and HIE."On ART" and exists(HIE."TB preventive treatment TPT start date in measurement period")
 
 /**
  * Denominator
@@ -104,8 +104,27 @@ define "Numerator":
  */
 
 define "Denominator":
-  HIE."HIV-positive B.DE116" and (HIE."On ART D.DE38" or HIE."On ART H.DE47") and HE."Eligible for TB preventive treatment"
+  HIE."HIV-positive B.DE116" and HIE."On ART" and HIE."Eligible for TB preventive treatment"
     
 
 /* end Populations */
 
+/*
+ * Disaggregations:
+ *  • Gender (female, male, other*) 
+ *  • Age (0–4, 5–9, 10–14, 15–19, 20–24, 25–29, 30–34, 35–39, 40–44, 45–49, 50+ years)** 
+ *  • Type of TPT regimen 
+ *  • Cities and other administrative regions of epidemiologic importance
+ */
+
+ define "Administrative Gender Stratifier":
+	HIE."By Administrative Gender Stratifier"
+
+define "Age Stratifier":
+  HIE."By Age Stratifier"
+
+define "TPT Regimen Type Stratifier":
+  HE."TPT regimen type"
+
+define "Geographic Region Stratifier":
+  HIE."By Geographic Region Stratifier"

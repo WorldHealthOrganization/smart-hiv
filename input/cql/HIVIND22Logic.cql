@@ -135,13 +135,13 @@ define function "Measure Observation"(Patient "Patient"):
  */
 
 define "Administrative Gender Stratifier":
-	HIC."By Administrative Gender Stratifier"
+	HIE."By Administrative Gender Stratifier"
 
 define "Age Stratifier":
-	HIC."By Age Stratifier 2"
+	HIE."By Age Stratifier  2"
 
 define "Geographic Region Stratifier":
-	HIC."By Geographic Region Stratifier"
+	HIE."By Geographic Region Stratifier"
 
 define "patientGroups Stratifier":
 	HIC."patientGroups"
@@ -150,8 +150,8 @@ define "HIV status of partner or contact":
   HIC."HIV status of partner or contact"
 
 define "Stratification":
- HIC."By Administrative Gender Stratifier".code 
+ HIE."By Administrative Gender Stratifier".code 
  + ':' + HIC."HIV status of partner or contact".code
-  + ':' + HIC."By Age Stratifier 2"
-+ ':' + HIC."By Geographic Region Stratifier"
+  + ':' + HIE."By Age Stratifier  2"
++ ':' + HIE."By Geographic Region Stratifier"
 + Combine(HIC.patientGroups, ':')

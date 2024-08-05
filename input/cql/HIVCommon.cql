@@ -137,24 +137,6 @@ define "By Age Stratifier 3":
  * By state stratifier
  */
 
-define "By Geographic Region Stratifier":
-    First(Patient.address A where A.use in { 'home' }).state
-
-/*
- * By Administrative Gender of Patient Stratifier
- * Need to expand codes
- */
-
-define "By Administrative Gender Stratifier":
-    case 
-        when Patient.gender = 'male' then HC."Male"
-        when Patient.gender = 'female' then HC."Female"
-        when Patient.gender = 'transgender female' then HC."Transgender female"
-        when Patient.gender = 'transgender male' then HC."Transgender male"
-        else HC."Other - HIV.A.DE23"
-    end
-
-
   define "HIV status of partner or contact":
     case 
         when HIE."Already knew positive" then HC."Already knew positive"
