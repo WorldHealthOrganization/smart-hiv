@@ -628,12 +628,10 @@ define "ART start date B.DE72 Value":
 @activity: HIV.B7 Test for HIV using testing algorithm
 @description: Type of HIV test
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "HIV test type B.DE81":
-  exists "HIV test type B.DE81 Observation"
-define "HIV test type B.DE81 Observation":
-  Elements."HIV test type B.DE81 Observation" O
-    where O.effective.toInterval() during "Measurement Period"
+  exists Elements."HIV test type B.DE81"
+
 /* End of HIV test type B.DE81 */
 
 /*
@@ -641,17 +639,10 @@ define "HIV test type B.DE81 Observation":
 @activity: HIV.B7 Test for HIV using testing algorithm
 @description: Antibody test for HIV performed with a rapid diagnostic
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "Rapid diagnostic test for HIV B.DE82":
-  exists "Rapid diagnostic test for HIV B.DE82 Condition"
-    or exists "Rapid diagnostic test for HIV B.DE82 Observation"
-define "Rapid diagnostic test for HIV B.DE82 Condition":
-  Elements."Rapid diagnostic test for HIV B.DE82 Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Rapid diagnostic test for HIV B.DE82 Observation":
-  Elements."Rapid diagnostic test for HIV B.DE82 Observation" O
-    where O.effective.toInterval() during "Measurement Period"
+      exists(Elements."Rapid diagnostic test for HIV B.DE82" O
+    where O.effective.toInterval() during "Measurement Period")
 /* End of Rapid diagnostic test for HIV B.DE82 */
 
 /*
@@ -659,17 +650,10 @@ define "Rapid diagnostic test for HIV B.DE82 Observation":
 @activity: HIV.B7 Test for HIV using testing algorithm
 @description: Antibody test for HIV performed with an enzyme immunoassay
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "Enzyme immunoassay for HIV B.DE83":
-  exists "Enzyme immunoassay for HIV B.DE83 Condition"
-    or exists "Enzyme immunoassay for HIV B.DE83 Observation"
-define "Enzyme immunoassay for HIV B.DE83 Condition":
-  Elements."Enzyme immunoassay for HIV B.DE83 Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Enzyme immunoassay for HIV B.DE83 Observation":
-  Elements."Enzyme immunoassay for HIV B.DE83 Observation" O
-    where O.effective.toInterval() during "Measurement Period"
+    exists(Elements."Enzyme immunoassay for HIV B.DE83" O
+    where O.effective.toInterval() during "Measurement Period")
 /* End of Enzyme immunoassay for HIV B.DE83 */
 
 /*
@@ -677,17 +661,10 @@ define "Enzyme immunoassay for HIV B.DE83 Observation":
 @activity: HIV.B7 Test for HIV using testing algorithm
 @description: Virological test, which includes testing for early infant diagnosis
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "Nucleic acid test for HIV B.DE84":
-  exists "Nucleic acid test for HIV B.DE84 Condition"
-    or exists "Nucleic acid test for HIV B.DE84 Observation"
-define "Nucleic acid test for HIV B.DE84 Condition":
-  Elements."Nucleic acid test for HIV B.DE84 Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Nucleic acid test for HIV B.DE84 Observation":
-  Elements."Nucleic acid test for HIV B.DE84 Observation" O
-    where O.effective.toInterval() during "Measurement Period"
+  exists(Elements."Nucleic acid test for HIV B.DE84" O
+    where O.effective.toInterval() during "Measurement Period")
 /* End of Nucleic acid test for HIV B.DE84 */
 
 /*
@@ -695,17 +672,10 @@ define "Nucleic acid test for HIV B.DE84 Observation":
 @activity: HIV.B7 Test for HIV using testing algorithm
 @description: Antibody test for HIV and syphilis performed with a rapid diagnostic
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "Dual HIV/syphilis rapid diagnostic test B.DE85":
-  exists "Dual HIV/syphilis rapid diagnostic test B.DE85 Condition"
-    or exists "Dual HIV/syphilis rapid diagnostic test B.DE85 Observation"
-define "Dual HIV/syphilis rapid diagnostic test B.DE85 Condition":
-  Elements."Dual HIV/syphilis rapid diagnostic test B.DE85 Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Dual HIV/syphilis rapid diagnostic test B.DE85 Observation":
-  Elements."Dual HIV/syphilis rapid diagnostic test B.DE85 Observation" O
-    where O.effective.toInterval() during "Measurement Period"
+  exists(Elements."Dual HIV/syphilis rapid diagnostic test B.DE85" O
+    where O.effective.toInterval() during "Measurement Period")
 /* End of Dual HIV/syphilis rapid diagnostic test B.DE85 */
 
 /*
@@ -713,17 +683,10 @@ define "Dual HIV/syphilis rapid diagnostic test B.DE85 Observation":
 @activity: HIV.B7 Test for HIV using testing algorithm
 @description: Antibody test for HIV performed by self-tester using a rapid diagnostic
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "HIV self-test":
-  exists "HIV self-test Condition"
-    or exists "HIV self-test Observation"
-define "HIV self-test Condition":
-  Elements."HIV self-test Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "HIV self-test Observation":
-  Elements."HIV self-test Observation" O
-    where O.effective.toInterval() during "Measurement Period"
+  exists(Elements."HIV self-test" O
+    where O.effective.toInterval() during "Measurement Period")
 /* End of HIV self-test */
 
 /*
@@ -817,7 +780,7 @@ define "HIV status Observation":
 @activity: HIV.B7 Test for HIV using testing algorithm
 @description: Client is HIV-positive
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "HIV-positive B.DE116":
   exists(Elements."HIV-positive B.DE116" HIV where HIV starts before end of "Measurement Period")
 /* End of HIV-positive B.DE116 */
@@ -5474,12 +5437,10 @@ define "Delivery date Value":
 @activity: HIV.E1 Capture or update mother's history
 @description: The type of place where the woman delivered
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "Place of delivery":
-  exists "Place of delivery Observation"
-define "Place of delivery Observation":
-  Elements."Place of delivery Observation" O
-    where O.effective.toInterval() during "Measurement Period"
+  exists (Elements."Place of delivery" P
+  where P.performed.toInterval() during "Measurement Period")
 /* End of Place of delivery */
 
 /*
@@ -5487,35 +5448,20 @@ define "Place of delivery Observation":
 @activity: HIV.E1 Capture or update mother's history
 @description: The woman delivered at a health facility
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "Health facility":
-  exists "Health facility Condition"
-    or exists "Health facility Observation"
-define "Health facility Condition":
-  Elements."Health facility Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Health facility Observation":
-  Elements."Health facility Observation" O
-    where O.effective.toInterval() during "Measurement Period"
-/* End of Health facility */
+  exists (Elements."Health facility" P
+  where P.performed.toInterval() during "Measurement Period")
 
 /*
 @dataElement: HIV.E.DE69 - Home
 @activity: HIV.E1 Capture or update mother's history
 @description: The woman delivered at home
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "Home":
-  exists "Home Condition"
-    or exists "Home Observation"
-define "Home Condition":
-  Elements."Home Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Home Observation":
-  Elements."Home Observation" O
-    where O.effective.toInterval() during "Measurement Period"
+  exists (Elements."Health facility" P
+  where P.performed.toInterval() during "Measurement Period")
 /* End of Home */
 
 /*
@@ -5523,17 +5469,10 @@ define "Home Observation":
 @activity: HIV.E1 Capture or update mother's history
 @description: The woman delivered at another location that is not at home or at a health facility
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "Other E.DE70":
-  exists "Other E.DE70 Condition"
-    or exists "Other E.DE70 Observation"
-define "Other E.DE70 Condition":
-  Elements."Other E.DE70 Condition" C
-    where C.prevalenceInterval() overlaps before "Measurement Period"
-      or C.prevalenceInterval() overlaps after "Measurement Period"
-define "Other E.DE70 Observation":
-  Elements."Other E.DE70 Observation" O
-    where O.effective.toInterval() during "Measurement Period"
+  exists (Elements."Other E.DE70" P
+  where P.performed.toInterval() during "Measurement Period")
 /* End of Other E.DE70 */
 
 /*
@@ -5591,11 +5530,9 @@ define "Age of infant in years":
 @activity: HIV.F6 Check whether infant/child had HIV exposure
 @description: Whether the infant or child was determined to have had HIV exposure
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "HIV-exposed infant or child E.DE112":
-  exists "HIV-exposed infant or child E.DE112 Observation"
-define "HIV-exposed infant or child E.DE112 Observation":
-  Elements."HIV-exposed infant or child E.DE112 Observation" O
+  exists Elements."HIV-exposed infant or child E.DE112" O
     where O.effective.toInterval() during "Measurement Period"
 /* End of HIV-exposed infant or child E.DE112 */
 
