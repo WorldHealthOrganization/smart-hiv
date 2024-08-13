@@ -5546,8 +5546,9 @@ define "Established on ART Observation":
 */
 
 define "ART start type":
-  [Observation: Concepts."ART start type"] O
-    where O.status in { 'final', 'amended', 'corrected' }
+  [MedicationStatement] MS
+    where exists(MS.reasonCode C where C ~ Concepts."On ART - HIV.D.DE38")
+    sort by start of effective.toInterval()
 /* End of ART start type */
 
 /*
@@ -5557,8 +5558,8 @@ define "ART start type":
 */
 
 define "First-time user of ART":
-  "ART start type" O
-      where O.value ~ Concepts."First-time user of ART"
+  "ART start type" MS
+      where exists(MS.reasonCode C where C ~ Concepts."First-time user of ART") 
 /* End of First-time user of ART */
 
 /*
@@ -5568,8 +5569,9 @@ define "First-time user of ART":
 */
 
 define "Restarting ART":
-   "ART start type" O
-      where O.value ~ Concepts."Restarting ART"
+   "ART start type" MS
+      where exists(MS.reasonCode C where C ~ Concepts."Restarting ART") 
+
 /* End of Restarting ART */
 
 /*
@@ -10253,10 +10255,8 @@ define "Malaria prevention such as bed nets and prophylaxis, depending on epidem
 @activity: HIV.D21 Determine regimen and treatment options
 @description: Client is eligible for differentiated service delivery (DSD) for ART
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "Eligible for DSD ART":
-  exists "Eligible for DSD ART Observation"
-define "Eligible for DSD ART Observation":
   [Observation: Concepts."Eligible for DSD ART"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and O.value is true
@@ -10267,13 +10267,11 @@ define "Eligible for DSD ART Observation":
 @activity: HIV.D21 Determine regimen and treatment options
 @description: Date client was assessed for eligibility for differentiated service delivery (DSD) for ART
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "Date DSD ART eligibility assessed":
-  [Observation: Concepts."Date DSD ART eligibility assessed"] O
-    where O.status in { 'final', 'amended', 'corrected' }
-define "Date DSD ART eligibility assessed Value":
-  "Date DSD ART eligibility assessed" O
-  return O.value
+  [Procedure: CustomConcepts."DSD ART eligibility assessed"] P
+    where P.status in { 'completed' }
+  return P.performed.toInterval()
 /* End of Date DSD ART eligibility assessed */
 
 /*
@@ -10281,13 +10279,11 @@ define "Date DSD ART eligibility assessed Value":
 @activity: HIV.D21 Determine regimen and treatment options
 @description: Client currently enrolled in differentiated service delivery (DSD) ART model
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "Currently enrolled in DSD ART model":
-  exists "Currently enrolled in DSD ART model Observation"
-define "Currently enrolled in DSD ART model Observation":
-  [Observation: Concepts."Currently enrolled in DSD ART model"] O
-    where O.status in { 'final', 'amended', 'corrected' }
-      and O.value is true
+  [EpisodeOfCare] EOC
+    where exists(EOC.type T where T ~ Concepts."Currently enrolled in DSD ART model")
+  
 /* End of Currently enrolled in DSD ART model */
 
 /*
@@ -10295,13 +10291,23 @@ define "Currently enrolled in DSD ART model Observation":
 @activity: HIV.D21 Determine regimen and treatment options
 @description: Date client started on differentiated service delivery (DSD) for ART
 */
-// TODO: Replace placeholder with relevant CQL logic
+
 define "DSD ART start date":
-  [Observation: Concepts."DSD ART start date"] O
-    where O.status in { 'final', 'amended', 'corrected' }
-define "DSD ART start date Value":
-  "DSD ART start date" O
-  return O.value
+  flatten{"DSD ART status","DSD ART statusHistory".statusHistory.period}
+
+define "DSD ART status":
+    [EpisodeOfCare] EOC
+    where exists(EOC.type T where T ~ Concepts."Currently enrolled in DSD ART model")
+      and EOC.status = 'finished'
+    return EOC.period
+
+define "DSD ART statusHistory":
+    [EpisodeOfCare] EOC
+    where exists(EOC.type T where T ~ Concepts."Currently enrolled in DSD ART model") 
+    and (exists (
+      EOC.statusHistory H
+      where H.status = 'finished'
+      and H.period is not null))
 /* End of DSD ART start date */
 
 /*
@@ -15012,3 +15018,6 @@ define "Reporting date Value":
 /*
  * Custom elements and logic for use DT and IND CQL Libraries
  */
+
+define "First On ART":
+  (First("On ART D.DE38"))
