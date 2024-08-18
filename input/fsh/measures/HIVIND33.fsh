@@ -8,7 +8,7 @@ Title: "HIV.IND.33 Early viral load testing (at six months)"
 * url = "http://smart.who.int/hiv/Measure/HIVIND33"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND33"
 * title = "HIV.IND.33 Early viral load testing (at six months)"
 * publisher = "World Health Organization (WHO)"

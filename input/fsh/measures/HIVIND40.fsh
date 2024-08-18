@@ -8,7 +8,7 @@ Title: "HIV.IND.40 ART coverage in pregnant women"
 * url = "http://smart.who.int/hiv/Measure/HIVIND40"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND40"
 * title = "HIV.IND.40 ART coverage in pregnant women"
 * publisher = "World Health Organization (WHO)"

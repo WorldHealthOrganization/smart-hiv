@@ -8,7 +8,7 @@ Title: "HIV.IND.38 Early infant diagnosis (EID) coverage"
 * url = "http://smart.who.int/hiv/Measure/HIVIND38"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND38"
 * title = "HIV.IND.38 Early infant diagnosis (EID) coverage"
 * publisher = "World Health Organization (WHO)"
@@ -33,3 +33,7 @@ Title: "HIV.IND.38 Early infant diagnosis (EID) coverage"
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"
+  * stratifier[+]
+    * id = "HIV.IND.38.S.GR"
+    * criteria.language = #text/cql-identifier
+    * criteria.expression = "Geographic Region Stratifier"

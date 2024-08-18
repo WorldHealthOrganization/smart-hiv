@@ -8,7 +8,7 @@ Title: "HIV.IND.87 HBsAg positivity, pregnant women"
 * url = "http://smart.who.int/hiv/Measure/HIVIND87"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND87"
 * title = "HIV.IND.87 HBsAg positivity, pregnant women"
 * publisher = "World Health Organization (WHO)"

@@ -8,7 +8,7 @@ Title: "HIV.IND.34 Appropriate second viral load test after adherence counsellin
 * url = "http://smart.who.int/hiv/Measure/HIVIND34"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND34"
 * title = "HIV.IND.34 Appropriate second viral load test after adherence counselling"
 * publisher = "World Health Organization (WHO)"

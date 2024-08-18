@@ -8,7 +8,7 @@ Title: "HIV.IND.62 Syphilis test positivity, HIV prevention services"
 * url = "http://smart.who.int/hiv/Measure/HIVIND62"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND62"
 * title = "HIV.IND.62 Syphilis test positivity, HIV prevention services"
 * publisher = "World Health Organization (WHO)"
@@ -33,3 +33,7 @@ Title: "HIV.IND.62 Syphilis test positivity, HIV prevention services"
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"
+  * stratifier[+]
+    * id = "HIV.IND.62.S"
+    * criteria.language = #text/cql-identifier
+    * criteria.expression = "Stratification"

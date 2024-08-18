@@ -8,7 +8,7 @@ Title: "HIV.IND.50 TB testing among those symptom-screened positive"
 * url = "http://smart.who.int/hiv/Measure/HIVIND50"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND50"
 * title = "HIV.IND.50 TB testing among those symptom-screened positive"
 * publisher = "World Health Organization (WHO)"
@@ -33,3 +33,7 @@ Title: "HIV.IND.50 TB testing among those symptom-screened positive"
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"
+  * stratifier[+]
+    * id = "HIV.IND.50.S"
+    * criteria.language = #text/cql-identifier
+    * criteria.expression = "Stratification"

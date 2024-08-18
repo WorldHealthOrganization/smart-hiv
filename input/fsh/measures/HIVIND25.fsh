@@ -8,7 +8,7 @@ Title: "HIV.IND.25 HIV retesting coverage"
 * url = "http://smart.who.int/hiv/Measure/HIVIND25"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND25"
 * title = "HIV.IND.25 HIV retesting coverage"
 * publisher = "World Health Organization (WHO)"

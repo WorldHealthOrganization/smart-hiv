@@ -8,7 +8,7 @@ Title: "HIV.IND.48 TB screening coverage among new ART patients"
 * url = "http://smart.who.int/hiv/Measure/HIVIND48"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND48"
 * title = "HIV.IND.48 TB screening coverage among new ART patients"
 * publisher = "World Health Organization (WHO)"
@@ -33,3 +33,7 @@ Title: "HIV.IND.48 TB screening coverage among new ART patients"
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"
+  * stratifier[+]
+    * id = "HIV.IND.48.S"
+    * criteria.language = #text/cql-identifier
+    * criteria.expression = "Stratification"

@@ -8,7 +8,7 @@ Title: "HIV.IND.88 HCV positivity, HIV prevention services"
 * url = "http://smart.who.int/hiv/Measure/HIVIND88"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND88"
 * title = "HIV.IND.88 HCV positivity, HIV prevention services"
 * publisher = "World Health Organization (WHO)"

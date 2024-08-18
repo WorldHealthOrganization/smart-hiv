@@ -8,7 +8,7 @@ Title: "HIV.IND.18 People living with HIV who know their HIV status (first 95)"
 * url = "http://smart.who.int/hiv/Measure/HIVIND18"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND18"
 * title = "HIV.IND.18 People living with HIV who know their HIV status (first 95)"
 * publisher = "World Health Organization (WHO)"

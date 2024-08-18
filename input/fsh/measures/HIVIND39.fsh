@@ -8,7 +8,7 @@ Title: "HIV.IND.39 Infant ARV prophylaxis coverage"
 * url = "http://smart.who.int/hiv/Measure/HIVIND39"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND39"
 * title = "HIV.IND.39 Infant ARV prophylaxis coverage"
 * publisher = "World Health Organization (WHO)"

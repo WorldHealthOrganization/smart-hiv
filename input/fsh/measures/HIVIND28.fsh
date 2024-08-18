@@ -8,7 +8,7 @@ Title: "HIV.IND.28 Total attrition from ART"
 * url = "http://smart.who.int/hiv/Measure/HIVIND28"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND28"
 * title = "HIV.IND.28 Total attrition from ART"
 * publisher = "World Health Organization (WHO)"

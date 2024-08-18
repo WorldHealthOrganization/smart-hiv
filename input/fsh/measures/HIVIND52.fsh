@@ -8,7 +8,7 @@ Title: "HIV.IND.52 TB treatment initiation among diagnosed"
 * url = "http://smart.who.int/hiv/Measure/HIVIND52"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND52"
 * title = "HIV.IND.52 TB treatment initiation among diagnosed"
 * publisher = "World Health Organization (WHO)"
@@ -33,3 +33,7 @@ Title: "HIV.IND.52 TB treatment initiation among diagnosed"
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"
+  * stratifier[+]
+    * id = "HIV.IND.52.S"
+    * criteria.language = #text/cql-identifier
+    * criteria.expression = "Stratification"

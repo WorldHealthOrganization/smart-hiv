@@ -8,7 +8,7 @@ Title: "HIV.IND.37 Viral suppression at labour and delivery"
 * url = "http://smart.who.int/hiv/Measure/HIVIND37"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND37"
 * title = "HIV.IND.37 Viral suppression at labour and delivery"
 * publisher = "World Health Organization (WHO)"
@@ -33,3 +33,7 @@ Title: "HIV.IND.37 Viral suppression at labour and delivery"
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"
+  * stratifier[+]
+    * id = "HIV.IND.37.S"
+    * criteria.language = #text/cql-identifier
+    * criteria.expression = "Stratification"

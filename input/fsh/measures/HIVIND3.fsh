@@ -8,7 +8,7 @@ Title: "HIV.IND.3 PrEP coverage"
 * url = "http://smart.who.int/hiv/Measure/HIVIND3"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND3"
 * title = "HIV.IND.3 PrEP coverage"
 * publisher = "World Health Organization (WHO)"

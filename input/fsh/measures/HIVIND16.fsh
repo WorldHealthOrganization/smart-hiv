@@ -8,7 +8,7 @@ Title: "HIV.IND.16 VMMC adverse events"
 * url = "http://smart.who.int/hiv/Measure/HIVIND16"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND16"
 * title = "HIV.IND.16 VMMC adverse events"
 * publisher = "World Health Organization (WHO)"

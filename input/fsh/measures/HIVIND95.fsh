@@ -8,7 +8,7 @@ Title: "HIV.IND.95 Invasive cervical cancer treatment"
 * url = "http://smart.who.int/hiv/Measure/HIVIND95"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND95"
 * title = "HIV.IND.95 Invasive cervical cancer treatment"
 * publisher = "World Health Organization (WHO)"

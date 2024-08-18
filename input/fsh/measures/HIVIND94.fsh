@@ -8,7 +8,7 @@ Title: "HIV.IND.94 Pre-invasive cervical disease treatment"
 * url = "http://smart.who.int/hiv/Measure/HIVIND94"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND94"
 * title = "HIV.IND.94 Pre-invasive cervical disease treatment"
 * publisher = "World Health Organization (WHO)"

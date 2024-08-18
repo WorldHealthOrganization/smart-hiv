@@ -8,7 +8,7 @@ Title: "HIV.IND.67 Syphilis treatment coverage, HIV-positive clients"
 * url = "http://smart.who.int/hiv/Measure/HIVIND67"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND67"
 * title = "HIV.IND.67 Syphilis treatment coverage, HIV-positive clients"
 * publisher = "World Health Organization (WHO)"

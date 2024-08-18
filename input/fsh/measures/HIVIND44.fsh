@@ -8,7 +8,7 @@ Title: "HIV.IND.44 TPT initiation"
 * url = "http://smart.who.int/hiv/Measure/HIVIND44"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND44"
 * title = "HIV.IND.44 TPT initiation"
 * publisher = "World Health Organization (WHO)"

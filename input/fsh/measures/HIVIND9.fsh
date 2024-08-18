@@ -8,7 +8,7 @@ Title: "HIV.IND.9 Regular NSP access"
 * url = "http://smart.who.int/hiv/Measure/HIVIND9"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND9"
 * title = "HIV.IND.9 Regular NSP access"
 * publisher = "World Health Organization (WHO)"

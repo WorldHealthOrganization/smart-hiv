@@ -8,7 +8,7 @@ Title: "HIV.IND.21 Linkage to ART"
 * url = "http://smart.who.int/hiv/Measure/HIVIND21"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND21"
 * title = "HIV.IND.21 Linkage to ART"
 * publisher = "World Health Organization (WHO)"

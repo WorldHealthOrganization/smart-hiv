@@ -8,7 +8,7 @@ Title: "HIV.IND.65 Syphilis test positivity, pregnant women, any visit"
 * url = "http://smart.who.int/hiv/Measure/HIVIND65"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND65"
 * title = "HIV.IND.65 Syphilis test positivity, pregnant women, any visit"
 * publisher = "World Health Organization (WHO)"

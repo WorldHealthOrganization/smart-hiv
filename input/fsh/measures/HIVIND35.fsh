@@ -8,7 +8,7 @@ Title: "HIV.IND.35 ARV toxicity prevalence"
 * url = "http://smart.who.int/hiv/Measure/HIVIND35"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND35"
 * title = "HIV.IND.35 ARV toxicity prevalence"
 * publisher = "World Health Organization (WHO)"

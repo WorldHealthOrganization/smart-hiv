@@ -8,7 +8,7 @@ Title: "HIV.IND.57 Viral suppression among people living with HIV engaged in DSD
 * url = "http://smart.who.int/hiv/Measure/HIVIND57"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND57"
 * title = "HIV.IND.57 Viral suppression among people living with HIV engaged in DSD ART models"
 * publisher = "World Health Organization (WHO)"
@@ -33,3 +33,7 @@ Title: "HIV.IND.57 Viral suppression among people living with HIV engaged in DSD
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"
+  * stratifier[+]
+    * id = "HIV.IND.57.S"
+    * criteria.language = #text/cql-identifier
+    * criteria.expression = "Stratification"

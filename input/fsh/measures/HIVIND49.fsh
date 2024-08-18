@@ -8,7 +8,7 @@ Title: "HIV.IND.49 TB symptom-screened positive among new ART patients"
 * url = "http://smart.who.int/hiv/Measure/HIVIND49"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND49"
 * title = "HIV.IND.49 TB symptom-screened positive among new ART patients"
 * publisher = "World Health Organization (WHO)"
@@ -33,3 +33,7 @@ Title: "HIV.IND.49 TB symptom-screened positive among new ART patients"
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"
+  * stratifier[+]
+    * id = "HIV.IND.49.S"
+    * criteria.language = #text/cql-identifier
+    * criteria.expression = "Stratification"

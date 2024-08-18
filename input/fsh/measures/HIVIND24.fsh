@@ -8,7 +8,7 @@ Title: "HIV.IND.24 HTS linkage to prevention"
 * url = "http://smart.who.int/hiv/Measure/HIVIND24"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND24"
 * title = "HIV.IND.24 HTS linkage to prevention"
 * publisher = "World Health Organization (WHO)"

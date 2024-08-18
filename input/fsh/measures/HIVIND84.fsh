@@ -8,7 +8,7 @@ Title: "HIV.IND.84 HCV test coverage, HIV-positive clients"
 * url = "http://smart.who.int/hiv/Measure/HIVIND84"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND84"
 * title = "HIV.IND.84 HCV test coverage, HIV-positive clients"
 * publisher = "World Health Organization (WHO)"

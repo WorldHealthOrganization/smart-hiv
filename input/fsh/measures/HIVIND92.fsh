@@ -8,7 +8,7 @@ Title: "HIV.IND.92 HCV cured among people living with HIV"
 * url = "http://smart.who.int/hiv/Measure/HIVIND92"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND92"
 * title = "HIV.IND.92 HCV cured among people living with HIV"
 * publisher = "World Health Organization (WHO)"

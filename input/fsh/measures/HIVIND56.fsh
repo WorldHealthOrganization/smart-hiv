@@ -8,7 +8,7 @@ Title: "HIV.IND.56 Retention in DSD ART models"
 * url = "http://smart.who.int/hiv/Measure/HIVIND56"
 * status = #draft
 * experimental = true
-* date = "2024-08-05"
+* date = "2024-08-18"
 * name = "HIVIND56"
 * title = "HIV.IND.56 Retention in DSD ART models"
 * publisher = "World Health Organization (WHO)"
@@ -33,3 +33,7 @@ Title: "HIV.IND.56 Retention in DSD ART models"
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"
+  * stratifier[+]
+    * id = "HIV.IND.56.S"
+    * criteria.language = #text/cql-identifier
+    * criteria.expression = "Stratification"
