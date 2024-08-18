@@ -73,13 +73,17 @@ define "PREP Prescription":
   [MedicationRequest] MR
     where MR.status = 'completed'
     and MR.intent = 'order'
-    and MR.medication ~ Concepts."PrEP for HIV prevention"
+    and (MR.medication as CodeableConcept in Concepts."PrEP product prescribed Choices"
+    or MR.medication as CodeableConcept in Concepts."Current PrEP regimen Choices")
 
 define "PEP Prescription":
   [MedicationRequest] MR
       where MR.status = 'completed'
       and MR.intent = 'order'
-      and MR.medication ~ Concepts."PEP for HIV prevention"
+      and (MR.medication as CodeableConcept in Concepts."Preferred PEP backbone regimen Choices"
+      or MR.medication as CodeableConcept in Concepts."Alternative PEP backbone regimen Choices"
+      or MR.medication as CodeableConcept in Concepts."Preferred third PEP drug Choices"
+      or MR.medication as CodeableConcept in Concepts."Alternative third PEP drug Choices")
 
 define "routine viral load sample collection":
   [Procedure] P
@@ -2580,10 +2584,10 @@ define "HIV retest prior to starting ART conducted Observation":
 */
 
 define "At elevated risk for HIV acquisition B.DE225":
-  [Observation] O
-    where O.status in { 'final', 'amended', 'corrected' }
-    and exists(O.category OC where OC ~ ConceptsCustom."social-history")
-    and O.code ~ Concepts."At elevated risk for HIV acquisition - HIV.B.DE225"
+  [Condition] C
+    where C.code ~ Concepts."At elevated risk for HIV acquisition - HIV.B.DE225"
+      and C.verificationStatus.text = 'confirmed'
+
 /* End of At elevated risk for HIV acquisition B.DE225 */
 
 /*
