@@ -22,7 +22,18 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+        with: 
+          lfs: true
+      
+      # Enable LFS
+      - name: Enable LFS
+        run: git lfs install
+      
+      # Turn on LFS for db and zip files in ./output
+      - name: Track LFS files
+        run: git lfs track "*.db" "*.zip" "./output"
+
       - name: Update the image to the latest publisher
         uses: docker://hl7fhir/ig-publisher-base:latest
         with:
