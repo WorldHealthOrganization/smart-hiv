@@ -46,6 +46,9 @@ jobs:
           # Run the publisher - don't run the batch script but run the line directly
           args: java -Xms1g -Xmx7g -jar ./input-cache/publisher.jar publisher -ig .
 
+      - name: remove large files
+        run: rm -f ./output/full-ig.zip
+        
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
