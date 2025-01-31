@@ -14,7 +14,7 @@ These indicators may be aggregated automatically from the digital tracking tool 
 |Description|A description about the indicator|
 |Numerator definition|The description of numerator used to calculate the indicator.|
 |Numerator computation|The calculation or how to derive this numerator. Any specific data elements noted here should align directly with the individual-level Data Element Name.|
-|Denominator definition|The dglossescription of denominator used to calculate the indicator.|
+|Denominator definition|The description of denominator used to calculate the indicator.|
 |Denominator definition|The description of denominator used to calculate the indicator.|
 |Denominator computation|The calculation or how to derive this denominator. Any specific data elements noted here should align directly with the individual-level Data Element Name.|
 |Disaggregations|Are there any dis-aggregations that you would like to be able to do in order to conduct the necessary analysis?|
