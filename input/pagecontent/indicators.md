@@ -29,7 +29,7 @@ These indicators may be aggregated automatically from the digital tracking tool 
 
 The following indicators are extracted from the HIV DAK. The full indicators and performance metrics table is available in Web Annex C of the HIV DAK. To see linkages to references and full details of the L2 content, please reference the HIV DAK.
 
-<div style=" width: 100%; height: 500px; overflow: scroll;">
+<div style=" width: 100%; height: 1000px; overflow: scroll;">
     <table border="1" class="dataframe table table-striped table-bordered">
         <thead style="position: sticky;top: 0;z-index: 100;background-color: white;">
             <tr>
