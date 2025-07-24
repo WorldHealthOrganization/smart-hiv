@@ -15,6 +15,8 @@ Title: "HIV.IND.74 Gonorrhoea treatment coverage, HIV prevention services"
 * library = "http://smart.who.int/hiv/Library/HIVIND74Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.74.IP"
     * description = "Initial Population"

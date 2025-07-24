@@ -15,6 +15,8 @@ Title: "HIV.IND.95 Invasive cervical cancer treatment"
 * library = "http://smart.who.int/hiv/Library/HIVIND95Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.95.IP"
     * description = "Initial Population"

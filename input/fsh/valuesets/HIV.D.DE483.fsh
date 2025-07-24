@@ -8,3 +8,5 @@ Description: "Value set of new antiretroviral (ARV) drugs after client changed r
 * ^experimental = true
 * ^name = "HIVDDE483"
 * ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE483"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-rules-text"
+* ^extension[=].valueMarkdown = "This should be a context-specific list of new antiretroviral (ARV) drugs after client changed regimen within the first-line regimen"

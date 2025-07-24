@@ -8,3 +8,6 @@ Description: "Value set of name of health facility client was transferred from"
 * ^experimental = true
 * ^name = "HIVDDE52"
 * ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE52"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-rules-text"
+* ^extension[=].valueMarkdown = "This should be a context-specific list of facilities"
+
