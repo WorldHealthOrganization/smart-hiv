@@ -15,6 +15,8 @@ Title: "HIV.IND.22 HTS partner services"
 * library = "http://smart.who.int/hiv/Library/HIVIND22Logic"
 * scoring = $measure-scoring#continuous-variable "Continuous Variable"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.22.IP"
     * description = "Initial Population"

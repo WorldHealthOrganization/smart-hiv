@@ -15,6 +15,8 @@ Title: "HIV.IND.89 HCV positivity, HIV-positive clients"
 * library = "http://smart.who.int/hiv/Library/HIVIND89Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = #decrease
   * population[initialPopulation]
     * id = "HIV.IND.89.IP"
     * description = "Initial Population"

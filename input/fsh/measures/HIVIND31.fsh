@@ -15,6 +15,8 @@ Title: "HIV.IND.31 Late ART initiation"
 * library = "http://smart.who.int/hiv/Library/HIVIND31Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = #decrease
   * population[initialPopulation]
     * id = "HIV.IND.31.IP"
     * description = "Initial Population"
