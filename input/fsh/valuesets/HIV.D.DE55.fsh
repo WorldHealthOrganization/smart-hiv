@@ -8,3 +8,5 @@ Description: "Value set of facility where the client first enrolled in HIV care"
 * ^experimental = true
 * ^name = "HIVDDE55"
 * ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE55"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-rules-text"
+* ^extension[=].valueMarkdown = "This should be a context-specific list of facilities"

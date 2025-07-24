@@ -8,3 +8,5 @@ Description: "Value set of this should be a context-specific list of administrat
 * ^experimental = true
 * ^name = "HIVADE43"
 * ^url = "http://smart.who.int/hiv/ValueSet/HIV.A.DE43"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-rules-text"
+* ^extension[=].valueMarkdown = "This should be a context-specific list of administrative areas, such as villages, districts, etc. The purpose of this data element is to allow for grouping and flagging of client data to a particular facility's catchment area. This can be input into the system by the end user OR it can be automated in the database based on the end user's attributes."

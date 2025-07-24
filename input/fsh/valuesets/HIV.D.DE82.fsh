@@ -8,3 +8,5 @@ Description: "Value set of the optimal regimen for transition to DTG-based regim
 * ^experimental = true
 * ^name = "HIVDDE82"
 * ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE82"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-rules-text"
+* ^extension[=].valueMarkdown = "This should be a context-specific list of optimal regimens for transition to DTG-based regimens for children established on ART"

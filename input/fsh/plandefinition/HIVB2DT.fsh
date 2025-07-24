@@ -1,5 +1,5 @@
 Instance: HIVB2DT
-InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition
+InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0
 Title: "HIV.B2.DT Check for signs of serious illness"
 Description: "Check for signs of serious illness"
 Usage: #definition

@@ -15,6 +15,8 @@ Title: "HIV.IND.50 TB testing among those symptom-screened positive"
 * library = "http://smart.who.int/hiv/Library/HIVIND50Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.50.IP"
     * description = "Initial Population"

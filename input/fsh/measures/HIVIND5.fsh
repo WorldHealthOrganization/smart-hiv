@@ -15,6 +15,8 @@ Title: "HIV.IND.5 Number of PEP recipients"
 * library = "http://smart.who.int/hiv/Library/HIVIND5Logic"
 * scoring = $measure-scoring#continuous-variable "Continuous Variable"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.5.IP"
     * description = "Initial Population"

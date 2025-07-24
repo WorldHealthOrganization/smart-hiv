@@ -8,3 +8,5 @@ Description: "Value set of the facility where the client received an HIV-positiv
 * ^experimental = true
 * ^name = "HIVBDE66"
 * ^url = "http://smart.who.int/hiv/ValueSet/HIV.B.DE66"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-rules-text"
+* ^extension[=].valueMarkdown = "This should be a context-specific list of HIV diagnosing facilities"
