@@ -14,9 +14,8 @@ Title: "HIV.IND.46 TB diagnostic testing type"
 * publisher = "World Health Organization (WHO)"
 * library = "http://smart.who.int/hiv/Library/HIVIND46Logic"
 * scoring = $measure-scoring#proportion "Proportion"
+* improvementNotation = $measure-improvement-notation#increase
 * group[+]
-  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
-  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.46.IP"
     * description = "Initial Population"

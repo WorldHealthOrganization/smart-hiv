@@ -14,9 +14,8 @@ Title: "HIV.IND.35 ARV toxicity prevalence"
 * publisher = "World Health Organization (WHO)"
 * library = "http://smart.who.int/hiv/Library/HIVIND35Logic"
 * scoring = $measure-scoring#proportion "Proportion"
+* improvementNotation = $measure-improvement-notation#decrease
 * group[+]
-  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
-  * extension[=].valueCodeableConcept = #decrease
   * population[initialPopulation]
     * id = "HIV.IND.35.IP"
     * description = "Initial Population"
