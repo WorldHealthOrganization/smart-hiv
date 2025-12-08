@@ -19,4 +19,4 @@ Description: "Value set of symptoms that may indicate TB disease in clients livi
 * HIVConcepts#HIV.D.DE981 "Chest pain"
 * HIVConcepts#HIV.D.DE982 "Haemoptysis"
 * HIVConcepts#HIV.D.DE983 "Lethargy"
-* HIVConcepts#HIV.D.DE984 ""
+* HIVConcepts#HIV.D.DE984 "None"

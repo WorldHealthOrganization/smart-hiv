@@ -15,6 +15,8 @@ Title: "HIV.IND.12 Total person-years on OAMT"
 * library = "http://smart.who.int/hiv/Library/HIVIND12Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.12.IP"
     * description = "Initial Population"

@@ -169,7 +169,9 @@ define "Sex partner is on HIV treatment and not virally suppressed":
  @pseudocode: "Key population member"=True
  */
 define "Is Key population member":
-  Elements."Is Key population member B.DE49"
+  exists(
+    Elements."Key population member type Observation" O
+  )
 
  /*
   @input: "Signs of substantial risk of HIV infection"

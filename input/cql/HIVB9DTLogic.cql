@@ -83,7 +83,7 @@ define "HIV burden of setting is low HIV burden setting":
   @pseudocode: "Key population member" = TRUE
   */
 define "Key population member":
-  Elements."Is Key population member B.DE49"
+  Elements."Is Key population member"
 
  /*
   @input: "Currently pregnant"
@@ -97,7 +97,7 @@ define "Currently pregnant":
   @pseudocode: "Currently pregnant"=True
   */
 define "TB diagnosis result is diagnosed TB":
-  exists(Elements."TB diagnosis result Observation" O
+  exists(Elements."TB diagnosis result" O
     where O.value ~ Concepts."Diagnosed TB")
 
  /*
@@ -113,8 +113,7 @@ define "Presumptive TB":
   @pseudocode: "Currently on PrEP"=True
   */
 define "Currently on PrEP":
-  exists(Elements."Currently on PrEP Observation" O
-    where O.value is true)
+  exists(Elements."Currently on PrEP")
 
  /*
   @input: "At elevated risk for HIV acquisition"

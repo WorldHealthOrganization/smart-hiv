@@ -15,6 +15,8 @@ Title: "HIV.IND.9 Regular NSP access"
 * library = "http://smart.who.int/hiv/Library/HIVIND9Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.9.IP"
     * description = "Initial Population"

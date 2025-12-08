@@ -15,6 +15,8 @@ Title: "HIV.IND.29 People living with HIV on ART who have suppressed viral load"
 * library = "http://smart.who.int/hiv/Library/HIVIND29Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.29.IP"
     * description = "Initial Population"

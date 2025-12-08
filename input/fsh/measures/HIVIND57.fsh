@@ -15,6 +15,8 @@ Title: "HIV.IND.57 Viral suppression among people living with HIV engaged in DSD
 * library = "http://smart.who.int/hiv/Library/HIVIND57Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.57.IP"
     * description = "Initial Population"

@@ -1,5 +1,5 @@
 Instance: HIVD12DT
-InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition
+InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0
 Title: "HIV.D12.Determine recommended screenings and tests"
 Description: "Determine recommended screenings and tests"
 Usage: #definition
@@ -9,7 +9,7 @@ Usage: #definition
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"
   * valueCode = #computable
-* url = "http://smart.who.int/hiv/PlanDefinition/HIVD4DT"
+* url = "http://smart.who.int/hiv/PlanDefinition/HIVD12DT"
 * name = "HIVD4DT"
 * status = #draft
 * experimental = true

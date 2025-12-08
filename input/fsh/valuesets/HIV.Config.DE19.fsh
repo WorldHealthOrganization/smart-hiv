@@ -8,3 +8,6 @@ Description: "Value set of other populations of priority of HIV prevention and c
 * ^experimental = true
 * ^name = "HIVConfigDE19"
 * ^url = "http://smart.who.int/hiv/ValueSet/HIV.Config.DE19"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-rules-text"
+* ^extension[=].valueMarkdown = "This should be a context-specific list of other priority populations"
+

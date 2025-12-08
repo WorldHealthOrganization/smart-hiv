@@ -15,6 +15,8 @@ Title: "HIV.IND.55 Coverage of DSD ART models among people living with HIV on AR
 * library = "http://smart.who.int/hiv/Library/HIVIND55Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.55.IP"
     * description = "Initial Population"

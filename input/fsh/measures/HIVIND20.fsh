@@ -15,6 +15,8 @@ Title: "HIV.IND.20 Individuals testing positive for HIV"
 * library = "http://smart.who.int/hiv/Library/HIVIND20Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = #decrease
   * population[initialPopulation]
     * id = "HIV.IND.20.IP"
     * description = "Initial Population"

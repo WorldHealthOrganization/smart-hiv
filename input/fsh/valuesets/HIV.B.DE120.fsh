@@ -8,3 +8,5 @@ Description: "Value set of name or identifier of health facility where HIV test 
 * ^experimental = true
 * ^name = "HIVBDE120"
 * ^url = "http://smart.who.int/hiv/ValueSet/HIV.B.DE120"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-rules-text"
+* ^extension[=].valueMarkdown = "This should be a context-specific list of health facilities capable of performing a HIV test"

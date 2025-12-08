@@ -1,5 +1,5 @@
 Instance: HIVB9DT
-InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition
+InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0
 Title: "HIV.B9.DT Determine retest recommendation"
 Description: "HIV restesting recommendations"
 Usage: #definition
@@ -26,7 +26,7 @@ Usage: #definition
       * expression
         * language = #text/cql-identifier
         * expression = "Schedule an annual follow-up test"
-    * type = #create
+    * type = $action-type#create
     * definitionCanonical = Canonical(HIVB9DTScheduleFollowUp)
     * dynamicValue[+]
       * path = "intent"
@@ -53,7 +53,7 @@ Usage: #definition
       * expression
         * language = #text/cql-identifier
         * expression = "Schedule quarterly retesting for PrEP users"
-    * type = #create
+    * type = $action-type#create
     * definitionCanonical = Canonical(HIVB9DTScheduleFollowUp)
     * dynamicValue[+]
       * path = "intent"
@@ -80,7 +80,7 @@ Usage: #definition
       * expression
         * language = #text/cql-identifier
         * expression = "Follow-up test recommended"
-    * type = #create
+    * type = $action-type#create
     * definitionCanonical = Canonical(HIVB9DTScheduleFollowUp)
     * dynamicValue[+]
       * path = "intent"
@@ -101,10 +101,10 @@ Usage: #definition
       * expression
         * language = #text/cql-identifier
         * expression = "Schedule an HIV test, syphilis test, hepatitis B test as early as possible during this pregnancy"
-    * type = #create
+    * type = $action-type#create
     * action[+]
       * textEquivalent = "Schedule an HIV test as early as possible"
-      * type = #create
+      * type = $action-type#create
       * definitionCanonical = Canonical(HIVB9DTScheduleFollowUp)
       * dynamicValue[+]
         * path = "intent"
@@ -120,7 +120,7 @@ Usage: #definition
           * expression = "'171121004' from \"SNOMED-CT\" display 'HIV test'"
     * action[+]
       * textEquivalent = "Schedule a Syphilis test as early as possible"
-      * type = #create
+      * type = $action-type#create
       * definitionCanonical = Canonical(HIVB9DTScheduleFollowUp)
       * dynamicValue[+]
         * path = "intent"
@@ -136,7 +136,7 @@ Usage: #definition
           * expression = "'40675008' from \"SNOMED-CT\" display 'Syphilis test'"
     * action[+]
       * textEquivalent = "Schedule a Heptatitis test as early as possible"
-      * type = #create
+      * type = $action-type#create
       * definitionCanonical = Canonical(HIVB9DTScheduleFollowUp)
       * dynamicValue[+]
         * path = "intent"
@@ -157,10 +157,10 @@ Usage: #definition
       * expression
         * language = #text/cql-identifier
         * expression = "Schedule a 'Follow-up test recommended date' at first ANC contact date"
-    * type = #create
+    * type = $action-type#create
     * action[+]
       * textEquivalent = "Schedule a follow-up test recommended date at first ANC contact date"
-      * type = #create
+      * type = $action-type#create
       * definitionCanonical = Canonical(HIVB9DTScheduleFollowUp)
       * dynamicValue[+]
         * path = "intent"
@@ -176,7 +176,7 @@ Usage: #definition
           * expression = "'171121004' from \"SNOMED-CT\" display 'HIV screening'"
     * action[+]
       * textEquivalent = "Schedule a follow-up test recommended date during a third trimester visit"
-      * type = #create
+      * type = $action-type#create
       * definitionCanonical = Canonical(HIVB9DTScheduleFollowUp)
       * dynamicValue[+]
         * path = "intent"
@@ -192,7 +192,7 @@ Usage: #definition
           * expression = "'171121004' from \"SNOMED-CT\" display 'HIV screening'"
     * action[+]
       * textEquivalent = "Schedule a follow-up test recommended date either two-weeks, 6 months or 9 months post delivery"
-      * type = #create
+      * type = $action-type#create
       * definitionCanonical = Canonical(HIVB9DTScheduleFollowUp)
       * dynamicValue[+]
         * path = "intent"

@@ -15,6 +15,8 @@ Title: "HIV.IND.73 Gonorrhoea test positivity, HIV-positive clients"
 * library = "http://smart.who.int/hiv/Library/HIVIND73Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = #decrease
   * population[initialPopulation]
     * id = "HIV.IND.73.IP"
     * description = "Initial Population"

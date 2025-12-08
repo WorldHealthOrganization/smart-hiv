@@ -1,5 +1,5 @@
 Instance: HIVD4DT
-InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition
+InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0
 Title: "HIV.D4.DT TB Screening Decision Tables"
 Description: "Screen for TB using one of three algorithms"
 Usage: #definition

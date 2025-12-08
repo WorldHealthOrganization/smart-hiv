@@ -8,3 +8,5 @@ Description: "Value set of aRV drug regimen received prior to enrolment into HIV
 * ^experimental = true
 * ^name = "HIVDDE64"
 * ^url = "http://smart.who.int/hiv/ValueSet/HIV.D.DE64"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-rules-text"
+* ^extension[=].valueMarkdown = "This should be a context-specific list of approved ARV regimens"

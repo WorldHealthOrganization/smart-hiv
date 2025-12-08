@@ -154,10 +154,9 @@ define "Unknown B.DE36 Observation":
 @activity: HIV.B6 Capture or update client history
 @description: Client is a member of a key population that has an increased risk of HIV
 */
-define "Is Key population member B.DE49":
+define "Is Key population member":
   exists(
     "Key population member type Observation" O
-      where O.encounter.references(EncounterId)
   )
 /* End of Key population member B.DE49 */
 

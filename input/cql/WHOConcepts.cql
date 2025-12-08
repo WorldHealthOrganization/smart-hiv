@@ -9,7 +9,7 @@ codesystem "ICD-11": 'http://id.who.int/icd/release/11/mms'
 codesystem "ICHI": 'https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi'
 codesystem "ICF": 'http://hl7.org/fhir/sid/icf-nl'
 
-// ValuSets
+// ValueSets
 valueset "Pregnancy Status Pregnant": 'http://fhir.org/guides/who/core/ValueSet/pregnancystatus-values'
 valueset "Adverse Events": 'http://hl7.org/fhir/ValueSet/adverse-event-type'
 

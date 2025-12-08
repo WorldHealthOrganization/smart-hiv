@@ -15,6 +15,8 @@ Title: "HIV.IND.93 Cervical cancer screening"
 * library = "http://smart.who.int/hiv/Library/HIVIND93Logic"
 * scoring = $measure-scoring#continuous-variable "Continuous Variable"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.93.IP"
     * description = "Initial Population"

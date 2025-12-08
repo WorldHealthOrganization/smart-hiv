@@ -16,7 +16,7 @@ Usage: #definition
 * action.participant[0].type = #patient
 * action.participant[=].role.coding.code = #client
 * action.participant[+].type = #practitioner
-* action.participant[=].role.coding.code = #TrainedLayProvider
+* action.participant[=].role.text = "Trained Lay Provider"
 * action.action[0].id = "HIV.A.1"
 * action.action[=].title = "Arrive at facility"
 * action.action[=].description = "Client arrives at the health facility."
@@ -33,9 +33,9 @@ Usage: #definition
 * action.action[=].relatedAction.relationship = #before-start
 * action.action[+].id = "HIV.A.3"
 * action.action[=].title = "Search for client record"
-* action.action[=].description = "This search process can be done through a variety of means depending on what mechanisms are available in the record system. For example, clients can be searched for by name, unique identifier, or QR code. "
+* action.action[=].description = "This search process can be done through a variety of means depending on what mechanisms are available in the record system. For example, clients can be searched for by name, unique identifier, or QR code."
 * action.action[=].participant.type = #practitioner
-* action.action[=].participant.role.coding.code = #TrainedLayProvider
+* action.action[=].participant.role.text = "Trained Lay Provider"
 * action.action[=].relatedAction.actionId = "HIV.A.4"
 * action.action[=].relatedAction.relationship = #before-start
 * action.action[+].id = "HIV.A.4"
@@ -47,7 +47,7 @@ Usage: #definition
 * action.action[=].action[=].title = "Create new client record"
 * action.action[=].action[=].description = "If a previous unique identifier has been issued, use the same number to create the client record."
 * action.action[=].action[=].participant.type = #practitioner
-* action.action[=].action[=].participant.role.coding.code = #TrainedLayProvider
+* action.action[=].action[=].participant.role.text = "Trained Lay Provider"
 * action.action[=].action[=].relatedAction.actionId = "HIV.A.4"
 * action.action[=].action[=].relatedAction.relationship = #before-end
 * action.action[=].action[+].id = "HIV.A.6"
@@ -57,31 +57,31 @@ Usage: #definition
 * action.action[=].action[=].action[=].title = "Review sociodemographic data with client"
 * action.action[=].action[=].action[=].description = "Review client’s non-clinical information, such as name, address, contact information, etc."
 * action.action[=].action[=].action[=].participant.type = #practitioner
-* action.action[=].action[=].action[=].participant.role.coding.code = #TrainedLayProvider
+* action.action[=].action[=].action[=].participant.role.text = "Trained Lay Provider"
 * action.action[=].action[=].action[=].relatedAction.actionId = "HIV.A.6.2"
 * action.action[=].action[=].action[=].relatedAction.relationship = #before-start
 * action.action[=].action[=].action[+].id = "HIV.A.6.2"
 * action.action[=].action[=].action[=].title = "Update needed?"
 * action.action[=].action[=].action[=].description = "Has the client moved? Has the client changed contact information? Has any other sociodemographic information changed?"
 * action.action[=].action[=].action[=].participant.type = #practitioner
-* action.action[=].action[=].action[=].participant.role.coding.code = #TrainedLayProvider
+* action.action[=].action[=].action[=].participant.role.text = "Trained Lay Provider"
 * action.action[=].action[=].action[=].relatedAction.actionId = "HIV.A.6.3"
 * action.action[=].action[=].action[=].relatedAction.relationship = #before-start
 * action.action[=].action[=].action[+].id = "HIV.A.6.3"
 * action.action[=].action[=].action[=].title = "Update client details"
 * action.action[=].action[=].action[=].description = "Ask client to provide updated information if address or other details have changed since last contact"
 * action.action[=].action[=].action[=].participant.type = #practitioner
-* action.action[=].action[=].action[=].participant.role.coding.code = #TrainedLayProvider
+* action.action[=].action[=].action[=].participant.role.text = "Trained Lay Provider"
 * action.action[=].action[=].action[=].relatedAction.actionId = "HIV.A.7"
 * action.action[=].action[=].action[=].relatedAction.relationship = #before-start
 * action.action[=].action[=].relatedAction.actionId = "HIV.A.4"
 * action.action[=].action[=].relatedAction.relationship = #before-end
 * action.action[=].participant.type = #practitioner
-* action.action[=].participant.role.coding.code = #TrainedLayProvider
+* action.action[=].participant.role.text = "Trained Lay Provider"
 * action.action[=].relatedAction.actionId = "HIV.A.7"
 * action.action[=].relatedAction.relationship = #before-start
 * action.action[+].id = "HIV.A.7"
 * action.action[=].title = "Check in client"
 * action.action[=].description = "Add client to the relevant queue for services"
 * action.action[=].participant.type = #practitioner
-* action.action[=].participant.role.coding.code = #TrainedLayProvider
+* action.action[=].participant.role.text = "Trained Lay Provider"

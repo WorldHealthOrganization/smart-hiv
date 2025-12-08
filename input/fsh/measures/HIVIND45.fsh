@@ -15,6 +15,8 @@ Title: "HIV.IND.45 TPT completion"
 * library = "http://smart.who.int/hiv/Library/HIVIND45Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.45.IP"
     * description = "Initial Population"

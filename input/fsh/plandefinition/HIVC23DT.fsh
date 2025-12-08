@@ -1,5 +1,5 @@
 Instance: HIVC23DT
-InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition
+InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0
 Title: "HIV.C23.DT Determine PEP or PrEP regimen"
 Description: "Determine PEP or PrEP regimen"
 Usage: #definition

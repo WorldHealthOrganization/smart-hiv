@@ -15,6 +15,8 @@ Title: "HIV.IND.62 Syphilis test positivity, HIV prevention services"
 * library = "http://smart.who.int/hiv/Library/HIVIND62Logic"
 * scoring = $measure-scoring#proportion "Proportion"
 * group[+]
+  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
+  * extension[=].valueCodeableConcept = #decrease
   * population[initialPopulation]
     * id = "HIV.IND.62.IP"
     * description = "Initial Population"
