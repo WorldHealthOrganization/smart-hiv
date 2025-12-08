@@ -14,9 +14,8 @@ Title: "HIV.IND.30 New ART patients"
 * publisher = "World Health Organization (WHO)"
 * library = "http://smart.who.int/hiv/Library/HIVIND30Logic"
 * scoring = $measure-scoring#continuous-variable "Continuous Variable"
+* improvementNotation = $measure-improvement-notation#increase
 * group[+]
-  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
-  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.30.IP"
     * description = "Initial Population"

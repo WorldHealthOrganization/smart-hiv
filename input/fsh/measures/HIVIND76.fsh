@@ -14,9 +14,8 @@ Title: "HIV.IND.76 Presence of STI syndrome, HIV prevention services"
 * publisher = "World Health Organization (WHO)"
 * library = "http://smart.who.int/hiv/Library/HIVIND76Logic"
 * scoring = $measure-scoring#proportion "Proportion"
+* improvementNotation = $measure-improvement-notation#decrease
 * group[+]
-  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
-  * extension[=].valueCodeableConcept = #decrease
   * population[initialPopulation]
     * id = "HIV.IND.76.IP"
     * description = "Initial Population"

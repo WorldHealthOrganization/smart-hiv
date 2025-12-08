@@ -14,9 +14,8 @@ Title: "HIV.IND.15 VMMC scale-up"
 * publisher = "World Health Organization (WHO)"
 * library = "http://smart.who.int/hiv/Library/HIVIND15Logic"
 * scoring = $measure-scoring#continuous-variable "Continuous Variable"
+* improvementNotation = $measure-improvement-notation#increase
 * group[+]
-  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
-  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.15.IP"
     * description = "Initial Population"

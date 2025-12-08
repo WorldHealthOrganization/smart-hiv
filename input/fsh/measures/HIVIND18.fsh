@@ -14,9 +14,8 @@ Title: "HIV.IND.18 People living with HIV who know their HIV status (first 95)"
 * publisher = "World Health Organization (WHO)"
 * library = "http://smart.who.int/hiv/Library/HIVIND18Logic"
 * scoring = $measure-scoring#continuous-variable "Continuous Variable"
+* improvementNotation = $measure-improvement-notation#increase
 * group[+]
-  * extension[+].url = "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation"
-  * extension[=].valueCodeableConcept = $measure-improvement-notation#increase
   * population[initialPopulation]
     * id = "HIV.IND.18.IP"
     * description = "Initial Population"
