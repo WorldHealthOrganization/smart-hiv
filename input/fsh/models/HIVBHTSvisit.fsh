@@ -132,6 +132,9 @@ Description: "This tab describes the data that are collected during the HIV Test
   * ^code[+] = HIVConcepts#HIV.B.DE79
 * hivTestConducted 0..1 boolean "HIV test conducted" "An HIV test was performed on the client during the visit"
   * ^code[+] = HIVConcepts#HIV.B.DE80
+* hivTestCategory 0..1 Coding "HIV test type" "Type of HIV test"
+  * ^code[+] = HIVConcepts#HIV.B.DE332
+* hivTestCategory from HIV.B.DE332
 * hivTestType 0..1 Coding "HIV test type" "Type of HIV test"
   * ^code[+] = HIVConcepts#HIV.B.DE81
 * hivTestType from HIV.B.DE81

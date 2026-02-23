@@ -36,6 +36,15 @@ Usage: #definition
   * repeats = false
   * readOnly = false
 * item[+]
+  * id = "HIV.B.DE332"
+  * linkId = "HIV.B.DE332"
+  * type = #choice
+  * text = "HIV test type"
+  * required = false
+  * repeats = false
+  * readOnly = false
+  * answerValueSet = "#HIV.B.DE332"
+* item[+]
   * id = "HIV.B.DE81"
   * linkId = "HIV.B.DE81"
   * type = #choice

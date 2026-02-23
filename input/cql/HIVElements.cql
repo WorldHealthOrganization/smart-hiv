@@ -711,6 +711,8 @@ define "People living in prisons and other closed settings":
 /*
 @dataElement: HIV.B.DE60 - Date HIV test results returned
 @activity: HIV.B6 Capture or update client history
+@activity: HIV.C7 Check suitability for PrEP or PEP
+@activity: HIV.C23 Prescribe or administer PrEP or PEP
 @description: Date HIV test result returned to client
 */
 define "Date HIV test results returned":
@@ -1257,6 +1259,8 @@ define "Invalid B.DE109 Observation":
 /*
 @dataElement: HIV.B.DE110 - HIV test date
 @activity: HIV.B7 Test for HIV using testing algorithm
+@activity: HIV.C7 Check suitability for PrEP or PEP
+@activity: HIV.C23 Prescribe or administer PrEP or PEP
 @description: Date of the HIV test
 */
 define "HIV test date B.DE110":
@@ -1267,6 +1271,8 @@ define "HIV test date B.DE110":
 /*
 @dataElement: HIV.B.DE111 - HIV test result
 @activity: HIV.B7 Test for HIV using testing algorithm
+@activity: HIV.C7 Check suitability for PrEP or PEP
+@activity: HIV.C23 Prescribe or administer PrEP or PEP
 @description: The result from HIV testing after applying the testing algorithm
 */
 // Same as test - see profile
@@ -2936,6 +2942,57 @@ define "Other B.DE281":
     where O.status in { 'final', 'amended', 'corrected' }
 
 /* End of Other B.DE281 */
+
+/*
+@dataElement: HIV.B.DE332 - HIV test type
+@activity: HIV.B7 Test for HIV using testing algorithm
+@activity: HIV.C7 Check suitability for PrEP or PEP
+@activity: HIV.C23 Prescribe or administer PrEP or PEP
+@description: Type of HIV test
+*/
+define "HIV test type B.DE332":
+  [Observation: Concepts."HIV test type - HIV.B.DE332"] O
+    where O.status in { 'final', 'amended', 'corrected' }
+define "HIV test type B.DE332 Value":
+  "HIV test type B.DE332" O
+  return O.value as CodeableConcept
+/* End of HIV test type B.DE332 */
+
+/*
+@dataElement: HIV.B.DE333 - Rapid diagnostic test (RDT)
+@activity: HIV.B7 Test for HIV using testing algorithm
+@activity: HIV.C7 Check suitability for PrEP or PEP
+@activity: HIV.C23 Prescribe or administer PrEP or PEP
+@description: HIV test performed using a rapid diagnostic test (RDT)
+*/
+define "Rapid diagnostic test (RDT) B.DE333":
+  "HIV test type B.DE332" O
+    where O.value ~ Concepts."Rapid diagnostic test (RDT) - HIV.B.DE333"
+/* End of Rapid diagnostic test (RDT) B.DE333 */
+
+/*
+@dataElement: HIV.B.DE334 - Laboratory assay
+@activity: HIV.B7 Test for HIV using testing algorithm
+@activity: HIV.C7 Check suitability for PrEP or PEP
+@activity: HIV.C23 Prescribe or administer PrEP or PEP
+@description: HIV test performed using a laboratory assay
+*/
+define "Laboratory assay B.DE334":
+  "HIV test type B.DE332" O
+    where O.value ~ Concepts."Laboratory assay - HIV.B.DE334"
+/* End of Laboratory assay B.DE334 */
+
+/*
+@dataElement: HIV.B.DE335 - Self-test (reported)
+@activity: HIV.B7 Test for HIV using testing algorithm
+@activity: HIV.C7 Check suitability for PrEP or PEP
+@activity: HIV.C23 Prescribe or administer PrEP or PEP
+@description: HIV self-test reported by the client
+*/
+define "Self-test (reported) B.DE335":
+  "HIV test type B.DE332" O
+    where O.value ~ Concepts."Self-test (reported) - HIV.B.DE335"
+/* End of Self-test (reported) B.DE335 */
 
 /*
 @dataElement: HIV.C.DE9 - Date/time of suspected exposure to HIV

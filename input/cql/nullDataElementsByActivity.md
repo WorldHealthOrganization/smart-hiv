@@ -150,6 +150,7 @@ Data elements for this activity can be collected using the [HIV](Questionnaire-H
 |HIV.B.DE8|Type of contact or partner for partner services|Client's relationship to the person that referred the client for partner services or family services|string|[Observation.value[x]](StructureDefinition-hiv-b-de8.html)|
 |HIV.B.DE80|HIV test conducted|An HIV test was performed on the client during the visit|string|[Observation.value[x]](StructureDefinition-hiv-b-de80.html)|
 |HIV.B.DE81|HIV test type|Type of HIV test|string|[Observation.value[x]](StructureDefinition-hiv-b-de81.html)|
+|HIV.B.DE332|HIV test type|Type of HIV test|string|[Observation.value[x]](StructureDefinition-hiv-b-de332.html)|
 |HIV.B.DE87|Date HIV test sent|Date HIV specimen was sent to lab|string|[Observation.value[x]](StructureDefinition-hiv-b-de87.html)|
 |HIV.B.DE88|Assay number in testing strategy|The number of the assay (test kit) in the HIV testing strategy|string|[Observation.value[x]](StructureDefinition-hiv-b-de88.html)|
 |HIV.B.DE89|Assay 0|A community outreach test-for-triage or self-test which is not included in the HIV testing strategy|string|[Observation.value[x]](StructureDefinition-hiv-b-de89.html)|

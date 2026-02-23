@@ -2014,7 +2014,7 @@ HIV.A5 Create new client record</td>
     <td>None</td>
     <td>C</td>
     <td>None</td>
-    <td></td>
+    <td>HIV.C7.DT, HIV.C23.DT</td>
     <td>HTS.2, HTS.3, HTS.5</td>
     <td></td>
   </tr>
@@ -2462,6 +2462,74 @@ HIV.A5 Create new client record</td>
   </tr>
   <tr>
     <td>HIV.B7 Test for HIV using testing algorithm</td>
+    <td>HIV.B.DE332</td>
+    <td>HIV test type</td>
+    <td>Type of HIV test</td>
+    <td>Select one</td>
+    <td>Coding</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>None</td>
+    <td>C</td>
+    <td>Required if "HIV test conducted"=True</td>
+    <td>HIV.C7.DT, HIV.C23.DT</td>
+    <td>HTS.2, HTS.3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>HIV.B7 Test for HIV using testing algorithm</td>
+    <td>HIV.B.DE333</td>
+    <td>Rapid diagnostic test (RDT)</td>
+    <td>HIV test performed using a rapid diagnostic test (RDT)</td>
+    <td>Input Option</td>
+    <td>Codes</td>
+    <td>Rapid diagnostic test (RDT)</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>None</td>
+    <td>O</td>
+    <td>None</td>
+    <td>HIV.C7.DT, HIV.C23.DT</td>
+    <td>HTS.2, HTS.3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>HIV.B7 Test for HIV using testing algorithm</td>
+    <td>HIV.B.DE334</td>
+    <td>Laboratory assay</td>
+    <td>HIV test performed using a laboratory assay</td>
+    <td>Input Option</td>
+    <td>Codes</td>
+    <td>Laboratory assay</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>None</td>
+    <td>O</td>
+    <td>None</td>
+    <td>HIV.C7.DT, HIV.C23.DT</td>
+    <td>HTS.2, HTS.3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>HIV.B7 Test for HIV using testing algorithm</td>
+    <td>HIV.B.DE335</td>
+    <td>Self-test (reported)</td>
+    <td>HIV self-test reported by the client</td>
+    <td>Input Option</td>
+    <td>Codes</td>
+    <td>Self-test (reported)</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>None</td>
+    <td>O</td>
+    <td>None</td>
+    <td>HIV.C7.DT, HIV.C23.DT</td>
+    <td>HTS.2, HTS.3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>HIV.B7 Test for HIV using testing algorithm</td>
     <td>HIV.B.DE87</td>
     <td>Date HIV test sent</td>
     <td>Date HIV specimen was sent to lab</td>
@@ -2864,7 +2932,7 @@ HIV.A5 Create new client record</td>
     <td>None</td>
     <td>C</td>
     <td>None</td>
-    <td></td>
+    <td>HIV.C7.DT, HIV.C23.DT</td>
     <td>HTS.2, HTS.3, HTS.5, HTS.7, HTS.8, PRV.3, PRV.7, VER.2, VER.7</td>
     <td></td>
   </tr>
@@ -2881,7 +2949,7 @@ HIV.A5 Create new client record</td>
     <td>None</td>
     <td>C</td>
     <td>None</td>
-    <td>HIV.B7.DT, HIV.D12.DT, HIV.E12.DT, HIV.E4.DT, HIV.S.1</td>
+    <td>HIV.B7.DT, HIV.C7.DT, HIV.C23.DT, HIV.D12.DT, HIV.E12.DT, HIV.E4.DT, HIV.S.1</td>
     <td>HTS.2, HTS.3, HTS.7, HTS.8, PRV.3, PRV.7, VER.7</td>
     <td></td>
   </tr>

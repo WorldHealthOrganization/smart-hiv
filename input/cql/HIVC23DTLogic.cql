@@ -8,6 +8,10 @@ Library: HIV.C23.DT Logic
 @Description: Determine PEP or PrEP regimen
 
 Data Concepts:
+ * HIV.B.DE60: Date HIV test results returned | Date HIV test result returned to client
+ * HIV.B.DE110: HIV test date | Date of the HIV test
+ * HIV.B.DE111: HIV test result | The result from HIV testing after applying the testing algorithm
+ * HIV.B.DE332: HIV test type | Type of HIV test
   
 
 Consolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring: recommendations for a public health approach (2021) Chapter 5: Advanced HIV Disease. Figure 5.1: Algorithm for providing a package of care for people with advanced HIV disease.

@@ -532,12 +532,29 @@ define "Invalid B.DE109 Observation":
 /*
 @dataElement: HIV.B.DE111 - HIV test result
 @activity: HIV.B7 Test for HIV using testing algorithm
+@activity: HIV.C7 Check suitability for PrEP or PEP
+@activity: HIV.C23 Prescribe or administer PrEP or PEP
 @description: The result from HIV testing after applying the testing algorithm
 */
 define "HIV test result":
   Elements."HIV test result Observation" O
     where O.encounter.references(EncounterId)
 /* End of HIV test result B.DE111 */
+
+/*
+@dataElement: HIV.B.DE332 - HIV test type
+@activity: HIV.B7 Test for HIV using testing algorithm
+@activity: HIV.C7 Check suitability for PrEP or PEP
+@activity: HIV.C23 Prescribe or administer PrEP or PEP
+@description: Type of HIV test
+*/
+define "HIV test type B.DE332":
+  Elements."HIV test type B.DE332" O
+    where O.encounter.references(EncounterId)
+define "HIV test type B.DE332 Value":
+  "HIV test type B.DE332" O
+  return O.value
+/* End of HIV test type B.DE332 */
 
 /*
 @dataElement: HIV.B.DE115 - HIV status

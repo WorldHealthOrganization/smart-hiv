@@ -9,7 +9,11 @@ Library: HIV.C7.DT Logic
 
 Data Concepts:
  * HIV.B.DE49: Key population member | Client is a member of a key population that has an increased risk of HIV
+ * HIV.B.DE60: Date HIV test results returned | Date HIV test result returned to client
+ * HIV.B.DE110: HIV test date | Date of the HIV test
+ * HIV.B.DE111: HIV test result | The result from HIV testing after applying the testing algorithm
  * HIV.B.DE115: HIV status | HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.
+ * HIV.B.DE332: HIV test type | Type of HIV test
  * HIV.C.DE31: PEP history | The client's history in taking post-exposure prophylaxis (PEP) for HIV prevention
  * HIV.C.DE36: Signs of substantial risk of HIV infection | Signs the client is at a substantial risk of HIV infection
  * HIV.C.DE55: Sex partners HIV treatment status | Treatment adherence of client's sex partner for partners that are HIV-positive
