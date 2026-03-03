@@ -10,5 +10,5 @@ Description: "Value set of the woman gave birth when the gestational age is less
 * ^url = "http://smart.who.int/hiv/ValueSet/HIV.E.DE62"
 
 * HIVConcepts#HIV.E.DE63 "Not preterm"
-* HIVConcepts#HIV.E.DE64 "Preterm (<37 weeks gestation)"
-* HIVConcepts#HIV.E.DE65 "Very preterm (<32 weeks gestation)"
+* HIVConcepts#HIV.E.DE64 "Preterm (less than 37 weeks gestation)"
+* HIVConcepts#HIV.E.DE65 "Very preterm (less than 32 weeks gestation)"

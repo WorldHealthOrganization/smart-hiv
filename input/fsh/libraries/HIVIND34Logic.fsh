@@ -1,7 +1,7 @@
 Instance: HIVIND34Logic
 InstanceOf: Library
 Title: "HIV.IND.34 Logic"
-Description: "% of people living with HIV receiving ART with VL ≥1000 copies/mL who received a follow-up viral load test within three months"
+Description: "% of people living with HIV receiving ART with VL >=1000 copies/mL who received a follow-up viral load test within three months"
 Usage: #definition
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary"

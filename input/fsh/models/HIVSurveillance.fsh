@@ -1,11 +1,11 @@
 Invariant:    HIV-Surveillance-1
-Description:  "Date ≤ Current Date"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "Date <= Current Date"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-Surveillance-2
-Description:  "DateTime ≤ Current DateTime"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "DateTime <= Current DateTime"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVSurveillance

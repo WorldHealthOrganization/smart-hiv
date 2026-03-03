@@ -1,81 +1,81 @@
 Invariant:    HIV-D-1
 Description:  "'Date enrolled in HIV care' is NOT NULL"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-2
 Description:  "'HCV treatment completion date' after 'HCV treatment start date'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-3
 Description:  "'Viral load test result' has no values for the client"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-4
-Description:  "0 ≤ 'Number of live births' ≤ ('Number of previous pregnancies' - 'Number of miscarriages and/or abortions')"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0 <= 'Number of live births' <= ('Number of previous pregnancies' - 'Number of miscarriages and/or abortions')"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-5
-Description:  "0 ≤ 'Number of miscarriages and/or abortions' ≤ 'Number of previous pregnancies'"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0 <= 'Number of miscarriages and/or abortions' <= 'Number of previous pregnancies'"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-6
-Description:  "1 ≤ 'Number of pregnancies (gravida)' ≤ 15"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "1 <= 'Number of pregnancies (gravida)' <= 15"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-7
-Description:  "30 kg ≤ 'Body weight' ≤ 180 kg"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "30 kg <= 'Body weight' <= 180 kg"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-8
-Description:  "60 mmHg ≤ 'Diastolic blood pressure' ≤ mmHg"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "60 mmHg <= 'Diastolic blood pressure' <= mmHg"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-9
-Description:  "60 mmHg ≤ 'Systolic blood pressure' ≤ 260 mmHg"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "60 mmHg <= 'Systolic blood pressure' <= 260 mmHg"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-10
 Description:  "Cannot select 'None' or 'Don't know' with any other option."
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-11
 Description:  "Cannot select with any other option"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-12
-Description:  "DateTime ≤ Current DateTime"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "DateTime <= Current DateTime"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-13
-Description:  "If 'Current ART regimen' ≠ 'ART regimen prescribed' (most recent), display a warning"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "If 'Current ART regimen' != 'ART regimen prescribed' (most recent), display a warning"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-14
 Description:  "Start date of most recent 'Current ART regimen'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-15
-Description:  "≥ 35 and ≤ 42"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  ">= 35 and <= 42"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-16
-Description:  "≥ 50 and ≤ 250"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  ">= 50 and <= 250"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVDCareTreatment
@@ -318,7 +318,7 @@ Description: "This tab describes the data that may be collected during care and 
   * ^code[+] = HIVConcepts#HIV.D.DE367
 * dateOfBaselineCd4CountTest 0..1 dateTime "Date of baseline CD4 count test" "Date and time when baseline CD4 count test was conducted"
   * ^code[+] = HIVConcepts#HIV.D.DE368
-* lateArtInitiation 0..1 boolean "Late ART initiation" "Client had late ART initiation. That is, the client's first CD4 count from baseline CD4 test performed (such as at HIV diagnosis) was a count of <200 cells/mm3"
+* lateArtInitiation 0..1 boolean "Late ART initiation" "Client had late ART initiation. That is, the client's first CD4 count from baseline CD4 test performed (such as at HIV diagnosis) was a count of less than 200 cells/mm3"
   * ^code[+] = HIVConcepts#HIV.D.DE369
 * reasonsForDelayedArtInitiation 0..* Coding "Reasons for delayed ART initiation" "Reason why ART was not initiated at diagnosis or within 7 days of diagnosis"
   * ^code[+] = HIVConcepts#HIV.D.DE370
@@ -592,7 +592,7 @@ Description: "This tab describes the data that may be collected during care and 
 * reasonMalariaProphylaxisNotProvided from HIV.D.DE646
 * otherReasonNotProvidedSpecify 0..1 string "Other reason not provided (specify)" "Other reason why the prophylaxis was not provided"
   * ^code[+] = HIVConcepts#HIV.D.DE651
-* moreThan28DaysSinceLastMissedAppointment 0..1 boolean ">28 days since last missed appointment" "More than 28 days have passed since client's last missed appointment"
+* moreThan28DaysSinceLastMissedAppointment 0..1 boolean "More than 28 days since last missed appointment" "More than 28 days have passed since client's last missed appointment"
   * ^code[+] = HIVConcepts#HIV.D.DE652
 * aidsRelatedDeath 0..1 boolean "AIDS-related death" "Death of client was AIDS-related"
   * ^code[+] = HIVConcepts#HIV.D.DE653

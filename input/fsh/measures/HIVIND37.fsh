@@ -30,7 +30,7 @@ Title: "HIV.IND.37 Viral suppression at labour and delivery"
     * criteria.expression = "Denominator"
   * population[numerator]
     * id = "HIV.IND.37.NUM"
-    * description = "Number of HIV-positive pregnant women on ART during pregnancy and delivering at a facility during the reporting period who were virally suppressed (<1000 copies/mL) at delivery"
+    * description = "Number of HIV-positive pregnant women on ART during pregnancy and delivering at a facility during the reporting period who were virally suppressed (less than 1000 copies/mL) at delivery"
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"

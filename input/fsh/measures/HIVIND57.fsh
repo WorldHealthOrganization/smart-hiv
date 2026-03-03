@@ -30,7 +30,7 @@ Title: "HIV.IND.57 Viral suppression among people living with HIV engaged in DSD
     * criteria.expression = "Denominator"
   * population[numerator]
     * id = "HIV.IND.57.NUM"
-    * description = "Number of people enrolled in a DSD ART model with at least one routine viral load test during the reporting period who have virological suppression (<1000 copies/mL) at 6 months after ART initiation and yearly thereafter (that is, at 24, 36, 48 and 60 months, etc. after ART initiation)."
+    * description = "Number of people enrolled in a DSD ART model with at least one routine viral load test during the reporting period who have virological suppression (less than 1000 copies/mL) at 6 months after ART initiation and yearly thereafter (that is, at 24, 36, 48 and 60 months, etc. after ART initiation)."
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"

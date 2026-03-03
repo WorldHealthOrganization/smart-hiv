@@ -30,7 +30,7 @@ Title: "HIV.IND.29 People living with HIV on ART who have suppressed viral load"
     * criteria.expression = "Denominator"
   * population[numerator]
     * id = "HIV.IND.29.NUM"
-    * description = "Number of people living with HIV on ART for at least six months and with at least one routine VL test result who have virological suppression (<1000 copies/mL) during the reporting period."
+    * description = "Number of people living with HIV on ART for at least six months and with at least one routine VL test result who have virological suppression (less than 1000 copies/mL) during the reporting period."
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"

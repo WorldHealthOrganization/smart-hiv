@@ -1,141 +1,141 @@
 Invariant:    HIV-E-1
 Description:  "'Date of birth' OR 'Date of birth unknown' OR 'Estimated age' should be entered."
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-2
-Description:  "'Date of death infant'' ≤ Date in which data is entered"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "'Date of death infant'' <= Date in which data is entered"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-3
-Description:  "'Delivery date' ≤ Date in which data is entered"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "'Delivery date' <= Date in which data is entered"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-4
-Description:  "'Infant HIV status' ≠ 'HIV-positive' and 'Infant HIV status' ≠ 'HIV-negative'"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "'Infant HIV status' != 'HIV-positive' and 'Infant HIV status' != 'HIV-negative'"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-5
 Description:  "'Infant HIV status'='HIV-negative'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-6
 Description:  "'Infant HIV status'='HIV-positive'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-7
-Description:  "'Infant's co-trimoxazole prophylaxis start date' - 'Infant date of birth' ≤ 24 months"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "'Infant's co-trimoxazole prophylaxis start date' - 'Infant date of birth' <= 24 months"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-8
 Description:  "'Maternal HIV status'='HIV-positive'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-9
-Description:  "0 kg > 'Birth weight' ≥ 10kg"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0 kg > 'Birth weight' >= 10kg"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-10
-Description:  "0 kg > 'Infant weight' ≥ 20 kg"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0 kg > 'Infant weight' >= 20 kg"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-11
-Description:  "0 ≤ 'Number of caesarian sections' ≤ ''Parity'"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0 <= 'Number of caesarian sections' <= ''Parity'"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-12
-Description:  "0 ≤ 'Number of live births' ≤ ('Number of previous pregnancies' - 'Number of miscarriages and/or abortions')"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0 <= 'Number of live births' <= ('Number of previous pregnancies' - 'Number of miscarriages and/or abortions')"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-13
-Description:  "0 ≤ 'Number of miscarriages and/or abortions' ≤ 'Number of previous pregnancies'"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0 <= 'Number of miscarriages and/or abortions' <= 'Number of previous pregnancies'"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-14
-Description:  "0 ≤ 'Number of stillbirths' ≤ ('Number of previous pregnancies' - 'Number of miscarriages and/or abortions' - 'Number of live births')"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0 <= 'Number of stillbirths' <= ('Number of previous pregnancies' - 'Number of miscarriages and/or abortions' - 'Number of live births')"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-15
-Description:  "1 ≤ 'Number of pregnancies (gravida)' ≤ 15"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "1 <= 'Number of pregnancies (gravida)' <= 15"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-16
-Description:  "20 cm ≥ 'Infant height' ≥ 100 cm"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "20 cm >= 'Infant height' >= 100 cm"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-17
-Description:  "4 weeks ≤ 'Gestational age' ≤ 40 weeks"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "4 weeks <= 'Gestational age' <= 40 weeks"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-18
 Description:  "Calculated from 'Birth weight'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-19
-Description:  "Date of death' ≤ Date in which data is entered"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "Date of death' <= Date in which data is entered"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-20
-Description:  "Date of miscarriage/abortion' ≤ Date in which data is entered"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "Date of miscarriage/abortion' <= Date in which data is entered"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-21
-Description:  "Date ≤ Current Date"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "Date <= Current Date"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-22
-Description:  "DateTime ≤ Current DateTime"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "DateTime <= Current DateTime"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-23
 Description:  "If 'Date of birth unknown' = True, 'Estimated age' is required"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-24
 Description:  "If 'Key population member type' is NOT NULL"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-25
 Description:  "Include if Pregnant = True"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-26
 Description:  "Minimum and maximum number of characters based on local policy"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-27
 Description:  "Only letters and special characters (period, dash) allowed"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-E-28
 Description:  "Only letters and special characters (period, dash) allowed."
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVEPMTCT
@@ -213,7 +213,7 @@ Description: "This tab describes the data that are collected relevant to HIV car
   * ^code[+] = HIVConcepts#HIV.E.DE59
 * gestationalAgeAtBirth 0..1 integer "Gestational age at birth" "Best estimate of gestational age in completed weeks when infant was born (an indication of prematurity, preterm and extreme preterm)"
   * ^code[+] = HIVConcepts#HIV.E.DE60
-* smallForGestationalAgeSga 0..1 boolean "Small for gestational age (SGA)" "Whether the infant was small for gestational age (SGA) at birth (<10th percentile)"
+* smallForGestationalAgeSga 0..1 boolean "Small for gestational age (SGA)" "Whether the infant was small for gestational age (SGA) at birth (less than 10th percentile)"
   * ^code[+] = HIVConcepts#HIV.E.DE61
 * pretermBirthStatus 0..1 Coding "Preterm birth status" "The woman gave birth when the gestational age is less than 37 weeks"
   * ^code[+] = HIVConcepts#HIV.E.DE62

@@ -1,16 +1,16 @@
 Invariant:    HIV-C-1
-Description:  "Date ≤ Current Date"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "Date <= Current Date"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-C-2
 Description:  "True if 'Gender'='Female'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-C-3
 Description:  "True if 'Gender'='Male'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVCPrEPvisit

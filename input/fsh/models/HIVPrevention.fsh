@@ -1,6 +1,6 @@
 Invariant:    HIV-Prevention-1
-Description:  "Date ≤ Current Date"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "Date <= Current Date"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVPrevention

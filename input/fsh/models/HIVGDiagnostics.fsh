@@ -1,11 +1,11 @@
 Invariant:    HIV-G-1
-Description:  "Date ≤ Current Date"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "Date <= Current Date"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-G-2
-Description:  "DateTime ≤ Current DateTime"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "DateTime <= Current DateTime"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVGDiagnostics
@@ -26,7 +26,7 @@ Description: "This tab describes the data that are collected during the workflow
   * ^code[+] = HIVConcepts#HIV.G.DE3
 * dateOfBaselineCd4CountSampleCollection 0..1 date "Date of baseline CD4 count sample collection" "Date and time when baseline CD4 count test sample was collected"
   * ^code[+] = HIVConcepts#HIV.G.DE4
-* lateArtInitiation 0..1 boolean "Late ART initiation" "The client's first CD4 count from baseline CD4 test performed (such as at HIV diagnosis) was a count of <200 cells/mm3"
+* lateArtInitiation 0..1 boolean "Late ART initiation" "The client's first CD4 count from baseline CD4 test performed (such as at HIV diagnosis) was a count of less than 200 cells/mm3"
   * ^code[+] = HIVConcepts#HIV.G.DE5
 * dateOfCd4SampleCollection 0..1 date "Date of CD4 sample collection" "Date sample to be used for CD4 count was collected"
   * ^code[+] = HIVConcepts#HIV.G.DE6
