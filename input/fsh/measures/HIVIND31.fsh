@@ -4,7 +4,7 @@ Title: "HIV.IND.31 Late ART initiation"
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure"
 * meta.profile[+] = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablemeasure"
 * extension[http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis].valueCode = #boolean
-* description = "% of people living with HIV who initiate ART with a CD4 count of <200 cells/mm3"
+* description = "% of people living with HIV who initiate ART with a CD4 count of less than 200 cells/mm3"
 * url = "http://smart.who.int/hiv/Measure/HIVIND31"
 * status = #draft
 * experimental = true
@@ -30,7 +30,7 @@ Title: "HIV.IND.31 Late ART initiation"
     * criteria.expression = "Denominator"
   * population[numerator]
     * id = "HIV.IND.31.NUM"
-    * description = "Number of people living with HIV initiating ART during the reporting period with a baseline CD4 count of <200 cells/mm3"
+    * description = "Number of people living with HIV initiating ART during the reporting period with a baseline CD4 count of less than 200 cells/mm3"
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"

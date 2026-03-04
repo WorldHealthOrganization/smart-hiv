@@ -235,7 +235,7 @@ Usage: #definition
   * id = "HIV.D.DE652"
   * linkId = "HIV.D.DE652"
   * type = #boolean
-  * text = ">28 days since last missed appointment"
+  * text = "greater than 28 days since last missed appointment"
   * required = false
   * repeats = false
   * readOnly = false

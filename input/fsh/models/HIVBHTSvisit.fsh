@@ -1,41 +1,41 @@
 Invariant:    HIV-B-1
 Description:  "'HIV status' = 'HIV-positive'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-B-2
 Description:  "'HIV status'='HIV-positive'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-B-3
-Description:  "4 Weeks ≤ 'Gestational age' ≤ 40 Weeks"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "4 Weeks <= 'Gestational age' <= 40 Weeks"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-B-4
-Description:  "DateTime ≤ Current DateTime"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "DateTime <= Current DateTime"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-B-5
 Description:  "Facility list"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-B-6
 Description:  "Gender"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-B-7
 Description:  "Gender, Age"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-B-8
-Description:  "If 'Key populations' is not null, ≠ False"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "If 'Key populations' is not null, != False"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVBHTSvisit

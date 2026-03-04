@@ -30,7 +30,7 @@ Title: "HIV.IND.14 OAMT minimum dose"
     * criteria.expression = "Denominator"
   * population[numerator]
     * id = "HIV.IND.14.NUM"
-    * description = "Number of people, at a specified date, maintained on methadone or buprenorphine receiving recommended minimum maintenance dose (WHO guidance recommends doses of ≥60 mg of methadone or ≥8 mg of buprenorphine)"
+    * description = "Number of people, at a specified date, maintained on methadone or buprenorphine receiving recommended minimum maintenance dose (WHO guidance recommends doses of >=60 mg of methadone or >=8 mg of buprenorphine)"
     * code = $measure-population#numerator "Numerator"
     * criteria.language = #text/cql-identifier
     * criteria.expression = "Numerator"

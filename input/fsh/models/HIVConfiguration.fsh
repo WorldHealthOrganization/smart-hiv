@@ -1,46 +1,46 @@
 Invariant:    HIV-Configuration-1
-Description:  "0% ≤ 'Population incidence of HIV in the absence of PrEP' ≤ 100%"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0% <= 'Population incidence of HIV in the absence of PrEP' <= 100%"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-Configuration-2
-Description:  "0% ≤ 'Population prevalence of HIV' ≤ 100%"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0% <= 'Population prevalence of HIV' <= 100%"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-Configuration-3
-Description:  "0% ≤ 'Population prevalence of TB' ≤ 100%"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0% <= 'Population prevalence of TB' <= 100%"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-Configuration-4
-Description:  "0% ≤ 'Population prevalence of hepatitis B' ≤ 100%"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0% <= 'Population prevalence of hepatitis B' <= 100%"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-Configuration-5
-Description:  "0% ≤ 'Population prevalence of hepatitis C' ≤ 100%"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0% <= 'Population prevalence of hepatitis C' <= 100%"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-Configuration-6
-Description:  "0% ≤ 'Population prevalence of soil-transmitted helminth infection' ≤ 100%"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0% <= 'Population prevalence of soil-transmitted helminth infection' <= 100%"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-Configuration-7
-Description:  "0% ≤ 'Population prevalence of syphilis' ≤ 100%"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0% <= 'Population prevalence of syphilis' <= 100%"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-Configuration-8
-Description:  "0% ≤ 'Prevalence of pretreatment NNRTI drug resistance' ≤ 100%"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "0% <= 'Prevalence of pretreatment NNRTI drug resistance' <= 100%"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-Configuration-9
 Description:  "Specific format based on local policy"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVConfiguration

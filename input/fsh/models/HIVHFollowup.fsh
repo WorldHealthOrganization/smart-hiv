@@ -1,11 +1,11 @@
 Invariant:    HIV-H-1
 Description:  "Not selectable with 'Did not initiate ART'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-H-2
 Description:  "Not selectable with 'Inconclusive HIV status'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVHFollowup

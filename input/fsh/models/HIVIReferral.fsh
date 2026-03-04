@@ -1,6 +1,6 @@
 Invariant:    HIV-I-1
 Description:  "Existing facility"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVIReferral

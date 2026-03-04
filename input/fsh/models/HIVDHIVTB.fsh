@@ -1,11 +1,11 @@
 Invariant:    HIV-D-17
-Description:  "DateTime ≤ Current DateTime"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "DateTime <= Current DateTime"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-D-18
 Description:  "Required if 'TB diagnosis result'='Diagnosed TB'"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVDHIVTB

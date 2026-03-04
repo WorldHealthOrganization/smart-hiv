@@ -1,56 +1,56 @@
 Invariant:    HIV-A-1
 Description:  "'Date of birth' OR 'Date of birth unknown' OR 'Estimated age' should be entered"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-A-2
 Description:  "Can be a drop-down list of input options"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-A-3
 Description:  "Can be based on the structure and format of addresses in the country"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-A-4
-Description:  "DateTime ≤ Current DateTime"
-Expression:   "<NOT-IMPLEMENTED>"
+Description:  "DateTime <= Current DateTime"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-A-5
 Description:  "If 'Date of birth unknown' = True, 'Estimated age' is required"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-A-6
 Description:  "List of countries"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-A-7
 Description:  "Minimum and maximum number of characters based on country"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-A-8
 Description:  "Minimum and maximum number of characters based on local policy"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-A-9
 Description:  "Minimum and maximum number of characters, based on local policy"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-A-10
 Description:  "Must be appropriate email format with '@' sign"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Invariant:    HIV-A-11
 Description:  "Only letters and special characters (period, dash) allowed"
-Expression:   "<NOT-IMPLEMENTED>"
+Expression:   "'NOT IMPLEMENTED'"
 Severity:     #error
 
 Logical: HIVARegistration
