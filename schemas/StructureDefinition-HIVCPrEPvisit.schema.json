@@ -1,0 +1,1598 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/base/StructureDefinition-HIVCPrEPvisit.schema.json",
+  "title": "HIV.C PrEP visit",
+  "description": "This tab describes the data that may be collected during the pre-exposure prophylaxis (PrEP) or post-exposure prophylaxis (PEP) workflow (HIV.C)",
+  "type": "object",
+  "properties": {
+    "resourceType": {
+      "type": "string",
+      "const": "HIVCPrEPvisit",
+      "description": "Resource type identifier for HIVCPrEPvisit logical model"
+    },
+    "@context": {
+      "description": "JSON-LD context for this logical model with ValueSet vocabularies",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uri",
+          "description": "URI reference to external JSON-LD context"
+        },
+        {
+          "type": "object",
+          "description": "Inline JSON-LD context",
+          "properties": {
+            "@version": {
+              "type": "number",
+              "const": 1.1
+            },
+            "fhir": {
+              "type": "string",
+              "const": "http://hl7.org/fhir/"
+            }
+          },
+          "additionalProperties": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        {
+          "type": "array",
+          "description": "Array of JSON-LD context objects/URIs",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "object"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "JSON-LD type identifier for HIVCPrEPvisit logical model",
+      "examples": [
+        "LogicalModel-HIVCPrEPvisit"
+      ]
+    },
+    "reasonForPrepVisit": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE1",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE1 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE1.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE1"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE1"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Client's reason for the prevention visit"
+    },
+    "threeMonthPrepVisit": {
+      "type": "boolean",
+      "description": "Client is visiting for the recommended 3-month pre-exposure prophylaxis (PrEP) visit"
+    },
+    "contactWithAndSuspectedExposureToHiv": {
+      "type": "boolean",
+      "description": "The client had suspected or known exposure to HIV"
+    },
+    "dateTimeOfSuspectedExposureToHiv": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the suspect exposure to HIV took place"
+    },
+    "currentlyOnPrep": {
+      "type": "boolean",
+      "description": "The client is currently taking PrEP. Oral pre-exposure prophylaxis (PrEP) of HIV is the use of ARV drugs by people who are not infected with HIV to block the acquisition of HIV."
+    },
+    "prepDosingType": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE11",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE11 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE11.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE11"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE11"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Way in which pre-exposure prophylaxis (PrEP) is taken (daily or event-driven)"
+    },
+    "otherPrepDosingTypeSpecify": {
+      "type": "string",
+      "description": "Other PrEP dosing type (specify)"
+    },
+    "usedEventDrivenPrepForAtRiskExposuresOverThePast3Months": {
+      "type": "boolean",
+      "description": "Client reports taking ED-PrEP for at risk exposures over a 3-month period"
+    },
+    "currentPrepRegimen": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE17",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE17 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE17.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE17"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE17"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "HIV pre-exposure prophylaxis (PrEP) regimen"
+    },
+    "experienceWithPrep": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE24",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE24 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE24.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE24"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE24"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "The client's experience in taking PrEP"
+    },
+    "prepStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "The date on which the client started or restarted pre-exposure prophylaxis (PrEP)"
+    },
+    "stoppedPrep": {
+      "type": "boolean",
+      "description": "Client stopped taking pre-exposure prophylaxis (PrEP)"
+    },
+    "datePrepStopped": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client stopped taking pre-exposure prophylaxis (PrEP)"
+    },
+    "pepHistory": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE31",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE31 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE31.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE31"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE31"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "The client's history in taking post-exposure prophylaxis (PEP) for HIV prevention"
+    },
+    "datesOfPastPepUse": {
+      "type": "string",
+      "format": "date",
+      "description": "Dates when the client previously used post-exposure prophylaxis (PEP)"
+    },
+    "dateClientCompletesPepCourse": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client completes PEP course"
+    },
+    "signsOfSubstantialRiskOfHivInfection": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE36",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE36 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE36.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE36"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE36"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE36. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "minItems": 1,
+      "description": "Signs the client is at a substantial risk of HIV infection"
+    },
+    "pregnancyIntentionInSerodiscordantPartnerships": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE41",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE41 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE41.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE41"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE41"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Client's intention or desire in the next year to either become pregnant or prevent a future pregnancy (in serodiscordant partnerships)"
+    },
+    "acuteHivInfectionSymptoms": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE46",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE46 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE46.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE46"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE46"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE46. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "Symptoms that could suggest an acute HIV infection"
+    },
+    "sexPartnerHivTreatmentStatus": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE55",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE55 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE55.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE55"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE55"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE55. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "Treatment adherence of client's sex partner for partners that are HIV-positive"
+    },
+    "suitableForPrep": {
+      "type": "boolean",
+      "description": "The client is suitable for PrEP"
+    },
+    "offeredPrep": {
+      "type": "boolean",
+      "description": "After being evaluated as suitable for PrEP, the client was offered PrEP"
+    },
+    "screeningsAndDiagnosticsForPrepUsers": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE63",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE63 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE63.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE63"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE63"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE63. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "Listing of tests for clients on or starting pre-exposure prophylaxis (PrEP) that may be recommended or should be considered"
+    },
+    "serumCreatinineTestDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Test serum creatinine to identify pre-existing renal disease (estimated creatinine clearance less than 60 ml/min)"
+    },
+    "serumCreatinineTestResult": {
+      "type": "integer",
+      "description": "Test serum creatinine to identify pre-existing renal disease (estimated creatinine clearance less than 60 ml/min)."
+    },
+    "dateMedicationsDispensed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the client was dispensed medications"
+    },
+    "dateMedicationsPrescribed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the client was prescribed medications"
+    },
+    "medicationsPrescribed": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE75",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE75 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE75.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE75"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE75"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Medications the client was prescribed"
+    },
+    "otherMedicationsPrescribed": {
+      "type": "string",
+      "description": "Client was prescribed other medications (specify)"
+    },
+    "prepProductPrescribed": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE80",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE80 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE80.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE80"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE80"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "PrEP product that the client was prescribed"
+    },
+    "otherPrepProductPrescribed": {
+      "type": "string",
+      "description": "Client was prescribed other PrEP product (specify)"
+    },
+    "datePrepPrescribed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client was prescribed PrEP, including initial prescription and repeats"
+    },
+    "datePrepDispensed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client was dispensed PrEP"
+    },
+    "volumeOfPrepProductPrescribedDispensed": {
+      "type": "integer",
+      "description": "Volume of PrEP product the client was prescribed or dispensed (for example, number of pills, number of devices)"
+    },
+    "datePepPrescribed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the client was prescribed PEP"
+    },
+    "datePepCourseCompletion": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client completes PEP course"
+    },
+    "preferredPepBackboneRegimen": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE91",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE91 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE91.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE91"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE91"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Preferred backbone regimen for PEP"
+    },
+    "alternativePepBackboneRegimen": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE95",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE95 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE95.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE95"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE95"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE95. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "Alternative backbone regimen for PEP"
+    },
+    "preferredThirdPepDrug": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE99",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE99 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE99.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE99"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE99"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE99. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "Preferred third drug for PEP"
+    },
+    "alternativeThirdPepDrug": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE101",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE101 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE101.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE101"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE101"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE101. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "Alternative third drug for PEP"
+    },
+    "estimatedCreatinineClearance": {
+      "type": "integer",
+      "description": "Estimated creatinine clearance of the client returned from lab in mL/min"
+    },
+    "sexFactorForEstimatingCreatinineClearance": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE107",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE107 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE107.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE107"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE107"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Value used for gender for calculating creatinine clearance if required. For transgender populations, the sex at birth is used in the Cockcroft-Gault equation if the person is not using hormone therapy; among transgender populations using hormone therapy for more than three months, the current gender can be used."
+    },
+    "estimatedCreatinineClearanceCockcroftGaultEquation": {
+      "type": "integer",
+      "description": "If the laboratory does not have the capacity to estimate creatinine clearance, the provider can use the Cockcroft–Gault equation to calculate estimated creatinine clearance based on measured serum creatinine, the client’s sex at birth, age and estimated lean body weight."
+    },
+    "dateOfSampleCollection": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date when the specimen was collected"
+    },
+    "contraindicationsToPrepUsage": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE112",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE112 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE112.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE112"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE112"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE112. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "Listing of contraindications to pre-exposure prophylaxis (PrEP)"
+    },
+    "otherAllergyOrContraindicationToAMedicineInThePrepRegimenSpecify": {
+      "type": "string",
+      "description": "Client has another allergy or contraindication to a medicine in the pre-exposure prophylaxis (PrEP) regimen (specify)"
+    },
+    "prescribedPrepAtInitialVisit": {
+      "type": "boolean",
+      "description": "Client was prescribed pre-exposure prophylaxis (PrEP) on a first visit"
+    },
+    "numberOfDaysPrescribed": {
+      "type": "integer",
+      "description": "Days of medication client has been prescribed"
+    },
+    "prepRegimenPrescribed": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE122",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE122 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE122.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE122"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE122"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE122. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "HIV pre-exposure prophylaxis (PrEP) regimen prescribed"
+    },
+    "adherenceCounsellingProvided": {
+      "type": "boolean",
+      "description": "Whether adherence counselling was provided"
+    },
+    "dateTimeOfFollowUpAppointment": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date the client is to return for monitoring, re-supply, or any other reason"
+    },
+    "typeOfFollowUpAppointment": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE125",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE125 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE125.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE125"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE125"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Type of follow-up appointment for testing services"
+    },
+    "otherTypeOfFollowUpAppointment": {
+      "type": "string",
+      "description": "Other reason for the follow-up appointment (specify)"
+    },
+    "linkedToEnrolmentInCareAndArtInitiation": {
+      "type": "boolean",
+      "description": "Linkage made from HIV testing to enrolment in care following an HIV diagnosis"
+    },
+    "preventionServicesOfferedAndReferrals": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE131",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE131 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE131.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE131"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE131"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE131. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "Offer or refer to prevention services"
+    },
+    "dateProvidedCondoms": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client was provided with condoms"
+    },
+    "condomsDistributed": {
+      "type": "integer",
+      "description": "Number of condoms given to the client, if any were distributed"
+    },
+    "condomType": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE138",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE138 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE138.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE138"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE138"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Type of condom provided to client"
+    },
+    "hivSelfTestKitsAccepted": {
+      "type": "boolean",
+      "description": "Whether any HIV self-test kits were given to the client"
+    },
+    "numberOfHivSelfTestKitsDistributed": {
+      "type": "integer",
+      "description": "Number of HIV self-test kits distributed to the client"
+    },
+    "hivSelfTestDistributedForUseBy": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.C.DE143",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.C.DE143 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.C.DE143.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.C.DE143"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.C.DE143"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Whom the client plans to give the HIV self-test kit (self, sexual partner, social contact, etc.)"
+    },
+    "sexualAndReproductiveHealthIntegratedServices": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE149",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE149 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE149.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE149"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE149"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE149. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "Offer or refer to sexual and reproductive health services"
+    },
+    "offerOtherClinicalServices": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE157",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE157 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE157.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE157"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE157"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE157. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "Other clinical services offered or referrals given to the client"
+    },
+    "otherSupportServices": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.C.DE164",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.C.DE164 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.C.DE164.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.C.DE164"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.C.DE164"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.C.DE164. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "Offer or refer for other support services"
+    }
+  },
+  "required": [
+    "resourceType",
+    "reasonForPrepVisit",
+    "signsOfSubstantialRiskOfHivInfection",
+    "pregnancyIntentionInSerodiscordantPartnerships"
+  ],
+  "resourceDefinition": "http://smart.who.int/hiv/StructureDefinition/HIVCPrEPvisit",
+  "fhir:parent": "http://hl7.org/fhir/StructureDefinition/Base",
+  "jsonld:valuesets": [
+    "HIV.C.DE95",
+    "HIV.C.DE157",
+    "HIV.C.DE101",
+    "HIV.C.DE75",
+    "HIV.C.DE1",
+    "HIV.C.DE46",
+    "HIV.C.DE11",
+    "HIV.C.DE24",
+    "HIV.C.DE55",
+    "HIV.C.DE125",
+    "HIV.C.DE131",
+    "HIV.C.DE122",
+    "HIV.C.DE41",
+    "HIV.C.DE149",
+    "HIV.C.DE112",
+    "HIV.C.DE36",
+    "HIV.C.DE80",
+    "HIV.C.DE143",
+    "HIV.C.DE107",
+    "HIV.C.DE63",
+    "HIV.C.DE91",
+    "HIV.C.DE17",
+    "HIV.C.DE99",
+    "HIV.C.DE138",
+    "HIV.C.DE31",
+    "HIV.C.DE164"
+  ],
+  "jsonld:contextTemplate": {
+    "@version": 1.1,
+    "fhir": "http://hl7.org/fhir/",
+    "HIV.C.DE95": "http://smart.who.int/base/ValueSet-HIV.C.DE95.jsonld",
+    "HIV.C.DE157": "http://smart.who.int/base/ValueSet-HIV.C.DE157.jsonld",
+    "HIV.C.DE101": "http://smart.who.int/base/ValueSet-HIV.C.DE101.jsonld",
+    "HIV.C.DE75": "http://smart.who.int/base/ValueSet-HIV.C.DE75.jsonld",
+    "HIV.C.DE1": "http://smart.who.int/base/ValueSet-HIV.C.DE1.jsonld",
+    "HIV.C.DE46": "http://smart.who.int/base/ValueSet-HIV.C.DE46.jsonld",
+    "HIV.C.DE11": "http://smart.who.int/base/ValueSet-HIV.C.DE11.jsonld",
+    "HIV.C.DE24": "http://smart.who.int/base/ValueSet-HIV.C.DE24.jsonld",
+    "HIV.C.DE55": "http://smart.who.int/base/ValueSet-HIV.C.DE55.jsonld",
+    "HIV.C.DE125": "http://smart.who.int/base/ValueSet-HIV.C.DE125.jsonld",
+    "HIV.C.DE131": "http://smart.who.int/base/ValueSet-HIV.C.DE131.jsonld",
+    "HIV.C.DE122": "http://smart.who.int/base/ValueSet-HIV.C.DE122.jsonld",
+    "HIV.C.DE41": "http://smart.who.int/base/ValueSet-HIV.C.DE41.jsonld",
+    "HIV.C.DE149": "http://smart.who.int/base/ValueSet-HIV.C.DE149.jsonld",
+    "HIV.C.DE112": "http://smart.who.int/base/ValueSet-HIV.C.DE112.jsonld",
+    "HIV.C.DE36": "http://smart.who.int/base/ValueSet-HIV.C.DE36.jsonld",
+    "HIV.C.DE80": "http://smart.who.int/base/ValueSet-HIV.C.DE80.jsonld",
+    "HIV.C.DE143": "http://smart.who.int/base/ValueSet-HIV.C.DE143.jsonld",
+    "HIV.C.DE107": "http://smart.who.int/base/ValueSet-HIV.C.DE107.jsonld",
+    "HIV.C.DE63": "http://smart.who.int/base/ValueSet-HIV.C.DE63.jsonld",
+    "HIV.C.DE91": "http://smart.who.int/base/ValueSet-HIV.C.DE91.jsonld",
+    "HIV.C.DE17": "http://smart.who.int/base/ValueSet-HIV.C.DE17.jsonld",
+    "HIV.C.DE99": "http://smart.who.int/base/ValueSet-HIV.C.DE99.jsonld",
+    "HIV.C.DE138": "http://smart.who.int/base/ValueSet-HIV.C.DE138.jsonld",
+    "HIV.C.DE31": "http://smart.who.int/base/ValueSet-HIV.C.DE31.jsonld",
+    "HIV.C.DE164": "http://smart.who.int/base/ValueSet-HIV.C.DE164.jsonld"
+  }
+}

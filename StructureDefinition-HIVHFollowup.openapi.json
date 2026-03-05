@@ -1,0 +1,296 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "HIV.H Follow-up API",
+    "description": "This tab describes the data that are collected during the follow-up and contacting clients workflow (HIV.H)",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/StructureDefinition-HIVHFollowup.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the Logical Model StructureDefinition-HIVHFollowup",
+        "description": "This endpoint serves the JSON Schema definition for the Logical Model StructureDefinition-HIVHFollowup.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for StructureDefinition-HIVHFollowup",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./StructureDefinition-HIVHFollowup.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StructureDefinition-HIVHFollowup": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/base/StructureDefinition-HIVHFollowup.schema.json",
+        "title": "HIV.H Follow-up",
+        "description": "This tab describes the data that are collected during the follow-up and contacting clients workflow (HIV.H)",
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string",
+            "const": "HIVHFollowup",
+            "description": "Resource type identifier for HIVHFollowup logical model"
+          },
+          "@context": {
+            "description": "JSON-LD context for this logical model with ValueSet vocabularies",
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri",
+                "description": "URI reference to external JSON-LD context"
+              },
+              {
+                "type": "object",
+                "description": "Inline JSON-LD context",
+                "properties": {
+                  "@version": {
+                    "type": "number",
+                    "const": 1.1
+                  },
+                  "fhir": {
+                    "type": "string",
+                    "const": "http://hl7.org/fhir/"
+                  }
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              {
+                "type": "array",
+                "description": "Array of JSON-LD context objects/URIs",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    {
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "@type": {
+            "type": "string",
+            "description": "JSON-LD type identifier for HIVHFollowup logical model",
+            "examples": [
+              "LogicalModel-HIVHFollowup"
+            ]
+          },
+          "reasonForFollowUp": {
+            "type": "array",
+            "items": {
+              "$ref": "./ValueSet-HIV.H.DE1.schema.json",
+              "description": "Coding-shaped {system, code} object from ValueSet HIV.H.DE1"
+            },
+            "minItems": 1,
+            "description": "The reason why the client is being followed up"
+          },
+          "otherFollowUpReasonSpecify": {
+            "type": "string",
+            "description": "Client was followed up for another reason (specify)"
+          },
+          "clientContactAttempted": {
+            "type": "boolean",
+            "description": "An attempt to locate the client was made"
+          },
+          "dateOfContactAttempt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date of attempt to contact client"
+          },
+          "contactAttemptedBy": {
+            "type": "string",
+            "description": "Who attempted to reach out to the client"
+          },
+          "contactMethod": {
+            "$ref": "./ValueSet-HIV.H.DE13.schema.json",
+            "description": "Method used to try to reach out to the client"
+          },
+          "sourceOfInformation": {
+            "$ref": "./ValueSet-HIV.H.DE17.schema.json",
+            "description": "Source of information about the client"
+          },
+          "otherSourceOfInformationSpecify": {
+            "type": "string",
+            "description": "Information about the client's status was provided by someone else (specify)"
+          },
+          "outcomeFromOutreachAttempt": {
+            "$ref": "./ValueSet-HIV.H.DE23.schema.json",
+            "description": "Detailed outcome from the attempt to locate the client"
+          },
+          "movedFromCatchmentArea": {
+            "type": "boolean",
+            "description": "The client moved from the catchment area (may be reported from the community level)"
+          },
+          "dateClientMovedFromCatchmentArea": {
+            "type": "string",
+            "format": "date",
+            "description": "The date on which the client moved from the catchment area, if known"
+          },
+          "newCatchmentArea": {
+            "type": "string",
+            "description": "New catchment area where the client resides"
+          },
+          "partnerOrContactOfIndexCase": {
+            "type": "boolean",
+            "description": "The client was identified by an index case as a partner or contact"
+          },
+          "hivStatusOfPartnerOrContact": {
+            "$ref": "./ValueSet-HIV.H.DE34.schema.json",
+            "description": "HIV status of the partner or contact given by the index case"
+          },
+          "dateOfDeath": {
+            "type": "string",
+            "format": "date",
+            "description": "If deceased, the date that the client died"
+          },
+          "causeOfDeath": {
+            "type": "string",
+            "description": "Cause of death, if known"
+          },
+          "placeOfDeath": {
+            "type": "string",
+            "description": "Where the client died, if known"
+          },
+          "hivTreatmentOutcome": {
+            "$ref": "./ValueSet-HIV.H.DE41.schema.json",
+            "description": "The outcome for the client which is used for reporting retention/attrition."
+          },
+          "datePatientLostToFollowUp": {
+            "type": "string",
+            "format": "date",
+            "description": "Date patient was lost to follow-up (LTFU)"
+          },
+          "onArt": {
+            "type": "boolean",
+            "description": "Client is currently taking ART"
+          },
+          "dateHivTreatmentOutcomeChanged": {
+            "type": "string",
+            "format": "date",
+            "description": "The date on which the client's outcome (lost to follow-up, transferred out, death (documented), or refused (stopped) treatment) changed"
+          },
+          "transferConfirmed": {
+            "type": "boolean",
+            "description": "Select if transfer to another facility is confirmed"
+          },
+          "transferToFacility": {
+            "$ref": "./ValueSet-HIV.H.DE50.schema.json",
+            "description": "Name of health facility client was transferred to"
+          },
+          "dateOfTransferOut": {
+            "type": "string",
+            "format": "date",
+            "description": "The date the client transferred out of the facility to be provided with care at another facility"
+          },
+          "adherenceAssessment": {
+            "type": "boolean",
+            "description": "Whether client is adherent or not to ART regimen per national guidelines (immunological or virological monitoring)"
+          },
+          "reasonsForAdherenceProblem": {
+            "type": "array",
+            "items": {
+              "$ref": "./ValueSet-HIV.H.DE53.schema.json",
+              "description": "Coding-shaped {system, code} object from ValueSet HIV.H.DE53"
+            },
+            "description": "Reason why client is not adherent"
+          },
+          "otherReasonsForAdherenceProblem": {
+            "type": "string",
+            "description": "Client reported not being adherent because of other reason (specify)"
+          },
+          "dateArtStopped": {
+            "type": "string",
+            "format": "date",
+            "description": "Date on which client stopped ART"
+          },
+          "reasonArtStopped": {
+            "type": "array",
+            "items": {
+              "$ref": "./ValueSet-HIV.H.DE74.schema.json",
+              "description": "Coding-shaped {system, code} object from ValueSet HIV.H.DE74"
+            },
+            "description": "Reason why client intentionally stopped ART"
+          },
+          "otherReasonForStoppingArtSpecify": {
+            "type": "string",
+            "description": "Client stopped ART for other reason (specify)"
+          }
+        },
+        "required": [
+          "resourceType",
+          "reasonForFollowUp",
+          "dateOfContactAttempt",
+          "contactAttemptedBy",
+          "contactMethod",
+          "sourceOfInformation"
+        ],
+        "allOf": [
+          {
+            "$ref": "./StructureDefinition-FHIRSchemaBase.schema.json"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "resourceDefinition": {
+                "type": "string",
+                "format": "uri",
+                "const": "http://smart.who.int/hiv/StructureDefinition/HIVHFollowup"
+              },
+              "fhir:parent": {
+                "type": "string",
+                "const": "http://hl7.org/fhir/StructureDefinition/Base"
+              },
+              "jsonld:valuesets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "const": [
+                  "HIV.H.DE1",
+                  "HIV.H.DE13",
+                  "HIV.H.DE17",
+                  "HIV.H.DE23",
+                  "HIV.H.DE34",
+                  "HIV.H.DE41",
+                  "HIV.H.DE50",
+                  "HIV.H.DE53",
+                  "HIV.H.DE74"
+                ]
+              },
+              "jsonld:contextTemplate": {
+                "type": "object",
+                "const": {
+                  "@version": 1.1,
+                  "fhir": "http://hl7.org/fhir/",
+                  "HIV.H.DE53": "http://smart.who.int/base/ValueSet-HIV.H.DE53.jsonld",
+                  "HIV.H.DE1": "http://smart.who.int/base/ValueSet-HIV.H.DE1.jsonld",
+                  "HIV.H.DE50": "http://smart.who.int/base/ValueSet-HIV.H.DE50.jsonld",
+                  "HIV.H.DE23": "http://smart.who.int/base/ValueSet-HIV.H.DE23.jsonld",
+                  "HIV.H.DE34": "http://smart.who.int/base/ValueSet-HIV.H.DE34.jsonld",
+                  "HIV.H.DE17": "http://smart.who.int/base/ValueSet-HIV.H.DE17.jsonld",
+                  "HIV.H.DE13": "http://smart.who.int/base/ValueSet-HIV.H.DE13.jsonld",
+                  "HIV.H.DE41": "http://smart.who.int/base/ValueSet-HIV.H.DE41.jsonld",
+                  "HIV.H.DE74": "http://smart.who.int/base/ValueSet-HIV.H.DE74.jsonld"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

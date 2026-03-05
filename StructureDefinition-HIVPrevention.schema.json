@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/base/StructureDefinition-HIVPrevention.schema.json",
+  "title": "HIV.Prevention",
+  "description": "This tab describes the data that are collected during HIV prevention activities (not covered in the previous business processes)",
+  "type": "object",
+  "properties": {
+    "resourceType": {
+      "type": "string",
+      "const": "HIVPrevention",
+      "description": "Resource type identifier for HIVPrevention logical model"
+    },
+    "@context": {
+      "description": "JSON-LD context for this logical model with ValueSet vocabularies",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uri",
+          "description": "URI reference to external JSON-LD context"
+        },
+        {
+          "type": "object",
+          "description": "Inline JSON-LD context",
+          "properties": {
+            "@version": {
+              "type": "number",
+              "const": 1.1
+            },
+            "fhir": {
+              "type": "string",
+              "const": "http://hl7.org/fhir/"
+            }
+          },
+          "additionalProperties": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        {
+          "type": "array",
+          "description": "Array of JSON-LD context objects/URIs",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "object"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "JSON-LD type identifier for HIVPrevention logical model",
+      "examples": [
+        "LogicalModel-HIVPrevention"
+      ]
+    },
+    "atElevatedRiskForHivAcquisition": {
+      "type": "boolean",
+      "description": "Client is at elevated risk for HIV acquisition, defined according to country/programme context"
+    },
+    "hivPreventionIntervention": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.PRV.DE2.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.PRV.DE2"
+      },
+      "description": "HIV prevention intervention that client accessed"
+    },
+    "otherHivPreventionIntervention": {
+      "type": "string",
+      "description": "Client accessed other HIV prevention services (specify)"
+    },
+    "dateAccessedHivPreventionIntervention": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the client accessed HIV prevention intervention"
+    },
+    "hivStatusOfContact": {
+      "$ref": "./ValueSet-HIV.PRV.DE11.schema.json",
+      "description": "The HIV status of the client's contact"
+    },
+    "dateInjectingEquipmentProvided": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client was provided with injecting equipment"
+    },
+    "numberOfNeedlesSyringesProvided": {
+      "type": "integer",
+      "description": "Number of needles-syringes provided to client"
+    },
+    "dateOamtInitiated": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client initiated opioid agonist maintenance treatment (OAMT)"
+    },
+    "dateOamtDoseReceived": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client received opioid agonist maintenance treatment (OAMT) dose"
+    },
+    "dateOamtTakeAwayDosesDispensed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the client was dispensed opioid agonist maintenance treatment (OAMT) take-away dose(s)"
+    },
+    "currentlyOnOamt": {
+      "type": "boolean",
+      "description": "Client is currently on opioid agonist maintenance treatment (OAMT) at reporting date, defined according to country/program to account for medication dispensed and LTFU criterion"
+    },
+    "retainedOnOamt": {
+      "type": "boolean",
+      "description": "Client is retained on opioid agonist maintenance treatment (OAMT) at reporting date, defined according to country/program to account for medication dispensed and LTFU criterion"
+    },
+    "clientBeingInductedOnOamt": {
+      "type": "boolean",
+      "description": "Client is currently being inducted on opioid agonist maintenance treatment (OAMT), defined according to country/program"
+    },
+    "clientOnReducingDosesOfOamt": {
+      "type": "boolean",
+      "description": "Client is current on reducing doses of opioid agonist maintenance treatment (OAMT), defined according to country/program"
+    },
+    "dateFirstMaintenanceDoseReceived": {
+      "type": "string",
+      "format": "date",
+      "description": "First date on which client received maintenance dose"
+    },
+    "dateOfLossToFollowUpOrOamtStopped": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of loss to follow-up or opioid agonist maintenance treatment (OAMT) stopped"
+    },
+    "dateMedicationsDispensed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the client was dispensed medications"
+    },
+    "dateMedicationsPrescribed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the client was prescribed medications"
+    },
+    "numberOfDaysPrescribed": {
+      "type": "integer",
+      "description": "Days of medication client has been prescribed"
+    }
+  },
+  "required": [
+    "resourceType"
+  ],
+  "allOf": [
+    {
+      "$ref": "./StructureDefinition-FHIRSchemaBase.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "resourceDefinition": {
+          "type": "string",
+          "format": "uri",
+          "const": "http://smart.who.int/hiv/StructureDefinition/HIVPrevention"
+        },
+        "fhir:parent": {
+          "type": "string",
+          "const": "http://hl7.org/fhir/StructureDefinition/Base"
+        },
+        "jsonld:valuesets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "const": [
+            "HIV.PRV.DE11",
+            "HIV.PRV.DE2"
+          ]
+        },
+        "jsonld:contextTemplate": {
+          "type": "object",
+          "const": {
+            "@version": 1.1,
+            "fhir": "http://hl7.org/fhir/",
+            "HIV.PRV.DE2": "http://smart.who.int/base/ValueSet-HIV.PRV.DE2.jsonld",
+            "HIV.PRV.DE11": "http://smart.who.int/base/ValueSet-HIV.PRV.DE11.jsonld"
+          }
+        }
+      }
+    }
+  ]
+}

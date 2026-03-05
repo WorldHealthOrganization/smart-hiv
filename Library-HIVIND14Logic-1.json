@@ -1,0 +1,1244 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "Overloads",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "333",
+            "s" : [ {
+               "value" : [ "/**\n * Library: HIV.IND.14 Logic\n * Ref No: PRV.14\n * Short Name: OAMT minimum dose\n *\n * Definition: % of OAMT recipients receiving a maintenance dose greater than or equal to the recommended minimum dose\n *\n * Numerator: Number of people, at a specified date, maintained on methadone or buprenorphine receiving recommended minimum maintenance dose (WHO guidance recommends doses of ≥60 mg of methadone or ≥8 mg of buprenorphine*)\n * Numerator Calculation: COUNT of clients with (\"Medications prescribed\"='Methadone' AND \"Dose of medications prescribed\" GREATER THAN OR EQUAL TO 60mg) OR (\"Medications prescribed\"='Buprenorphine' AND \"Dose of medications prescribed\" GREATER THAN OR EQUAL TO 8mg) for a specified \"Reporting date\"\n * Numerator Exclusions: \"Client being inducted on OAMT\" OR \"Client on reducing doses of OAMT\"\n *\n * Denominator: Number of people receiving maintenance dose of methadone or buprenorphine at a specified date, excluding: a) individuals currently being inducted on OAMT and yet to reach the maintenance dose and b) individuals on reducing doses of OAMT.\n * Denominator Calculation: COUNT of clients with \"Medications prescribed\" IN 'Methadone', 'Buprenorphine' for a specified \"Reporting date\"\n * Denominator Exclusions: \"Client being inducted on OAMT\" OR \"Client on reducing doses of OAMT\"\n *\n * Disaggregations:\n * • Gender (female, male, other**) \n *  • Age (15–19, 20–24, 25–49, 50+ years) \n *  • Provider type (key population-led or community-led organization, public sector provider, other entities such as private for-profit and not-for-profit organizations, including faith-based, international, nongovernmental) \n *  • Setting: facility-based service (including hospitals, health clinics, general practice offices, etc.) or community-based service (including drop-in centres, community service delivery points, mobile clinics or vans, outreach teams, community support groups, etc.) \n *  • Cities and other administrative regions of epidemiologic importance\n *\n * Disaggregation Elements: Gender | Age\n *\n * Numerator and Denominator Elements:\n * Dose of medications prescribed \n *  Medications prescribed \n *  Reporting date\n *\n * Reference: Consolidated guidelines on person-centred HIV strategic information: strengthening routine data for impact. Geneva: World Health Organization; 2022\n * \n * Data Concepts:\n * HIV.A.DE17: Age | Calculated age (number of years) of the client based on date of birth\n * HIV.A.DE18: Gender* | Gender of the client*\n * HIV.A.DE19: Female | Client identifies as female\n * HIV.A.DE20: Male | Client identifies as male\n * HIV.A.DE21: Transgender male | Client identifies as transgender male\n * HIV.A.DE22: Transgender female | Client identifies as transgender female\n * HIV.A.DE23: Other | Additional category\n * HIV.C.DE75: Medications prescribed | Medications the client was prescribed\n * HIV.C.DE76: PrEP for HIV prevention | Client was prescribed pre-exposure prophylaxis (PrEP) for HIV prevention\n * HIV.C.DE77: PEP for HIV prevention | Client was prescribed post-exposure prophylaxis (PEP) for HIV prevention\n * HIV.C.DE78: Other | Client was prescribed other medications\n * HIV.D.DE457: Medications prescribed | Name or regimen code of all other medications prescribed during the visit\n * HIV.D.DE459: Dose of medications prescribed | Number of doses (quantity taken at a single point in time) of drugs prescribed/dispensed\n * HIV.Config.DE22: Reporting date | Reporting date, for surveys performed on a specific date\n *\n * Additional Context\n * - what it measures: Measures the proportion of OAMT recipients receiving the recommended minimum maintenance dose.\n * - rationale: Evidence demonstrates that maximum benefit from OAMT is gained when individuals receive at least the recommended minimum maintenance dose.\n * - method: Individual-level data obtained from programme records\n * \n * Suggested Scoring Method: proportion | http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm\n \n * Profiles: HivTreatmentMedicationRequest, HivOamtEpisodeOfCare\n */\n\n","library HIVIND14Logic" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "HIVIND14Logic",
+         "system" : "http://smart.who.int/hiv"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1",
+            "version" : "1.0.0"
+         }, {
+            "localId" : "206",
+            "locator" : "61:1-61:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "// Included Libraries\n","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "63:1-63:44",
+            "localIdentifier" : "HIC",
+            "path" : "http://smart.who.int/hiv/HIVCommon",
+            "version" : "0.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'0.0.1'"," called ","HIC" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "64:1-64:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://hl7.org/fhir/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "65:1-65:29",
+            "localIdentifier" : "WCom",
+            "path" : "http://smart.who.int/hiv/WHOCommon",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "WHOCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","WCom" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "67:1-67:39",
+            "localIdentifier" : "HIE",
+            "path" : "http://smart.who.int/hiv/HIVIndicatorElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVIndicatorElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","HIE" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "68:1-68:29",
+            "localIdentifier" : "HE",
+            "path" : "http://smart.who.int/hiv/HIVElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","HE" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "parameters" : {
+         "def" : [ {
+            "localId" : "218",
+            "locator" : "71:1-71:88",
+            "name" : "Measurement Period",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "218",
+                  "s" : [ {
+                     "value" : [ "// Indicator Definition\n","parameter ","\"Measurement Period\""," " ]
+                  }, {
+                     "r" : "230",
+                     "s" : [ {
+                        "value" : [ "Interval<" ]
+                     }, {
+                        "r" : "231",
+                        "s" : [ {
+                           "value" : [ "Date" ]
+                        } ]
+                     }, {
+                        "value" : [ ">" ]
+                     } ]
+                  }, {
+                     "value" : [ " default " ]
+                  }, {
+                     "r" : "229",
+                     "s" : [ {
+                        "r" : "223",
+                        "value" : [ "Interval[","@2023-01-01",", ","@2023-01-30","]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "default" : {
+               "localId" : "229",
+               "locator" : "71:55-71:88",
+               "lowClosed" : true,
+               "highClosed" : true,
+               "type" : "Interval",
+               "low" : {
+                  "localId" : "223",
+                  "locator" : "71:64-71:74",
+                  "type" : "Date",
+                  "signature" : [ ],
+                  "year" : {
+                     "localId" : "220",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "2023",
+                     "type" : "Literal"
+                  },
+                  "month" : {
+                     "localId" : "221",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  },
+                  "day" : {
+                     "localId" : "222",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  }
+               },
+               "high" : {
+                  "localId" : "228",
+                  "locator" : "71:77-71:87",
+                  "type" : "Date",
+                  "signature" : [ ],
+                  "year" : {
+                     "localId" : "225",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "2023",
+                     "type" : "Literal"
+                  },
+                  "month" : {
+                     "localId" : "226",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  },
+                  "day" : {
+                     "localId" : "227",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "30",
+                     "type" : "Literal"
+                  }
+               }
+            },
+            "parameterTypeSpecifier" : {
+               "localId" : "230",
+               "locator" : "71:32-71:45",
+               "type" : "IntervalTypeSpecifier",
+               "pointType" : {
+                  "localId" : "231",
+                  "locator" : "71:41-71:44",
+                  "name" : "{urn:hl7-org:elm-types:r1}Date",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "localId" : "236",
+            "locator" : "73:1-73:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "234",
+            "locator" : "73:1-73:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "235",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "233",
+                  "locator" : "73:1-73:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "239",
+            "locator" : "80:1-81:6",
+            "name" : "Initial Population",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "239",
+                  "s" : [ {
+                     "r" : "240",
+                     "value" : [ "/* Populations */\n\n/*\n *Initial Population\n */\n\n","define ","\"Initial Population\"",":\n  ","true" ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "240",
+               "locator" : "81:3-81:6",
+               "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+               "value" : "true",
+               "type" : "Literal"
+            }
+         }, {
+            "localId" : "243",
+            "locator" : "90:1-92:94",
+            "name" : "Numerator",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "243",
+                  "s" : [ {
+                     "value" : [ "/**\n * Numerator\n * \n * Definition: Number of people, at a specified date, maintained on methadone or buprenorphine receiving recommended minimum maintenance dose (WHO guidance recommends doses of ≥60 mg of methadone or ≥8 mg of buprenorphine*)\n * Calculation: COUNT of clients with (\"Medications prescribed\"='Methadone' AND \"Dose of medications prescribed\" GREATER THAN OR EQUAL TO 60mg) OR (\"Medications prescribed\"='Buprenorphine' AND \"Dose of medications prescribed\" GREATER THAN OR EQUAL TO 8mg) for a specified \"Reporting date\"\n */\n\n","define ","\"Numerator\"",":\n  " ]
+                  }, {
+                     "r" : "244",
+                     "s" : [ {
+                        "r" : "245",
+                        "s" : [ {
+                           "r" : "251",
+                           "s" : [ {
+                              "r" : "250",
+                              "s" : [ {
+                                 "value" : [ "First","(" ]
+                              }, {
+                                 "r" : "247",
+                                 "s" : [ {
+                                    "r" : "246",
+                                    "s" : [ {
+                                       "value" : [ "HIE" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "247",
+                                    "s" : [ {
+                                       "value" : [ "\"Methadone D.DE555\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ ")" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "251",
+                              "s" : [ {
+                                 "value" : [ "dailyDose","()" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " ",">="," " ]
+                        }, {
+                           "r" : "253",
+                           "s" : [ {
+                              "value" : [ "System",".","Quantity","{ " ]
+                           }, {
+                              "s" : [ {
+                                 "r" : "255",
+                                 "value" : [ "value",": ","60" ]
+                              } ]
+                           }, {
+                              "value" : [ ", " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "unit",": " ]
+                              }, {
+                                 "r" : "259",
+                                 "s" : [ {
+                                    "value" : [ "'mg'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " }" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n  or " ]
+                     }, {
+                        "r" : "263",
+                        "s" : [ {
+                           "r" : "269",
+                           "s" : [ {
+                              "r" : "268",
+                              "s" : [ {
+                                 "value" : [ "First","(" ]
+                              }, {
+                                 "r" : "265",
+                                 "s" : [ {
+                                    "r" : "264",
+                                    "s" : [ {
+                                       "value" : [ "HIE" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "265",
+                                    "s" : [ {
+                                       "value" : [ "\"Buprenorphine D.DE552\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ ")" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "269",
+                              "s" : [ {
+                                 "value" : [ "dailyDose","()" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " ",">="," " ]
+                        }, {
+                           "r" : "271",
+                           "s" : [ {
+                              "value" : [ "System",".","Quantity","{ " ]
+                           }, {
+                              "s" : [ {
+                                 "r" : "273",
+                                 "value" : [ "value",": ","8" ]
+                              } ]
+                           }, {
+                              "value" : [ ", " ]
+                           }, {
+                              "s" : [ {
+                                 "value" : [ "unit",": " ]
+                              }, {
+                                 "r" : "277",
+                                 "s" : [ {
+                                    "value" : [ "'mg'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " }" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "244",
+               "locator" : "91:3-92:94",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "245",
+                  "locator" : "91:3-91:88",
+                  "type" : "GreaterOrEqual",
+                  "signature" : [ {
+                     "localId" : "261",
+                     "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "NamedTypeSpecifier"
+                  }, {
+                     "localId" : "262",
+                     "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "NamedTypeSpecifier"
+                  } ],
+                  "operand" : [ {
+                     "localId" : "251",
+                     "locator" : "91:3-91:44",
+                     "name" : "dailyDose",
+                     "libraryName" : "HIC",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "252",
+                        "name" : "{http://hl7.org/fhir}MedicationRequest",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "250",
+                        "locator" : "91:3-91:32",
+                        "type" : "First",
+                        "signature" : [ ],
+                        "source" : {
+                           "localId" : "247",
+                           "locator" : "91:9-91:31",
+                           "name" : "Methadone D.DE555",
+                           "libraryName" : "HIE",
+                           "type" : "ExpressionRef"
+                        }
+                     } ]
+                  }, {
+                     "localId" : "253",
+                     "locator" : "91:49-91:88",
+                     "classType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "Instance",
+                     "element" : [ {
+                        "name" : "value",
+                        "value" : {
+                           "localId" : "257",
+                           "type" : "ToDecimal",
+                           "signature" : [ {
+                              "localId" : "258",
+                              "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : {
+                              "localId" : "255",
+                              "locator" : "91:73-91:74",
+                              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "value" : "60",
+                              "type" : "Literal"
+                           }
+                        }
+                     }, {
+                        "name" : "unit",
+                        "value" : {
+                           "localId" : "259",
+                           "locator" : "91:83-91:86",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "mg",
+                           "type" : "Literal"
+                        }
+                     } ]
+                  } ]
+               }, {
+                  "localId" : "263",
+                  "locator" : "92:6-92:94",
+                  "type" : "GreaterOrEqual",
+                  "signature" : [ {
+                     "localId" : "279",
+                     "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "NamedTypeSpecifier"
+                  }, {
+                     "localId" : "280",
+                     "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "NamedTypeSpecifier"
+                  } ],
+                  "operand" : [ {
+                     "localId" : "269",
+                     "locator" : "92:6-92:51",
+                     "name" : "dailyDose",
+                     "libraryName" : "HIC",
+                     "type" : "FunctionRef",
+                     "signature" : [ {
+                        "localId" : "270",
+                        "name" : "{http://hl7.org/fhir}MedicationRequest",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "268",
+                        "locator" : "92:6-92:39",
+                        "type" : "First",
+                        "signature" : [ ],
+                        "source" : {
+                           "localId" : "265",
+                           "locator" : "92:12-92:38",
+                           "name" : "Buprenorphine D.DE552",
+                           "libraryName" : "HIE",
+                           "type" : "ExpressionRef"
+                        }
+                     } ]
+                  }, {
+                     "localId" : "271",
+                     "locator" : "92:56-92:94",
+                     "classType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "Instance",
+                     "element" : [ {
+                        "name" : "value",
+                        "value" : {
+                           "localId" : "275",
+                           "type" : "ToDecimal",
+                           "signature" : [ {
+                              "localId" : "276",
+                              "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : {
+                              "localId" : "273",
+                              "locator" : "92:80",
+                              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "value" : "8",
+                              "type" : "Literal"
+                           }
+                        }
+                     }, {
+                        "name" : "unit",
+                        "value" : {
+                           "localId" : "277",
+                           "locator" : "92:89-92:92",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "mg",
+                           "type" : "Literal"
+                        }
+                     } ]
+                  } ]
+               } ]
+            }
+         }, {
+            "localId" : "283",
+            "locator" : "100:1-101:79",
+            "name" : "Numerator Exclusions",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "283",
+                  "s" : [ {
+                     "value" : [ "/**\n * Numerator Exclusions\n *\n * Calculation: \"Client being inducted on OAMT\" OR \"Client on reducing doses of OAMT\"\n */\n    \n","define ","\"Numerator Exclusions\"",":\n  " ]
+                  }, {
+                     "r" : "284",
+                     "s" : [ {
+                        "r" : "286",
+                        "s" : [ {
+                           "r" : "285",
+                           "s" : [ {
+                              "value" : [ "HIE" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "286",
+                           "s" : [ {
+                              "value" : [ "\"Client being inducted on OAMT\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " or " ]
+                     }, {
+                        "r" : "288",
+                        "s" : [ {
+                           "r" : "287",
+                           "s" : [ {
+                              "value" : [ "HIE" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "288",
+                           "s" : [ {
+                              "value" : [ "\"Client on reducing doses of OAMT\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "284",
+               "locator" : "101:3-101:79",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "286",
+                  "locator" : "101:3-101:37",
+                  "name" : "Client being inducted on OAMT",
+                  "libraryName" : "HIE",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "288",
+                  "locator" : "101:42-101:79",
+                  "name" : "Client on reducing doses of OAMT",
+                  "libraryName" : "HIE",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "localId" : "291",
+            "locator" : "110:1-111:72",
+            "name" : "Denominator",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "291",
+                  "s" : [ {
+                     "value" : [ "/**\n * Denominator\n *\n * Definition: Number of people receiving maintenance dose of methadone or buprenorphine at a specified date, excluding: a) individuals currently being inducted on OAMT and yet to reach the maintenance dose and b) individuals on reducing doses of OAMT.\n * Calculation: COUNT of clients with \"Medications prescribed\" IN 'Methadone', 'Buprenorphine' for a specified \"Reporting date\"\n */\n\n","define ","\"Denominator\"",":\n  " ]
+                  }, {
+                     "r" : "292",
+                     "s" : [ {
+                        "r" : "297",
+                        "s" : [ {
+                           "value" : [ "Exists","(" ]
+                        }, {
+                           "r" : "294",
+                           "s" : [ {
+                              "r" : "293",
+                              "s" : [ {
+                                 "value" : [ "HIE" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "294",
+                              "s" : [ {
+                                 "value" : [ "\"Methadone D.DE555\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     }, {
+                        "value" : [ " or " ]
+                     }, {
+                        "r" : "302",
+                        "s" : [ {
+                           "value" : [ "Exists","(" ]
+                        }, {
+                           "r" : "299",
+                           "s" : [ {
+                              "r" : "298",
+                              "s" : [ {
+                                 "value" : [ "HIE" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "299",
+                              "s" : [ {
+                                 "value" : [ "\"Buprenorphine D.DE552\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "292",
+               "locator" : "111:3-111:72",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "297",
+                  "locator" : "111:3-111:33",
+                  "type" : "Exists",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "294",
+                     "locator" : "111:10-111:32",
+                     "name" : "Methadone D.DE555",
+                     "libraryName" : "HIE",
+                     "type" : "ExpressionRef"
+                  }
+               }, {
+                  "localId" : "302",
+                  "locator" : "111:38-111:72",
+                  "type" : "Exists",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "299",
+                     "locator" : "111:45-111:71",
+                     "name" : "Buprenorphine D.DE552",
+                     "libraryName" : "HIE",
+                     "type" : "ExpressionRef"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "305",
+            "locator" : "119:1-120:79",
+            "name" : "Denominator Exclusions",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "305",
+                  "s" : [ {
+                     "value" : [ "/**\n* Denominator Exclusions\n*\n* Calculation: \"Client being inducted on OAMT\" OR \"Client on reducing doses of OAMT\"\n*/\n\n","define ","\"Denominator Exclusions\"",":\n  " ]
+                  }, {
+                     "r" : "306",
+                     "s" : [ {
+                        "r" : "308",
+                        "s" : [ {
+                           "r" : "307",
+                           "s" : [ {
+                              "value" : [ "HIE" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "308",
+                           "s" : [ {
+                              "value" : [ "\"Client being inducted on OAMT\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " or " ]
+                     }, {
+                        "r" : "310",
+                        "s" : [ {
+                           "r" : "309",
+                           "s" : [ {
+                              "value" : [ "HIE" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "310",
+                           "s" : [ {
+                              "value" : [ "\"Client on reducing doses of OAMT\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "306",
+               "locator" : "120:3-120:79",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "308",
+                  "locator" : "120:3-120:37",
+                  "name" : "Client being inducted on OAMT",
+                  "libraryName" : "HIE",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "310",
+                  "locator" : "120:42-120:79",
+                  "name" : "Client on reducing doses of OAMT",
+                  "libraryName" : "HIE",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "localId" : "313",
+            "locator" : "129:1-130:42",
+            "name" : "Administrative Gender Stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "313",
+                  "s" : [ {
+                     "value" : [ "/* end Populations */\n\n\n/*\n * Disaggregators\n */\n\n","define ","\"Administrative Gender Stratifier\"",":\n\t" ]
+                  }, {
+                     "r" : "315",
+                     "s" : [ {
+                        "r" : "314",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "315",
+                        "s" : [ {
+                           "value" : [ "\"By Administrative Gender Stratifier\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "315",
+               "locator" : "130:2-130:42",
+               "name" : "By Administrative Gender Stratifier",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "318",
+            "locator" : "132:1-133:26",
+            "name" : "Age Stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "318",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Age Stratifier\"",":\n\t" ]
+                  }, {
+                     "r" : "320",
+                     "s" : [ {
+                        "r" : "319",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "320",
+                        "s" : [ {
+                           "value" : [ "\"By Age Stratifier 3\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "320",
+               "locator" : "133:2-133:26",
+               "name" : "By Age Stratifier 3",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "323",
+            "locator" : "135:1-136:38",
+            "name" : "Geographic Region Stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "323",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Geographic Region Stratifier\"",":\n\t" ]
+                  }, {
+                     "r" : "325",
+                     "s" : [ {
+                        "r" : "324",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "325",
+                        "s" : [ {
+                           "value" : [ "\"By Geographic Region Stratifier\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "325",
+               "locator" : "136:2-136:38",
+               "name" : "By Geographic Region Stratifier",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "328",
+            "locator" : "138:1-139:17",
+            "name" : "Setting",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "328",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Setting\"",":\n    " ]
+                  }, {
+                     "r" : "330",
+                     "s" : [ {
+                        "r" : "329",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "330",
+                        "s" : [ {
+                           "value" : [ "\"setting\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "330",
+               "locator" : "139:5-139:17",
+               "name" : "setting",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "333",
+            "locator" : "143:1-147:27",
+            "name" : "Stratification",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "333",
+                  "s" : [ {
+                     "value" : [ "//provider type not provided?\n\n","define ","\"Stratification\"",":\n " ]
+                  }, {
+                     "r" : "375",
+                     "s" : [ {
+                        "r" : "369",
+                        "s" : [ {
+                           "r" : "364",
+                           "s" : [ {
+                              "r" : "357",
+                              "s" : [ {
+                                 "r" : "352",
+                                 "s" : [ {
+                                    "r" : "347",
+                                    "s" : [ {
+                                       "r" : "342",
+                                       "s" : [ {
+                                          "r" : "341",
+                                          "s" : [ {
+                                             "r" : "340",
+                                             "s" : [ {
+                                                "value" : [ "HIE" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "341",
+                                             "s" : [ {
+                                                "value" : [ "\"By Administrative Gender Stratifier\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "342",
+                                          "s" : [ {
+                                             "value" : [ "code" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " \n  + " ]
+                                    }, {
+                                       "r" : "343",
+                                       "s" : [ {
+                                          "value" : [ "':'" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " + " ]
+                                 }, {
+                                    "r" : "349",
+                                    "s" : [ {
+                                       "r" : "348",
+                                       "s" : [ {
+                                          "value" : [ "HIE" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "349",
+                                       "s" : [ {
+                                          "value" : [ "\"By Age Stratifier 3\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n+ " ]
+                              }, {
+                                 "r" : "353",
+                                 "s" : [ {
+                                    "value" : [ "':'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " + " ]
+                           }, {
+                              "r" : "359",
+                              "s" : [ {
+                                 "r" : "358",
+                                 "s" : [ {
+                                    "value" : [ "HIE" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "359",
+                                 "s" : [ {
+                                    "value" : [ "\"By Geographic Region Stratifier\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n + " ]
+                        }, {
+                           "r" : "365",
+                           "s" : [ {
+                              "value" : [ "':'" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " + " ]
+                     }, {
+                        "r" : "372",
+                        "s" : [ {
+                           "r" : "371",
+                           "s" : [ {
+                              "r" : "370",
+                              "s" : [ {
+                                 "value" : [ "HIE" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "371",
+                              "s" : [ {
+                                 "value" : [ "\"setting\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "372",
+                           "s" : [ {
+                              "value" : [ "code" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "375",
+               "locator" : "144:2-147:27",
+               "type" : "Concatenate",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "369",
+                  "locator" : "144:2-147:6",
+                  "type" : "Concatenate",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "364",
+                     "locator" : "144:2-146:45",
+                     "type" : "Concatenate",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "357",
+                        "locator" : "144:2-146:5",
+                        "type" : "Concatenate",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "352",
+                           "locator" : "144:2-145:35",
+                           "type" : "Concatenate",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "347",
+                              "locator" : "144:2-145:7",
+                              "type" : "Concatenate",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "342",
+                                 "locator" : "144:2-144:47",
+                                 "path" : "code",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "localId" : "341",
+                                    "locator" : "144:2-144:42",
+                                    "name" : "By Administrative Gender Stratifier",
+                                    "libraryName" : "HIE",
+                                    "type" : "ExpressionRef"
+                                 }
+                              }, {
+                                 "localId" : "343",
+                                 "locator" : "145:5-145:7",
+                                 "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                                 "value" : ":",
+                                 "type" : "Literal"
+                              } ]
+                           }, {
+                              "localId" : "349",
+                              "locator" : "145:11-145:35",
+                              "name" : "By Age Stratifier 3",
+                              "libraryName" : "HIE",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "353",
+                           "locator" : "146:3-146:5",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : ":",
+                           "type" : "Literal"
+                        } ]
+                     }, {
+                        "localId" : "360",
+                        "name" : "ToString",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ {
+                           "localId" : "361",
+                           "name" : "{http://hl7.org/fhir}string",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : [ {
+                           "localId" : "359",
+                           "locator" : "146:9-146:45",
+                           "name" : "By Geographic Region Stratifier",
+                           "libraryName" : "HIE",
+                           "type" : "ExpressionRef"
+                        } ]
+                     } ]
+                  }, {
+                     "localId" : "365",
+                     "locator" : "147:4-147:6",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : ":",
+                     "type" : "Literal"
+                  } ]
+               }, {
+                  "localId" : "372",
+                  "locator" : "147:10-147:27",
+                  "path" : "code",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "371",
+                     "locator" : "147:10-147:22",
+                     "name" : "setting",
+                     "libraryName" : "HIE",
+                     "type" : "ExpressionRef"
+                  }
+               } ]
+            }
+         } ]
+      }
+   }
+}

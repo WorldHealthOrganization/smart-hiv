@@ -1,0 +1,884 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "HIV.D HIV-TB API",
+    "description": "This tab describes the data that may be collected during care and treatment clinical visit for HIV/TB care (HIV.D)",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/StructureDefinition-HIVDHIVTB.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the Logical Model StructureDefinition-HIVDHIVTB",
+        "description": "This endpoint serves the JSON Schema definition for the Logical Model StructureDefinition-HIVDHIVTB.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for StructureDefinition-HIVDHIVTB",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./StructureDefinition-HIVDHIVTB.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StructureDefinition-HIVDHIVTB": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/base/StructureDefinition-HIVDHIVTB.schema.json",
+        "title": "HIV.D HIV-TB",
+        "description": "This tab describes the data that may be collected during care and treatment clinical visit for HIV/TB care (HIV.D)",
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string",
+            "const": "HIVDHIVTB",
+            "description": "Resource type identifier for HIVDHIVTB logical model"
+          },
+          "@context": {
+            "description": "JSON-LD context for this logical model with ValueSet vocabularies",
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri",
+                "description": "URI reference to external JSON-LD context"
+              },
+              {
+                "type": "object",
+                "description": "Inline JSON-LD context",
+                "properties": {
+                  "@version": {
+                    "type": "number",
+                    "const": 1.1
+                  },
+                  "fhir": {
+                    "type": "string",
+                    "const": "http://hl7.org/fhir/"
+                  }
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              {
+                "type": "array",
+                "description": "Array of JSON-LD context objects/URIs",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    {
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "@type": {
+            "type": "string",
+            "description": "JSON-LD type identifier for HIVDHIVTB logical model",
+            "examples": [
+              "LogicalModel-HIVDHIVTB"
+            ]
+          },
+          "whoHivClinicalStageConditionOrSymptom": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "description": "FHIR Coding from ValueSet HIV.D.DE934",
+                  "properties": {
+                    "system": {
+                      "type": "string",
+                      "description": "Code system URI"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Code value"
+                    },
+                    "display": {
+                      "type": "string",
+                      "description": "Human readable display text"
+                    }
+                  },
+                  "required": [
+                    "system",
+                    "code"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Coding from ValueSet HIV.D.DE934 (JSON-LD structure)",
+                  "properties": {
+                    "@type": {
+                      "type": "string",
+                      "const": "http://smart.who.int/base/ValueSet-HIV.D.DE934.jsonld",
+                      "description": "JSON-LD type reference to ValueSet HIV.D.DE934"
+                    },
+                    "@id": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Full IRI of the code from ValueSet HIV.D.DE934"
+                    }
+                  },
+                  "required": [
+                    "@type",
+                    "@id"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Coding from ValueSet HIV.D.DE934. Supports both FHIR Coding structure and JSON-LD structure."
+            },
+            "description": "New or recurrent clinical events used to categorize HIV disease severity based at baseline and follow up"
+          },
+          "tbDisease": {
+            "type": "boolean",
+            "description": "Whether the client has tuberculosis (TB) disease. Sometimes known as active TB"
+          },
+          "tbDiagnosisResult": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.D.DE939",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.D.DE939 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.D.DE939.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.D.DE939"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.D.DE939"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Final result of the TB investigation (bacteriological and/or clinical)"
+          },
+          "methodOfTbDiagnosis": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.D.DE942",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.D.DE942 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.D.DE942.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.D.DE942"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.D.DE942"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Method used to set the TB diagnosis"
+          },
+          "presumptiveTb": {
+            "type": "boolean",
+            "description": "Client has signs or symptoms of tuberculosis (TB) without laboratory confirmation"
+          },
+          "presumptiveTbRegistrationDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Date client is registered as having signs or symptoms of tuberculosis (TB) without laboratory confirmation"
+          },
+          "tbTreatmentHistory": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.D.DE947",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.D.DE947 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.D.DE947.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.D.DE947"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.D.DE947"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "History of previous TB treatment"
+          },
+          "dateOfTbDiagnosis": {
+            "type": "string",
+            "format": "date",
+            "description": "The date when the diagnosis was established"
+          },
+          "currentlyOnTbPreventiveTreatmentTpt": {
+            "type": "boolean",
+            "description": "Client is currently taking TPT"
+          },
+          "tbPreventiveTreatmentTptStartDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date on which the client began taking TPT"
+          },
+          "tbPreventiveTreatmentTptCompletionDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date on which the client completed TPT"
+          },
+          "tbScreeningAlgorithm": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "description": "FHIR Coding from ValueSet HIV.D.DE956",
+                  "properties": {
+                    "system": {
+                      "type": "string",
+                      "description": "Code system URI"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Code value"
+                    },
+                    "display": {
+                      "type": "string",
+                      "description": "Human readable display text"
+                    }
+                  },
+                  "required": [
+                    "system",
+                    "code"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Coding from ValueSet HIV.D.DE956 (JSON-LD structure)",
+                  "properties": {
+                    "@type": {
+                      "type": "string",
+                      "const": "http://smart.who.int/base/ValueSet-HIV.D.DE956.jsonld",
+                      "description": "JSON-LD type reference to ValueSet HIV.D.DE956"
+                    },
+                    "@id": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Full IRI of the code from ValueSet HIV.D.DE956"
+                    }
+                  },
+                  "required": [
+                    "@type",
+                    "@id"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Coding from ValueSet HIV.D.DE956. Supports both FHIR Coding structure and JSON-LD structure."
+            },
+            "description": "Screening algorithm selected for screening activities"
+          },
+          "otherTbScreeningAlgorithmSpecify": {
+            "type": "string",
+            "description": "Client screened for tuberculosis (TB) with a different screening method not listed (specify)"
+          },
+          "tbScreeningConducted": {
+            "type": "boolean",
+            "description": "A screening for tuberculosis (TB) was performed"
+          },
+          "symptomsOfTb": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.D.DE973",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.D.DE973 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.D.DE973.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.D.DE973"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.D.DE973"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Symptoms that may indicate TB disease in clients living with HIV, based on a clinical algorithm"
+          },
+          "historyOfContactWithAPersonWithTb": {
+            "type": "boolean",
+            "description": "Client had a history of a contact with a person with TB"
+          },
+          "tbScreeningResult": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.D.DE986",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.D.DE986 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.D.DE986.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.D.DE986"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.D.DE986"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Record the result of the tuberculosis (TB) screening"
+          },
+          "tbScreeningDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Date the TB screening was conducted"
+          },
+          "tbScreeningResultDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date when the result of TB screening is available"
+          },
+          "tbDiagnosticTestCategory": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.D.DE992",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.D.DE992 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.D.DE992.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.D.DE992"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.D.DE992"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The type of diagnostic test performed to detect tuberculosis (TB) disease"
+          },
+          "tbDiagnosticTestDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date when TB diagnostic test was performed"
+          },
+          "testSampleCollectionDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date when the test sample was collected from the client"
+          },
+          "tbDiagnosticTestResultDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date when the result of the TB diagnostic test is available"
+          },
+          "tbTreatmentStarted": {
+            "type": "boolean",
+            "description": "Indicates if TB treatment was started"
+          },
+          "tbTreatmentStartDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date on which the client start or restarted tuberculosis (TB) treatment"
+          },
+          "tbTreatmentOutcome": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.D.DE1002",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.D.DE1002 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.D.DE1002.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.D.DE1002"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.D.DE1002"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Indicates patient's TB treatment outcome"
+          },
+          "tbTreatmentCompletionDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Date client completes TB treatment"
+          },
+          "tbTreatmentRegimenComposition": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "description": "FHIR Coding from ValueSet HIV.D.DE1010",
+                  "properties": {
+                    "system": {
+                      "type": "string",
+                      "description": "Code system URI"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Code value"
+                    },
+                    "display": {
+                      "type": "string",
+                      "description": "Human readable display text"
+                    }
+                  },
+                  "required": [
+                    "system",
+                    "code"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Coding from ValueSet HIV.D.DE1010 (JSON-LD structure)",
+                  "properties": {
+                    "@type": {
+                      "type": "string",
+                      "const": "http://smart.who.int/base/ValueSet-HIV.D.DE1010.jsonld",
+                      "description": "JSON-LD type reference to ValueSet HIV.D.DE1010"
+                    },
+                    "@id": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Full IRI of the code from ValueSet HIV.D.DE1010"
+                    }
+                  },
+                  "required": [
+                    "@type",
+                    "@id"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Coding from ValueSet HIV.D.DE1010. Supports both FHIR Coding structure and JSON-LD structure."
+            },
+            "description": "TB drugs currently being taken by the client"
+          },
+          "eligibleForTbPreventiveTreatment": {
+            "type": "boolean",
+            "description": "Client is eligible for tuberculosis preventive treatment (TPT)"
+          },
+          "dateWhenEligibilityForTbPreventiveTreatmentTptWasDetermined": {
+            "type": "string",
+            "format": "date",
+            "description": "Date when a determination of the client's eligibility for TPT was made"
+          },
+          "tbStatusAtArtStart": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.D.DE1019",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.D.DE1019 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.D.DE1019.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.D.DE1019"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.D.DE1019"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Client's tuberculosis (TB) status when antiretroviral therapy (ART) is started"
+          },
+          "tbPreventionServicesAccepted": {
+            "type": "boolean",
+            "description": "Indicates if the client accepts to be evaluated for TB infection and to take the treatment in case he/she is eligible"
+          },
+          "tbMeningitis": {
+            "type": "boolean",
+            "description": "Type of extrapulmonary TB identified for the client is TB meningitis"
+          },
+          "cReactiveProteinTestDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date on which the client has a test for C reactive protein"
+          },
+          "cReactiveProteinTestResult": {
+            "type": "integer",
+            "description": "Test result of the client's C reactive protein test result in mg/L"
+          },
+          "cReactiveProteinTestResultDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date when the client's test result for C reactive protein is available"
+          },
+          "tptRegimenType": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.D.DE1028",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.D.DE1028 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.D.DE1028.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.D.DE1028"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.D.DE1028"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Type of TPT regimen the client is currently on"
+          },
+          "tbPreventiveTreatmentTptStatus": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.D.DE1034",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.D.DE1034 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.D.DE1034.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.D.DE1034"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.D.DE1034"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Indicates the current status of TB preventive treatment (TPT)"
+          }
+        },
+        "required": [
+          "resourceType",
+          "currentlyOnTbPreventiveTreatmentTpt"
+        ],
+        "resourceDefinition": "http://smart.who.int/hiv/StructureDefinition/HIVDHIVTB",
+        "fhir:parent": "http://hl7.org/fhir/StructureDefinition/Base",
+        "jsonld:valuesets": [
+          "HIV.D.DE1010",
+          "HIV.D.DE1019",
+          "HIV.D.DE947",
+          "HIV.D.DE1028",
+          "HIV.D.DE1034",
+          "HIV.D.DE973",
+          "HIV.D.DE986",
+          "HIV.D.DE939",
+          "HIV.D.DE956",
+          "HIV.D.DE1002",
+          "HIV.D.DE934",
+          "HIV.D.DE992",
+          "HIV.D.DE942"
+        ],
+        "jsonld:contextTemplate": {
+          "@version": 1.1,
+          "fhir": "http://hl7.org/fhir/",
+          "HIV.D.DE1010": "http://smart.who.int/base/ValueSet-HIV.D.DE1010.jsonld",
+          "HIV.D.DE1019": "http://smart.who.int/base/ValueSet-HIV.D.DE1019.jsonld",
+          "HIV.D.DE947": "http://smart.who.int/base/ValueSet-HIV.D.DE947.jsonld",
+          "HIV.D.DE1028": "http://smart.who.int/base/ValueSet-HIV.D.DE1028.jsonld",
+          "HIV.D.DE1034": "http://smart.who.int/base/ValueSet-HIV.D.DE1034.jsonld",
+          "HIV.D.DE973": "http://smart.who.int/base/ValueSet-HIV.D.DE973.jsonld",
+          "HIV.D.DE986": "http://smart.who.int/base/ValueSet-HIV.D.DE986.jsonld",
+          "HIV.D.DE939": "http://smart.who.int/base/ValueSet-HIV.D.DE939.jsonld",
+          "HIV.D.DE956": "http://smart.who.int/base/ValueSet-HIV.D.DE956.jsonld",
+          "HIV.D.DE1002": "http://smart.who.int/base/ValueSet-HIV.D.DE1002.jsonld",
+          "HIV.D.DE934": "http://smart.who.int/base/ValueSet-HIV.D.DE934.jsonld",
+          "HIV.D.DE992": "http://smart.who.int/base/ValueSet-HIV.D.DE992.jsonld",
+          "HIV.D.DE942": "http://smart.who.int/base/ValueSet-HIV.D.DE942.jsonld"
+        }
+      }
+    }
+  }
+}

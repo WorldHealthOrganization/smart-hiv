@@ -1,0 +1,85 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Disease targeted ValueSet Schema API",
+    "description": "JSON Schema for Disease targeted ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/ValueSet-HIV.D.DE610.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the enumeration ValueSet-HIV.D.DE610",
+        "description": "This endpoint serves the JSON Schema definition for the enumeration ValueSet-HIV.D.DE610.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for ValueSet-HIV.D.DE610",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./ValueSet-HIV.D.DE610.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ValueSet-HIV.D.DE610": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE610.schema.json",
+        "title": "Disease targeted ValueSet Schema",
+        "description": "JSON Schema for Disease targeted ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+        "type": "object",
+        "required": [
+          "system",
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "system": {
+            "type": "string",
+            "const": "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "HIV.D.DE611",
+              "HIV.D.DE612",
+              "HIV.D.DE613",
+              "HIV.D.DE614",
+              "HIV.D.DE615",
+              "HIV.D.DE616",
+              "HIV.D.DE617",
+              "HIV.D.DE618",
+              "HIV.D.DE619",
+              "HIV.D.DE620",
+              "HIV.D.DE621",
+              "HIV.D.DE622",
+              "HIV.D.DE623",
+              "HIV.D.DE624",
+              "HIV.D.DE625",
+              "HIV.D.DE626",
+              "HIV.D.DE627",
+              "HIV.D.DE628",
+              "HIV.D.DE629",
+              "HIV.D.DE630",
+              "HIV.D.DE631",
+              "HIV.D.DE632",
+              "HIV.D.DE633",
+              "HIV.D.DE634",
+              "HIV.D.DE635"
+            ]
+          }
+        },
+        "narrative": "This schema validates Coding-shaped objects for the Disease targeted ValueSet ValueSet. Each value must be an object with 'system' (CodeSystem URI) and 'code' (fragment after '#') properties. Display values are available at http://smart.who.int/hiv/ValueSet-HIV.D.DE610.displays.json. The canonical IRI for a code can be reconstructed as system + '#' + code. For a complete listing of all ValueSets, see artifacts.html#terminology-value-sets.",
+        "fhir:displays": "http://smart.who.int/hiv/ValueSet-HIV.D.DE610.displays.json",
+        "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE610",
+        "fhir:version": "0.4.4",
+        "fhir:expansionTimestamp": "2026-03-05T13:16:29+00:00"
+      }
+    }
+  }
+}

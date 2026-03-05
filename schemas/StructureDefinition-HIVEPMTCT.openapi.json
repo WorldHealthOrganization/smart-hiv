@@ -1,0 +1,2493 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "HIV.E-F PMTCT API",
+    "description": "This tab describes the data that are collected relevant to HIV care and treatment of pregnant and postpartum women and their newborns during the delivery and postpartum care and the infant diagnosis and final HIV status workflows (HIV.E and HIV.F)",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/StructureDefinition-HIVEPMTCT.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the Logical Model StructureDefinition-HIVEPMTCT",
+        "description": "This endpoint serves the JSON Schema definition for the Logical Model StructureDefinition-HIVEPMTCT.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for StructureDefinition-HIVEPMTCT",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./StructureDefinition-HIVEPMTCT.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StructureDefinition-HIVEPMTCT": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/base/StructureDefinition-HIVEPMTCT.schema.json",
+        "title": "HIV.E-F PMTCT",
+        "description": "This tab describes the data that are collected relevant to HIV care and treatment of pregnant and postpartum women and their newborns during the delivery and postpartum care and the infant diagnosis and final HIV status workflows (HIV.E and HIV.F)",
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string",
+            "const": "HIVEPMTCT",
+            "description": "Resource type identifier for HIVEPMTCT logical model"
+          },
+          "@context": {
+            "description": "JSON-LD context for this logical model with ValueSet vocabularies",
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri",
+                "description": "URI reference to external JSON-LD context"
+              },
+              {
+                "type": "object",
+                "description": "Inline JSON-LD context",
+                "properties": {
+                  "@version": {
+                    "type": "number",
+                    "const": 1.1
+                  },
+                  "fhir": {
+                    "type": "string",
+                    "const": "http://hl7.org/fhir/"
+                  }
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              {
+                "type": "array",
+                "description": "Array of JSON-LD context objects/URIs",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    {
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "@type": {
+            "type": "string",
+            "description": "JSON-LD type identifier for HIVEPMTCT logical model",
+            "examples": [
+              "LogicalModel-HIVEPMTCT"
+            ]
+          },
+          "pregnantWomanFirstName": {
+            "type": "string",
+            "description": "Pregnant woman's first or given name"
+          },
+          "pregnantWomanSurname": {
+            "type": "string",
+            "description": "Pregnant woman's family name or last name"
+          },
+          "pregnantWomanUniqueId": {
+            "type": "object",
+            "description": "Unique identifier generated for new clients or a universal ID, if used in the country"
+          },
+          "antenatalCareNumber": {
+            "type": "object",
+            "description": "Identification number assigned to woman at first visit to the ANC based on national system"
+          },
+          "gestationalAge": {
+            "type": "integer",
+            "description": "Gestational age in weeks and/or days depending on the source of gestational age"
+          },
+          "sourceOfGestationalAge": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE6",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE6 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE6.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE6"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE6"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Gestational age can be calculated multiple ways. This data element describes where the gestational age above has been calculated from."
+          },
+          "expectedDateOfDeliveryEdd": {
+            "type": "string",
+            "format": "date",
+            "description": "Expected date of delivery based on gestational age"
+          },
+          "numberOfPregnanciesGravida": {
+            "type": "integer",
+            "description": "Total number of times the woman has been pregnant (including this pregnancy). Also referred to as gravida."
+          },
+          "numberOfPreviousPregnancies": {
+            "type": "integer",
+            "description": "This calculates the total number of all previous pregnancies (i.e. not including this current pregnancy). This is done for easier obstetric history calculations."
+          },
+          "numberOfMiscarriagesAndOrAbortions": {
+            "type": "integer",
+            "description": "Total number of pregnancies lost or ended due to miscarriages and/or abortions before 22 weeks / 5 months"
+          },
+          "numberOfLiveBirths": {
+            "type": "integer",
+            "description": "Total number of live births after 22 weeks"
+          },
+          "numberOfCaesarianSections": {
+            "type": "integer",
+            "description": "Total number of caesarean sections"
+          },
+          "numberOfStillbirths": {
+            "type": "integer",
+            "description": "Total number of stillbirths after 22 weeks"
+          },
+          "pastPregnancyComplications": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "description": "FHIR Coding from ValueSet HIV.E.DE17",
+                  "properties": {
+                    "system": {
+                      "type": "string",
+                      "description": "Code system URI"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Code value"
+                    },
+                    "display": {
+                      "type": "string",
+                      "description": "Human readable display text"
+                    }
+                  },
+                  "required": [
+                    "system",
+                    "code"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Coding from ValueSet HIV.E.DE17 (JSON-LD structure)",
+                  "properties": {
+                    "@type": {
+                      "type": "string",
+                      "const": "http://smart.who.int/base/ValueSet-HIV.E.DE17.jsonld",
+                      "description": "JSON-LD type reference to ValueSet HIV.E.DE17"
+                    },
+                    "@id": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Full IRI of the code from ValueSet HIV.E.DE17"
+                    }
+                  },
+                  "required": [
+                    "@type",
+                    "@id"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Coding from ValueSet HIV.E.DE17. Supports both FHIR Coding structure and JSON-LD structure."
+            },
+            "description": "Whether the woman has had any complications or problems in any previous pregnancy"
+          },
+          "otherPastPregnancyProblemsSpecify": {
+            "type": "string",
+            "description": "Woman experienced other past pregnancy problems not described above (specify)"
+          },
+          "parity": {
+            "type": "integer",
+            "description": "Total number of live and stillbirths (calculated)"
+          },
+          "pregnancyInHivInfectedWoman": {
+            "type": "boolean",
+            "description": "Any HIV diagnosis in a pregnant woman as determined by the national HIV testing algorithm, or a pregnancy in a woman previously diagnosed with HIV"
+          },
+          "dateNewPregnancyOfHivPositiveWomanIdentified": {
+            "type": "string",
+            "format": "date",
+            "description": "Earliest date when a new pregnancy of an HIV-positive woman is recorded"
+          },
+          "ancContactDuringPregnancy": {
+            "type": "boolean",
+            "description": "Whether the mother had at least one ANC contact (visit)"
+          },
+          "dateOfFirstAncVisit": {
+            "type": "string",
+            "format": "date",
+            "description": "Date of the pregnant woman's first ANC visit"
+          },
+          "timingOfArtInitiation": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE41",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE41 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE41.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE41"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE41"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "When the pregnant woman or mother initiated ART, for women living with HIV."
+          },
+          "maternalUseOfRecommendedArtRegimen": {
+            "type": "boolean",
+            "description": "Whether the mother is taking a recommended ART regimen"
+          },
+          "deliveryDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Date on which the woman delivered"
+          },
+          "pregnancyOutcome": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE47",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE47 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE47.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE47"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE47"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Outcome of current pregnancy"
+          },
+          "deliveryMode": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE52",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE52 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE52.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE52"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE52"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Mode of delivery for current pregnancy"
+          },
+          "indicationsForCaesarianSectionCS": {
+            "type": "string",
+            "description": "Indications for caesarian section"
+          },
+          "obstetricComplications": {
+            "type": "string",
+            "description": "Serious or life-threatening obstetric complications during pregnancy, delivery or postpartum experienced by mother or her newborn"
+          },
+          "liveBirth": {
+            "type": "boolean",
+            "description": "The woman had a live birth"
+          },
+          "liveBirthToAnHivPositiveWoman": {
+            "type": "boolean",
+            "description": "A woman living with HIV had a live birth"
+          },
+          "gestationalAgeAtBirth": {
+            "type": "integer",
+            "description": "Best estimate of gestational age in completed weeks when infant was born (an indication of prematurity, preterm and extreme preterm)"
+          },
+          "smallForGestationalAgeSga": {
+            "type": "boolean",
+            "description": "Whether the infant was small for gestational age (SGA) at birth (less than 10th percentile)"
+          },
+          "pretermBirthStatus": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE62",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE62 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE62.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE62"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE62"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The woman gave birth when the gestational age is less than 37 weeks"
+          },
+          "maternalArtStartDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date on which the infant was started or restarted on ART"
+          },
+          "placeOfDelivery": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE67",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE67 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE67.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE67"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE67"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The type of place where the woman delivered"
+          },
+          "otherPlaceOfDelivery": {
+            "type": "string",
+            "description": "The woman delivered at another location that is not at home or at a health facility (specify)"
+          },
+          "deliveryFacility": {
+            "type": "string",
+            "description": "Facility where the infant or child was born"
+          },
+          "dateOfMiscarriageOrAbortion": {
+            "type": "string",
+            "format": "date",
+            "description": "Date of the miscarriage/abortion"
+          },
+          "dateOfDeathOfMother": {
+            "type": "string",
+            "format": "date",
+            "description": "Date that the woman died"
+          },
+          "causeOfDeathOfMother": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE75",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE75 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE75.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE75"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE75"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The woman's cause of death"
+          },
+          "infantFirstName": {
+            "type": "string",
+            "description": "Infant's first or given name"
+          },
+          "infantSurname": {
+            "type": "string",
+            "description": "Infant's family name or last name"
+          },
+          "infantUniqueId": {
+            "type": "object",
+            "description": "Unique identifier generated for new clients or a universal ID, if used in the country"
+          },
+          "motherFirstName": {
+            "type": "string",
+            "description": "Biological mother's first or given name"
+          },
+          "motherSurname": {
+            "type": "string",
+            "description": "Biological mother's family name or last name"
+          },
+          "motherUniqueId": {
+            "type": "object",
+            "description": "Unique identifier generated for new clients or a universal ID, if used in the country"
+          },
+          "caregiverFirstName": {
+            "type": "string",
+            "description": "Caregiver's first or given name"
+          },
+          "caregiverSurname": {
+            "type": "string",
+            "description": "Caregiver's family name or last name"
+          },
+          "caregiverUniqueIdentifier": {
+            "type": "object",
+            "description": "Unique identifier generated for new clients or a universal ID, if used in the country"
+          },
+          "ancContactDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time of the client's ANC contact (in the ANC DAK this is called 'Contact date')"
+          },
+          "referral": {
+            "type": "boolean",
+            "description": "If infant was referred for care"
+          },
+          "infantDateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "description": "The infant's date of birth (DOB) if known"
+          },
+          "dateOfBirthOfInfantUnknown": {
+            "type": "boolean",
+            "description": "Is the client's DOB unknown?"
+          },
+          "estimatedAgeOfInfant": {
+            "type": "integer",
+            "description": "If DOB is unknown, enter the client's estimated age. Display client's age in number of years"
+          },
+          "ageOfInfant": {
+            "type": "integer",
+            "description": "Infant age calculated using date of birth"
+          },
+          "genderOfInfant": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE91",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE91 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE91.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE91"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE91"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Gender of the infant"
+          },
+          "infantHeight": {
+            "type": "integer",
+            "description": "The infant's height in centimetres"
+          },
+          "infantWeight": {
+            "type": "integer",
+            "description": "The infant's current weight in kilograms"
+          },
+          "birthWeight": {
+            "type": "integer",
+            "description": "Birth weight in kg of the baby"
+          },
+          "lowBirthWeight": {
+            "type": "boolean",
+            "description": "Note if infant </¬¨‚â•2500 g at birth"
+          },
+          "lengthOfInfant": {
+            "type": "integer",
+            "description": "Length of infant at birth in cm"
+          },
+          "headCircumference": {
+            "type": "integer",
+            "description": "Head circumference of infant at birth in cm"
+          },
+          "motherHivTestConducted": {
+            "type": "boolean",
+            "description": "Whether an HIV test of the mother was conducted"
+          },
+          "motherHivTestOrdered": {
+            "type": "boolean",
+            "description": "Whether an HIV test of the mother was ordered"
+          },
+          "motherHivTestDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date when a mother's HIV test was conducted"
+          },
+          "maternalHivTestResult": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE104",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE104 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE104.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE104"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE104"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Test result for mother after applying the testing strategy"
+          },
+          "infantOrChildExposureToHiv": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE108",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE108 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE108.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE108"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE108"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Whether the infant or child was determined to have had HIV exposure through mother"
+          },
+          "hivExposedInfantOrChild": {
+            "type": "boolean",
+            "description": "Whether the infant or child was determined to have had HIV exposure"
+          },
+          "keyPopulationMember": {
+            "type": "boolean",
+            "description": "Mother is a member of a key population which has an increased risk of HIV"
+          },
+          "keyPopulationMemberType": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "description": "FHIR Coding from ValueSet HIV.E.DE114",
+                  "properties": {
+                    "system": {
+                      "type": "string",
+                      "description": "Code system URI"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Code value"
+                    },
+                    "display": {
+                      "type": "string",
+                      "description": "Human readable display text"
+                    }
+                  },
+                  "required": [
+                    "system",
+                    "code"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Coding from ValueSet HIV.E.DE114 (JSON-LD structure)",
+                  "properties": {
+                    "@type": {
+                      "type": "string",
+                      "const": "http://smart.who.int/base/ValueSet-HIV.E.DE114.jsonld",
+                      "description": "JSON-LD type reference to ValueSet HIV.E.DE114"
+                    },
+                    "@id": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Full IRI of the code from ValueSet HIV.E.DE114"
+                    }
+                  },
+                  "required": [
+                    "@type",
+                    "@id"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Coding from ValueSet HIV.E.DE114. Supports both FHIR Coding structure and JSON-LD structure."
+            },
+            "description": "The type of key population that the infant's mother is included in"
+          },
+          "postpartumFamilyPlanningCounsellingConducted": {
+            "type": "boolean",
+            "description": "Provide family planning and contraception counselling"
+          },
+          "ageOfInfantOnHivTestDate": {
+            "type": "integer",
+            "description": "Infant's age when an HIV test is performed in months and years (calculated from date of birth)"
+          },
+          "arvAdherenceCounselling": {
+            "type": "boolean",
+            "description": "Counselling was carried out during visit"
+          },
+          "infantFeedingCounsellingProvided": {
+            "type": "boolean",
+            "description": "Support on infant and child feeding to mother or caregiver provided"
+          },
+          "dateInfantFeedingCounsellingProvided": {
+            "type": "string",
+            "format": "date",
+            "description": "Date support on infant and child feeding to mother or caregiver provided"
+          },
+          "malariaPreventionCounsellingConducted": {
+            "type": "boolean",
+            "description": "Counselling provided on how to prevent malaria"
+          },
+          "insecticideTreatedBednetItnProvidedOrReferred": {
+            "type": "boolean",
+            "description": "An insecticide treated bednet (ITN) was provided or the client was referred"
+          },
+          "maternalSyphilisTreatment": {
+            "type": "boolean",
+            "description": "Whether or not mother was treated for syphilis"
+          },
+          "infantFeedingPractice": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE127",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE127 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE127.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE127"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE127"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Infant feeding practice"
+          },
+          "infantFeedingPracticeRecordedDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Date on which infant feeding practice was recorded"
+          },
+          "stoppedBreastfeeding": {
+            "type": "boolean",
+            "description": "The mother has fully stopped breastfeeding the infant or child"
+          },
+          "dateStoppedBreastfeeding": {
+            "type": "string",
+            "format": "date",
+            "description": "The date on which the mother stopped breastfeeding the infant"
+          },
+          "takingIronAndFolicAcidIfaTablets": {
+            "type": "boolean",
+            "description": "Is client taking her iron and folic acid (IFA) tablets? Select whether the woman is continuing to take IFA supplements"
+          },
+          "amountOfIronPrescribed": {
+            "type": "integer",
+            "description": "Amount of iron supplements prescribed in milligrams for intake"
+          },
+          "typeOfIronSupplementDosageProvided": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE136",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE136 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE136.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE136"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE136"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Whether the amount of iron prescribed is for daily or weekly intake"
+          },
+          "amountOfDailyDoseOfFolicAcidPrescribed": {
+            "type": "integer",
+            "description": "Amount of folic acid supplements prescribed in milligrams for daily intake"
+          },
+          "dateInfantArvProphylaxisDispensedOrStarted": {
+            "type": "string",
+            "format": "date",
+            "description": "Date HIV-exposed infant received ARV prophylaxis (for the first time)"
+          },
+          "maternalHivStatus": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE141",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE141 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE141.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE141"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE141"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The HIV status of the infant's mother"
+          },
+          "maternalHivStatusAtFirstAncVisit": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE145",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE145 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE145.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE145"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE145"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The HIV status of the infant's mother at first ANC visit"
+          },
+          "maternalSyphilisTestResult": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE149",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE149 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE149.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE149"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE149"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Result from maternal syphilis test"
+          },
+          "hypertension": {
+            "type": "boolean",
+            "description": "Whether the client has developed hypertension associated with pregnancy"
+          },
+          "preEclampsia": {
+            "type": "boolean",
+            "description": "Whether the client has pre-eclampsia"
+          },
+          "signsOfSubstantialRiskOfHivInfection": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "description": "FHIR Coding from ValueSet HIV.E.DE155",
+                  "properties": {
+                    "system": {
+                      "type": "string",
+                      "description": "Code system URI"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Code value"
+                    },
+                    "display": {
+                      "type": "string",
+                      "description": "Human readable display text"
+                    }
+                  },
+                  "required": [
+                    "system",
+                    "code"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Coding from ValueSet HIV.E.DE155 (JSON-LD structure)",
+                  "properties": {
+                    "@type": {
+                      "type": "string",
+                      "const": "http://smart.who.int/base/ValueSet-HIV.E.DE155.jsonld",
+                      "description": "JSON-LD type reference to ValueSet HIV.E.DE155"
+                    },
+                    "@id": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Full IRI of the code from ValueSet HIV.E.DE155"
+                    }
+                  },
+                  "required": [
+                    "@type",
+                    "@id"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Coding from ValueSet HIV.E.DE155. Supports both FHIR Coding structure and JSON-LD structure."
+            },
+            "minItems": 1,
+            "description": "Signs the client is at a substantial risk of HIV infection"
+          },
+          "serodiscordantPartner": {
+            "type": "boolean",
+            "description": "Mother's HIV status is different from a current partner's HIV status"
+          },
+          "dateWomanReceivedCounsellingForCpt": {
+            "type": "string",
+            "format": "date",
+            "description": "Date woman received counselling for co-trimoxazole preventive therapy (CPT)"
+          },
+          "dateWomanReceivedCounsellingForTpt": {
+            "type": "string",
+            "format": "date",
+            "description": "Date woman received counselling for TB preventive therapy"
+          },
+          "infantCoTrimoxazoleProphylaxisStartDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Start date of co-trimoxazole prophylaxis"
+          },
+          "infantAgeWhenCoTrimoxazoleProphylaxisWasStarted": {
+            "type": "integer",
+            "description": "The number of weeks or months infant was when started on co-trimoxazole (CTX) prophylaxis preventive therapy"
+          },
+          "presumptiveClinicalDiagnosisOfSevereHivInfectionInInfants": {
+            "type": "boolean",
+            "description": "Presumptive clinical diagnosis of severe HIV infection in infants"
+          },
+          "infantArvProphylaxis": {
+            "type": "boolean",
+            "description": "Infant is taking an antiretroviral prophylaxis to prevent infection from HIV exposure"
+          },
+          "infantArvProphylaxisStartDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date on which the infant was started on an antiretroviral prophylaxis"
+          },
+          "hivTestType": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE168",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE168 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE168.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE168"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE168"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Type of HIV test"
+          },
+          "maternalAndChildHealthServiceVisit": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE173",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE173 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE173.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE173"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE173"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Maternal and child health service visit attended by an HIV-exposed infant"
+          },
+          "weeksPostpartum": {
+            "type": "integer",
+            "description": "Number of weeks postpartum on this visit date"
+          },
+          "birthCohort": {
+            "type": "string",
+            "format": "date",
+            "description": "Month and year of infant's birth, which the infant is registered into. The cohort is a group of infants born in the same month, whose status is followed over time."
+          },
+          "registeredInBirthCohort": {
+            "type": "boolean",
+            "description": "Whether the infant has been registered in a birth cohort"
+          },
+          "eidSampleNumber": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE180",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE180 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE180.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE180"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE180"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Early infant diagnosis (EID) sample number"
+          },
+          "eidTestNumber": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE183",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE183 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE183.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE183"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE183"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Early infant diagnosis (EID) HIV test number using the same sample"
+          },
+          "eidTestNumber1TestResult": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE186",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE186 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE186.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE186"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE186"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Early infant diagnosis test number 1 test result"
+          },
+          "eidTestNumber2TestResult": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE190",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE190 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE190.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE190"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE190"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Early infant diagnosis test number 2 test result"
+          },
+          "assayNumberInTestingStrategy": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE194",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE194 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE194.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE194"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE194"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The number of the assay (test kit) in the HIV testing strategy"
+          },
+          "testResultOfHivAssay1": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE200",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE200 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE200.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE200"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE200"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The result of the first HIV assay in the testing strategy"
+          },
+          "testResultOfHivAssay2": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE204",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE204 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE204.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE204"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE204"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The result of the second HIV assay in the testing strategy"
+          },
+          "testResultOfHivAssay3": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE208",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE208 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE208.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE208"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE208"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The result of the third HIV assay in the testing strategy"
+          },
+          "testResultOfHivAssay1Repeated": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE212",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE212 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE212.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE212"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE212"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The result of the repeated first HIV assay in the testing strategy"
+          },
+          "testResultOfSyphilisAssay1": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE216",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE216 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE216.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE216"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE216"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The result of the first syphilis assay in the testing strategy"
+          },
+          "testResultOfSyphilisAssay1Repeated": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE220",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE220 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE220.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE220"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE220"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The result of the first syphilis assay repeated in the testing strategy"
+          },
+          "hivTestDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Date of the HIV test"
+          },
+          "infantHivStatus": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE225",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE225 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE225.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE225"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE225"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "HIV status reported after applying the HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis."
+          },
+          "infantArtStartDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date on which the infant was started or restarted on antiretroviral therapy (ART)"
+          },
+          "finalDiagnosisOfHivExposedInfant": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE230",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE230 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE230.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE230"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE230"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "HIV-exposed infant final status at 18 months or 3 months after cessation of breastfeeding (whichever is later)."
+          },
+          "hivExposedInfantReasonForUnknownFinalStatus": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE234",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE234 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE234.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE234"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE234"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The outcome for the infant does not have a final outcome, which may because of death, stopped treatment or lost to follow-up."
+          },
+          "dateOfDeathOfInfant": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date that the infant died"
+          },
+          "causeOfDeathOfInfant": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE240",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE240 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE240.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE240"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE240"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "The infant's cause of death"
+          },
+          "infantDiedWithin24HoursOfChildbirth": {
+            "type": "boolean",
+            "description": "The infant died within 24 hours of childbirth"
+          },
+          "actionsNeededDuringInfantFollowUpVisit": {
+            "type": "string",
+            "description": "Any actions needed during infant follow-up visit"
+          },
+          "timingOfAdditionalInfantHivTest": {
+            "type": "integer",
+            "description": "Age in months when additional infant HIV test is performed"
+          },
+          "dateOfSampleCollectionOfAdditionalInfantHivTest": {
+            "type": "string",
+            "format": "date",
+            "description": "Date of sample collection of additional infant HIV test"
+          },
+          "haemoglobinHbResult": {
+            "type": "integer",
+            "description": "Result of woman's haemoglobin test during ANC, labour or delivery. Full blood count testing is recommended, and if not available, use of  haemoglobinometer over haemoglobin colour scale."
+          },
+          "bloodGroupAndRhFactor": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE246",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE246 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE246.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE246"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE246"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Mother's blood type and blood Rh factor"
+          },
+          "asymptomaticBacteriuriaAsbTestResult": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE255",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE255 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE255.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE255"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE255"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Result of urine culture (or urine Gram-staining if not available over dipstick tests) for diagnosing asymptomatic bacteriuria"
+          },
+          "urineProteinTestResult": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "FHIR Coding from ValueSet HIV.E.DE259",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "description": "Code system URI"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Code value"
+                  },
+                  "display": {
+                    "type": "string",
+                    "description": "Human readable display text"
+                  }
+                },
+                "required": [
+                  "system",
+                  "code"
+                ]
+              },
+              {
+                "type": "object",
+                "description": "Coding from ValueSet HIV.E.DE259 (JSON-LD structure)",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "const": "http://smart.who.int/base/ValueSet-HIV.E.DE259.jsonld",
+                    "description": "JSON-LD type reference to ValueSet HIV.E.DE259"
+                  },
+                  "@id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Full IRI of the code from ValueSet HIV.E.DE259"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "@id"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Results of urine protein test of mother during ANC visit"
+          },
+          "typeOfHypertensiveDisorder": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "description": "FHIR Coding from ValueSet HIV.E.DE264",
+                  "properties": {
+                    "system": {
+                      "type": "string",
+                      "description": "Code system URI"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Code value"
+                    },
+                    "display": {
+                      "type": "string",
+                      "description": "Human readable display text"
+                    }
+                  },
+                  "required": [
+                    "system",
+                    "code"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Coding from ValueSet HIV.E.DE264 (JSON-LD structure)",
+                  "properties": {
+                    "@type": {
+                      "type": "string",
+                      "const": "http://smart.who.int/base/ValueSet-HIV.E.DE264.jsonld",
+                      "description": "JSON-LD type reference to ValueSet HIV.E.DE264"
+                    },
+                    "@id": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Full IRI of the code from ValueSet HIV.E.DE264"
+                    }
+                  },
+                  "required": [
+                    "@type",
+                    "@id"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Coding from ValueSet HIV.E.DE264. Supports both FHIR Coding structure and JSON-LD structure."
+            },
+            "description": "Type of hypertensive disorder of the mother"
+          }
+        },
+        "required": [
+          "resourceType",
+          "gestationalAge",
+          "sourceOfGestationalAge",
+          "expectedDateOfDeliveryEdd",
+          "numberOfPregnanciesGravida",
+          "numberOfPreviousPregnancies",
+          "numberOfMiscarriagesAndOrAbortions",
+          "numberOfLiveBirths",
+          "numberOfCaesarianSections",
+          "numberOfStillbirths",
+          "parity",
+          "deliveryDate",
+          "placeOfDelivery",
+          "infantFirstName",
+          "infantSurname",
+          "infantUniqueId",
+          "ancContactDate",
+          "referral",
+          "genderOfInfant",
+          "infantOrChildExposureToHiv",
+          "maternalSyphilisTreatment",
+          "signsOfSubstantialRiskOfHivInfection",
+          "birthCohort",
+          "registeredInBirthCohort",
+          "infantHivStatus"
+        ],
+        "resourceDefinition": "http://smart.who.int/hiv/StructureDefinition/HIVEPMTCT",
+        "fhir:parent": "http://hl7.org/fhir/StructureDefinition/Base",
+        "jsonld:valuesets": [
+          "HIV.E.DE186",
+          "HIV.E.DE240",
+          "HIV.E.DE91",
+          "HIV.E.DE75",
+          "HIV.E.DE190",
+          "HIV.E.DE234",
+          "HIV.E.DE264",
+          "HIV.E.DE17",
+          "HIV.E.DE173",
+          "HIV.E.DE6",
+          "HIV.E.DE180",
+          "HIV.E.DE259",
+          "HIV.E.DE62",
+          "HIV.E.DE67",
+          "HIV.E.DE204",
+          "HIV.E.DE230",
+          "HIV.E.DE246",
+          "HIV.E.DE225",
+          "HIV.E.DE136",
+          "HIV.E.DE108",
+          "HIV.E.DE200",
+          "HIV.E.DE216",
+          "HIV.E.DE212",
+          "HIV.E.DE255",
+          "HIV.E.DE52",
+          "HIV.E.DE194",
+          "HIV.E.DE127",
+          "HIV.E.DE168",
+          "HIV.E.DE183",
+          "HIV.E.DE47",
+          "HIV.E.DE149",
+          "HIV.E.DE220",
+          "HIV.E.DE41",
+          "HIV.E.DE145",
+          "HIV.E.DE114",
+          "HIV.E.DE104",
+          "HIV.E.DE141",
+          "HIV.E.DE155",
+          "HIV.E.DE208"
+        ],
+        "jsonld:contextTemplate": {
+          "@version": 1.1,
+          "fhir": "http://hl7.org/fhir/",
+          "HIV.E.DE186": "http://smart.who.int/base/ValueSet-HIV.E.DE186.jsonld",
+          "HIV.E.DE240": "http://smart.who.int/base/ValueSet-HIV.E.DE240.jsonld",
+          "HIV.E.DE91": "http://smart.who.int/base/ValueSet-HIV.E.DE91.jsonld",
+          "HIV.E.DE75": "http://smart.who.int/base/ValueSet-HIV.E.DE75.jsonld",
+          "HIV.E.DE190": "http://smart.who.int/base/ValueSet-HIV.E.DE190.jsonld",
+          "HIV.E.DE234": "http://smart.who.int/base/ValueSet-HIV.E.DE234.jsonld",
+          "HIV.E.DE264": "http://smart.who.int/base/ValueSet-HIV.E.DE264.jsonld",
+          "HIV.E.DE17": "http://smart.who.int/base/ValueSet-HIV.E.DE17.jsonld",
+          "HIV.E.DE173": "http://smart.who.int/base/ValueSet-HIV.E.DE173.jsonld",
+          "HIV.E.DE6": "http://smart.who.int/base/ValueSet-HIV.E.DE6.jsonld",
+          "HIV.E.DE180": "http://smart.who.int/base/ValueSet-HIV.E.DE180.jsonld",
+          "HIV.E.DE259": "http://smart.who.int/base/ValueSet-HIV.E.DE259.jsonld",
+          "HIV.E.DE62": "http://smart.who.int/base/ValueSet-HIV.E.DE62.jsonld",
+          "HIV.E.DE67": "http://smart.who.int/base/ValueSet-HIV.E.DE67.jsonld",
+          "HIV.E.DE204": "http://smart.who.int/base/ValueSet-HIV.E.DE204.jsonld",
+          "HIV.E.DE230": "http://smart.who.int/base/ValueSet-HIV.E.DE230.jsonld",
+          "HIV.E.DE246": "http://smart.who.int/base/ValueSet-HIV.E.DE246.jsonld",
+          "HIV.E.DE225": "http://smart.who.int/base/ValueSet-HIV.E.DE225.jsonld",
+          "HIV.E.DE136": "http://smart.who.int/base/ValueSet-HIV.E.DE136.jsonld",
+          "HIV.E.DE108": "http://smart.who.int/base/ValueSet-HIV.E.DE108.jsonld",
+          "HIV.E.DE200": "http://smart.who.int/base/ValueSet-HIV.E.DE200.jsonld",
+          "HIV.E.DE216": "http://smart.who.int/base/ValueSet-HIV.E.DE216.jsonld",
+          "HIV.E.DE212": "http://smart.who.int/base/ValueSet-HIV.E.DE212.jsonld",
+          "HIV.E.DE255": "http://smart.who.int/base/ValueSet-HIV.E.DE255.jsonld",
+          "HIV.E.DE52": "http://smart.who.int/base/ValueSet-HIV.E.DE52.jsonld",
+          "HIV.E.DE194": "http://smart.who.int/base/ValueSet-HIV.E.DE194.jsonld",
+          "HIV.E.DE127": "http://smart.who.int/base/ValueSet-HIV.E.DE127.jsonld",
+          "HIV.E.DE168": "http://smart.who.int/base/ValueSet-HIV.E.DE168.jsonld",
+          "HIV.E.DE183": "http://smart.who.int/base/ValueSet-HIV.E.DE183.jsonld",
+          "HIV.E.DE47": "http://smart.who.int/base/ValueSet-HIV.E.DE47.jsonld",
+          "HIV.E.DE149": "http://smart.who.int/base/ValueSet-HIV.E.DE149.jsonld",
+          "HIV.E.DE220": "http://smart.who.int/base/ValueSet-HIV.E.DE220.jsonld",
+          "HIV.E.DE41": "http://smart.who.int/base/ValueSet-HIV.E.DE41.jsonld",
+          "HIV.E.DE145": "http://smart.who.int/base/ValueSet-HIV.E.DE145.jsonld",
+          "HIV.E.DE114": "http://smart.who.int/base/ValueSet-HIV.E.DE114.jsonld",
+          "HIV.E.DE104": "http://smart.who.int/base/ValueSet-HIV.E.DE104.jsonld",
+          "HIV.E.DE141": "http://smart.who.int/base/ValueSet-HIV.E.DE141.jsonld",
+          "HIV.E.DE155": "http://smart.who.int/base/ValueSet-HIV.E.DE155.jsonld",
+          "HIV.E.DE208": "http://smart.who.int/base/ValueSet-HIV.E.DE208.jsonld"
+        }
+      }
+    }
+  }
+}

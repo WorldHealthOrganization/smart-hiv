@@ -1,0 +1,1111 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "Overloads",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "320",
+            "s" : [ {
+               "value" : [ "/**\n * Library: HIV.IND.49 Logic\n * Ref No: DFT.2\n * Short Name: TB symptom-screened positive among new ART patients\n *\n * Definition: % of people living with HIV newly initiated on ART who were screened for TB symptoms and who screened positive\n *\n * Numerator: Number of people living with HIV newly initiated on ART who screened positive for TB symptoms\n * Numerator Calculation: COUNT of clients with \"HIV status\"='HIV-positive' AND with \"ART start type\"='First-time user of ART' AND with \"ART start date\" in the reporting period AND \"TB screening date\" in the reporting period AND \"TB screening result\"='Screen positive for TB'\n * Numerator Exclusions: \n *\n * Denominator: Number of people living with HIV newly initiated on ART during the reporting period who were screened for TB symptoms\n * Denominator Calculation: COUNT of clients with \"HIV status\"='HIV-positive' AND with \"ART start type\"='First-time user of ART' AND with \"ART start date\" in the reporting period AND \"TB screening date\" in the reporting period\n * Denominator Exclusions: \n *\n * Disaggregations:\n * • Gender (female, male, other*) \n *  • Age 0–4, 5–9, 10–14, 15–19, 20–24, 25–49, 50+ years)** \n *  • Cities and other administrative regions of epidemiologic importance\n *\n * Disaggregation Elements: Gender | Age\n *\n * Numerator and Denominator Elements:\n * ART start date \n *  ART start type \n *  HIV status \n *  TB screening date \n *  TB screening result\n *\n * Reference: Consolidated guidelines on person-centred HIV strategic information: strengthening routine data for impact. Geneva: World Health Organization; 2022\n * \n * Data Concepts:\n * HIV.A.DE17: Age | Calculated age (number of years) of the client based on date of birth\n * HIV.A.DE18: Gender* | Gender of the client*\n * HIV.A.DE19: Female | Client identifies as female\n * HIV.A.DE20: Male | Client identifies as male\n * HIV.A.DE21: Transgender male | Client identifies as transgender male\n * HIV.A.DE22: Transgender female | Client identifies as transgender female\n * HIV.A.DE23: Other | Additional category\n * HIV.B.DE72: ART start date | The date on which the client started or restarted antiretroviral therapy (ART)\n * HIV.B.DE115: HIV status | HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.\n * HIV.B.DE116: HIV-positive | Client is HIV-positive\n * HIV.B.DE117: HIV-negative | Client is HIV-negative\n * HIV.B.DE118: Unknown | Client has unknown HIV status\n * HIV.D.DE39: ART start date | The date on which the client started or restarted ART\n * HIV.D.DE43: ART start type | Whether the client is ART naive or is restarting ART\n * HIV.D.DE44: First-time user of ART | Client is ART naive, having never taken ART to treat HIV before\n * HIV.D.DE45: Restarting ART | Client is restarting ART after stopping treatment for any reason\n * HIV.D.DE986: TB screening result | Record the result of the tuberculosis (TB) screening\n * HIV.D.DE987: Screen positive for TB | Screening result was positive for tuberculosis (TB)\n * HIV.D.DE988: Screen negative for TB | Screening result was negative for tuberculosis (TB)\n * HIV.D.DE989: Inconclusive | Screening result was inconclusive for tuberculosis (TB)\n * HIV.D.DE990: TB screening date | Date the TB screening was conducted\n * HIV.SRV.DE6: ART start date | The date on which the client started or restarted antiretroviral therapy (ART)\n *\n * Additional Context\n * - what it measures: This indicator measures the percentage of people living with HIV newly initiated on ART and screened for symptoms of active TB disease who screen positive.\n * - rationale: • Routine TB screening among people living with HIV newly initiated on ART and those who are already on ART is essential to identifying presumptive TB cases in need of confirmatory diagnostic testing and to determine eligibility for TPT if active TB disease is ruled out. | • Screening positivity rates vary based on background TB prevalence and other epidemiological and environmental factors. However, low screening positivity rates can signal inadequate or poor-quality TB screening, particularly in high burden settings. | • It is important to understand the cascade from ART enrolment to treatment of active | TB disease; this indicator will highlight obstacles between ART enrolment and screening for TB symptoms. | • This is the second of five \"screening cascade\" indicators considered priority for high burden TB/HIV settings.\n * - method: \"Newly initiated\" is defined as the number of people living with HIV who start ART in accordance with national treatment guidelines during the reporting period. |  | For the numerator and denominator: Programme records (for example, ART registers, EMR)\n * \n * Suggested Scoring Method: proportion | http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm\n */\n\n","library HIVIND49Logic" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "HIVIND49Logic",
+         "system" : "http://smart.who.int/hiv"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1",
+            "version" : "1.0.0"
+         }, {
+            "localId" : "206",
+            "locator" : "67:1-67:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "// Included Libraries\n","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "69:1-69:44",
+            "localIdentifier" : "HIC",
+            "path" : "http://smart.who.int/hiv/HIVCommon",
+            "version" : "0.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'0.0.1'"," called ","HIC" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "70:1-70:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://hl7.org/fhir/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "72:1-72:29",
+            "localIdentifier" : "WCom",
+            "path" : "http://smart.who.int/hiv/WHOCommon",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "WHOCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","WCom" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "73:1-73:29",
+            "localIdentifier" : "HE",
+            "path" : "http://smart.who.int/hiv/HIVElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","HE" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "74:1-74:39",
+            "localIdentifier" : "HIE",
+            "path" : "http://smart.who.int/hiv/HIVIndicatorElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVIndicatorElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","HIE" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "parameters" : {
+         "def" : [ {
+            "localId" : "218",
+            "locator" : "77:1-77:88",
+            "name" : "Measurement Period",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "218",
+                  "s" : [ {
+                     "value" : [ "// Indicator Definition\n","parameter ","\"Measurement Period\""," " ]
+                  }, {
+                     "r" : "230",
+                     "s" : [ {
+                        "value" : [ "Interval<" ]
+                     }, {
+                        "r" : "231",
+                        "s" : [ {
+                           "value" : [ "Date" ]
+                        } ]
+                     }, {
+                        "value" : [ ">" ]
+                     } ]
+                  }, {
+                     "value" : [ " default " ]
+                  }, {
+                     "r" : "229",
+                     "s" : [ {
+                        "r" : "223",
+                        "value" : [ "Interval[","@2023-01-01",", ","@2023-01-30","]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "default" : {
+               "localId" : "229",
+               "locator" : "77:55-77:88",
+               "lowClosed" : true,
+               "highClosed" : true,
+               "type" : "Interval",
+               "low" : {
+                  "localId" : "223",
+                  "locator" : "77:64-77:74",
+                  "type" : "Date",
+                  "signature" : [ ],
+                  "year" : {
+                     "localId" : "220",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "2023",
+                     "type" : "Literal"
+                  },
+                  "month" : {
+                     "localId" : "221",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  },
+                  "day" : {
+                     "localId" : "222",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  }
+               },
+               "high" : {
+                  "localId" : "228",
+                  "locator" : "77:77-77:87",
+                  "type" : "Date",
+                  "signature" : [ ],
+                  "year" : {
+                     "localId" : "225",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "2023",
+                     "type" : "Literal"
+                  },
+                  "month" : {
+                     "localId" : "226",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  },
+                  "day" : {
+                     "localId" : "227",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "30",
+                     "type" : "Literal"
+                  }
+               }
+            },
+            "parameterTypeSpecifier" : {
+               "localId" : "230",
+               "locator" : "77:32-77:45",
+               "type" : "IntervalTypeSpecifier",
+               "pointType" : {
+                  "localId" : "231",
+                  "locator" : "77:41-77:44",
+                  "name" : "{urn:hl7-org:elm-types:r1}Date",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "localId" : "236",
+            "locator" : "79:1-79:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "234",
+            "locator" : "79:1-79:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "235",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "233",
+                  "locator" : "79:1-79:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "239",
+            "locator" : "86:1-87:6",
+            "name" : "Initial Population",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "239",
+                  "s" : [ {
+                     "r" : "240",
+                     "value" : [ "/* Populations */\n\n/*\n *Initial Population\n */\n\n","define ","\"Initial Population\"",":\n  ","true" ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "240",
+               "locator" : "87:3-87:6",
+               "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+               "value" : "true",
+               "type" : "Literal"
+            }
+         }, {
+            "localId" : "243",
+            "locator" : "96:1-99:34",
+            "name" : "Numerator",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "243",
+                  "s" : [ {
+                     "value" : [ "/**\n * Numerator\n * \n * Definition: Number of people living with HIV newly initiated on ART who screened positive for TB symptoms\n * Calculation: COUNT of clients with \"HIV status\"='HIV-positive' AND with \"ART start type\"='First-time user of ART' AND with \"ART start date\" in the reporting period AND \"TB screening date\" in the reporting period AND \"TB screening result\"='Screen positive for TB'\n */\n\n","define ","\"Numerator\"",":\n  " ]
+                  }, {
+                     "r" : "244",
+                     "s" : [ {
+                        "r" : "245",
+                        "s" : [ {
+                           "r" : "247",
+                           "s" : [ {
+                              "r" : "246",
+                              "s" : [ {
+                                 "value" : [ "HIE" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "247",
+                              "s" : [ {
+                                 "value" : [ "\"Has HIV-positive Status\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  and " ]
+                        }, {
+                           "r" : "258",
+                           "s" : [ {
+                              "value" : [ "(" ]
+                           }, {
+                              "r" : "258",
+                              "s" : [ {
+                                 "r" : "248",
+                                 "s" : [ {
+                                    "value" : [ "start of " ]
+                                 }, {
+                                    "r" : "255",
+                                    "s" : [ {
+                                       "r" : "254",
+                                       "s" : [ {
+                                          "r" : "253",
+                                          "s" : [ {
+                                             "value" : [ "First","(" ]
+                                          }, {
+                                             "r" : "250",
+                                             "s" : [ {
+                                                "r" : "249",
+                                                "s" : [ {
+                                                   "value" : [ "HE" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "250",
+                                                "s" : [ {
+                                                   "value" : [ "\"First-time user of ART\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ")" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "254",
+                                          "s" : [ {
+                                             "value" : [ "effective" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "255",
+                                       "s" : [ {
+                                          "value" : [ "toInterval","()" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "r" : "258",
+                                 "value" : [ " ","during"," " ]
+                              }, {
+                                 "r" : "256",
+                                 "s" : [ {
+                                    "value" : [ "\"Measurement Period\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ")" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n  and " ]
+                     }, {
+                        "r" : "271",
+                        "s" : [ {
+                           "r" : "270",
+                           "s" : [ {
+                              "value" : [ "HIE" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "271",
+                           "s" : [ {
+                              "value" : [ "\"Screen positive for TB\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "244",
+               "locator" : "97:3-99:34",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "245",
+                  "locator" : "97:3-98:102",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "247",
+                     "locator" : "97:3-97:31",
+                     "name" : "Has HIV-positive Status",
+                     "libraryName" : "HIE",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "localId" : "258",
+                     "locator" : "98:7-98:102",
+                     "type" : "In",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "248",
+                        "locator" : "98:8-98:73",
+                        "type" : "Start",
+                        "signature" : [ ],
+                        "operand" : {
+                           "localId" : "255",
+                           "locator" : "98:17-98:73",
+                           "name" : "toInterval",
+                           "libraryName" : "WCom",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "254",
+                              "locator" : "98:17-98:60",
+                              "path" : "effective",
+                              "type" : "Property",
+                              "source" : {
+                                 "localId" : "253",
+                                 "locator" : "98:17-98:50",
+                                 "type" : "First",
+                                 "signature" : [ ],
+                                 "source" : {
+                                    "localId" : "250",
+                                    "locator" : "98:23-98:49",
+                                    "name" : "First-time user of ART",
+                                    "libraryName" : "HE",
+                                    "type" : "ExpressionRef"
+                                 }
+                              }
+                           } ]
+                        }
+                     }, {
+                        "localId" : "259",
+                        "type" : "Interval",
+                        "low" : {
+                           "localId" : "262",
+                           "type" : "ToDateTime",
+                           "signature" : [ {
+                              "localId" : "263",
+                              "name" : "{urn:hl7-org:elm-types:r1}Date",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : {
+                              "localId" : "260",
+                              "path" : "low",
+                              "type" : "Property",
+                              "source" : {
+                                 "localId" : "256",
+                                 "locator" : "98:82-98:101",
+                                 "name" : "Measurement Period",
+                                 "type" : "ParameterRef"
+                              }
+                           }
+                        },
+                        "lowClosedExpression" : {
+                           "localId" : "264",
+                           "path" : "lowClosed",
+                           "type" : "Property",
+                           "source" : {
+                              "localId" : "256",
+                              "locator" : "98:82-98:101",
+                              "name" : "Measurement Period",
+                              "type" : "ParameterRef"
+                           }
+                        },
+                        "high" : {
+                           "localId" : "267",
+                           "type" : "ToDateTime",
+                           "signature" : [ {
+                              "localId" : "268",
+                              "name" : "{urn:hl7-org:elm-types:r1}Date",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : {
+                              "localId" : "265",
+                              "path" : "high",
+                              "type" : "Property",
+                              "source" : {
+                                 "localId" : "256",
+                                 "locator" : "98:82-98:101",
+                                 "name" : "Measurement Period",
+                                 "type" : "ParameterRef"
+                              }
+                           }
+                        },
+                        "highClosedExpression" : {
+                           "localId" : "269",
+                           "path" : "highClosed",
+                           "type" : "Property",
+                           "source" : {
+                              "localId" : "256",
+                              "locator" : "98:82-98:101",
+                              "name" : "Measurement Period",
+                              "type" : "ParameterRef"
+                           }
+                        }
+                     } ]
+                  } ]
+               }, {
+                  "localId" : "271",
+                  "locator" : "99:7-99:34",
+                  "name" : "Screen positive for TB",
+                  "libraryName" : "HIE",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "localId" : "274",
+            "locator" : "109:1-112:29",
+            "name" : "Denominator",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "274",
+                  "s" : [ {
+                     "value" : [ "/**\n * Denominator\n *\n * Definition: Number of people living with HIV newly initiated on ART during the reporting period who were screened for TB symptoms\n * Calculation: COUNT of clients with \"HIV status\"='HIV-positive' AND with \"ART start type\"='First-time user of ART' AND with \"ART start date\" in the reporting period AND \"TB screening date\" in the reporting period\n */\n\n","define ","\"Denominator\"",":\n  " ]
+                  }, {
+                     "r" : "275",
+                     "s" : [ {
+                        "r" : "276",
+                        "s" : [ {
+                           "r" : "278",
+                           "s" : [ {
+                              "r" : "277",
+                              "s" : [ {
+                                 "value" : [ "HIE" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "278",
+                              "s" : [ {
+                                 "value" : [ "\"Has HIV-positive Status\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  and " ]
+                        }, {
+                           "r" : "289",
+                           "s" : [ {
+                              "value" : [ "(" ]
+                           }, {
+                              "r" : "289",
+                              "s" : [ {
+                                 "r" : "279",
+                                 "s" : [ {
+                                    "value" : [ "start of " ]
+                                 }, {
+                                    "r" : "286",
+                                    "s" : [ {
+                                       "r" : "285",
+                                       "s" : [ {
+                                          "r" : "284",
+                                          "s" : [ {
+                                             "value" : [ "First","(" ]
+                                          }, {
+                                             "r" : "281",
+                                             "s" : [ {
+                                                "r" : "280",
+                                                "s" : [ {
+                                                   "value" : [ "HE" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "281",
+                                                "s" : [ {
+                                                   "value" : [ "\"First-time user of ART\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ")" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "285",
+                                          "s" : [ {
+                                             "value" : [ "effective" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "286",
+                                       "s" : [ {
+                                          "value" : [ "toInterval","()" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "r" : "289",
+                                 "value" : [ " ","during"," " ]
+                              }, {
+                                 "r" : "287",
+                                 "s" : [ {
+                                    "value" : [ "\"Measurement Period\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ")" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n  and " ]
+                     }, {
+                        "r" : "302",
+                        "s" : [ {
+                           "r" : "301",
+                           "s" : [ {
+                              "value" : [ "HIE" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "302",
+                           "s" : [ {
+                              "value" : [ "\"TB screening date\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "275",
+               "locator" : "110:3-112:29",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "276",
+                  "locator" : "110:3-111:102",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "278",
+                     "locator" : "110:3-110:31",
+                     "name" : "Has HIV-positive Status",
+                     "libraryName" : "HIE",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "localId" : "289",
+                     "locator" : "111:7-111:102",
+                     "type" : "In",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "279",
+                        "locator" : "111:8-111:73",
+                        "type" : "Start",
+                        "signature" : [ ],
+                        "operand" : {
+                           "localId" : "286",
+                           "locator" : "111:17-111:73",
+                           "name" : "toInterval",
+                           "libraryName" : "WCom",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "285",
+                              "locator" : "111:17-111:60",
+                              "path" : "effective",
+                              "type" : "Property",
+                              "source" : {
+                                 "localId" : "284",
+                                 "locator" : "111:17-111:50",
+                                 "type" : "First",
+                                 "signature" : [ ],
+                                 "source" : {
+                                    "localId" : "281",
+                                    "locator" : "111:23-111:49",
+                                    "name" : "First-time user of ART",
+                                    "libraryName" : "HE",
+                                    "type" : "ExpressionRef"
+                                 }
+                              }
+                           } ]
+                        }
+                     }, {
+                        "localId" : "290",
+                        "type" : "Interval",
+                        "low" : {
+                           "localId" : "293",
+                           "type" : "ToDateTime",
+                           "signature" : [ {
+                              "localId" : "294",
+                              "name" : "{urn:hl7-org:elm-types:r1}Date",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : {
+                              "localId" : "291",
+                              "path" : "low",
+                              "type" : "Property",
+                              "source" : {
+                                 "localId" : "287",
+                                 "locator" : "111:82-111:101",
+                                 "name" : "Measurement Period",
+                                 "type" : "ParameterRef"
+                              }
+                           }
+                        },
+                        "lowClosedExpression" : {
+                           "localId" : "295",
+                           "path" : "lowClosed",
+                           "type" : "Property",
+                           "source" : {
+                              "localId" : "287",
+                              "locator" : "111:82-111:101",
+                              "name" : "Measurement Period",
+                              "type" : "ParameterRef"
+                           }
+                        },
+                        "high" : {
+                           "localId" : "298",
+                           "type" : "ToDateTime",
+                           "signature" : [ {
+                              "localId" : "299",
+                              "name" : "{urn:hl7-org:elm-types:r1}Date",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : {
+                              "localId" : "296",
+                              "path" : "high",
+                              "type" : "Property",
+                              "source" : {
+                                 "localId" : "287",
+                                 "locator" : "111:82-111:101",
+                                 "name" : "Measurement Period",
+                                 "type" : "ParameterRef"
+                              }
+                           }
+                        },
+                        "highClosedExpression" : {
+                           "localId" : "300",
+                           "path" : "highClosed",
+                           "type" : "Property",
+                           "source" : {
+                              "localId" : "287",
+                              "locator" : "111:82-111:101",
+                              "name" : "Measurement Period",
+                              "type" : "ParameterRef"
+                           }
+                        }
+                     } ]
+                  } ]
+               }, {
+                  "localId" : "302",
+                  "locator" : "112:7-112:29",
+                  "name" : "TB screening date",
+                  "libraryName" : "HIE",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "localId" : "305",
+            "locator" : "121:1-122:42",
+            "name" : "Administrative Gender Stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "305",
+                  "s" : [ {
+                     "value" : [ "/* end Populations */\n\n/*\n * Disaggregators\n */\n\n","define ","\"Administrative Gender Stratifier\"",":\n\t" ]
+                  }, {
+                     "r" : "307",
+                     "s" : [ {
+                        "r" : "306",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "307",
+                        "s" : [ {
+                           "value" : [ "\"By Administrative Gender Stratifier\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "307",
+               "locator" : "122:2-122:42",
+               "name" : "By Administrative Gender Stratifier",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "310",
+            "locator" : "124:1-125:26",
+            "name" : "Age Stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "310",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Age Stratifier\"",":\n\t" ]
+                  }, {
+                     "r" : "312",
+                     "s" : [ {
+                        "r" : "311",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "312",
+                        "s" : [ {
+                           "value" : [ "\"By Age Stratifier 2\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "312",
+               "locator" : "125:2-125:26",
+               "name" : "By Age Stratifier 2",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "315",
+            "locator" : "127:1-128:38",
+            "name" : "Geographic Region Stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "315",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Geographic Region Stratifier\"",":\n\t" ]
+                  }, {
+                     "r" : "317",
+                     "s" : [ {
+                        "r" : "316",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "317",
+                        "s" : [ {
+                           "value" : [ "\"By Geographic Region Stratifier\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "317",
+               "locator" : "128:2-128:38",
+               "name" : "By Geographic Region Stratifier",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "320",
+            "locator" : "130:1-133:45",
+            "name" : "Stratification",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "320",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Stratification\"",":\n " ]
+                  }, {
+                     "r" : "349",
+                     "s" : [ {
+                        "r" : "342",
+                        "s" : [ {
+                           "r" : "337",
+                           "s" : [ {
+                              "r" : "332",
+                              "s" : [ {
+                                 "r" : "327",
+                                 "s" : [ {
+                                    "r" : "326",
+                                    "s" : [ {
+                                       "r" : "325",
+                                       "s" : [ {
+                                          "value" : [ "HIE" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "326",
+                                       "s" : [ {
+                                          "value" : [ "\"By Administrative Gender Stratifier\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "327",
+                                    "s" : [ {
+                                       "value" : [ "code" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " \n  + " ]
+                              }, {
+                                 "r" : "328",
+                                 "s" : [ {
+                                    "value" : [ "':'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " + " ]
+                           }, {
+                              "r" : "334",
+                              "s" : [ {
+                                 "r" : "333",
+                                 "s" : [ {
+                                    "value" : [ "HIE" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "334",
+                                 "s" : [ {
+                                    "value" : [ "\"By Age Stratifier 2\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n+ " ]
+                        }, {
+                           "r" : "338",
+                           "s" : [ {
+                              "value" : [ "':'" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " + " ]
+                     }, {
+                        "r" : "344",
+                        "s" : [ {
+                           "r" : "343",
+                           "s" : [ {
+                              "value" : [ "HIE" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "344",
+                           "s" : [ {
+                              "value" : [ "\"By Geographic Region Stratifier\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "349",
+               "locator" : "131:2-133:45",
+               "type" : "Concatenate",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "342",
+                  "locator" : "131:2-133:5",
+                  "type" : "Concatenate",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "337",
+                     "locator" : "131:2-132:35",
+                     "type" : "Concatenate",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "332",
+                        "locator" : "131:2-132:7",
+                        "type" : "Concatenate",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "327",
+                           "locator" : "131:2-131:47",
+                           "path" : "code",
+                           "type" : "Property",
+                           "source" : {
+                              "localId" : "326",
+                              "locator" : "131:2-131:42",
+                              "name" : "By Administrative Gender Stratifier",
+                              "libraryName" : "HIE",
+                              "type" : "ExpressionRef"
+                           }
+                        }, {
+                           "localId" : "328",
+                           "locator" : "132:5-132:7",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : ":",
+                           "type" : "Literal"
+                        } ]
+                     }, {
+                        "localId" : "334",
+                        "locator" : "132:11-132:35",
+                        "name" : "By Age Stratifier 2",
+                        "libraryName" : "HIE",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }, {
+                     "localId" : "338",
+                     "locator" : "133:3-133:5",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : ":",
+                     "type" : "Literal"
+                  } ]
+               }, {
+                  "localId" : "345",
+                  "name" : "ToString",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ {
+                     "localId" : "346",
+                     "name" : "{http://hl7.org/fhir}string",
+                     "type" : "NamedTypeSpecifier"
+                  } ],
+                  "operand" : [ {
+                     "localId" : "344",
+                     "locator" : "133:9-133:45",
+                     "name" : "By Geographic Region Stratifier",
+                     "libraryName" : "HIE",
+                     "type" : "ExpressionRef"
+                  } ]
+               } ]
+            }
+         } ]
+      }
+   }
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.E.DE17.displays.json",
+  "title": "Past pregnancy complications ValueSet Display Values",
+  "description": "Display values for Past pregnancy complications ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.E.DE18": {
+      "en": "No past pregnancy complications"
+    },
+    "HIV.E.DE19": {
+      "en": "Does not know of any past pregnancy complications"
+    },
+    "HIV.E.DE20": {
+      "en": "Pre-eclampsia"
+    },
+    "HIV.E.DE21": {
+      "en": "Eclampsia"
+    },
+    "HIV.E.DE22": {
+      "en": "Alcohol use"
+    },
+    "HIV.E.DE23": {
+      "en": "Baby died within 24 hours of birth"
+    },
+    "HIV.E.DE24": {
+      "en": "Prolonged labour"
+    },
+    "HIV.E.DE25": {
+      "en": "Convulsions"
+    },
+    "HIV.E.DE26": {
+      "en": "Forceps"
+    },
+    "HIV.E.DE27": {
+      "en": "Gestational diabetes mellitus"
+    },
+    "HIV.E.DE28": {
+      "en": "Heavy bleeding (during or after delivery)"
+    },
+    "HIV.E.DE29": {
+      "en": "Macrosomia"
+    },
+    "HIV.E.DE30": {
+      "en": "Perineal tear (3rd or 4th degree)"
+    },
+    "HIV.E.DE31": {
+      "en": "Substance use"
+    },
+    "HIV.E.DE32": {
+      "en": "Tobacco use"
+    },
+    "HIV.E.DE33": {
+      "en": "Vacuum delivery"
+    },
+    "HIV.E.DE34": {
+      "en": "Other past pregnancy problems"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.E.DE17",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:30+00:00"
+}

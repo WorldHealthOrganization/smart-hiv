@@ -1,0 +1,2343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Measure xmlns="http://hl7.org/fhir">
+  <id value="HIVIND57"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablemeasure"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+  <table class="narrative-table">
+    <tbody>
+<tr>
+
+<th colspan="2" scope="row" class="row-header">Knowledge Artifact Metadata</th>
+
+</tr>
+
+<tr>
+
+<th scope="row" class="row-header">Name (machine-readable)</th>
+
+<td class="content-container">HIVIND57</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Title (human-readable)</th>
+
+<td class="content-container">HIV.IND.57 Viral suppression among people living with HIV engaged in DSD ART models</td>
+</tr>
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Status</th>
+
+<td class="content-container">Draft</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Experimental</th>
+
+<td class="content-container">true</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Description</th>
+
+<td class="content-container"><div><p>% of people living with HIV engaged in DSD ART models who have virological suppression</p>
+</div></td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Measure Steward</th>
+
+<td class="content-container">WHO</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Steward Contact Details</th>
+
+<td class="content-container">WHO: <a href="http://who.int">http://who.int</a></td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Metadata</th>
+
+</tr>
+
+
+
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Version Number</th>
+
+<td class="content-container">0.4.4</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Measure Scoring</th>
+
+<td class="content-container"><span title="Codes:{http://terminology.hl7.org/CodeSystem/measure-scoring proportion}">Proportion</span></td>
+</tr>
+
+
+
+
+
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Improvement Notation</th>
+
+<td class="content-container"><span title="Codes:{http://terminology.hl7.org/CodeSystem/measure-improvement-notation increase}">Increased score indicates improvement</span></td>
+</tr>
+
+
+
+
+
+  
+<tr>
+
+<th scope="row" class="row-header">Population Basis</th>
+
+<td class="content-container">boolean</td>
+</tr>
+
+
+
+
+
+  
+    <tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Population Criteria</th>
+
+</tr>
+  
+  
+  
+  
+    <tr>
+      
+        
+<th scope="row" class="row-header">Initial Population</th>
+
+      
+      <td class="content-container">
+        
+        <em>ID</em>: HIV.IND.57.IP
+        <br/>
+        
+        
+          <em>Description</em>:
+          <p style="white-space: pre-line" class="tab-one">Initial Population</p>
+        
+        
+          
+            
+            <em>Logic Definition</em>: <a href="#hivind57logic-initial-population">Initial Population</a> 
+          
+        
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      
+        
+<th scope="row" class="row-header">Denominator</th>
+
+      
+      <td class="content-container">
+        
+        <em>ID</em>: HIV.IND.57.DEN
+        <br/>
+        
+        
+          <em>Description</em>:
+          <p style="white-space: pre-line" class="tab-one">Number of people enrolled in a DSD ART model with at least one routine viral load result in a medical or laboratory record during the reporting period</p>
+        
+        
+          
+            
+            <em>Logic Definition</em>: <a href="#hivind57logic-denominator">Denominator</a> 
+          
+        
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      
+        
+<th scope="row" class="row-header">Numerator</th>
+
+      
+      <td class="content-container">
+        
+        <em>ID</em>: HIV.IND.57.NUM
+        <br/>
+        
+        
+          <em>Description</em>:
+          <p style="white-space: pre-line" class="tab-one">Number of people enrolled in a DSD ART model with at least one routine viral load test during the reporting period who have virological suppression (less than 1000 copies/mL) at 6 months after ART initiation and yearly thereafter (that is, at 24, 36, 48 and 60 months, etc. after ART initiation).</p>
+        
+        
+          
+            
+            <em>Logic Definition</em>: <a href="#hivind57logic-numerator">Numerator</a> 
+          
+        
+      </td>
+    </tr>
+  
+
+  
+<tr>
+  
+<th scope="row" class="row-header">Stratifier</th>
+
+  <td class="content-container">
+    
+      <em>ID</em>: HIV.IND.57.S
+      
+    
+    
+    
+  </td>
+</tr>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Logic</th>
+
+</tr>
+
+<tr>
+
+<th scope="row" class="row-header">Primary Library</th>
+
+<td class="content-container"><a href="Library-HIVIND57Logic.html">HIV.IND.57 Logic</a></td>
+</tr>
+
+
+
+
+  
+  
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: FHIR model information
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIR-ModelInfo.html">http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library HIE
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="Library-HIVIndicatorElements.html">HIVIndicatorElements</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVIndicatorElements</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library FHIRHelpers
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIRHelpers.html">http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library Concepts
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <code>http://smart.who.int/hiv/Library/HIVConcepts|0.0.2</code>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVConcepts|0.0.2</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library Elements
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="Library-HIVElements.html">HIVElements</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVElements</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library WC
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="Library-WHOCommon.html">WHOCommon</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/WHOCommon</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library ConceptsCustom
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <code>http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1</code>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Code system HIVConcepts
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="CodeSystem-HIVConcepts.html">WHO SMART HIV Concepts CodeSystem</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Code system missing concepts
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <code>https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts</code>
+    <br/>
+    <em>Canonical URL</em>: <tt>https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Code system ObservationCategoryCodes
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="http://terminology.hl7.org/6.1.0/CodeSystem-observation-category.html">Observation Category Codes</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://terminology.hl7.org/CodeSystem/observation-category</tt>
+    
+  </td>
+</tr>
+
+
+  
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Currently enrolled in DSD ART model
+        <br/>
+      
+      <em>Code</em>: HIV.D.DE762
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Viral load test result
+        <br/>
+      
+      <em>Code</em>: HIV.D.DE387
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+      <em>Code</em>: viral load test
+      <br/>
+      <em>System</em>: <tt>https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Routine viral load test
+        <br/>
+      
+      <em>Code</em>: HIV.D.DE392
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Male
+        <br/>
+      
+      <em>Code</em>: HIV.A.DE20
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Female
+        <br/>
+      
+      <em>Code</em>: HIV.A.DE19
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Transgender female
+        <br/>
+      
+      <em>Code</em>: HIV.A.DE22
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Transgender male
+        <br/>
+      
+      <em>Code</em>: HIV.A.DE21
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Other
+        <br/>
+      
+      <em>Code</em>: HIV.A.DE23
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Key population member*
+        <br/>
+      
+      <em>Code</em>: HIV.B.DE49
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Social History
+        <br/>
+      
+      <em>Code</em>: social-history
+      <br/>
+      <em>System</em>: <tt>http://terminology.hl7.org/CodeSystem/observation-category</tt>
+    </td>
+  </tr>
+
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Measurement Period
+    <br/>
+    <em>Use</em>: In
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: Period
+  </td>
+</tr>
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Numerator
+    <br/>
+    <em>Use</em>: Out
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: boolean
+  </td>
+</tr>
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Denominator
+    <br/>
+    <em>Use</em>: Out
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: boolean
+  </td>
+</tr>
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Initial Population
+    <br/>
+    <em>Use</em>: Out
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: boolean
+  </td>
+</tr>
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Stratification
+    <br/>
+    <em>Use</em>: Out
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: string
+  </td>
+</tr>
+  
+  
+  <tr>
+    <th colspan="2" scope="row" class="section-header"><a name="effective-data-requirements"> </a>Measure Logic Data Requirements</th>
+  </tr>
+  
+  
+<tr>
+  <th scope="row" class="row-header">Data Requirement</th>
+  <td class="content-container">
+    <em>Type</em>: EpisodeOfCare
+    <br/>
+  
+    <em>Profile(s)</em>: 
+  
+    <a href="http://hl7.org/fhir/R4/episodeofcare.html">EpisodeOfCare</a>
+    <br/>        
+  
+   
+   
+    <em>Must Support Elements</em>: type, statusHistory, period
+    <br/>
+   
+   
+  </td>
+</tr>
+
+<tr>
+  <th scope="row" class="row-header">Data Requirement</th>
+  <td class="content-container">
+    <em>Type</em>: Observation
+    <br/>
+  
+    <em>Profile(s)</em>: 
+  
+    <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+    <br/>        
+  
+   
+   
+    <em>Must Support Elements</em>: code, status, effective, partOf, value
+    <br/>
+   
+  
+    <em>Code Filter(s)</em>: 
+    <br/>
+  
+  
+    <span class="tab-one"><em>Path</em>: code</span>
+    <br/>
+  
+  
+  
+  
+    <span class="tab-one"><em>Code</em>: </span>
+    <br/>
+  
+  
+   
+  </td>
+</tr>
+
+<tr>
+  <th scope="row" class="row-header">Data Requirement</th>
+  <td class="content-container">
+    <em>Type</em>: Observation
+    <br/>
+  
+    <em>Profile(s)</em>: 
+  
+    <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+    <br/>        
+  
+   
+   
+    <em>Must Support Elements</em>: code, status, category, effective, issued, code.coding
+    <br/>
+   
+  
+    <em>Code Filter(s)</em>: 
+    <br/>
+  
+  
+    <span class="tab-one"><em>Path</em>: code</span>
+    <br/>
+  
+  
+  
+  
+    <span class="tab-one"><em>Code</em>: </span>
+    <br/>
+  
+  
+   
+  </td>
+</tr>
+
+<tr>
+  <th scope="row" class="row-header">Data Requirement</th>
+  <td class="content-container">
+    <em>Type</em>: Procedure
+    <br/>
+  
+    <em>Profile(s)</em>: 
+  
+    <a href="http://hl7.org/fhir/R4/procedure.html">Procedure</a>
+    <br/>        
+  
+   
+   
+    <em>Must Support Elements</em>: status, code, reasonCode, performed
+    <br/>
+   
+   
+  </td>
+</tr>
+
+<tr>
+  <th scope="row" class="row-header">Data Requirement</th>
+  <td class="content-container">
+    <em>Type</em>: Patient
+    <br/>
+  
+    <em>Profile(s)</em>: 
+  
+    <a href="http://hl7.org/fhir/R4/patient.html">Patient</a>
+    <br/>        
+  
+   
+   
+    <em>Must Support Elements</em>: use
+    <br/>
+   
+   
+  </td>
+</tr>
+
+  
+  <tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Logic Definitions</th>
+
+</tr>
+  
+          
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-currently-enrolled-in-dsd-art-model"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of Date DSD ART eligibility assessed */
+
+/*
+@dataElement: HIV.D.DE762 - Currently enrolled in DSD ART model
+@activity: HIV.D21 Determine regimen and treatment options
+@description: Client currently enrolled in differentiated service delivery (DSD) ART model
+*/
+
+define &quot;Currently enrolled in DSD ART model&quot;:
+  exists(
+    [EpisodeOfCare] EOC
+    where exists(EOC.type T where T ~ Concepts.&quot;Currently enrolled in DSD ART model&quot;)
+    and (exists (
+      EOC.statusHistory H
+      where H.period starts after start of &quot;Measurement Period&quot;
+      and H.period starts before end of &quot;Measurement Period&quot;
+    ) 
+    or (
+      EOC.period starts after start of &quot;Measurement Period&quot;
+      and EOC.period starts before end of &quot;Measurement Period&quot;
+    )
+    )
+  )</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivelements-viral-load-test-result-d.de387"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of Time to start ART */
+
+/*
+@dataElement: HIV.D.DE387 - Viral load test result
+@activity: HIV.D20 Diagnostics
+@description: Result from the viral load test in number of copies/mL
+*/
+
+define &quot;Viral load test result D.DE387&quot;:
+  [Observation: Concepts.&quot;Viral load test result - HIV.D.DE387&quot;] O
+    where O.status in { 'final', 'amended', 'corrected' }</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-viral-load-test-result-d.de387"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of Date of baseline CD4 count test D.DE368 */
+
+/*
+@dataElement: HIV.D.DE387 - Viral load test result
+@activity: HIV.D20 Diagnostics
+@description: Result from the viral load test in number of copies/mL
+*/
+
+define &quot;Viral load test result D.DE387&quot;:
+  Elements.&quot;Viral load test result D.DE387&quot; O
+    where O.effective.toInterval() during &quot;Measurement Period&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivelements-routine-viral-load-sample-collection"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define &quot;routine viral load sample collection&quot;:
+  [Procedure] P
+  where P.status = 'completed'
+  and P.code ~ ConceptsCustom.&quot;viral load test&quot;
+  and exists(P.reasonCode RC where RC ~ Concepts.&quot;Routine viral load test&quot;)</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivind57logic-numerator"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIND57Logic</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/**
+ * Numerator
+ * 
+ * Definition: Number of people enrolled in a DSD ART model with at least one routine viral load test during the reporting period who have virological suppression (&lt;1000 copies/mL) at 6 months after ART initiation and yearly thereafter (that is, at 24, 36, 48 and 60 months, etc. after ART initiation).
+ * Calculation: COUNT of clients with &quot;Currently enrolled in DSD ART model&quot;=True AND &quot;Date of viral load sample collection&quot; during the reporting period AND &quot;Reason for HIV viral load test&quot;='Routine viral load test' AND &quot;Viral load test result&quot; LESS THAN 1000 copies/mL
+ */
+
+define &quot;Numerator&quot;:
+  HIE.&quot;Currently enrolled in DSD ART model&quot;
+   and exists(
+    HIE.&quot;Viral load test result D.DE387&quot; VL
+    with HE.&quot;routine viral load sample collection&quot; P 
+    such that VL.partOf.references(P) and  P.performed.toInterval() during &quot;Measurement Period&quot;
+    where VL.value &lt; 1000
+    )</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivind57logic-denominator"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIND57Logic</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/**
+ * Denominator
+ *
+ * Definition: Number of people enrolled in a DSD ART model with at least one routine viral load result in a medical or laboratory record during the reporting period
+ * Calculation: COUNT of clients with &quot;Currently enrolled in DSD ART model&quot;=True AND &quot;Date of viral load sample collection&quot; during the reporting period AND &quot;Reason for HIV viral load test&quot;='Routine viral load test'
+ */
+
+define &quot;Denominator&quot;:
+  HIE.&quot;Currently enrolled in DSD ART model&quot;
+   and exists(
+    HIE.&quot;Viral load test result D.DE387&quot; VL
+    with HE.&quot;routine viral load sample collection&quot; P 
+    such that VL.partOf.references(P) and  P.performed.toInterval() during &quot;Measurement Period&quot;
+    )</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivind57logic-initial-population"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIND57Logic</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* Populations */
+
+/*
+ *Initial Population
+ */
+
+define &quot;Initial Population&quot;:
+  true</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-by-administrative-gender-stratifier"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/*
+@dataElement: HIV.A.DE18 - Gender
+@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record
+@description: Gender of the client
+*/
+
+/*
+ * By Administrative Gender of Patient Stratifier
+ * Need to expand codes
+ */
+
+define &quot;By Administrative Gender Stratifier&quot;:
+  case 
+      when Patient.gender = 'male' then Concepts.&quot;Male&quot;
+      when Patient.gender = 'female' then Concepts.&quot;Female&quot;
+      when Patient.gender = 'transgender female' then Concepts.&quot;Transgender female&quot;
+      when Patient.gender = 'transgender male' then Concepts.&quot;Transgender male&quot;
+      else Concepts.&quot;Other - HIV.A.DE23&quot;
+  end</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-age-in-years"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of Visit date A.DE3 */
+
+/*
+@dataElement: HIV.A.DE17 - Age
+@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record
+@description: Calculated age (number of years) of the client based on date of birth
+*/
+define &quot;Age In Years&quot;:
+  AgeInYearsAt(start of &quot;Measurement Period&quot;)</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-by-age-stratifier-8"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">//(0–4, 5–14, 15–24, 25+ years) 
+define &quot;By Age Stratifier 8&quot;:
+  case 
+      when &quot;Age In Years&quot; &lt;= 4 then '0-4'
+      when &quot;Age In Years&quot; &lt;= 14 then '5-14'
+      when &quot;Age In Years&quot; &lt;= 24 then '15-24'
+      when &quot;Age In Years&quot; &gt;= 25 then '25+'
+      else null
+  end</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-by-geographic-region-stratifier"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">// Geographic Region
+define &quot;By Geographic Region Stratifier&quot;:
+    First(Patient.address A where A.use in { 'home' }).state</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivelements-key-population-member-type-observation"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of Key population member B.DE49 */
+
+/*
+@dataElement: HIV.B.DE50 - Key population member type
+@activity: HIV.B6 Capture or update client history
+@description: The type of key population that the client is included in
+*/
+define &quot;Key population member type Observation&quot;:
+  [Observation: Concepts.&quot;Key population member - HIV.B.DE49&quot;] O
+    where O.status in { 'final', 'amended', 'corrected' }
+    and exists(O.category OC where OC ~ ConceptsCustom.&quot;social-history&quot;)</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-key-population-member-type-observation"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define &quot;Key population member type Observation&quot;:
+  Elements.&quot;Key population member type Observation&quot; O
+    where O.effective.toInterval() before end of &quot;Measurement Period&quot;
+    or O.issued before end of &quot;Measurement Period&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-patientgroups"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">// Stratifier
+define patientGroups:
+  &quot;Key population member type Observation&quot; O
+  return Combine(O.code.coding.code, ':')</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivind57logic-stratification"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIND57Logic</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define &quot;Stratification&quot;:
+ HIE.&quot;By Administrative Gender Stratifier&quot;.code 
+  + ':' + HIE.&quot;By Age Stratifier 8&quot;
++ ':' + HIE.&quot;By Geographic Region Stratifier&quot;
++ Combine(HIE.patientGroups, ':')</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-toconcept"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToConcept(concept FHIR.CodeableConcept):
+    if concept is null then
+        null
+    else
+        System.Concept {
+            codes: concept.coding C return ToCode(C),
+            display: concept.text.value
+        }</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tocode"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToCode(coding FHIR.Coding):
+    if coding is null then
+        null
+    else
+        System.Code {
+          code: coding.code.value,
+          system: coding.system.value,
+          version: coding.version.value,
+          display: coding.display.value
+        }</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tointerval"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToInterval(period FHIR.Period):
+    if period is null then
+        null
+    else
+        if period.&quot;start&quot; is null then
+            Interval(period.&quot;start&quot;.value, period.&quot;end&quot;.value]
+        else
+            Interval[period.&quot;start&quot;.value, period.&quot;end&quot;.value]</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tostring"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToString(value ObservationStatus): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tostring"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToString(value ProcedureStatus): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="whocommon-references"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> WHOCommon</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/*
+@description: Returns true if any of the given references are to the given resource
+@comment: Returns true if the `id` element of the given resource exactly equals the tail of any of the given references.
+NOTE: This function assumes resources from the same source server.
+*/
+define fluent function references(references List&lt;FHIR.Reference&gt;, resource FHIR.Resource):
+  exists (references R where R.references(resource))</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="whocommon-references"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> WHOCommon</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/*
+@description: Returns true if the given reference is to the given resource
+@comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference.
+NOTE: This function assumes resources from the same source server.
+*/
+define fluent function references(reference FHIR.Reference, resource FHIR.Resource):
+  resource.id = Last(Split(reference.reference, '/'))</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tostring"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToString(value string): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tointeger"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToInteger(value integer): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tostring"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToString(value AdministrativeGender): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tostring"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToString(value AddressUse): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-todatetime"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToDateTime(value instant): value.value</code></pre>
+  </td>
+
+</tr>
+
+  
+
+<tr>
+  <th colspan="2" scope="row" class="row-header">Generated using version 0.4.6 of the sample-content-ig Liquid templates</th>
+</tr>
+    </tbody>
+  </table>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE762"/>
+          <display value="Currently enrolled in DSD ART model"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE387"/>
+          <display value="Viral load test result"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts"/>
+          <code value="viral load test"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE392"/>
+          <display value="Routine viral load test"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.A.DE20"/>
+          <display value="Male"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.A.DE19"/>
+          <display value="Female"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.A.DE22"/>
+          <display value="Transgender female"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.A.DE21"/>
+          <display value="Transgender male"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.A.DE23"/>
+          <display value="Other"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.B.DE49"/>
+          <display value="Key population member*"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+          <code value="social-history"/>
+          <display value="Social History"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Currently enrolled in DSD ART model"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Date DSD ART eligibility assessed */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE762 - Currently enrolled in DSD ART model&#xA;@activity: HIV.D21 Determine regimen and treatment options&#xA;@description: Client currently enrolled in differentiated service delivery (DSD) ART model&#xA;*/&#xA;&#xA;define &quot;Currently enrolled in DSD ART model&quot;:&#xA;  exists(&#xA;    [EpisodeOfCare] EOC&#xA;    where exists(EOC.type T where T ~ Concepts.&quot;Currently enrolled in DSD ART model&quot;)&#xA;    and (exists (&#xA;      EOC.statusHistory H&#xA;      where H.period starts after start of &quot;Measurement Period&quot;&#xA;      and H.period starts before end of &quot;Measurement Period&quot;&#xA;    ) &#xA;    or (&#xA;      EOC.period starts after start of &quot;Measurement Period&quot;&#xA;      and EOC.period starts before end of &quot;Measurement Period&quot;&#xA;    )&#xA;    )&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="0"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Viral load test result D.DE387"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Time to start ART */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE387 - Viral load test result&#xA;@activity: HIV.D20 Diagnostics&#xA;@description: Result from the viral load test in number of copies/mL&#xA;*/&#xA;&#xA;define &quot;Viral load test result D.DE387&quot;:&#xA;  [Observation: Concepts.&quot;Viral load test result - HIV.D.DE387&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="1"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Viral load test result D.DE387"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Date of baseline CD4 count test D.DE368 */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE387 - Viral load test result&#xA;@activity: HIV.D20 Diagnostics&#xA;@description: Result from the viral load test in number of copies/mL&#xA;*/&#xA;&#xA;define &quot;Viral load test result D.DE387&quot;:&#xA;  Elements.&quot;Viral load test result D.DE387&quot; O&#xA;    where O.effective.toInterval() during &quot;Measurement Period&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="2"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="routine viral load sample collection"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;routine viral load sample collection&quot;:&#xA;  [Procedure] P&#xA;  where P.status = 'completed'&#xA;  and P.code ~ ConceptsCustom.&quot;viral load test&quot;&#xA;  and exists(P.reasonCode RC where RC ~ Concepts.&quot;Routine viral load test&quot;)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="3"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIND57Logic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Numerator"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/**&#xA; * Numerator&#xA; * &#xA; * Definition: Number of people enrolled in a DSD ART model with at least one routine viral load test during the reporting period who have virological suppression (&lt;1000 copies/mL) at 6 months after ART initiation and yearly thereafter (that is, at 24, 36, 48 and 60 months, etc. after ART initiation).&#xA; * Calculation: COUNT of clients with &quot;Currently enrolled in DSD ART model&quot;=True AND &quot;Date of viral load sample collection&quot; during the reporting period AND &quot;Reason for HIV viral load test&quot;='Routine viral load test' AND &quot;Viral load test result&quot; LESS THAN 1000 copies/mL&#xA; */&#xA;&#xA;define &quot;Numerator&quot;:&#xA;  HIE.&quot;Currently enrolled in DSD ART model&quot;&#xA;   and exists(&#xA;    HIE.&quot;Viral load test result D.DE387&quot; VL&#xA;    with HE.&quot;routine viral load sample collection&quot; P &#xA;    such that VL.partOf.references(P) and  P.performed.toInterval() during &quot;Measurement Period&quot;&#xA;    where VL.value &lt; 1000&#xA;    )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="4"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIND57Logic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Denominator"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/**&#xA; * Denominator&#xA; *&#xA; * Definition: Number of people enrolled in a DSD ART model with at least one routine viral load result in a medical or laboratory record during the reporting period&#xA; * Calculation: COUNT of clients with &quot;Currently enrolled in DSD ART model&quot;=True AND &quot;Date of viral load sample collection&quot; during the reporting period AND &quot;Reason for HIV viral load test&quot;='Routine viral load test'&#xA; */&#xA;&#xA;define &quot;Denominator&quot;:&#xA;  HIE.&quot;Currently enrolled in DSD ART model&quot;&#xA;   and exists(&#xA;    HIE.&quot;Viral load test result D.DE387&quot; VL&#xA;    with HE.&quot;routine viral load sample collection&quot; P &#xA;    such that VL.partOf.references(P) and  P.performed.toInterval() during &quot;Measurement Period&quot;&#xA;    )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="5"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIND57Logic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Initial Population"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* Populations */&#xA;&#xA;/*&#xA; *Initial Population&#xA; */&#xA;&#xA;define &quot;Initial Population&quot;:&#xA;  true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="6"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="By Administrative Gender Stratifier"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;@dataElement: HIV.A.DE18 - Gender&#xA;@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record&#xA;@description: Gender of the client&#xA;*/&#xA;&#xA;/*&#xA; * By Administrative Gender of Patient Stratifier&#xA; * Need to expand codes&#xA; */&#xA;&#xA;define &quot;By Administrative Gender Stratifier&quot;:&#xA;  case &#xA;      when Patient.gender = 'male' then Concepts.&quot;Male&quot;&#xA;      when Patient.gender = 'female' then Concepts.&quot;Female&quot;&#xA;      when Patient.gender = 'transgender female' then Concepts.&quot;Transgender female&quot;&#xA;      when Patient.gender = 'transgender male' then Concepts.&quot;Transgender male&quot;&#xA;      else Concepts.&quot;Other - HIV.A.DE23&quot;&#xA;  end"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="7"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Age In Years"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Visit date A.DE3 */&#xA;&#xA;/*&#xA;@dataElement: HIV.A.DE17 - Age&#xA;@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record&#xA;@description: Calculated age (number of years) of the client based on date of birth&#xA;*/&#xA;define &quot;Age In Years&quot;:&#xA;  AgeInYearsAt(start of &quot;Measurement Period&quot;)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="8"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="By Age Stratifier 8"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="//(0–4, 5–14, 15–24, 25+ years) &#xA;define &quot;By Age Stratifier 8&quot;:&#xA;  case &#xA;      when &quot;Age In Years&quot; &lt;= 4 then '0-4'&#xA;      when &quot;Age In Years&quot; &lt;= 14 then '5-14'&#xA;      when &quot;Age In Years&quot; &lt;= 24 then '15-24'&#xA;      when &quot;Age In Years&quot; &gt;= 25 then '25+'&#xA;      else null&#xA;  end"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="9"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="By Geographic Region Stratifier"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// Geographic Region&#xA;define &quot;By Geographic Region Stratifier&quot;:&#xA;    First(Patient.address A where A.use in { 'home' }).state"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="10"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Key population member type Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Key population member B.DE49 */&#xA;&#xA;/*&#xA;@dataElement: HIV.B.DE50 - Key population member type&#xA;@activity: HIV.B6 Capture or update client history&#xA;@description: The type of key population that the client is included in&#xA;*/&#xA;define &quot;Key population member type Observation&quot;:&#xA;  [Observation: Concepts.&quot;Key population member - HIV.B.DE49&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }&#xA;    and exists(O.category OC where OC ~ ConceptsCustom.&quot;social-history&quot;)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="11"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Key population member type Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Key population member type Observation&quot;:&#xA;  Elements.&quot;Key population member type Observation&quot; O&#xA;    where O.effective.toInterval() before end of &quot;Measurement Period&quot;&#xA;    or O.issued before end of &quot;Measurement Period&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="12"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="patientGroups"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="// Stratifier&#xA;define patientGroups:&#xA;  &quot;Key population member type Observation&quot; O&#xA;  return Combine(O.code.coding.code, ':')"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="13"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIND57Logic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Stratification"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Stratification&quot;:&#xA; HIE.&quot;By Administrative Gender Stratifier&quot;.code &#xA;  + ':' + HIE.&quot;By Age Stratifier 8&quot;&#xA;+ ':' + HIE.&quot;By Geographic Region Stratifier&quot;&#xA;+ Combine(HIE.patientGroups, ':')"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="14"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToConcept"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToConcept(concept FHIR.CodeableConcept):&#xA;    if concept is null then&#xA;        null&#xA;    else&#xA;        System.Concept {&#xA;            codes: concept.coding C return ToCode(C),&#xA;            display: concept.text.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="15"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToCode"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToCode(coding FHIR.Coding):&#xA;    if coding is null then&#xA;        null&#xA;    else&#xA;        System.Code {&#xA;          code: coding.code.value,&#xA;          system: coding.system.value,&#xA;          version: coding.version.value,&#xA;          display: coding.display.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="16"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToInterval"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToInterval(period FHIR.Period):&#xA;    if period is null then&#xA;        null&#xA;    else&#xA;        if period.&quot;start&quot; is null then&#xA;            Interval(period.&quot;start&quot;.value, period.&quot;end&quot;.value]&#xA;        else&#xA;            Interval[period.&quot;start&quot;.value, period.&quot;end&quot;.value]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="17"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value ObservationStatus): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="18"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value ProcedureStatus): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="19"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="WHOCommon"/>
+        </extension>
+        <extension url="name">
+          <valueString value="references"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;@description: Returns true if any of the given references are to the given resource&#xA;@comment: Returns true if the `id` element of the given resource exactly equals the tail of any of the given references.&#xA;NOTE: This function assumes resources from the same source server.&#xA;*/&#xA;define fluent function references(references List&lt;FHIR.Reference&gt;, resource FHIR.Resource):&#xA;  exists (references R where R.references(resource))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="20"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="WHOCommon"/>
+        </extension>
+        <extension url="name">
+          <valueString value="references"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;@description: Returns true if the given reference is to the given resource&#xA;@comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference.&#xA;NOTE: This function assumes resources from the same source server.&#xA;*/&#xA;define fluent function references(reference FHIR.Reference, resource FHIR.Resource):&#xA;  resource.id = Last(Split(reference.reference, '/'))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="21"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value string): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="22"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToInteger"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToInteger(value integer): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="23"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value AdministrativeGender): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="24"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value AddressUse): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="25"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToDateTime"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToDateTime(value instant): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="26"/>
+        </extension>
+      </extension>
+      <name value="EffectiveDataRequirements"/>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="FHIR model information"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library HIE"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVIndicatorElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts|0.0.2"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library WC"/>
+        <resource value="http://smart.who.int/hiv/Library/WHOCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library ConceptsCustom"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system HIVConcepts"/>
+        <resource value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system missing concepts"/>
+        <resource value="https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system ObservationCategoryCodes"/>
+        <resource value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="Measurement Period"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="Period"/>
+      </parameter>
+      <parameter>
+        <name value="Numerator"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Denominator"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Initial Population"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Stratification"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <dataRequirement>
+        <type value="EpisodeOfCare"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/EpisodeOfCare"/>
+        <mustSupport value="type"/>
+        <mustSupport value="statusHistory"/>
+        <mustSupport value="period"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="effective"/>
+        <mustSupport value="partOf"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.D.DE387"/>
+            <display value="Viral load test result"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="category"/>
+        <mustSupport value="effective"/>
+        <mustSupport value="issued"/>
+        <mustSupport value="code.coding"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.B.DE49"/>
+            <display value="Key population member*"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Procedure"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Procedure"/>
+        <mustSupport value="status"/>
+        <mustSupport value="code"/>
+        <mustSupport value="reasonCode"/>
+        <mustSupport value="performed"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Patient"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+        <mustSupport value="use"/>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis">
+    <valueCode value="boolean"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
+    <valueCanonical value="#effective-data-requirements"/>
+  </extension>
+  <url value="http://smart.who.int/hiv/Measure/HIVIND57"/>
+  <version value="0.4.4"/>
+  <name value="HIVIND57"/>
+  <title value="HIV.IND.57 Viral suppression among people living with HIV engaged in DSD ART models"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2024-08-18"/>
+  <publisher value="WHO"/>
+  <contact>
+    <name value="WHO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://who.int"/>
+    </telecom>
+  </contact>
+  <description value="% of people living with HIV engaged in DSD ART models who have virological suppression"/>
+  <library value="http://smart.who.int/hiv/Library/HIVIND57Logic"/>
+  <scoring>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"/>
+      <code value="proportion"/>
+      <display value="Proportion"/>
+    </coding>
+  </scoring>
+  <improvementNotation>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"/>
+      <code value="increase"/>
+    </coding>
+  </improvementNotation>
+  <group>
+    <population id="HIV.IND.57.IP">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="initial-population"/>
+          <display value="Initial Population"/>
+        </coding>
+      </code>
+      <description value="Initial Population"/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Initial Population"/>
+      </criteria>
+    </population>
+    <population id="HIV.IND.57.DEN">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="denominator"/>
+          <display value="Denominator"/>
+        </coding>
+      </code>
+      <description value="Number of people enrolled in a DSD ART model with at least one routine viral load result in a medical or laboratory record during the reporting period"/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Denominator"/>
+      </criteria>
+    </population>
+    <population id="HIV.IND.57.NUM">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="numerator"/>
+          <display value="Numerator"/>
+        </coding>
+      </code>
+      <description value="Number of people enrolled in a DSD ART model with at least one routine viral load test during the reporting period who have virological suppression (less than 1000 copies/mL) at 6 months after ART initiation and yearly thereafter (that is, at 24, 36, 48 and 60 months, etc. after ART initiation)."/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Numerator"/>
+      </criteria>
+    </population>
+    <stratifier id="HIV.IND.57.S">
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Stratification"/>
+      </criteria>
+    </stratifier>
+  </group>
+</Measure>

@@ -1,0 +1,284 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "HIV.A Registration API",
+    "description": "This tab describes the data that are collected during the registration workflow (HIV.A)",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/StructureDefinition-HIVARegistration.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the Logical Model StructureDefinition-HIVARegistration",
+        "description": "This endpoint serves the JSON Schema definition for the Logical Model StructureDefinition-HIVARegistration.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for StructureDefinition-HIVARegistration",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./StructureDefinition-HIVARegistration.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StructureDefinition-HIVARegistration": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/base/StructureDefinition-HIVARegistration.schema.json",
+        "title": "HIV.A Registration",
+        "description": "This tab describes the data that are collected during the registration workflow (HIV.A)",
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string",
+            "const": "HIVARegistration",
+            "description": "Resource type identifier for HIVARegistration logical model"
+          },
+          "@context": {
+            "description": "JSON-LD context for this logical model with ValueSet vocabularies",
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri",
+                "description": "URI reference to external JSON-LD context"
+              },
+              {
+                "type": "object",
+                "description": "Inline JSON-LD context",
+                "properties": {
+                  "@version": {
+                    "type": "number",
+                    "const": 1.1
+                  },
+                  "fhir": {
+                    "type": "string",
+                    "const": "http://hl7.org/fhir/"
+                  }
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              {
+                "type": "array",
+                "description": "Array of JSON-LD context objects/URIs",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    {
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "@type": {
+            "type": "string",
+            "description": "JSON-LD type identifier for HIVARegistration logical model",
+            "examples": [
+              "LogicalModel-HIVARegistration"
+            ]
+          },
+          "firstName": {
+            "type": "string",
+            "description": "Client's first or given name"
+          },
+          "familyName": {
+            "type": "string",
+            "description": "Client's family name or last name"
+          },
+          "visitDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time of the client's visit"
+          },
+          "referral": {
+            "type": "boolean",
+            "description": "If client was referred for care"
+          },
+          "referredBy": {
+            "$ref": "./ValueSet-HIV.A.DE5.schema.json",
+            "description": "How the client was referred"
+          },
+          "uniqueIdentifier": {
+            "type": "object",
+            "description": "Unique identifier generated for new clients or a universal ID, if used in the country"
+          },
+          "nationalId": {
+            "type": "object",
+            "description": "National unique identifier assigned to the client, if used in the country"
+          },
+          "nationalHealthId": {
+            "type": "object",
+            "description": "National health unique identifier assigned to the client, if used in the country"
+          },
+          "nationalProgrammeId": {
+            "type": "object",
+            "description": "National programme unique identifier assigned to the client, if used in the country"
+          },
+          "nationalHealthInsuranceId": {
+            "type": "object",
+            "description": "National health insurance unique identifier assigned to the client, if used in the country"
+          },
+          "countryOfBirth": {
+            "$ref": "./ValueSet-HIV.A.DE13.schema.json",
+            "description": "Country where the client was born"
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "description": "The client's date of birth (DOB) if known"
+          },
+          "dateOfBirthUnknown": {
+            "type": "boolean",
+            "description": "Is the client's DOB is unknown?"
+          },
+          "estimatedAge": {
+            "type": "integer",
+            "description": "If DOB is unknown, enter the client's estimated age. Display client's age in number of years."
+          },
+          "age": {
+            "type": "integer",
+            "description": "Calculated age (number of years) of the client based on date of birth"
+          },
+          "gender": {
+            "$ref": "./ValueSet-HIV.A.DE18.schema.json",
+            "description": "Gender of the client"
+          },
+          "otherGender": {
+            "type": "string",
+            "description": "Additional category (please specify)"
+          },
+          "sex": {
+            "$ref": "./ValueSet-HIV.A.DE25.schema.json",
+            "description": "Sex of the client assigned at birth"
+          },
+          "address": {
+            "type": "string",
+            "description": "Client's home address or address which the client is consenting to disclose"
+          },
+          "maritalStatus": {
+            "$ref": "./ValueSet-HIV.A.DE30.schema.json",
+            "description": "Client's current marital status"
+          },
+          "telephoneNumber": {
+            "type": "integer",
+            "description": "Client's telephone number (a landline or a mobile phone number)"
+          },
+          "administrativeArea": {
+            "$ref": "./ValueSet-HIV.A.DE43.schema.json",
+            "description": "This should be a context-specific list of administrative areas, such as villages, districts, etc. The purpose of this data element is to allow for grouping and flagging of client data to a particular facility's catchment area. This can be input into the system by the end user OR it can be automated in the database based on the end user's attributes."
+          },
+          "communicationConsent": {
+            "type": "boolean",
+            "description": "Indication that client gave consent to be contacted"
+          },
+          "reminderMessages": {
+            "type": "boolean",
+            "description": "Whether client wants to receive text or other messages as follow-up for HIV services"
+          },
+          "communicationPreferences": {
+            "type": "array",
+            "items": {
+              "$ref": "./ValueSet-HIV.A.DE46.schema.json",
+              "description": "Coding-shaped {system, code} object from ValueSet HIV.A.DE46"
+            },
+            "description": "How the client would like to receive family planning communications"
+          },
+          "clientEmail": {
+            "type": "string",
+            "description": "Client's primary email account where the client can be contacted"
+          },
+          "alternateContactName": {
+            "type": "string",
+            "description": "Name of an alternate contact, which could be next of kin (e.g. partner, husband, mother, sibling, etc.). The alternate contact would be used in the case of an emergency situation."
+          },
+          "alternateContactPhoneNumber": {
+            "type": "integer",
+            "description": "Phone number of the alternate contact"
+          },
+          "alternateContactAddress": {
+            "type": "string",
+            "description": "Alternate contact's home address or address which the client is consenting to disclose"
+          },
+          "alternateContactRelationship": {
+            "type": "string",
+            "description": "The alternate contact's relationship to the client (e.g. partner, husband, mother, sibling, etc.)"
+          }
+        },
+        "required": [
+          "resourceType",
+          "firstName",
+          "familyName",
+          "visitDate",
+          "referral",
+          "uniqueIdentifier",
+          "countryOfBirth",
+          "gender",
+          "sex",
+          "address",
+          "telephoneNumber",
+          "administrativeArea"
+        ],
+        "allOf": [
+          {
+            "$ref": "./StructureDefinition-FHIRSchemaBase.schema.json"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "resourceDefinition": {
+                "type": "string",
+                "format": "uri",
+                "const": "http://smart.who.int/hiv/StructureDefinition/HIVARegistration"
+              },
+              "fhir:parent": {
+                "type": "string",
+                "const": "http://hl7.org/fhir/StructureDefinition/Base"
+              },
+              "jsonld:valuesets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "const": [
+                  "HIV.A.DE13",
+                  "HIV.A.DE18",
+                  "HIV.A.DE25",
+                  "HIV.A.DE30",
+                  "HIV.A.DE43",
+                  "HIV.A.DE46",
+                  "HIV.A.DE5"
+                ]
+              },
+              "jsonld:contextTemplate": {
+                "type": "object",
+                "const": {
+                  "@version": 1.1,
+                  "fhir": "http://hl7.org/fhir/",
+                  "HIV.A.DE5": "http://smart.who.int/base/ValueSet-HIV.A.DE5.jsonld",
+                  "HIV.A.DE30": "http://smart.who.int/base/ValueSet-HIV.A.DE30.jsonld",
+                  "HIV.A.DE18": "http://smart.who.int/base/ValueSet-HIV.A.DE18.jsonld",
+                  "HIV.A.DE25": "http://smart.who.int/base/ValueSet-HIV.A.DE25.jsonld",
+                  "HIV.A.DE43": "http://smart.who.int/base/ValueSet-HIV.A.DE43.jsonld",
+                  "HIV.A.DE46": "http://smart.who.int/base/ValueSet-HIV.A.DE46.jsonld",
+                  "HIV.A.DE13": "http://smart.who.int/base/ValueSet-HIV.A.DE13.jsonld"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

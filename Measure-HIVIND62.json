@@ -1,0 +1,1531 @@
+{
+  "resourceType" : "Measure",
+  "id" : "HIVIND62",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablemeasure"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n  <table class=\"narrative-table\">\n    <tbody>\n<tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Knowledge Artifact Metadata</th>\n\n</tr>\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Name (machine-readable)</th>\n\n<td class=\"content-container\">HIVIND62</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Title (human-readable)</th>\n\n<td class=\"content-container\">HIV.IND.62 Syphilis test positivity, HIV prevention services</td>\n</tr>\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Status</th>\n\n<td class=\"content-container\">Draft</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Experimental</th>\n\n<td class=\"content-container\">true</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Description</th>\n\n<td class=\"content-container\"><div><p>% of people attending HIV prevention services who were tested for syphilis and had a positive syphilis test result during the reporting period</p>\n</div></td>\n</tr>\n\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Measure Steward</th>\n\n<td class=\"content-container\">WHO</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Steward Contact Details</th>\n\n<td class=\"content-container\">WHO: <a href=\"http://who.int\">http://who.int</a></td>\n</tr>\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Metadata</th>\n\n</tr>\n\n\n\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Version Number</th>\n\n<td class=\"content-container\">0.4.4</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Measure Scoring</th>\n\n<td class=\"content-container\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/measure-scoring proportion}\">Proportion</span></td>\n</tr>\n\n\n\n\n\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Improvement Notation</th>\n\n<td class=\"content-container\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/measure-improvement-notation decrease}\">Decreased score indicates improvement</span></td>\n</tr>\n\n\n\n\n\n  \n<tr>\n\n<th scope=\"row\" class=\"row-header\">Population Basis</th>\n\n<td class=\"content-container\">boolean</td>\n</tr>\n\n\n\n\n\n  \n    <tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Population Criteria</th>\n\n</tr>\n  \n  \n  \n  \n    <tr>\n      \n        \n<th scope=\"row\" class=\"row-header\">Initial Population</th>\n\n      \n      <td class=\"content-container\">\n        \n        <em>ID</em>: HIV.IND.62.IP\n        <br/>\n        \n        \n          <em>Description</em>:\n          <p style=\"white-space: pre-line\" class=\"tab-one\">Initial Population</p>\n        \n        \n          \n            \n            <em>Logic Definition</em>: <a href=\"#hivind62logic-initial-population\">Initial Population</a> \n          \n        \n      </td>\n    </tr>\n  \n\n  \n    <tr>\n      \n        \n<th scope=\"row\" class=\"row-header\">Denominator</th>\n\n      \n      <td class=\"content-container\">\n        \n        <em>ID</em>: HIV.IND.62.DEN\n        <br/>\n        \n        \n          <em>Description</em>:\n          <p style=\"white-space: pre-line\" class=\"tab-one\">Number of people attending HIV prevention services tested for syphilis | </p>\n        \n        \n          \n            \n            <em>Logic Definition</em>: <a href=\"#hivind62logic-denominator\">Denominator</a> \n          \n        \n      </td>\n    </tr>\n  \n\n  \n    <tr>\n      \n        \n<th scope=\"row\" class=\"row-header\">Numerator</th>\n\n      \n      <td class=\"content-container\">\n        \n        <em>ID</em>: HIV.IND.62.NUM\n        <br/>\n        \n        \n          <em>Description</em>:\n          <p style=\"white-space: pre-line\" class=\"tab-one\">Number of people attending HIV prevention services who tested positive for syphilis during the reporting period (tested positive on both nontreponemal and treponemal tests or tested positive on either nontreponemal or treponemal test) | </p>\n        \n        \n          \n            \n            <em>Logic Definition</em>: <a href=\"#hivind62logic-numerator\">Numerator</a> \n          \n        \n      </td>\n    </tr>\n  \n\n  \n<tr>\n  \n<th scope=\"row\" class=\"row-header\">Stratifier</th>\n\n  <td class=\"content-container\">\n    \n      <em>ID</em>: HIV.IND.62.S\n      \n    \n    \n    \n  </td>\n</tr>\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Logic</th>\n\n</tr>\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Primary Library</th>\n\n<td class=\"content-container\"><a href=\"Library-HIVIND62Logic.html\">HIV.IND.62 Logic</a></td>\n</tr>\n\n\n\n\n  \n  \n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: FHIR model information\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIR-ModelInfo.html\">http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library HE\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-HIVElements.html\">HIVElements</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVElements</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library Concepts\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <code>http://smart.who.int/hiv/Library/HIVConcepts|0.0.2</code>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVConcepts|0.0.2</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library FHIRHelpers\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIRHelpers.html\">http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library ConceptsCustom\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <code>http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1</code>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library WCom\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-WHOCommon.html\">WHOCommon</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/WHOCommon</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library HIE\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-HIVIndicatorElements.html\">HIVIndicatorElements</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVIndicatorElements</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Code system HIVConcepts\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"CodeSystem-HIVConcepts.html\">WHO SMART HIV Concepts CodeSystem</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Code system missing concepts\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <code>https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts</code>\n    <br/>\n    <em>Canonical URL</em>: <tt>https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Code system ObservationCategoryCodes\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"http://terminology.hl7.org/6.1.0/CodeSystem-observation-category.html\">Observation Category Codes</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://terminology.hl7.org/CodeSystem/observation-category</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Code system ConditionClinicalStatusCodes\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"http://terminology.hl7.org/6.1.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://terminology.hl7.org/CodeSystem/condition-clinical</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Code system ConditionCategoryCodes\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"http://terminology.hl7.org/6.1.0/CodeSystem-condition-category.html\">Condition Category Codes</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://terminology.hl7.org/CodeSystem/condition-category</tt>\n    \n  </td>\n</tr>\n\n\n  \n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Syphilis test result\n        <br/>\n      \n      <em>Code</em>: HIV.B.DE250\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Positive\n        <br/>\n      \n      <em>Code</em>: HIV.B.DE251\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n      <em>Code</em>: syphilis test\n      <br/>\n      <em>System</em>: <tt>https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: PrEP for HIV prevention\n        <br/>\n      \n      <em>Code</em>: HIV.C.DE76\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: STI testing and treatment services\n        <br/>\n      \n      <em>Code</em>: HIV.B.DE164\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: VMMC procedure performed\n        <br/>\n      \n      <em>Code</em>: HIV.B.DE197\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: HIV prevention intervention\n        <br/>\n      \n      <em>Code</em>: HIV.PRV.DE2\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Other\n        <br/>\n      \n      <em>Code</em>: HIV.PRV.DE8\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: OAMT\n        <br/>\n      \n      <em>Code</em>: HIV.PRV.DE4\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Male\n        <br/>\n      \n      <em>Code</em>: HIV.A.DE20\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Female\n        <br/>\n      \n      <em>Code</em>: HIV.A.DE19\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Transgender female\n        <br/>\n      \n      <em>Code</em>: HIV.A.DE22\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Transgender male\n        <br/>\n      \n      <em>Code</em>: HIV.A.DE21\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Other\n        <br/>\n      \n      <em>Code</em>: HIV.A.DE23\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Key population member*\n        <br/>\n      \n      <em>Code</em>: HIV.B.DE49\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Social History\n        <br/>\n      \n      <em>Code</em>: social-history\n      <br/>\n      <em>System</em>: <tt>http://terminology.hl7.org/CodeSystem/observation-category</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: HIV-positive\n        <br/>\n      \n      <em>Code</em>: HIV.B.DE116\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n      <em>Code</em>: active\n      <br/>\n      <em>System</em>: <tt>http://terminology.hl7.org/CodeSystem/condition-clinical</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Encounter Diagnosis\n        <br/>\n      \n      <em>Code</em>: encounter-diagnosis\n      <br/>\n      <em>System</em>: <tt>http://terminology.hl7.org/CodeSystem/condition-category</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: HIV status\n        <br/>\n      \n      <em>Code</em>: HIV.B.DE115\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: HIV-negative\n        <br/>\n      \n      <em>Code</em>: HIV.B.DE117\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Unknown\n        <br/>\n      \n      <em>Code</em>: HIV.B.DE118\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Measurement Period\n    <br/>\n    <em>Use</em>: In\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: Period\n  </td>\n</tr>\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Numerator\n    <br/>\n    <em>Use</em>: Out\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: boolean\n  </td>\n</tr>\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Denominator\n    <br/>\n    <em>Use</em>: Out\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: boolean\n  </td>\n</tr>\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Initial Population\n    <br/>\n    <em>Use</em>: Out\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: boolean\n  </td>\n</tr>\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Stratification\n    <br/>\n    <em>Use</em>: Out\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: string\n  </td>\n</tr>\n  \n  \n  <tr>\n    <th colspan=\"2\" scope=\"row\" class=\"section-header\"><a name=\"effective-data-requirements\"> </a>Measure Logic Data Requirements</th>\n  </tr>\n  \n  \n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, value, partOf\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n  \n    <span class=\"tab-one\"><em>Code</em>: </span>\n    <br/>\n  \n  \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, category, effective, issued, code.coding\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n  \n    <span class=\"tab-one\"><em>Code</em>: </span>\n    <br/>\n  \n  \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, value, issued, effective\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n  \n    <span class=\"tab-one\"><em>Code</em>: </span>\n    <br/>\n  \n  \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: status, code, value, effective\n    <br/>\n   \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Procedure\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/procedure.html\">Procedure</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: status, code, performed\n    <br/>\n   \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: MedicationStatement\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/medicationstatement.html\">MedicationStatement</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: reasonCode, effective\n    <br/>\n   \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: EpisodeOfCare\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/episodeofcare.html\">EpisodeOfCare</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: type, period, statusHistory\n    <br/>\n   \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Patient\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/patient.html\">Patient</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: use\n    <br/>\n   \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Condition\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/condition.html\">Condition</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, clinicalStatus, category, onset\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n  \n    <span class=\"tab-one\"><em>Code</em>: </span>\n    <br/>\n  \n  \n   \n  </td>\n</tr>\n\n  \n  <tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Logic Definitions</th>\n\n</tr>\n  \n          \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-syphilis-test-result-b.de250\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Syphilis test date B.DE249 */\n\n/*\n@dataElement: HIV.B.DE250 - Syphilis test result\n@activity: HIV.B23 Offer sexual and reproductive health services\n@description: Result from syphilis test\n*/\n\ndefine &quot;Syphilis test result B.DE250&quot;:\n  [Observation: Concepts.&quot;Syphilis test result - HIV.B.DE250&quot;] O\n    where O.status in { 'final', 'amended', 'corrected' }</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-positive-b.de251\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Syphilis test result B.DE250 */\n\n/*\n@dataElement: HIV.B.DE251 - Positive\n@activity: HIV.B23 Offer sexual and reproductive health services\n@description: Test result is positive for syphilis\n*/\n\ndefine &quot;Positive B.DE251&quot;:\n  &quot;Syphilis test result B.DE250&quot; O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and O.value ~ Concepts.&quot;Positive - HIV.B.DE251&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-syphilis-test-date-b.de249\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Any STI syndrome diagnosed B.DE235 */\n\n/*\n@dataElement: HIV.B.DE249 - Syphilis test date\n@activity: HIV.B23 Offer sexual and reproductive health services\n@description: Date of syphilis test\n*/\n\ndefine &quot;Syphilis test date B.DE249&quot;:\n  [Procedure] P\n  where P.status = 'completed'\n  and P.code ~ ConceptsCustom.&quot;syphilis test&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivind62logic-numerator\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIND62Logic</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/**\n * Numerator\n * \n * Definition: Number of people attending HIV prevention services who tested positive for syphilis during the reporting period (tested positive on both nontreponemal and treponemal tests or tested positive on either nontreponemal or treponemal test) | \n * Calculation: COUNT of clients with &quot;Syphilis test date&quot; in the reporting period AND &quot;Syphilis test result&quot;='Positive'\n */\n\ndefine &quot;Numerator&quot;:\n  exists(HE.&quot;Positive B.DE251&quot; S\n  with HE.&quot;Syphilis test date B.DE249&quot; P\n  such that S.partOf.references(P) and P.performed.toInterval() during &quot;Measurement Period&quot;)</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-prep-service-date\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;PrEP service date&quot;:\n  [MedicationStatement] MS\n    where exists(MS.reasonCode C where C ~ Concepts.&quot;PrEP for HIV prevention&quot;)\n    return start of MS.effective.toInterval()</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-sti-services-date\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;STI services date&quot;:\n  [Procedure] P\n  where P.status = 'completed'\n  and P.code ~ Concepts.&quot;STI testing and treatment services&quot;\n  return start of P.performed.toInterval()</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-vmmc\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of STI services */\n\n/*\n@dataElement: HIV.PRV.DE7 - VMMC\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed voluntary medical male circumcision (VMMC) services\n*/\n// define &quot;VMMC_done&quot;:\n// [Procedure] P\n//   where P.status = 'completed'\n//   and P.code ~ Concepts.&quot;Voluntary medical male circumcision VMMC&quot;\n\n\ndefine &quot;VMMC&quot;:\n  [Procedure] P\n  where P.status = 'completed'\n  and P.code ~ Concepts.&quot;VMMC procedure&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-vmmc-date\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;VMMC date&quot;:\n  &quot;VMMC&quot; P\n  return start of P.performed.toInterval()</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-other-prv.de8-date\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;Other PRV.DE8 date&quot;:\n  [Observation] O\n    where O.status in {'final', 'amended'}\n    and O.code ~ Concepts.&quot;HIV prevention intervention&quot;\n    and O.value ~ Concepts.&quot;Other - HIV.PRV.DE8&quot;\n  return start of O.effective.toInterval()</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-oamt-status-date\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;OAMT status date&quot;:\n  [EpisodeOfCare] EOC\n    where exists(EOC.type T where T ~ Concepts.&quot;OAMT&quot;)\n    return start of EOC.period</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-date-accessed-hiv-prevention-intervention\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Other PRV.DE8 */\n\n/*\n@dataElement: HIV.PRV.DE10 - Date accessed HIV prevention intervention\n@activity: HIV.B6 Capture or update client history\n@description: Date the client accessed HIV prevention intervention\n*/\n// TODO: NSP date requires fix to DeviceUseStatement support\ndefine &quot;Date accessed HIV prevention intervention&quot;: \n  flatten{&quot;PrEP service date&quot;, /*&quot;NSP date&quot;,*/ &quot;STI services date&quot;, &quot;VMMC date&quot;, &quot;Other PRV.DE8 date&quot;,&quot;OAMT status date&quot;}</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivind62logic-denominator\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIND62Logic</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/**\n * Denominator\n *\n * Definition: Number of people attending HIV prevention services tested for syphilis | \n * Calculation: COUNT of clients with &quot;Syphilis test date&quot; on &quot;Date accessed HIV prevention intervention&quot; in the reporting period\n */\n\ndefine &quot;Denominator&quot;:\n  exists(HE.&quot;Syphilis test date B.DE249&quot; P\n  where P.performed.toInterval() during &quot;Measurement Period&quot;\n  and exists (HE.&quot;Date accessed HIV prevention intervention&quot; t where t = start of P.performed.toInterval()))</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivind62logic-initial-population\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIND62Logic</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* Populations */\n\n/*\n *Initial Population\n */\n\n\ndefine &quot;Initial Population&quot;:\n  true</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-by-administrative-gender-stratifier\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\n@dataElement: HIV.A.DE18 - Gender\n@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record\n@description: Gender of the client\n*/\n\n/*\n * By Administrative Gender of Patient Stratifier\n * Need to expand codes\n */\n\ndefine &quot;By Administrative Gender Stratifier&quot;:\n  case \n      when Patient.gender = 'male' then Concepts.&quot;Male&quot;\n      when Patient.gender = 'female' then Concepts.&quot;Female&quot;\n      when Patient.gender = 'transgender female' then Concepts.&quot;Transgender female&quot;\n      when Patient.gender = 'transgender male' then Concepts.&quot;Transgender male&quot;\n      else Concepts.&quot;Other - HIV.A.DE23&quot;\n  end</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-age-in-years\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Visit date A.DE3 */\n\n/*\n@dataElement: HIV.A.DE17 - Age\n@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record\n@description: Calculated age (number of years) of the client based on date of birth\n*/\ndefine &quot;Age In Years&quot;:\n  AgeInYearsAt(start of &quot;Measurement Period&quot;)</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-by-age-stratifier-9\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;By Age Stratifier 9&quot;:\n  case \n      when &quot;Age In Years&quot; &gt;= 15 and &quot;Age In Years&quot;&lt;= 19 then '15-19'\n      when &quot;Age In Years&quot; &lt;= 24 then '20-24'\n      when &quot;Age In Years&quot; &lt;= 29 then '25–29'\n      when &quot;Age In Years&quot; &lt;= 49 then '30–49'\n      when &quot;Age In Years&quot; &gt;= 50 then '50+'\n      else null\n  end</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-by-geographic-region-stratifier\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">// Geographic Region\ndefine &quot;By Geographic Region Stratifier&quot;:\n    First(Patient.address A where A.use in { 'home' }).state</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-key-population-member-type-observation\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Key population member B.DE49 */\n\n/*\n@dataElement: HIV.B.DE50 - Key population member type\n@activity: HIV.B6 Capture or update client history\n@description: The type of key population that the client is included in\n*/\ndefine &quot;Key population member type Observation&quot;:\n  [Observation: Concepts.&quot;Key population member - HIV.B.DE49&quot;] O\n    where O.status in { 'final', 'amended', 'corrected' }\n    and exists(O.category OC where OC ~ ConceptsCustom.&quot;social-history&quot;)</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-key-population-member-type-observation\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;Key population member type Observation&quot;:\n  Elements.&quot;Key population member type Observation&quot; O\n    where O.effective.toInterval() before end of &quot;Measurement Period&quot;\n    or O.issued before end of &quot;Measurement Period&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-patientgroups\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">// Stratifier\ndefine patientGroups:\n  &quot;Key population member type Observation&quot; O\n  return Combine(O.code.coding.code, ':')</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-prep-service\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of HIV prevention intervention */\n\n/*\n@dataElement: HIV.PRV.DE3 - PrEP service\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed PrEP services\n*/\n\ndefine &quot;PrEP service&quot;:\n  [MedicationStatement] MS\n    where exists(MS.reasonCode C where C ~ Concepts.&quot;PrEP for HIV prevention&quot;)\n    sort by start of effective.toInterval()</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-prep-service\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of HIV prevention intervention */\n\n/*\n@dataElement: HIV.PRV.DE3 - PrEP service\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed PrEP services\n*/\n\ndefine &quot;PrEP service&quot;:\n  exists(Elements.&quot;PrEP service&quot; prep\n   where prep.effective.toInterval() during &quot;Measurement Period&quot;\n   )</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-oamt-status\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;OAMT status&quot;:\n    [EpisodeOfCare] EOC\n    where exists(EOC.type T where T ~ Concepts.&quot;OAMT&quot;)\n    return EOC.period</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-oamt-statushistory\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;OAMT statusHistory&quot;:\n    [EpisodeOfCare] EOC\n    where exists(EOC.type T where T ~ Concepts.&quot;OAMT&quot;) \n    and (exists (\n      EOC.statusHistory H\n      where H.period is not null))</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-oamt\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of PrEP service */\n\n/*\n@dataElement: HIV.PRV.DE4 - OAMT\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed opioid agonist maintenance treatment (OAMT) services\n*/\n\ndefine &quot;OAMT&quot;:\n  flatten{&quot;OAMT status&quot;,&quot;OAMT statusHistory&quot;.statusHistory.period}</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-oamt\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of PrEP service */\n\n/*\n@dataElement: HIV.PRV.DE4 - OAMT\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed opioid agonist maintenance treatment (OAMT) services\n*/\n\ndefine &quot;OAMT&quot;:\n  exists(Elements.&quot;OAMT&quot; t where t during &quot;Measurement Period&quot;)</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-nsp\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of OAMT */\n\n/*\n@dataElement: HIV.PRV.DE5 - NSP\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed needle-syringe programme (NSP) services\n*/\n\ndefine &quot;NSP&quot;:\n  false</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-sti-services\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">// TODO: fix device use statement \n  // [DeviceUseStatement] DUS\n  // with [Device: ConceptsCustom.&quot;needle-syringe&quot;] D\n  //     such that DUS.reasonReference.references(D) \n  //       and D.status in { 'active' }\n  // where DUS.status = 'completed'\n\n  // define &quot;NSP date&quot;:\n  // [DeviceUseStatement] DUS\n  // with [Device: ConceptsCustom.&quot;needle-syringe&quot;] D\n  //     such that DUS.reasonReference.references(D) \n  //       and D.status in { 'active' }\n  // where DUS.status = 'completed'\n  // return start of DUS.timing.toInterval()\n/* End of NSP */\n\n/*\n@dataElement: HIV.PRV.DE6 - STI services\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed sexually transmitted infection (STI) services\n*/\n\ndefine &quot;STI services&quot;:\n  [Procedure] P\n  where P.status = 'completed'\n  and P.code ~ Concepts.&quot;STI testing and treatment services&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-sti-services\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">// TODO: doesn't compile DeviceUseStatement causes translation error\n  //exists(Elements.&quot;NSP&quot; DUS where DUS.timing.toInterval() during &quot;Measurement Period&quot;)\n/* End of NSP */\n\n/*\n@dataElement: HIV.PRV.DE6 - STI services\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed sexually transmitted infection (STI) services\n*/\n\ndefine &quot;STI services&quot;:\n  exists(Elements.&quot;STI services&quot; STI where STI.performed.toInterval() during &quot;Measurement Period&quot;)</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-vmmc\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of STI services */\n\n/*\n@dataElement: HIV.PRV.DE7 - VMMC\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed voluntary medical male circumcision (VMMC) services\n*/\n\ndefine &quot;VMMC&quot;:\n  exists(Elements.&quot;VMMC&quot; V where V.performed.toInterval() during &quot;Measurement Period&quot;)</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-other-prv.de8\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of VMMC */\n\n/*\n@dataElement: HIV.PRV.DE8 - Other\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed other HIV prevention services\n*/\n\ndefine &quot;Other PRV.DE8&quot;:\n  [Observation] O\n    where O.status in {'final', 'amended'}\n    and O.code ~ Concepts.&quot;HIV prevention intervention&quot;\n    and O.value ~ Concepts.&quot;Other - HIV.PRV.DE8&quot;\n    sort by start of effective.toInterval()</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-other-prv.de8\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of VMMC */\n\n/*\n@dataElement: HIV.PRV.DE8 - Other\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed other HIV prevention services\n*/\n\ndefine &quot;Other PRV.DE8&quot;:\n  exists(Elements.&quot;Other PRV.DE8&quot; O\n    where O.effective.toInterval() during &quot;Measurement Period&quot;)</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-hiv-prevention-intervention\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of At elevated risk for HIV acquisition PRV.DE1 */\n\n/*\n@dataElement: HIV.PRV.DE2 - HIV prevention intervention\n@activity: HIV.B6 Capture or update client history\n@description: HIV prevention intervention that client accessed\n*/\n\n//(including PrEP, OAMT, NSP, STI services, VMMC) \ndefine &quot;HIV prevention intervention&quot;:\n  List&lt;String&gt;{\n    if &quot;PrEP service&quot; then 'PrEP' else null,\n    if &quot;OAMT&quot; then 'OAMT' else null,\n    if &quot;NSP&quot; then 'NSP' else null,\n    if &quot;STI services&quot; then 'STI services' else null,\n    if &quot;VMMC&quot; then 'VMMC' else null,\n    if &quot;Other PRV.DE8&quot; then 'other prevention' else null\n  }</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-hiv-status-positive-condition\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;HIV Status Positive Condition&quot;:\n  [Condition: Concepts.&quot;HIV-positive - HIV.B.DE116&quot;] C\n    where C.clinicalStatus ~ ConceptsCustom.&quot;active&quot;\n      and exists(C.category CC where CC ~ ConceptsCustom.&quot;encounter-diagnosis&quot;)\n    sort by start of onset.toInterval()</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-hiv-status-positive-condition\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;HIV Status Positive Condition&quot;:\n  Elements.&quot;HIV Status Positive Condition&quot; C\n  where C.onset before end of &quot;Measurement Period&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-hiv-status-observation\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of HIV-inconclusive */\n\n/*\n@dataElement: HIV.B.DE115 - HIV status\n@activity: HIV.B7 Test for HIV using testing algorithm\n@description: HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.\n*/\ndefine &quot;HIV Status Observation&quot;:\n  [Observation: Concepts.&quot;HIV status&quot;] O\n    where O.status in { 'final', 'amended', 'corrected' }</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-hiv-status-positive-observation\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;HIV Status Positive Observation&quot;:\n&quot;HIV Status Observation&quot; O\n    where O.value ~ Concepts.&quot;HIV-positive - HIV.B.DE116&quot;\n      sort by start of effective.toInterval()</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-hiv-status-positive-observation\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;HIV Status Positive Observation&quot;:\n  Elements.&quot;HIV Status Positive Observation&quot; O\n  where O.issued before end of &quot;Measurement Period&quot;\n  or O.effective.toInterval() starts before end of &quot;Measurement Period&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-has-hiv-positive-status\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;Has HIV-positive Status&quot;:\n  exists &quot;HIV Status Positive Condition&quot;\n  or exists &quot;HIV Status Positive Observation&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-hiv-status-negative-observation\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;HIV Status Negative Observation&quot;:\n  &quot;HIV Status Observation&quot; O\n    where O.value ~ Concepts.&quot;HIV-negative - HIV.B.DE117&quot;\n    sort by start of effective.toInterval()</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-hiv-status-negative-observation\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of HIV-positive B.DE116 */\n\ndefine &quot;HIV Status Negative Observation&quot;:\n  Elements.&quot;HIV Status Negative Observation&quot; O\n  where O.issued before end of &quot;Measurement Period&quot;\n  or O.effective.toInterval() starts before end of &quot;Measurement Period&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-hiv-status-stratifier\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of HIV-negative B.DE113 */\n\n/*\n@dataElement: HIV.B.DE115 - HIV status\n@activity: HIV.B7 Test for HIV using testing algorithm\n@description: HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.\n*/\n\n\ndefine &quot;HIV Status Stratifier&quot;:\n  case \n      when &quot;Has HIV-positive Status&quot; then Concepts.&quot;HIV-positive - HIV.B.DE116&quot;\n      when not exists(&quot;HIV Status Positive Condition&quot;) and exists(&quot;HIV Status Negative Observation&quot;) then  Concepts.&quot;HIV-negative - HIV.B.DE117&quot;\n      else Concepts.&quot;Unknown - HIV.B.DE118&quot;\n  end</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivind62logic-stratification\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIND62Logic</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;Stratification&quot;:\n HIE.&quot;By Administrative Gender Stratifier&quot;.code \n  + ':' + HIE.&quot;By Age Stratifier 9&quot;\n+ ':' + HIE.&quot;By Geographic Region Stratifier&quot;\n+ Combine(HIE.patientGroups, ':')\n+ Combine(HIE.&quot;HIV prevention intervention&quot;, ':')\n+ ':' + HIE.&quot;HIV Status Stratifier&quot;.code</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tostring\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToString(value ObservationStatus): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-toconcept\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tocode\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tostring\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToString(value ProcedureStatus): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"whocommon-references\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> WHOCommon</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\n@description: Returns true if any of the given references are to the given resource\n@comment: Returns true if the `id` element of the given resource exactly equals the tail of any of the given references.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(references List&lt;FHIR.Reference&gt;, resource FHIR.Resource):\n  exists (references R where R.references(resource))</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"whocommon-references\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> WHOCommon</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\n@description: Returns true if the given reference is to the given resource\n@comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(reference FHIR.Reference, resource FHIR.Resource):\n  resource.id = Last(Split(reference.reference, '/'))</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tostring\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToString(value string): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tointerval\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToInterval(period FHIR.Period):\n    if period is null then\n        null\n    else\n        if period.&quot;start&quot; is null then\n            Interval(period.&quot;start&quot;.value, period.&quot;end&quot;.value]\n        else\n            Interval[period.&quot;start&quot;.value, period.&quot;end&quot;.value]</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tostring\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToString(value AdministrativeGender): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tostring\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToString(value AddressUse): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-todatetime\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToDateTime(value instant): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-todatetime\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToDateTime(value dateTime): value.value</code></pre>\n  </td>\n\n</tr>\n\n  \n\n<tr>\n  <th colspan=\"2\" scope=\"row\" class=\"row-header\">Generated using version 0.4.6 of the sample-content-ig Liquid templates</th>\n</tr>\n    </tbody>\n  </table>\n</div>"
+  },
+  "contained" : [{
+    "resourceType" : "Library",
+    "id" : "effective-data-requirements",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE250",
+        "display" : "Syphilis test result"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE251",
+        "display" : "Positive"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts",
+        "code" : "syphilis test"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.C.DE76",
+        "display" : "PrEP for HIV prevention"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE164",
+        "display" : "STI testing and treatment services"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE197",
+        "display" : "VMMC procedure performed"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.PRV.DE2",
+        "display" : "HIV prevention intervention"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.PRV.DE8",
+        "display" : "Other"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.PRV.DE4",
+        "display" : "OAMT"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.A.DE20",
+        "display" : "Male"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.A.DE19",
+        "display" : "Female"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.A.DE22",
+        "display" : "Transgender female"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.A.DE21",
+        "display" : "Transgender male"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.A.DE23",
+        "display" : "Other"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE49",
+        "display" : "Key population member*"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code" : "social-history",
+        "display" : "Social History"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE116",
+        "display" : "HIV-positive"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code" : "active"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code" : "encounter-diagnosis",
+        "display" : "Encounter Diagnosis"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE115",
+        "display" : "HIV status"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE117",
+        "display" : "HIV-negative"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE118",
+        "display" : "Unknown"
+      }
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Syphilis test result B.DE250"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Syphilis test date B.DE249 */\n\n/*\n@dataElement: HIV.B.DE250 - Syphilis test result\n@activity: HIV.B23 Offer sexual and reproductive health services\n@description: Result from syphilis test\n*/\n\ndefine \"Syphilis test result B.DE250\":\n  [Observation: Concepts.\"Syphilis test result - HIV.B.DE250\"] O\n    where O.status in { 'final', 'amended', 'corrected' }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 0
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Positive B.DE251"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Syphilis test result B.DE250 */\n\n/*\n@dataElement: HIV.B.DE251 - Positive\n@activity: HIV.B23 Offer sexual and reproductive health services\n@description: Test result is positive for syphilis\n*/\n\ndefine \"Positive B.DE251\":\n  \"Syphilis test result B.DE250\" O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and O.value ~ Concepts.\"Positive - HIV.B.DE251\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 1
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Syphilis test date B.DE249"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Any STI syndrome diagnosed B.DE235 */\n\n/*\n@dataElement: HIV.B.DE249 - Syphilis test date\n@activity: HIV.B23 Offer sexual and reproductive health services\n@description: Date of syphilis test\n*/\n\ndefine \"Syphilis test date B.DE249\":\n  [Procedure] P\n  where P.status = 'completed'\n  and P.code ~ ConceptsCustom.\"syphilis test\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 2
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIND62Logic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Numerator"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/**\n * Numerator\n * \n * Definition: Number of people attending HIV prevention services who tested positive for syphilis during the reporting period (tested positive on both nontreponemal and treponemal tests or tested positive on either nontreponemal or treponemal test) | \n * Calculation: COUNT of clients with \"Syphilis test date\" in the reporting period AND \"Syphilis test result\"='Positive'\n */\n\ndefine \"Numerator\":\n  exists(HE.\"Positive B.DE251\" S\n  with HE.\"Syphilis test date B.DE249\" P\n  such that S.partOf.references(P) and P.performed.toInterval() during \"Measurement Period\")"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 3
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "PrEP service date"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"PrEP service date\":\n  [MedicationStatement] MS\n    where exists(MS.reasonCode C where C ~ Concepts.\"PrEP for HIV prevention\")\n    return start of MS.effective.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 4
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "STI services date"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"STI services date\":\n  [Procedure] P\n  where P.status = 'completed'\n  and P.code ~ Concepts.\"STI testing and treatment services\"\n  return start of P.performed.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 5
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "VMMC"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of STI services */\n\n/*\n@dataElement: HIV.PRV.DE7 - VMMC\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed voluntary medical male circumcision (VMMC) services\n*/\n// define \"VMMC_done\":\n// [Procedure] P\n//   where P.status = 'completed'\n//   and P.code ~ Concepts.\"Voluntary medical male circumcision VMMC\"\n\n\ndefine \"VMMC\":\n  [Procedure] P\n  where P.status = 'completed'\n  and P.code ~ Concepts.\"VMMC procedure\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 6
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "VMMC date"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"VMMC date\":\n  \"VMMC\" P\n  return start of P.performed.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 7
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Other PRV.DE8 date"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"Other PRV.DE8 date\":\n  [Observation] O\n    where O.status in {'final', 'amended'}\n    and O.code ~ Concepts.\"HIV prevention intervention\"\n    and O.value ~ Concepts.\"Other - HIV.PRV.DE8\"\n  return start of O.effective.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 8
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "OAMT status date"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"OAMT status date\":\n  [EpisodeOfCare] EOC\n    where exists(EOC.type T where T ~ Concepts.\"OAMT\")\n    return start of EOC.period"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 9
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Date accessed HIV prevention intervention"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Other PRV.DE8 */\n\n/*\n@dataElement: HIV.PRV.DE10 - Date accessed HIV prevention intervention\n@activity: HIV.B6 Capture or update client history\n@description: Date the client accessed HIV prevention intervention\n*/\n// TODO: NSP date requires fix to DeviceUseStatement support\ndefine \"Date accessed HIV prevention intervention\": \n  flatten{\"PrEP service date\", /*\"NSP date\",*/ \"STI services date\", \"VMMC date\", \"Other PRV.DE8 date\",\"OAMT status date\"}"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 10
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIND62Logic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Denominator"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/**\n * Denominator\n *\n * Definition: Number of people attending HIV prevention services tested for syphilis | \n * Calculation: COUNT of clients with \"Syphilis test date\" on \"Date accessed HIV prevention intervention\" in the reporting period\n */\n\ndefine \"Denominator\":\n  exists(HE.\"Syphilis test date B.DE249\" P\n  where P.performed.toInterval() during \"Measurement Period\"\n  and exists (HE.\"Date accessed HIV prevention intervention\" t where t = start of P.performed.toInterval()))"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 11
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIND62Logic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Initial Population"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* Populations */\n\n/*\n *Initial Population\n */\n\n\ndefine \"Initial Population\":\n  true"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 12
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "By Administrative Gender Stratifier"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n@dataElement: HIV.A.DE18 - Gender\n@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record\n@description: Gender of the client\n*/\n\n/*\n * By Administrative Gender of Patient Stratifier\n * Need to expand codes\n */\n\ndefine \"By Administrative Gender Stratifier\":\n  case \n      when Patient.gender = 'male' then Concepts.\"Male\"\n      when Patient.gender = 'female' then Concepts.\"Female\"\n      when Patient.gender = 'transgender female' then Concepts.\"Transgender female\"\n      when Patient.gender = 'transgender male' then Concepts.\"Transgender male\"\n      else Concepts.\"Other - HIV.A.DE23\"\n  end"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 13
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Age In Years"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Visit date A.DE3 */\n\n/*\n@dataElement: HIV.A.DE17 - Age\n@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record\n@description: Calculated age (number of years) of the client based on date of birth\n*/\ndefine \"Age In Years\":\n  AgeInYearsAt(start of \"Measurement Period\")"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 14
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "By Age Stratifier 9"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"By Age Stratifier 9\":\n  case \n      when \"Age In Years\" >= 15 and \"Age In Years\"<= 19 then '15-19'\n      when \"Age In Years\" <= 24 then '20-24'\n      when \"Age In Years\" <= 29 then '25–29'\n      when \"Age In Years\" <= 49 then '30–49'\n      when \"Age In Years\" >= 50 then '50+'\n      else null\n  end"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 15
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "By Geographic Region Stratifier"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "// Geographic Region\ndefine \"By Geographic Region Stratifier\":\n    First(Patient.address A where A.use in { 'home' }).state"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 16
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Key population member type Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Key population member B.DE49 */\n\n/*\n@dataElement: HIV.B.DE50 - Key population member type\n@activity: HIV.B6 Capture or update client history\n@description: The type of key population that the client is included in\n*/\ndefine \"Key population member type Observation\":\n  [Observation: Concepts.\"Key population member - HIV.B.DE49\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n    and exists(O.category OC where OC ~ ConceptsCustom.\"social-history\")"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 17
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Key population member type Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"Key population member type Observation\":\n  Elements.\"Key population member type Observation\" O\n    where O.effective.toInterval() before end of \"Measurement Period\"\n    or O.issued before end of \"Measurement Period\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 18
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "patientGroups"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "// Stratifier\ndefine patientGroups:\n  \"Key population member type Observation\" O\n  return Combine(O.code.coding.code, ':')"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 19
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "PrEP service"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of HIV prevention intervention */\n\n/*\n@dataElement: HIV.PRV.DE3 - PrEP service\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed PrEP services\n*/\n\ndefine \"PrEP service\":\n  [MedicationStatement] MS\n    where exists(MS.reasonCode C where C ~ Concepts.\"PrEP for HIV prevention\")\n    sort by start of effective.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 20
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "PrEP service"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of HIV prevention intervention */\n\n/*\n@dataElement: HIV.PRV.DE3 - PrEP service\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed PrEP services\n*/\n\ndefine \"PrEP service\":\n  exists(Elements.\"PrEP service\" prep\n   where prep.effective.toInterval() during \"Measurement Period\"\n   )"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 21
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "OAMT status"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"OAMT status\":\n    [EpisodeOfCare] EOC\n    where exists(EOC.type T where T ~ Concepts.\"OAMT\")\n    return EOC.period"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 22
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "OAMT statusHistory"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"OAMT statusHistory\":\n    [EpisodeOfCare] EOC\n    where exists(EOC.type T where T ~ Concepts.\"OAMT\") \n    and (exists (\n      EOC.statusHistory H\n      where H.period is not null))"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 23
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "OAMT"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of PrEP service */\n\n/*\n@dataElement: HIV.PRV.DE4 - OAMT\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed opioid agonist maintenance treatment (OAMT) services\n*/\n\ndefine \"OAMT\":\n  flatten{\"OAMT status\",\"OAMT statusHistory\".statusHistory.period}"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 24
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "OAMT"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of PrEP service */\n\n/*\n@dataElement: HIV.PRV.DE4 - OAMT\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed opioid agonist maintenance treatment (OAMT) services\n*/\n\ndefine \"OAMT\":\n  exists(Elements.\"OAMT\" t where t during \"Measurement Period\")"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 25
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "NSP"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of OAMT */\n\n/*\n@dataElement: HIV.PRV.DE5 - NSP\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed needle-syringe programme (NSP) services\n*/\n\ndefine \"NSP\":\n  false"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 26
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "STI services"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "// TODO: fix device use statement \n  // [DeviceUseStatement] DUS\n  // with [Device: ConceptsCustom.\"needle-syringe\"] D\n  //     such that DUS.reasonReference.references(D) \n  //       and D.status in { 'active' }\n  // where DUS.status = 'completed'\n\n  // define \"NSP date\":\n  // [DeviceUseStatement] DUS\n  // with [Device: ConceptsCustom.\"needle-syringe\"] D\n  //     such that DUS.reasonReference.references(D) \n  //       and D.status in { 'active' }\n  // where DUS.status = 'completed'\n  // return start of DUS.timing.toInterval()\n/* End of NSP */\n\n/*\n@dataElement: HIV.PRV.DE6 - STI services\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed sexually transmitted infection (STI) services\n*/\n\ndefine \"STI services\":\n  [Procedure] P\n  where P.status = 'completed'\n  and P.code ~ Concepts.\"STI testing and treatment services\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 27
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "STI services"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "// TODO: doesn't compile DeviceUseStatement causes translation error\n  //exists(Elements.\"NSP\" DUS where DUS.timing.toInterval() during \"Measurement Period\")\n/* End of NSP */\n\n/*\n@dataElement: HIV.PRV.DE6 - STI services\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed sexually transmitted infection (STI) services\n*/\n\ndefine \"STI services\":\n  exists(Elements.\"STI services\" STI where STI.performed.toInterval() during \"Measurement Period\")"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 28
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "VMMC"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of STI services */\n\n/*\n@dataElement: HIV.PRV.DE7 - VMMC\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed voluntary medical male circumcision (VMMC) services\n*/\n\ndefine \"VMMC\":\n  exists(Elements.\"VMMC\" V where V.performed.toInterval() during \"Measurement Period\")"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 29
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Other PRV.DE8"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of VMMC */\n\n/*\n@dataElement: HIV.PRV.DE8 - Other\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed other HIV prevention services\n*/\n\ndefine \"Other PRV.DE8\":\n  [Observation] O\n    where O.status in {'final', 'amended'}\n    and O.code ~ Concepts.\"HIV prevention intervention\"\n    and O.value ~ Concepts.\"Other - HIV.PRV.DE8\"\n    sort by start of effective.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 30
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Other PRV.DE8"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of VMMC */\n\n/*\n@dataElement: HIV.PRV.DE8 - Other\n@activity: HIV.B6 Capture or update client history\n@description: Client accessed other HIV prevention services\n*/\n\ndefine \"Other PRV.DE8\":\n  exists(Elements.\"Other PRV.DE8\" O\n    where O.effective.toInterval() during \"Measurement Period\")"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 31
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV prevention intervention"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of At elevated risk for HIV acquisition PRV.DE1 */\n\n/*\n@dataElement: HIV.PRV.DE2 - HIV prevention intervention\n@activity: HIV.B6 Capture or update client history\n@description: HIV prevention intervention that client accessed\n*/\n\n//(including PrEP, OAMT, NSP, STI services, VMMC) \ndefine \"HIV prevention intervention\":\n  List<String>{\n    if \"PrEP service\" then 'PrEP' else null,\n    if \"OAMT\" then 'OAMT' else null,\n    if \"NSP\" then 'NSP' else null,\n    if \"STI services\" then 'STI services' else null,\n    if \"VMMC\" then 'VMMC' else null,\n    if \"Other PRV.DE8\" then 'other prevention' else null\n  }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 32
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Positive Condition"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"HIV Status Positive Condition\":\n  [Condition: Concepts.\"HIV-positive - HIV.B.DE116\"] C\n    where C.clinicalStatus ~ ConceptsCustom.\"active\"\n      and exists(C.category CC where CC ~ ConceptsCustom.\"encounter-diagnosis\")\n    sort by start of onset.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 33
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Positive Condition"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"HIV Status Positive Condition\":\n  Elements.\"HIV Status Positive Condition\" C\n  where C.onset before end of \"Measurement Period\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 34
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of HIV-inconclusive */\n\n/*\n@dataElement: HIV.B.DE115 - HIV status\n@activity: HIV.B7 Test for HIV using testing algorithm\n@description: HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.\n*/\ndefine \"HIV Status Observation\":\n  [Observation: Concepts.\"HIV status\"] O\n    where O.status in { 'final', 'amended', 'corrected' }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 35
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Positive Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"HIV Status Positive Observation\":\n\"HIV Status Observation\" O\n    where O.value ~ Concepts.\"HIV-positive - HIV.B.DE116\"\n      sort by start of effective.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 36
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Positive Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"HIV Status Positive Observation\":\n  Elements.\"HIV Status Positive Observation\" O\n  where O.issued before end of \"Measurement Period\"\n  or O.effective.toInterval() starts before end of \"Measurement Period\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 37
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Has HIV-positive Status"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"Has HIV-positive Status\":\n  exists \"HIV Status Positive Condition\"\n  or exists \"HIV Status Positive Observation\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 38
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Negative Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"HIV Status Negative Observation\":\n  \"HIV Status Observation\" O\n    where O.value ~ Concepts.\"HIV-negative - HIV.B.DE117\"\n    sort by start of effective.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 39
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Negative Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of HIV-positive B.DE116 */\n\ndefine \"HIV Status Negative Observation\":\n  Elements.\"HIV Status Negative Observation\" O\n  where O.issued before end of \"Measurement Period\"\n  or O.effective.toInterval() starts before end of \"Measurement Period\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 40
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Stratifier"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of HIV-negative B.DE113 */\n\n/*\n@dataElement: HIV.B.DE115 - HIV status\n@activity: HIV.B7 Test for HIV using testing algorithm\n@description: HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.\n*/\n\n\ndefine \"HIV Status Stratifier\":\n  case \n      when \"Has HIV-positive Status\" then Concepts.\"HIV-positive - HIV.B.DE116\"\n      when not exists(\"HIV Status Positive Condition\") and exists(\"HIV Status Negative Observation\") then  Concepts.\"HIV-negative - HIV.B.DE117\"\n      else Concepts.\"Unknown - HIV.B.DE118\"\n  end"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 41
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIND62Logic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Stratification"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"Stratification\":\n HIE.\"By Administrative Gender Stratifier\".code \n  + ':' + HIE.\"By Age Stratifier 9\"\n+ ':' + HIE.\"By Geographic Region Stratifier\"\n+ Combine(HIE.patientGroups, ':')\n+ Combine(HIE.\"HIV prevention intervention\", ':')\n+ ':' + HIE.\"HIV Status Stratifier\".code"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 42
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value ObservationStatus): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 43
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToConcept"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 44
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToCode"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 45
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value ProcedureStatus): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 46
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "WHOCommon"
+      },
+      {
+        "url" : "name",
+        "valueString" : "references"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n@description: Returns true if any of the given references are to the given resource\n@comment: Returns true if the `id` element of the given resource exactly equals the tail of any of the given references.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(references List<FHIR.Reference>, resource FHIR.Resource):\n  exists (references R where R.references(resource))"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 47
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "WHOCommon"
+      },
+      {
+        "url" : "name",
+        "valueString" : "references"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n@description: Returns true if the given reference is to the given resource\n@comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(reference FHIR.Reference, resource FHIR.Resource):\n  resource.id = Last(Split(reference.reference, '/'))"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 48
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value string): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 49
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToInterval"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToInterval(period FHIR.Period):\n    if period is null then\n        null\n    else\n        if period.\"start\" is null then\n            Interval(period.\"start\".value, period.\"end\".value]\n        else\n            Interval[period.\"start\".value, period.\"end\".value]"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 50
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value AdministrativeGender): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 51
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value AddressUse): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 52
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToDateTime"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToDateTime(value instant): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 53
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToDateTime"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToDateTime(value dateTime): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 54
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    }],
+    "name" : "EffectiveDataRequirements",
+    "status" : "active",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/library-type",
+        "code" : "module-definition"
+      }]
+    },
+    "relatedArtifact" : [{
+      "type" : "depends-on",
+      "display" : "FHIR model information",
+      "resource" : "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library HE",
+      "resource" : "http://smart.who.int/hiv/Library/HIVElements"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library Concepts",
+      "resource" : "http://smart.who.int/hiv/Library/HIVConcepts|0.0.2"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library FHIRHelpers",
+      "resource" : "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library ConceptsCustom",
+      "resource" : "http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library WCom",
+      "resource" : "http://smart.who.int/hiv/Library/WHOCommon"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library HIE",
+      "resource" : "http://smart.who.int/hiv/Library/HIVIndicatorElements"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Code system HIVConcepts",
+      "resource" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Code system missing concepts",
+      "resource" : "https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Code system ObservationCategoryCodes",
+      "resource" : "http://terminology.hl7.org/CodeSystem/observation-category"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Code system ConditionClinicalStatusCodes",
+      "resource" : "http://terminology.hl7.org/CodeSystem/condition-clinical"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Code system ConditionCategoryCodes",
+      "resource" : "http://terminology.hl7.org/CodeSystem/condition-category"
+    }],
+    "parameter" : [{
+      "name" : "Measurement Period",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "Period"
+    },
+    {
+      "name" : "Numerator",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "boolean"
+    },
+    {
+      "name" : "Denominator",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "boolean"
+    },
+    {
+      "name" : "Initial Population",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "boolean"
+    },
+    {
+      "name" : "Stratification",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "string"
+    }],
+    "dataRequirement" : [{
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code",
+      "status",
+      "value",
+      "partOf"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.B.DE250",
+          "display" : "Syphilis test result"
+        }]
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code",
+      "status",
+      "category",
+      "effective",
+      "issued",
+      "code.coding"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.B.DE49",
+          "display" : "Key population member*"
+        }]
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code",
+      "status",
+      "value",
+      "issued",
+      "effective"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.B.DE115",
+          "display" : "HIV status"
+        }]
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["status",
+      "code",
+      "value",
+      "effective"]
+    },
+    {
+      "type" : "Procedure",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Procedure"],
+      "mustSupport" : ["status",
+      "code",
+      "performed"]
+    },
+    {
+      "type" : "MedicationStatement",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/MedicationStatement"],
+      "mustSupport" : ["reasonCode",
+      "effective"]
+    },
+    {
+      "type" : "EpisodeOfCare",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/EpisodeOfCare"],
+      "mustSupport" : ["type",
+      "period",
+      "statusHistory"]
+    },
+    {
+      "type" : "Patient",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Patient"],
+      "mustSupport" : ["use"]
+    },
+    {
+      "type" : "Condition",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Condition"],
+      "mustSupport" : ["code",
+      "clinicalStatus",
+      "category",
+      "onset"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.B.DE116",
+          "display" : "HIV-positive"
+        }]
+      }]
+    }]
+  }],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+    "valueCode" : "boolean"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
+    "valueCanonical" : "#effective-data-requirements"
+  }],
+  "url" : "http://smart.who.int/hiv/Measure/HIVIND62",
+  "version" : "0.4.4",
+  "name" : "HIVIND62",
+  "title" : "HIV.IND.62 Syphilis test positivity, HIV prevention services",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2024-08-18",
+  "publisher" : "WHO",
+  "contact" : [{
+    "name" : "WHO",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://who.int"
+    }]
+  }],
+  "description" : "% of people attending HIV prevention services who were tested for syphilis and had a positive syphilis test result during the reporting period",
+  "library" : ["http://smart.who.int/hiv/Library/HIVIND62Logic"],
+  "scoring" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/measure-scoring",
+      "code" : "proportion",
+      "display" : "Proportion"
+    }]
+  },
+  "improvementNotation" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+      "code" : "decrease"
+    }]
+  },
+  "group" : [{
+    "population" : [{
+      "id" : "HIV.IND.62.IP",
+      "code" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code" : "initial-population",
+          "display" : "Initial Population"
+        }]
+      },
+      "description" : "Initial Population",
+      "criteria" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Initial Population"
+      }
+    },
+    {
+      "id" : "HIV.IND.62.DEN",
+      "code" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code" : "denominator",
+          "display" : "Denominator"
+        }]
+      },
+      "description" : "Number of people attending HIV prevention services tested for syphilis | ",
+      "criteria" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Denominator"
+      }
+    },
+    {
+      "id" : "HIV.IND.62.NUM",
+      "code" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code" : "numerator",
+          "display" : "Numerator"
+        }]
+      },
+      "description" : "Number of people attending HIV prevention services who tested positive for syphilis during the reporting period (tested positive on both nontreponemal and treponemal tests or tested positive on either nontreponemal or treponemal test) | ",
+      "criteria" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Numerator"
+      }
+    }],
+    "stratifier" : [{
+      "id" : "HIV.IND.62.S",
+      "criteria" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Stratification"
+      }
+    }]
+  }]
+}

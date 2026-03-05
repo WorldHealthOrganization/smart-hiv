@@ -1,0 +1,1840 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Measure xmlns="http://hl7.org/fhir">
+  <id value="HIVIND89"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablemeasure"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+  <table class="narrative-table">
+    <tbody>
+<tr>
+
+<th colspan="2" scope="row" class="row-header">Knowledge Artifact Metadata</th>
+
+</tr>
+
+<tr>
+
+<th scope="row" class="row-header">Name (machine-readable)</th>
+
+<td class="content-container">HIVIND89</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Title (human-readable)</th>
+
+<td class="content-container">HIV.IND.89 HCV positivity, HIV-positive clients</td>
+</tr>
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Status</th>
+
+<td class="content-container">Draft</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Experimental</th>
+
+<td class="content-container">true</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Description</th>
+
+<td class="content-container"><div><p>% of people living with HIV with a positive HCV test result (HCV antibody, HCV RNA (PCR) or HCV core antigen) during the reporting period</p>
+</div></td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Measure Steward</th>
+
+<td class="content-container">WHO</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Steward Contact Details</th>
+
+<td class="content-container">WHO: <a href="http://who.int">http://who.int</a></td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Metadata</th>
+
+</tr>
+
+
+
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Version Number</th>
+
+<td class="content-container">0.4.4</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Measure Scoring</th>
+
+<td class="content-container"><span title="Codes:{http://terminology.hl7.org/CodeSystem/measure-scoring proportion}">Proportion</span></td>
+</tr>
+
+
+
+
+
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Improvement Notation</th>
+
+<td class="content-container"><span title="Codes:{http://terminology.hl7.org/CodeSystem/measure-improvement-notation decrease}">Decreased score indicates improvement</span></td>
+</tr>
+
+
+
+
+
+  
+<tr>
+
+<th scope="row" class="row-header">Population Basis</th>
+
+<td class="content-container">boolean</td>
+</tr>
+
+
+
+
+
+  
+    <tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Population Criteria</th>
+
+</tr>
+  
+  
+  
+  
+    <tr>
+      
+        
+<th scope="row" class="row-header">Initial Population</th>
+
+      
+      <td class="content-container">
+        
+        <em>ID</em>: HIV.IND.89.IP
+        <br/>
+        
+        
+          <em>Description</em>:
+          <p style="white-space: pre-line" class="tab-one">Initial Population</p>
+        
+        
+          
+            
+            <em>Logic Definition</em>: <a href="#hivind89logic-initial-population">Initial Population</a> 
+          
+        
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      
+        
+<th scope="row" class="row-header">Denominator</th>
+
+      
+      <td class="content-container">
+        
+        <em>ID</em>: HIV.IND.89.DEN
+        <br/>
+        
+        
+          <em>Description</em>:
+          <p style="white-space: pre-line" class="tab-one">Number of people living with HIV who were tested for HCV during the reporting period</p>
+        
+        
+          
+            
+            <em>Logic Definition</em>: <a href="#hivind89logic-denominator">Denominator</a> 
+          
+        
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      
+        
+<th scope="row" class="row-header">Numerator</th>
+
+      
+      <td class="content-container">
+        
+        <em>ID</em>: HIV.IND.89.NUM
+        <br/>
+        
+        
+          <em>Description</em>:
+          <p style="white-space: pre-line" class="tab-one">Number of people living with HIV newly identified with a positive HCV test (HCV antibody, HCV RNA (PCR) or HCV core antigen) during the reporting period</p>
+        
+        
+          
+            
+            <em>Logic Definition</em>: <a href="#hivind89logic-numerator">Numerator</a> 
+          
+        
+      </td>
+    </tr>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Logic</th>
+
+</tr>
+
+<tr>
+
+<th scope="row" class="row-header">Primary Library</th>
+
+<td class="content-container"><a href="Library-HIVIND89Logic.html">HIV.IND.89 Logic</a></td>
+</tr>
+
+
+
+
+  
+  
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: FHIR model information
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIR-ModelInfo.html">http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library HIE
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="Library-HIVIndicatorElements.html">HIVIndicatorElements</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVIndicatorElements</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library Elements
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="Library-HIVElements.html">HIVElements</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVElements</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library Concepts
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <code>http://smart.who.int/hiv/Library/HIVConcepts|0.0.2</code>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVConcepts|0.0.2</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library FHIRHelpers
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIRHelpers.html">http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library ConceptsCustom
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <code>http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1</code>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library WC
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="Library-WHOCommon.html">WHOCommon</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/WHOCommon</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Code system HIVConcepts
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="CodeSystem-HIVConcepts.html">WHO SMART HIV Concepts CodeSystem</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Code system ConditionClinicalStatusCodes
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="http://terminology.hl7.org/6.1.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://terminology.hl7.org/CodeSystem/condition-clinical</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Code system ConditionCategoryCodes
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="http://terminology.hl7.org/6.1.0/CodeSystem-condition-category.html">Condition Category Codes</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://terminology.hl7.org/CodeSystem/condition-category</tt>
+    
+  </td>
+</tr>
+
+
+  
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: HIV-positive
+        <br/>
+      
+      <em>Code</em>: HIV.B.DE116
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+      <em>Code</em>: active
+      <br/>
+      <em>System</em>: <tt>http://terminology.hl7.org/CodeSystem/condition-clinical</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Encounter Diagnosis
+        <br/>
+      
+      <em>Code</em>: encounter-diagnosis
+      <br/>
+      <em>System</em>: <tt>http://terminology.hl7.org/CodeSystem/condition-category</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: HIV status
+        <br/>
+      
+      <em>Code</em>: HIV.B.DE115
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: HCV test result
+        <br/>
+      
+      <em>Code</em>: HIV.D.DE170
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+        <em>Display</em>: Positive
+        <br/>
+      
+      <em>Code</em>: HIV.D.DE171
+      <br/>
+      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>
+    </td>
+  </tr>
+
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Measurement Period
+    <br/>
+    <em>Use</em>: In
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: Period
+  </td>
+</tr>
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Numerator
+    <br/>
+    <em>Use</em>: Out
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: boolean
+  </td>
+</tr>
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Denominator
+    <br/>
+    <em>Use</em>: Out
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: boolean
+  </td>
+</tr>
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Initial Population
+    <br/>
+    <em>Use</em>: Out
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: boolean
+  </td>
+</tr>
+  
+  
+  <tr>
+    <th colspan="2" scope="row" class="section-header"><a name="effective-data-requirements"> </a>Measure Logic Data Requirements</th>
+  </tr>
+  
+  
+<tr>
+  <th scope="row" class="row-header">Data Requirement</th>
+  <td class="content-container">
+    <em>Type</em>: Condition
+    <br/>
+  
+    <em>Profile(s)</em>: 
+  
+    <a href="http://hl7.org/fhir/R4/condition.html">Condition</a>
+    <br/>        
+  
+   
+   
+    <em>Must Support Elements</em>: code, clinicalStatus, category, onset
+    <br/>
+   
+  
+    <em>Code Filter(s)</em>: 
+    <br/>
+  
+  
+    <span class="tab-one"><em>Path</em>: code</span>
+    <br/>
+  
+  
+  
+  
+    <span class="tab-one"><em>Code</em>: </span>
+    <br/>
+  
+  
+   
+  </td>
+</tr>
+
+<tr>
+  <th scope="row" class="row-header">Data Requirement</th>
+  <td class="content-container">
+    <em>Type</em>: Observation
+    <br/>
+  
+    <em>Profile(s)</em>: 
+  
+    <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+    <br/>        
+  
+   
+   
+    <em>Must Support Elements</em>: code, status, value, issued, effective
+    <br/>
+   
+  
+    <em>Code Filter(s)</em>: 
+    <br/>
+  
+  
+    <span class="tab-one"><em>Path</em>: code</span>
+    <br/>
+  
+  
+  
+  
+    <span class="tab-one"><em>Code</em>: </span>
+    <br/>
+  
+  
+   
+  </td>
+</tr>
+
+<tr>
+  <th scope="row" class="row-header">Data Requirement</th>
+  <td class="content-container">
+    <em>Type</em>: Observation
+    <br/>
+  
+    <em>Profile(s)</em>: 
+  
+    <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+    <br/>        
+  
+   
+   
+    <em>Must Support Elements</em>: code, status, value, effective, effective.low
+    <br/>
+   
+  
+    <em>Code Filter(s)</em>: 
+    <br/>
+  
+  
+    <span class="tab-one"><em>Path</em>: code</span>
+    <br/>
+  
+  
+  
+  
+    <span class="tab-one"><em>Code</em>: </span>
+    <br/>
+  
+  
+   
+  </td>
+</tr>
+
+  
+  <tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Logic Definitions</th>
+
+</tr>
+  
+          
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivelements-hiv-status-positive-condition"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define &quot;HIV Status Positive Condition&quot;:
+  [Condition: Concepts.&quot;HIV-positive - HIV.B.DE116&quot;] C
+    where C.clinicalStatus ~ ConceptsCustom.&quot;active&quot;
+      and exists(C.category CC where CC ~ ConceptsCustom.&quot;encounter-diagnosis&quot;)
+    sort by start of onset.toInterval()</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-hiv-status-positive-condition"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define &quot;HIV Status Positive Condition&quot;:
+  Elements.&quot;HIV Status Positive Condition&quot; C
+  where C.onset before end of &quot;Measurement Period&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivelements-hiv-status-observation"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of HIV-inconclusive */
+
+/*
+@dataElement: HIV.B.DE115 - HIV status
+@activity: HIV.B7 Test for HIV using testing algorithm
+@description: HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.
+*/
+define &quot;HIV Status Observation&quot;:
+  [Observation: Concepts.&quot;HIV status&quot;] O
+    where O.status in { 'final', 'amended', 'corrected' }</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivelements-hiv-status-positive-observation"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define &quot;HIV Status Positive Observation&quot;:
+&quot;HIV Status Observation&quot; O
+    where O.value ~ Concepts.&quot;HIV-positive - HIV.B.DE116&quot;
+      sort by start of effective.toInterval()</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-hiv-status-positive-observation"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define &quot;HIV Status Positive Observation&quot;:
+  Elements.&quot;HIV Status Positive Observation&quot; O
+  where O.issued before end of &quot;Measurement Period&quot;
+  or O.effective.toInterval() starts before end of &quot;Measurement Period&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-has-hiv-positive-status"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define &quot;Has HIV-positive Status&quot;:
+  exists &quot;HIV Status Positive Condition&quot;
+  or exists &quot;HIV Status Positive Observation&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivelements-hcv-test-result-d.de170"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of HCV test date D.DE169 */
+
+
+/*
+@dataElement: HIV.D.DE170 - HCV test result
+@activity: HIV.D12 Determine recommended screenings and tests
+@description: Hepatitis C virus test result (HCV antibody, HCV RNA or HCV core antigen)
+*/
+
+define &quot;HCV test result D.DE170&quot;:
+  [Observation: Concepts.&quot;HCV test result - HIV.D.DE170&quot;] O
+    where O.status in { 'final', 'amended', 'corrected' }</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivelements-positive-d.de171"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of HCV test result D.DE170 */
+
+/*
+@dataElement: HIV.D.DE171 - Positive
+@activity: HIV.D12 Determine recommended screenings and tests
+@description: HCV test result was positive
+*/
+
+define &quot;Positive D.DE171&quot;:
+  &quot;HCV test result D.DE170&quot; O
+  where O.value ~ Concepts.&quot;Positive - HIV.D.DE171&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-positive-d.de171"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of HCV test result D.DE170 */
+
+/*
+@dataElement: HIV.D.DE171 - Positive
+@activity: HIV.D12 Determine recommended screenings and tests
+@description: HCV test result was positive
+*/
+
+define &quot;Positive D.DE171&quot;:
+  Elements.&quot;Positive D.DE171&quot; O
+    where O.effective.toInterval() during &quot;Measurement Period&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivind89logic-numerator"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIND89Logic</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/**
+ * Numerator
+ * 
+ * Definition: Number of people living with HIV newly identified with a positive HCV test (HCV antibody, HCV RNA (PCR) or HCV core antigen) during the reporting period
+ * Calculation: COUNT of clients with &quot;HIV status&quot;='HIV-positive' AND with &quot;HCV test date&quot; in the reporting period AND &quot;HCV test result&quot;='HCV positive'
+ */
+
+define &quot;Numerator&quot;:
+  HIE.&quot;Has HIV-positive Status&quot; and
+  exists(HIE.&quot;Positive D.DE171&quot;)</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-hcv-test-result-d.de170"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of HCV test date D.DE169 */
+
+/*
+@dataElement: HIV.D.DE170 - HCV test result
+@activity: HIV.D12 Determine recommended screenings and tests
+@description: Hepatitis C virus test result (HCV antibody, HCV RNA or HCV core antigen)
+*/
+
+define &quot;HCV test result D.DE170&quot;:
+  Elements.&quot;HCV test result D.DE170&quot; O
+    where O.effective.toInterval() during &quot;Measurement Period&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-hcv-test-date-d.de169"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of HBV treatment TDF start date */
+
+/*
+@dataElement: HIV.D.DE169 - HCV test date
+@activity: HIV.D12 Determine recommended screenings and tests
+@description: Date client was tested for hepatitis C virus (HCV antibody, HCV RNA or HCV core antigen)
+*/
+
+define &quot;HCV test date D.DE169&quot;:
+  &quot;HCV test result D.DE170&quot; O
+  return O.effective.toInterval().low</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivind89logic-denominator"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIND89Logic</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/**
+ * Denominator
+ *
+ * Definition: Number of people living with HIV who were tested for HCV during the reporting period
+ * Calculation: COUNT of clients with &quot;HIV status&quot;='HIV-positive' AND with &quot;HCV test date&quot; in the reporting period
+ */
+
+define &quot;Denominator&quot;:
+  HIE.&quot;Has HIV-positive Status&quot; and exists(HIE.&quot;HCV test date D.DE169&quot;)</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivind89logic-initial-population"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIND89Logic</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* Populations */
+
+/*
+ *Initial Population
+ */
+
+define &quot;Initial Population&quot;:
+  true</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-toconcept"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToConcept(concept FHIR.CodeableConcept):
+    if concept is null then
+        null
+    else
+        System.Concept {
+            codes: concept.coding C return ToCode(C),
+            display: concept.text.value
+        }</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tocode"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToCode(coding FHIR.Coding):
+    if coding is null then
+        null
+    else
+        System.Code {
+          code: coding.code.value,
+          system: coding.system.value,
+          version: coding.version.value,
+          display: coding.display.value
+        }</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-todatetime"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToDateTime(value dateTime): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tostring"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToString(value ObservationStatus): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-todatetime"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToDateTime(value instant): value.value</code></pre>
+  </td>
+
+</tr>
+
+  
+
+<tr>
+  <th colspan="2" scope="row" class="row-header">Generated using version 0.4.6 of the sample-content-ig Liquid templates</th>
+</tr>
+    </tbody>
+  </table>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.B.DE116"/>
+          <display value="HIV-positive"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="active"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+          <code value="encounter-diagnosis"/>
+          <display value="Encounter Diagnosis"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.B.DE115"/>
+          <display value="HIV status"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE170"/>
+          <display value="HCV test result"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE171"/>
+          <display value="Positive"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV Status Positive Condition"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;HIV Status Positive Condition&quot;:&#xA;  [Condition: Concepts.&quot;HIV-positive - HIV.B.DE116&quot;] C&#xA;    where C.clinicalStatus ~ ConceptsCustom.&quot;active&quot;&#xA;      and exists(C.category CC where CC ~ ConceptsCustom.&quot;encounter-diagnosis&quot;)&#xA;    sort by start of onset.toInterval()"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="0"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV Status Positive Condition"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;HIV Status Positive Condition&quot;:&#xA;  Elements.&quot;HIV Status Positive Condition&quot; C&#xA;  where C.onset before end of &quot;Measurement Period&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="1"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV Status Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of HIV-inconclusive */&#xA;&#xA;/*&#xA;@dataElement: HIV.B.DE115 - HIV status&#xA;@activity: HIV.B7 Test for HIV using testing algorithm&#xA;@description: HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.&#xA;*/&#xA;define &quot;HIV Status Observation&quot;:&#xA;  [Observation: Concepts.&quot;HIV status&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="2"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV Status Positive Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;HIV Status Positive Observation&quot;:&#xA;&quot;HIV Status Observation&quot; O&#xA;    where O.value ~ Concepts.&quot;HIV-positive - HIV.B.DE116&quot;&#xA;      sort by start of effective.toInterval()"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="3"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV Status Positive Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;HIV Status Positive Observation&quot;:&#xA;  Elements.&quot;HIV Status Positive Observation&quot; O&#xA;  where O.issued before end of &quot;Measurement Period&quot;&#xA;  or O.effective.toInterval() starts before end of &quot;Measurement Period&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="4"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Has HIV-positive Status"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Has HIV-positive Status&quot;:&#xA;  exists &quot;HIV Status Positive Condition&quot;&#xA;  or exists &quot;HIV Status Positive Observation&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="5"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HCV test result D.DE170"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of HCV test date D.DE169 */&#xA;&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE170 - HCV test result&#xA;@activity: HIV.D12 Determine recommended screenings and tests&#xA;@description: Hepatitis C virus test result (HCV antibody, HCV RNA or HCV core antigen)&#xA;*/&#xA;&#xA;define &quot;HCV test result D.DE170&quot;:&#xA;  [Observation: Concepts.&quot;HCV test result - HIV.D.DE170&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="6"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Positive D.DE171"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of HCV test result D.DE170 */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE171 - Positive&#xA;@activity: HIV.D12 Determine recommended screenings and tests&#xA;@description: HCV test result was positive&#xA;*/&#xA;&#xA;define &quot;Positive D.DE171&quot;:&#xA;  &quot;HCV test result D.DE170&quot; O&#xA;  where O.value ~ Concepts.&quot;Positive - HIV.D.DE171&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="7"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Positive D.DE171"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of HCV test result D.DE170 */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE171 - Positive&#xA;@activity: HIV.D12 Determine recommended screenings and tests&#xA;@description: HCV test result was positive&#xA;*/&#xA;&#xA;define &quot;Positive D.DE171&quot;:&#xA;  Elements.&quot;Positive D.DE171&quot; O&#xA;    where O.effective.toInterval() during &quot;Measurement Period&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="8"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIND89Logic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Numerator"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/**&#xA; * Numerator&#xA; * &#xA; * Definition: Number of people living with HIV newly identified with a positive HCV test (HCV antibody, HCV RNA (PCR) or HCV core antigen) during the reporting period&#xA; * Calculation: COUNT of clients with &quot;HIV status&quot;='HIV-positive' AND with &quot;HCV test date&quot; in the reporting period AND &quot;HCV test result&quot;='HCV positive'&#xA; */&#xA;&#xA;define &quot;Numerator&quot;:&#xA;  HIE.&quot;Has HIV-positive Status&quot; and&#xA;  exists(HIE.&quot;Positive D.DE171&quot;)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="9"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HCV test result D.DE170"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of HCV test date D.DE169 */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE170 - HCV test result&#xA;@activity: HIV.D12 Determine recommended screenings and tests&#xA;@description: Hepatitis C virus test result (HCV antibody, HCV RNA or HCV core antigen)&#xA;*/&#xA;&#xA;define &quot;HCV test result D.DE170&quot;:&#xA;  Elements.&quot;HCV test result D.DE170&quot; O&#xA;    where O.effective.toInterval() during &quot;Measurement Period&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="10"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HCV test date D.DE169"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of HBV treatment TDF start date */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE169 - HCV test date&#xA;@activity: HIV.D12 Determine recommended screenings and tests&#xA;@description: Date client was tested for hepatitis C virus (HCV antibody, HCV RNA or HCV core antigen)&#xA;*/&#xA;&#xA;define &quot;HCV test date D.DE169&quot;:&#xA;  &quot;HCV test result D.DE170&quot; O&#xA;  return O.effective.toInterval().low"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="11"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIND89Logic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Denominator"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/**&#xA; * Denominator&#xA; *&#xA; * Definition: Number of people living with HIV who were tested for HCV during the reporting period&#xA; * Calculation: COUNT of clients with &quot;HIV status&quot;='HIV-positive' AND with &quot;HCV test date&quot; in the reporting period&#xA; */&#xA;&#xA;define &quot;Denominator&quot;:&#xA;  HIE.&quot;Has HIV-positive Status&quot; and exists(HIE.&quot;HCV test date D.DE169&quot;)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="12"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIND89Logic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Initial Population"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* Populations */&#xA;&#xA;/*&#xA; *Initial Population&#xA; */&#xA;&#xA;define &quot;Initial Population&quot;:&#xA;  true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="13"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToConcept"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToConcept(concept FHIR.CodeableConcept):&#xA;    if concept is null then&#xA;        null&#xA;    else&#xA;        System.Concept {&#xA;            codes: concept.coding C return ToCode(C),&#xA;            display: concept.text.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="14"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToCode"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToCode(coding FHIR.Coding):&#xA;    if coding is null then&#xA;        null&#xA;    else&#xA;        System.Code {&#xA;          code: coding.code.value,&#xA;          system: coding.system.value,&#xA;          version: coding.version.value,&#xA;          display: coding.display.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="15"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToDateTime"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToDateTime(value dateTime): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="16"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value ObservationStatus): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="17"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToDateTime"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToDateTime(value instant): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="18"/>
+        </extension>
+      </extension>
+      <name value="EffectiveDataRequirements"/>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="FHIR model information"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library HIE"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVIndicatorElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts|0.0.2"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library ConceptsCustom"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library WC"/>
+        <resource value="http://smart.who.int/hiv/Library/WHOCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system HIVConcepts"/>
+        <resource value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system ConditionClinicalStatusCodes"/>
+        <resource value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system ConditionCategoryCodes"/>
+        <resource value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="Measurement Period"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="Period"/>
+      </parameter>
+      <parameter>
+        <name value="Numerator"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Denominator"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Initial Population"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <dataRequirement>
+        <type value="Condition"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Condition"/>
+        <mustSupport value="code"/>
+        <mustSupport value="clinicalStatus"/>
+        <mustSupport value="category"/>
+        <mustSupport value="onset"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.B.DE116"/>
+            <display value="HIV-positive"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="value"/>
+        <mustSupport value="issued"/>
+        <mustSupport value="effective"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.B.DE115"/>
+            <display value="HIV status"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="value"/>
+        <mustSupport value="effective"/>
+        <mustSupport value="effective.low"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.D.DE170"/>
+            <display value="HCV test result"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis">
+    <valueCode value="boolean"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
+    <valueCanonical value="#effective-data-requirements"/>
+  </extension>
+  <url value="http://smart.who.int/hiv/Measure/HIVIND89"/>
+  <version value="0.4.4"/>
+  <name value="HIVIND89"/>
+  <title value="HIV.IND.89 HCV positivity, HIV-positive clients"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2024-08-18"/>
+  <publisher value="WHO"/>
+  <contact>
+    <name value="WHO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://who.int"/>
+    </telecom>
+  </contact>
+  <description value="% of people living with HIV with a positive HCV test result (HCV antibody, HCV RNA (PCR) or HCV core antigen) during the reporting period"/>
+  <library value="http://smart.who.int/hiv/Library/HIVIND89Logic"/>
+  <scoring>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"/>
+      <code value="proportion"/>
+      <display value="Proportion"/>
+    </coding>
+  </scoring>
+  <improvementNotation>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"/>
+      <code value="decrease"/>
+    </coding>
+  </improvementNotation>
+  <group>
+    <population id="HIV.IND.89.IP">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="initial-population"/>
+          <display value="Initial Population"/>
+        </coding>
+      </code>
+      <description value="Initial Population"/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Initial Population"/>
+      </criteria>
+    </population>
+    <population id="HIV.IND.89.DEN">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="denominator"/>
+          <display value="Denominator"/>
+        </coding>
+      </code>
+      <description value="Number of people living with HIV who were tested for HCV during the reporting period"/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Denominator"/>
+      </criteria>
+    </population>
+    <population id="HIV.IND.89.NUM">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="numerator"/>
+          <display value="Numerator"/>
+        </coding>
+      </code>
+      <description value="Number of people living with HIV newly identified with a positive HCV test (HCV antibody, HCV RNA (PCR) or HCV core antigen) during the reporting period"/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Numerator"/>
+      </criteria>
+    </population>
+  </group>
+</Measure>

@@ -1,0 +1,71 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Preventing and treating coinfections ValueSet Schema API",
+    "description": "JSON Schema for Preventing and treating coinfections ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/ValueSet-HIV.D.DE247.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the enumeration ValueSet-HIV.D.DE247",
+        "description": "This endpoint serves the JSON Schema definition for the enumeration ValueSet-HIV.D.DE247.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for ValueSet-HIV.D.DE247",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./ValueSet-HIV.D.DE247.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ValueSet-HIV.D.DE247": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE247.schema.json",
+        "title": "Preventing and treating coinfections ValueSet Schema",
+        "description": "JSON Schema for Preventing and treating coinfections ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+        "type": "object",
+        "required": [
+          "system",
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "system": {
+            "type": "string",
+            "const": "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "HIV.D.DE248",
+              "HIV.D.DE249",
+              "HIV.D.DE250",
+              "HIV.D.DE251",
+              "HIV.D.DE252",
+              "HIV.D.DE253",
+              "HIV.D.DE254",
+              "HIV.D.DE255",
+              "HIV.D.DE256",
+              "HIV.D.DE257",
+              "HIV.D.DE258"
+            ]
+          }
+        },
+        "narrative": "This schema validates Coding-shaped objects for the Preventing and treating coinfections ValueSet ValueSet. Each value must be an object with 'system' (CodeSystem URI) and 'code' (fragment after '#') properties. Display values are available at http://smart.who.int/hiv/ValueSet-HIV.D.DE247.displays.json. The canonical IRI for a code can be reconstructed as system + '#' + code. For a complete listing of all ValueSets, see artifacts.html#terminology-value-sets.",
+        "fhir:displays": "http://smart.who.int/hiv/ValueSet-HIV.D.DE247.displays.json",
+        "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE247",
+        "fhir:version": "0.4.4",
+        "fhir:expansionTimestamp": "2026-03-05T13:16:28+00:00"
+      }
+    }
+  }
+}

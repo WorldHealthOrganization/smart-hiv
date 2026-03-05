@@ -1,0 +1,73 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Monitoring examinations ValueSet Schema API",
+    "description": "JSON Schema for Monitoring examinations ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/ValueSet-HIV.D.DE399.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the enumeration ValueSet-HIV.D.DE399",
+        "description": "This endpoint serves the JSON Schema definition for the enumeration ValueSet-HIV.D.DE399.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for ValueSet-HIV.D.DE399",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./ValueSet-HIV.D.DE399.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ValueSet-HIV.D.DE399": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE399.schema.json",
+        "title": "Monitoring examinations ValueSet Schema",
+        "description": "JSON Schema for Monitoring examinations ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+        "type": "object",
+        "required": [
+          "system",
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "system": {
+            "type": "string",
+            "const": "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "HIV.D.DE400",
+              "HIV.D.DE401",
+              "HIV.D.DE402",
+              "HIV.D.DE403",
+              "HIV.D.DE404",
+              "HIV.D.DE405",
+              "HIV.D.DE406",
+              "HIV.D.DE407",
+              "HIV.D.DE408",
+              "HIV.D.DE409",
+              "HIV.D.DE410",
+              "HIV.D.DE411",
+              "HIV.D.DE412"
+            ]
+          }
+        },
+        "narrative": "This schema validates Coding-shaped objects for the Monitoring examinations ValueSet ValueSet. Each value must be an object with 'system' (CodeSystem URI) and 'code' (fragment after '#') properties. Display values are available at http://smart.who.int/hiv/ValueSet-HIV.D.DE399.displays.json. The canonical IRI for a code can be reconstructed as system + '#' + code. For a complete listing of all ValueSets, see artifacts.html#terminology-value-sets.",
+        "fhir:displays": "http://smart.who.int/hiv/ValueSet-HIV.D.DE399.displays.json",
+        "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE399",
+        "fhir:version": "0.4.4",
+        "fhir:expansionTimestamp": "2026-03-05T13:16:28+00:00"
+      }
+    }
+  }
+}

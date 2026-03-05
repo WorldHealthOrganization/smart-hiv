@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE569.displays.json",
+  "title": "Family planning method used ValueSet Display Values",
+  "description": "Display values for Family planning method used ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.D.DE570": {
+      "en": "Copper-bearing intrauterine device (Cu-IUD)"
+    },
+    "HIV.D.DE571": {
+      "en": "Levonorgestrel intrauterine device (LNG-IUD)"
+    },
+    "HIV.D.DE572": {
+      "en": "Etonogestrel (ETG) one-rod implant"
+    },
+    "HIV.D.DE573": {
+      "en": "Levonorgestrel (LNG) two-rod implant"
+    },
+    "HIV.D.DE574": {
+      "en": "DMPA-IM"
+    },
+    "HIV.D.DE575": {
+      "en": "DMPA-SC"
+    },
+    "HIV.D.DE576": {
+      "en": "NET-EN norethisterone enanthate"
+    },
+    "HIV.D.DE577": {
+      "en": "Progestogen-only pills (POP)"
+    },
+    "HIV.D.DE578": {
+      "en": "Combined oral contraceptives (COCs)"
+    },
+    "HIV.D.DE579": {
+      "en": "Combined contraceptive patch"
+    },
+    "HIV.D.DE580": {
+      "en": "Combined contraceptive vaginal ring (CVR)"
+    },
+    "HIV.D.DE581": {
+      "en": "Progesterone-releasing vaginal ring (PVR)"
+    },
+    "HIV.D.DE582": {
+      "en": "Lactational amenorrhea method (LAM)"
+    },
+    "HIV.D.DE583": {
+      "en": "Emergency contraceptive pills (ECPs)"
+    },
+    "HIV.D.DE584": {
+      "en": "Fertility awareness-based methods (FAB)"
+    },
+    "HIV.D.DE585": {
+      "en": "Male condoms"
+    },
+    "HIV.D.DE586": {
+      "en": "Female condoms"
+    },
+    "HIV.D.DE587": {
+      "en": "Withdrawal"
+    },
+    "HIV.D.DE588": {
+      "en": "Female relying on male method"
+    },
+    "HIV.D.DE589": {
+      "en": "Male relying on female method"
+    },
+    "HIV.D.DE590": {
+      "en": "Male sterilization"
+    },
+    "HIV.D.DE591": {
+      "en": "Female sterilization"
+    },
+    "HIV.D.DE592": {
+      "en": "No method"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE569",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:29+00:00"
+}

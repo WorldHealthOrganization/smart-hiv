@@ -1,0 +1,66 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Assay number in testing strategy ValueSet Schema API",
+    "description": "JSON Schema for Assay number in testing strategy ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/ValueSet-HIV.E.DE194.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the enumeration ValueSet-HIV.E.DE194",
+        "description": "This endpoint serves the JSON Schema definition for the enumeration ValueSet-HIV.E.DE194.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for ValueSet-HIV.E.DE194",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./ValueSet-HIV.E.DE194.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ValueSet-HIV.E.DE194": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/hiv/ValueSet-HIV.E.DE194.schema.json",
+        "title": "Assay number in testing strategy ValueSet Schema",
+        "description": "JSON Schema for Assay number in testing strategy ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+        "type": "object",
+        "required": [
+          "system",
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "system": {
+            "type": "string",
+            "const": "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "HIV.E.DE195",
+              "HIV.E.DE196",
+              "HIV.E.DE197",
+              "HIV.E.DE198",
+              "HIV.E.DE93",
+              "HIV.E.DE94"
+            ]
+          }
+        },
+        "narrative": "This schema validates Coding-shaped objects for the Assay number in testing strategy ValueSet ValueSet. Each value must be an object with 'system' (CodeSystem URI) and 'code' (fragment after '#') properties. Display values are available at http://smart.who.int/hiv/ValueSet-HIV.E.DE194.displays.json. The canonical IRI for a code can be reconstructed as system + '#' + code. For a complete listing of all ValueSets, see artifacts.html#terminology-value-sets.",
+        "fhir:displays": "http://smart.who.int/hiv/ValueSet-HIV.E.DE194.displays.json",
+        "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.E.DE194",
+        "fhir:version": "0.4.4",
+        "fhir:expansionTimestamp": "2026-03-05T13:16:30+00:00"
+      }
+    }
+  }
+}

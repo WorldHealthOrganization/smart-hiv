@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE719.displays.json",
+  "title": "Treatment method for cervical precancer lesions ValueSet Display Values",
+  "description": "Display values for Treatment method for cervical precancer lesions ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.D.DE720": {
+      "en": "Cryotherapy"
+    },
+    "HIV.D.DE721": {
+      "en": "Thermal ablation"
+    },
+    "HIV.D.DE722": {
+      "en": "Laser ablation"
+    },
+    "HIV.D.DE723": {
+      "en": "CKC"
+    },
+    "HIV.D.DE724": {
+      "en": "Laser cone biopsy"
+    },
+    "HIV.D.DE725": {
+      "en": "LLETZ/LEEP"
+    },
+    "HIV.D.DE726": {
+      "en": "Other"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE719",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:29+00:00"
+}

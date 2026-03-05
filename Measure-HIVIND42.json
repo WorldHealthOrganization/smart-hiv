@@ -1,0 +1,617 @@
+{
+  "resourceType" : "Measure",
+  "id" : "HIVIND42",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablemeasure"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n  <table class=\"narrative-table\">\n    <tbody>\n<tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Knowledge Artifact Metadata</th>\n\n</tr>\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Name (machine-readable)</th>\n\n<td class=\"content-container\">HIVIND42</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Title (human-readable)</th>\n\n<td class=\"content-container\">HIV.IND.42 Final outcome of PMTCT</td>\n</tr>\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Status</th>\n\n<td class=\"content-container\">Draft</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Experimental</th>\n\n<td class=\"content-container\">true</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Description</th>\n\n<td class=\"content-container\"><div><p>% of HIV-exposed infants whose final HIV outcome status is known</p>\n</div></td>\n</tr>\n\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Measure Steward</th>\n\n<td class=\"content-container\">WHO</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Steward Contact Details</th>\n\n<td class=\"content-container\">WHO: <a href=\"http://who.int\">http://who.int</a></td>\n</tr>\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Metadata</th>\n\n</tr>\n\n\n\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Version Number</th>\n\n<td class=\"content-container\">0.4.4</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Measure Scoring</th>\n\n<td class=\"content-container\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/measure-scoring proportion}\">Proportion</span></td>\n</tr>\n\n\n\n\n\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Improvement Notation</th>\n\n<td class=\"content-container\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/measure-improvement-notation increase}\">Increased score indicates improvement</span></td>\n</tr>\n\n\n\n\n\n  \n<tr>\n\n<th scope=\"row\" class=\"row-header\">Population Basis</th>\n\n<td class=\"content-container\">boolean</td>\n</tr>\n\n\n\n\n\n  \n    <tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Population Criteria</th>\n\n</tr>\n  \n  \n  \n  \n    <tr>\n      \n        \n<th scope=\"row\" class=\"row-header\">Initial Population</th>\n\n      \n      <td class=\"content-container\">\n        \n        <em>ID</em>: HIV.IND.42.IP\n        <br/>\n        \n        \n          <em>Description</em>:\n          <p style=\"white-space: pre-line\" class=\"tab-one\">Initial Population</p>\n        \n        \n          \n            \n            <em>Logic Definition</em>: <a href=\"#hivind42logic-initial-population\">Initial Population</a> \n          \n        \n      </td>\n    </tr>\n  \n\n  \n    <tr>\n      \n        \n<th scope=\"row\" class=\"row-header\">Denominator</th>\n\n      \n      <td class=\"content-container\">\n        \n        <em>ID</em>: HIV.IND.42.DEN\n        <br/>\n        \n        \n          <em>Description</em>:\n          <p style=\"white-space: pre-line\" class=\"tab-one\">a) Programme-based/service delivery denominator | Number of HIV-exposed infants who were born within the 12 months (or 24 months in breastfeeding settings) prior to the reporting period and registered in the birth cohort | For example, for the reporting period January to December 2021 the denominator would be the number of HIV-exposed infants born between January to December 2020 in non-breast feeding settings and January to December 2019 in breastfeeding settings. |  | b) Population-based denominator | Estimated number of HIV-positive women who delivered within the past 12 months | (or 24 months in breastfeeding settings)</p>\n        \n        \n          \n            \n            <em>Logic Definition</em>: <a href=\"#hivind42logic-denominator\">Denominator</a> \n          \n        \n      </td>\n    </tr>\n  \n\n  \n    <tr>\n      \n        \n<th scope=\"row\" class=\"row-header\">Numerator</th>\n\n      \n      <td class=\"content-container\">\n        \n        <em>ID</em>: HIV.IND.42.NUM\n        <br/>\n        \n        \n          <em>Description</em>:\n          <p style=\"white-space: pre-line\" class=\"tab-one\">HIV-exposed infants born within the past 12 months (or 24 months in breastfeeding settings) who have known final HIV outcome status</p>\n        \n        \n          \n            \n            <em>Logic Definition</em>: <a href=\"#hivind42logic-numerator\">Numerator</a> \n          \n        \n      </td>\n    </tr>\n  \n\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Logic</th>\n\n</tr>\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Primary Library</th>\n\n<td class=\"content-container\"><a href=\"Library-HIVIND42Logic.html\">HIV.IND.42 Logic</a></td>\n</tr>\n\n\n\n\n  \n  \n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: FHIR model information\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIR-ModelInfo.html\">http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library HIE\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-HIVIndicatorElements.html\">HIVIndicatorElements</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVIndicatorElements</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library FHIRHelpers\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIRHelpers.html\">http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library Elements\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-HIVElements.html\">HIVElements</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVElements</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library Concepts\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <code>http://smart.who.int/hiv/Library/HIVConcepts|0.0.2</code>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVConcepts|0.0.2</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library WC\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-WHOCommon.html\">WHOCommon</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/WHOCommon</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Code system HIVConcepts\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"CodeSystem-HIVConcepts.html\">WHO SMART HIV Concepts CodeSystem</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    \n  </td>\n</tr>\n\n\n  \n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: HIV-exposed infant or child\n        <br/>\n      \n      <em>Code</em>: HIV.E.DE112\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Live birth\n        <br/>\n      \n      <em>Code</em>: HIV.E.DE48\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Breastfeeding\n        <br/>\n      \n      <em>Code</em>: HIV.B.DE32\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Registered in birth cohort\n        <br/>\n      \n      <em>Code</em>: HIV.E.DE179\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  <tr>\n    <th scope=\"row\" class=\"row-header\">Direct Reference Code</th>\n    <td class=\"content-container\">\n      \n        <em>Display</em>: Final diagnosis of HIV-exposed infant\n        <br/>\n      \n      <em>Code</em>: HIV.E.DE230\n      <br/>\n      <em>System</em>: <tt>http://smart.who.int/hiv/CodeSystem/HIVConcepts</tt>\n    </td>\n  </tr>\n\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Measurement Period\n    <br/>\n    <em>Use</em>: In\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: Period\n  </td>\n</tr>\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Numerator\n    <br/>\n    <em>Use</em>: Out\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: boolean\n  </td>\n</tr>\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Denominator\n    <br/>\n    <em>Use</em>: Out\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: boolean\n  </td>\n</tr>\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Initial Population\n    <br/>\n    <em>Use</em>: Out\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: boolean\n  </td>\n</tr>\n  \n  \n  <tr>\n    <th colspan=\"2\" scope=\"row\" class=\"section-header\"><a name=\"effective-data-requirements\"> </a>Measure Logic Data Requirements</th>\n  </tr>\n  \n  \n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Patient\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/patient.html\">Patient</a>\n    <br/>        \n  \n   \n   \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, effective\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n  \n    <span class=\"tab-one\"><em>Code</em>: </span>\n    <br/>\n  \n  \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, value, effective\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n  \n    <span class=\"tab-one\"><em>Code</em>: </span>\n    <br/>\n  \n  \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, value\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n  \n    <span class=\"tab-one\"><em>Code</em>: </span>\n    <br/>\n  \n  \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, value, effective\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n  \n    <span class=\"tab-one\"><em>Code</em>: </span>\n    <br/>\n  \n  \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, effective\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n  \n    <span class=\"tab-one\"><em>Code</em>: </span>\n    <br/>\n  \n  \n   \n  </td>\n</tr>\n\n  \n  <tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Logic Definitions</th>\n\n</tr>\n  \n          \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-is-infant-patient\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;Is Infant Patient&quot;:\n  Patient.birthDate is not null\n  and difference in years between Patient.birthDate and start of &quot;Measurement Period&quot; &lt; 1</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-hiv-exposed-infant-or-child-e.de112\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Age of infant */\n\n/*\n@dataElement: HIV.E.DE112 - HIV-exposed infant or child\n@activity: HIV.F6 Check whether infant/child had HIV exposure\n@description: Whether the infant or child was determined to have had HIV exposure\n*/\ndefine &quot;HIV-exposed infant or child E.DE112&quot;:\n\n  [Observation: Concepts.&quot;HIV-exposed infant or child - HIV.E.DE112&quot;] O\n    where O.status in { 'final', 'amended', 'corrected' }</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-is-hiv-exposed-infant-or-child-e.de112\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Age of infant */\n\n/*\n@dataElement: HIV.E.DE112 - HIV-exposed infant or child\n@activity: HIV.F6 Check whether infant/child had HIV exposure\n@description: Whether the infant or child was determined to have had HIV exposure\n*/\ndefine &quot;is HIV-exposed infant or child E.DE112&quot;:\n  &quot;Is Infant Patient&quot; and \n  exists(Elements.&quot;HIV-exposed infant or child E.DE112&quot; O\n    where O.effective.toInterval() during &quot;Measurement Period&quot;)</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-live-birth-delivery\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Newly on ART during labour and delivery */\n\n/*\n@dataElement: HIV.E.DE46 - Delivery date\n@activity: HIV.E1 Capture or update mother's history\n@description: Date on which the woman delivered\n*/\ndefine &quot;Live Birth Delivery&quot;:\n  [Observation: Concepts.&quot;Live birth&quot;] O\n    where O.status in { 'final', 'amended', 'corrected' }</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-live-birth-delivery\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Newly on ART during labour and delivery */\n\n/*\n@dataElement: HIV.E.DE46 - Delivery date\n@activity: HIV.E1 Capture or update mother's history\n@description: Date on which the woman delivered\n*/\ndefine &quot;Live Birth Delivery&quot;:\n  Elements.&quot;Live Birth Delivery&quot; O\n    where O.effective.toInterval() during &quot;Measurement Period&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-breastfeeding-b.de32\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Currently pregnant B.DE29 */\n\n/*\n@dataElement: HIV.B.DE32 - Breastfeeding\n@activity: HIV.B6 Capture or update client history\n@description: Infant is being breastfed by mother\n*/\n\ndefine &quot;Breastfeeding B.DE32&quot;:\n  [Observation: Concepts.&quot;Breastfeeding - HIV.B.DE32&quot;] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and O.value is true</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-breastfeeding-b.de32\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Currently pregnant B.DE29 */\n\n/*\n@dataElement: HIV.B.DE32 - Breastfeeding\n@activity: HIV.B6 Capture or update client history\n@description: Infant is being breastfed by mother\n*/\n\ndefine &quot;Breastfeeding B.DE32&quot;:\n  Elements.&quot;Breastfeeding B.DE32&quot; O\n    where O.effective.toInterval() during &quot;Measurement Period&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-registered-in-birth-cohort\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of First visit after the end of breastfeeding */\n\n/*\n@dataElement: HIV.E.DE179 - Registered in birth cohort\n@activity: HIV.F3 Capture or update infant's/child's history\n@description: Whether the infant has been registered in a birth cohort\n*/\n\ndefine &quot;Registered in birth cohort&quot;:\n  [Observation: Concepts.&quot;Registered in birth cohort&quot;] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and O.value is true</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivindicatorelements-registered-in-birth-cohort\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIndicatorElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of First visit after the end of breastfeeding */\n\n/*\n@dataElement: HIV.E.DE179 - Registered in birth cohort\n@activity: HIV.F3 Capture or update infant's/child's history\n@description: Whether the infant has been registered in a birth cohort\n*/\n\ndefine &quot;Registered in birth cohort&quot;:\n  exists Elements.&quot;Registered in birth cohort&quot; O\n    where O.effective.toInterval() during &quot;Measurement Period&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-final-diagnosis-of-hiv-exposed-infant-e.de230-observation\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define &quot;Final diagnosis of HIV-exposed infant E.DE230 Observation&quot;:\n  [Observation: Concepts.&quot;Final diagnosis of HIV-exposed infant - HIV.E.DE230&quot;] O\n    where O.status in { 'final', 'amended', 'corrected' }</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivelements-final-diagnosis-of-hiv-exposed-infant-e.de230\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* End of Infant ART start date */\n\n/*\n@dataElement: HIV.E.DE230 - Final diagnosis of HIV-exposed infant\n@activity: HIV.F20 Record infant's/child's final HIV diagnosis\n@description: HIV-exposed infant final status at 18 months or 3 months after cessation of breastfeeding (whichever is later).\n*/\n\ndefine &quot;Final diagnosis of HIV-exposed infant E.DE230&quot;:\n  First(&quot;Final diagnosis of HIV-exposed infant E.DE230 Observation&quot;.value) as FHIR.CodeableConcept</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivind42logic-numerator\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIND42Logic</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/**\n * Numerator\n * \n * Definition: HIV-exposed infants born within the past 12 months (or 24 months in breastfeeding settings) who have known final HIV outcome status\n * Calculation: COUNT of infants who are an &quot;HIV-exposed infant or child&quot; AND [(with an &quot;Infant date of birth&quot; in past 12 months) OR (with an &quot;Infant date of birth&quot; in past 24 months IF mothers are &quot;Breastfeeding&quot;)] AND &quot;Registered in birth cohort&quot;=True AND with a &quot;Final diagnosis of HIV-exposed infant&quot; of NOT NULL\n */\n\ndefine &quot;Numerator&quot;:\n  HIE.&quot;is HIV-exposed infant or child E.DE112&quot;\n  and\n  (exists(HIE.&quot;Live Birth Delivery&quot; B where months between end of B.effective.toInterval() and end of  &quot;Measurement Period&quot; &lt; 12 months)\n  or \n  (\n  exists(HIE.&quot;Breastfeeding B.DE32&quot; B) and\n  exists(HIE.&quot;Live Birth Delivery&quot; B where months between end of B.effective.toInterval() and end of  &quot;Measurement Period&quot; &lt; 24 months)\n  )\n  )\n  and HIE.&quot;Registered in birth cohort&quot;\n  and HE.&quot;Final diagnosis of HIV-exposed infant E.DE230&quot; is not null</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivind42logic-denominator\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIND42Logic</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/**\n * Denominator\n *\n * Definition: a) Programme-based/service delivery denominator | Number of HIV-exposed infants who were born within the 12 months (or 24 months in breastfeeding settings) prior to the reporting period and registered in the birth cohort | For example, for the reporting period January to December 2021 the denominator would be the number of HIV-exposed infants born between January to December 2020 in non-breast feeding settings and January to December 2019 in breastfeeding settings. |  | b) Population-based denominator | Estimated number of HIV-positive women who delivered within the past 12 months | (or 24 months in breastfeeding settings)\n * Calculation: COUNT of infants who are an &quot;HIV-exposed infant or child&quot; AND [(with an &quot;Infant date of birth&quot; within past 12 months) OR (with an &quot;Infant date of birth&quot; within past 24 months IF mothers are &quot;Breastfeeding&quot;)] AND &quot;Registered in birth cohort&quot;=True\n */\n\ndefine &quot;Denominator&quot;:\n  HIE.&quot;is HIV-exposed infant or child E.DE112&quot;\n  and\n  (exists(HIE.&quot;Live Birth Delivery&quot; B where months between end of B.effective.toInterval() and end of  &quot;Measurement Period&quot; &lt; 12 months)\n  or \n  (\n  exists(HIE.&quot;Breastfeeding B.DE32&quot; B) and\n  exists(HIE.&quot;Live Birth Delivery&quot; B where months between end of B.effective.toInterval() and end of  &quot;Measurement Period&quot; &lt; 24 months)\n  )\n  )\n  and HIE.&quot;Registered in birth cohort&quot;</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"hivind42logic-initial-population\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> HIVIND42Logic</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/* Populations */\n\n/*\n *Initial Population\n */\n\ndefine &quot;Initial Population&quot;:\n  true</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-todate\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToDate(value date): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tostring\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToString(value ObservationStatus): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-toboolean\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToBoolean(value boolean): value.value</code></pre>\n  </td>\n\n</tr>\n\n  \n\n<tr>\n  <th colspan=\"2\" scope=\"row\" class=\"row-header\">Generated using version 0.4.6 of the sample-content-ig Liquid templates</th>\n</tr>\n    </tbody>\n  </table>\n</div>"
+  },
+  "contained" : [{
+    "resourceType" : "Library",
+    "id" : "effective-data-requirements",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.E.DE112",
+        "display" : "HIV-exposed infant or child"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.E.DE48",
+        "display" : "Live birth"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE32",
+        "display" : "Breastfeeding"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.E.DE179",
+        "display" : "Registered in birth cohort"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.E.DE230",
+        "display" : "Final diagnosis of HIV-exposed infant"
+      }
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Is Infant Patient"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"Is Infant Patient\":\n  Patient.birthDate is not null\n  and difference in years between Patient.birthDate and start of \"Measurement Period\" < 1"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 0
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV-exposed infant or child E.DE112"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Age of infant */\n\n/*\n@dataElement: HIV.E.DE112 - HIV-exposed infant or child\n@activity: HIV.F6 Check whether infant/child had HIV exposure\n@description: Whether the infant or child was determined to have had HIV exposure\n*/\ndefine \"HIV-exposed infant or child E.DE112\":\n\n  [Observation: Concepts.\"HIV-exposed infant or child - HIV.E.DE112\"] O\n    where O.status in { 'final', 'amended', 'corrected' }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 1
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "is HIV-exposed infant or child E.DE112"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Age of infant */\n\n/*\n@dataElement: HIV.E.DE112 - HIV-exposed infant or child\n@activity: HIV.F6 Check whether infant/child had HIV exposure\n@description: Whether the infant or child was determined to have had HIV exposure\n*/\ndefine \"is HIV-exposed infant or child E.DE112\":\n  \"Is Infant Patient\" and \n  exists(Elements.\"HIV-exposed infant or child E.DE112\" O\n    where O.effective.toInterval() during \"Measurement Period\")"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 2
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Live Birth Delivery"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Newly on ART during labour and delivery */\n\n/*\n@dataElement: HIV.E.DE46 - Delivery date\n@activity: HIV.E1 Capture or update mother's history\n@description: Date on which the woman delivered\n*/\ndefine \"Live Birth Delivery\":\n  [Observation: Concepts.\"Live birth\"] O\n    where O.status in { 'final', 'amended', 'corrected' }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 3
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Live Birth Delivery"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Newly on ART during labour and delivery */\n\n/*\n@dataElement: HIV.E.DE46 - Delivery date\n@activity: HIV.E1 Capture or update mother's history\n@description: Date on which the woman delivered\n*/\ndefine \"Live Birth Delivery\":\n  Elements.\"Live Birth Delivery\" O\n    where O.effective.toInterval() during \"Measurement Period\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 4
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Breastfeeding B.DE32"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Currently pregnant B.DE29 */\n\n/*\n@dataElement: HIV.B.DE32 - Breastfeeding\n@activity: HIV.B6 Capture or update client history\n@description: Infant is being breastfed by mother\n*/\n\ndefine \"Breastfeeding B.DE32\":\n  [Observation: Concepts.\"Breastfeeding - HIV.B.DE32\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and O.value is true"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 5
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Breastfeeding B.DE32"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Currently pregnant B.DE29 */\n\n/*\n@dataElement: HIV.B.DE32 - Breastfeeding\n@activity: HIV.B6 Capture or update client history\n@description: Infant is being breastfed by mother\n*/\n\ndefine \"Breastfeeding B.DE32\":\n  Elements.\"Breastfeeding B.DE32\" O\n    where O.effective.toInterval() during \"Measurement Period\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 6
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Registered in birth cohort"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of First visit after the end of breastfeeding */\n\n/*\n@dataElement: HIV.E.DE179 - Registered in birth cohort\n@activity: HIV.F3 Capture or update infant's/child's history\n@description: Whether the infant has been registered in a birth cohort\n*/\n\ndefine \"Registered in birth cohort\":\n  [Observation: Concepts.\"Registered in birth cohort\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and O.value is true"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 7
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Registered in birth cohort"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of First visit after the end of breastfeeding */\n\n/*\n@dataElement: HIV.E.DE179 - Registered in birth cohort\n@activity: HIV.F3 Capture or update infant's/child's history\n@description: Whether the infant has been registered in a birth cohort\n*/\n\ndefine \"Registered in birth cohort\":\n  exists Elements.\"Registered in birth cohort\" O\n    where O.effective.toInterval() during \"Measurement Period\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 8
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Final diagnosis of HIV-exposed infant E.DE230 Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"Final diagnosis of HIV-exposed infant E.DE230 Observation\":\n  [Observation: Concepts.\"Final diagnosis of HIV-exposed infant - HIV.E.DE230\"] O\n    where O.status in { 'final', 'amended', 'corrected' }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 9
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Final diagnosis of HIV-exposed infant E.DE230"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Infant ART start date */\n\n/*\n@dataElement: HIV.E.DE230 - Final diagnosis of HIV-exposed infant\n@activity: HIV.F20 Record infant's/child's final HIV diagnosis\n@description: HIV-exposed infant final status at 18 months or 3 months after cessation of breastfeeding (whichever is later).\n*/\n\ndefine \"Final diagnosis of HIV-exposed infant E.DE230\":\n  First(\"Final diagnosis of HIV-exposed infant E.DE230 Observation\".value) as FHIR.CodeableConcept"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 10
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIND42Logic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Numerator"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/**\n * Numerator\n * \n * Definition: HIV-exposed infants born within the past 12 months (or 24 months in breastfeeding settings) who have known final HIV outcome status\n * Calculation: COUNT of infants who are an \"HIV-exposed infant or child\" AND [(with an \"Infant date of birth\" in past 12 months) OR (with an \"Infant date of birth\" in past 24 months IF mothers are \"Breastfeeding\")] AND \"Registered in birth cohort\"=True AND with a \"Final diagnosis of HIV-exposed infant\" of NOT NULL\n */\n\ndefine \"Numerator\":\n  HIE.\"is HIV-exposed infant or child E.DE112\"\n  and\n  (exists(HIE.\"Live Birth Delivery\" B where months between end of B.effective.toInterval() and end of  \"Measurement Period\" < 12 months)\n  or \n  (\n  exists(HIE.\"Breastfeeding B.DE32\" B) and\n  exists(HIE.\"Live Birth Delivery\" B where months between end of B.effective.toInterval() and end of  \"Measurement Period\" < 24 months)\n  )\n  )\n  and HIE.\"Registered in birth cohort\"\n  and HE.\"Final diagnosis of HIV-exposed infant E.DE230\" is not null"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 11
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIND42Logic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Denominator"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/**\n * Denominator\n *\n * Definition: a) Programme-based/service delivery denominator | Number of HIV-exposed infants who were born within the 12 months (or 24 months in breastfeeding settings) prior to the reporting period and registered in the birth cohort | For example, for the reporting period January to December 2021 the denominator would be the number of HIV-exposed infants born between January to December 2020 in non-breast feeding settings and January to December 2019 in breastfeeding settings. |  | b) Population-based denominator | Estimated number of HIV-positive women who delivered within the past 12 months | (or 24 months in breastfeeding settings)\n * Calculation: COUNT of infants who are an \"HIV-exposed infant or child\" AND [(with an \"Infant date of birth\" within past 12 months) OR (with an \"Infant date of birth\" within past 24 months IF mothers are \"Breastfeeding\")] AND \"Registered in birth cohort\"=True\n */\n\ndefine \"Denominator\":\n  HIE.\"is HIV-exposed infant or child E.DE112\"\n  and\n  (exists(HIE.\"Live Birth Delivery\" B where months between end of B.effective.toInterval() and end of  \"Measurement Period\" < 12 months)\n  or \n  (\n  exists(HIE.\"Breastfeeding B.DE32\" B) and\n  exists(HIE.\"Live Birth Delivery\" B where months between end of B.effective.toInterval() and end of  \"Measurement Period\" < 24 months)\n  )\n  )\n  and HIE.\"Registered in birth cohort\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 12
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIND42Logic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Initial Population"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* Populations */\n\n/*\n *Initial Population\n */\n\ndefine \"Initial Population\":\n  true"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 13
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToDate"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToDate(value date): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 14
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value ObservationStatus): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 15
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToBoolean"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToBoolean(value boolean): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 16
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    }],
+    "name" : "EffectiveDataRequirements",
+    "status" : "active",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/library-type",
+        "code" : "module-definition"
+      }]
+    },
+    "relatedArtifact" : [{
+      "type" : "depends-on",
+      "display" : "FHIR model information",
+      "resource" : "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library HIE",
+      "resource" : "http://smart.who.int/hiv/Library/HIVIndicatorElements"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library FHIRHelpers",
+      "resource" : "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library Elements",
+      "resource" : "http://smart.who.int/hiv/Library/HIVElements"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library Concepts",
+      "resource" : "http://smart.who.int/hiv/Library/HIVConcepts|0.0.2"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library WC",
+      "resource" : "http://smart.who.int/hiv/Library/WHOCommon"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Code system HIVConcepts",
+      "resource" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+    }],
+    "parameter" : [{
+      "name" : "Measurement Period",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "Period"
+    },
+    {
+      "name" : "Numerator",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "boolean"
+    },
+    {
+      "name" : "Denominator",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "boolean"
+    },
+    {
+      "name" : "Initial Population",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "boolean"
+    }],
+    "dataRequirement" : [{
+      "type" : "Patient",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Patient"]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code",
+      "status",
+      "effective"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.E.DE112",
+          "display" : "HIV-exposed infant or child"
+        }]
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code",
+      "status",
+      "value",
+      "effective"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.E.DE179",
+          "display" : "Registered in birth cohort"
+        }]
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code",
+      "status",
+      "value"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.E.DE230",
+          "display" : "Final diagnosis of HIV-exposed infant"
+        }]
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code",
+      "status",
+      "value",
+      "effective"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.B.DE32",
+          "display" : "Breastfeeding"
+        }]
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code",
+      "status",
+      "effective"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.E.DE48",
+          "display" : "Live birth"
+        }]
+      }]
+    }]
+  }],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+    "valueCode" : "boolean"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
+    "valueCanonical" : "#effective-data-requirements"
+  }],
+  "url" : "http://smart.who.int/hiv/Measure/HIVIND42",
+  "version" : "0.4.4",
+  "name" : "HIVIND42",
+  "title" : "HIV.IND.42 Final outcome of PMTCT",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2024-08-18",
+  "publisher" : "WHO",
+  "contact" : [{
+    "name" : "WHO",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://who.int"
+    }]
+  }],
+  "description" : "% of HIV-exposed infants whose final HIV outcome status is known",
+  "library" : ["http://smart.who.int/hiv/Library/HIVIND42Logic"],
+  "scoring" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/measure-scoring",
+      "code" : "proportion",
+      "display" : "Proportion"
+    }]
+  },
+  "improvementNotation" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+      "code" : "increase"
+    }]
+  },
+  "group" : [{
+    "population" : [{
+      "id" : "HIV.IND.42.IP",
+      "code" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code" : "initial-population",
+          "display" : "Initial Population"
+        }]
+      },
+      "description" : "Initial Population",
+      "criteria" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Initial Population"
+      }
+    },
+    {
+      "id" : "HIV.IND.42.DEN",
+      "code" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code" : "denominator",
+          "display" : "Denominator"
+        }]
+      },
+      "description" : "a) Programme-based/service delivery denominator | Number of HIV-exposed infants who were born within the 12 months (or 24 months in breastfeeding settings) prior to the reporting period and registered in the birth cohort | For example, for the reporting period January to December 2021 the denominator would be the number of HIV-exposed infants born between January to December 2020 in non-breast feeding settings and January to December 2019 in breastfeeding settings. |  | b) Population-based denominator | Estimated number of HIV-positive women who delivered within the past 12 months | (or 24 months in breastfeeding settings)",
+      "criteria" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Denominator"
+      }
+    },
+    {
+      "id" : "HIV.IND.42.NUM",
+      "code" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code" : "numerator",
+          "display" : "Numerator"
+        }]
+      },
+      "description" : "HIV-exposed infants born within the past 12 months (or 24 months in breastfeeding settings) who have known final HIV outcome status",
+      "criteria" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Numerator"
+      }
+    }]
+  }]
+}

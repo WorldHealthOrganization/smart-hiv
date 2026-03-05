@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="HIVD15DT"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableplandefinition"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">HIVD15DT</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="PlanDefinition-HIVD15DT.html">HIV.D15.DT Determine WHO clinical staging of HIV disease in adults, adolescents and children</a></td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.4.4</td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">HIV.D15.DT Determine WHO clinical staging of HIV disease in adults, adolescents and children</td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">draft</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">true</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/6.1.0/CodeSystem-plan-definition-type.html">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2026-03-05 13:07:29+0000</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">WHO</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>Determine WHO clinical staging of HIV disease in adults, adolescents and children</p>
+</div></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Related Artifacts: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p><b>References</b></p>
+                <ul>
+                    
+                    <li><div><p>WHO Consolidated guidelines on the use of antiretroviral drugs for treating and preventing HIV infection, 2nd edition (2016). ANNEX 10 - WHO clinical staging of HIV disease in adults, adolescents and children.</p>
+</div><br/><a href="null"/></li>
+                    
+                </ul>
+                
+                
+                
+                
+                
+                
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Libraries: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td><a href="Library-HIVD4DTLogic.html">HIV.D4.DT Logic</a></td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Actions: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td>
+                            
+                            Outcome of determining WHO clinical staging for HIV
+                            
+                            <br/>
+                            
+                            
+                            
+                            
+                            <b>Then:</b> <i>Definition:</i> <a href="ActivityDefinition-HIVGuidanceCommunicationRequestActivity.html">HIVGuidanceCommunicationRequestActivity</a><br/>
+                            
+                            <i>Dynamic Values:</i><br/>
+                            
+                            payload[+].contentString: <i>(Guidance)</i>
+                            <br/>
+                            
+                            
+                            
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+    </table>
+</div>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE956"/>
+          <display value="TB screening algorithm"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE959"/>
+          <display value="W4SS single screening algorithm"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE973"/>
+          <display value="Symptoms of TB"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE974"/>
+          <display value="Current cough"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE976"/>
+          <display value="Fever of 39 °C or greater"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE977"/>
+          <display value="Weight loss reported"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE978"/>
+          <display value="Night sweats"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE984"/>
+          <display value="None"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE963"/>
+          <display value="Sequential positive screening algorithm with W4SS and CRP"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE1026"/>
+          <display value="C reactive protein test result"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE958"/>
+          <display value="Screening with any TB symptom"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE985"/>
+          <display value="History of contact with a person with TB"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="TB screening algorithm Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;TB screening algorithm Observation&quot;:&#xA;  [Observation: Concepts.&quot;TB screening algorithm&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="0"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="TB screening algorithm Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Presumptive TB D.DE945 */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE956 - TB screening algorithm&#xA;@activity: HIV.D4 Screen for TB&#xA;@description: Screening algorithm selected for screening activities&#xA;*/&#xA;define &quot;TB screening algorithm Observation&quot;:&#xA;  Elements.&quot;TB screening algorithm Observation&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="1"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="W4SS single screening algorithm"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;  @input: TB screening algorithm&#xA;  @pseudocode: &quot;TB screening algorithm&quot;='W4SS single screening algorithm'&#xA;  */&#xA;define &quot;W4SS single screening algorithm&quot;:&#xA;  exists(&#xA;    Elements.&quot;TB screening algorithm Observation&quot; O&#xA;      where O.value ~ Concepts.&quot;W4SS single screening algorithm&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="2"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Current Patient Age In Years"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/**&#xA; * HIV Elements&#xA; */&#xA;&#xA;// Auto-generated Elements from DAK Data Dictionary&#xA;//   Entries based on DAK Data Dictionary for Data Elements marked as used&#xA;//   in at least one Decision Support Table or Aggregate Indicator&#xA;&#xA;/*&#xA;@dataElement: HIV.A.DE17 - Age&#xA;@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record&#xA;@description: Calculated age (number of years) of the client based on date of birth&#xA;*/&#xA;/** &#xA; * @dataElement Patient age in years&#xA; */&#xA;define &quot;Current Patient Age In Years&quot;:&#xA;  AgeInYearsAt(Today())"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="3"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Age 10 or older"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: Estimated age&#xA; @pseudocode: &quot;Estimated age&quot; &gt;= 10 years&#xA; */&#xA;define &quot;Age 10 or older&quot;:&#xA;  Elements.&quot;Current Patient Age In Years&quot; &gt;= 10"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="4"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Symptoms of TB Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Symptoms of TB Observation&quot;:&#xA;  [Observation: Concepts.&quot;Symptoms of TB&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="5"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Symptoms of TB Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Other TB screening algorithm */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE973 - Symptoms of TB&#xA;@activity: HIV.D4 Screen for TB&#xA;@description: Symptoms that may indicate TB disease in clients living with HIV, based on a clinical algorithm&#xA;*/&#xA;define &quot;Symptoms of TB Observation&quot;:&#xA;  Elements.&quot;Symptoms of TB Observation&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="6"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Has symptoms of TB"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: Symptoms of TB&#xA; @pseudocode: &quot;Symptoms of TB&quot; IN 'Current cough', 'Fever of 39 °C or greater', 'Weight loss (reported)', 'Night sweats'&#xA; */&#xA;define &quot;Has symptoms of TB&quot;:&#xA;  exists(&#xA;    Elements.&quot;Symptoms of TB Observation&quot; O&#xA;      where O.value ~ Concepts.&quot;Current cough&quot;&#xA;         or O.value ~ Concepts.&quot;Fever of 39 °C or greater&quot;&#xA;         or O.value ~ Concepts.&quot;Weight loss reported&quot;&#xA;         or O.value ~ Concepts.&quot;Night sweats&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="7"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Does not have symptoms of TB"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: Symptoms of TB&#xA; @pseudocode: &quot;Symptoms of TB&quot; = 'None'&#xA; */&#xA;define &quot;Does not have symptoms of TB&quot;:&#xA;  exists(&#xA;    Elements.&quot;Symptoms of TB Observation&quot; O&#xA;      where O.value ~ Concepts.&quot;None&quot;&#xA;  ) or not(&quot;Has symptoms of TB&quot;)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="8"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Sequential positive screening algorithm with W4SS and CRP"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;  @input: TB screening algorithm&#xA;  @pseudocode: &quot;TB screening algorithm&quot;='Sequential positive screening algorithm with W4SS and CRP'&#xA;  */&#xA;define &quot;Sequential positive screening algorithm with W4SS and CRP&quot;:&#xA;  exists(&#xA;    Elements.&quot;TB screening algorithm Observation&quot; O&#xA;      where O.value ~ Concepts.&quot;Sequential positive screening algorithm with W4SS and CRP&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="9"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="C reactive protein test result"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of TB prevention services accepted */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE1026 - C reactive protein test result&#xA;@activity: HIV.D4 Screen for TB&#xA;@description: Test result of the client's C reactive protein test result in mg/L&#xA;*/&#xA;// TODO: Replace placeholder with relevant CQL logic&#xA;define &quot;C reactive protein test result&quot;:&#xA;  [Observation: Concepts.&quot;C reactive protein test result&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="10"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="C reactive protein test result"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of TB prevention services accepted */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE1026 - C reactive protein test result&#xA;@activity: HIV.D4 Screen for TB&#xA;@description: Test result of the client's C reactive protein test result in mg/L&#xA;*/&#xA;define &quot;C reactive protein test result&quot;:&#xA;  Elements.&quot;C reactive protein test result&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="11"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="No C-reactive protein test done"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: C-reactive protein test result&#xA; @pseudocode:&#xA; */&#xA;define &quot;No C-reactive protein test done&quot;:&#xA;  not(exists(&#xA;    Elements.&quot;C reactive protein test result&quot;&#xA;  ))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="12"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="C-reactive protein at or under 5mg/L"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: C-reactive protein test result&#xA; @pseudocode: &quot;C reactive protein test result&quot; ≤ 5 mg/L&#xA; */&#xA;define &quot;C-reactive protein at or under 5mg/L&quot;:&#xA;  exists(&#xA;    Elements.&quot;C reactive protein test result&quot; O&#xA;      where O.value &lt; 5&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="13"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="C-reactive protein over 5mg/L"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: C-reactive protein test result&#xA; @pseudocode: &quot;C reactive protein test result&quot; &gt; 5 mg/L&#xA; */&#xA;define &quot;C-reactive protein over 5mg/L&quot;:&#xA;  exists(&#xA;    Elements.&quot;C reactive protein test result&quot; O&#xA;      where O.value &gt; 5&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="14"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Screening with any TB symptom"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;  @input: TB screening algorithm&#xA;  @pseudocode: &quot;TB screening algorithm&quot;='Screening with any TB symptom'&#xA;  */&#xA;define &quot;Screening with any TB symptom&quot;:&#xA;  exists(&#xA;    Elements.&quot;TB screening algorithm Observation&quot; O&#xA;      where O.value ~ Concepts.&quot;Screening with any TB symptom&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="15"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Age under 15"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: Estimated age&#xA; @pseudocode: &quot;Estimated age&quot; &lt; 15 years&#xA; */&#xA;define &quot;Age under 15&quot;:&#xA;  Elements.&quot;Current Patient Age In Years&quot; &lt; 15"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="16"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="History of contact with a person with TB Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;History of contact with a person with TB Observation&quot;:&#xA;  [Observation: Concepts.&quot;History of contact with a person with TB&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }&#xA;      and O.value is true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="17"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="History of contact with a person with TB Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of None */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE985 - History of contact with a person with TB&#xA;@activity: HIV.D4 Screen for TB&#xA;@description: Client had a history of a contact with a person with TB&#xA;*/&#xA;define &quot;History of contact with a person with TB Observation&quot;:&#xA;  Elements.&quot;History of contact with a person with TB Observation&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="18"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="History of contact with a person with TB"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: History of contact with a person with TB&#xA; @pseudocode: &quot;History of contact with a person with TB&quot;=True&#xA; */&#xA;define &quot;History of contact with a person with TB&quot;:&#xA;  exists(&#xA;    Elements.&quot;History of contact with a person with TB Observation&quot; O&#xA;      where O.value = true&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="19"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD4DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Guidance"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @dynamicValue: Guidance&#xA; */&#xA;define &quot;Guidance&quot;:&#xA;  Combine({&#xA;    if &quot;W4SS single screening algorithm&quot; and &quot;Age 10 or older&quot; and &quot;Has symptoms of TB&quot;&#xA;      then 'Screen positive for TB.  Refer for diagnostic evaluation including mWRD &amp; clinical evaluation as indicated.  &#xA;&#xA;In PLHIV, diagnostic testing for TB with LF-LAM and other methods is usually considered early on.  See WHO consolidated guidelines on tuberculosis, Module 3: Diagnosis - Rapid diagnostics for tuberculosis detection.  &#xA;&#xA;LF-LAM can assist TB diagnosis among people with advanced HIV disease (AHD) with symptoms and signs of TB. For inpatients with CD4 count ≤200 cells/mm3, outpatients with CD4 count ≤100 cells/mm3, or individuals with any CD4 count with symptoms of AHD or if seriously ill (See WHO Consolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring: recommendations for a public health approach (2021))'&#xA;      else '',&#xA;    if &quot;W4SS single screening algorithm&quot; and &quot;Age 10 or older&quot; and &quot;Does not have symptoms of TB&quot;&#xA;      then 'Screen negative for TB, assess for TPT.'&#xA;      else '',&#xA;    if &quot;Sequential positive screening algorithm with W4SS and CRP&quot; and &quot;Age 10 or older&quot; and &quot;Does not have symptoms of TB&quot;&#xA;      then 'Screen negative for TB.  Assess for TPT.'&#xA;      else '',&#xA;    if &quot;Sequential positive screening algorithm with W4SS and CRP&quot; and &quot;Age 10 or older&quot; and &quot;Has symptoms of TB&quot; and &quot;No C-reactive protein test done&quot;&#xA;      then 'Perform C reative protein test.'&#xA;      else '',&#xA;    if &quot;Sequential positive screening algorithm with W4SS and CRP&quot; and &quot;Age 10 or older&quot; and &quot;Has symptoms of TB&quot; and &quot;C-reactive protein at or under 5mg/L&quot;&#xA;      then 'Screen positive for TB.  Refer for diagnostic evaluation including mWRD &amp; clinical evaluation as indicated.  &#xA;&#xA;In PLHIV, diagnostic testing for TB with LF-LAM and other methods is usually considered early on.  &#xA;&#xA;Currently, the c-reative protein cut-off value of &gt; 5 mg/L is recommended, as it is the lowest threshold indicating abnormality in many clinical settings and because it is the most sensitive. At this cut-off, CRP has a similar sensitivity and higher or similar specificity to symptom screening in all subpopulations of adults and adolescents living with HIV tested (Section 5.2.2, 2021 WHO operation handbook on tuberculosis, Module 2: screening).  &#xA;&#xA;LF-LAM can assist TB diagnosis among people with advanced HIV disease (AHD) with symptoms and signs of TB. For inpatients with CD4 count ≤200 cells/mm3, outpatients with CD4 count ≤100 cells/mm3, or individuals with any CD4 count with symptoms of AHD or if seriously ill.'&#xA;      else '',&#xA;    if &quot;Sequential positive screening algorithm with W4SS and CRP&quot; and &quot;Age 10 or older&quot; and &quot;Has symptoms of TB&quot; and &quot;C-reactive protein over 5mg/L&quot;&#xA;      then 'In PLHIV, diagnostic testing for TB with LF-LAM and other methods is usually considered early on.  &#xA;&#xA;Currently, the c-reative protein cut-off value of &gt; 5 mg/L is recommended, as it is the lowest threshold indicating abnormality in many clinical settings and because it is the most sensitive. At this cut-off, CRP has a similar sensitivity and higher or similar specificity to symptom screening in all subpopulations of adults and adolescents living with HIV tested (Section 5.2.2, 2021 WHO operation handbook on tuberculosis, Module 2: screening).  &#xA;&#xA;LF-LAM can assist TB diagnosis among people with advanced HIV disease (AHD) with symptoms and signs of TB. For inpatients with CD4 count ≤200 cells/mm3, outpatients with CD4 count ≤100 cells/mm3, or individuals with any CD4 count with symptoms of AHD or if seriously ill.'&#xA;      else '',&#xA;    if &quot;Screening with any TB symptom&quot; and &quot;Age under 15&quot; and &quot;Has symptoms of TB&quot; and &quot;History of contact with a person with TB&quot;&#xA;      then 'Screen positive for TB.  Refer for diagnostic evaluation including mWRD &amp; clinical evaluation as indicated.  &#xA;&#xA;Any child &lt; 15 years who has had close contact with someone with TB disease should be screened for TB with a symptom screen and/or CXR as part of active contact-tracing (see Algorithm A.5.1 in Annex 5). Symptoms that should be used to screen for TB are cough, fever and poor weight gain (or weight loss). In young children, reduced playfulness or lethargy should also be included in symptom screening; cough may be absent.'&#xA;      else '',&#xA;    if &quot;Screening with any TB symptom&quot; and &quot;Age under 15&quot; and &quot;Does not have symptoms of TB&quot; and &quot;History of contact with a person with TB&quot;&#xA;      then 'Screen negative for TB.  Refer for TPT.'&#xA;      else ''&#xA;  })"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="20"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value ObservationStatus): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="21"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="WHOCommon"/>
+        </extension>
+        <extension url="name">
+          <valueString value="references"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;@description: Returns true if the given reference is to the given resourceId&#xA;@comment: Returns true if the `resourceId` parameter exactly equals the tail of the given reference.&#xA;NOTE: This function assumes resources from the same source server.&#xA;*/&#xA;define fluent function references(reference FHIR.Reference, resourceId String):&#xA;  resourceId = Last(Split(reference.reference, '/'))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="22"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value string): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="23"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToConcept"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToConcept(concept FHIR.CodeableConcept):&#xA;    if concept is null then&#xA;        null&#xA;    else&#xA;        System.Concept {&#xA;            codes: concept.coding C return ToCode(C),&#xA;            display: concept.text.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="24"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToCode"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToCode(coding FHIR.Coding):&#xA;    if coding is null then&#xA;        null&#xA;    else&#xA;        System.Code {&#xA;          code: coding.code.value,&#xA;          system: coding.system.value,&#xA;          version: coding.version.value,&#xA;          display: coding.display.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="25"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToInteger"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToInteger(value integer): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="26"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToBoolean"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToBoolean(value boolean): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="27"/>
+        </extension>
+      </extension>
+      <name value="EffectiveDataRequirements"/>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="FHIR model information"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVEncounterElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts|0.0.2"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library WC"/>
+        <resource value="http://smart.who.int/hiv/Library/WHOCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system HIVConcepts"/>
+        <resource value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="EncounterId"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <parameter>
+        <name value="Guidance"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.D.DE973"/>
+            <display value="Symptoms of TB"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.D.DE956"/>
+            <display value="TB screening algorithm"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="value"/>
+        <mustSupport value="encounter"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.D.DE985"/>
+            <display value="History of contact with a person with TB"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.D.DE1026"/>
+            <display value="C reactive protein test result"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Patient"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability">
+    <valueCode value="computable"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
+    <valueCanonical value="#effective-data-requirements"/>
+  </extension>
+  <url value="http://smart.who.int/hiv/PlanDefinition/HIVD15DT"/>
+  <version value="0.4.4"/>
+  <name value="HIVD15DT"/>
+  <title value="HIV.D15.DT Determine WHO clinical staging of HIV disease in adults, adolescents and children"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-03-05T13:07:29+00:00"/>
+  <publisher value="WHO"/>
+  <contact>
+    <name value="WHO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://who.int"/>
+    </telecom>
+  </contact>
+  <description value="Determine WHO clinical staging of HIV disease in adults, adolescents and children"/>
+  <relatedArtifact>
+    <type value="citation"/>
+    <citation value="WHO Consolidated guidelines on the use of antiretroviral drugs for treating and preventing HIV infection, 2nd edition (2016). ANNEX 10 - WHO clinical staging of HIV disease in adults, adolescents and children."/>
+  </relatedArtifact>
+  <library value="http://smart.who.int/hiv/Library/HIVD4DTLogic"/>
+  <action>
+    <textEquivalent value="Outcome of determining WHO clinical staging for HIV"/>
+    <definitionCanonical value="http://smart.who.int/hiv/ActivityDefinition/HIVGuidanceCommunicationRequestActivity"/>
+    <dynamicValue>
+      <path value="payload[+].contentString"/>
+      <expression>
+        <language value="text/cql-identifier"/>
+        <expression value="Guidance"/>
+      </expression>
+    </dynamicValue>
+  </action>
+</PlanDefinition>

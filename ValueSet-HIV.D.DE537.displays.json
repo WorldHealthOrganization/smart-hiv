@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE537.displays.json",
+  "title": "Current medications ValueSet Display Values",
+  "description": "Display values for Current medications ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.D.DE538": {
+      "en": "No medications"
+    },
+    "HIV.D.DE539": {
+      "en": "Don't know of any current medications"
+    },
+    "HIV.D.DE540": {
+      "en": "Analgesic"
+    },
+    "HIV.D.DE541": {
+      "en": "Antacids"
+    },
+    "HIV.D.DE542": {
+      "en": "Antibiotics (broad-spectrum)"
+    },
+    "HIV.D.DE543": {
+      "en": "Anticonvulsive"
+    },
+    "HIV.D.DE544": {
+      "en": "Antidiabetic"
+    },
+    "HIV.D.DE545": {
+      "en": "Antifungals"
+    },
+    "HIV.D.DE546": {
+      "en": "Antihelmintic"
+    },
+    "HIV.D.DE547": {
+      "en": "Antihypertensive"
+    },
+    "HIV.D.DE548": {
+      "en": "Antimalarials"
+    },
+    "HIV.D.DE549": {
+      "en": "Antiretrovirals (ARVs)"
+    },
+    "HIV.D.DE550": {
+      "en": "Antiparasitics"
+    },
+    "HIV.D.DE551": {
+      "en": "Antivirals"
+    },
+    "HIV.D.DE552": {
+      "en": "Buprenorphine"
+    },
+    "HIV.D.DE553": {
+      "en": "Co-trimoxazole preventive therapy (CPT)"
+    },
+    "HIV.D.DE554": {
+      "en": "Hormonal family planning method"
+    },
+    "HIV.D.DE555": {
+      "en": "Methadone"
+    },
+    "HIV.D.DE556": {
+      "en": "PrEP to prevent HIV"
+    },
+    "HIV.D.DE557": {
+      "en": "Other antibiotics"
+    },
+    "HIV.D.DE558": {
+      "en": "Other medications"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE537",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:28+00:00"
+}

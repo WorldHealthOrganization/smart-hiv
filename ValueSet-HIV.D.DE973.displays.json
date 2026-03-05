@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE973.displays.json",
+  "title": "Symptoms of TB ValueSet Display Values",
+  "description": "Display values for Symptoms of TB ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.D.DE974": {
+      "en": "Current cough"
+    },
+    "HIV.D.DE975": {
+      "en": "Prolonged cough (>=2w)"
+    },
+    "HIV.D.DE976": {
+      "en": "Fever of 39 °C or greater"
+    },
+    "HIV.D.DE977": {
+      "en": "Weight loss (reported)"
+    },
+    "HIV.D.DE978": {
+      "en": "Night sweats"
+    },
+    "HIV.D.DE979": {
+      "en": "Poor weight gain"
+    },
+    "HIV.D.DE980": {
+      "en": "Reduced playfulness"
+    },
+    "HIV.D.DE981": {
+      "en": "Chest pain"
+    },
+    "HIV.D.DE982": {
+      "en": "Haemoptysis"
+    },
+    "HIV.D.DE983": {
+      "en": "Lethargy"
+    },
+    "HIV.D.DE984": {
+      "en": "None"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE973",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:29+00:00"
+}

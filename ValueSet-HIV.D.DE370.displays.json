@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE370.displays.json",
+  "title": "Reasons for delayed ART initiation ValueSet Display Values",
+  "description": "Display values for Reasons for delayed ART initiation ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.D.DE371": {
+      "en": "Patient self-reported as not ready/willing"
+    },
+    "HIV.D.DE372": {
+      "en": "Not completed education, support and preparation for ART"
+    },
+    "HIV.D.DE373": {
+      "en": "Fear of disclosure"
+    },
+    "HIV.D.DE374": {
+      "en": "Patient lacks finances"
+    },
+    "HIV.D.DE375": {
+      "en": "Initiated on TB treatment"
+    },
+    "HIV.D.DE376": {
+      "en": "Patient initiated on treatment for TB meningitis"
+    },
+    "HIV.D.DE377": {
+      "en": "Patient diagnosed with cryptococcal meningitis"
+    },
+    "HIV.D.DE378": {
+      "en": "Patient diagnosed with histoplasmosis"
+    },
+    "HIV.D.DE379": {
+      "en": "Patient critically/severely ill"
+    },
+    "HIV.D.DE380": {
+      "en": "Other"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE370",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:28+00:00"
+}

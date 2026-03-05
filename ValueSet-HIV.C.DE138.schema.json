@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.C.DE138.schema.json",
+  "title": "Condom type ValueSet Schema",
+  "description": "JSON Schema for Condom type ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+  "type": "object",
+  "required": [
+    "system",
+    "code"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "system": {
+      "type": "string",
+      "const": "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+    },
+    "code": {
+      "type": "string",
+      "enum": [
+        "HIV.C.DE139",
+        "HIV.C.DE140"
+      ]
+    }
+  },
+  "narrative": "This schema validates Coding-shaped objects for the Condom type ValueSet ValueSet. Each value must be an object with 'system' (CodeSystem URI) and 'code' (fragment after '#') properties. Display values are available at http://smart.who.int/hiv/ValueSet-HIV.C.DE138.displays.json. The canonical IRI for a code can be reconstructed as system + '#' + code. For a complete listing of all ValueSets, see artifacts.html#terminology-value-sets.",
+  "fhir:displays": "http://smart.who.int/hiv/ValueSet-HIV.C.DE138.displays.json",
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.C.DE138",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:27+00:00"
+}

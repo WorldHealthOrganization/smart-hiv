@@ -1,0 +1,274 @@
+# Review sociodemographic data with client - WHO SMART Guidelines - HIV v0.4.4
+
+* [**Table of Contents**](toc.md)
+* [**Indices**](indices.md)
+* [**Artifact Index**](artifacts.md)
+* **Review sociodemographic data with client**
+
+## Questionnaire: Review sociodemographic data with client
+Branch:
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Questionnaire",
+  "id" : "HIV.A6.1ReviewSociodemographicDataWithClient",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-smap",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablequestionnaire",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablequestionnaire"]
+  },
+  "language" : "en",
+  "url" : "http://smart.who.int/hiv/Questionnaire/HIV.A6.1ReviewSociodemographicDataWithClient",
+  "version" : "0.4.4",
+  "title" : "Review sociodemographic data with client",
+  "status" : "draft",
+  "experimental" : true,
+  "subjectType" : ["Patient"],
+  "date" : "2026-03-05T13:07:29+00:00",
+  "publisher" : "WHO",
+  "contact" : [{
+    "name" : "WHO",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://who.int"
+    }]
+  }],
+  "description" : "Questionnaire for review sociodemographic data with client",
+  "item" : [{
+    "id" : "HIV.A.DE8",
+    "linkId" : "HIV.A.DE8",
+    "text" : "Unique identifier",
+    "type" : "string",
+    "required" : true,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE9",
+    "linkId" : "HIV.A.DE9",
+    "text" : "National ID",
+    "type" : "string",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE10",
+    "linkId" : "HIV.A.DE10",
+    "text" : "National health ID",
+    "type" : "string",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE11",
+    "linkId" : "HIV.A.DE11",
+    "text" : "National programme ID",
+    "type" : "string",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE12",
+    "linkId" : "HIV.A.DE12",
+    "text" : "National health insurance ID",
+    "type" : "string",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE13",
+    "linkId" : "HIV.A.DE13",
+    "text" : "Country of birth",
+    "type" : "choice",
+    "required" : true,
+    "repeats" : false,
+    "readOnly" : false,
+    "answerValueSet" : "#HIV.A.DE13"
+  },
+  {
+    "id" : "HIV.A.DE14",
+    "linkId" : "HIV.A.DE14",
+    "text" : "Date of birth",
+    "type" : "date",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE15",
+    "linkId" : "HIV.A.DE15",
+    "text" : "Date of birth unknown",
+    "type" : "boolean",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE16",
+    "linkId" : "HIV.A.DE16",
+    "text" : "Estimated age",
+    "type" : "integer",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE17",
+    "linkId" : "HIV.A.DE17",
+    "text" : "Age",
+    "type" : "integer",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE18",
+    "linkId" : "HIV.A.DE18",
+    "text" : "Gender",
+    "type" : "choice",
+    "required" : true,
+    "repeats" : false,
+    "readOnly" : false,
+    "answerValueSet" : "#HIV.A.DE18"
+  },
+  {
+    "id" : "HIV.A.DE24",
+    "linkId" : "HIV.A.DE24",
+    "text" : "Other (specify)",
+    "type" : "string",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE25",
+    "linkId" : "HIV.A.DE25",
+    "text" : "Sex",
+    "type" : "choice",
+    "required" : true,
+    "repeats" : false,
+    "readOnly" : false,
+    "answerValueSet" : "#HIV.A.DE25"
+  },
+  {
+    "id" : "HIV.A.DE29",
+    "linkId" : "HIV.A.DE29",
+    "text" : "Address",
+    "type" : "string",
+    "required" : true,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE30",
+    "linkId" : "HIV.A.DE30",
+    "text" : "Marital Status",
+    "type" : "choice",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false,
+    "answerValueSet" : "#HIV.A.DE30"
+  },
+  {
+    "id" : "HIV.A.DE42",
+    "linkId" : "HIV.A.DE42",
+    "text" : "Telephone number",
+    "type" : "integer",
+    "required" : true,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE43",
+    "linkId" : "HIV.A.DE43",
+    "text" : "Administrative Area",
+    "type" : "choice",
+    "required" : true,
+    "repeats" : false,
+    "readOnly" : false,
+    "answerValueSet" : "#HIV.A.DE43"
+  },
+  {
+    "id" : "HIV.A.DE44",
+    "linkId" : "HIV.A.DE44",
+    "text" : "Communication consent",
+    "type" : "boolean",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE45",
+    "linkId" : "HIV.A.DE45",
+    "text" : "Reminder messages",
+    "type" : "boolean",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE46",
+    "linkId" : "HIV.A.DE46",
+    "text" : "Communication preference(s)",
+    "type" : "choice",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false,
+    "answerValueSet" : "#HIV.A.DE46"
+  },
+  {
+    "id" : "HIV.A.DE49",
+    "linkId" : "HIV.A.DE49",
+    "text" : "Client's email",
+    "type" : "string",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE50",
+    "linkId" : "HIV.A.DE50",
+    "text" : "Alternate contact's name",
+    "type" : "string",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE51",
+    "linkId" : "HIV.A.DE51",
+    "text" : "Alternate contact's phone number",
+    "type" : "integer",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE52",
+    "linkId" : "HIV.A.DE52",
+    "text" : "Alternate contact's address",
+    "type" : "string",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  },
+  {
+    "id" : "HIV.A.DE53",
+    "linkId" : "HIV.A.DE53",
+    "text" : "Alternate contact relationship",
+    "type" : "string",
+    "required" : false,
+    "repeats" : false,
+    "readOnly" : false
+  }]
+}
+
+```

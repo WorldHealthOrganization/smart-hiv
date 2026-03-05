@@ -1,0 +1,66 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Current PrEP regimen ValueSet Schema API",
+    "description": "JSON Schema for Current PrEP regimen ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/ValueSet-HIV.C.DE17.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the enumeration ValueSet-HIV.C.DE17",
+        "description": "This endpoint serves the JSON Schema definition for the enumeration ValueSet-HIV.C.DE17.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for ValueSet-HIV.C.DE17",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./ValueSet-HIV.C.DE17.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ValueSet-HIV.C.DE17": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/hiv/ValueSet-HIV.C.DE17.schema.json",
+        "title": "Current PrEP regimen ValueSet Schema",
+        "description": "JSON Schema for Current PrEP regimen ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+        "type": "object",
+        "required": [
+          "system",
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "system": {
+            "type": "string",
+            "const": "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "HIV.C.DE18",
+              "HIV.C.DE19",
+              "HIV.C.DE20",
+              "HIV.C.DE21",
+              "HIV.C.DE22",
+              "HIV.C.DE23"
+            ]
+          }
+        },
+        "narrative": "This schema validates Coding-shaped objects for the Current PrEP regimen ValueSet ValueSet. Each value must be an object with 'system' (CodeSystem URI) and 'code' (fragment after '#') properties. Display values are available at http://smart.who.int/hiv/ValueSet-HIV.C.DE17.displays.json. The canonical IRI for a code can be reconstructed as system + '#' + code. For a complete listing of all ValueSets, see artifacts.html#terminology-value-sets.",
+        "fhir:displays": "http://smart.who.int/hiv/ValueSet-HIV.C.DE17.displays.json",
+        "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.C.DE17",
+        "fhir:version": "0.4.4",
+        "fhir:expansionTimestamp": "2026-03-05T13:16:27+00:00"
+      }
+    }
+  }
+}

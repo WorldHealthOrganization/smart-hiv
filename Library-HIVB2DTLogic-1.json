@@ -1,0 +1,2433 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "Overloads",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "t" : [ {
+            "name" : "DecisionID",
+            "value" : "HIV.B2.DT"
+         }, {
+            "name" : "BusinessRule",
+            "value" : "Check for signs of serious illness"
+         }, {
+            "name" : "Trigger",
+            "value" : "HIV.B2 Check for signs of serious illness"
+         }, {
+            "name" : "Trigger",
+            "value" : "HIV.D3 Check for signs of serious illness"
+         }, {
+            "name" : "HitPolicy",
+            "value" : "Rule Order"
+         }, {
+            "name" : "Description",
+            "value" : "Check for serious illness\n\nData Concepts:\nHIV.A.DE17: Age | Calculated age (number of years) of the client based on date of birth\nHIV.D.DE17: Signs of serious illness | Signs that may indicate the client has a serious illness and needs triage or an emergency referral\nHIV.D.DE9: Body temperature | Temperature of the client in Celsius\n\nConsolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring: recommendations for a public health approach (2021) Chapter 5: Advanced HIV Disease. Figure 5.1: Algorithm for providing a package of care for people with advanced HIV disease."
+         } ],
+         "s" : {
+            "r" : "441",
+            "s" : [ {
+               "value" : [ "/**\nLibrary: HIV.B2.DT Logic\n\n@DecisionID: HIV.B2.DT\n@BusinessRule: Check for signs of serious illness\n@Trigger: HIV.B2 Check for signs of serious illness\n@Trigger: HIV.D3 Check for signs of serious illness\n@HitPolicy: Rule Order\n@Description: Check for serious illness\n\nData Concepts:\n * HIV.A.DE17: Age | Calculated age (number of years) of the client based on date of birth\n * HIV.D.DE17: Signs of serious illness | Signs that may indicate the client has a serious illness and needs triage or an emergency referral\n * HIV.D.DE9: Body temperature | Temperature of the client in Celsius\n\nConsolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring: recommendations for a public health approach (2021) Chapter 5: Advanced HIV Disease. Figure 5.1: Algorithm for providing a package of care for people with advanced HIV disease.\n*/\n\n","library HIVB2DTLogic" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "HIVB2DTLogic",
+         "system" : "http://smart.who.int/hiv"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1",
+            "version" : "1.0.0"
+         }, {
+            "localId" : "206",
+            "locator" : "21:1-21:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "23:1-23:44",
+            "localIdentifier" : "HIC",
+            "path" : "http://smart.who.int/hiv/HIVCommon",
+            "version" : "0.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'0.0.1'"," called ","HIC" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "24:1-24:35",
+            "localIdentifier" : "Concepts",
+            "path" : "http://smart.who.int/hiv/HIVConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Concepts" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "25:1-25:44",
+            "localIdentifier" : "Elements",
+            "path" : "http://smart.who.int/hiv/HIVEncounterElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVEncounterElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Elements" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "26:1-26:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://hl7.org/fhir/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "28:1-28:29",
+            "localIdentifier" : "WCom",
+            "path" : "http://smart.who.int/hiv/WHOCommon",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "WHOCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","WCom" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "parameters" : {
+         "def" : [ {
+            "localId" : "218",
+            "locator" : "30:1-30:31",
+            "name" : "Today",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "218",
+                  "s" : [ {
+                     "value" : [ "","parameter ","Today"," default " ]
+                  }, {
+                     "r" : "221",
+                     "s" : [ {
+                        "value" : [ "Today","()" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "default" : {
+               "localId" : "221",
+               "locator" : "30:25-30:31",
+               "type" : "Today",
+               "signature" : [ ]
+            }
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "localId" : "226",
+            "locator" : "32:1-32:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "224",
+            "locator" : "32:1-32:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "225",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "223",
+                  "locator" : "32:1-32:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "229",
+            "locator" : "38:1-39:47",
+            "name" : "Age 10 or older",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Age\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "'Age' >= 10 years"
+               } ],
+               "s" : {
+                  "r" : "229",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"Age\"\n  @pseudocode: 'Age' >= 10 years\n  */\n","define ","\"Age 10 or older\"",":\n  " ]
+                  }, {
+                     "r" : "230",
+                     "s" : [ {
+                        "r" : "232",
+                        "s" : [ {
+                           "r" : "231",
+                           "s" : [ {
+                              "value" : [ "Elements" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "232",
+                           "s" : [ {
+                              "value" : [ "\"Current Patient Age In Years\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "r" : "233",
+                        "value" : [ " ",">="," ","10" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "230",
+               "locator" : "39:3-39:47",
+               "type" : "GreaterOrEqual",
+               "signature" : [ {
+                  "localId" : "234",
+                  "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "NamedTypeSpecifier"
+               }, {
+                  "localId" : "235",
+                  "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "232",
+                  "locator" : "39:3-39:41",
+                  "name" : "Current Patient Age In Years",
+                  "libraryName" : "Elements",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "233",
+                  "locator" : "39:46-39:47",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "10",
+                  "type" : "Literal"
+               } ]
+            }
+         }, {
+            "localId" : "238",
+            "locator" : "45:1-46:46",
+            "name" : "Age under 10",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Age\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "'Age' < 10 years"
+               } ],
+               "s" : {
+                  "r" : "238",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"Age\"\n  @pseudocode: 'Age' < 10 years\n  */\n","define ","\"Age under 10\"",":\n  " ]
+                  }, {
+                     "r" : "239",
+                     "s" : [ {
+                        "r" : "241",
+                        "s" : [ {
+                           "r" : "240",
+                           "s" : [ {
+                              "value" : [ "Elements" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "241",
+                           "s" : [ {
+                              "value" : [ "\"Current Patient Age In Years\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "r" : "242",
+                        "value" : [ " ","<"," ","10" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "239",
+               "locator" : "46:3-46:46",
+               "type" : "Less",
+               "signature" : [ {
+                  "localId" : "243",
+                  "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "NamedTypeSpecifier"
+               }, {
+                  "localId" : "244",
+                  "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "241",
+                  "locator" : "46:3-46:41",
+                  "name" : "Current Patient Age In Years",
+                  "libraryName" : "Elements",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "242",
+                  "locator" : "46:45-46:46",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "10",
+                  "type" : "Literal"
+               } ]
+            }
+         }, {
+            "localId" : "247",
+            "locator" : "51:1-55:3",
+            "name" : "Immediately take action or refer for care if a client is having this issue",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "output",
+                  "value" : "\"Immediately take action or refer for care if a client is having this issue\""
+               } ],
+               "s" : {
+                  "r" : "247",
+                  "s" : [ {
+                     "value" : [ "/*\n @output: \"Immediately take action or refer for care if a client is having this issue\"\n */\n","define ","\"Immediately take action or refer for care if a client is having this issue\"",":\n  " ]
+                  }, {
+                     "r" : "248",
+                     "s" : [ {
+                        "r" : "249",
+                        "s" : [ {
+                           "value" : [ "\"Age 10 or older\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " and " ]
+                     }, {
+                        "r" : "250",
+                        "s" : [ {
+                           "value" : [ "exists" ]
+                        }, {
+                           "r" : "267",
+                           "s" : [ {
+                              "value" : [ "(\n    " ]
+                           }, {
+                              "r" : "267",
+                              "s" : [ {
+                                 "s" : [ {
+                                    "r" : "251",
+                                    "s" : [ {
+                                       "r" : "253",
+                                       "s" : [ {
+                                          "s" : [ {
+                                             "value" : [ "Elements",".","\"Signs of serious illness Observation\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","O" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      " ]
+                              }, {
+                                 "r" : "255",
+                                 "s" : [ {
+                                    "value" : [ "where " ]
+                                 }, {
+                                    "r" : "255",
+                                    "s" : [ {
+                                       "r" : "257",
+                                       "s" : [ {
+                                          "r" : "256",
+                                          "s" : [ {
+                                             "value" : [ "O" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "257",
+                                          "s" : [ {
+                                             "value" : [ "value" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","~"," " ]
+                                    }, {
+                                       "r" : "259",
+                                       "s" : [ {
+                                          "r" : "258",
+                                          "s" : [ {
+                                             "value" : [ "Concepts" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "259",
+                                          "s" : [ {
+                                             "value" : [ "\"Tachycardia\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n  )" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "248",
+               "locator" : "52:3-55:3",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "249",
+                  "locator" : "52:3-52:19",
+                  "name" : "Age 10 or older",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "250",
+                  "locator" : "52:25-55:3",
+                  "type" : "Exists",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "267",
+                     "locator" : "52:31-55:3",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "251",
+                        "locator" : "53:5-53:53",
+                        "alias" : "O",
+                        "expression" : {
+                           "localId" : "253",
+                           "locator" : "53:5-53:51",
+                           "name" : "Signs of serious illness Observation",
+                           "libraryName" : "Elements",
+                           "type" : "ExpressionRef"
+                        }
+                     } ],
+                     "let" : [ ],
+                     "relationship" : [ ],
+                     "where" : {
+                        "localId" : "255",
+                        "locator" : "54:7-54:44",
+                        "type" : "Equivalent",
+                        "signature" : [ {
+                           "localId" : "265",
+                           "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                           "type" : "NamedTypeSpecifier"
+                        }, {
+                           "localId" : "266",
+                           "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : [ {
+                           "localId" : "261",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "260",
+                              "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                              "type" : "As",
+                              "signature" : [ ],
+                              "operand" : {
+                                 "localId" : "257",
+                                 "locator" : "54:13-54:19",
+                                 "path" : "value",
+                                 "scope" : "O",
+                                 "type" : "Property"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "263",
+                           "type" : "ToConcept",
+                           "signature" : [ {
+                              "localId" : "264",
+                              "name" : "{urn:hl7-org:elm-types:r1}Code",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : {
+                              "localId" : "259",
+                              "locator" : "54:23-54:44",
+                              "name" : "Tachycardia",
+                              "libraryName" : "Concepts",
+                              "type" : "CodeRef"
+                           }
+                        } ]
+                     }
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "274",
+            "locator" : "93:1-99:3",
+            "name" : "Signs of serious illness age 10 or older",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "274",
+                  "s" : [ {
+                     "value" : [ "/*\n Supporting Logic\n*/\n","define ","\"Signs of serious illness age 10 or older\"",":\n  " ]
+                  }, {
+                     "r" : "275",
+                     "s" : [ {
+                        "r" : "276",
+                        "s" : [ {
+                           "value" : [ "\"Age 10 or older\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " and " ]
+                     }, {
+                        "r" : "277",
+                        "s" : [ {
+                           "value" : [ "exists" ]
+                        }, {
+                           "r" : "307",
+                           "s" : [ {
+                              "value" : [ "(\n    " ]
+                           }, {
+                              "r" : "307",
+                              "s" : [ {
+                                 "s" : [ {
+                                    "r" : "278",
+                                    "s" : [ {
+                                       "r" : "280",
+                                       "s" : [ {
+                                          "s" : [ {
+                                             "value" : [ "Elements",".","\"Signs of serious illness Observation\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","O" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      " ]
+                              }, {
+                                 "r" : "282",
+                                 "s" : [ {
+                                    "value" : [ "where\n        " ]
+                                 }, {
+                                    "r" : "282",
+                                    "s" : [ {
+                                       "r" : "283",
+                                       "s" : [ {
+                                          "r" : "285",
+                                          "s" : [ {
+                                             "r" : "284",
+                                             "s" : [ {
+                                                "value" : [ "O" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "285",
+                                             "s" : [ {
+                                                "value" : [ "value" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ","~"," " ]
+                                       }, {
+                                          "r" : "287",
+                                          "s" : [ {
+                                             "r" : "286",
+                                             "s" : [ {
+                                                "value" : [ "Concepts" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "287",
+                                             "s" : [ {
+                                                "value" : [ "\"Tachypnea\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " or\n        " ]
+                                    }, {
+                                       "r" : "295",
+                                       "s" : [ {
+                                          "r" : "297",
+                                          "s" : [ {
+                                             "r" : "296",
+                                             "s" : [ {
+                                                "value" : [ "O" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "297",
+                                             "s" : [ {
+                                                "value" : [ "value" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ","~"," " ]
+                                       }, {
+                                          "r" : "299",
+                                          "s" : [ {
+                                             "r" : "298",
+                                             "s" : [ {
+                                                "value" : [ "Concepts" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "299",
+                                             "s" : [ {
+                                                "value" : [ "\"Unable to walk unaided\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n  )" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "275",
+               "locator" : "94:3-99:3",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "276",
+                  "locator" : "94:3-94:19",
+                  "name" : "Age 10 or older",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "277",
+                  "locator" : "94:25-99:3",
+                  "type" : "Exists",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "307",
+                     "locator" : "94:31-99:3",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "278",
+                        "locator" : "95:5-95:53",
+                        "alias" : "O",
+                        "expression" : {
+                           "localId" : "280",
+                           "locator" : "95:5-95:51",
+                           "name" : "Signs of serious illness Observation",
+                           "libraryName" : "Elements",
+                           "type" : "ExpressionRef"
+                        }
+                     } ],
+                     "let" : [ ],
+                     "relationship" : [ ],
+                     "where" : {
+                        "localId" : "282",
+                        "locator" : "96:7-98:51",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "283",
+                           "locator" : "97:9-97:38",
+                           "type" : "Equivalent",
+                           "signature" : [ {
+                              "localId" : "293",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           }, {
+                              "localId" : "294",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : [ {
+                              "localId" : "289",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "288",
+                                 "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                 "type" : "As",
+                                 "signature" : [ ],
+                                 "operand" : {
+                                    "localId" : "285",
+                                    "locator" : "97:9-97:15",
+                                    "path" : "value",
+                                    "scope" : "O",
+                                    "type" : "Property"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "291",
+                              "type" : "ToConcept",
+                              "signature" : [ {
+                                 "localId" : "292",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : {
+                                 "localId" : "287",
+                                 "locator" : "97:19-97:38",
+                                 "name" : "Tachypnea",
+                                 "libraryName" : "Concepts",
+                                 "type" : "CodeRef"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "295",
+                           "locator" : "98:9-98:51",
+                           "type" : "Equivalent",
+                           "signature" : [ {
+                              "localId" : "305",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           }, {
+                              "localId" : "306",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : [ {
+                              "localId" : "301",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "300",
+                                 "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                 "type" : "As",
+                                 "signature" : [ ],
+                                 "operand" : {
+                                    "localId" : "297",
+                                    "locator" : "98:9-98:15",
+                                    "path" : "value",
+                                    "scope" : "O",
+                                    "type" : "Property"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "303",
+                              "type" : "ToConcept",
+                              "signature" : [ {
+                                 "localId" : "304",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : {
+                                 "localId" : "299",
+                                 "locator" : "98:19-98:51",
+                                 "name" : "Unable to walk unaided",
+                                 "libraryName" : "Concepts",
+                                 "type" : "CodeRef"
+                              }
+                           } ]
+                        } ]
+                     }
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "311",
+            "locator" : "101:1-111:5",
+            "name" : "Signs of serious illness age under 10",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "311",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Signs of serious illness age under 10\"",":\n  " ]
+                  }, {
+                     "r" : "312",
+                     "s" : [ {
+                        "r" : "313",
+                        "s" : [ {
+                           "value" : [ "\"Age under 10\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " and " ]
+                     }, {
+                        "r" : "314",
+                        "s" : [ {
+                           "value" : [ "exists" ]
+                        }, {
+                           "r" : "396",
+                           "s" : [ {
+                              "value" : [ "(\n    " ]
+                           }, {
+                              "r" : "396",
+                              "s" : [ {
+                                 "s" : [ {
+                                    "r" : "315",
+                                    "s" : [ {
+                                       "r" : "317",
+                                       "s" : [ {
+                                          "s" : [ {
+                                             "value" : [ "Elements",".","\"Signs of serious illness Observation\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","O" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      " ]
+                              }, {
+                                 "r" : "319",
+                                 "s" : [ {
+                                    "value" : [ "where\n        " ]
+                                 }, {
+                                    "r" : "319",
+                                    "s" : [ {
+                                       "r" : "320",
+                                       "s" : [ {
+                                          "r" : "321",
+                                          "s" : [ {
+                                             "r" : "322",
+                                             "s" : [ {
+                                                "r" : "323",
+                                                "s" : [ {
+                                                   "r" : "324",
+                                                   "s" : [ {
+                                                      "r" : "326",
+                                                      "s" : [ {
+                                                         "r" : "325",
+                                                         "s" : [ {
+                                                            "value" : [ "O" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "326",
+                                                         "s" : [ {
+                                                            "value" : [ "value" ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ " ","~"," " ]
+                                                   }, {
+                                                      "r" : "328",
+                                                      "s" : [ {
+                                                         "r" : "327",
+                                                         "s" : [ {
+                                                            "value" : [ "Concepts" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "328",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Lethargy - HIV.D.DE22\"" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ " or\n        " ]
+                                                }, {
+                                                   "r" : "336",
+                                                   "s" : [ {
+                                                      "r" : "338",
+                                                      "s" : [ {
+                                                         "r" : "337",
+                                                         "s" : [ {
+                                                            "value" : [ "O" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "338",
+                                                         "s" : [ {
+                                                            "value" : [ "value" ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ " ","~"," " ]
+                                                   }, {
+                                                      "r" : "340",
+                                                      "s" : [ {
+                                                         "r" : "339",
+                                                         "s" : [ {
+                                                            "value" : [ "Concepts" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "340",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Unconsciousness\"" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " or\n        " ]
+                                             }, {
+                                                "r" : "348",
+                                                "s" : [ {
+                                                   "r" : "350",
+                                                   "s" : [ {
+                                                      "r" : "349",
+                                                      "s" : [ {
+                                                         "value" : [ "O" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "." ]
+                                                   }, {
+                                                      "r" : "350",
+                                                      "s" : [ {
+                                                         "value" : [ "value" ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ " ","~"," " ]
+                                                }, {
+                                                   "r" : "352",
+                                                   "s" : [ {
+                                                      "r" : "351",
+                                                      "s" : [ {
+                                                         "value" : [ "Concepts" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "." ]
+                                                   }, {
+                                                      "r" : "352",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Convulsions\"" ]
+                                                      } ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " or\n        " ]
+                                          }, {
+                                             "r" : "360",
+                                             "s" : [ {
+                                                "r" : "362",
+                                                "s" : [ {
+                                                   "r" : "361",
+                                                   "s" : [ {
+                                                      "value" : [ "O" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "362",
+                                                   "s" : [ {
+                                                      "value" : [ "value" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " ","~"," " ]
+                                             }, {
+                                                "r" : "364",
+                                                "s" : [ {
+                                                   "r" : "363",
+                                                   "s" : [ {
+                                                      "value" : [ "Concepts" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "364",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Unable to breastfeed\"" ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " or\n        " ]
+                                       }, {
+                                          "r" : "372",
+                                          "s" : [ {
+                                             "r" : "374",
+                                             "s" : [ {
+                                                "r" : "373",
+                                                "s" : [ {
+                                                   "value" : [ "O" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "374",
+                                                "s" : [ {
+                                                   "value" : [ "value" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " ","~"," " ]
+                                          }, {
+                                             "r" : "376",
+                                             "s" : [ {
+                                                "r" : "375",
+                                                "s" : [ {
+                                                   "value" : [ "Concepts" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "376",
+                                                "s" : [ {
+                                                   "value" : [ "\"Unable to drink\"" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " or\n        " ]
+                                    }, {
+                                       "r" : "384",
+                                       "s" : [ {
+                                          "r" : "386",
+                                          "s" : [ {
+                                             "r" : "385",
+                                             "s" : [ {
+                                                "value" : [ "O" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "386",
+                                             "s" : [ {
+                                                "value" : [ "value" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ","~"," " ]
+                                       }, {
+                                          "r" : "388",
+                                          "s" : [ {
+                                             "r" : "387",
+                                             "s" : [ {
+                                                "value" : [ "Concepts" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "388",
+                                             "s" : [ {
+                                                "value" : [ "\"Repeated vomiting\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    )" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "312",
+               "locator" : "102:3-111:5",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "313",
+                  "locator" : "102:3-102:16",
+                  "name" : "Age under 10",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "314",
+                  "locator" : "102:22-111:5",
+                  "type" : "Exists",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "396",
+                     "locator" : "102:28-111:5",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "315",
+                        "locator" : "103:5-103:53",
+                        "alias" : "O",
+                        "expression" : {
+                           "localId" : "317",
+                           "locator" : "103:5-103:51",
+                           "name" : "Signs of serious illness Observation",
+                           "libraryName" : "Elements",
+                           "type" : "ExpressionRef"
+                        }
+                     } ],
+                     "let" : [ ],
+                     "relationship" : [ ],
+                     "where" : {
+                        "localId" : "319",
+                        "locator" : "104:7-110:46",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "320",
+                           "locator" : "105:9-109:44",
+                           "type" : "Or",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "321",
+                              "locator" : "105:9-108:49",
+                              "type" : "Or",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "322",
+                                 "locator" : "105:9-107:40",
+                                 "type" : "Or",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "323",
+                                    "locator" : "105:9-106:44",
+                                    "type" : "Or",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "324",
+                                       "locator" : "105:9-105:50",
+                                       "type" : "Equivalent",
+                                       "signature" : [ {
+                                          "localId" : "334",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                                          "type" : "NamedTypeSpecifier"
+                                       }, {
+                                          "localId" : "335",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                                          "type" : "NamedTypeSpecifier"
+                                       } ],
+                                       "operand" : [ {
+                                          "localId" : "330",
+                                          "name" : "ToConcept",
+                                          "libraryName" : "FHIRHelpers",
+                                          "type" : "FunctionRef",
+                                          "signature" : [ ],
+                                          "operand" : [ {
+                                             "localId" : "329",
+                                             "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                             "type" : "As",
+                                             "signature" : [ ],
+                                             "operand" : {
+                                                "localId" : "326",
+                                                "locator" : "105:9-105:15",
+                                                "path" : "value",
+                                                "scope" : "O",
+                                                "type" : "Property"
+                                             }
+                                          } ]
+                                       }, {
+                                          "localId" : "332",
+                                          "type" : "ToConcept",
+                                          "signature" : [ {
+                                             "localId" : "333",
+                                             "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                             "type" : "NamedTypeSpecifier"
+                                          } ],
+                                          "operand" : {
+                                             "localId" : "328",
+                                             "locator" : "105:19-105:50",
+                                             "name" : "Lethargy - HIV.D.DE22",
+                                             "libraryName" : "Concepts",
+                                             "type" : "CodeRef"
+                                          }
+                                       } ]
+                                    }, {
+                                       "localId" : "336",
+                                       "locator" : "106:9-106:44",
+                                       "type" : "Equivalent",
+                                       "signature" : [ {
+                                          "localId" : "346",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                                          "type" : "NamedTypeSpecifier"
+                                       }, {
+                                          "localId" : "347",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                                          "type" : "NamedTypeSpecifier"
+                                       } ],
+                                       "operand" : [ {
+                                          "localId" : "342",
+                                          "name" : "ToConcept",
+                                          "libraryName" : "FHIRHelpers",
+                                          "type" : "FunctionRef",
+                                          "signature" : [ ],
+                                          "operand" : [ {
+                                             "localId" : "341",
+                                             "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                             "type" : "As",
+                                             "signature" : [ ],
+                                             "operand" : {
+                                                "localId" : "338",
+                                                "locator" : "106:9-106:15",
+                                                "path" : "value",
+                                                "scope" : "O",
+                                                "type" : "Property"
+                                             }
+                                          } ]
+                                       }, {
+                                          "localId" : "344",
+                                          "type" : "ToConcept",
+                                          "signature" : [ {
+                                             "localId" : "345",
+                                             "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                             "type" : "NamedTypeSpecifier"
+                                          } ],
+                                          "operand" : {
+                                             "localId" : "340",
+                                             "locator" : "106:19-106:44",
+                                             "name" : "Unconsciousness",
+                                             "libraryName" : "Concepts",
+                                             "type" : "CodeRef"
+                                          }
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "localId" : "348",
+                                    "locator" : "107:9-107:40",
+                                    "type" : "Equivalent",
+                                    "signature" : [ {
+                                       "localId" : "358",
+                                       "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                                       "type" : "NamedTypeSpecifier"
+                                    }, {
+                                       "localId" : "359",
+                                       "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                                       "type" : "NamedTypeSpecifier"
+                                    } ],
+                                    "operand" : [ {
+                                       "localId" : "354",
+                                       "name" : "ToConcept",
+                                       "libraryName" : "FHIRHelpers",
+                                       "type" : "FunctionRef",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "353",
+                                          "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                          "type" : "As",
+                                          "signature" : [ ],
+                                          "operand" : {
+                                             "localId" : "350",
+                                             "locator" : "107:9-107:15",
+                                             "path" : "value",
+                                             "scope" : "O",
+                                             "type" : "Property"
+                                          }
+                                       } ]
+                                    }, {
+                                       "localId" : "356",
+                                       "type" : "ToConcept",
+                                       "signature" : [ {
+                                          "localId" : "357",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                          "type" : "NamedTypeSpecifier"
+                                       } ],
+                                       "operand" : {
+                                          "localId" : "352",
+                                          "locator" : "107:19-107:40",
+                                          "name" : "Convulsions",
+                                          "libraryName" : "Concepts",
+                                          "type" : "CodeRef"
+                                       }
+                                    } ]
+                                 } ]
+                              }, {
+                                 "localId" : "360",
+                                 "locator" : "108:9-108:49",
+                                 "type" : "Equivalent",
+                                 "signature" : [ {
+                                    "localId" : "370",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                                    "type" : "NamedTypeSpecifier"
+                                 }, {
+                                    "localId" : "371",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                                    "type" : "NamedTypeSpecifier"
+                                 } ],
+                                 "operand" : [ {
+                                    "localId" : "366",
+                                    "name" : "ToConcept",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "365",
+                                       "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                       "type" : "As",
+                                       "signature" : [ ],
+                                       "operand" : {
+                                          "localId" : "362",
+                                          "locator" : "108:9-108:15",
+                                          "path" : "value",
+                                          "scope" : "O",
+                                          "type" : "Property"
+                                       }
+                                    } ]
+                                 }, {
+                                    "localId" : "368",
+                                    "type" : "ToConcept",
+                                    "signature" : [ {
+                                       "localId" : "369",
+                                       "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                       "type" : "NamedTypeSpecifier"
+                                    } ],
+                                    "operand" : {
+                                       "localId" : "364",
+                                       "locator" : "108:19-108:49",
+                                       "name" : "Unable to breastfeed",
+                                       "libraryName" : "Concepts",
+                                       "type" : "CodeRef"
+                                    }
+                                 } ]
+                              } ]
+                           }, {
+                              "localId" : "372",
+                              "locator" : "109:9-109:44",
+                              "type" : "Equivalent",
+                              "signature" : [ {
+                                 "localId" : "382",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                                 "type" : "NamedTypeSpecifier"
+                              }, {
+                                 "localId" : "383",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : [ {
+                                 "localId" : "378",
+                                 "name" : "ToConcept",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "377",
+                                    "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                    "type" : "As",
+                                    "signature" : [ ],
+                                    "operand" : {
+                                       "localId" : "374",
+                                       "locator" : "109:9-109:15",
+                                       "path" : "value",
+                                       "scope" : "O",
+                                       "type" : "Property"
+                                    }
+                                 } ]
+                              }, {
+                                 "localId" : "380",
+                                 "type" : "ToConcept",
+                                 "signature" : [ {
+                                    "localId" : "381",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                    "type" : "NamedTypeSpecifier"
+                                 } ],
+                                 "operand" : {
+                                    "localId" : "376",
+                                    "locator" : "109:19-109:44",
+                                    "name" : "Unable to drink",
+                                    "libraryName" : "Concepts",
+                                    "type" : "CodeRef"
+                                 }
+                              } ]
+                           } ]
+                        }, {
+                           "localId" : "384",
+                           "locator" : "110:9-110:46",
+                           "type" : "Equivalent",
+                           "signature" : [ {
+                              "localId" : "394",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           }, {
+                              "localId" : "395",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : [ {
+                              "localId" : "390",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "389",
+                                 "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                 "type" : "As",
+                                 "signature" : [ ],
+                                 "operand" : {
+                                    "localId" : "386",
+                                    "locator" : "110:9-110:15",
+                                    "path" : "value",
+                                    "scope" : "O",
+                                    "type" : "Property"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "392",
+                              "type" : "ToConcept",
+                              "signature" : [ {
+                                 "localId" : "393",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : {
+                                 "localId" : "388",
+                                 "locator" : "110:19-110:46",
+                                 "name" : "Repeated vomiting",
+                                 "libraryName" : "Concepts",
+                                 "type" : "CodeRef"
+                              }
+                           } ]
+                        } ]
+                     }
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "270",
+            "locator" : "60:1-61:87",
+            "name" : "Immediately take action or refer for care if client is showing this sign of a serious illness",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "270",
+                  "s" : [ {
+                     "value" : [ "/*\n @output \"Immediately take action or refer for care if client is showing this sign of a serious illness.\"\n */\n","define ","\"Immediately take action or refer for care if client is showing this sign of a serious illness\"",":\n  " ]
+                  }, {
+                     "r" : "271",
+                     "s" : [ {
+                        "r" : "308",
+                        "s" : [ {
+                           "value" : [ "\"Signs of serious illness age 10 or older\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " or " ]
+                     }, {
+                        "r" : "397",
+                        "s" : [ {
+                           "value" : [ "\"Signs of serious illness age under 10\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "271",
+               "locator" : "61:3-61:87",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "308",
+                  "locator" : "61:3-61:44",
+                  "name" : "Signs of serious illness age 10 or older",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "397",
+                  "locator" : "61:49-61:87",
+                  "name" : "Signs of serious illness age under 10",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "localId" : "404",
+            "locator" : "113:1-119:3",
+            "name" : "Signs of serious illness requiring clinical judgement age 10 or older",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "404",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Signs of serious illness requiring clinical judgement age 10 or older\"",":\n  " ]
+                  }, {
+                     "r" : "405",
+                     "s" : [ {
+                        "r" : "406",
+                        "s" : [ {
+                           "value" : [ "\"Age 10 or older\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " and " ]
+                     }, {
+                        "r" : "407",
+                        "s" : [ {
+                           "value" : [ "exists" ]
+                        }, {
+                           "r" : "437",
+                           "s" : [ {
+                              "value" : [ "(\n    " ]
+                           }, {
+                              "r" : "437",
+                              "s" : [ {
+                                 "s" : [ {
+                                    "r" : "408",
+                                    "s" : [ {
+                                       "r" : "410",
+                                       "s" : [ {
+                                          "s" : [ {
+                                             "value" : [ "Elements",".","\"Signs of serious illness Observation\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","O" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      " ]
+                              }, {
+                                 "r" : "412",
+                                 "s" : [ {
+                                    "value" : [ "where\n        " ]
+                                 }, {
+                                    "r" : "412",
+                                    "s" : [ {
+                                       "r" : "413",
+                                       "s" : [ {
+                                          "r" : "415",
+                                          "s" : [ {
+                                             "r" : "414",
+                                             "s" : [ {
+                                                "value" : [ "O" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "415",
+                                             "s" : [ {
+                                                "value" : [ "value" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ","~"," " ]
+                                       }, {
+                                          "r" : "417",
+                                          "s" : [ {
+                                             "r" : "416",
+                                             "s" : [ {
+                                                "value" : [ "Concepts" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "417",
+                                             "s" : [ {
+                                                "value" : [ "\"Fever of 39 C or greater\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " or\n        " ]
+                                    }, {
+                                       "r" : "425",
+                                       "s" : [ {
+                                          "r" : "427",
+                                          "s" : [ {
+                                             "r" : "426",
+                                             "s" : [ {
+                                                "value" : [ "O" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "427",
+                                             "s" : [ {
+                                                "value" : [ "value" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ","~"," " ]
+                                       }, {
+                                          "r" : "429",
+                                          "s" : [ {
+                                             "r" : "428",
+                                             "s" : [ {
+                                                "value" : [ "Concepts" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "429",
+                                             "s" : [ {
+                                                "value" : [ "\"Other sign of serious illness\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n  )" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "405",
+               "locator" : "114:3-119:3",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "406",
+                  "locator" : "114:3-114:19",
+                  "name" : "Age 10 or older",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "407",
+                  "locator" : "114:25-119:3",
+                  "type" : "Exists",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "437",
+                     "locator" : "114:31-119:3",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "408",
+                        "locator" : "115:5-115:53",
+                        "alias" : "O",
+                        "expression" : {
+                           "localId" : "410",
+                           "locator" : "115:5-115:51",
+                           "name" : "Signs of serious illness Observation",
+                           "libraryName" : "Elements",
+                           "type" : "ExpressionRef"
+                        }
+                     } ],
+                     "let" : [ ],
+                     "relationship" : [ ],
+                     "where" : {
+                        "localId" : "412",
+                        "locator" : "116:7-118:58",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "413",
+                           "locator" : "117:9-117:53",
+                           "type" : "Equivalent",
+                           "signature" : [ {
+                              "localId" : "423",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           }, {
+                              "localId" : "424",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : [ {
+                              "localId" : "419",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "418",
+                                 "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                 "type" : "As",
+                                 "signature" : [ ],
+                                 "operand" : {
+                                    "localId" : "415",
+                                    "locator" : "117:9-117:15",
+                                    "path" : "value",
+                                    "scope" : "O",
+                                    "type" : "Property"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "421",
+                              "type" : "ToConcept",
+                              "signature" : [ {
+                                 "localId" : "422",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : {
+                                 "localId" : "417",
+                                 "locator" : "117:19-117:53",
+                                 "name" : "Fever of 39 C or greater",
+                                 "libraryName" : "Concepts",
+                                 "type" : "CodeRef"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "425",
+                           "locator" : "118:9-118:58",
+                           "type" : "Equivalent",
+                           "signature" : [ {
+                              "localId" : "435",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           }, {
+                              "localId" : "436",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : [ {
+                              "localId" : "431",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "430",
+                                 "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                 "type" : "As",
+                                 "signature" : [ ],
+                                 "operand" : {
+                                    "localId" : "427",
+                                    "locator" : "118:9-118:15",
+                                    "path" : "value",
+                                    "scope" : "O",
+                                    "type" : "Property"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "433",
+                              "type" : "ToConcept",
+                              "signature" : [ {
+                                 "localId" : "434",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : {
+                                 "localId" : "429",
+                                 "locator" : "118:19-118:58",
+                                 "name" : "Other sign of serious illness",
+                                 "libraryName" : "Concepts",
+                                 "type" : "CodeRef"
+                              }
+                           } ]
+                        } ]
+                     }
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "441",
+            "locator" : "121:1-127:3",
+            "name" : "Signs of serious illness requiring clinical judgement age under 10",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "441",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Signs of serious illness requiring clinical judgement age under 10\"",":\n  " ]
+                  }, {
+                     "r" : "442",
+                     "s" : [ {
+                        "r" : "443",
+                        "s" : [ {
+                           "value" : [ "\"Age under 10\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " and " ]
+                     }, {
+                        "r" : "444",
+                        "s" : [ {
+                           "value" : [ "exists" ]
+                        }, {
+                           "r" : "474",
+                           "s" : [ {
+                              "value" : [ "(\n    " ]
+                           }, {
+                              "r" : "474",
+                              "s" : [ {
+                                 "s" : [ {
+                                    "r" : "445",
+                                    "s" : [ {
+                                       "r" : "447",
+                                       "s" : [ {
+                                          "s" : [ {
+                                             "value" : [ "Elements",".","\"Signs of serious illness Observation\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","O" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      " ]
+                              }, {
+                                 "r" : "449",
+                                 "s" : [ {
+                                    "value" : [ "where\n        " ]
+                                 }, {
+                                    "r" : "449",
+                                    "s" : [ {
+                                       "r" : "450",
+                                       "s" : [ {
+                                          "r" : "452",
+                                          "s" : [ {
+                                             "r" : "451",
+                                             "s" : [ {
+                                                "value" : [ "O" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "452",
+                                             "s" : [ {
+                                                "value" : [ "value" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ","~"," " ]
+                                       }, {
+                                          "r" : "454",
+                                          "s" : [ {
+                                             "r" : "453",
+                                             "s" : [ {
+                                                "value" : [ "Concepts" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "454",
+                                             "s" : [ {
+                                                "value" : [ "\"Fever of 39 C or greater\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " or\n        " ]
+                                    }, {
+                                       "r" : "462",
+                                       "s" : [ {
+                                          "r" : "464",
+                                          "s" : [ {
+                                             "r" : "463",
+                                             "s" : [ {
+                                                "value" : [ "O" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "464",
+                                             "s" : [ {
+                                                "value" : [ "value" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ","~"," " ]
+                                       }, {
+                                          "r" : "466",
+                                          "s" : [ {
+                                             "r" : "465",
+                                             "s" : [ {
+                                                "value" : [ "Concepts" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "466",
+                                             "s" : [ {
+                                                "value" : [ "\"Other sign of serious illness\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n  )" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "442",
+               "locator" : "122:3-127:3",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "443",
+                  "locator" : "122:3-122:16",
+                  "name" : "Age under 10",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "444",
+                  "locator" : "122:22-127:3",
+                  "type" : "Exists",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "474",
+                     "locator" : "122:28-127:3",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "445",
+                        "locator" : "123:5-123:53",
+                        "alias" : "O",
+                        "expression" : {
+                           "localId" : "447",
+                           "locator" : "123:5-123:51",
+                           "name" : "Signs of serious illness Observation",
+                           "libraryName" : "Elements",
+                           "type" : "ExpressionRef"
+                        }
+                     } ],
+                     "let" : [ ],
+                     "relationship" : [ ],
+                     "where" : {
+                        "localId" : "449",
+                        "locator" : "124:7-126:58",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "450",
+                           "locator" : "125:9-125:53",
+                           "type" : "Equivalent",
+                           "signature" : [ {
+                              "localId" : "460",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           }, {
+                              "localId" : "461",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : [ {
+                              "localId" : "456",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "455",
+                                 "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                 "type" : "As",
+                                 "signature" : [ ],
+                                 "operand" : {
+                                    "localId" : "452",
+                                    "locator" : "125:9-125:15",
+                                    "path" : "value",
+                                    "scope" : "O",
+                                    "type" : "Property"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "458",
+                              "type" : "ToConcept",
+                              "signature" : [ {
+                                 "localId" : "459",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : {
+                                 "localId" : "454",
+                                 "locator" : "125:19-125:53",
+                                 "name" : "Fever of 39 C or greater",
+                                 "libraryName" : "Concepts",
+                                 "type" : "CodeRef"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "462",
+                           "locator" : "126:9-126:58",
+                           "type" : "Equivalent",
+                           "signature" : [ {
+                              "localId" : "472",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           }, {
+                              "localId" : "473",
+                              "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : [ {
+                              "localId" : "468",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "467",
+                                 "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                                 "type" : "As",
+                                 "signature" : [ ],
+                                 "operand" : {
+                                    "localId" : "464",
+                                    "locator" : "126:9-126:15",
+                                    "path" : "value",
+                                    "scope" : "O",
+                                    "type" : "Property"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "470",
+                              "type" : "ToConcept",
+                              "signature" : [ {
+                                 "localId" : "471",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Code",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : {
+                                 "localId" : "466",
+                                 "locator" : "126:19-126:58",
+                                 "name" : "Other sign of serious illness",
+                                 "libraryName" : "Concepts",
+                                 "type" : "CodeRef"
+                              }
+                           } ]
+                        } ]
+                     }
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "400",
+            "locator" : "66:1-67:145",
+            "name" : "Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "400",
+                  "s" : [ {
+                     "value" : [ "/*\n @output \"Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill\"\n */\n","define ","\"Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill\"",":\n  " ]
+                  }, {
+                     "r" : "401",
+                     "s" : [ {
+                        "r" : "438",
+                        "s" : [ {
+                           "value" : [ "\"Signs of serious illness requiring clinical judgement age 10 or older\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " or " ]
+                     }, {
+                        "r" : "475",
+                        "s" : [ {
+                           "value" : [ "\"Signs of serious illness requiring clinical judgement age under 10\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "401",
+               "locator" : "67:3-67:145",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "438",
+                  "locator" : "67:3-67:73",
+                  "name" : "Signs of serious illness requiring clinical judgement age 10 or older",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "475",
+                  "locator" : "67:78-67:145",
+                  "name" : "Signs of serious illness requiring clinical judgement age under 10",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "localId" : "478",
+            "locator" : "72:1-88:4",
+            "name" : "Guidance",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "dynamicValue",
+                  "value" : "Guidance"
+               } ],
+               "s" : {
+                  "r" : "478",
+                  "s" : [ {
+                     "value" : [ "/*\n @dynamicValue: Guidance\n */\n","define ","\"Guidance\"",":\n  " ]
+                  }, {
+                     "r" : "510",
+                     "s" : [ {
+                        "value" : [ "Combine","(" ]
+                     }, {
+                        "r" : "479",
+                        "s" : [ {
+                           "value" : [ "{ \n    " ]
+                        }, {
+                           "r" : "480",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "481",
+                              "s" : [ {
+                                 "value" : [ "\"Immediately take action or refer for care if a client is having this issue\"" ]
+                              } ]
+                           }, {
+                              "value" : [ " \n      then " ]
+                           }, {
+                              "r" : "482",
+                              "s" : [ {
+                                 "value" : [ "'Immediately take action or refer for care if a client is having this issue.'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      else " ]
+                           }, {
+                              "r" : "484",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "486",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "487",
+                              "s" : [ {
+                                 "r" : "488",
+                                 "s" : [ {
+                                    "value" : [ "\"Immediately take action or refer for care if client is showing this sign of a serious illness\"" ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "489",
+                                 "s" : [ {
+                                    "value" : [ "\"Age 10 or older\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "490",
+                              "s" : [ {
+                                 "value" : [ "'Immediately take action or refer for care if client is showing this sign of a serious illness.'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      else " ]
+                           }, {
+                              "r" : "492",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "494",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "495",
+                              "s" : [ {
+                                 "r" : "496",
+                                 "s" : [ {
+                                    "value" : [ "\"Immediately take action or refer for care if client is showing this sign of a serious illness\"" ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "497",
+                                 "s" : [ {
+                                    "value" : [ "\"Age under 10\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "498",
+                              "s" : [ {
+                                 "value" : [ "'This is a sign and/or symptom of a serious health condition.\n    \n  Immediately take action or refer for care if client is showing this sign of a serious illness.'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      else " ]
+                           }, {
+                              "r" : "500",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "502",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "503",
+                              "s" : [ {
+                                 "value" : [ "\"Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill\"" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "504",
+                              "s" : [ {
+                                 "value" : [ "'Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill. '" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      else " ]
+                           }, {
+                              "r" : "506",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  }" ]
+                        } ]
+                     }, {
+                        "value" : [ ")" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "510",
+               "locator" : "73:3-88:4",
+               "type" : "Combine",
+               "signature" : [ ],
+               "source" : {
+                  "localId" : "479",
+                  "locator" : "73:11-88:3",
+                  "type" : "List",
+                  "element" : [ {
+                     "localId" : "480",
+                     "locator" : "74:5-76:13",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "481",
+                        "locator" : "74:8-74:83",
+                        "name" : "Immediately take action or refer for care if a client is having this issue",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "482",
+                        "locator" : "75:12-75:88",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Immediately take action or refer for care if a client is having this issue.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "484",
+                        "locator" : "76:12-76:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "486",
+                     "locator" : "77:5-79:13",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "487",
+                        "locator" : "77:8-77:124",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "488",
+                           "locator" : "77:8-77:102",
+                           "name" : "Immediately take action or refer for care if client is showing this sign of a serious illness",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "localId" : "489",
+                           "locator" : "77:108-77:124",
+                           "name" : "Age 10 or older",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "490",
+                        "locator" : "78:12-78:107",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Immediately take action or refer for care if client is showing this sign of a serious illness.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "492",
+                        "locator" : "79:12-79:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "494",
+                     "locator" : "80:5-84:13",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "495",
+                        "locator" : "80:8-80:121",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "496",
+                           "locator" : "80:8-80:102",
+                           "name" : "Immediately take action or refer for care if client is showing this sign of a serious illness",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "localId" : "497",
+                           "locator" : "80:108-80:121",
+                           "name" : "Age under 10",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "498",
+                        "locator" : "81:12-81:175",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "This is a sign and/or symptom of a serious health condition.\n    \n  Immediately take action or refer for care if client is showing this sign of a serious illness.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "500",
+                        "locator" : "84:12-84:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "502",
+                     "locator" : "85:5-87:13",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "503",
+                        "locator" : "85:8-85:120",
+                        "name" : "Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "504",
+                        "locator" : "86:12-86:126",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill. ",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "506",
+                        "locator" : "87:12-87:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  } ]
+               }
+            }
+         } ]
+      }
+   }
+}

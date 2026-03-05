@@ -1,0 +1,1314 @@
+# HIV.IND.27 People living with HIV on ART - WHO SMART Guidelines - HIV v0.4.4
+
+* [**Table of Contents**](toc.md)
+* [**Indices**](indices.md)
+* [**Artifact Index**](artifacts.md)
+* **HIV.IND.27 People living with HIV on ART**
+
+## Measure: HIV.IND.27 People living with HIV on ART (Experimental) 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://smart.who.int/hiv/Measure/HIVIND27 | *Version*:0.4.4 |
+| Draft as of 2024-08-18 | *Computable Name*:HIVIND27 |
+
+ 
+Number and % of people on ART among all people living with HIV at the end of the reporting period 
+
+* Knowledge Artifact Metadata: Name (machine-readable)
+  * ?: HIVIND27
+* Knowledge Artifact Metadata: Title (human-readable)
+  * ?: HIV.IND.27 People living with HIV on ART
+* Knowledge Artifact Metadata: Status
+  * ?: Draft
+* Knowledge Artifact Metadata: Experimental
+  * ?: true
+* Knowledge Artifact Metadata: Description
+  * ?: Number and % of people on ART among all people living with HIV at the end of the reporting period
+* Knowledge Artifact Metadata: Measure Steward
+  * ?: WHO
+* Knowledge Artifact Metadata: Steward Contact Details
+  * ?: WHO:[http://who.int](http://who.int)
+* Knowledge Artifact Metadata: Measure Metadata
+* Knowledge Artifact Metadata: Version Number
+  * ?: 0.4.4
+* Knowledge Artifact Metadata: Measure Scoring
+  * ?: Continuous Variable
+* Knowledge Artifact Metadata: Improvement Notation
+  * ?: Increased score indicates improvement
+* Knowledge Artifact Metadata: Population Basis
+  * ?: boolean
+* Knowledge Artifact Metadata: Measure Population Criteria
+* Knowledge Artifact Metadata: Initial Population
+  * ?: **ID**: HIV.IND.27.IP**Description**:Initial Population**Logic Definition**:[Initial Population](#hivind27logic-initial-population)
+* Knowledge Artifact Metadata: Measure Population
+  * ?: **ID**: HIV.IND.27.MP**Description**:Measure Population**Logic Definition**:[Measure Population](#hivind27logic-measure-population)
+* Knowledge Artifact Metadata: Measure Observation
+  * ?: **ID**: HIV.IND.27.MO**Description**:Measure Observation**Logic Definition**:[Measure Observation](#hivind27logic-measure-observation)
+* Knowledge Artifact Metadata: Stratifier
+  * ?: **ID**: HIV.IND.27.S
+* Knowledge Artifact Metadata: Measure Logic
+* Knowledge Artifact Metadata: Primary Library
+  * ?: [HIV.IND.27 Logic](Library-HIVIND27Logic.md)
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: FHIR model information**Resource**:[http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1](http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIR-ModelInfo.html)**Canonical URL**:http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Library HIE**Resource**:[HIVIndicatorElements](Library-HIVIndicatorElements.md)**Canonical URL**:http://smart.who.int/hiv/Library/HIVIndicatorElements
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Library FHIRHelpers**Resource**:[http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1](http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIRHelpers.html)**Canonical URL**:http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Library Concepts**Resource**:`http://smart.who.int/hiv/Library/HIVConcepts|0.0.2`**Canonical URL**:http://smart.who.int/hiv/Library/HIVConcepts|0.0.2
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Library Elements**Resource**:[HIVElements](Library-HIVElements.md)**Canonical URL**:http://smart.who.int/hiv/Library/HIVElements
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Library ConceptsCustom**Resource**:`http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1`**Canonical URL**:http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Library WC**Resource**:[WHOCommon](Library-WHOCommon.md)**Canonical URL**:http://smart.who.int/hiv/Library/WHOCommon
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Library Concepts**Resource**:[HIVConcepts](Library-HIVConcepts.md)**Canonical URL**:http://smart.who.int/hiv/Library/HIVConcepts
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Library Config**Resource**:[HIVConfig](Library-HIVConfig.md)**Canonical URL**:http://smart.who.int/hiv/Library/HIVConfig
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Code system HIVConcepts**Resource**:[WHO SMART HIV Concepts CodeSystem](CodeSystem-HIVConcepts.md)**Canonical URL**:http://smart.who.int/hiv/CodeSystem/HIVConcepts
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Code system ObservationCategoryCodes**Resource**:[Observation Category Codes](http://terminology.hl7.org/6.1.0/CodeSystem-observation-category.html)**Canonical URL**:http://terminology.hl7.org/CodeSystem/observation-category
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Code system ConditionClinicalStatusCodes**Resource**:[Condition Clinical Status Codes](http://terminology.hl7.org/6.1.0/CodeSystem-condition-clinical.html)**Canonical URL**:http://terminology.hl7.org/CodeSystem/condition-clinical
+* Knowledge Artifact Metadata: Dependency
+  * ?: **Description**: Code system ConditionCategoryCodes**Resource**:[Condition Category Codes](http://terminology.hl7.org/6.1.0/CodeSystem-condition-category.html)**Canonical URL**:http://terminology.hl7.org/CodeSystem/condition-category
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Display**: Male**Code**: HIV.A.DE20**System**:http://smart.who.int/hiv/CodeSystem/HIVConcepts
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Display**: Female**Code**: HIV.A.DE19**System**:http://smart.who.int/hiv/CodeSystem/HIVConcepts
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Display**: Transgender female**Code**: HIV.A.DE22**System**:http://smart.who.int/hiv/CodeSystem/HIVConcepts
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Display**: Transgender male**Code**: HIV.A.DE21**System**:http://smart.who.int/hiv/CodeSystem/HIVConcepts
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Display**: Other**Code**: HIV.A.DE23**System**:http://smart.who.int/hiv/CodeSystem/HIVConcepts
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Display**: Key population member***Code**: HIV.B.DE49**System**:http://smart.who.int/hiv/CodeSystem/HIVConcepts
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Display**: Social History**Code**: social-history**System**:http://terminology.hl7.org/CodeSystem/observation-category
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Display**: HIV-positive**Code**: HIV.B.DE116**System**:http://smart.who.int/hiv/CodeSystem/HIVConcepts
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Code**: active**System**:http://terminology.hl7.org/CodeSystem/condition-clinical
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Display**: Encounter Diagnosis**Code**: encounter-diagnosis**System**:http://terminology.hl7.org/CodeSystem/condition-category
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Display**: HIV status**Code**: HIV.B.DE115**System**:http://smart.who.int/hiv/CodeSystem/HIVConcepts
+* Knowledge Artifact Metadata: Direct Reference Code
+  * ?: **Display**: On ART**Code**: HIV.H.DE47**System**:http://smart.who.int/hiv/CodeSystem/HIVConcepts
+* Knowledge Artifact Metadata: Parameter
+  * ?: **Name**: Measurement Period**Use**: In**Min Cardinality**: 0**Max Cardinality**: 1**Type**: Period
+* Knowledge Artifact Metadata: Parameter
+  * ?: **Name**: Initial Population**Use**: Out**Min Cardinality**: 0**Max Cardinality**: 1**Type**: boolean
+* Knowledge Artifact Metadata: Parameter
+  * ?: **Name**: Stratification**Use**: Out**Min Cardinality**: 0**Max Cardinality**: 1**Type**: string
+* Knowledge Artifact Metadata: Parameter
+  * ?: **Name**: Measure Population**Use**: Out**Min Cardinality**: 0**Max Cardinality**: 1**Type**: boolean
+* Knowledge Artifact Metadata:  Measure Logic Data Requirements
+* Knowledge Artifact Metadata: Data Requirement
+  * ?: **Type**: Patient**Profile(s)**:[Patient](http://hl7.org/fhir/R4/patient.html)**Must Support Elements**: use
+* Knowledge Artifact Metadata: Data Requirement
+  * ?: **Type**: Observation**Profile(s)**:[Observation](http://hl7.org/fhir/R4/observation.html)**Must Support Elements**: code, status, category, effective, issued, code.coding**Code Filter(s)**:**Path**: code**Code**: 
+* Knowledge Artifact Metadata: Data Requirement
+  * ?: **Type**: Observation**Profile(s)**:[Observation](http://hl7.org/fhir/R4/observation.html)**Must Support Elements**: code, status, value, issued, effective**Code Filter(s)**:**Path**: code**Code**: 
+* Knowledge Artifact Metadata: Data Requirement
+  * ?: **Type**: Condition**Profile(s)**:[Condition](http://hl7.org/fhir/R4/condition.html)**Must Support Elements**: code, clinicalStatus, category, onset**Code Filter(s)**:**Path**: code**Code**: 
+* Knowledge Artifact Metadata: Data Requirement
+  * ?: **Type**: MedicationStatement**Profile(s)**:[MedicationStatement](http://hl7.org/fhir/R4/medicationstatement.html)**Must Support Elements**: reasonCode, context, effective
+* Knowledge Artifact Metadata: Data Requirement
+  * ?: **Type**: EpisodeOfCare**Profile(s)**:[EpisodeOfCare](http://hl7.org/fhir/R4/episodeofcare.html)**Must Support Elements**: type, status, period, statusHistory
+* Knowledge Artifact Metadata: Measure Logic Definitions
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIND27Logic
+* Knowledge Artifact Metadata: ````/* * As defined by Member States */ define "Initial Population": true````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIndicatorElements
+* Knowledge Artifact Metadata: ````/* @dataElement: HIV.A.DE18 - Gender @activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record @description: Gender of the client */ /* * By Administrative Gender of Patient Stratifier * Need to expand codes */ define "By Administrative Gender Stratifier": case when Patient.gender = 'male' then Concepts."Male" when Patient.gender = 'female' then Concepts."Female" when Patient.gender = 'transgender female' then Concepts."Transgender female" when Patient.gender = 'transgender male' then Concepts."Transgender male" else Concepts."Other - HIV.A.DE23" end````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIndicatorElements
+* Knowledge Artifact Metadata: ````/* End of Visit date A.DE3 */ /* @dataElement: HIV.A.DE17 - Age @activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record @description: Calculated age (number of years) of the client based on date of birth */ define "Age In Years": AgeInYearsAt(start of "Measurement Period")````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIndicatorElements
+* Knowledge Artifact Metadata: ````/* * By Age Stratifiers * (0–4, 5–9, 10–14, 15–19, 20–24, 25–29, 30–34, 35–39, 40–44, 45–49, 50+ years) * */ define "By Age Stratifier": case when "Age In Years" <= 4 then '0-4' when "Age In Years" <= 9 then '5-9' when "Age In Years" <= 14 then '10–14' when "Age In Years" <= 19 then '15–19' when "Age In Years" <= 24 then '20–24' when "Age In Years" <= 29 then '25–29' when "Age In Years" <= 34 then '30–34' when "Age In Years" <= 39 then '35–39' when "Age In Years" <= 44 then '40–44' when "Age In Years" <= 49 then '45–49' when "Age In Years" >= 50 then '50+' else null end````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIndicatorElements
+* Knowledge Artifact Metadata: ````// Geographic Region define "By Geographic Region Stratifier": First(Patient.address A where A.use in { 'home' }).state````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVElements
+* Knowledge Artifact Metadata: ````/* End of Key population member B.DE49 */ /* @dataElement: HIV.B.DE50 - Key population member type @activity: HIV.B6 Capture or update client history @description: The type of key population that the client is included in */ define "Key population member type Observation": [Observation: Concepts."Key population member - HIV.B.DE49"] O where O.status in { 'final', 'amended', 'corrected' } and exists(O.category OC where OC ~ ConceptsCustom."social-history")````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIndicatorElements
+* Knowledge Artifact Metadata: ````define "Key population member type Observation": Elements."Key population member type Observation" O where O.effective.toInterval() before end of "Measurement Period" or O.issued before end of "Measurement Period"````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIndicatorElements
+* Knowledge Artifact Metadata: ````// Stratifier define patientGroups: "Key population member type Observation" O return Combine(O.code.coding.code, ':')````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIND27Logic
+* Knowledge Artifact Metadata: ````define "Stratification": HIE."By Administrative Gender Stratifier".code + ':' + HIE."By Age Stratifier" + ':' + HIE."By Geographic Region Stratifier" + Combine(HIE.patientGroups, ':')````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVElements
+* Knowledge Artifact Metadata: ````define "HIV Status Positive Condition": [Condition: Concepts."HIV-positive - HIV.B.DE116"] C where C.clinicalStatus ~ ConceptsCustom."active" and exists(C.category CC where CC ~ ConceptsCustom."encounter-diagnosis") sort by start of onset.toInterval()````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIndicatorElements
+* Knowledge Artifact Metadata: ````define "HIV Status Positive Condition": Elements."HIV Status Positive Condition" C where C.onset before end of "Measurement Period"````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVElements
+* Knowledge Artifact Metadata: ````/* End of HIV-inconclusive */ /* @dataElement: HIV.B.DE115 - HIV status @activity: HIV.B7 Test for HIV using testing algorithm @description: HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis. */ define "HIV Status Observation": [Observation: Concepts."HIV status"] O where O.status in { 'final', 'amended', 'corrected' }````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVElements
+* Knowledge Artifact Metadata: ````define "HIV Status Positive Observation": "HIV Status Observation" O where O.value ~ Concepts."HIV-positive - HIV.B.DE116" sort by start of effective.toInterval()````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIndicatorElements
+* Knowledge Artifact Metadata: ````define "HIV Status Positive Observation": Elements."HIV Status Positive Observation" O where O.issued before end of "Measurement Period" or O.effective.toInterval() starts before end of "Measurement Period"````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIndicatorElements
+* Knowledge Artifact Metadata: ````define "Has HIV-positive Status": exists "HIV Status Positive Condition" or exists "HIV Status Positive Observation"````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVElements
+* Knowledge Artifact Metadata: ````/* End of Refused stopped treatment */ /* @dataElement: HIV.H.DE47 - On ART @activity: HIV.H3 Record outreach and result @description: Client is currently taking ART */ define "On ART H.DE47": [MedicationStatement] MS where exists(MS.reasonCode C where C ~ Concepts."On ART - HIV.H.DE47") sort by start of effective.toInterval()````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVConfig
+* Knowledge Artifact Metadata: ````define "LTFU Days": 28 days````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVElements
+* Knowledge Artifact Metadata: ````/* End of Transferred out */ /* @dataElement: HIV.H.DE44 - Death documented @activity: HIV.H3 Record outreach and result @description: People living with HIV previously on ART who are confirmed to have died from any cause */ define "Death documented": case when Patient.deceased is FHIR.boolean and Patient.deceased ~ true then Patient.meta.lastUpdated.value when Patient.deceased is FHIR.dateTime then Patient.deceased as FHIR.dateTime else null end````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIndicatorElements
+* Knowledge Artifact Metadata: ````/* End of Transferred out */ /* @dataElement: HIV.H.DE44 - Death documented @activity: HIV.H3 Record outreach and result @description: People living with HIV previously on ART who are confirmed to have died from any cause */ define "Has death documented": Elements."Death documented" before end of "Measurement Period"````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIND27Logic
+* Knowledge Artifact Metadata: ````/* * Many indicator specifications in ANC and Immunization have context as patient. * I believe these should be unfiltered to get all observations not just those related to a current patient * Should discuss. */ define "Measure Population": HIE."Has HIV-positive Status" and exists(HE."On ART H.DE47" A with [EpisodeOfCare] EOC such that A.context.references(EOC) and //Not Transferred out not (exists(EOC.type T where T ~ Concepts."On ART - HIV.H.DE47") and EOC.status = 'finished' and EOC.period.toInterval() ends during "Measurement Period") and not exists ( EOC.statusHistory H where H.status = 'finished' and H.period.toInterval() ends during "Measurement Period") //On ART for at least one day in measurement period where A.effective.toInterval() starts before end of "Measurement Period" and A.effective.toInterval() ends after start of "Measurement Period" //Not Lost to follow up and (A.effective.toInterval() ends after (end of "Measurement Period" - Config."LTFU Days")) ) and not HIE."Has death documented"````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToString(value AdministrativeGender): value.value````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToString(value string): value.value````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToString(value AddressUse): value.value````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToString(value ObservationStatus): value.value````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToConcept(concept FHIR.CodeableConcept): if concept is null then null else System.Concept { codes: concept.coding C return ToCode(C), display: concept.text.value }````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToCode(coding FHIR.Coding): if coding is null then null else System.Code { code: coding.code.value, system: coding.system.value, version: coding.version.value, display: coding.display.value }````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToDateTime(value instant): value.value````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToDateTime(value dateTime): value.value````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**WHOCommon
+* Knowledge Artifact Metadata: ````/* @description: Returns true if the given reference is to the given resource @comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference. NOTE: This function assumes resources from the same source server. */ define fluent function references(reference FHIR.Reference, resource FHIR.Resource): resource.id = Last(Split(reference.reference, '/'))````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToString(value EpisodeOfCareStatus): value.value````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**WHOCommon
+* Knowledge Artifact Metadata: ````/* From FHIRCommon 4.1.0: */ /* @description: Normalizes a value that is a choice of timing-valued types to an equivalent interval @comment: Normalizes a choice type of FHIR.dateTime, FHIR.Period, FHIR.Timing, FHIR.instance, FHIR.string, FHIR.Age, or FHIR.Range types to an equivalent interval. This selection of choice types is a superset of the majority of choice types that are used as possible representations for timing-valued elements in FHIR, allowing this function to be used across any resource. The input can be provided as a dateTime, Period, Timing, instant, string, Age, or Range. The intent of this function is to provide a clear and concise mechanism to treat single elements that have multiple possible representations as intervals so that logic doesn't have to account for the variability. More complex calculations (such as medication request period or dispense period calculation) need specific guidance and consideration. That guidance may make use of this function, but the focus of this function is on single element calculations where the semantics are unambiguous. If the input is a dateTime, the result a DateTime Interval beginning and ending on that dateTime. If the input is a Period, the result is a DateTime Interval. If the input is a Timing, an error is raised indicating a single interval cannot be computed from a Timing. If the input is an instant, the result is a DateTime Interval beginning and ending on that instant. If the input is a string, an error is raised indicating a single interval cannot be computed from a string. If the input is an Age, the result is a DateTime Interval beginning when the patient was the given Age, and ending immediately prior to when the patient was the given Age plus one year. If the input is a Range, the result is a DateTime Interval beginning when the patient was the Age given by the low end of the Range, and ending immediately prior to when the patient was the Age given by the high end of the Range plus one year. NOTE: Due to the complexity of determining a single interval from a Timing or String type, this function will throw a run-time exception if it is used with a Timing or String. */ define fluent function toInterval(choice Choice<FHIR.dateTime, FHIR.Period, FHIR.Timing, FHIR.instant, FHIR.string, FHIR.Age, FHIR.Range>): case when choice is FHIR.dateTime then Interval[FHIRHelpers.ToDateTime(choice as FHIR.dateTime), FHIRHelpers.ToDateTime(choice as FHIR.dateTime)] when choice is FHIR.Period then FHIRHelpers.ToInterval(choice as FHIR.Period) when choice is FHIR.instant then Interval[FHIRHelpers.ToDateTime(choice as FHIR.instant), FHIRHelpers.ToDateTime(choice as FHIR.instant)] when choice is FHIR.Age then Interval[FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity(choice as FHIR.Age), FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity(choice as FHIR.Age) + 1 year) when choice is FHIR.Range then Interval[FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity((choice as FHIR.Range).low), FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity((choice as FHIR.Range).high) + 1 year) when choice is FHIR.Timing then Message(null as Interval<DateTime>, true, 'NOT_IMPLEMENTED', 'Error', 'Calculation of an interval from a Timing value is not supported') when choice is FHIR.string then Message(null as Interval<DateTime>, true, 'NOT_IMPLEMENTED', 'Error', 'Calculation of an interval from a String value is not supported') else null as Interval<DateTime> end````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToInterval(period FHIR.Period): if period is null then null else if period."start" is null then Interval(period."start".value, period."end".value] else Interval[period."start".value, period."end".value]````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToDate(value date): value.value````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToQuantity(quantity FHIR.Quantity): case when quantity is null then null when quantity.value is null then null when quantity.comparator is not null then Message(null, true, 'FHIRHelpers.ToQuantity.ComparatorQuantityNotSupported', 'Error', 'FHIR Quantity value has a comparator and cannot be converted to a System.Quantity value.') when quantity.system is null or quantity.system.value = 'http://unitsofmeasure.org' or quantity.system.value = 'http://hl7.org/fhirpath/CodeSystem/calendar-units' then System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, '1')) } else Message(null, true, 'FHIRHelpers.ToQuantity.InvalidFHIRQuantity', 'Error', 'Invalid FHIR Quantity code: ' & quantity.unit.value & ' (' & quantity.system.value & '|' & quantity.code.value & ')') end````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToCalendarUnit(unit System.String): case unit when 'ms' then 'millisecond' when 's' then 'second' when 'min' then 'minute' when 'h' then 'hour' when 'd' then 'day' when 'wk' then 'week' when 'mo' then 'month' when 'a' then 'year' else unit end````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**FHIRHelpers
+* Knowledge Artifact Metadata: ````define function ToBoolean(value boolean): value.value````
+* Knowledge Artifact Metadata:  Logic Definition
+  * ?: **Library Name:**HIVIND27Logic
+* Knowledge Artifact Metadata: ````/* * NOTE: Modeled as a Continuous Variable measure because this is an estimated denominator proportion measure */ define function "Measure Observation"(Patient "Patient"): 1````
+* Knowledge Artifact Metadata: Generated using version 0.4.6 of the sample-content-ig Liquid templates
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Measure",
+  "id" : "HIVIND27",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cv-measure-cqfm",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablemeasure"]
+  },
+  "contained" : [{
+    "resourceType" : "Library",
+    "id" : "effective-data-requirements",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.A.DE20",
+        "display" : "Male"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.A.DE19",
+        "display" : "Female"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.A.DE22",
+        "display" : "Transgender female"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.A.DE21",
+        "display" : "Transgender male"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.A.DE23",
+        "display" : "Other"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE49",
+        "display" : "Key population member*"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code" : "social-history",
+        "display" : "Social History"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE116",
+        "display" : "HIV-positive"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code" : "active"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code" : "encounter-diagnosis",
+        "display" : "Encounter Diagnosis"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE115",
+        "display" : "HIV status"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.H.DE47",
+        "display" : "On ART"
+      }
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIND27Logic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Initial Population"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n * As defined by Member States\n */\ndefine \"Initial Population\":\n  true"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 0
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "By Administrative Gender Stratifier"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n@dataElement: HIV.A.DE18 - Gender\n@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record\n@description: Gender of the client\n*/\n\n/*\n * By Administrative Gender of Patient Stratifier\n * Need to expand codes\n */\n\ndefine \"By Administrative Gender Stratifier\":\n  case \n      when Patient.gender = 'male' then Concepts.\"Male\"\n      when Patient.gender = 'female' then Concepts.\"Female\"\n      when Patient.gender = 'transgender female' then Concepts.\"Transgender female\"\n      when Patient.gender = 'transgender male' then Concepts.\"Transgender male\"\n      else Concepts.\"Other - HIV.A.DE23\"\n  end"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 1
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Age In Years"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Visit date A.DE3 */\n\n/*\n@dataElement: HIV.A.DE17 - Age\n@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record\n@description: Calculated age (number of years) of the client based on date of birth\n*/\ndefine \"Age In Years\":\n  AgeInYearsAt(start of \"Measurement Period\")"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 2
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "By Age Stratifier"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n * By Age Stratifiers\n * (0–4, 5–9, 10–14, 15–19, 20–24, 25–29, 30–34, 35–39, 40–44, 45–49, 50+ years)\n * \n */\ndefine \"By Age Stratifier\":\n  case \n      when \"Age In Years\" <= 4 then '0-4'\n      when \"Age In Years\" <= 9 then '5-9'\n      when \"Age In Years\" <= 14 then '10–14'\n      when \"Age In Years\" <= 19 then '15–19'\n      when \"Age In Years\" <= 24 then '20–24'\n      when \"Age In Years\" <= 29 then '25–29'\n      when \"Age In Years\" <= 34 then '30–34'\n      when \"Age In Years\" <= 39 then '35–39'\n      when \"Age In Years\" <= 44 then '40–44'\n      when \"Age In Years\" <= 49 then '45–49'\n      when \"Age In Years\" >= 50 then '50+'\n      else null\n  end"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 3
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "By Geographic Region Stratifier"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "// Geographic Region\ndefine \"By Geographic Region Stratifier\":\n    First(Patient.address A where A.use in { 'home' }).state"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 4
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Key population member type Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Key population member B.DE49 */\n\n/*\n@dataElement: HIV.B.DE50 - Key population member type\n@activity: HIV.B6 Capture or update client history\n@description: The type of key population that the client is included in\n*/\ndefine \"Key population member type Observation\":\n  [Observation: Concepts.\"Key population member - HIV.B.DE49\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n    and exists(O.category OC where OC ~ ConceptsCustom.\"social-history\")"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 5
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Key population member type Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"Key population member type Observation\":\n  Elements.\"Key population member type Observation\" O\n    where O.effective.toInterval() before end of \"Measurement Period\"\n    or O.issued before end of \"Measurement Period\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 6
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "patientGroups"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "// Stratifier\ndefine patientGroups:\n  \"Key population member type Observation\" O\n  return Combine(O.code.coding.code, ':')"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 7
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIND27Logic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Stratification"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"Stratification\":\n HIE.\"By Administrative Gender Stratifier\".code \n  + ':' + HIE.\"By Age Stratifier\"\n+ ':' + HIE.\"By Geographic Region Stratifier\"\n+ Combine(HIE.patientGroups, ':')"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 8
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Positive Condition"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"HIV Status Positive Condition\":\n  [Condition: Concepts.\"HIV-positive - HIV.B.DE116\"] C\n    where C.clinicalStatus ~ ConceptsCustom.\"active\"\n      and exists(C.category CC where CC ~ ConceptsCustom.\"encounter-diagnosis\")\n    sort by start of onset.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 9
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Positive Condition"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"HIV Status Positive Condition\":\n  Elements.\"HIV Status Positive Condition\" C\n  where C.onset before end of \"Measurement Period\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 10
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of HIV-inconclusive */\n\n/*\n@dataElement: HIV.B.DE115 - HIV status\n@activity: HIV.B7 Test for HIV using testing algorithm\n@description: HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.\n*/\ndefine \"HIV Status Observation\":\n  [Observation: Concepts.\"HIV status\"] O\n    where O.status in { 'final', 'amended', 'corrected' }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 11
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Positive Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"HIV Status Positive Observation\":\n\"HIV Status Observation\" O\n    where O.value ~ Concepts.\"HIV-positive - HIV.B.DE116\"\n      sort by start of effective.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 12
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Status Positive Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"HIV Status Positive Observation\":\n  Elements.\"HIV Status Positive Observation\" O\n  where O.issued before end of \"Measurement Period\"\n  or O.effective.toInterval() starts before end of \"Measurement Period\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 13
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Has HIV-positive Status"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"Has HIV-positive Status\":\n  exists \"HIV Status Positive Condition\"\n  or exists \"HIV Status Positive Observation\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 14
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "On ART H.DE47"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Refused stopped treatment */\n\n/*\n@dataElement: HIV.H.DE47 - On ART\n@activity: HIV.H3 Record outreach and result\n@description: Client is currently taking ART \n*/\n\ndefine \"On ART H.DE47\":\n    [MedicationStatement] MS\n    where exists(MS.reasonCode C where C ~ Concepts.\"On ART - HIV.H.DE47\")\n    sort by start of effective.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 15
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVConfig"
+      },
+      {
+        "url" : "name",
+        "valueString" : "LTFU Days"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"LTFU Days\":\n  28 days"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 16
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Death documented"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Transferred out */\n\n/*\n@dataElement: HIV.H.DE44 - Death documented\n@activity: HIV.H3 Record outreach and result\n@description: People living with HIV previously on ART who are confirmed to have died from any cause\n*/\ndefine \"Death documented\":\n  case \n    when Patient.deceased is FHIR.boolean and Patient.deceased ~ true then Patient.meta.lastUpdated.value\n    when Patient.deceased is FHIR.dateTime then Patient.deceased as FHIR.dateTime\n    else null\n  end"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 17
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIndicatorElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Has death documented"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Transferred out */\n\n/*\n@dataElement: HIV.H.DE44 - Death documented\n@activity: HIV.H3 Record outreach and result\n@description: People living with HIV previously on ART who are confirmed to have died from any cause\n*/\ndefine \"Has death documented\":\n  Elements.\"Death documented\" before end of \"Measurement Period\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 18
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIND27Logic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Measure Population"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n* Many indicator specifications in ANC and Immunization have context as patient. \n* I believe these should be unfiltered to get all observations not just those related to a current patient\n* Should discuss.\n*/\n\ndefine \"Measure Population\":\n   HIE.\"Has HIV-positive Status\"\n   and exists(HE.\"On ART H.DE47\" A\n    with [EpisodeOfCare] EOC\n      such that A.context.references(EOC) and \n      //Not Transferred out\n      not (exists(EOC.type T where T ~ Concepts.\"On ART - HIV.H.DE47\")\n      and EOC.status = 'finished' and EOC.period.toInterval() ends during \"Measurement Period\")\n      and not exists (\n      EOC.statusHistory H\n      where H.status = 'finished'\n      and H.period.toInterval() ends during \"Measurement Period\")\n      //On ART for at least one day in measurement period\n    where A.effective.toInterval() starts before end of \"Measurement Period\"\n    and A.effective.toInterval() ends after start of \"Measurement Period\"\n    //Not Lost to follow up\n\tand (A.effective.toInterval() ends after (end of \"Measurement Period\" - Config.\"LTFU Days\"))\n   )\n   and not HIE.\"Has death documented\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 19
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value AdministrativeGender): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 20
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value string): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 21
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value AddressUse): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 22
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value ObservationStatus): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 23
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToConcept"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 24
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToCode"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 25
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToDateTime"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToDateTime(value instant): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 26
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToDateTime"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToDateTime(value dateTime): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 27
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "WHOCommon"
+      },
+      {
+        "url" : "name",
+        "valueString" : "references"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n@description: Returns true if the given reference is to the given resource\n@comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(reference FHIR.Reference, resource FHIR.Resource):\n  resource.id = Last(Split(reference.reference, '/'))"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 28
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value EpisodeOfCareStatus): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 29
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "WHOCommon"
+      },
+      {
+        "url" : "name",
+        "valueString" : "toInterval"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\nFrom FHIRCommon 4.1.0:\n*/\n\n/*\n@description: Normalizes a value that is a choice of timing-valued types to an equivalent interval\n@comment: Normalizes a choice type of FHIR.dateTime, FHIR.Period, FHIR.Timing, FHIR.instance, FHIR.string, FHIR.Age, or FHIR.Range types\nto an equivalent interval. This selection of choice types is a superset of the majority of choice types that are used as possible\nrepresentations for timing-valued elements in FHIR, allowing this function to be used across any resource.\n\nThe input can be provided as a dateTime, Period, Timing, instant, string, Age, or Range.\nThe intent of this function is to provide a clear and concise mechanism to treat single\nelements that have multiple possible representations as intervals so that logic doesn't have to account\nfor the variability. More complex calculations (such as medication request period or dispense period\ncalculation) need specific guidance and consideration. That guidance may make use of this function, but\nthe focus of this function is on single element calculations where the semantics are unambiguous.\nIf the input is a dateTime, the result a DateTime Interval beginning and ending on that dateTime.\nIf the input is a Period, the result is a DateTime Interval.\nIf the input is a Timing, an error is raised indicating a single interval cannot be computed from a Timing.\nIf the input is an instant, the result is a DateTime Interval beginning and ending on that instant.\nIf the input is a string, an error is raised indicating a single interval cannot be computed from a string.\nIf the input is an Age, the result is a DateTime Interval beginning when the patient was the given Age,\nand ending immediately prior to when the patient was the given Age plus one year.\nIf the input is a Range, the result is a DateTime Interval beginning when the patient was the Age given\nby the low end of the Range, and ending immediately prior to when the patient was the Age given by the\nhigh end of the Range plus one year.\n\nNOTE: Due to the\ncomplexity of determining a single interval from a Timing or String type, this function will throw a run-time exception if it is used\nwith a Timing or String.\n*/\ndefine fluent function toInterval(choice Choice<FHIR.dateTime, FHIR.Period, FHIR.Timing, FHIR.instant, FHIR.string, FHIR.Age, FHIR.Range>):\n  case\n    when choice is FHIR.dateTime then\n      Interval[FHIRHelpers.ToDateTime(choice as FHIR.dateTime), FHIRHelpers.ToDateTime(choice as FHIR.dateTime)]\n    when choice is FHIR.Period then\n      FHIRHelpers.ToInterval(choice as FHIR.Period)\n    when choice is FHIR.instant then\n      Interval[FHIRHelpers.ToDateTime(choice as FHIR.instant), FHIRHelpers.ToDateTime(choice as FHIR.instant)]\n    when choice is FHIR.Age then\n      Interval[FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity(choice as FHIR.Age),\n        FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity(choice as FHIR.Age) + 1 year)\n    when choice is FHIR.Range then\n      Interval[FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity((choice as FHIR.Range).low),\n        FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity((choice as FHIR.Range).high) + 1 year)\n    when choice is FHIR.Timing then\n      Message(null as Interval<DateTime>, true, 'NOT_IMPLEMENTED', 'Error', 'Calculation of an interval from a Timing value is not supported')\n    when choice is FHIR.string then\n      Message(null as Interval<DateTime>, true, 'NOT_IMPLEMENTED', 'Error', 'Calculation of an interval from a String value is not supported')\n    else\n      null as Interval<DateTime>\n  end"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 30
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToInterval"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToInterval(period FHIR.Period):\n    if period is null then\n        null\n    else\n        if period.\"start\" is null then\n            Interval(period.\"start\".value, period.\"end\".value]\n        else\n            Interval[period.\"start\".value, period.\"end\".value]"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 31
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToDate"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToDate(value date): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 32
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToQuantity"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToQuantity(quantity FHIR.Quantity):\n    case\n        when quantity is null then null\n        when quantity.value is null then null\n        when quantity.comparator is not null then\n            Message(null, true, 'FHIRHelpers.ToQuantity.ComparatorQuantityNotSupported', 'Error', 'FHIR Quantity value has a comparator and cannot be converted to a System.Quantity value.')\n        when quantity.system is null or quantity.system.value = 'http://unitsofmeasure.org'\n              or quantity.system.value = 'http://hl7.org/fhirpath/CodeSystem/calendar-units' then\n            System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, '1')) }\n        else\n            Message(null, true, 'FHIRHelpers.ToQuantity.InvalidFHIRQuantity', 'Error', 'Invalid FHIR Quantity code: ' & quantity.unit.value & ' (' & quantity.system.value & '|' & quantity.code.value & ')')\n    end"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 33
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToCalendarUnit"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToCalendarUnit(unit System.String):\n    case unit\n        when 'ms' then 'millisecond'\n        when 's' then 'second'\n        when 'min' then 'minute'\n        when 'h' then 'hour'\n        when 'd' then 'day'\n        when 'wk' then 'week'\n        when 'mo' then 'month'\n        when 'a' then 'year'\n        else unit\n    end"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 34
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToBoolean"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToBoolean(value boolean): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 35
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVIND27Logic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Measure Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n * NOTE: Modeled as a Continuous Variable measure because this is an estimated denominator proportion measure\n */\n\ndefine function \"Measure Observation\"(Patient \"Patient\"):\n  1"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 36
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    }],
+    "name" : "EffectiveDataRequirements",
+    "status" : "active",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/library-type",
+        "code" : "module-definition"
+      }]
+    },
+    "relatedArtifact" : [{
+      "type" : "depends-on",
+      "display" : "FHIR model information",
+      "resource" : "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library HIE",
+      "resource" : "http://smart.who.int/hiv/Library/HIVIndicatorElements"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library FHIRHelpers",
+      "resource" : "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library Concepts",
+      "resource" : "http://smart.who.int/hiv/Library/HIVConcepts|0.0.2"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library Elements",
+      "resource" : "http://smart.who.int/hiv/Library/HIVElements"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library ConceptsCustom",
+      "resource" : "http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library WC",
+      "resource" : "http://smart.who.int/hiv/Library/WHOCommon"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library Concepts",
+      "resource" : "http://smart.who.int/hiv/Library/HIVConcepts"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library Config",
+      "resource" : "http://smart.who.int/hiv/Library/HIVConfig"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Code system HIVConcepts",
+      "resource" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Code system ObservationCategoryCodes",
+      "resource" : "http://terminology.hl7.org/CodeSystem/observation-category"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Code system ConditionClinicalStatusCodes",
+      "resource" : "http://terminology.hl7.org/CodeSystem/condition-clinical"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Code system ConditionCategoryCodes",
+      "resource" : "http://terminology.hl7.org/CodeSystem/condition-category"
+    }],
+    "parameter" : [{
+      "name" : "Measurement Period",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "Period"
+    },
+    {
+      "name" : "Initial Population",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "boolean"
+    },
+    {
+      "name" : "Stratification",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "string"
+    },
+    {
+      "name" : "Measure Population",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "boolean"
+    }],
+    "dataRequirement" : [{
+      "type" : "Patient",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Patient"],
+      "mustSupport" : ["use"]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code", "status", "category", "effective", "issued", "code.coding"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.B.DE49",
+          "display" : "Key population member*"
+        }]
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code", "status", "value", "issued", "effective"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.B.DE115",
+          "display" : "HIV status"
+        }]
+      }]
+    },
+    {
+      "type" : "Condition",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Condition"],
+      "mustSupport" : ["code", "clinicalStatus", "category", "onset"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.B.DE116",
+          "display" : "HIV-positive"
+        }]
+      }]
+    },
+    {
+      "type" : "MedicationStatement",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/MedicationStatement"],
+      "mustSupport" : ["reasonCode", "context", "effective"]
+    },
+    {
+      "type" : "EpisodeOfCare",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/EpisodeOfCare"],
+      "mustSupport" : ["type", "status", "period", "statusHistory"]
+    }]
+  }],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+    "valueCode" : "boolean"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
+    "valueCanonical" : "#effective-data-requirements"
+  }],
+  "url" : "http://smart.who.int/hiv/Measure/HIVIND27",
+  "version" : "0.4.4",
+  "name" : "HIVIND27",
+  "title" : "HIV.IND.27 People living with HIV on ART",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2024-08-18",
+  "publisher" : "WHO",
+  "contact" : [{
+    "name" : "WHO",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://who.int"
+    }]
+  }],
+  "description" : "Number and % of people on ART among all people living with HIV at the end of the reporting period",
+  "library" : ["http://smart.who.int/hiv/Library/HIVIND27Logic"],
+  "scoring" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/measure-scoring",
+      "code" : "continuous-variable",
+      "display" : "Continuous Variable"
+    }]
+  },
+  "improvementNotation" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+      "code" : "increase"
+    }]
+  },
+  "group" : [{
+    "population" : [{
+      "id" : "HIV.IND.27.IP",
+      "code" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code" : "initial-population",
+          "display" : "Initial Population"
+        }]
+      },
+      "description" : "Initial Population",
+      "criteria" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Initial Population"
+      }
+    },
+    {
+      "id" : "HIV.IND.27.MP",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+        "valueCode" : "boolean"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code" : "measure-population",
+          "display" : "Measure Population"
+        }]
+      },
+      "description" : "Measure Population",
+      "criteria" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Measure Population"
+      }
+    },
+    {
+      "id" : "HIV.IND.27.MO",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-criteriaReference",
+        "valueString" : "measure-population"
+      },
+      {
+        "url" : "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-aggregateMethod",
+        "valueCode" : "count"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code" : "measure-observation",
+          "display" : "Measure Observation"
+        }]
+      },
+      "description" : "Measure Observation",
+      "criteria" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Measure Observation"
+      }
+    }],
+    "stratifier" : [{
+      "id" : "HIV.IND.27.S",
+      "criteria" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Stratification"
+      }
+    }]
+  }]
+}
+
+```

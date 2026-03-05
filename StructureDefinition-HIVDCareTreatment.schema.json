@@ -1,0 +1,1894 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/base/StructureDefinition-HIVDCareTreatment.schema.json",
+  "title": "HIV.D Care-Treatment",
+  "description": "This tab describes the data that may be collected during care and treatment clinical visit for HIV workflow (HIV.D)",
+  "type": "object",
+  "properties": {
+    "resourceType": {
+      "type": "string",
+      "const": "HIVDCareTreatment",
+      "description": "Resource type identifier for HIVDCareTreatment logical model"
+    },
+    "@context": {
+      "description": "JSON-LD context for this logical model with ValueSet vocabularies",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uri",
+          "description": "URI reference to external JSON-LD context"
+        },
+        {
+          "type": "object",
+          "description": "Inline JSON-LD context",
+          "properties": {
+            "@version": {
+              "type": "number",
+              "const": 1.1
+            },
+            "fhir": {
+              "type": "string",
+              "const": "http://hl7.org/fhir/"
+            }
+          },
+          "additionalProperties": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        {
+          "type": "array",
+          "description": "Array of JSON-LD context objects/URIs",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "object"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "JSON-LD type identifier for HIVDCareTreatment logical model",
+      "examples": [
+        "LogicalModel-HIVDCareTreatment"
+      ]
+    },
+    "reasonForVisit": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE1.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE1"
+      },
+      "minItems": 1,
+      "description": "Whether visit was scheduled or unscheduled, clinical only, or for ARV drug pick-up"
+    },
+    "scheduledVisit": {
+      "type": "boolean",
+      "description": "Is this is a scheduled visit?"
+    },
+    "bodyTemperature": {
+      "type": "integer",
+      "description": "Temperature of the client in Celsius"
+    },
+    "respiratoryRate": {
+      "type": "integer",
+      "description": "The number of breaths per minute"
+    },
+    "heartRate": {
+      "type": "integer",
+      "description": "The number of heartbeats per minute"
+    },
+    "bodyHeight": {
+      "type": "integer",
+      "description": "The client's height in centimetres"
+    },
+    "bodyWeight": {
+      "type": "integer",
+      "description": "The client's current weight in kilograms"
+    },
+    "systolicBloodPressure": {
+      "type": "integer",
+      "description": "Systolic blood pressure (SBP) in mmHg"
+    },
+    "diastolicBloodPressure": {
+      "type": "integer",
+      "description": "Diastolic blood pressure (DBP) in mmHg"
+    },
+    "bloodPressureCannotBeTaken": {
+      "type": "boolean",
+      "description": "If the client's blood pressure cannot be taken, this should be indicated here. Otherwise, blood pressure should be measured."
+    },
+    "signsOfSeriousIllness": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE17.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE17"
+      },
+      "description": "Signs that may indicate the client has a serious illness and needs triage or an emergency referral"
+    },
+    "otherSignOfSeriousIllnessSpecify": {
+      "type": "string",
+      "description": "Client is exhibiting another sign of a serious illness (specify)"
+    },
+    "currentlyPregnant": {
+      "type": "boolean",
+      "description": "Client is currently pregnant"
+    },
+    "breastfeeding": {
+      "type": "boolean",
+      "description": "Client is giving infant breast milk"
+    },
+    "numberOfPregnanciesGravida": {
+      "type": "integer",
+      "description": "Total number of times the woman has been pregnant (gravida)"
+    },
+    "numberOfMiscarriagesAndOrAbortions": {
+      "type": "integer",
+      "description": "Total number of pregnancies lost/ended due to miscarriages and/or abortions before 22 weeks/5 months"
+    },
+    "numberOfLiveBirths": {
+      "type": "integer",
+      "description": "Total number of live births after 22 weeks"
+    },
+    "parity": {
+      "type": "integer",
+      "description": "Calculated parity is the total number of live and stillbirths"
+    },
+    "serodiscordantPartner": {
+      "type": "boolean",
+      "description": "Client's HIV status is different from a current partner's HIV status"
+    },
+    "onArt": {
+      "type": "boolean",
+      "description": "Client is currently taking ART"
+    },
+    "artStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "The date on which the client started or restarted ART"
+    },
+    "stoppedArt": {
+      "type": "boolean",
+      "description": "Client stopped taking ART"
+    },
+    "dateArtStopped": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which client stopped ART"
+    },
+    "establishedOnArt": {
+      "type": "boolean",
+      "description": "Is the client successfully established on ART?"
+    },
+    "artStartType": {
+      "$ref": "./ValueSet-HIV.D.DE43.schema.json",
+      "description": "Whether the client is ART naive or is restarting ART"
+    },
+    "dateOfInitiationOnArt": {
+      "type": "string",
+      "format": "date",
+      "description": "The date on which the client was first initiated on ART"
+    },
+    "timeOnArt": {
+      "type": "integer",
+      "description": "Time the client has been on ART since starting or restarting it in years and months"
+    },
+    "datesArtRestarted": {
+      "type": "string",
+      "format": "date",
+      "description": "Date(s) client restarted ART after stopping (intentionally interrupting) for any number of reasons (see 'Reason ART stopped')"
+    },
+    "artCohort": {
+      "type": "string",
+      "format": "date",
+      "description": "Month and year client originally started ART (documented) at a health facility in the system. The cohort is a group of patients who started ART in the same month (or quarter) and year, whose status is followed over time, using the ART register."
+    },
+    "transferInForHivCare": {
+      "type": "boolean",
+      "description": "Client is transferring in with records or known ART drugs and ART start date"
+    },
+    "dateOfTransferIn": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client presented at facility (with transfer/referral slip) from another facility (and on ART) within the system"
+    },
+    "facilityTransferredFrom": {
+      "$ref": "./ValueSet-HIV.D.DE52.schema.json",
+      "description": "Name of health facility client was transferred from"
+    },
+    "dateEnrolledInHivCare": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client first enrols in HIV care at the facility. Begins when a person with a confirmed HIV diagnosis presents to a facility where HIV care is provided and a medical record, patient card, file or chart is opened for the first time. This could be at an HIV care/ART, MNCH or TB clinic."
+    },
+    "ageAtEnrolment": {
+      "type": "integer",
+      "description": "Client's age when the client was enrolled in ART care"
+    },
+    "facilityWhereClientFirstEnrolledInHivCare": {
+      "$ref": "./ValueSet-HIV.D.DE55.schema.json",
+      "description": "Facility where the client first enrolled in HIV care"
+    },
+    "antiretroviralArvDrugsReceivedPriorToEnrolment": {
+      "$ref": "./ValueSet-HIV.D.DE56.schema.json",
+      "description": "Whether or not the client received ARV drugs prior to enrolling into HIV care"
+    },
+    "dateArvDrugsReceivedPriorToEnrolment": {
+      "type": "string",
+      "format": "date",
+      "description": "Date ARV drugs were started prior to enrolment into HIV care/ART"
+    },
+    "locationArvDrugsReceivedPriorToEnrolment": {
+      "$ref": "./ValueSet-HIV.D.DE63.schema.json",
+      "description": "Health facility (or other location) where ARV drugs were received prior to enrolment into HIV care/ART"
+    },
+    "arvDrugRegimenReceivedPriorToEnrolment": {
+      "$ref": "./ValueSet-HIV.D.DE64.schema.json",
+      "description": "ARV drug regimen received prior to enrolment into HIV care/ART"
+    },
+    "existingChronicHealthConditions": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE65.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE65"
+      },
+      "description": "Does the client have any current chronic health conditions or problems?"
+    },
+    "otherExistingChronicHealthConditions": {
+      "type": "string",
+      "description": "Other health conditions not included in the list (specify)"
+    },
+    "originalFirstLineArtRegimen": {
+      "$ref": "./ValueSet-HIV.D.DE74.schema.json",
+      "description": "Original full, first-line ARV drug regimen patient started on at this facility"
+    },
+    "currentArtRegimen": {
+      "$ref": "./ValueSet-HIV.D.DE75.schema.json",
+      "description": "The current ART regimen the client is taking"
+    },
+    "currentArtRegimenStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "The date on which the client started taking the current ART regimen"
+    },
+    "preferredFirstLineArtRegimen": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE77.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE77"
+      },
+      "description": "The preferred first-line ART regimen for the client according to WHO (or national) guidelines"
+    },
+    "alternativeFirstLineArtRegimen": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE78.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE78"
+      },
+      "description": "The alternative first-line ART regimen for the client according to WHO (or national) guidelines"
+    },
+    "firstLineArtRegimenUnderSpecialCircumstances": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE79.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE79"
+      },
+      "description": "The first-line ART regimen for the client under special circumstances according to WHO (or national) guidelines"
+    },
+    "preferredSecondLineArtRegimen": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE80.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE80"
+      },
+      "description": "The preferred second-line ART regimen for the client according to WHO (or national) guidelines"
+    },
+    "alternativeSecondLineArtRegimen": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE81.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE81"
+      },
+      "description": "The alternative second-line ART regimen for the client according to WHO (or national) guidelines"
+    },
+    "optimalRegimenForTransition": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE82.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE82"
+      },
+      "description": "The optimal regimen for transition to DTG-based regimens for children established on ART"
+    },
+    "currentArtRegimenFirstSecondOrThirdLine": {
+      "$ref": "./ValueSet-HIV.D.DE83.schema.json",
+      "description": "ART regimen for treating clients living with HIV, based on national guidance"
+    },
+    "artRegimen": {
+      "$ref": "./ValueSet-HIV.D.DE90.schema.json",
+      "description": "List of ART regimens"
+    },
+    "otherArtRegimen": {
+      "type": "string",
+      "description": "Other regimen based upon WHO recommendations (specify)"
+    },
+    "artRegimenComposition": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE128.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE128"
+      },
+      "description": "Drug composition of client's current ART regimen"
+    },
+    "artRegimenDrugClass": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE146.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE146"
+      },
+      "description": "Drug class of current ART regimen"
+    },
+    "preventionServicesOfferedAndReferrals": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE152.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE152"
+      },
+      "minItems": 1,
+      "description": "Offer or refer for prevention services"
+    },
+    "sexualAndReproductiveHealthIntegratedServices": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE156.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE156"
+      },
+      "minItems": 1,
+      "description": "Offer or refer to sexual and reproductive health services"
+    },
+    "hbsagTestDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client was tested for hepatitis B virus (HBV)"
+    },
+    "hbsagTestResult": {
+      "$ref": "./ValueSet-HIV.D.DE162.schema.json",
+      "description": "Hepatitis B virus test result (HBsAg)"
+    },
+    "dateHbvTestResultReturnedToClient": {
+      "type": "string",
+      "format": "date",
+      "description": "Date HBV test result (HBsAG) was returned to client"
+    },
+    "hbvTreatmentTdfStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when client started treatment (TDF) for hepatitis B virus (HBV)"
+    },
+    "hbvTreatmentRegimenPrescribed": {
+      "$ref": "./ValueSet-HIV.D.DE168.schema.json",
+      "description": "Hepatitis B virus treatment regimen prescribed"
+    },
+    "hcvTestDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client was tested for hepatitis C virus (HCV antibody, HCV RNA or HCV core antigen)"
+    },
+    "hcvTestResult": {
+      "$ref": "./ValueSet-HIV.D.DE170.schema.json",
+      "description": "Hepatitis C virus test result (HCV antibody, HCV RNA or HCV core antigen)"
+    },
+    "dateHcvTestResultReturnedToClient": {
+      "type": "string",
+      "format": "date",
+      "description": "Date HCV test result was returned to client"
+    },
+    "hcvTreatmentStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when client started treatment for hepatitis C virus (HCV)"
+    },
+    "hcvTreatmentCompletionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when client completed treatment for hepatitis C virus (HCV)"
+    },
+    "hcvTreatmentRegimenPrescribed": {
+      "$ref": "./ValueSet-HIV.D.DE177.schema.json",
+      "description": "Hepatitis C virus treatment regimen prescribed"
+    },
+    "hcvViralLoadTestDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Hepatitis C viral load test date"
+    },
+    "hcvViralLoadTestResult": {
+      "$ref": "./ValueSet-HIV.D.DE179.schema.json",
+      "description": "Hepatitis C viral load test result (qualitative)"
+    },
+    "hcvMedicineType": {
+      "$ref": "./ValueSet-HIV.D.DE182.schema.json",
+      "description": "Type of medicine client is prescribed"
+    },
+    "currentlyOnTdfBasedArt": {
+      "type": "boolean",
+      "description": "Client is currently on TDF-based ART regimen"
+    },
+    "hivClinicalStage": {
+      "$ref": "./ValueSet-HIV.D.DE186.schema.json",
+      "description": "WHO clinical stage of client based on signs and symptoms. WHO clinical staging is a way to categorize HIV disease severity based on new or recurrent clinical events. There are 4 WHO clinical stages that range from mild symptoms (WHO clinical stage 1) to severe symptoms (WHO clinical stage 4)."
+    },
+    "numberOfMissedDoses": {
+      "type": "integer",
+      "description": "Number of doses of antiretroviral therapy (ART) the client missed since the last visit, used for monitoring adherence"
+    },
+    "receivedViralLoadTestResult": {
+      "type": "boolean",
+      "description": "Client received results from viral load test"
+    },
+    "dateViralLoadTestResultsReceivedByClient": {
+      "type": "string",
+      "format": "date",
+      "description": "The date on which the client received results from viral load test"
+    },
+    "dateOfViralLoadSampleCollection": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time when the sample was collected to test the client's HIV viral load"
+    },
+    "dateOfScheduledReviewOfViralLoadTestResults": {
+      "type": "string",
+      "format": "date",
+      "description": "Expected date when client's viral load test results will be returned and reviewed"
+    },
+    "dateOfArtInterruption": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of client's ART interruption (ART stop or missed drug pick-up)"
+    },
+    "reasonsForAdherenceProblem": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE197.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE197"
+      },
+      "description": "Reason why client was not adherent"
+    },
+    "otherReasonForNonadherenceSpecify": {
+      "type": "string",
+      "description": "Client reported not being adherent because of other reason for nonadherence (specify)"
+    },
+    "reasonArtStopped": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE217.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE217"
+      },
+      "description": "Reason client intentionally stopped ART"
+    },
+    "otherReasonForStoppingArtSpecify": {
+      "type": "string",
+      "description": "Client stopped ART because of other reason (specify)"
+    },
+    "treatmentFailure": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE225.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE225"
+      },
+      "description": "ART treatment failure"
+    },
+    "generalCareActivitiesRecommended": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE229.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE229"
+      },
+      "description": "General care activities to be performed during the care visit"
+    },
+    "preventingAndTreatingCoinfections": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE247.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE247"
+      },
+      "description": "Coinfection prevention and treatment activities performed during the care visit"
+    },
+    "riskFactorsComorbiditiesAndCoinfectionsSignsAndSymptoms": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE259.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE259"
+      },
+      "description": "Signs and symptoms of opportunistic infections or other comorbidities experienced by client"
+    },
+    "otherRiskFactorsComorbiditiesAndCoinfectionsSignsAndSymptoms": {
+      "type": "string",
+      "description": "Other comorbidities or coinfection signs or symptoms (specify)"
+    },
+    "whoHivClinicalStageConditionOrSymptom": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE289.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE289"
+      },
+      "description": "New or recurrent clinical events used to categorize HIV disease severity based at baseline and follow up"
+    },
+    "clinicalStageAtStartOfArt": {
+      "$ref": "./ValueSet-HIV.D.DE358.schema.json",
+      "description": "WHO clinical stage of client based on signs and symptoms at start of ART"
+    },
+    "dateOfClinicalStatusChange": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the client's WHO HIV clinical stage changed, including the date when the client's stage is first determined"
+    },
+    "cd4Count": {
+      "type": "integer",
+      "description": "CD4 cell count in cells/mm^3"
+    },
+    "cd4CellPercentage": {
+      "type": "integer",
+      "description": "CD4 cell percentage"
+    },
+    "dateOfCd4CountTest": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time when CD4 count test was conducted"
+    },
+    "baselineCd4Count": {
+      "type": "integer",
+      "description": "CD4 count performed at HIV diagnosis"
+    },
+    "dateOfBaselineCd4CountTest": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time when baseline CD4 count test was conducted"
+    },
+    "lateArtInitiation": {
+      "type": "boolean",
+      "description": "Client had late ART initiation. That is, the client's first CD4 count from baseline CD4 test performed (such as at HIV diagnosis) was a count of less than 200 cells/mm3"
+    },
+    "reasonsForDelayedArtInitiation": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE370.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE370"
+      },
+      "description": "Reason why ART was not initiated at diagnosis or within 7 days of diagnosis"
+    },
+    "otherReasonsForDelayedArtInitiation": {
+      "type": "string",
+      "description": "Client did not initiate ART at diagnosis or within 7 days of diagnosis because of other reason (specify)"
+    },
+    "artInitiatedWithin7DaysOfDiagnosis": {
+      "type": "boolean",
+      "description": "Client initiated ART within 7 days of diagnosis"
+    },
+    "timeToStartArt": {
+      "$ref": "./ValueSet-HIV.D.DE383.schema.json",
+      "description": "Time from HIV diagnosis to when client started ART"
+    },
+    "viralLoadTestResult": {
+      "type": "integer",
+      "description": "Result from the viral load test in number of copies/mL"
+    },
+    "virallySuppressed": {
+      "type": "boolean",
+      "description": "The client is virally suppressed for HIV, based on the client's most recent viral load test result being less than 1000 copies/mL"
+    },
+    "dateViralLoadTestResultsReceived": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the viral load test result was received from the lab or completed in the facility"
+    },
+    "viralLoadSuppressionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the client tested as becoming virally suppressed, as indicated by a viral load test result under 1000 copies/mL"
+    },
+    "reasonForHivViralLoadTest": {
+      "$ref": "./ValueSet-HIV.D.DE391.schema.json",
+      "description": "Whether the viral load is being tested for routine monitoring on a set schedule or for targeted monitoring for suspected treatment failure"
+    },
+    "hepatitisBTestRequired": {
+      "type": "boolean",
+      "description": "Hepatitis B test is required"
+    },
+    "hepatitisCTestRecommended": {
+      "type": "boolean",
+      "description": "Hepatitis C test is recommended or should be considered"
+    },
+    "syphilisTestRequired": {
+      "type": "boolean",
+      "description": "Syphilis test is required"
+    },
+    "monitoringExaminations": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE399.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE399"
+      },
+      "description": "Name of examinations, test and results for any relevant investigations carried out for client"
+    },
+    "dateOfScheduledMonitoringExamination": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of scheduled monitoring examination"
+    },
+    "hepatitisCTestOrdered": {
+      "type": "boolean",
+      "description": "Hepatitis C test has been ordered"
+    },
+    "syphilisTestOrdered": {
+      "type": "boolean",
+      "description": "Syphilis test has been ordered"
+    },
+    "receivedViralLoadTestResults": {
+      "type": "boolean",
+      "description": "Client received results from viral load test"
+    },
+    "dateViralLoadTestResultsReceivedByClient1": {
+      "type": "string",
+      "format": "date",
+      "description": "The date on which the client received results from a viral load test"
+    },
+    "reasonForArvDrugRegimenSubstitution": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE418.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE418"
+      },
+      "description": "Reason why a substitution was made to the antiretroviral (ARV) drug regimen"
+    },
+    "otherReasonForRegimenSubstitutionSpecify": {
+      "type": "string",
+      "description": "A substitution was made for another reason (specify)"
+    },
+    "switchToSecondLineArtRegimenRecommended": {
+      "type": "boolean",
+      "description": "A switch to second-line ART regimen is recommended"
+    },
+    "switchToThirdLineArtRegimenRecommended": {
+      "type": "boolean",
+      "description": "A switch to third-line ART regimen is recommended"
+    },
+    "regimenSwitchMade": {
+      "type": "boolean",
+      "description": "Provider has made a regimen switch"
+    },
+    "reasonForRegimenSwitch": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE430.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE430"
+      },
+      "description": "Reason why a switch to a second- or third-line regimen was made"
+    },
+    "otherReasonForRegimenSwitch": {
+      "type": "string",
+      "description": "A switch was made to the regimen for another reason (specify)"
+    },
+    "regimenSubstitutionRecommended": {
+      "type": "boolean",
+      "description": "A drug substitution is recommended"
+    },
+    "doseAdjustmentRecommended": {
+      "type": "boolean",
+      "description": "A dosage change is recommended"
+    },
+    "regimenSubstitutionMade": {
+      "type": "boolean",
+      "description": "Provider has made a regimen substitution"
+    },
+    "coTrimoxazoleProphylaxisStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date co-trimoxazole prophylaxis prescribed to client"
+    },
+    "coTrimoxazoleProphylaxisCompletionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Completion date of co-trimoxazole prophylaxis prescribed to client"
+    },
+    "coTrimoxazoleProphylaxisDosage": {
+      "type": "integer",
+      "description": "Dose of co-trimoxazole prophylaxis prescribed to client"
+    },
+    "coTrimoxazoleProphylaxisNumberOfDaysPrescribed": {
+      "type": "integer",
+      "description": "Number of days of co-trimoxazole prophylaxis prescribed to client"
+    },
+    "suspicionOfTreatmentFailureOrInterruption": {
+      "type": "boolean",
+      "description": "Client has been on ART, but has stopped taking it or a treatment failure is suspected"
+    },
+    "artRegimenPrescribed": {
+      "$ref": "./ValueSet-HIV.D.DE444.schema.json",
+      "description": "INCLUDE VALUE SETS OF REGIMENS"
+    },
+    "antiretroviralToxicity": {
+      "type": "boolean",
+      "description": "Client is experiencing antiretroviral drug (ARV) toxicity"
+    },
+    "coinfectionStatusAtArtStart": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE446.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE446"
+      },
+      "description": "Clients status of coinfections at the time when ART was initiated"
+    },
+    "pregnantAndBreastfeedingStatusAtArtStart": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE449.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE449"
+      },
+      "description": "ART status of women to prevent mother-to-child transmission"
+    },
+    "deliveryDateOfInfant": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of delivery/birth of infant if breastfeeding at ART start"
+    },
+    "serodiscordantPartnerAtArtStart": {
+      "type": "boolean",
+      "description": "Client living with HIV was in an ongoing sexual relationship with an HIV-negative partner when ART was started"
+    },
+    "regimenStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "The date on which the client started taking the current ART regimen"
+    },
+    "medicationsPrescribed": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE457.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE457"
+      },
+      "description": "Name or regimen code of all other medications prescribed during the visit"
+    },
+    "dateMedicationsPrescribed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the medications were prescribed"
+    },
+    "doseOfMedicationsPrescribed": {
+      "type": "integer",
+      "description": "Number of doses (quantity taken at a single point in time) of drugs prescribed/dispensed"
+    },
+    "numberOfDaysMedicationsPrescribed": {
+      "type": "integer",
+      "description": "Number of days supply of each medication or regimen prescribed during the visit"
+    },
+    "medicationsDispensed": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE461.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE461"
+      },
+      "description": "Any other medications that were dispensed to client, including preventive treatment"
+    },
+    "numberOfDaysOfMedicationsDispensed": {
+      "type": "integer",
+      "description": "Number of days supply of each medication or regimen dispensed during the visit"
+    },
+    "dosage": {
+      "type": "integer",
+      "description": "Prescribed dosage of the medication"
+    },
+    "frequency": {
+      "type": "integer",
+      "description": "Prescribed frequency for taking the medication"
+    },
+    "adherenceCounsellingProvided": {
+      "type": "boolean",
+      "description": "Counselling was carried out during visit"
+    },
+    "typeOfTreatmentLimitingToxicity": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE466.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE466"
+      },
+      "description": "Type of treatment-limiting toxicity experienced by client. Treatment-limiting toxicity is defined as a serious adverse drug reaction that results in drug discontinuation or substitution. In addition, any reaction that leads to treatment interruption or requires changing the drug or regimen because of an adverse drug reaction is also considered a serious adverse drug reaction."
+    },
+    "unexpectedAdverseDrugReactionSpecify": {
+      "type": "string",
+      "description": "Specify the type of unexpected adverse drug reaction the client experienced"
+    },
+    "datesOfSubstitutionWithinFirstLineRegimen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which ARV drug regimen (one or more drugs) for client was changed within the first-line regimen (substitution)"
+    },
+    "reasonsForSubstitutionWithinFirstLineRegimen": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE482.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE482"
+      },
+      "description": "Reason(s) why one ore more drugs in client's first-line ARV drug regimen was changed (substituted)"
+    },
+    "newAntiretroviralRegimenAfterSubstitutionWithinFirstLineRegimen": {
+      "$ref": "./ValueSet-HIV.D.DE483.schema.json",
+      "description": "New antiretroviral (ARV) drugs after client changed regimen within the first-line regimen"
+    },
+    "dateOfSwitchToSecondLineRegimen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client was changed from a first-line to second-line ARV drug regimen (switch)"
+    },
+    "newRegimenAfterSwitchToSecondLineRegimen": {
+      "$ref": "./ValueSet-HIV.D.DE485.schema.json",
+      "description": "New ART regimen after switch to second-line ART regimen"
+    },
+    "reasonForSwitchToSecondLineRegimen": {
+      "$ref": "./ValueSet-HIV.D.DE486.schema.json",
+      "description": "Reason why client was switched from first- to second-line ARV drug regimen (see 'Reason for regimen switch' for levels)"
+    },
+    "datesOfSubstitutionWithinSecondLineRegimen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which ARV drug regimen for client was changed within the second-line regimen (substitution)"
+    },
+    "reasonsForSubstitutionWithinSecondLineRegimen": {
+      "$ref": "./ValueSet-HIV.D.DE488.schema.json",
+      "description": "Reason(s) why client changed drug regimen (within the second-line)"
+    },
+    "newRegimensAfterSubstitutionWithinSecondLineRegimen": {
+      "$ref": "./ValueSet-HIV.D.DE489.schema.json",
+      "description": "New ARV drugs after client changed regimen within the second- line regimen"
+    },
+    "dateOfSwitchToThirdLineRegimen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client was changed from a second- to third-line ARV drug regimen (switch)"
+    },
+    "newRegimenAfterSwitchToThirdLineRegimen": {
+      "$ref": "./ValueSet-HIV.D.DE491.schema.json",
+      "description": "New ART regimen after switch to third-line ART regimen"
+    },
+    "reasonForSwitchToThirdLineRegimen": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE492.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE492"
+      },
+      "description": "Reason why client was switched from second- to third-line ARV drug regimen (see 'Reason for regimen switch' for levels)"
+    },
+    "datesOfSubstitutionWithinThirdLineRegimen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which ARV drug regimen for client was changed within the third-line (substitution)"
+    },
+    "reasonsForSubstitutionWithinThirdLineRegimen": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE494.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE494"
+      },
+      "description": "Reason(s) why client changed drug regimen (within the third-line)"
+    },
+    "newRegimensAfterSubstitutionWithinThirdLineRegimen": {
+      "$ref": "./ValueSet-HIV.D.DE495.schema.json",
+      "description": "New ARV drugs after client changed regimen within the third-line regimen"
+    },
+    "enhancedAdherenceCounsellingProvided": {
+      "type": "boolean",
+      "description": "Enhanced adherence counselling was provided to the client during the visit"
+    },
+    "firstEnhancedAdherenceCounsellingSessionCompleted": {
+      "type": "boolean",
+      "description": "A first enhanced adherence counselling was provided to the client during the visit"
+    },
+    "dateOfFirstEnhancedAdherenceCounsellingSessionCompleted": {
+      "type": "string",
+      "format": "date",
+      "description": "The date on which the first enhanced adherence counselling was provided to the client"
+    },
+    "secondEnhancedAdherenceCounsellingSessionCompleted": {
+      "type": "boolean",
+      "description": "A second enhanced adherence counselling was provided to the client during the visit"
+    },
+    "dateOfSecondEnhancedAdherenceCounsellingSessionCompleted": {
+      "type": "string",
+      "format": "date",
+      "description": "The date on which the second enhanced adherence counselling was provided to the client"
+    },
+    "thirdEnhancedAdherenceCounsellingSessionCompleted": {
+      "type": "boolean",
+      "description": "A third enhanced adherence counselling was provided to the client during the visit"
+    },
+    "dateOfThirdEnhancedAdherenceCounsellingSessionCompleted": {
+      "type": "string",
+      "format": "date",
+      "description": "The date on which the third enhanced adherence counselling was provided to the client"
+    },
+    "nameOfTreatmentSupporter": {
+      "type": "string",
+      "description": "Full name of person providing support to client for adherence, care, treatment and other needs (e.g. ARV pick-up if ill)"
+    },
+    "addressOfTreatmentSupporter": {
+      "type": "string",
+      "description": "Full address or description of home of treatment supporter"
+    },
+    "telephoneNumberOfTreatmentSupporter": {
+      "type": "object",
+      "description": "Telephone number if available, or else telephone number of neighbour/friend"
+    },
+    "homeBasedCareProvider": {
+      "type": "string",
+      "description": "Name of individual or organization that provides home-based care to client"
+    },
+    "counsellingProvidedOnDiagnoses": {
+      "type": "boolean",
+      "description": "Counselling provided on diagnoses"
+    },
+    "hepatitisBPositiveCounsellingConducted": {
+      "type": "boolean",
+      "description": "Whether counselling was provided to a client who has been diagnosed with hepatitis B"
+    },
+    "hepatitisCPositiveCounsellingConducted": {
+      "type": "boolean",
+      "description": "Whether counselling was provided to a client who has been diagnosed with hepatitis C"
+    },
+    "syphilisCounsellingAndTreatment": {
+      "type": "boolean",
+      "description": "Whether counselling and treatment was provided to a client who has been diagnosed with syphilis"
+    },
+    "syphilisCounsellingTreatmentAndFurtherTesting": {
+      "type": "boolean",
+      "description": "Whether counselling and treatment was provided to a client who has been diagnosed with syphilis. Additional testing (RPR test) recommended."
+    },
+    "acceptedPartnerServices": {
+      "type": "boolean",
+      "description": "Client accepted offer for partner services"
+    },
+    "hivTestingForPartnersAndBiologicalChildren": {
+      "type": "boolean",
+      "description": "Offer voluntary testing for all partners and biological children of positive cases (includes partner services and index case testing), as well as partners and social contacts of people from key populations, where appropriate"
+    },
+    "hivStatusOfFamilyMember": {
+      "$ref": "./ValueSet-HIV.D.DE514.schema.json",
+      "description": "HIV status of each family member at time of patient's enrolment, including partner (for mothers)"
+    },
+    "uniqueIdOfFamilyMember": {
+      "type": "object",
+      "description": "Unique ID number of each family member if enrolled in HIV care according to national guidelines (see unique ID number)"
+    },
+    "dateOfDeathOfFamilyMember": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of death for each family member as appropriate"
+    },
+    "offeredVoluntaryPartnerServices": {
+      "type": "boolean",
+      "description": "Whether the client was offered voluntary partner services or family services"
+    },
+    "providedSupportForDisclosureAndPartnerServices": {
+      "type": "boolean",
+      "description": "Offer or refer for support for disclosure and partner services"
+    },
+    "otherSupportServices": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE519.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE519"
+      },
+      "description": "Offer or refer for other support services"
+    },
+    "dateTimeOfFollowUpAppointment": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date the client is to return for monitoring, re-supply or any other reason"
+    },
+    "typeOfFollowUpAppointment": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE525.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE525"
+      },
+      "description": "Whether the visit will be clinical only, ARV drug pick-up or other. Client may have multiple follow-ups scheduled."
+    },
+    "otherTypeOfFollowUpAppointment": {
+      "type": "string",
+      "description": "Other reason for the follow-up appointment (specify)"
+    },
+    "followUpTestRecommendedDate": {
+      "type": "string",
+      "format": "date",
+      "description": "A test or screening recommended for the client's care plan at a future date"
+    },
+    "reasonBloodPressureReadingNotDone": {
+      "$ref": "./ValueSet-HIV.D.DE532.schema.json",
+      "description": "Reason why test was not performed"
+    },
+    "otherReasonBloodPressureReadingNotDone": {
+      "type": "string",
+      "description": "Other reason blood pressure can not be taken (specify)"
+    },
+    "currentMedications": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE537.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE537"
+      },
+      "minItems": 1,
+      "description": "List of all of the medications the client is currently taking"
+    },
+    "otherMedicationsSpecify": {
+      "type": "string",
+      "description": "Other medications or supplements that are not listed above (specify)"
+    },
+    "allergies": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE560.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE560"
+      },
+      "minItems": 1,
+      "description": "Does the client have any allergies?"
+    },
+    "otherAllergiesSpecify": {
+      "type": "string",
+      "description": "Client has other allergies not listed here (specify)"
+    },
+    "familyPlanningMethodUsed": {
+      "$ref": "./ValueSet-HIV.D.DE569.schema.json",
+      "description": "Method the client reports currently using at intake"
+    },
+    "medicationStatus": {
+      "$ref": "./ValueSet-HIV.D.DE593.schema.json",
+      "description": "Current state of the client's taking of the medication"
+    },
+    "hepatitisBNegativeCounsellingConducted": {
+      "type": "boolean",
+      "description": "Hepatitis B negative counselling conducted"
+    },
+    "vaccineBrand": {
+      "$ref": "./ValueSet-HIV.D.DE603.schema.json",
+      "description": "The brand or trade name used to refer to the vaccine received"
+    },
+    "vaccineType": {
+      "$ref": "./ValueSet-HIV.D.DE604.schema.json",
+      "description": "Type of vaccine received (such as IPV, OPV)"
+    },
+    "dateAndTimeOfVaccination": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Represents the visit/encounter date, which is the date and time when the vaccine was administered to the client"
+    },
+    "vaccinationLocation": {
+      "$ref": "./ValueSet-HIV.D.DE606.schema.json",
+      "description": "The service delivery location where the vaccine adminstration occurred"
+    },
+    "doseNumber": {
+      "type": "integer",
+      "description": "Vaccine dose number within series"
+    },
+    "doseQuantity": {
+      "type": "integer",
+      "description": "The quantity of vaccine product that was administered"
+    },
+    "totalDosesInSeries": {
+      "type": "integer",
+      "description": "The recommended number of vaccine doses for immunity according to national protocol"
+    },
+    "diseaseTargeted": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE610.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE610"
+      },
+      "description": "Vaccine preventable disease being targeted by vaccine administered"
+    },
+    "reasonImmunizationWasNotProvided": {
+      "$ref": "./ValueSet-HIV.D.DE636.schema.json",
+      "description": "Reason the vaccine dose was not given"
+    },
+    "otherReasonImmunizationNotProvidedSpecify": {
+      "type": "string",
+      "description": "Other reason why the immunization was not provided (specify)"
+    },
+    "malariaProphylaxis": {
+      "type": "boolean",
+      "description": "Whether malaria prophylaxis was given"
+    },
+    "iptpSpDoseNumberProvided": {
+      "type": "integer",
+      "description": "IPTp-SP dose number that was provided"
+    },
+    "dateIptpSpDoseProvided": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the IPTp-SP dose was provided"
+    },
+    "reasonMalariaProphylaxisNotProvided": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE646.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE646"
+      },
+      "description": "Reason why the treatment was not given"
+    },
+    "otherReasonNotProvidedSpecify": {
+      "type": "string",
+      "description": "Other reason why the prophylaxis was not provided"
+    },
+    "moreThan28DaysSinceLastMissedAppointment": {
+      "type": "boolean",
+      "description": "More than 28 days have passed since client's last missed appointment"
+    },
+    "aidsRelatedDeath": {
+      "type": "boolean",
+      "description": "Death of client was AIDS-related"
+    },
+    "dateOfFirstAidsDiagnosis": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of client's first AIDS diagnosis"
+    },
+    "ageAtFinalHpvVaccinationDoseReceived": {
+      "type": "integer",
+      "description": "Client's age at date received final HPV vaccination dose"
+    },
+    "dateOfCervicalCancerScreeningTest": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of cervical cancer screening test"
+    },
+    "lifetimeScreeningTestNumber": {
+      "type": "integer",
+      "description": "Client's lifetime number of screenings for cervical cancer"
+    },
+    "cervicalCancerPrimaryScreeningTestType": {
+      "$ref": "./ValueSet-HIV.D.DE658.schema.json",
+      "description": "Type of cervical cancer screening test used in primary screening"
+    },
+    "otherCervicalCancerPrimaryScreeningTestType": {
+      "type": "string",
+      "description": "Screened for cervical cancer using other method (specify)"
+    },
+    "hpvDnaCervicalCancerScreeningTestResult": {
+      "$ref": "./ValueSet-HIV.D.DE664.schema.json",
+      "description": "HPV-DNA cervical cancer screening test result"
+    },
+    "viaCervicalCancerScreeningTestResult": {
+      "$ref": "./ValueSet-HIV.D.DE668.schema.json",
+      "description": "Screening test result for VIA"
+    },
+    "cervicalCytologyScreeningTestResult": {
+      "$ref": "./ValueSet-HIV.D.DE673.schema.json",
+      "description": "Screening result for cervical cytology"
+    },
+    "cervicalCancerTriageTestDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of triage test for cervical cancer"
+    },
+    "cervicalCancerTriageTestType": {
+      "$ref": "./ValueSet-HIV.D.DE681.schema.json",
+      "description": "Type of triage test for cervical cancer"
+    },
+    "otherCervicalCancerTriageTestType": {
+      "type": "string",
+      "description": "Triage test for cervical cancer using another test (specify)"
+    },
+    "hpv1618TestResult": {
+      "$ref": "./ValueSet-HIV.D.DE688.schema.json",
+      "description": "Test result from HPV16/18 test"
+    },
+    "cervicalCancerColposcopyResult": {
+      "$ref": "./ValueSet-HIV.D.DE691.schema.json",
+      "description": "Result of cervical cancer colposcopy"
+    },
+    "cervicalCancerHistopathologyResult": {
+      "$ref": "./ValueSet-HIV.D.DE697.schema.json",
+      "description": "Result of cervical cancer histopathology"
+    },
+    "dateOfAdditionalCervicalCancerTriageTest": {
+      "type": "string",
+      "description": "Date of tertiary cervical cancer screening test"
+    },
+    "additionalCervicalCancerTriageTestTypeSpecify": {
+      "type": "string",
+      "description": "Additional cervical cancer triage test type (specify)"
+    },
+    "additionalCervicalCancerTriageTestResultSpecify": {
+      "type": "string",
+      "description": "Additional cervical cancer triage test result (specify)"
+    },
+    "dateOfDiagnosisOfCervicalPrecancerLesionsOrInvasiveCervical": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of diagnosis of cervical precancer lesions or invasive cervical cancer"
+    },
+    "cervicalCancerScreeningOutcome": {
+      "$ref": "./ValueSet-HIV.D.DE706.schema.json",
+      "description": "Client's screening outcome for cervical cancer"
+    },
+    "cervicalCancerDiagnosis": {
+      "$ref": "./ValueSet-HIV.D.DE709.schema.json",
+      "description": "Type of cervical cancer diagnosis"
+    },
+    "cervicalCancerStageAtDiagnosis": {
+      "$ref": "./ValueSet-HIV.D.DE712.schema.json",
+      "description": "Cervical cancer stage at diagnosis of cervical cancer"
+    },
+    "dateOfTreatmentForCervicalPrecancerLesions": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of treatment for cervical precancer lesions"
+    },
+    "treatmentMethodForCervicalPrecancerLesions": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE719.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE719"
+      },
+      "description": "Treatment method for cervical precancer lesions"
+    },
+    "otherTreatmentMethodForCervicalPrecancerLesions": {
+      "type": "string",
+      "description": "Treatment for cervical precancer lesions is not listed (specify)"
+    },
+    "dateOfFollowUpForTreatmentForCervicalPrecancerLesions": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of follow-up for treatment for cervical precancer lesions"
+    },
+    "dateOfStartOfInvasiveCancerTreatment": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of start of invasive cancer treatment"
+    },
+    "invasiveCervicalCancerTreatmentEpisode": {
+      "type": "integer",
+      "description": "Client's lifetime number of treatments for invasive cervical cancer"
+    },
+    "invasiveCervicalCancerTreatmentMethod": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE731.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE731"
+      },
+      "minItems": 1,
+      "description": "Invasive cervical cancer treatment method"
+    },
+    "otherInvasiveCervicalCancerTreatmentMethod": {
+      "type": "string",
+      "description": "Invasive cervical cancer treatment method is a not in list (specify)"
+    },
+    "treatmentOutcome": {
+      "type": "string",
+      "description": "Treatment outcome from cervical pre-cancerous lesion treatment or invasive cancer treatment (specify)"
+    },
+    "secondaryOtherCancersDiagnosed": {
+      "type": "string",
+      "description": "Secondary and other cancers that client is diagnosed with (specify)"
+    },
+    "cancersAtOtherSitesHpvAndNonHpvRelated": {
+      "type": "string",
+      "description": "Cancers at other sites that client has (specify)"
+    },
+    "dateOfDeath": {
+      "type": "string",
+      "format": "date-time",
+      "description": "If deceased, the date that the client died"
+    },
+    "cervicalCancerScreeningIntervalAmongstWlhiv": {
+      "type": "integer",
+      "description": "Country-specific interval between cancer screenings amongst women living with HIV (typically 3 or 5 years)"
+    },
+    "entryPointForFacilityLevelTesting": {
+      "$ref": "./ValueSet-HIV.D.DE746.schema.json",
+      "description": "Specific point where testing is happening at a facility"
+    },
+    "offerOtherClinicalServices": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE753.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE753"
+      },
+      "description": "Other clinical services offered or referrals given to the client"
+    },
+    "eligibleForDsdArt": {
+      "type": "boolean",
+      "description": "Client is eligible for differentiated service delivery (DSD) for ART"
+    },
+    "dateDsdArtEligibilityAssessed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client was assessed for eligibility for differentiated service delivery (DSD) for ART"
+    },
+    "currentlyEnrolledInDsdArtModel": {
+      "type": "boolean",
+      "description": "Client currently enrolled in differentiated service delivery (DSD) ART model"
+    },
+    "dsdArtStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client started on differentiated service delivery (DSD) for ART"
+    },
+    "dsdArtModels": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE764.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE764"
+      },
+      "description": "Type of DSD ART model client is enrolled in (country-specific)"
+    },
+    "otherDsdArtModelSpecify": {
+      "type": "string",
+      "description": "Client is enrolled in another DSD ART model (specify)"
+    },
+    "partnerTestingOffered": {
+      "type": "boolean",
+      "description": "Whether client was offered partner testing"
+    },
+    "partnerTestingAccepted": {
+      "type": "boolean",
+      "description": "Whether partner testing was accepted"
+    },
+    "datePartnerContactedForIndexTesting": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which client's partner was contacted for index testing"
+    },
+    "datePartnerTestedForHiv": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which client's partner was tested for HIV"
+    },
+    "dateOfNextScheduledFollowUpAppointment": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of client's next scheduled follow-up appointment"
+    },
+    "typeOfNextFollowUpAppointment": {
+      "type": "string",
+      "description": "Type of client's next follow-up appointment (specify)"
+    },
+    "syndromeStiDiagnosed": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE778.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE778"
+      },
+      "description": "Syndrome or STI for which client is diagnosed"
+    },
+    "otherSyndromeStiDiagnosed": {
+      "type": "string",
+      "description": "Other syndrome/STI diagnosed (specify)"
+    },
+    "anyStiSyndromeDiagnosed": {
+      "type": "boolean",
+      "description": "Was the client diagnosed with any of the five STI syndromes during this visit?"
+    },
+    "dateOfStiTest": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date on which the STI test was conducted"
+    },
+    "stiTestedFor": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE789.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE789"
+      },
+      "description": "STI for which the client was tested"
+    },
+    "otherStiTestedFor": {
+      "type": "string",
+      "description": "Client tested for other STI (specify)"
+    },
+    "syphilisTestDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of syphilis test"
+    },
+    "syphilisTestResult": {
+      "$ref": "./ValueSet-HIV.D.DE802.schema.json",
+      "description": "Result from syphilis test"
+    },
+    "syphilisTreatmentStartDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of initiation of syphilis treatment"
+    },
+    "gonorrhoeaTestDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of Gonorrhoea test"
+    },
+    "gonorrhoeaTestResult": {
+      "$ref": "./ValueSet-HIV.D.DE808.schema.json",
+      "description": "Result from Gonorrhoea test"
+    },
+    "gonorrhoeaTreatmentStartDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of initiation of Gonorrhoea treatment"
+    },
+    "typeOfSpecimen": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE813.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE813"
+      },
+      "description": "Type of specimen to be collected"
+    },
+    "otherTypeOfSpecimenSpecify": {
+      "type": "string",
+      "description": "Other specimen type to be collected (specify)"
+    },
+    "syphilisTestType": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE821.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE821"
+      },
+      "description": "Type of diagnostic test used for syphilis (Treponema pallidum)"
+    },
+    "otherSyphilisTestTypeSpecify": {
+      "type": "string",
+      "description": "Other test used (specify)"
+    },
+    "neisseriaGonorrhoeaeTestType": {
+      "$ref": "./ValueSet-HIV.D.DE828.schema.json",
+      "description": "Type of diagnostic test used for Neisseria gonorrhoeae"
+    },
+    "otherNeisseriaGonorrhoeaeTestType": {
+      "type": "string",
+      "description": "Other type of test used (specify)"
+    },
+    "pocTestForNeisseriaGonorrhoeaeSpecify": {
+      "type": "string",
+      "description": "Point-of-care (POC) test used for Neisseria gonorrhoeae (specify)"
+    },
+    "chlamydiaTrachomatisTestType": {
+      "$ref": "./ValueSet-HIV.D.DE836.schema.json",
+      "description": "Type of diagnostic test used for Chlamydia trachomatis"
+    },
+    "otherTestForChlamydiaSpecify": {
+      "type": "string",
+      "description": "Other type of test used for Chlaymdia (specify)"
+    },
+    "pocTestTypeForChlamydiaTestSpecify": {
+      "type": "string",
+      "description": "Point-of-care (POC) test used for Chlamydia (specify)"
+    },
+    "trichomonasVaginalisTestType": {
+      "$ref": "./ValueSet-HIV.D.DE845.schema.json",
+      "description": "Type of diagnostic test used for Trichomonas vaginalis"
+    },
+    "otherTrichomonasVaginalisTestType": {
+      "type": "string",
+      "description": "Other type of test used (specify)"
+    },
+    "pocTestTypeForTrichomonasVaginalisTestSpecify": {
+      "type": "string",
+      "description": "Point-of-care (POC) test used (specify)"
+    },
+    "herpesSimplexVirusHsvTestType": {
+      "$ref": "./ValueSet-HIV.D.DE853.schema.json",
+      "description": "Type of diagnostic test used for Herpes simplex virus (HSV)"
+    },
+    "otherHerpesSimplexVirusHsvTestType": {
+      "type": "string",
+      "description": "Other type of test used for Herpes simplex virus (HSV) test (specify)"
+    },
+    "mycoplasmaGenitaliumTestType": {
+      "$ref": "./ValueSet-HIV.D.DE858.schema.json",
+      "description": "Type of diagnostic test used for Mycoplasma genitalium"
+    },
+    "otherMycoplasmaGenitaliumTestType": {
+      "type": "string",
+      "description": "Other type of test used for Mycoplasma genitalium test (specify)"
+    },
+    "testTypeForOtherStiTestedForSpecify": {
+      "type": "string",
+      "description": "Test type used for the other specified STI"
+    },
+    "stiTestResult": {
+      "$ref": "./ValueSet-HIV.D.DE864.schema.json",
+      "description": "Result from STI test"
+    },
+    "dateOfStiConfirmatoryTest": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of STI confirmatory test"
+    },
+    "confirmatorySyphilisTestType": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE869.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE869"
+      },
+      "description": "Type of test ued for confirmatory syphilis test"
+    },
+    "otherConfirmatorySyphilisTestType": {
+      "type": "string",
+      "description": "Other test used for confirmatory syphilis test (specify)"
+    },
+    "confirmatoryTestTypeForOtherStiSpecify": {
+      "type": "string",
+      "description": "Confirmatory test type for other STI"
+    },
+    "confirmatoryStiTestResult": {
+      "$ref": "./ValueSet-HIV.D.DE877.schema.json",
+      "description": "Result from confirmatory STI test"
+    },
+    "dateStiTreatmentPrescribed": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date STI treatment was prescribed to the client"
+    },
+    "dateStiTreatmentDispensed": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date STI treatment dispensed to the client"
+    },
+    "stiTreatmentDispensedSpecify": {
+      "type": "string",
+      "description": "STI treatment dispensed to the client"
+    },
+    "midUpperArmCircumferenceMuac": {
+      "type": "integer",
+      "description": "Client's mid-upper arm circumference (MUAC)"
+    },
+    "dateOfStartOfFluconazoleProphylaxis": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of client's start of fluconazole prophylaxis"
+    },
+    "fluconazoleProphylaxis": {
+      "type": "boolean",
+      "description": "Client provided with fluconazole prophylaxis"
+    },
+    "dateStartedCryptococcalMeningitisTreatmentInductionRegimen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client started cryptococcal meningitis treatment induction regimen"
+    },
+    "dateCompletedCryptococcalMeningitisTreatmentInductionRegimen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client completed cryptococcal meningitis treatment induction regimen"
+    },
+    "dateStartedCryptococcalMeningitisTreatmentMaintenanceRegimen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client started cryptococcal meningitis treatment maintenance regimen"
+    },
+    "dateCompletedCryptococcalMeningitisTreatmentMaintenanceRegimen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client completed cryptococcal meningitis treatment maintenance regimen"
+    },
+    "dateStartedCryptococcalMeningitisTreatmentConsolidationRegimen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client started cryptococcal meningitis treatment consolidation regimen"
+    },
+    "dateCompletedCryptococcalMeningitisTreatmentConsolidationRegimen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date client completed cryptococcal meningitis treatment consolidation regimen"
+    },
+    "stagingOfLiverDisease": {
+      "$ref": "./ValueSet-HIV.D.DE893.schema.json",
+      "description": "Staging of liver disease in client"
+    },
+    "advancedHivDisease": {
+      "type": "boolean",
+      "description": "Client has Advanced HIV disease (AHD)"
+    },
+    "whoFunctionalStatus": {
+      "$ref": "./ValueSet-HIV.D.DE897.schema.json",
+      "description": "Functional status of people with advanced HIV disease"
+    },
+    "tailoredAdherenceCounsellingForAdvancedHivDisease": {
+      "type": "boolean",
+      "description": "Client provided with tailored adherence counselling for advanced HIV disease"
+    },
+    "datesOfTracingInterventions": {
+      "type": "string",
+      "format": "date",
+      "description": "Date tracing interventions to support reengagement into HIV care conducted"
+    },
+    "medicationDrug": {
+      "type": "array",
+      "items": {
+        "$ref": "./ValueSet-HIV.D.DE903.schema.json",
+        "description": "Coding-shaped {system, code} object from ValueSet HIV.D.DE903"
+      },
+      "description": "Current or considered medication/drug, for the purpose of determining drug interactions"
+    },
+    "otherMedicationDrug": {
+      "type": "string",
+      "description": "Other medication currently being taken by, or considered for, client (specify)"
+    },
+    "medicationChangeRecommended": {
+      "type": "boolean",
+      "description": "A medication change is recommended for the client based upon current or considered medications"
+    }
+  },
+  "required": [
+    "resourceType",
+    "reasonForVisit",
+    "scheduledVisit",
+    "bodyWeight",
+    "onArt",
+    "preventionServicesOfferedAndReferrals",
+    "sexualAndReproductiveHealthIntegratedServices",
+    "hepatitisBTestRequired",
+    "hepatitisCTestRecommended",
+    "syphilisTestRequired",
+    "hepatitisCTestOrdered",
+    "syphilisTestOrdered",
+    "currentMedications",
+    "allergies",
+    "reasonImmunizationWasNotProvided",
+    "malariaProphylaxis",
+    "iptpSpDoseNumberProvided",
+    "invasiveCervicalCancerTreatmentMethod",
+    "cervicalCancerScreeningIntervalAmongstWlhiv"
+  ],
+  "allOf": [
+    {
+      "$ref": "./StructureDefinition-FHIRSchemaBase.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "resourceDefinition": {
+          "type": "string",
+          "format": "uri",
+          "const": "http://smart.who.int/hiv/StructureDefinition/HIVDCareTreatment"
+        },
+        "fhir:parent": {
+          "type": "string",
+          "const": "http://hl7.org/fhir/StructureDefinition/Base"
+        },
+        "jsonld:valuesets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "const": [
+            "HIV.D.DE1",
+            "HIV.D.DE128",
+            "HIV.D.DE146",
+            "HIV.D.DE152",
+            "HIV.D.DE156",
+            "HIV.D.DE162",
+            "HIV.D.DE168",
+            "HIV.D.DE17",
+            "HIV.D.DE170",
+            "HIV.D.DE177",
+            "HIV.D.DE179",
+            "HIV.D.DE182",
+            "HIV.D.DE186",
+            "HIV.D.DE197",
+            "HIV.D.DE217",
+            "HIV.D.DE225",
+            "HIV.D.DE229",
+            "HIV.D.DE247",
+            "HIV.D.DE259",
+            "HIV.D.DE289",
+            "HIV.D.DE358",
+            "HIV.D.DE370",
+            "HIV.D.DE383",
+            "HIV.D.DE391",
+            "HIV.D.DE399",
+            "HIV.D.DE418",
+            "HIV.D.DE43",
+            "HIV.D.DE430",
+            "HIV.D.DE444",
+            "HIV.D.DE446",
+            "HIV.D.DE449",
+            "HIV.D.DE457",
+            "HIV.D.DE461",
+            "HIV.D.DE466",
+            "HIV.D.DE482",
+            "HIV.D.DE483",
+            "HIV.D.DE485",
+            "HIV.D.DE486",
+            "HIV.D.DE488",
+            "HIV.D.DE489",
+            "HIV.D.DE491",
+            "HIV.D.DE492",
+            "HIV.D.DE494",
+            "HIV.D.DE495",
+            "HIV.D.DE514",
+            "HIV.D.DE519",
+            "HIV.D.DE52",
+            "HIV.D.DE525",
+            "HIV.D.DE532",
+            "HIV.D.DE537",
+            "HIV.D.DE55",
+            "HIV.D.DE56",
+            "HIV.D.DE560",
+            "HIV.D.DE569",
+            "HIV.D.DE593",
+            "HIV.D.DE603",
+            "HIV.D.DE604",
+            "HIV.D.DE606",
+            "HIV.D.DE610",
+            "HIV.D.DE63",
+            "HIV.D.DE636",
+            "HIV.D.DE64",
+            "HIV.D.DE646",
+            "HIV.D.DE65",
+            "HIV.D.DE658",
+            "HIV.D.DE664",
+            "HIV.D.DE668",
+            "HIV.D.DE673",
+            "HIV.D.DE681",
+            "HIV.D.DE688",
+            "HIV.D.DE691",
+            "HIV.D.DE697",
+            "HIV.D.DE706",
+            "HIV.D.DE709",
+            "HIV.D.DE712",
+            "HIV.D.DE719",
+            "HIV.D.DE731",
+            "HIV.D.DE74",
+            "HIV.D.DE746",
+            "HIV.D.DE75",
+            "HIV.D.DE753",
+            "HIV.D.DE764",
+            "HIV.D.DE77",
+            "HIV.D.DE778",
+            "HIV.D.DE78",
+            "HIV.D.DE789",
+            "HIV.D.DE79",
+            "HIV.D.DE80",
+            "HIV.D.DE802",
+            "HIV.D.DE808",
+            "HIV.D.DE81",
+            "HIV.D.DE813",
+            "HIV.D.DE82",
+            "HIV.D.DE821",
+            "HIV.D.DE828",
+            "HIV.D.DE83",
+            "HIV.D.DE836",
+            "HIV.D.DE845",
+            "HIV.D.DE853",
+            "HIV.D.DE858",
+            "HIV.D.DE864",
+            "HIV.D.DE869",
+            "HIV.D.DE877",
+            "HIV.D.DE893",
+            "HIV.D.DE897",
+            "HIV.D.DE90",
+            "HIV.D.DE903"
+          ]
+        },
+        "jsonld:contextTemplate": {
+          "type": "object",
+          "const": {
+            "@version": 1.1,
+            "fhir": "http://hl7.org/fhir/",
+            "HIV.D.DE719": "http://smart.who.int/base/ValueSet-HIV.D.DE719.jsonld",
+            "HIV.D.DE731": "http://smart.who.int/base/ValueSet-HIV.D.DE731.jsonld",
+            "HIV.D.DE845": "http://smart.who.int/base/ValueSet-HIV.D.DE845.jsonld",
+            "HIV.D.DE789": "http://smart.who.int/base/ValueSet-HIV.D.DE789.jsonld",
+            "HIV.D.DE186": "http://smart.who.int/base/ValueSet-HIV.D.DE186.jsonld",
+            "HIV.D.DE495": "http://smart.who.int/base/ValueSet-HIV.D.DE495.jsonld",
+            "HIV.D.DE746": "http://smart.who.int/base/ValueSet-HIV.D.DE746.jsonld",
+            "HIV.D.DE399": "http://smart.who.int/base/ValueSet-HIV.D.DE399.jsonld",
+            "HIV.D.DE82": "http://smart.who.int/base/ValueSet-HIV.D.DE82.jsonld",
+            "HIV.D.DE525": "http://smart.who.int/base/ValueSet-HIV.D.DE525.jsonld",
+            "HIV.D.DE673": "http://smart.who.int/base/ValueSet-HIV.D.DE673.jsonld",
+            "HIV.D.DE658": "http://smart.who.int/base/ValueSet-HIV.D.DE658.jsonld",
+            "HIV.D.DE869": "http://smart.who.int/base/ValueSet-HIV.D.DE869.jsonld",
+            "HIV.D.DE778": "http://smart.who.int/base/ValueSet-HIV.D.DE778.jsonld",
+            "HIV.D.DE391": "http://smart.who.int/base/ValueSet-HIV.D.DE391.jsonld",
+            "HIV.D.DE519": "http://smart.who.int/base/ValueSet-HIV.D.DE519.jsonld",
+            "HIV.D.DE688": "http://smart.who.int/base/ValueSet-HIV.D.DE688.jsonld",
+            "HIV.D.DE691": "http://smart.who.int/base/ValueSet-HIV.D.DE691.jsonld",
+            "HIV.D.DE485": "http://smart.who.int/base/ValueSet-HIV.D.DE485.jsonld",
+            "HIV.D.DE289": "http://smart.who.int/base/ValueSet-HIV.D.DE289.jsonld",
+            "HIV.D.DE668": "http://smart.who.int/base/ValueSet-HIV.D.DE668.jsonld",
+            "HIV.D.DE75": "http://smart.who.int/base/ValueSet-HIV.D.DE75.jsonld",
+            "HIV.D.DE897": "http://smart.who.int/base/ValueSet-HIV.D.DE897.jsonld",
+            "HIV.D.DE593": "http://smart.who.int/base/ValueSet-HIV.D.DE593.jsonld",
+            "HIV.D.DE177": "http://smart.who.int/base/ValueSet-HIV.D.DE177.jsonld",
+            "HIV.D.DE78": "http://smart.who.int/base/ValueSet-HIV.D.DE78.jsonld",
+            "HIV.D.DE532": "http://smart.who.int/base/ValueSet-HIV.D.DE532.jsonld",
+            "HIV.D.DE77": "http://smart.who.int/base/ValueSet-HIV.D.DE77.jsonld",
+            "HIV.D.DE418": "http://smart.who.int/base/ValueSet-HIV.D.DE418.jsonld",
+            "HIV.D.DE903": "http://smart.who.int/base/ValueSet-HIV.D.DE903.jsonld",
+            "HIV.D.DE488": "http://smart.who.int/base/ValueSet-HIV.D.DE488.jsonld",
+            "HIV.D.DE569": "http://smart.who.int/base/ValueSet-HIV.D.DE569.jsonld",
+            "HIV.D.DE514": "http://smart.who.int/base/ValueSet-HIV.D.DE514.jsonld",
+            "HIV.D.DE83": "http://smart.who.int/base/ValueSet-HIV.D.DE83.jsonld",
+            "HIV.D.DE709": "http://smart.who.int/base/ValueSet-HIV.D.DE709.jsonld",
+            "HIV.D.DE168": "http://smart.who.int/base/ValueSet-HIV.D.DE168.jsonld",
+            "HIV.D.DE494": "http://smart.who.int/base/ValueSet-HIV.D.DE494.jsonld",
+            "HIV.D.DE197": "http://smart.who.int/base/ValueSet-HIV.D.DE197.jsonld",
+            "HIV.D.DE156": "http://smart.who.int/base/ValueSet-HIV.D.DE156.jsonld",
+            "HIV.D.DE808": "http://smart.who.int/base/ValueSet-HIV.D.DE808.jsonld",
+            "HIV.D.DE170": "http://smart.who.int/base/ValueSet-HIV.D.DE170.jsonld",
+            "HIV.D.DE813": "http://smart.who.int/base/ValueSet-HIV.D.DE813.jsonld",
+            "HIV.D.DE43": "http://smart.who.int/base/ValueSet-HIV.D.DE43.jsonld",
+            "HIV.D.DE681": "http://smart.who.int/base/ValueSet-HIV.D.DE681.jsonld",
+            "HIV.D.DE17": "http://smart.who.int/base/ValueSet-HIV.D.DE17.jsonld",
+            "HIV.D.DE836": "http://smart.who.int/base/ValueSet-HIV.D.DE836.jsonld",
+            "HIV.D.DE162": "http://smart.who.int/base/ValueSet-HIV.D.DE162.jsonld",
+            "HIV.D.DE853": "http://smart.who.int/base/ValueSet-HIV.D.DE853.jsonld",
+            "HIV.D.DE217": "http://smart.who.int/base/ValueSet-HIV.D.DE217.jsonld",
+            "HIV.D.DE664": "http://smart.who.int/base/ValueSet-HIV.D.DE664.jsonld",
+            "HIV.D.DE466": "http://smart.who.int/base/ValueSet-HIV.D.DE466.jsonld",
+            "HIV.D.DE128": "http://smart.who.int/base/ValueSet-HIV.D.DE128.jsonld",
+            "HIV.D.DE753": "http://smart.who.int/base/ValueSet-HIV.D.DE753.jsonld",
+            "HIV.D.DE697": "http://smart.who.int/base/ValueSet-HIV.D.DE697.jsonld",
+            "HIV.D.DE81": "http://smart.who.int/base/ValueSet-HIV.D.DE81.jsonld",
+            "HIV.D.DE444": "http://smart.who.int/base/ValueSet-HIV.D.DE444.jsonld",
+            "HIV.D.DE90": "http://smart.who.int/base/ValueSet-HIV.D.DE90.jsonld",
+            "HIV.D.DE358": "http://smart.who.int/base/ValueSet-HIV.D.DE358.jsonld",
+            "HIV.D.DE491": "http://smart.who.int/base/ValueSet-HIV.D.DE491.jsonld",
+            "HIV.D.DE146": "http://smart.who.int/base/ValueSet-HIV.D.DE146.jsonld",
+            "HIV.D.DE489": "http://smart.who.int/base/ValueSet-HIV.D.DE489.jsonld",
+            "HIV.D.DE179": "http://smart.who.int/base/ValueSet-HIV.D.DE179.jsonld",
+            "HIV.D.DE457": "http://smart.who.int/base/ValueSet-HIV.D.DE457.jsonld",
+            "HIV.D.DE56": "http://smart.who.int/base/ValueSet-HIV.D.DE56.jsonld",
+            "HIV.D.DE383": "http://smart.who.int/base/ValueSet-HIV.D.DE383.jsonld",
+            "HIV.D.DE646": "http://smart.who.int/base/ValueSet-HIV.D.DE646.jsonld",
+            "HIV.D.DE52": "http://smart.who.int/base/ValueSet-HIV.D.DE52.jsonld",
+            "HIV.D.DE706": "http://smart.who.int/base/ValueSet-HIV.D.DE706.jsonld",
+            "HIV.D.DE182": "http://smart.who.int/base/ValueSet-HIV.D.DE182.jsonld",
+            "HIV.D.DE858": "http://smart.who.int/base/ValueSet-HIV.D.DE858.jsonld",
+            "HIV.D.DE430": "http://smart.who.int/base/ValueSet-HIV.D.DE430.jsonld",
+            "HIV.D.DE606": "http://smart.who.int/base/ValueSet-HIV.D.DE606.jsonld",
+            "HIV.D.DE63": "http://smart.who.int/base/ValueSet-HIV.D.DE63.jsonld",
+            "HIV.D.DE486": "http://smart.who.int/base/ValueSet-HIV.D.DE486.jsonld",
+            "HIV.D.DE64": "http://smart.who.int/base/ValueSet-HIV.D.DE64.jsonld",
+            "HIV.D.DE152": "http://smart.who.int/base/ValueSet-HIV.D.DE152.jsonld",
+            "HIV.D.DE492": "http://smart.who.int/base/ValueSet-HIV.D.DE492.jsonld",
+            "HIV.D.DE55": "http://smart.who.int/base/ValueSet-HIV.D.DE55.jsonld",
+            "HIV.D.DE828": "http://smart.who.int/base/ValueSet-HIV.D.DE828.jsonld",
+            "HIV.D.DE461": "http://smart.who.int/base/ValueSet-HIV.D.DE461.jsonld",
+            "HIV.D.DE483": "http://smart.who.int/base/ValueSet-HIV.D.DE483.jsonld",
+            "HIV.D.DE636": "http://smart.who.int/base/ValueSet-HIV.D.DE636.jsonld",
+            "HIV.D.DE712": "http://smart.who.int/base/ValueSet-HIV.D.DE712.jsonld",
+            "HIV.D.DE259": "http://smart.who.int/base/ValueSet-HIV.D.DE259.jsonld",
+            "HIV.D.DE247": "http://smart.who.int/base/ValueSet-HIV.D.DE247.jsonld",
+            "HIV.D.DE446": "http://smart.who.int/base/ValueSet-HIV.D.DE446.jsonld",
+            "HIV.D.DE560": "http://smart.who.int/base/ValueSet-HIV.D.DE560.jsonld",
+            "HIV.D.DE802": "http://smart.who.int/base/ValueSet-HIV.D.DE802.jsonld",
+            "HIV.D.DE449": "http://smart.who.int/base/ValueSet-HIV.D.DE449.jsonld",
+            "HIV.D.DE74": "http://smart.who.int/base/ValueSet-HIV.D.DE74.jsonld",
+            "HIV.D.DE80": "http://smart.who.int/base/ValueSet-HIV.D.DE80.jsonld",
+            "HIV.D.DE1": "http://smart.who.int/base/ValueSet-HIV.D.DE1.jsonld",
+            "HIV.D.DE604": "http://smart.who.int/base/ValueSet-HIV.D.DE604.jsonld",
+            "HIV.D.DE764": "http://smart.who.int/base/ValueSet-HIV.D.DE764.jsonld",
+            "HIV.D.DE229": "http://smart.who.int/base/ValueSet-HIV.D.DE229.jsonld",
+            "HIV.D.DE537": "http://smart.who.int/base/ValueSet-HIV.D.DE537.jsonld",
+            "HIV.D.DE603": "http://smart.who.int/base/ValueSet-HIV.D.DE603.jsonld",
+            "HIV.D.DE893": "http://smart.who.int/base/ValueSet-HIV.D.DE893.jsonld",
+            "HIV.D.DE482": "http://smart.who.int/base/ValueSet-HIV.D.DE482.jsonld",
+            "HIV.D.DE79": "http://smart.who.int/base/ValueSet-HIV.D.DE79.jsonld",
+            "HIV.D.DE821": "http://smart.who.int/base/ValueSet-HIV.D.DE821.jsonld",
+            "HIV.D.DE370": "http://smart.who.int/base/ValueSet-HIV.D.DE370.jsonld",
+            "HIV.D.DE864": "http://smart.who.int/base/ValueSet-HIV.D.DE864.jsonld",
+            "HIV.D.DE610": "http://smart.who.int/base/ValueSet-HIV.D.DE610.jsonld",
+            "HIV.D.DE65": "http://smart.who.int/base/ValueSet-HIV.D.DE65.jsonld",
+            "HIV.D.DE877": "http://smart.who.int/base/ValueSet-HIV.D.DE877.jsonld",
+            "HIV.D.DE225": "http://smart.who.int/base/ValueSet-HIV.D.DE225.jsonld"
+          }
+        }
+      }
+    }
+  ]
+}

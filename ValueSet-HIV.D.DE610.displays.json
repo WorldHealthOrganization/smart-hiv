@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE610.displays.json",
+  "title": "Disease targeted ValueSet Display Values",
+  "description": "Display values for Disease targeted ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.D.DE611": {
+      "en": "Hepatitis A"
+    },
+    "HIV.D.DE612": {
+      "en": "Hepatitis B"
+    },
+    "HIV.D.DE613": {
+      "en": "Tetanus"
+    },
+    "HIV.D.DE614": {
+      "en": "COVID-19"
+    },
+    "HIV.D.DE615": {
+      "en": "Influenza due to influenza B virus"
+    },
+    "HIV.D.DE616": {
+      "en": "Tuberculosis"
+    },
+    "HIV.D.DE617": {
+      "en": "Acute poliomyelitis"
+    },
+    "HIV.D.DE618": {
+      "en": "Measles"
+    },
+    "HIV.D.DE619": {
+      "en": "Diptheria"
+    },
+    "HIV.D.DE620": {
+      "en": "Rabies"
+    },
+    "HIV.D.DE621": {
+      "en": "Cholera"
+    },
+    "HIV.D.DE622": {
+      "en": "Mumps"
+    },
+    "HIV.D.DE623": {
+      "en": "HPV infection"
+    },
+    "HIV.D.DE624": {
+      "en": "Haemophilus influenzae type B"
+    },
+    "HIV.D.DE625": {
+      "en": "Varicella"
+    },
+    "HIV.D.DE626": {
+      "en": "Dengue"
+    },
+    "HIV.D.DE627": {
+      "en": "Yellow fever"
+    },
+    "HIV.D.DE628": {
+      "en": "Japanese Encephalitis"
+    },
+    "HIV.D.DE629": {
+      "en": "Rubella"
+    },
+    "HIV.D.DE630": {
+      "en": "Pertussis"
+    },
+    "HIV.D.DE631": {
+      "en": "Enteritis due to rotavirus"
+    },
+    "HIV.D.DE632": {
+      "en": "Pneumococcal disease"
+    },
+    "HIV.D.DE633": {
+      "en": "Meningococcal disease"
+    },
+    "HIV.D.DE634": {
+      "en": "Tick-borne encephalitis"
+    },
+    "HIV.D.DE635": {
+      "en": "Typhoid"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE610",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:29+00:00"
+}

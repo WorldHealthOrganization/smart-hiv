@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE399.displays.json",
+  "title": "Monitoring examinations ValueSet Display Values",
+  "description": "Display values for Monitoring examinations ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.D.DE400": {
+      "en": "Haemoglobin (Hb)"
+    },
+    "HIV.D.DE401": {
+      "en": "Pregnancy test"
+    },
+    "HIV.D.DE402": {
+      "en": "Syphilis test"
+    },
+    "HIV.D.DE403": {
+      "en": "Chest X-ray (CXR)"
+    },
+    "HIV.D.DE404": {
+      "en": "Sputum or culture for TB"
+    },
+    "HIV.D.DE405": {
+      "en": "HBsAg test (HBV)"
+    },
+    "HIV.D.DE406": {
+      "en": "HIV viral load test ordered"
+    },
+    "HIV.D.DE407": {
+      "en": "HIV viral load test scheduled"
+    },
+    "HIV.D.DE408": {
+      "en": "CD4 count ordered"
+    },
+    "HIV.D.DE409": {
+      "en": "CD4 count test scheduled"
+    },
+    "HIV.D.DE410": {
+      "en": "Cryptococcal antigen test"
+    },
+    "HIV.D.DE411": {
+      "en": "Histoplasmosis antigen test"
+    },
+    "HIV.D.DE412": {
+      "en": "Cervical cancer screening scheduled"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE399",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:28+00:00"
+}

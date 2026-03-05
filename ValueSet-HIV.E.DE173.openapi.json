@@ -1,0 +1,63 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Maternal and child health service visit ValueSet Schema API",
+    "description": "JSON Schema for Maternal and child health service visit ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/ValueSet-HIV.E.DE173.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the enumeration ValueSet-HIV.E.DE173",
+        "description": "This endpoint serves the JSON Schema definition for the enumeration ValueSet-HIV.E.DE173.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for ValueSet-HIV.E.DE173",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./ValueSet-HIV.E.DE173.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ValueSet-HIV.E.DE173": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/hiv/ValueSet-HIV.E.DE173.schema.json",
+        "title": "Maternal and child health service visit ValueSet Schema",
+        "description": "JSON Schema for Maternal and child health service visit ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+        "type": "object",
+        "required": [
+          "system",
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "system": {
+            "type": "string",
+            "const": "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "HIV.E.DE174",
+              "HIV.E.DE175",
+              "HIV.E.DE176"
+            ]
+          }
+        },
+        "narrative": "This schema validates Coding-shaped objects for the Maternal and child health service visit ValueSet ValueSet. Each value must be an object with 'system' (CodeSystem URI) and 'code' (fragment after '#') properties. Display values are available at http://smart.who.int/hiv/ValueSet-HIV.E.DE173.displays.json. The canonical IRI for a code can be reconstructed as system + '#' + code. For a complete listing of all ValueSets, see artifacts.html#terminology-value-sets.",
+        "fhir:displays": "http://smart.who.int/hiv/ValueSet-HIV.E.DE173.displays.json",
+        "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.E.DE173",
+        "fhir:version": "0.4.4",
+        "fhir:expansionTimestamp": "2026-03-05T13:16:30+00:00"
+      }
+    }
+  }
+}

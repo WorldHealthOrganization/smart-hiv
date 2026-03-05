@@ -1,0 +1,1640 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "Overloads",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "388",
+            "s" : [ {
+               "value" : [ "","library HIVConceptsCustom version '0.0.1'" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "HIVConceptsCustom",
+         "system" : "http://smart.who.int/hiv",
+         "version" : "0.0.1"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1",
+            "version" : "1.0.0"
+         } ]
+      },
+      "codeSystems" : {
+         "def" : [ {
+            "localId" : "206",
+            "locator" : "4:1-4:95",
+            "name" : "ConditionCategoryCodes",
+            "id" : "http://terminology.hl7.org/CodeSystem/condition-category",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "// codesystem \"HIVConceptsCustom\": 'http://smart.who.int/hiv/CodeSystem/HIVConceptsCustom'\n\n","codesystem ","\"ConditionCategoryCodes\"",": ","'http://terminology.hl7.org/CodeSystem/condition-category'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "208",
+            "locator" : "5:1-5:101",
+            "name" : "ConditionClinicalStatusCodes",
+            "id" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"ConditionClinicalStatusCodes\"",": ","'http://terminology.hl7.org/CodeSystem/condition-clinical'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "6:1-6:99",
+            "name" : "ObservationCategoryCodes",
+            "id" : "http://terminology.hl7.org/CodeSystem/observation-category",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"ObservationCategoryCodes\"",": ","'http://terminology.hl7.org/CodeSystem/observation-category'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "7:1-7:112",
+            "name" : "missing concepts",
+            "id" : "https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"missing concepts\"",": ","'https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "8:1-8:82",
+            "name" : "Devicestatement-status",
+            "id" : "http://hl7.org/fhir/device-statement-status",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"Devicestatement-status\"",": ","'http://hl7.org/fhir/device-statement-status'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "9:1-9:73",
+            "name" : "SNOMEDCT:2018-03",
+            "id" : "http://snomed.info/sct",
+            "version" : "2018-03",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"SNOMEDCT:2018-03\"",": ","'http://snomed.info/sct'"," version ","'2018-03'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "218",
+            "locator" : "10:1-10:47",
+            "name" : "SNOMEDCT",
+            "id" : "http://snomed.info/sct",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "218",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"SNOMEDCT\"",": ","'http://snomed.info/sct'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "220",
+            "locator" : "11:1-11:97",
+            "name" : "AdverseEventSeverity",
+            "id" : "http://terminology.hl7.org/CodeSystem/adverse-event-severity",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "220",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"AdverseEventSeverity\"",": ","'http://terminology.hl7.org/CodeSystem/adverse-event-severity'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "222",
+            "locator" : "12:1-12:74",
+            "name" : "RoleCode",
+            "id" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "222",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"RoleCode\"",": ","'http://terminology.hl7.org/CodeSystem/v3-RoleCode'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "valueSets" : {
+         "def" : [ {
+            "localId" : "227",
+            "locator" : "17:1-17:103",
+            "name" : "RelatedPersonRelationshipType",
+            "id" : "http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "227",
+                  "s" : [ {
+                     "value" : [ "// Related Person\n","valueset ","\"RelatedPersonRelationshipType\"",": ","'http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : [ ]
+         } ]
+      },
+      "codes" : {
+         "def" : [ {
+            "localId" : "224",
+            "locator" : "14:1-14:109",
+            "name" : "encounter-diagnosis",
+            "id" : "encounter-diagnosis",
+            "display" : "Encounter Diagnosis",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "","code ","\"encounter-diagnosis\"",": ","'encounter-diagnosis'"," from " ]
+                  }, {
+                     "r" : "225",
+                     "s" : [ {
+                        "value" : [ "\"ConditionCategoryCodes\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Encounter Diagnosis'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "225",
+               "locator" : "14:56-14:79",
+               "name" : "ConditionCategoryCodes"
+            }
+         }, {
+            "localId" : "229",
+            "locator" : "18:1-18:36",
+            "name" : "Mother",
+            "id" : "MTH",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "229",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Mother\"",": ","'MTH'"," from " ]
+                  }, {
+                     "r" : "230",
+                     "s" : [ {
+                        "value" : [ "\"RoleCode\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "230",
+               "locator" : "18:27-18:36",
+               "name" : "RoleCode"
+            }
+         }, {
+            "localId" : "232",
+            "locator" : "21:1-21:59",
+            "name" : "active",
+            "id" : "active",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "232",
+                  "s" : [ {
+                     "value" : [ "// Condition Clinical Status Codes\n","code ","\"active\"",": ","'active'"," from " ]
+                  }, {
+                     "r" : "233",
+                     "s" : [ {
+                        "value" : [ "\"ConditionClinicalStatusCodes\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "233",
+               "locator" : "21:30-21:59",
+               "name" : "ConditionClinicalStatusCodes"
+            }
+         }, {
+            "localId" : "235",
+            "locator" : "22:1-22:67",
+            "name" : "recurrence",
+            "id" : "recurrence",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "235",
+                  "s" : [ {
+                     "value" : [ "","code ","\"recurrence\"",": ","'recurrence'"," from " ]
+                  }, {
+                     "r" : "236",
+                     "s" : [ {
+                        "value" : [ "\"ConditionClinicalStatusCodes\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "236",
+               "locator" : "22:38-22:67",
+               "name" : "ConditionClinicalStatusCodes"
+            }
+         }, {
+            "localId" : "238",
+            "locator" : "23:1-23:61",
+            "name" : "relapse",
+            "id" : "relapse",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "238",
+                  "s" : [ {
+                     "value" : [ "","code ","\"relapse\"",": ","'relapse'"," from " ]
+                  }, {
+                     "r" : "239",
+                     "s" : [ {
+                        "value" : [ "\"ConditionClinicalStatusCodes\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "239",
+               "locator" : "23:32-23:61",
+               "name" : "ConditionClinicalStatusCodes"
+            }
+         }, {
+            "localId" : "241",
+            "locator" : "24:1-24:63",
+            "name" : "inactive",
+            "id" : "inactive",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "241",
+                  "s" : [ {
+                     "value" : [ "","code ","\"inactive\"",": ","'inactive'"," from " ]
+                  }, {
+                     "r" : "242",
+                     "s" : [ {
+                        "value" : [ "\"ConditionClinicalStatusCodes\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "242",
+               "locator" : "24:34-24:63",
+               "name" : "ConditionClinicalStatusCodes"
+            }
+         }, {
+            "localId" : "244",
+            "locator" : "25:1-25:65",
+            "name" : "remission",
+            "id" : "remission",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "244",
+                  "s" : [ {
+                     "value" : [ "","code ","\"remission\"",": ","'remission'"," from " ]
+                  }, {
+                     "r" : "245",
+                     "s" : [ {
+                        "value" : [ "\"ConditionClinicalStatusCodes\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "245",
+               "locator" : "25:36-25:65",
+               "name" : "ConditionClinicalStatusCodes"
+            }
+         }, {
+            "localId" : "247",
+            "locator" : "26:1-26:63",
+            "name" : "resolved",
+            "id" : "resolved",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "247",
+                  "s" : [ {
+                     "value" : [ "","code ","\"resolved\"",": ","'resolved'"," from " ]
+                  }, {
+                     "r" : "248",
+                     "s" : [ {
+                        "value" : [ "\"ConditionClinicalStatusCodes\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "248",
+               "locator" : "26:34-26:63",
+               "name" : "ConditionClinicalStatusCodes"
+            }
+         }, {
+            "localId" : "250",
+            "locator" : "29:1-29:96",
+            "name" : "social-history",
+            "id" : "social-history",
+            "display" : "Social History",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "250",
+                  "s" : [ {
+                     "value" : [ "//Observation category codes\n","code ","\"social-history\"",": ","'social-history'"," from " ]
+                  }, {
+                     "r" : "251",
+                     "s" : [ {
+                        "value" : [ "\"ObservationCategoryCodes\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Social History'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "251",
+               "locator" : "29:46-29:71",
+               "name" : "ObservationCategoryCodes"
+            }
+         }, {
+            "localId" : "253",
+            "locator" : "32:1-32:59",
+            "name" : "completed",
+            "id" : "completed",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "253",
+                  "s" : [ {
+                     "value" : [ "//Device statement status\n","code ","\"completed\"",": ","'completed'"," from " ]
+                  }, {
+                     "r" : "254",
+                     "s" : [ {
+                        "value" : [ "\"Devicestatement-status\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "254",
+               "locator" : "32:36-32:59",
+               "name" : "Devicestatement-status"
+            }
+         }, {
+            "localId" : "256",
+            "locator" : "35:1-35:47",
+            "name" : "mild",
+            "id" : "mild",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "256",
+                  "s" : [ {
+                     "value" : [ "//adverse event severity\n","code ","\"mild\"",": ","'mild'"," from " ]
+                  }, {
+                     "r" : "257",
+                     "s" : [ {
+                        "value" : [ "\"AdverseEventSeverity\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "257",
+               "locator" : "35:26-35:47",
+               "name" : "AdverseEventSeverity"
+            }
+         }, {
+            "localId" : "259",
+            "locator" : "36:1-36:55",
+            "name" : "moderate",
+            "id" : "moderate",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "259",
+                  "s" : [ {
+                     "value" : [ "","code ","\"moderate\"",": ","'moderate'"," from " ]
+                  }, {
+                     "r" : "260",
+                     "s" : [ {
+                        "value" : [ "\"AdverseEventSeverity\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "260",
+               "locator" : "36:34-36:55",
+               "name" : "AdverseEventSeverity"
+            }
+         }, {
+            "localId" : "262",
+            "locator" : "37:1-37:51",
+            "name" : "severe",
+            "id" : "severe",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "262",
+                  "s" : [ {
+                     "value" : [ "","code ","\"severe\"",": ","'severe'"," from " ]
+                  }, {
+                     "r" : "263",
+                     "s" : [ {
+                        "value" : [ "\"AdverseEventSeverity\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "263",
+               "locator" : "37:30-37:51",
+               "name" : "AdverseEventSeverity"
+            }
+         }, {
+            "localId" : "265",
+            "locator" : "40:1-40:125",
+            "name" : "Every eight hours (qualifier value)",
+            "id" : "307469008",
+            "display" : "Every eight hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "265",
+                  "s" : [ {
+                     "value" : [ "//frequency\n","code ","\"Every eight hours (qualifier value)\"",": ","'307469008'"," from " ]
+                  }, {
+                     "r" : "266",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT:2018-03\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every eight hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "266",
+               "locator" : "40:62-40:79",
+               "name" : "SNOMEDCT:2018-03"
+            }
+         }, {
+            "localId" : "268",
+            "locator" : "41:1-41:137",
+            "name" : "Every eight to twelve hours (qualifier value)",
+            "id" : "396140003",
+            "display" : "Every eight to twelve hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "268",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every eight to twelve hours (qualifier value)\"",": ","'396140003'"," from " ]
+                  }, {
+                     "r" : "269",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every eight to twelve hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "269",
+               "locator" : "41:72-41:81",
+               "name" : "SNOMEDCT"
+            }
+         }, {
+            "localId" : "271",
+            "locator" : "42:1-42:137",
+            "name" : "Every forty eight hours (qualifier value)",
+            "id" : "396131002",
+            "display" : "Every forty eight hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "271",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every forty eight hours (qualifier value)\"",": ","'396131002'"," from " ]
+                  }, {
+                     "r" : "272",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT:2018-03\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every forty eight hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "272",
+               "locator" : "42:68-42:85",
+               "name" : "SNOMEDCT:2018-03"
+            }
+         }, {
+            "localId" : "274",
+            "locator" : "43:1-43:115",
+            "name" : "Every four hours (qualifier value)",
+            "id" : "225756002",
+            "display" : "Every four hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "274",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every four hours (qualifier value)\"",": ","'225756002'"," from " ]
+                  }, {
+                     "r" : "275",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every four hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "275",
+               "locator" : "43:61-43:70",
+               "name" : "SNOMEDCT"
+            }
+         }, {
+            "localId" : "277",
+            "locator" : "44:1-44:137",
+            "name" : "Every seventy two hours (qualifier value)",
+            "id" : "396143001",
+            "display" : "Every seventy two hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "277",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every seventy two hours (qualifier value)\"",": ","'396143001'"," from " ]
+                  }, {
+                     "r" : "278",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT:2018-03\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every seventy two hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "278",
+               "locator" : "44:68-44:85",
+               "name" : "SNOMEDCT:2018-03"
+            }
+         }, {
+            "localId" : "280",
+            "locator" : "45:1-45:121",
+            "name" : "Every six hours (qualifier value)",
+            "id" : "307468000",
+            "display" : "Every six hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "280",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every six hours (qualifier value)\"",": ","'307468000'"," from " ]
+                  }, {
+                     "r" : "281",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT:2018-03\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every six hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "281",
+               "locator" : "45:60-45:77",
+               "name" : "SNOMEDCT:2018-03"
+            }
+         }, {
+            "localId" : "283",
+            "locator" : "46:1-46:131",
+            "name" : "Every six to eight hours (qualifier value)",
+            "id" : "396139000",
+            "display" : "Every six to eight hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "283",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every six to eight hours (qualifier value)\"",": ","'396139000'"," from " ]
+                  }, {
+                     "r" : "284",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every six to eight hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "284",
+               "locator" : "46:69-46:78",
+               "name" : "SNOMEDCT"
+            }
+         }, {
+            "localId" : "286",
+            "locator" : "47:1-47:135",
+            "name" : "Every thirty six hours (qualifier value)",
+            "id" : "396126004",
+            "display" : "Every thirty six hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "286",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every thirty six hours (qualifier value)\"",": ","'396126004'"," from " ]
+                  }, {
+                     "r" : "287",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT:2018-03\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every thirty six hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "287",
+               "locator" : "47:67-47:84",
+               "name" : "SNOMEDCT:2018-03"
+            }
+         }, {
+            "localId" : "289",
+            "locator" : "48:1-48:133",
+            "name" : "Every three to four hours (qualifier value)",
+            "id" : "225754004",
+            "display" : "Every three to four hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "289",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every three to four hours (qualifier value)\"",": ","'225754004'"," from " ]
+                  }, {
+                     "r" : "290",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every three to four hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "290",
+               "locator" : "48:70-48:79",
+               "name" : "SNOMEDCT"
+            }
+         }, {
+            "localId" : "292",
+            "locator" : "49:1-49:131",
+            "name" : "Every three to six hours (qualifier value)",
+            "id" : "396127008",
+            "display" : "Every three to six hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "292",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every three to six hours (qualifier value)\"",": ","'396127008'"," from " ]
+                  }, {
+                     "r" : "293",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every three to six hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "293",
+               "locator" : "49:69-49:78",
+               "name" : "SNOMEDCT"
+            }
+         }, {
+            "localId" : "295",
+            "locator" : "50:1-50:127",
+            "name" : "Every twelve hours (qualifier value)",
+            "id" : "307470009",
+            "display" : "Every twelve hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "295",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every twelve hours (qualifier value)\"",": ","'307470009'"," from " ]
+                  }, {
+                     "r" : "296",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT:2018-03\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every twelve hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "296",
+               "locator" : "50:63-50:80",
+               "name" : "SNOMEDCT:2018-03"
+            }
+         }, {
+            "localId" : "298",
+            "locator" : "51:1-51:137",
+            "name" : "Every twenty four hours (qualifier value)",
+            "id" : "396125000",
+            "display" : "Every twenty four hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "298",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every twenty four hours (qualifier value)\"",": ","'396125000'"," from " ]
+                  }, {
+                     "r" : "299",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT:2018-03\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every twenty four hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "299",
+               "locator" : "51:68-51:85",
+               "name" : "SNOMEDCT:2018-03"
+            }
+         }, {
+            "localId" : "301",
+            "locator" : "52:1-52:129",
+            "name" : "Every two to four hours (qualifier value)",
+            "id" : "225752000",
+            "display" : "Every two to four hours (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "301",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Every two to four hours (qualifier value)\"",": ","'225752000'"," from " ]
+                  }, {
+                     "r" : "302",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Every two to four hours (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "302",
+               "locator" : "52:68-52:77",
+               "name" : "SNOMEDCT"
+            }
+         }, {
+            "localId" : "304",
+            "locator" : "53:1-53:123",
+            "name" : "Four times daily (qualifier value)",
+            "id" : "307439001",
+            "display" : "Four times daily (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "304",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Four times daily (qualifier value)\"",": ","'307439001'"," from " ]
+                  }, {
+                     "r" : "305",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT:2018-03\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Four times daily (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "305",
+               "locator" : "53:61-53:78",
+               "name" : "SNOMEDCT:2018-03"
+            }
+         }, {
+            "localId" : "307",
+            "locator" : "54:1-54:111",
+            "name" : "Once daily (qualifier value)",
+            "id" : "229797004",
+            "display" : "Once daily (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "307",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Once daily (qualifier value)\"",": ","'229797004'"," from " ]
+                  }, {
+                     "r" : "308",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT:2018-03\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Once daily (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "308",
+               "locator" : "54:55-54:72",
+               "name" : "SNOMEDCT:2018-03"
+            }
+         }, {
+            "localId" : "310",
+            "locator" : "55:1-55:129",
+            "name" : "One to four times a day (qualifier value)",
+            "id" : "396109005",
+            "display" : "One to four times a day (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "310",
+                  "s" : [ {
+                     "value" : [ "","code ","\"One to four times a day (qualifier value)\"",": ","'396109005'"," from " ]
+                  }, {
+                     "r" : "311",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'One to four times a day (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "311",
+               "locator" : "55:68-55:77",
+               "name" : "SNOMEDCT"
+            }
+         }, {
+            "localId" : "313",
+            "locator" : "56:1-56:131",
+            "name" : "One to three times a day (qualifier value)",
+            "id" : "396108002",
+            "display" : "One to three times a day (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "313",
+                  "s" : [ {
+                     "value" : [ "","code ","\"One to three times a day (qualifier value)\"",": ","'396108002'"," from " ]
+                  }, {
+                     "r" : "314",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'One to three times a day (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "314",
+               "locator" : "56:69-56:78",
+               "name" : "SNOMEDCT"
+            }
+         }, {
+            "localId" : "316",
+            "locator" : "57:1-57:127",
+            "name" : "One to two times a day (qualifier value)",
+            "id" : "396107007",
+            "display" : "One to two times a day (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "316",
+                  "s" : [ {
+                     "value" : [ "","code ","\"One to two times a day (qualifier value)\"",": ","'396107007'"," from " ]
+                  }, {
+                     "r" : "317",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'One to two times a day (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "317",
+               "locator" : "57:67-57:76",
+               "name" : "SNOMEDCT"
+            }
+         }, {
+            "localId" : "319",
+            "locator" : "58:1-58:125",
+            "name" : "Three times daily (qualifier value)",
+            "id" : "229798009",
+            "display" : "Three times daily (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "319",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Three times daily (qualifier value)\"",": ","'229798009'"," from " ]
+                  }, {
+                     "r" : "320",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT:2018-03\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Three times daily (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "320",
+               "locator" : "58:62-58:79",
+               "name" : "SNOMEDCT:2018-03"
+            }
+         }, {
+            "localId" : "322",
+            "locator" : "59:1-59:113",
+            "name" : "Twice a day (qualifier value)",
+            "id" : "229799001",
+            "display" : "Twice a day (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "322",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Twice a day (qualifier value)\"",": ","'229799001'"," from " ]
+                  }, {
+                     "r" : "323",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT:2018-03\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Twice a day (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "323",
+               "locator" : "59:56-59:73",
+               "name" : "SNOMEDCT:2018-03"
+            }
+         }, {
+            "localId" : "325",
+            "locator" : "60:1-60:129",
+            "name" : "Two to four times a day (qualifier value)",
+            "id" : "396111001",
+            "display" : "Two to four times a day (qualifier value)",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "325",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Two to four times a day (qualifier value)\"",": ","'396111001'"," from " ]
+                  }, {
+                     "r" : "326",
+                     "s" : [ {
+                        "value" : [ "\"SNOMEDCT\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'Two to four times a day (qualifier value)'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "326",
+               "locator" : "60:68-60:77",
+               "name" : "SNOMEDCT"
+            }
+         }, {
+            "localId" : "328",
+            "locator" : "64:1-64:53",
+            "name" : "HTS Visit",
+            "id" : "HTS Visit",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "328",
+                  "s" : [ {
+                     "value" : [ "// Encounter Types\n","code ","\"HTS Visit\"",": ","'HTS Visit'"," from " ]
+                  }, {
+                     "r" : "329",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "329",
+               "locator" : "64:36-64:53",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "331",
+            "locator" : "67:1-67:63",
+            "name" : "needle-syringe",
+            "id" : "needle syringe",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "331",
+                  "s" : [ {
+                     "value" : [ "//not currently provided\n","code ","\"needle-syringe\"",": ","'needle syringe'"," from " ]
+                  }, {
+                     "r" : "332",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "332",
+               "locator" : "67:46-67:63",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "334",
+            "locator" : "68:1-68:53",
+            "name" : "methadone",
+            "id" : "methadone",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "334",
+                  "s" : [ {
+                     "value" : [ "","code ","\"methadone\"",": ","'methadone'"," from " ]
+                  }, {
+                     "r" : "335",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "335",
+               "locator" : "68:36-68:53",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "337",
+            "locator" : "69:1-69:61",
+            "name" : "buprenorphine",
+            "id" : "buprenorphine",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "337",
+                  "s" : [ {
+                     "value" : [ "","code ","\"buprenorphine\"",": ","'buprenorphine'"," from " ]
+                  }, {
+                     "r" : "338",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "338",
+               "locator" : "69:44-69:61",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "340",
+            "locator" : "70:1-70:65",
+            "name" : "viral load test",
+            "id" : "viral load test",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "340",
+                  "s" : [ {
+                     "value" : [ "","code ","\"viral load test\"",": ","'viral load test'"," from " ]
+                  }, {
+                     "r" : "341",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "341",
+               "locator" : "70:48-70:65",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "343",
+            "locator" : "71:1-71:51",
+            "name" : "delivery",
+            "id" : "delivery",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "343",
+                  "s" : [ {
+                     "value" : [ "","code ","\"delivery\"",": ","'delivery'"," from " ]
+                  }, {
+                     "r" : "344",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "344",
+               "locator" : "71:34-71:51",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "346",
+            "locator" : "72:1-72:59",
+            "name" : "tb treatment",
+            "id" : "tb treatment",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "346",
+                  "s" : [ {
+                     "value" : [ "","code ","\"tb treatment\"",": ","'tb treatment'"," from " ]
+                  }, {
+                     "r" : "347",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "347",
+               "locator" : "72:42-72:59",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "349",
+            "locator" : "73:1-73:63",
+            "name" : "ART medication",
+            "id" : "ART medication",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "349",
+                  "s" : [ {
+                     "value" : [ "","code ","\"ART medication\"",": ","'ART medication'"," from " ]
+                  }, {
+                     "r" : "350",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "350",
+               "locator" : "73:46-73:63",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "352",
+            "locator" : "74:1-74:92",
+            "name" : "DSD ART eligibility assessed",
+            "id" : "DSD ART eligibility assessed",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "352",
+                  "s" : [ {
+                     "value" : [ "","code ","\"DSD ART eligibility assessed\""," : ","'DSD ART eligibility assessed'"," from " ]
+                  }, {
+                     "r" : "353",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "353",
+               "locator" : "74:75-74:92",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "355",
+            "locator" : "75:1-75:62",
+            "name" : "syphilis test",
+            "id" : "syphilis test",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "355",
+                  "s" : [ {
+                     "value" : [ "","code ","\"syphilis test\""," : ","'syphilis test'"," from " ]
+                  }, {
+                     "r" : "356",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "356",
+               "locator" : "75:45-75:62",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "358",
+            "locator" : "76:1-76:56",
+            "name" : "HBsAg test",
+            "id" : "HBsAg test",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "358",
+                  "s" : [ {
+                     "value" : [ "","code ","\"HBsAg test\""," : ","'HBsAg test'"," from " ]
+                  }, {
+                     "r" : "359",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "359",
+               "locator" : "76:39-76:56",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "361",
+            "locator" : "77:1-77:66",
+            "name" : "Gonorrhoea test",
+            "id" : "Gonorrhoea test",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "361",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Gonorrhoea test\""," : ","'Gonorrhoea test'"," from " ]
+                  }, {
+                     "r" : "362",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "362",
+               "locator" : "77:49-77:66",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "364",
+            "locator" : "78:1-78:72",
+            "name" : "syphilis treatment",
+            "id" : "syphilis treatment",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "364",
+                  "s" : [ {
+                     "value" : [ "","code ","\"syphilis treatment\""," : ","'syphilis treatment'"," from " ]
+                  }, {
+                     "r" : "365",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "365",
+               "locator" : "78:55-78:72",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "367",
+            "locator" : "79:1-79:76",
+            "name" : "Gonorrhoea treatment",
+            "id" : "Gonorrhoea treatment",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "367",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Gonorrhoea treatment\""," : ","'Gonorrhoea treatment'"," from " ]
+                  }, {
+                     "r" : "368",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "368",
+               "locator" : "79:59-79:76",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "370",
+            "locator" : "80:1-80:52",
+            "name" : "HCV test",
+            "id" : "HCV test",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "370",
+                  "s" : [ {
+                     "value" : [ "","code ","\"HCV test\""," : ","'HCV test'"," from " ]
+                  }, {
+                     "r" : "371",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "371",
+               "locator" : "80:35-80:52",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "373",
+            "locator" : "81:1-81:64",
+            "name" : "HCV viral load",
+            "id" : "HCV viral load",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "373",
+                  "s" : [ {
+                     "value" : [ "","code ","\"HCV viral load\""," : ","'HCV viral load'"," from " ]
+                  }, {
+                     "r" : "374",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "374",
+               "locator" : "81:47-81:64",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "376",
+            "locator" : "82:1-82:96",
+            "name" : "cervical cancer screening test",
+            "id" : "cervical cancer screening test",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "376",
+                  "s" : [ {
+                     "value" : [ "","code ","\"cervical cancer screening test\""," : ","'cervical cancer screening test'"," from " ]
+                  }, {
+                     "r" : "377",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "377",
+               "locator" : "82:79-82:96",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "379",
+            "locator" : "83:1-83:106",
+            "name" : "cervical precancer lesion treatment",
+            "id" : "cervical precancer lesion treatment",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "379",
+                  "s" : [ {
+                     "value" : [ "","code ","\"cervical precancer lesion treatment\""," : ","'cervical precancer lesion treatment'"," from " ]
+                  }, {
+                     "r" : "380",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "380",
+               "locator" : "83:89-83:106",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "382",
+            "locator" : "84:1-84:104",
+            "name" : "Invasive cervical cancer treatment",
+            "id" : "Invasive cervical cancer treatment",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "382",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Invasive cervical cancer treatment\""," : ","'Invasive cervical cancer treatment'"," from " ]
+                  }, {
+                     "r" : "383",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "383",
+               "locator" : "84:87-84:104",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "385",
+            "locator" : "85:1-85:79",
+            "name" : "Antenatal care contact",
+            "id" : "Antenatal care contact",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "385",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Antenatal care contact\"",": ","'Antenatal care contact'"," from " ]
+                  }, {
+                     "r" : "386",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "386",
+               "locator" : "85:62-85:79",
+               "name" : "missing concepts"
+            }
+         }, {
+            "localId" : "388",
+            "locator" : "86:1-86:80",
+            "name" : "No longer breastfeeding",
+            "id" : "No longer breasfeeding",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "388",
+                  "s" : [ {
+                     "value" : [ "","code ","\"No longer breastfeeding\"",": ","'No longer breasfeeding'"," from " ]
+                  }, {
+                     "r" : "389",
+                     "s" : [ {
+                        "value" : [ "\"missing concepts\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "389",
+               "locator" : "86:63-86:80",
+               "name" : "missing concepts"
+            }
+         } ]
+      }
+   }
+}

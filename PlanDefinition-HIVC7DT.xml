@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="HIVC7DT"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableplandefinition"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">HIVC7DT</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="PlanDefinition-HIVC7DT.html">HIV.C7.DT Check for signs of serious illness</a></td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.4.4</td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">HIV.C7.DT Check for signs of serious illness</td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">draft</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">true</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/6.1.0/CodeSystem-plan-definition-type.html">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2026-03-05 13:07:29+0000</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">WHO</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>Check for signs of serious illness</p>
+</div></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Related Artifacts: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p><b>References</b></p>
+                <ul>
+                    
+                    <li><div><p>Consolidated Guidelines on HIV Testing Services (2019)</p>
+</div><br/><a href="null"/></li>
+                    
+                </ul>
+                
+                
+                
+                
+                
+                
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Libraries: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td><a href="Library-HIVC7DTLogic.html">HIV.C7.DT Logic</a></td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Actions: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td>
+                            
+                            Check suitability for PrEP or PEP
+                            
+                            <br/>
+                            
+                            
+                            
+                            <b>Then:</b>
+                            <table class="grid-dict">
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        Counsel client on PrEP. Based on answers given, client is suitable for PrEP.
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        <i>(Suitable for PrEP)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        <b>Then:</b> <i>Definition:</i> <a href="ActivityDefinition-HIVGuidanceCommunicationRequestActivity.html">HIVGuidanceCommunicationRequestActivity</a><br/>
+                                        
+                                        <i>Dynamic Values:</i><br/>
+                                        
+                                        payload[+].contentString: <i>(Guidance)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        Client is ineligible for PrEP based on answers given.
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        <i>(Not suitable for PrEP)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        <b>Then:</b> <i>Definition:</i> <a href="ActivityDefinition-HIVGuidanceCommunicationRequestActivity.html">HIVGuidanceCommunicationRequestActivity</a><br/>
+                                        
+                                        <i>Dynamic Values:</i><br/>
+                                        
+                                        payload[+].contentString: <i>(Guidance)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+    </table>
+</div>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.B.DE115"/>
+          <display value="HIV status"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.B.DE35"/>
+          <display value="HIV-negative"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE106"/>
+          <display value="Estimated creatinine clearance"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE112"/>
+          <display value="Contraindications to PrEP usage"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE116"/>
+          <display value="Acute HIV infection symptoms"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE117"/>
+          <display value="Probable recent exposure to HIV"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE36"/>
+          <display value="Signs of substantial risk of HIV infection"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE40"/>
+          <display value="PrEP requested by client"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.H.DE34"/>
+          <display value="HIV status of partner or contact"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.B.DE34"/>
+          <display value="HIV-positive"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE55"/>
+          <display value="Sex partners HIV treatment status"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE59"/>
+          <display value="Partner is not virally suppressed"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.B.DE49"/>
+          <display value="Key population member*"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+          <code value="social-history"/>
+          <display value="Social History"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE39"/>
+          <display value="A sexual partner in the past 6 months had one or more HIV risk factors"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE38"/>
+          <display value="STI in the past 6 months"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE31"/>
+          <display value="PEP history"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE33"/>
+          <display value="Repeat user"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE37"/>
+          <display value="No condom use during sex with more than one partner in the past 6 months"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.Config.DE13"/>
+          <display value="High HIV burden setting"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.B.DE36"/>
+          <display value="Unknown"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE113"/>
+          <display value="Tenofovir disoproxil fumarate TDF allergy or contraindication"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV Status Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of HIV-inconclusive */&#xA;&#xA;/*&#xA;@dataElement: HIV.B.DE115 - HIV status&#xA;@activity: HIV.B7 Test for HIV using testing algorithm&#xA;@description: HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.&#xA;*/&#xA;define &quot;HIV Status Observation&quot;:&#xA;  [Observation: Concepts.&quot;HIV status&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="0"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV Status Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of HIV test result B.DE111 */&#xA;&#xA;/*&#xA;@dataElement: HIV.B.DE115 - HIV status&#xA;@activity: HIV.B7 Test for HIV using testing algorithm&#xA;@description: HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.&#xA;*/&#xA;define &quot;HIV Status Observation&quot;:&#xA;  Elements.&quot;HIV Status Observation&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="1"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV negative"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input &quot;HIV Status&quot;&#xA; @pseudocode: &quot;HIV status&quot;='HIV-negative'&#xA; */&#xA;define &quot;HIV negative&quot;:&#xA;  exists(&#xA;    Elements.&quot;HIV Status Observation&quot; O&#xA;        where O.value ~ Concepts.&quot;HIV-negative&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="2"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Estimated creatinine clearance"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of RAL C.DE105 */&#xA;&#xA;/*&#xA;@dataElement: HIV.C.DE106 - Estimated creatinine clearance&#xA;@activity: HIV.C23 Prescribe or administer PrEP or PEP&#xA;@description: Estimated creatinine clearance of the client returned from lab in mL/min&#xA;*/&#xA;// TODO: Replace placeholder with relevant CQL logic&#xA;define &quot;Estimated creatinine clearance&quot;:&#xA;  [Observation: Concepts.&quot;Estimated creatinine clearance&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="3"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Estimated creatinine clearance"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Suitable for PrEP */&#xA;&#xA;/*&#xA;@dataElement: HIV.C.DE106 - Estimated creatinine clearance&#xA;@activity: HIV.C23 Prescribe or administer PrEP or PEP&#xA;@description: Estimated creatinine clearance of the client returned from lab in mL/min&#xA;*/&#xA;define &quot;Estimated creatinine clearance&quot;:&#xA;  Elements.&quot;Estimated creatinine clearance&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="4"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Estimated creatinine clearance ≥ 60 mL/min"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input &quot;Estimated creatinine clearance&quot;&#xA; @pseudocode: &quot;Estimated creatinine clearance&quot; ≥ 60 mL/min&#xA; */&#xA;define &quot;Estimated creatinine clearance ≥ 60 mL/min&quot;:&#xA;  exists(&#xA;    Elements.&quot;Estimated creatinine clearance&quot; O&#xA;      where FHIRHelpers.ToInteger(O.value) &gt;= 60&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="5"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Contraindications to PrEP usage Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Contraindications to PrEP usage Observation&quot;:&#xA;  [Observation: Concepts.&quot;Contraindications to PrEP usage&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="6"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Contraindications to PrEP usage"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Estimated creatinine clearance */&#xA;&#xA;/*&#xA;@dataElement: HIV.C.DE112 - Contraindications to PrEP usage&#xA;@activity: HIV.C23 Prescribe or administer PrEP or PEP&#xA;@description: Listing of contraindications to pre-exposure prophylaxis (PrEP)&#xA;*/&#xA;define &quot;Contraindications to PrEP usage&quot;:&#xA;  Elements.&quot;Contraindications to PrEP usage Observation&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="7"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="No symptoms of Acute HIV infection"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input &quot;Acute HIV infection symptoms&quot;&#xA; @pseudocode: &quot;Acute HIV infection symptoms&quot;=False&#xA; */&#xA;define &quot;No symptoms of Acute HIV infection&quot;:&#xA;  not(exists(&#xA;    Elements.&quot;Contraindications to PrEP usage&quot; O&#xA;      where O.value ~ Concepts.&quot;Acute HIV infection symptoms - HIV.C.DE116&quot;&#xA;  ))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="8"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="No probable recent exposure to HIV"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Probable recent exposure to HIV&quot;&#xA; @pseudocode: &quot;Probable recent exposure to HIV&quot;=False&#xA; */&#xA;define &quot;No probable recent exposure to HIV&quot;:&#xA;  not(exists(&#xA;    Elements.&quot;Contraindications to PrEP usage&quot; O&#xA;      where O.value ~ Concepts.&quot;Probable recent exposure to HIV&quot;&#xA;  ))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="9"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="No contraindications to PrEP usage"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Contraindications to PrEP usage&quot;&#xA; @pseudocode: &quot;Contraindications to PrEP usage&quot; is NULL&#xA; */&#xA;define &quot;No contraindications to PrEP usage&quot;:&#xA;  not(exists(&#xA;    Elements.&quot;Contraindications to PrEP usage&quot; O&#xA;  ))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="10"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Signs of substantial risk of HIV infection C.DE36"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Date client completes PEP course */&#xA;&#xA;/*&#xA;@dataElement: HIV.C.DE36 - Signs of substantial risk of HIV infection&#xA;@activity: HIV.C3 Capture or update client history&#xA;@description: Signs the client is at a substantial risk of HIV infection&#xA;*/&#xA;define &quot;Signs of substantial risk of HIV infection C.DE36&quot;:&#xA;  [Observation: Concepts.&quot;Signs of substantial risk of HIV infection - HIV.C.DE36&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="11"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Signs of substantial risk of HIV infection C.DE36"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of PEP history */&#xA;&#xA;/*&#xA;@dataElement: HIV.C.DE36 - Signs of substantial risk of HIV infection&#xA;@activity: HIV.C3 Capture or update client history&#xA;@description: Signs the client is at a substantial risk of HIV infection&#xA;*/&#xA;define &quot;Signs of substantial risk of HIV infection C.DE36&quot;:&#xA;  Elements.&quot;Signs of substantial risk of HIV infection C.DE36&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="12"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="PrEP requested by client"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Signs of substantial risk of HIV infection&quot;&#xA; @pseudocode: &quot;Signs of substantial risk of HIV infection&quot;='PrEP requested by client'&#xA; */&#xA;define &quot;PrEP requested by client&quot;:&#xA;  exists(&#xA;    Elements.&quot;Signs of substantial risk of HIV infection C.DE36&quot; O&#xA;      where O.value ~ Concepts.&quot;PrEP requested by client - HIV.C.DE40&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="13"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV status of partner or contact"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Inconclusive G.DE73 */&#xA;&#xA;/*&#xA;@dataElement: HIV.H.DE34 - HIV status of partner or contact&#xA;@activity: HIV.B6 Capture or update client history&#xA;@description: HIV status of the partner or contact given by the index case&#xA;*/&#xA;define &quot;HIV status of partner or contact&quot;:&#xA;  [Observation: Concepts.&quot;HIV status of partner or contact&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="14"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV status of partner or contact"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Inconclusive G.DE73 */&#xA;&#xA;/*&#xA;@dataElement: HIV.H.DE34 - HIV status of partner or contact&#xA;@activity: HIV.B6 Capture or update client history&#xA;@description: HIV status of the partner or contact given by the index case&#xA;*/&#xA;define &quot;HIV status of partner or contact&quot;:&#xA;  Elements.&quot;HIV status of partner or contact&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="15"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV status of partner or contact is positive"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;HIV status of partner or contact&quot;&#xA; @pseudocode: &quot;HIV status of partner or contact&quot;='HIV-positive'&#xA; */&#xA;define &quot;HIV status of partner or contact is positive&quot;:&#xA;  exists(&#xA;    Elements.&quot;HIV status of partner or contact&quot; O&#xA;      where O.value ~ Concepts.&quot;HIV-positive&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="16"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Sex partners HIV treatment status"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Rash */&#xA;&#xA;/*&#xA;@dataElement: HIV.C.DE55 - Sex partners HIV treatment status&#xA;@activity: HIV.C3 Capture or update client history&#xA;@description: Treatment adherence of client's sex partner for partners that are HIV-positive&#xA;*/&#xA;// TODO: Replace placeholder with relevant CQL logic&#xA;define &quot;Sex partners HIV treatment status&quot;:&#xA;  [Observation: Concepts.&quot;Sex partners HIV treatment status&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="17"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Sex partners HIV treatment status"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Rash */&#xA;&#xA;/*&#xA;@dataElement: HIV.C.DE55 - Sex partners HIV treatment status&#xA;@activity: HIV.C3 Capture or update client history&#xA;@description: Treatment adherence of client's sex partner for partners that are HIV-positive&#xA;*/&#xA;define &quot;Sex partners HIV treatment status&quot;:&#xA;  Elements.&quot;Sex partners HIV treatment status&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="18"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Sex partner is on HIV treatment and not virally suppressed"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Sex partner's HIV treatment status&quot;&#xA; @pseudocode: &quot;Sex partner's HIV treatment status&quot;='Partner is not virally suppressed'&#xA; */&#xA;define &quot;Sex partner is on HIV treatment and not virally suppressed&quot;:&#xA;  exists(&#xA;    Elements.&quot;Sex partners HIV treatment status&quot; O&#xA;      where O.value ~ Concepts.&quot;Partner is not virally suppressed&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="19"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Key population member type Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Key population member B.DE49 */&#xA;&#xA;/*&#xA;@dataElement: HIV.B.DE50 - Key population member type&#xA;@activity: HIV.B6 Capture or update client history&#xA;@description: The type of key population that the client is included in&#xA;*/&#xA;define &quot;Key population member type Observation&quot;:&#xA;  [Observation: Concepts.&quot;Key population member - HIV.B.DE49&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }&#xA;    and exists(O.category OC where OC ~ ConceptsCustom.&quot;social-history&quot;)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="20"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Key population member type Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Key population member B.DE49 */&#xA;&#xA;/*&#xA;@dataElement: HIV.B.DE50 - Key population member type&#xA;@activity: HIV.B6 Capture or update client history&#xA;@description: The type of key population that the client is included in&#xA;*/&#xA;define &quot;Key population member type Observation&quot;:&#xA;  Elements.&quot;Key population member type Observation&quot; O&#xA;    where O.encounter.references(EncounterId)&#xA;      or O.effective.toInterval() starts on or before Today"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="21"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Is Key population member"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Key population member&quot;&#xA; @pseudocode: &quot;Key population member&quot;=True&#xA; */&#xA;define &quot;Is Key population member&quot;:&#xA;  exists(&#xA;    Elements.&quot;Key population member type Observation&quot; O&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="22"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="A sexual partner in the past 6 months had one or more HIV risk factors"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Signs of substantial risk of HIV infection&quot;&#xA; @pseudocode: &quot;Signs of substantial risk of HIV infection&quot;='A sexual partner in the past 6 months had one or more HIV risk factors'&#xA; */&#xA;define &quot;A sexual partner in the past 6 months had one or more HIV risk factors&quot;:&#xA;  exists(&#xA;    Elements.&quot;Signs of substantial risk of HIV infection C.DE36&quot; O&#xA;      where O.value ~ Concepts.&quot;A sexual partner in the past 6 months had one or more HIV risk factors - HIV.C.DE39&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="23"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="STI in the past 6 months"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Signs of substantial risk of HIV infection&quot;&#xA; @pseudocode: &quot;Signs of substantial risk of HIV infection&quot;='STI in the past 6 months'&#xA; */&#xA;define &quot;STI in the past 6 months&quot;:&#xA;  exists(&#xA;    Elements.&quot;Signs of substantial risk of HIV infection C.DE36&quot; O&#xA;      where O.value ~ Concepts.&quot;STI in the past 6 months - HIV.C.DE38&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="24"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="PEP history"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Restarting following a period of not taking PrEP */&#xA;&#xA;/*&#xA;@dataElement: HIV.C.DE31 - PEP history&#xA;@activity: HIV.C3 Capture or update client history&#xA;@description: The client's history in taking post-exposure prophylaxis (PEP) for HIV prevention&#xA;*/&#xA;// TODO: Replace placeholder with relevant CQL logic&#xA;define &quot;PEP history&quot;:&#xA;  [Observation: Concepts.&quot;PEP history&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="25"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="PEP history"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of CAB-LA C.DE23 */&#xA;&#xA;/*&#xA;@dataElement: HIV.C.DE31 - PEP history&#xA;@activity: HIV.C3 Capture or update client history&#xA;@description: The client's history in taking post-exposure prophylaxis (PEP) for HIV prevention&#xA;*/&#xA;define &quot;PEP history&quot;:&#xA;  Elements.&quot;PEP history&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="26"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Repeat PEP user"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;PEP history&quot;&#xA; @pseudocode: &quot;PEP history&quot;='Repeat user'&#xA; */&#xA;define &quot;Repeat PEP user&quot;:&#xA;  exists(&#xA;    Elements.&quot;PEP history&quot; O&#xA;      where O.value ~ Concepts.&quot;Repeat user&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="27"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="No condom use during sex with more than one partner in the past 6 months"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Signs of substantial risk of HIV infection&quot;&#xA; @pseudocode: &quot;Signs of substantial risk of HIV infection&quot;='No condom use during sex with more than one partner in the past 6 months'&#xA; */&#xA;define &quot;No condom use during sex with more than one partner in the past 6 months&quot;:&#xA;  exists(&#xA;    Elements.&quot;Signs of substantial risk of HIV infection C.DE36&quot; O&#xA;      where O.value ~ Concepts.&quot;No condom use during sex with more than one partner in the past 6 months - HIV.C.DE37&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="28"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVConfig"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV burden of setting"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* &#xA; * HIV burden of setting&#xA; */&#xA;define &quot;HIV burden of setting&quot;:&#xA;  Concepts.&quot;High HIV burden setting&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="29"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV burden of setting is high HIV burden setting"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;  @input: &quot;Signs of substantial risk of HIV infection&quot;&#xA;  @pseudocode: &quot;HIV burden of the setting&quot;='High HIV burden setting'&#xA;  */&#xA;define &quot;HIV burden of setting is high HIV burden setting&quot;:&#xA;  Config.&quot;HIV burden of setting&quot; ~ Concepts.&quot;High HIV burden setting&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="30"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV negative or unknown"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input &quot;HIV Status&quot;&#xA; @pseudocode: &quot;HIV status&quot;='HIV-negative'&#xA; */&#xA;define &quot;HIV negative or unknown&quot;:&#xA;  exists(&#xA;    Elements.&quot;HIV Status Observation&quot; O&#xA;        where O.value ~ Concepts.&quot;HIV-negative&quot; or&#xA;          O.value ~ Concepts.&quot;Unknown&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="31"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Symptoms of Acute HIV infection"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input &quot;Acute HIV infection symptoms&quot;&#xA; @pseudocode: &quot;Acute HIV infection symptoms&quot;=True&#xA; */&#xA;define &quot;Symptoms of Acute HIV infection&quot;:&#xA;  exists(&#xA;    Elements.&quot;Contraindications to PrEP usage&quot; O&#xA;      where O.value ~ Concepts.&quot;Acute HIV infection symptoms - HIV.C.DE116&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="32"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Probable recent exposure to HIV"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Probable recent exposure to HIV&quot;&#xA; @pseudocode: &quot;Probable recent exposure to HIV&quot;=True&#xA; */&#xA;define &quot;Probable recent exposure to HIV&quot;:&#xA;  exists(&#xA;    Elements.&quot;Contraindications to PrEP usage&quot; O&#xA;      where O.value ~ Concepts.&quot;Probable recent exposure to HIV&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="33"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="TDF allergy or contraindication"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Contraindications to PrEP usage&quot;&#xA; @pseudocode: &quot;Contraindications to PrEP usage&quot;='Tenofovir disoproxil fumarate (TDF)'&#xA; */&#xA;define &quot;TDF allergy or contraindication&quot;:&#xA;  exists(&#xA;    Elements.&quot;Contraindications to PrEP usage&quot; O&#xA;      where O.value ~ Concepts.&quot;Tenofovir disoproxil fumarate TDF allergy or contraindication&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="34"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Contraindications to PrEP usage"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Contraindications to PrEP usage&quot;&#xA; @pseudocode: &quot;Contraindications to PrEP usage&quot; is NOT NULL&#xA; */&#xA;define &quot;Contraindications to PrEP usage&quot;:&#xA;  exists(&#xA;    Elements.&quot;Contraindications to PrEP usage&quot; O&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="35"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Estimated creatinine clearance &lt; 60 mL/min"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input &quot;Estimated creatinine clearance&quot;&#xA; @pseudocode: &quot;Estimated creatinine clearance&quot; &lt; 60 mL/min&#xA; */&#xA;define &quot;Estimated creatinine clearance &lt; 60 mL/min&quot;:&#xA;  exists(&#xA;    Elements.&quot;Estimated creatinine clearance&quot; O&#xA;      where FHIRHelpers.ToInteger(O.value) &lt; 60&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="36"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Guidance"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @dynamicValue: Guidance&#xA; */&#xA;define &quot;Guidance&quot;:&#xA;  case&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;PrEP requested by client&quot;&#xA;      then 'Counsel client on PrEP. Based on answers given, client is suitable for PrEP.'&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV status of partner or contact is positive&quot; and&#xA;         &quot;Sex partner is on HIV treatment and not virally suppressed&quot;&#xA;      then 'Counsel client on PrEP. Based on answers given, client is suitable for PrEP.&#xA;&#xA;PrEP can protect the HIV-negative partner in a serodiscordant relationship when the HIV-positive partner is either not on antiretroviral therapy (ART) or has not yet achieved viral suppression.'&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;Is Key population member&quot; and&#xA;         &quot;PrEP requested by client&quot;&#xA;      then 'Counsel client on PrEP. Based on answers given, client is suitable for PrEP.'&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;Is Key population member&quot; and&#xA;         &quot;A sexual partner in the past 6 months had one or more HIV risk factors&quot;&#xA;      then 'Counsel client on PrEP. Based on answers given, client is suitable for PrEP.&#xA;&#xA;PrEP services provide a unique opportunity to screen for hepatitis B and hepatitis C infection and thus address multiple public health issues. Hepatitis B is endemic in some parts of the world where there is also a high burden of HIV. Testing oral PrEP users for hepatitis B surface antigen (HBsAg) once, at PrEP initiation, is preferred and has several advantages in these settings. Rapid point-of-care tests are available for HBsAg, and WHO has prequalified several rapid diagnostic tests.'&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;Is Key population member&quot; and&#xA;         &quot;STI in the past 6 months&quot;&#xA;      then 'Counsel client on PrEP. Based on answers given, client is suitable for PrEP.&#xA;&#xA;Recently diagnosed STIs are often indicators of risk of sexual acquisition of HIV. The predictive value of STI indicators varies by region, the type of STI and a person\'s demographic characteristics. A new diagnosis of syphilis or genital herpes is a strong predictor of HIV risk among men who have sex with men in most settings and among heterosexual men and women in areas of high HIV prevalence. PrEP services should be prioritized; local epidemiology will be essential to guide decisions about when to offer PrEP and to which populations.'&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;Is Key population member&quot; and&#xA;         &quot;Repeat PEP user&quot;&#xA;      then 'Counsel client on PrEP. Based on answers given, client is suitable for PrEP.&#xA;&#xA;People may be subject to ongoing high risk of exposure to HIV, leading to multiple prescriptions for PEP. In such situations, health-care providers should discuss with their clients the potential benefits of transitioning to HIV PrEP.'&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;Is Key population member&quot; and&#xA;         &quot;No condom use during sex with more than one partner in the past 6 months&quot;&#xA;      then 'Counsel client on PrEP.  Based on answers given, PrEP is suitable for client.&#xA;&#xA;Inconsistent use of condoms (male or female), including an intention to use condoms during sex with some occasional omissions or accidents, increases HIV risk. Social desirability bias in reporting condom use may occur, so PrEP could be considered for people reporting any intercourse without a condom or concerns about their future use of condoms. For example, someone who reports a desire to stop using condoms may be already having sex without condoms.'&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV burden of setting is high HIV burden setting&quot; and&#xA;         &quot;PrEP requested by client&quot;&#xA;      then 'Counsel client on PrEP. Based on answers given, client is suitable for PrEP.'&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV burden of setting is high HIV burden setting&quot; and&#xA;         &quot;A sexual partner in the past 6 months had one or more HIV risk factors&quot;&#xA;      then 'Counsel client on PrEP. Based on answers given, client is suitable for PrEP.'&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV burden of setting is high HIV burden setting&quot; and&#xA;         &quot;STI in the past 6 months&quot;&#xA;      then 'Counsel client on PrEP. Based on answers given, PrEP is suitable for client.&#xA;&#xA;Recently diagnosed STIs are often indicators of risk of sexual acquisition of HIV. The predictive value of STI indicators varies by region, the type of STI and a person\'s demographic characteristics. A new diagnosis of syphilis or genital herpes is a strong predictor of HIV risk among men who have sex with men in most settings and among heterosexual men and women in areas of high HIV prevalence. PrEP services should be prioritized; local epidemiology will be essential to guide decisions about when to offer PrEP and to which populations.'&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV burden of setting is high HIV burden setting&quot; and&#xA;         &quot;Repeat PEP user&quot;&#xA;      then 'Counsel client on PrEP. Based on answers given, client is suitable for PrEP.'&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV burden of setting is high HIV burden setting&quot; and&#xA;         &quot;No condom use during sex with more than one partner in the past 6 months&quot;&#xA;      then 'Counsel client on PrEP. Based on answers given, client is suitable for PrEP.'&#xA;    when &quot;HIV negative or unknown&quot; and&#xA;         &quot;Symptoms of Acute HIV infection&quot;&#xA;      then 'Client is ineligible for PrEP based on answers given.'&#xA;    when &quot;HIV negative or unknown&quot; and&#xA;         &quot;Probable recent exposure to HIV&quot;&#xA;      then 'Client is ineligible for PrEP based on answers given.  Counsel client on risk and prevention.  &#xA;&#xA;If the person has had a recent high-risk HIV exposure (such as within the past 72 hours) they can be offered PEP and transition to PrEP after the completion of PEP and following additional HIV testing.&#xA;&#xA;The following types of exposure may warrant HIV PEP.&#xA;• Body fluids: blood, blood-stained saliva, breast-milk, genital secretions; cerebrospinal, amniotic, peritoneal, synovial, pericardial or pleural fluids. Although these fluids carry a high risk of HIV infection, this list is not exhaustive. All cases should be assessed clinically, and the health care workers should decide whether the actual exposure constitutes a significant risk.&#xA;• Types of exposure: (1) mucous membrane from sexual exposure; splashes to the eye, nose, or oral cavity and (2) parenteral exposures.&#xA;Exposure that does not require HIV PEP includes:&#xA;• when the exposed individual is already HIV positive;&#xA;• when the source is established to be HIV negative; and&#xA;• exposure to bodily fluids that do not pose a significant risk: tears, non-blood-stained saliva, urine and sweat.&#xA;&#xA;People may be subject to ongoing high risk of exposure to HIV, leading to multiple prescriptions for PEP. In such situations, health-care providers should discuss with their clients the potential benefits of transitioning to HIV PrEP.'&#xA;    when &quot;HIV negative&quot; and&#xA;         &quot;TDF allergy or contraindication&quot;&#xA;      then 'Client is ineligible for PrEP based on answers given. Counsel client on risk and prevention.'&#xA;    when &quot;HIV negative&quot; and&#xA;         &quot;Contraindications to PrEP usage&quot;&#xA;      then 'Client is ineligible for PrEP based on answers given. Counsel client on risk and prevention.'&#xA;    when &quot;HIV negative&quot; and&#xA;         &quot;Estimated creatinine clearance &lt; 60 mL/min&quot;&#xA;      then 'Client is ineligible for PrEP based on answers given.  Counsel client on risk and prevention.&#xA;&#xA;Measurement of kidney function will depend on age and comorbidities.  See Table 2. of source: Suggested procedures for measuring kidney function for TDF-containing oral PrEP&#xA;&#xA;Measuring kidney function is optional for those aged under 30 years without kidney-related comorbidities.&#xA;&#xA;Individuals aged 30 years and older without comorbidities may be screened once, at or within one to three months of oral PrEP initiation. Depending on available resources, this can be considered optional for those aged 30–49 years, particularly those aged 30–39, given the low risk of kidney impairment.&#xA;&#xA;More frequent screening (every 6–12 months) is suggested for individuals with comorbidities, those aged 50 years and older, and those with a previous kidney function test result suggesting at least a mild reduction in function (eGFR &lt;90 mL/min per 1.73 m^2).&#xA;&#xA;Waiting for kidney function test results should not delay initiation or continuation of oral PrEP.'&#xA;    else null&#xA;  end"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="37"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Suitable for PrEP"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @output &quot;Suitable for PrEP&quot;&#xA; */&#xA;define &quot;Suitable for PrEP&quot;:&#xA;  case&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;PrEP requested by client&quot;&#xA;      then true&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV status of partner or contact is positive&quot; and&#xA;         &quot;Sex partner is on HIV treatment and not virally suppressed&quot;&#xA;      then true&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;Is Key population member&quot; and&#xA;         &quot;PrEP requested by client&quot;&#xA;      then true&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;Is Key population member&quot; and&#xA;         &quot;A sexual partner in the past 6 months had one or more HIV risk factors&quot;&#xA;      then true&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;Is Key population member&quot; and&#xA;         &quot;STI in the past 6 months&quot;&#xA;      then true&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;Is Key population member&quot; and&#xA;         &quot;Repeat PEP user&quot;&#xA;      then true&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;Is Key population member&quot; and&#xA;         &quot;No condom use during sex with more than one partner in the past 6 months&quot;&#xA;      then true&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV burden of setting is high HIV burden setting&quot; and&#xA;         &quot;PrEP requested by client&quot;&#xA;      then true&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV burden of setting is high HIV burden setting&quot; and&#xA;         &quot;A sexual partner in the past 6 months had one or more HIV risk factors&quot;&#xA;      then true&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV burden of setting is high HIV burden setting&quot; and&#xA;         &quot;STI in the past 6 months&quot;&#xA;      then true&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV burden of setting is high HIV burden setting&quot; and&#xA;         &quot;Repeat PEP user&quot;&#xA;      then true&#xA;    when &quot;HIV negative&quot; and &#xA;         &quot;Estimated creatinine clearance ≥ 60 mL/min&quot; and&#xA;         &quot;No symptoms of Acute HIV infection&quot; and&#xA;         &quot;No probable recent exposure to HIV&quot; and&#xA;         &quot;No contraindications to PrEP usage&quot; and&#xA;         &quot;HIV burden of setting is high HIV burden setting&quot; and&#xA;         &quot;No condom use during sex with more than one partner in the past 6 months&quot;&#xA;      then true&#xA;    when &quot;HIV negative or unknown&quot; and&#xA;         &quot;Symptoms of Acute HIV infection&quot;&#xA;      then false&#xA;    when &quot;HIV negative or unknown&quot; and&#xA;         &quot;Probable recent exposure to HIV&quot;&#xA;      then false&#xA;    when &quot;HIV negative&quot; and&#xA;         &quot;TDF allergy or contraindication&quot;&#xA;      then false&#xA;    when &quot;HIV negative&quot; and&#xA;         &quot;Contraindications to PrEP usage&quot;&#xA;      then false&#xA;    when &quot;HIV negative&quot; and&#xA;         &quot;Estimated creatinine clearance &lt; 60 mL/min&quot;&#xA;      then false&#xA;    else null&#xA;  end"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="38"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC7DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Not suitable for PrEP"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Not suitable for PrEP&quot;:&#xA;  not(IsNull(&quot;Suitable for PrEP&quot;)) and not(&quot;Suitable for PrEP&quot;)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="39"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value ObservationStatus): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="40"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="WHOCommon"/>
+        </extension>
+        <extension url="name">
+          <valueString value="references"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;@description: Returns true if the given reference is to the given resourceId&#xA;@comment: Returns true if the `resourceId` parameter exactly equals the tail of the given reference.&#xA;NOTE: This function assumes resources from the same source server.&#xA;*/&#xA;define fluent function references(reference FHIR.Reference, resourceId String):&#xA;  resourceId = Last(Split(reference.reference, '/'))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="41"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value string): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="42"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToConcept"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToConcept(concept FHIR.CodeableConcept):&#xA;    if concept is null then&#xA;        null&#xA;    else&#xA;        System.Concept {&#xA;            codes: concept.coding C return ToCode(C),&#xA;            display: concept.text.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="43"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToCode"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToCode(coding FHIR.Coding):&#xA;    if coding is null then&#xA;        null&#xA;    else&#xA;        System.Code {&#xA;          code: coding.code.value,&#xA;          system: coding.system.value,&#xA;          version: coding.version.value,&#xA;          display: coding.display.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="44"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToInteger"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToInteger(value integer): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="45"/>
+        </extension>
+      </extension>
+      <name value="EffectiveDataRequirements"/>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="FHIR model information"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVEncounterElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts|0.0.2"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library WC"/>
+        <resource value="http://smart.who.int/hiv/Library/WHOCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library ConceptsCustom"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Config"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConfig"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system HIVConcepts"/>
+        <resource value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system ObservationCategoryCodes"/>
+        <resource value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="EncounterId"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <parameter>
+        <name value="Today"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="date"/>
+      </parameter>
+      <parameter>
+        <name value="Guidance"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <parameter>
+        <name value="Not suitable for PrEP"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Suitable for PrEP"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.H.DE34"/>
+            <display value="HIV status of partner or contact"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.C.DE55"/>
+            <display value="Sex partners HIV treatment status"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="category"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="effective"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.B.DE49"/>
+            <display value="Key population member*"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.C.DE31"/>
+            <display value="PEP history"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.C.DE36"/>
+            <display value="Signs of substantial risk of HIV infection"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.B.DE115"/>
+            <display value="HIV status"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.C.DE112"/>
+            <display value="Contraindications to PrEP usage"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.C.DE106"/>
+            <display value="Estimated creatinine clearance"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability">
+    <valueCode value="computable"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
+    <valueCanonical value="#effective-data-requirements"/>
+  </extension>
+  <url value="http://smart.who.int/hiv/PlanDefinition/HIVC7DT"/>
+  <version value="0.4.4"/>
+  <name value="HIVC7DT"/>
+  <title value="HIV.C7.DT Check for signs of serious illness"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-03-05T13:07:29+00:00"/>
+  <publisher value="WHO"/>
+  <contact>
+    <name value="WHO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://who.int"/>
+    </telecom>
+  </contact>
+  <description value="Check for signs of serious illness"/>
+  <relatedArtifact>
+    <type value="citation"/>
+    <citation value="Consolidated Guidelines on HIV Testing Services (2019)"/>
+  </relatedArtifact>
+  <library value="http://smart.who.int/hiv/Library/HIVC7DTLogic"/>
+  <action>
+    <textEquivalent value="Check suitability for PrEP or PEP"/>
+    <action>
+      <textEquivalent value="Counsel client on PrEP. Based on answers given, client is suitable for PrEP."/>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <language value="text/cql-identifier"/>
+          <expression value="Suitable for PrEP"/>
+        </expression>
+      </condition>
+      <definitionCanonical value="http://smart.who.int/hiv/ActivityDefinition/HIVGuidanceCommunicationRequestActivity"/>
+      <dynamicValue>
+        <path value="payload[+].contentString"/>
+        <expression>
+          <language value="text/cql-identifier"/>
+          <expression value="Guidance"/>
+        </expression>
+      </dynamicValue>
+    </action>
+    <action>
+      <textEquivalent value="Client is ineligible for PrEP based on answers given."/>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <language value="text/cql-identifier"/>
+          <expression value="Not suitable for PrEP"/>
+        </expression>
+      </condition>
+      <definitionCanonical value="http://smart.who.int/hiv/ActivityDefinition/HIVGuidanceCommunicationRequestActivity"/>
+      <dynamicValue>
+        <path value="payload[+].contentString"/>
+        <expression>
+          <language value="text/cql-identifier"/>
+          <expression value="Guidance"/>
+        </expression>
+      </dynamicValue>
+    </action>
+  </action>
+</PlanDefinition>

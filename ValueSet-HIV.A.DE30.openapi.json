@@ -1,0 +1,71 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Marital Status ValueSet Schema API",
+    "description": "JSON Schema for Marital Status ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/ValueSet-HIV.A.DE30.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the enumeration ValueSet-HIV.A.DE30",
+        "description": "This endpoint serves the JSON Schema definition for the enumeration ValueSet-HIV.A.DE30.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for ValueSet-HIV.A.DE30",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./ValueSet-HIV.A.DE30.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ValueSet-HIV.A.DE30": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/hiv/ValueSet-HIV.A.DE30.schema.json",
+        "title": "Marital Status ValueSet Schema",
+        "description": "JSON Schema for Marital Status ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+        "type": "object",
+        "required": [
+          "system",
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "system": {
+            "type": "string",
+            "const": "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "HIV.A.DE31",
+              "HIV.A.DE32",
+              "HIV.A.DE33",
+              "HIV.A.DE34",
+              "HIV.A.DE35",
+              "HIV.A.DE36",
+              "HIV.A.DE37",
+              "HIV.A.DE38",
+              "HIV.A.DE39",
+              "HIV.A.DE40",
+              "HIV.A.DE41"
+            ]
+          }
+        },
+        "narrative": "This schema validates Coding-shaped objects for the Marital Status ValueSet ValueSet. Each value must be an object with 'system' (CodeSystem URI) and 'code' (fragment after '#') properties. Display values are available at http://smart.who.int/hiv/ValueSet-HIV.A.DE30.displays.json. The canonical IRI for a code can be reconstructed as system + '#' + code. For a complete listing of all ValueSets, see artifacts.html#terminology-value-sets.",
+        "fhir:displays": "http://smart.who.int/hiv/ValueSet-HIV.A.DE30.displays.json",
+        "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.A.DE30",
+        "fhir:version": "0.4.4",
+        "fhir:expansionTimestamp": "2026-03-05T13:16:25+00:00"
+      }
+    }
+  }
+}

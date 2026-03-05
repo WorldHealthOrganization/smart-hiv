@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="HIVD12DT"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableplandefinition"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">HIVD12DT</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="PlanDefinition-HIVD12DT.html">HIV.D12.Determine recommended screenings and tests</a></td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.4.4</td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">HIV.D12.Determine recommended screenings and tests</td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">draft</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">true</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/6.1.0/CodeSystem-plan-definition-type.html">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2026-03-05 13:07:29+0000</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">WHO</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>Determine recommended screenings and tests</p>
+</div></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Related Artifacts: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p><b>References</b></p>
+                <ul>
+                    
+                    <li><div><p>Consolidated Guidelines on HIV Testing Services (2019)</p>
+</div><br/><a href="null"/></li>
+                    
+                </ul>
+                
+                
+                
+                
+                
+                
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Libraries: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td><a href="Library-HIVD12DTLogic.html">HIV.D12.DT Logic</a></td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Actions: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td>
+                            
+                            Recommended screenings and tests
+                            
+                            <br/>
+                            
+                            
+                            
+                            
+                            <b>Then:</b> <i>Definition:</i> <a href="ActivityDefinition-HIVGuidanceCommunicationRequestActivity.html">HIVGuidanceCommunicationRequestActivity</a><br/>
+                            
+                            <i>Dynamic Values:</i><br/>
+                            
+                            payload[+].contentString: <i>(Guidance)</i>
+                            <br/>
+                            
+                            
+                            
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+    </table>
+</div>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE1"/>
+          <display value="Reason for visit"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.B.DE4"/>
+          <display value="HIV testing services visit"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.B.DE34"/>
+          <display value="HIV-positive"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE38"/>
+          <display value="On ART"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE364"/>
+          <display value="CD4 count"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE4"/>
+          <display value="ART initiation"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE132"/>
+          <display value="AZT"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE135"/>
+          <display value="TDF"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE3"/>
+          <display value="Clinical visit"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE443"/>
+          <display value="Suspicion of treatment failure or interruption"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Reason for visit D.DE1"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Services for responding to violence against women C.DE169 */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE1 - Reason for visit&#xA;@activity: HIV.D1 Determine reason for visit&#xA;@description: Whether visit was scheduled or unscheduled, clinical only, or for ARV drug pick-up&#xA;*/&#xA;define &quot;Reason for visit D.DE1&quot;:&#xA;  [Observation: Concepts.&quot;Reason for visit - HIV.D.DE1&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="0"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Reason for visit D.DE1"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Services for responding to violence against women C.DE169 */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE1 - Reason for visit&#xA;@activity: HIV.D1 Determine reason for visit&#xA;@description: Whether visit was scheduled or unscheduled, clinical only, or for ARV drug pick-up&#xA;*/&#xA;define &quot;Reason for visit D.DE1&quot;:&#xA;  Elements.&quot;Reason for visit D.DE1&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="1"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV testing services visit"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Reason for Visit&quot;&#xA; @pseudocode: &quot;Reason for visit&quot;='HIV testing services visit'&#xA; */&#xA;define &quot;HIV testing services visit&quot;:&#xA;  exists(&#xA;    Elements.&quot;Reason for visit D.DE1&quot; O&#xA;      where O.value ~ Concepts.&quot;HIV testing services visit&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="2"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Current Patient Age In Years"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/**&#xA; * HIV Elements&#xA; */&#xA;&#xA;// Auto-generated Elements from DAK Data Dictionary&#xA;//   Entries based on DAK Data Dictionary for Data Elements marked as used&#xA;//   in at least one Decision Support Table or Aggregate Indicator&#xA;&#xA;/*&#xA;@dataElement: HIV.A.DE17 - Age&#xA;@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record&#xA;@description: Calculated age (number of years) of the client based on date of birth&#xA;*/&#xA;/** &#xA; * @dataElement Patient age in years&#xA; */&#xA;define &quot;Current Patient Age In Years&quot;:&#xA;  AgeInYearsAt(Today())"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="3"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Age 20 or older"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Age&quot;&#xA; @pseudocode: &quot;Age&quot; ≥ 20 years&#xA; */&#xA;define &quot;Age 20 or older&quot;:&#xA;  Elements.&quot;Current Patient Age In Years&quot; &gt;= 20"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="4"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV test"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Date informed of HIV-positive diagnosis */&#xA;&#xA;/*&#xA;@activity: HIV.B7 Test for HIV using testing algorithm&#xA;*/&#xA;define &quot;HIV test&quot;:&#xA;  [Observation: Concepts.&quot;HIV test type - HIV.B.DE81 Choices&quot;] O&#xA;  where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="5"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV test result Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of HIV test date B.DE110 */&#xA;&#xA;/*&#xA;@dataElement: HIV.B.DE111 - HIV test result&#xA;@activity: HIV.B7 Test for HIV using testing algorithm&#xA;@description: The result from HIV testing after applying the testing algorithm&#xA;*/&#xA;// Same as test - see profile&#xA;define &quot;HIV test result Observation&quot;:&#xA;  &quot;HIV test&quot; O"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="6"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV test result"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Invalid B.DE109 */&#xA;&#xA;/*&#xA;@dataElement: HIV.B.DE111 - HIV test result&#xA;@activity: HIV.B7 Test for HIV using testing algorithm&#xA;@description: The result from HIV testing after applying the testing algorithm&#xA;*/&#xA;define &quot;HIV test result&quot;:&#xA;  Elements.&quot;HIV test result Observation&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="7"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HIV Positive test result"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;HIV test result&quot;&#xA; @pseudocode: &quot;HIV test result&quot;='HIV-positive'&#xA; */&#xA;define &quot;HIV Positive test result&quot;:&#xA;  exists(&#xA;    Elements.&quot;HIV test result&quot; O&#xA;      where O.value ~ Concepts.&quot;HIV-positive&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="8"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="On ART D.DE38"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Serodiscordant partner D.DE37 */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE38 - On ART&#xA;@activity: HIV.D8 Capture or update client history&#xA;@description: Client is currently taking ART&#xA;*/&#xA;&#xA;define &quot;On ART D.DE38&quot;:&#xA;    [MedicationStatement] MS&#xA;    where exists(MS.reasonCode C where C ~ Concepts.&quot;On ART - HIV.D.DE38&quot;)&#xA;    sort by start of effective.toInterval()"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="9"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="On ART D.DE38"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Serodiscordant partner D.DE37 */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE38 - On ART&#xA;@activity: HIV.D8 Capture or update client history&#xA;@description: Client is currently taking ART&#xA;*/&#xA;define &quot;On ART D.DE38&quot;:&#xA;  Elements.&quot;On ART D.DE38&quot; MS&#xA;    where MS.context.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="10"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Not on ART"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;On ART&quot;&#xA; @pseudocode: &quot;On ART&quot;=False&#xA; */&#xA;define &quot;Not on ART&quot;:&#xA;  not(exists(&#xA;    Elements.&quot;On ART D.DE38&quot;&#xA;  ))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="11"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Age under 20"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Age&quot;&#xA; @pseudocode: &quot;&quot;Age&quot;&lt;20 years&#xA; */&#xA;define &quot;Age under 20&quot;:&#xA;  Elements.&quot;Current Patient Age In Years&quot; &lt; 20"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="12"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="CD4 count D.DE364"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Neutropenia */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE364 - CD4 count&#xA;@activity: HIV.D20 Diagnostics&#xA;@description: CD4 cell count in cells/mm^3&#xA;*/&#xA;// TODO: Replace placeholder with relevant CQL logic&#xA;define &quot;CD4 count D.DE364&quot;:&#xA;  [Observation: Concepts.&quot;CD4 count - HIV.D.DE364&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="13"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="CD4 count D.DE364"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of WHO HIV clinical stage condition or symptom D.DE289 */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE364 - CD4 count&#xA;@activity: HIV.D20 Diagnostics&#xA;@description: CD4 cell count in cells/mm^3&#xA;*/&#xA;define &quot;CD4 count D.DE364&quot;:&#xA;  Elements.&quot;CD4 count D.DE364&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="14"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="CD4 less than or equal to 100 cells/mm3"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;CD4 count&quot;&#xA; @pseudocode: &quot;CD4 count&quot; ≤ 100 cells/mm3&#xA; */&#xA;define &quot;CD4 less than or equal to 100 cells/mm3&quot;:&#xA;  exists(&#xA;    Elements.&quot;CD4 count D.DE364&quot; O&#xA;      where O.value &lt;= 100&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="15"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Gender"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Age */&#xA;&#xA;/*&#xA;@dataElement: HIV.A.DE18 - Gender&#xA;@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record&#xA;@description: Gender of the client&#xA;*/&#xA;// TODO: Replace placeholder with relevant CQL logic&#xA;define &quot;Gender&quot;:&#xA;  Patient.gender"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="16"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Female"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Gender */&#xA;&#xA;/*&#xA;@dataElement: HIV.A.DE19 - Female&#xA;@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record&#xA;@description: Client identifies as female&#xA;*/&#xA;define &quot;Female&quot;:&#xA;  &quot;Gender&quot; ~ 'female'"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="17"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Client is female"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Gender&quot;&#xA; @pseudocode: &quot;Gender&quot;='Female'&#xA; */&#xA;define &quot;Client is female&quot;:&#xA;  Elements.&quot;Female&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="18"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ART initiation visit"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Reason for Visit&quot;&#xA; @pseudocode: &quot;Reason for visit&quot;='ART initiation'&#xA; */&#xA;define &quot;ART initiation visit&quot;:&#xA;  exists(&#xA;    Elements.&quot;Reason for visit D.DE1&quot; O&#xA;      where O.value ~ Concepts.&quot;ART initiation&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="19"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Age 10 or older"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;  @input: &quot;Age&quot;&#xA;  @pseudocode: 'Age' ≥ 10 years&#xA;  */&#xA;define &quot;Age 10 or older&quot;:&#xA;  Elements.&quot;Current Patient Age In Years&quot; &gt;= 10"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="20"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="CD4 less than or equal to 200 cells/mm3"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;CD4 count&quot;&#xA; @pseudocode: &quot;CD4 count&quot; ≤ 200 cells/mm3&#xA; */&#xA;define &quot;CD4 less than or equal to 200 cells/mm3&quot;:&#xA;  exists(&#xA;    Elements.&quot;CD4 count D.DE364&quot; O&#xA;      where O.value &lt;= 200&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="21"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="On AZT"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Current medications&quot;&#xA; @pseudocode: &quot;Current medications&quot;='AZT'&#xA; */&#xA;define &quot;On AZT&quot;:&#xA;  exists(&#xA;    Elements.&quot;On ART D.DE38&quot; MS&#xA;      where MS.medication ~ Concepts.&quot;AZT&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="22"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="On TDF"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Current medications&quot;&#xA; @pseudocode: &quot;Current medications&quot;='TDF'&#xA; */&#xA;define &quot;On TDF&quot;:&#xA;  exists(&#xA;    Elements.&quot;On ART D.DE38&quot; MS&#xA;      where MS.medication ~ Concepts.&quot;TDF - HIV.D.DE135&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="23"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Clinical visit"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Reason for Visit&quot;&#xA; @pseudocode: &quot;Reason for visit&quot;='Clinical visit&#xA; */&#xA;define &quot;Clinical visit&quot;:&#xA;  exists(&#xA;    Elements.&quot;Reason for visit D.DE1&quot; O&#xA;      where O.value ~ Concepts.&quot;Clinical visit - HIV.D.DE3&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="24"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="On ART"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;On ART&quot;&#xA; @pseudocode: &quot;On ART&quot;=True&#xA; */&#xA;define &quot;On ART&quot;:&#xA;  exists(&#xA;    Elements.&quot;On ART D.DE38&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="25"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Suspicion of treatment failure or interruption Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Suspicion of treatment failure or interruption Observation&quot;:&#xA;  [Observation: Concepts.&quot;Suspicion of treatment failure or interruption&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }&#xA;      and O.value is true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="26"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Suspicion of treatment failure or interruption Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Dose adjustment recommended */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE443 - Suspicion of treatment failure or interruption&#xA;@activity: HIV.D23 Prescribe&#xA;@description: Client has been on ART, but has stopped taking it or a treatment failure is suspected&#xA;*/&#xA;define &quot;Suspicion of treatment failure or interruption Observation&quot;:&#xA;  Elements.&quot;Suspicion of treatment failure or interruption Observation&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="27"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Suspicion of treatment failure or interruption"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: &quot;Suspicion of treatment failure or interruption&quot;&#xA; @pseudocode: &quot;Suspicion of treatment failure or interruption&quot;=True&#xA; */&#xA;define &quot;Suspicion of treatment failure or interruption&quot;:&#xA;  exists(&#xA;    Elements.&quot;Suspicion of treatment failure or interruption Observation&quot; O&#xA;      where O.value = true&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="28"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVD12DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Guidance"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @dynamicValue: Guidance&#xA; */&#xA;define &quot;Guidance&quot;:&#xA;  Combine({&#xA;    if &quot;HIV testing services visit&quot; and &quot;Age 20 or older&quot; and &quot;HIV Positive test result&quot; and &quot;Not on ART&quot;&#xA;      then 'Recommended actions:&#xA;CD4 cell count&#xA;TB symptom screening&#xA;&#xA;Desirable actions:&#xA;HBV (HBsAg) serology&#xA;HCV serology&#xA;Screen for sexually transmitted infections   &#xA;Assess for major noncommunicable chronic diseases and comorbidities&#xA;&#xA;General care activities recommended: &#xA;Determine WHO clinical stage based on past and current HIV-related conditions&#xA;Prepare for ART&#xA;Prepare, assess and support adherence&#xA;Provide family planning and contraception&#xA;Support disclosure and partner notification&#xA;Counsel on risk reduction and combination HIV prevention approaches&#xA;Assess, prevent and manage noncommunicable diseases&#xA;Screen for and manage mental health problems&#xA;Screen for and manage and substance use issues&#xA;Provide psychosocial counselling and support&#xA;Manage pain and symptoms&#xA;Conduct a nutritional assessment and counsel on nutrition&#xA;&#xA;Preventing and treating coinfections: &#xA;Provide co-trimoxazole preventive therapy&#xA;Conduct intensified TB case-finding&#xA;Provide isoniazid preventive therapy&#xA;Screen for cryptococcal infection and fungal prophylaxis&#xA;Prevent malaria (insecticide- treated  bed-nets and prophylaxis)&#xA;Screen for sexually transmitted infections&#xA;Assess for vaccine-preventable diseases'&#xA;    else '',&#xA;    if &quot;HIV testing services visit&quot; and &quot;Age under 20&quot; and &quot;HIV Positive test result&quot; and &quot;Not on ART&quot;&#xA;      then 'Recommended:&#xA;CD4 cell count&#xA;TB symptom screening&#xA;&#xA;Desirable: &#xA;HBV (HBsAg) serology&#xA;HCV serology&#xA;Screen for sexually transmitted infections   &#xA;Assess for major noncommunicable chronic diseases and comorbidities&#xA;&#xA;General care activities recommended:&#xA; Determine WHO clinical stage based on past and current HIV-related conditions&#xA;Prepare for ART&#xA;Prepare, assess and support adherence&#xA;Provide family planning and contraception&#xA;Support disclosure and partner notification&#xA;Counsel on risk reduction and combination HIV prevention approaches&#xA;Assess, prevent and manage noncommunicable diseases&#xA;Screen for and manage mental health problems&#xA;Screen for and manage and substance use issues&#xA;Provide psychosocial counselling and support&#xA;Manage pain and symptoms&#xA;Conduct a nutritional, growth and development assessment&#xA;&#xA;Preventing and treating coinfections: &#xA;Provide co-trimoxazole preventive therapy&#xA;Conduct intensified TB case-finding&#xA;Provide isoniazid preventive therapy&#xA;Screen for cryptococcal infection and fungal prophylaxis&#xA;Prevent malaria (insecticide- treated  bed-nets and prophylaxis)&#xA;Screen for sexually transmitted infections&#xA;Assess for vaccine-preventable diseases'&#xA;    else '',&#xA;    if &quot;HIV testing services visit&quot; and &quot;HIV Positive test result&quot; and &quot;Not on ART&quot; and &quot;CD4 less than or equal to 100 cells/mm3&quot;&#xA;      then 'Desirable actions:&#xA;Cryptococcus antigen test'&#xA;    else '',&#xA;    if &quot;HIV testing services visit&quot; and &quot;HIV Positive test result&quot; and &quot;Not on ART&quot; and &quot;Client is female&quot;&#xA;      then 'Desirable actions: &#xA;Pregnancy test'&#xA;    else '',&#xA;    if &quot;ART initiation visit&quot; and &quot;Not on ART&quot;&#xA;      then 'Recommended: &#xA;Baseline CD4 cell count for identifying advanced HIV disease&#xA;Age-appropriate TB symptom screening&#xA;&#xA;Desirable: &#xA;Blood pressure measurement &#xA;&#xA;General care activities recommended:&#xA;Preparing people for ART&#xA;WHO clinical staging, past and current HIV- related conditions&#xA;Preparing, assessing and supporting adherence&#xA;Pregnancy status, family planning and contraception&#xA;Support for disclosure and partner notification&#xA;Risk-reduction counselling and combination and HIV prevention approaches&#xA;Screening for, preventing and managing noncommunicable diseases&#xA;Screening for and managing mental health problems and substance use&#xA;Psychosocial counselling and support&#xA;Managing pain and symptoms&#xA;Nutritional assessment and counselling&#xA;Infant and child feeding&#xA;Nutritional, growth and development assessment for children and adolescents&#xA;&#xA;Preventing and treating coinfections: &#xA;Co-trimoxazole preventive therapy&#xA;Intensified TB case- finding&#xA;Isoniazid preventive therapy&#xA;Screening for cryptococcal infection and fungal prophylaxis when appropriate&#xA;Screening for hepatitis B and C&#xA;Malaria prevention (insecticide-treated bed nets and prophylaxis)&#xA;Screening for sexually transmitted infections&#xA;Preventing and screening for cervical cancer&#xA;Assessing for vaccine- preventable diseases other than HBV and HCV infection'&#xA;    else '',&#xA;    if &quot;ART initiation visit&quot; and &quot;Age 10 or older&quot; and &quot;Not on ART&quot; and &quot;CD4 less than or equal to 200 cells/mm3&quot;&#xA;      then 'Perform a cryptococcal antigen for adults and adolescents'&#xA;    else '',&#xA;    if &quot;ART initiation visit&quot; and &quot;Not on ART&quot; and &quot;On AZT&quot;&#xA;      then 'Desirable actions: &#xA;Haemoglobin test'&#xA;    else '',&#xA;    if &quot;ART initiation visit&quot; and &quot;Not on ART&quot; and &quot;On TDF&quot;&#xA;      then 'Desirable actions: &#xA;Serum creatinine test&#xA;Estimated glomerular filtration rate (eGFR)'&#xA;    else '',&#xA;    if &quot;ART initiation visit&quot; and &quot;Not on ART&quot; and &quot;Client is female&quot;&#xA;      then 'Desirable actions: &#xA;Pregnancy test'&#xA;    else '',&#xA;    if &quot;Clinical visit&quot; and &quot;Age 20 or older&quot; and &quot;On ART&quot;&#xA;      then 'Recommended actions:&#xA;Schedule the following viral load tests: &#xA;HIV viral load test ≤ (ART start date + 6 months)&#xA;HIV viral load test ≤ (ART start date + 12 months)&#xA;HIV viral load test every 12 months thereafter&#xA;Perform a CD4 cell count every 6 months until &quot;&quot;Established on ART&quot;&quot; = TRUE&#xA;&#xA;Desirable actions:&#xA;Serum creatinine and estimated glomerular filtration rate for TDF&#xA;&#xA;Recommended general care activities: &#xA;Adherence support interventions should be provided to people on ART (p xxxix of source).&#xA;Manage current medications.&#xA;Provide family planning and contraception.&#xA;Support disclosure and partner notification.&#xA;Counsel on risk reduction and combination HIV prevention approaches.&#xA;Assess, prevent and manage noncommunicable diseases.&#xA;Screen for and manage mental health problems.&#xA;Screen for and manage and substance use issues.&#xA;Provide psychosocial counselling and support.&#xA;Manage pain and symptoms.&#xA;Conduct a nutritional assessment and counsel on nutrition.&#xA;&#xA;Preventing and treating coinfections:&#xA;Provide co-trimoxazole preventive therapy&#xA;Prevent malaria (insecticide- treated  bed-nets and prophylaxis)&#xA;Screen for sexually transmitted infections&#xA;Assess for vaccine-preventable diseases'&#xA;    else '',&#xA;    if &quot;Clinical visit&quot; and &quot;Age under 20&quot; and &quot;On ART&quot;&#xA;      then 'Recommended actions: &#xA;Schedule viral load tests on the following dates: &#xA;HIV viral load test ≤ (ART start date + 6 months)&#xA;HIV viral load test ≤ (ART start date + 12 months)&#xA;HIV viral load test every 12 months thereafter&#xA;CD4 cell count every 6 months until &quot;&quot;Established on ART&quot;&quot; = TRUE&#xA;&#xA;Recommended general care activities: &#xA;Prepare, assess and support adherence.&#xA;Manage current medications.&#xA;Provide family planning and contraception.&#xA;Support disclosure and partner notification.&#xA;Counsel on risk reduction and combination HIV prevention approaches.&#xA;Assess, prevent and manage noncommunicable diseases.&#xA;Screen for and manage mental health problems.&#xA;Screen for and manage and substance use issues.&#xA;Provide psychosocial counselling and support.&#xA;Manage pain and symptoms.&#xA;Conduct a nutritional, growth and development assessment.&#xA;&#xA;Preventing and treating coinfections:&#xA;Provide co-trimoxazole preventive therapy&#xA;Prevent malaria (insecticide- treated  bed-nets and prophylaxis)&#xA;Screen for sexually transmitted infections&#xA;Assess for vaccine-preventable diseases'&#xA;    else '',&#xA;    if &quot;Clinical visit&quot; and &quot;Age under 20&quot; and &quot;Client is female&quot;&#xA;      then 'Pregnancy test'&#xA;    else '',&#xA;    if &quot;Clinical visit&quot; and &quot;On ART&quot; and &quot;On TDF&quot;&#xA;      then 'Desirable actions: &#xA;Serum creatinine&#xA;Estimated glomerular filtration rate for TDF'&#xA;    else '',&#xA;    if &quot;Clinical visit&quot; and &quot;Age 20 or older&quot; and &quot;Suspicion of treatment failure or interruption&quot;&#xA;      then 'Desirable actions: &#xA;HBV (HBsAg) serology (before switching ART regimen if this testing was not done or if the result was negative at baseline and the patient was not vaccinated thereafter) &#xA;&#xA;Recommended general care activities: &#xA;Prepare, assess and support adherence.&#xA;Manage current medications.&#xA;Provide family planning and contraception.&#xA;Support disclosure and partner notification.&#xA;Counsel on risk reduction and combination HIV prevention approaches.&#xA;Assess, prevent and manage noncommunicable diseases.&#xA;Screen for and manage mental health problems.&#xA;Screen for and manage and substance use issues.&#xA;Provide psychosocial counselling and support.&#xA;Manage pain and symptoms.&#xA;Conduct a nutritional assessment and counsel on nutrition.&#xA;&#xA;Preventing and treating coinfections: &#xA;Provide co-trimoxazole preventive therapy&#xA;Conduct intensified TB case-finding&#xA;Prevent malaria (insecticide- treated  bed-nets and prophylaxis)&#xA;Screen for sexually transmitted infections&#xA;Assess for vaccine-preventable diseases'&#xA;    else '',&#xA;    if &quot;Clinical visit&quot; and &quot;Age 20 or older&quot; and &quot;Suspicion of treatment failure or interruption&quot;&#xA;      then 'Desirable actions: &#xA;HBV (HBsAg) serology (before switching ART regimen if this testing was not done or if the result was negative at baseline and the patient was not vaccinated thereafter)&#xA;&#xA;Recommended general care activities:&#xA;Prepare, assess and support adherence.&#xA;Manage current medications.&#xA;Provide family planning and contraception.&#xA;Support disclosure and partner notification.&#xA;Counsel on risk reduction and combination HIV prevention approaches.&#xA;Assess, prevent and manage noncommunicable diseases.&#xA;Screen for and manage mental health problems.&#xA;Screen for and manage and substance use issues.&#xA;Provide psychosocial counselling and support.&#xA;Manage pain and symptoms.&#xA;Conduct a nutritional, growth and development assessment.&#xA;&#xA;Preventing and treating coinfections:&#xA;Provide co-trimoxazole preventive therapy&#xA;Conduct intensified TB case-finding&#xA;Prevent malaria (insecticide- treated  bed-nets and prophylaxis)&#xA;Screen for sexually transmitted infections&#xA;Assess for vaccine-preventable diseases'&#xA;    else ''&#xA;  })"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="29"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value ObservationStatus): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="30"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="WHOCommon"/>
+        </extension>
+        <extension url="name">
+          <valueString value="references"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;@description: Returns true if the given reference is to the given resourceId&#xA;@comment: Returns true if the `resourceId` parameter exactly equals the tail of the given reference.&#xA;NOTE: This function assumes resources from the same source server.&#xA;*/&#xA;define fluent function references(reference FHIR.Reference, resourceId String):&#xA;  resourceId = Last(Split(reference.reference, '/'))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="31"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value string): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="32"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToConcept"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToConcept(concept FHIR.CodeableConcept):&#xA;    if concept is null then&#xA;        null&#xA;    else&#xA;        System.Concept {&#xA;            codes: concept.coding C return ToCode(C),&#xA;            display: concept.text.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="33"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToCode"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToCode(coding FHIR.Coding):&#xA;    if coding is null then&#xA;        null&#xA;    else&#xA;        System.Code {&#xA;          code: coding.code.value,&#xA;          system: coding.system.value,&#xA;          version: coding.version.value,&#xA;          display: coding.display.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="34"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToInteger"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToInteger(value integer): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="35"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value AdministrativeGender): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="36"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToBoolean"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToBoolean(value boolean): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="37"/>
+        </extension>
+      </extension>
+      <name value="EffectiveDataRequirements"/>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="FHIR model information"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVEncounterElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts|0.0.2"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library WC"/>
+        <resource value="http://smart.who.int/hiv/Library/WHOCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system HIVConcepts"/>
+        <resource value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set HIV test type - HIV.B.DE81 Choices"/>
+        <resource value="http://smart.who.int/hiv/ValueSet/HIV.B.DE81"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="EncounterId"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <parameter>
+        <name value="Guidance"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <valueSet value="http://smart.who.int/hiv/ValueSet/HIV.B.DE81"/>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.D.DE364"/>
+            <display value="CD4 count"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.D.DE1"/>
+            <display value="Reason for visit"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="value"/>
+        <mustSupport value="encounter"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.D.DE443"/>
+            <display value="Suspicion of treatment failure or interruption"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Patient"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="MedicationStatement"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationStatement"/>
+        <mustSupport value="reasonCode"/>
+        <mustSupport value="context"/>
+        <mustSupport value="medication"/>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability">
+    <valueCode value="computable"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
+    <valueCanonical value="#effective-data-requirements"/>
+  </extension>
+  <url value="http://smart.who.int/hiv/PlanDefinition/HIVD12DT"/>
+  <version value="0.4.4"/>
+  <name value="HIVD4DT"/>
+  <title value="HIV.D12.Determine recommended screenings and tests"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-03-05T13:07:29+00:00"/>
+  <publisher value="WHO"/>
+  <contact>
+    <name value="WHO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://who.int"/>
+    </telecom>
+  </contact>
+  <description value="Determine recommended screenings and tests"/>
+  <relatedArtifact>
+    <type value="citation"/>
+    <citation value="Consolidated Guidelines on HIV Testing Services (2019)"/>
+  </relatedArtifact>
+  <library value="http://smart.who.int/hiv/Library/HIVD12DTLogic"/>
+  <action>
+    <textEquivalent value="Recommended screenings and tests"/>
+    <definitionCanonical value="http://smart.who.int/hiv/ActivityDefinition/HIVGuidanceCommunicationRequestActivity"/>
+    <dynamicValue>
+      <path value="payload[+].contentString"/>
+      <expression>
+        <language value="text/cql-identifier"/>
+        <expression value="Guidance"/>
+      </expression>
+    </dynamicValue>
+  </action>
+</PlanDefinition>

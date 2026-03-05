@@ -1,0 +1,534 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/base/StructureDefinition-HIVARegistration.schema.json",
+  "title": "HIV.A Registration",
+  "description": "This tab describes the data that are collected during the registration workflow (HIV.A)",
+  "type": "object",
+  "properties": {
+    "resourceType": {
+      "type": "string",
+      "const": "HIVARegistration",
+      "description": "Resource type identifier for HIVARegistration logical model"
+    },
+    "@context": {
+      "description": "JSON-LD context for this logical model with ValueSet vocabularies",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uri",
+          "description": "URI reference to external JSON-LD context"
+        },
+        {
+          "type": "object",
+          "description": "Inline JSON-LD context",
+          "properties": {
+            "@version": {
+              "type": "number",
+              "const": 1.1
+            },
+            "fhir": {
+              "type": "string",
+              "const": "http://hl7.org/fhir/"
+            }
+          },
+          "additionalProperties": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        {
+          "type": "array",
+          "description": "Array of JSON-LD context objects/URIs",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "object"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "JSON-LD type identifier for HIVARegistration logical model",
+      "examples": [
+        "LogicalModel-HIVARegistration"
+      ]
+    },
+    "firstName": {
+      "type": "string",
+      "description": "Client's first or given name"
+    },
+    "familyName": {
+      "type": "string",
+      "description": "Client's family name or last name"
+    },
+    "visitDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time of the client's visit"
+    },
+    "referral": {
+      "type": "boolean",
+      "description": "If client was referred for care"
+    },
+    "referredBy": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.A.DE5",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.A.DE5 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.A.DE5.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.A.DE5"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.A.DE5"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "How the client was referred"
+    },
+    "uniqueIdentifier": {
+      "type": "object",
+      "description": "Unique identifier generated for new clients or a universal ID, if used in the country"
+    },
+    "nationalId": {
+      "type": "object",
+      "description": "National unique identifier assigned to the client, if used in the country"
+    },
+    "nationalHealthId": {
+      "type": "object",
+      "description": "National health unique identifier assigned to the client, if used in the country"
+    },
+    "nationalProgrammeId": {
+      "type": "object",
+      "description": "National programme unique identifier assigned to the client, if used in the country"
+    },
+    "nationalHealthInsuranceId": {
+      "type": "object",
+      "description": "National health insurance unique identifier assigned to the client, if used in the country"
+    },
+    "countryOfBirth": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.A.DE13",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.A.DE13 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.A.DE13.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.A.DE13"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.A.DE13"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Country where the client was born"
+    },
+    "dateOfBirth": {
+      "type": "string",
+      "format": "date",
+      "description": "The client's date of birth (DOB) if known"
+    },
+    "dateOfBirthUnknown": {
+      "type": "boolean",
+      "description": "Is the client's DOB is unknown?"
+    },
+    "estimatedAge": {
+      "type": "integer",
+      "description": "If DOB is unknown, enter the client's estimated age. Display client's age in number of years."
+    },
+    "age": {
+      "type": "integer",
+      "description": "Calculated age (number of years) of the client based on date of birth"
+    },
+    "gender": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.A.DE18",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.A.DE18 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.A.DE18.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.A.DE18"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.A.DE18"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Gender of the client"
+    },
+    "otherGender": {
+      "type": "string",
+      "description": "Additional category (please specify)"
+    },
+    "sex": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.A.DE25",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.A.DE25 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.A.DE25.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.A.DE25"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.A.DE25"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Sex of the client assigned at birth"
+    },
+    "address": {
+      "type": "string",
+      "description": "Client's home address or address which the client is consenting to disclose"
+    },
+    "maritalStatus": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.A.DE30",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.A.DE30 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.A.DE30.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.A.DE30"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.A.DE30"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Client's current marital status"
+    },
+    "telephoneNumber": {
+      "type": "integer",
+      "description": "Client's telephone number (a landline or a mobile phone number)"
+    },
+    "administrativeArea": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "FHIR Coding from ValueSet HIV.A.DE43",
+          "properties": {
+            "system": {
+              "type": "string",
+              "description": "Code system URI"
+            },
+            "code": {
+              "type": "string",
+              "description": "Code value"
+            },
+            "display": {
+              "type": "string",
+              "description": "Human readable display text"
+            }
+          },
+          "required": [
+            "system",
+            "code"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Coding from ValueSet HIV.A.DE43 (JSON-LD structure)",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://smart.who.int/base/ValueSet-HIV.A.DE43.jsonld",
+              "description": "JSON-LD type reference to ValueSet HIV.A.DE43"
+            },
+            "@id": {
+              "type": "string",
+              "format": "uri",
+              "description": "Full IRI of the code from ValueSet HIV.A.DE43"
+            }
+          },
+          "required": [
+            "@type",
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "This should be a context-specific list of administrative areas, such as villages, districts, etc. The purpose of this data element is to allow for grouping and flagging of client data to a particular facility's catchment area. This can be input into the system by the end user OR it can be automated in the database based on the end user's attributes."
+    },
+    "communicationConsent": {
+      "type": "boolean",
+      "description": "Indication that client gave consent to be contacted"
+    },
+    "reminderMessages": {
+      "type": "boolean",
+      "description": "Whether client wants to receive text or other messages as follow-up for HIV services"
+    },
+    "communicationPreferences": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "FHIR Coding from ValueSet HIV.A.DE46",
+            "properties": {
+              "system": {
+                "type": "string",
+                "description": "Code system URI"
+              },
+              "code": {
+                "type": "string",
+                "description": "Code value"
+              },
+              "display": {
+                "type": "string",
+                "description": "Human readable display text"
+              }
+            },
+            "required": [
+              "system",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "description": "Coding from ValueSet HIV.A.DE46 (JSON-LD structure)",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "http://smart.who.int/base/ValueSet-HIV.A.DE46.jsonld",
+                "description": "JSON-LD type reference to ValueSet HIV.A.DE46"
+              },
+              "@id": {
+                "type": "string",
+                "format": "uri",
+                "description": "Full IRI of the code from ValueSet HIV.A.DE46"
+              }
+            },
+            "required": [
+              "@type",
+              "@id"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "Coding from ValueSet HIV.A.DE46. Supports both FHIR Coding structure and JSON-LD structure."
+      },
+      "description": "How the client would like to receive family planning communications"
+    },
+    "clientEmail": {
+      "type": "string",
+      "description": "Client's primary email account where the client can be contacted"
+    },
+    "alternateContactName": {
+      "type": "string",
+      "description": "Name of an alternate contact, which could be next of kin (e.g. partner, husband, mother, sibling, etc.). The alternate contact would be used in the case of an emergency situation."
+    },
+    "alternateContactPhoneNumber": {
+      "type": "integer",
+      "description": "Phone number of the alternate contact"
+    },
+    "alternateContactAddress": {
+      "type": "string",
+      "description": "Alternate contact's home address or address which the client is consenting to disclose"
+    },
+    "alternateContactRelationship": {
+      "type": "string",
+      "description": "The alternate contact's relationship to the client (e.g. partner, husband, mother, sibling, etc.)"
+    }
+  },
+  "required": [
+    "resourceType",
+    "firstName",
+    "familyName",
+    "visitDate",
+    "referral",
+    "uniqueIdentifier",
+    "countryOfBirth",
+    "gender",
+    "sex",
+    "address",
+    "telephoneNumber",
+    "administrativeArea"
+  ],
+  "resourceDefinition": "http://smart.who.int/hiv/StructureDefinition/HIVARegistration",
+  "fhir:parent": "http://hl7.org/fhir/StructureDefinition/Base",
+  "jsonld:valuesets": [
+    "HIV.A.DE18",
+    "HIV.A.DE13",
+    "HIV.A.DE46",
+    "HIV.A.DE5",
+    "HIV.A.DE30",
+    "HIV.A.DE25",
+    "HIV.A.DE43"
+  ],
+  "jsonld:contextTemplate": {
+    "@version": 1.1,
+    "fhir": "http://hl7.org/fhir/",
+    "HIV.A.DE18": "http://smart.who.int/base/ValueSet-HIV.A.DE18.jsonld",
+    "HIV.A.DE13": "http://smart.who.int/base/ValueSet-HIV.A.DE13.jsonld",
+    "HIV.A.DE46": "http://smart.who.int/base/ValueSet-HIV.A.DE46.jsonld",
+    "HIV.A.DE5": "http://smart.who.int/base/ValueSet-HIV.A.DE5.jsonld",
+    "HIV.A.DE30": "http://smart.who.int/base/ValueSet-HIV.A.DE30.jsonld",
+    "HIV.A.DE25": "http://smart.who.int/base/ValueSet-HIV.A.DE25.jsonld",
+    "HIV.A.DE43": "http://smart.who.int/base/ValueSet-HIV.A.DE43.jsonld"
+  }
+}

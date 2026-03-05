@@ -1,0 +1,3615 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "Overloads",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "t" : [ {
+            "name" : "DecisionID",
+            "value" : "HIV.D12.DT"
+         }, {
+            "name" : "BusinessRule",
+            "value" : "Determine recommended screenings and tests"
+         }, {
+            "name" : "Trigger",
+            "value" : "HIV.D12.Determine recommended screenings and tests"
+         }, {
+            "name" : "HitPolicy",
+            "value" : "Rule Order"
+         }, {
+            "name" : "Description",
+            "value" : "Determine recommended screenings and tests\n\nData Concepts:\n\n\nConsolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring: recommendations for a public health approach (2021)."
+         } ],
+         "s" : {
+            "r" : "460",
+            "s" : [ {
+               "value" : [ "/**\nLibrary: HIV.D12.DT Logic\n\n@DecisionID: HIV.D12.DT\n@BusinessRule: Determine recommended screenings and tests\n@Trigger: HIV.D12.Determine recommended screenings and tests\n@HitPolicy: Rule Order\n@Description: Determine recommended screenings and tests\n\nData Concepts:\n\n\nConsolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring: recommendations for a public health approach (2021).\n*/\n\n","library HIVD12DTLogic" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "HIVD12DTLogic",
+         "system" : "http://smart.who.int/hiv"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1",
+            "version" : "1.0.0"
+         }, {
+            "localId" : "206",
+            "locator" : "18:1-18:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "20:1-20:44",
+            "localIdentifier" : "HIC",
+            "path" : "http://smart.who.int/hiv/HIVCommon",
+            "version" : "0.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'0.0.1'"," called ","HIC" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "21:1-21:35",
+            "localIdentifier" : "Concepts",
+            "path" : "http://smart.who.int/hiv/HIVConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Concepts" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "22:1-22:44",
+            "localIdentifier" : "Elements",
+            "path" : "http://smart.who.int/hiv/HIVEncounterElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVEncounterElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Elements" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "23:1-23:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://hl7.org/fhir/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "25:1-25:29",
+            "localIdentifier" : "WCom",
+            "path" : "http://smart.who.int/hiv/WHOCommon",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "WHOCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","WCom" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "localId" : "221",
+            "locator" : "27:1-27:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "27:1-27:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "27:1-27:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "33:1-37:3",
+            "name" : "HIV testing services visit",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Reason for Visit\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Reason for visit\"='HIV testing services visit'"
+               } ],
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"Reason for Visit\"\n @pseudocode: \"Reason for visit\"='HIV testing services visit'\n */\n","define ","\"HIV testing services visit\"",":\n  " ]
+                  }, {
+                     "r" : "225",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "242",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "242",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "226",
+                                 "s" : [ {
+                                    "r" : "228",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"Reason for visit D.DE1\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      " ]
+                           }, {
+                              "r" : "230",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "230",
+                                 "s" : [ {
+                                    "r" : "232",
+                                    "s" : [ {
+                                       "r" : "231",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "232",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","~"," " ]
+                                 }, {
+                                    "r" : "234",
+                                    "s" : [ {
+                                       "r" : "233",
+                                       "s" : [ {
+                                          "value" : [ "Concepts" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "234",
+                                       "s" : [ {
+                                          "value" : [ "\"HIV testing services visit\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "225",
+               "locator" : "34:3-37:3",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "242",
+                  "locator" : "34:9-37:3",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "226",
+                     "locator" : "35:5-35:39",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "228",
+                        "locator" : "35:5-35:37",
+                        "name" : "Reason for visit D.DE1",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "230",
+                     "locator" : "36:7-36:59",
+                     "type" : "Equivalent",
+                     "signature" : [ {
+                        "localId" : "240",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "241",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "236",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "235",
+                           "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "232",
+                              "locator" : "36:13-36:19",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "238",
+                        "type" : "ToConcept",
+                        "signature" : [ {
+                           "localId" : "239",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : {
+                           "localId" : "234",
+                           "locator" : "36:23-36:59",
+                           "name" : "HIV testing services visit",
+                           "libraryName" : "Concepts",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "245",
+            "locator" : "43:1-47:3",
+            "name" : "ART initiation visit",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Reason for Visit\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Reason for visit\"='ART initiation'"
+               } ],
+               "s" : {
+                  "r" : "245",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"Reason for Visit\"\n @pseudocode: \"Reason for visit\"='ART initiation'\n */\n","define ","\"ART initiation visit\"",":\n  " ]
+                  }, {
+                     "r" : "246",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "263",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "263",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "247",
+                                 "s" : [ {
+                                    "r" : "249",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"Reason for visit D.DE1\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      " ]
+                           }, {
+                              "r" : "251",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "251",
+                                 "s" : [ {
+                                    "r" : "253",
+                                    "s" : [ {
+                                       "r" : "252",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "253",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","~"," " ]
+                                 }, {
+                                    "r" : "255",
+                                    "s" : [ {
+                                       "r" : "254",
+                                       "s" : [ {
+                                          "value" : [ "Concepts" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "255",
+                                       "s" : [ {
+                                          "value" : [ "\"ART initiation\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "246",
+               "locator" : "44:3-47:3",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "263",
+                  "locator" : "44:9-47:3",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "247",
+                     "locator" : "45:5-45:39",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "249",
+                        "locator" : "45:5-45:37",
+                        "name" : "Reason for visit D.DE1",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "251",
+                     "locator" : "46:7-46:47",
+                     "type" : "Equivalent",
+                     "signature" : [ {
+                        "localId" : "261",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "262",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "257",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "256",
+                           "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "253",
+                              "locator" : "46:13-46:19",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "259",
+                        "type" : "ToConcept",
+                        "signature" : [ {
+                           "localId" : "260",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : {
+                           "localId" : "255",
+                           "locator" : "46:23-46:47",
+                           "name" : "ART initiation",
+                           "libraryName" : "Concepts",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "266",
+            "locator" : "53:1-57:3",
+            "name" : "Clinical visit",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Reason for Visit\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Reason for visit\"='Clinical visit"
+               } ],
+               "s" : {
+                  "r" : "266",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"Reason for Visit\"\n @pseudocode: \"Reason for visit\"='Clinical visit\n */\n","define ","\"Clinical visit\"",":\n  " ]
+                  }, {
+                     "r" : "267",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "284",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "284",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "268",
+                                 "s" : [ {
+                                    "r" : "270",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"Reason for visit D.DE1\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      " ]
+                           }, {
+                              "r" : "272",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "272",
+                                 "s" : [ {
+                                    "r" : "274",
+                                    "s" : [ {
+                                       "r" : "273",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "274",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","~"," " ]
+                                 }, {
+                                    "r" : "276",
+                                    "s" : [ {
+                                       "r" : "275",
+                                       "s" : [ {
+                                          "value" : [ "Concepts" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "276",
+                                       "s" : [ {
+                                          "value" : [ "\"Clinical visit - HIV.D.DE3\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "267",
+               "locator" : "54:3-57:3",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "284",
+                  "locator" : "54:9-57:3",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "268",
+                     "locator" : "55:5-55:39",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "270",
+                        "locator" : "55:5-55:37",
+                        "name" : "Reason for visit D.DE1",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "272",
+                     "locator" : "56:7-56:59",
+                     "type" : "Equivalent",
+                     "signature" : [ {
+                        "localId" : "282",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "283",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "278",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "277",
+                           "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "274",
+                              "locator" : "56:13-56:19",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "280",
+                        "type" : "ToConcept",
+                        "signature" : [ {
+                           "localId" : "281",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : {
+                           "localId" : "276",
+                           "locator" : "56:23-56:59",
+                           "name" : "Clinical visit - HIV.D.DE3",
+                           "libraryName" : "Concepts",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "287",
+            "locator" : "63:1-64:47",
+            "name" : "Age 20 or older",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Age\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Age\" ≥ 20 years"
+               } ],
+               "s" : {
+                  "r" : "287",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"Age\"\n @pseudocode: \"Age\" ≥ 20 years\n */\n","define ","\"Age 20 or older\"",":\n  " ]
+                  }, {
+                     "r" : "288",
+                     "s" : [ {
+                        "r" : "290",
+                        "s" : [ {
+                           "r" : "289",
+                           "s" : [ {
+                              "value" : [ "Elements" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "290",
+                           "s" : [ {
+                              "value" : [ "\"Current Patient Age In Years\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "r" : "291",
+                        "value" : [ " ",">="," ","20" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "288",
+               "locator" : "64:3-64:47",
+               "type" : "GreaterOrEqual",
+               "signature" : [ {
+                  "localId" : "292",
+                  "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "NamedTypeSpecifier"
+               }, {
+                  "localId" : "293",
+                  "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "290",
+                  "locator" : "64:3-64:41",
+                  "name" : "Current Patient Age In Years",
+                  "libraryName" : "Elements",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "291",
+                  "locator" : "64:46-64:47",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "20",
+                  "type" : "Literal"
+               } ]
+            }
+         }, {
+            "localId" : "296",
+            "locator" : "70:1-71:46",
+            "name" : "Age under 20",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Age\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"\"Age\"<20 years"
+               } ],
+               "s" : {
+                  "r" : "296",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"Age\"\n @pseudocode: \"\"Age\"<20 years\n */\n","define ","\"Age under 20\"",":\n  " ]
+                  }, {
+                     "r" : "297",
+                     "s" : [ {
+                        "r" : "299",
+                        "s" : [ {
+                           "r" : "298",
+                           "s" : [ {
+                              "value" : [ "Elements" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "299",
+                           "s" : [ {
+                              "value" : [ "\"Current Patient Age In Years\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "r" : "300",
+                        "value" : [ " ","<"," ","20" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "297",
+               "locator" : "71:3-71:46",
+               "type" : "Less",
+               "signature" : [ {
+                  "localId" : "301",
+                  "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "NamedTypeSpecifier"
+               }, {
+                  "localId" : "302",
+                  "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "299",
+                  "locator" : "71:3-71:41",
+                  "name" : "Current Patient Age In Years",
+                  "libraryName" : "Elements",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "300",
+                  "locator" : "71:45-71:46",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "20",
+                  "type" : "Literal"
+               } ]
+            }
+         }, {
+            "localId" : "305",
+            "locator" : "77:1-78:47",
+            "name" : "Age 10 or older",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Age\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "'Age' ≥ 10 years"
+               } ],
+               "s" : {
+                  "r" : "305",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"Age\"\n  @pseudocode: 'Age' ≥ 10 years\n  */\n","define ","\"Age 10 or older\"",":\n  " ]
+                  }, {
+                     "r" : "306",
+                     "s" : [ {
+                        "r" : "308",
+                        "s" : [ {
+                           "r" : "307",
+                           "s" : [ {
+                              "value" : [ "Elements" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "308",
+                           "s" : [ {
+                              "value" : [ "\"Current Patient Age In Years\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "r" : "309",
+                        "value" : [ " ",">="," ","10" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "306",
+               "locator" : "78:3-78:47",
+               "type" : "GreaterOrEqual",
+               "signature" : [ {
+                  "localId" : "310",
+                  "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "NamedTypeSpecifier"
+               }, {
+                  "localId" : "311",
+                  "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "308",
+                  "locator" : "78:3-78:41",
+                  "name" : "Current Patient Age In Years",
+                  "libraryName" : "Elements",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "309",
+                  "locator" : "78:46-78:47",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "10",
+                  "type" : "Literal"
+               } ]
+            }
+         }, {
+            "localId" : "314",
+            "locator" : "84:1-88:3",
+            "name" : "HIV Positive test result",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"HIV test result\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"HIV test result\"='HIV-positive'"
+               } ],
+               "s" : {
+                  "r" : "314",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"HIV test result\"\n @pseudocode: \"HIV test result\"='HIV-positive'\n */\n","define ","\"HIV Positive test result\"",":\n  " ]
+                  }, {
+                     "r" : "315",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "332",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "332",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "316",
+                                 "s" : [ {
+                                    "r" : "318",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"HIV test result\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      " ]
+                           }, {
+                              "r" : "320",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "320",
+                                 "s" : [ {
+                                    "r" : "322",
+                                    "s" : [ {
+                                       "r" : "321",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "322",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","~"," " ]
+                                 }, {
+                                    "r" : "324",
+                                    "s" : [ {
+                                       "r" : "323",
+                                       "s" : [ {
+                                          "value" : [ "Concepts" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "324",
+                                       "s" : [ {
+                                          "value" : [ "\"HIV-positive\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "315",
+               "locator" : "85:3-88:3",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "332",
+                  "locator" : "85:9-88:3",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "316",
+                     "locator" : "86:5-86:32",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "318",
+                        "locator" : "86:5-86:30",
+                        "name" : "HIV test result",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "320",
+                     "locator" : "87:7-87:45",
+                     "type" : "Equivalent",
+                     "signature" : [ {
+                        "localId" : "330",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "331",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "326",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "325",
+                           "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "322",
+                              "locator" : "87:13-87:19",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "328",
+                        "type" : "ToConcept",
+                        "signature" : [ {
+                           "localId" : "329",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : {
+                           "localId" : "324",
+                           "locator" : "87:23-87:45",
+                           "name" : "HIV-positive",
+                           "libraryName" : "Concepts",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "335",
+            "locator" : "94:1-97:4",
+            "name" : "Not on ART",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"On ART\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"On ART\"=False"
+               } ],
+               "s" : {
+                  "r" : "335",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"On ART\"\n @pseudocode: \"On ART\"=False\n */\n","define ","\"Not on ART\"",":\n  " ]
+                  }, {
+                     "r" : "336",
+                     "s" : [ {
+                        "value" : [ "not" ]
+                     }, {
+                        "r" : "337",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "337",
+                           "s" : [ {
+                              "value" : [ "exists" ]
+                           }, {
+                              "r" : "339",
+                              "s" : [ {
+                                 "value" : [ "(\n    " ]
+                              }, {
+                                 "r" : "339",
+                                 "s" : [ {
+                                    "r" : "338",
+                                    "s" : [ {
+                                       "value" : [ "Elements" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "339",
+                                    "s" : [ {
+                                       "value" : [ "\"On ART D.DE38\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n  )" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "336",
+               "locator" : "95:3-97:4",
+               "type" : "Not",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "337",
+                  "locator" : "95:6-97:4",
+                  "type" : "Exists",
+                  "signature" : [ {
+                     "localId" : "340",
+                     "type" : "ListTypeSpecifier",
+                     "elementType" : {
+                        "localId" : "341",
+                        "name" : "{http://hl7.org/fhir}MedicationStatement",
+                        "type" : "NamedTypeSpecifier"
+                     }
+                  } ],
+                  "operand" : {
+                     "localId" : "339",
+                     "locator" : "95:13-97:3",
+                     "name" : "On ART D.DE38",
+                     "libraryName" : "Elements",
+                     "type" : "ExpressionRef"
+                  }
+               }
+            }
+         }, {
+            "localId" : "344",
+            "locator" : "103:1-106:3",
+            "name" : "On ART",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"On ART\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"On ART\"=True"
+               } ],
+               "s" : {
+                  "r" : "344",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"On ART\"\n @pseudocode: \"On ART\"=True\n */\n","define ","\"On ART\"",":\n  " ]
+                  }, {
+                     "r" : "345",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "347",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "347",
+                           "s" : [ {
+                              "r" : "346",
+                              "s" : [ {
+                                 "value" : [ "Elements" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "347",
+                              "s" : [ {
+                                 "value" : [ "\"On ART D.DE38\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "345",
+               "locator" : "104:3-106:3",
+               "type" : "Exists",
+               "signature" : [ {
+                  "localId" : "348",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "localId" : "349",
+                     "name" : "{http://hl7.org/fhir}MedicationStatement",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ],
+               "operand" : {
+                  "localId" : "347",
+                  "locator" : "104:9-106:3",
+                  "name" : "On ART D.DE38",
+                  "libraryName" : "Elements",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
+            "localId" : "352",
+            "locator" : "112:1-113:19",
+            "name" : "Client is female",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Gender\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Gender\"='Female'"
+               } ],
+               "s" : {
+                  "r" : "352",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"Gender\"\n @pseudocode: \"Gender\"='Female'\n */\n","define ","\"Client is female\"",":\n  " ]
+                  }, {
+                     "r" : "354",
+                     "s" : [ {
+                        "r" : "353",
+                        "s" : [ {
+                           "value" : [ "Elements" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "354",
+                        "s" : [ {
+                           "value" : [ "\"Female\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "354",
+               "locator" : "113:3-113:19",
+               "name" : "Female",
+               "libraryName" : "Elements",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "357",
+            "locator" : "119:1-123:3",
+            "name" : "CD4 less than or equal to 100 cells/mm3",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"CD4 count\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"CD4 count\" ≤ 100 cells/mm3"
+               } ],
+               "s" : {
+                  "r" : "357",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"CD4 count\"\n @pseudocode: \"CD4 count\" ≤ 100 cells/mm3\n */\n","define ","\"CD4 less than or equal to 100 cells/mm3\"",":\n  " ]
+                  }, {
+                     "r" : "358",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "371",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "371",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "359",
+                                 "s" : [ {
+                                    "r" : "361",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"CD4 count D.DE364\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      " ]
+                           }, {
+                              "r" : "363",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "363",
+                                 "s" : [ {
+                                    "r" : "365",
+                                    "s" : [ {
+                                       "r" : "364",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "365",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "r" : "366",
+                                    "value" : [ " ","<="," ","100" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "358",
+               "locator" : "120:3-123:3",
+               "type" : "Exists",
+               "signature" : [ {
+                  "localId" : "372",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "localId" : "373",
+                     "name" : "{http://hl7.org/fhir}Observation",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ],
+               "operand" : {
+                  "localId" : "371",
+                  "locator" : "120:9-123:3",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "359",
+                     "locator" : "121:5-121:34",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "361",
+                        "locator" : "121:5-121:32",
+                        "name" : "CD4 count D.DE364",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "363",
+                     "locator" : "122:7-122:26",
+                     "type" : "LessOrEqual",
+                     "signature" : [ {
+                        "localId" : "369",
+                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "370",
+                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "368",
+                        "name" : "ToInteger",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "367",
+                           "asType" : "{http://hl7.org/fhir}integer",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "365",
+                              "locator" : "122:13-122:19",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "366",
+                        "locator" : "122:24-122:26",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "100",
+                        "type" : "Literal"
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "376",
+            "locator" : "129:1-133:3",
+            "name" : "CD4 less than or equal to 200 cells/mm3",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"CD4 count\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"CD4 count\" ≤ 200 cells/mm3"
+               } ],
+               "s" : {
+                  "r" : "376",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"CD4 count\"\n @pseudocode: \"CD4 count\" ≤ 200 cells/mm3\n */\n","define ","\"CD4 less than or equal to 200 cells/mm3\"",":\n  " ]
+                  }, {
+                     "r" : "377",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "390",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "390",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "378",
+                                 "s" : [ {
+                                    "r" : "380",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"CD4 count D.DE364\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      " ]
+                           }, {
+                              "r" : "382",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "382",
+                                 "s" : [ {
+                                    "r" : "384",
+                                    "s" : [ {
+                                       "r" : "383",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "384",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "r" : "385",
+                                    "value" : [ " ","<="," ","200" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "377",
+               "locator" : "130:3-133:3",
+               "type" : "Exists",
+               "signature" : [ {
+                  "localId" : "391",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "localId" : "392",
+                     "name" : "{http://hl7.org/fhir}Observation",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ],
+               "operand" : {
+                  "localId" : "390",
+                  "locator" : "130:9-133:3",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "378",
+                     "locator" : "131:5-131:34",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "380",
+                        "locator" : "131:5-131:32",
+                        "name" : "CD4 count D.DE364",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "382",
+                     "locator" : "132:7-132:26",
+                     "type" : "LessOrEqual",
+                     "signature" : [ {
+                        "localId" : "388",
+                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "389",
+                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "387",
+                        "name" : "ToInteger",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "386",
+                           "asType" : "{http://hl7.org/fhir}integer",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "384",
+                              "locator" : "132:13-132:19",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "385",
+                        "locator" : "132:24-132:26",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "200",
+                        "type" : "Literal"
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "395",
+            "locator" : "139:1-143:3",
+            "name" : "On AZT",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Current medications\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Current medications\"='AZT'"
+               } ],
+               "s" : {
+                  "r" : "395",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"Current medications\"\n @pseudocode: \"Current medications\"='AZT'\n */\n","define ","\"On AZT\"",":\n  " ]
+                  }, {
+                     "r" : "396",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "413",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "413",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "397",
+                                 "s" : [ {
+                                    "r" : "399",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"On ART D.DE38\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","MS" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      " ]
+                           }, {
+                              "r" : "401",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "401",
+                                 "s" : [ {
+                                    "r" : "403",
+                                    "s" : [ {
+                                       "r" : "402",
+                                       "s" : [ {
+                                          "value" : [ "MS" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "403",
+                                       "s" : [ {
+                                          "value" : [ "medication" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","~"," " ]
+                                 }, {
+                                    "r" : "405",
+                                    "s" : [ {
+                                       "r" : "404",
+                                       "s" : [ {
+                                          "value" : [ "Concepts" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "405",
+                                       "s" : [ {
+                                          "value" : [ "\"AZT\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "396",
+               "locator" : "140:3-143:3",
+               "type" : "Exists",
+               "signature" : [ {
+                  "localId" : "414",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "localId" : "415",
+                     "name" : "{http://hl7.org/fhir}MedicationStatement",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ],
+               "operand" : {
+                  "localId" : "413",
+                  "locator" : "140:9-143:3",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "397",
+                     "locator" : "141:5-141:31",
+                     "alias" : "MS",
+                     "expression" : {
+                        "localId" : "399",
+                        "locator" : "141:5-141:28",
+                        "name" : "On ART D.DE38",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "401",
+                     "locator" : "142:7-142:42",
+                     "type" : "Equivalent",
+                     "signature" : [ {
+                        "localId" : "411",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "412",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "407",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "406",
+                           "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "403",
+                              "locator" : "142:13-142:25",
+                              "path" : "medication",
+                              "scope" : "MS",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "409",
+                        "type" : "ToConcept",
+                        "signature" : [ {
+                           "localId" : "410",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : {
+                           "localId" : "405",
+                           "locator" : "142:29-142:42",
+                           "name" : "AZT",
+                           "libraryName" : "Concepts",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "418",
+            "locator" : "149:1-153:3",
+            "name" : "On TDF",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Current medications\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Current medications\"='TDF'"
+               } ],
+               "s" : {
+                  "r" : "418",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"Current medications\"\n @pseudocode: \"Current medications\"='TDF'\n */\n","define ","\"On TDF\"",":\n  " ]
+                  }, {
+                     "r" : "419",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "436",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "436",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "420",
+                                 "s" : [ {
+                                    "r" : "422",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"On ART D.DE38\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","MS" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      " ]
+                           }, {
+                              "r" : "424",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "424",
+                                 "s" : [ {
+                                    "r" : "426",
+                                    "s" : [ {
+                                       "r" : "425",
+                                       "s" : [ {
+                                          "value" : [ "MS" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "426",
+                                       "s" : [ {
+                                          "value" : [ "medication" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","~"," " ]
+                                 }, {
+                                    "r" : "428",
+                                    "s" : [ {
+                                       "r" : "427",
+                                       "s" : [ {
+                                          "value" : [ "Concepts" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "428",
+                                       "s" : [ {
+                                          "value" : [ "\"TDF - HIV.D.DE135\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "419",
+               "locator" : "150:3-153:3",
+               "type" : "Exists",
+               "signature" : [ {
+                  "localId" : "437",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "localId" : "438",
+                     "name" : "{http://hl7.org/fhir}MedicationStatement",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ],
+               "operand" : {
+                  "localId" : "436",
+                  "locator" : "150:9-153:3",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "420",
+                     "locator" : "151:5-151:31",
+                     "alias" : "MS",
+                     "expression" : {
+                        "localId" : "422",
+                        "locator" : "151:5-151:28",
+                        "name" : "On ART D.DE38",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "424",
+                     "locator" : "152:7-152:56",
+                     "type" : "Equivalent",
+                     "signature" : [ {
+                        "localId" : "434",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "435",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "430",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "429",
+                           "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "426",
+                              "locator" : "152:13-152:25",
+                              "path" : "medication",
+                              "scope" : "MS",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "432",
+                        "type" : "ToConcept",
+                        "signature" : [ {
+                           "localId" : "433",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : {
+                           "localId" : "428",
+                           "locator" : "152:29-152:56",
+                           "name" : "TDF - HIV.D.DE135",
+                           "libraryName" : "Concepts",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "441",
+            "locator" : "159:1-163:3",
+            "name" : "Suspicion of treatment failure or interruption",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Suspicion of treatment failure or interruption\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Suspicion of treatment failure or interruption\"=True"
+               } ],
+               "s" : {
+                  "r" : "441",
+                  "s" : [ {
+                     "value" : [ "/*\n @input: \"Suspicion of treatment failure or interruption\"\n @pseudocode: \"Suspicion of treatment failure or interruption\"=True\n */\n","define ","\"Suspicion of treatment failure or interruption\"",":\n  " ]
+                  }, {
+                     "r" : "442",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "455",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "455",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "443",
+                                 "s" : [ {
+                                    "r" : "445",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"Suspicion of treatment failure or interruption Observation\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      " ]
+                           }, {
+                              "r" : "447",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "447",
+                                 "s" : [ {
+                                    "r" : "449",
+                                    "s" : [ {
+                                       "r" : "448",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "449",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "r" : "450",
+                                    "value" : [ " ","="," ","true" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "442",
+               "locator" : "160:3-163:3",
+               "type" : "Exists",
+               "signature" : [ {
+                  "localId" : "456",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "localId" : "457",
+                     "name" : "{http://hl7.org/fhir}Observation",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ],
+               "operand" : {
+                  "localId" : "455",
+                  "locator" : "160:9-163:3",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "443",
+                     "locator" : "161:5-161:75",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "445",
+                        "locator" : "161:5-161:73",
+                        "name" : "Suspicion of treatment failure or interruption Observation",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "447",
+                     "locator" : "162:7-162:26",
+                     "type" : "Equal",
+                     "signature" : [ {
+                        "localId" : "453",
+                        "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "454",
+                        "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "452",
+                        "name" : "ToBoolean",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "451",
+                           "asType" : "{http://hl7.org/fhir}boolean",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "449",
+                              "locator" : "162:13-162:19",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "450",
+                        "locator" : "162:23-162:26",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "value" : "true",
+                        "type" : "Literal"
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "460",
+            "locator" : "169:1-410:4",
+            "name" : "Guidance",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "dynamicValue",
+                  "value" : "Guidance"
+               } ],
+               "s" : {
+                  "r" : "460",
+                  "s" : [ {
+                     "value" : [ "/*\n @dynamicValue: Guidance\n */\n","define ","\"Guidance\"",":\n  " ]
+                  }, {
+                     "r" : "622",
+                     "s" : [ {
+                        "value" : [ "Combine","(" ]
+                     }, {
+                        "r" : "461",
+                        "s" : [ {
+                           "value" : [ "{\n    " ]
+                        }, {
+                           "r" : "462",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "463",
+                              "s" : [ {
+                                 "r" : "464",
+                                 "s" : [ {
+                                    "r" : "465",
+                                    "s" : [ {
+                                       "r" : "466",
+                                       "s" : [ {
+                                          "value" : [ "\"HIV testing services visit\"" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " and " ]
+                                    }, {
+                                       "r" : "467",
+                                       "s" : [ {
+                                          "value" : [ "\"Age 20 or older\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "468",
+                                    "s" : [ {
+                                       "value" : [ "\"HIV Positive test result\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "469",
+                                 "s" : [ {
+                                    "value" : [ "\"Not on ART\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "470",
+                              "s" : [ {
+                                 "value" : [ "'Recommended actions:\nCD4 cell count\nTB symptom screening\n\nDesirable actions:\nHBV (HBsAg) serology\nHCV serology\nScreen for sexually transmitted infections   \nAssess for major noncommunicable chronic diseases and comorbidities\n\nGeneral care activities recommended: \nDetermine WHO clinical stage based on past and current HIV-related conditions\nPrepare for ART\nPrepare, assess and support adherence\nProvide family planning and contraception\nSupport disclosure and partner notification\nCounsel on risk reduction and combination HIV prevention approaches\nAssess, prevent and manage noncommunicable diseases\nScreen for and manage mental health problems\nScreen for and manage and substance use issues\nProvide psychosocial counselling and support\nManage pain and symptoms\nConduct a nutritional assessment and counsel on nutrition\n\nPreventing and treating coinfections: \nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nProvide isoniazid preventive therapy\nScreen for cryptococcal infection and fungal prophylaxis\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "472",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "474",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "475",
+                              "s" : [ {
+                                 "r" : "476",
+                                 "s" : [ {
+                                    "r" : "477",
+                                    "s" : [ {
+                                       "r" : "478",
+                                       "s" : [ {
+                                          "value" : [ "\"HIV testing services visit\"" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " and " ]
+                                    }, {
+                                       "r" : "479",
+                                       "s" : [ {
+                                          "value" : [ "\"Age under 20\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "480",
+                                    "s" : [ {
+                                       "value" : [ "\"HIV Positive test result\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "481",
+                                 "s" : [ {
+                                    "value" : [ "\"Not on ART\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "482",
+                              "s" : [ {
+                                 "value" : [ "'Recommended:\nCD4 cell count\nTB symptom screening\n\nDesirable: \nHBV (HBsAg) serology\nHCV serology\nScreen for sexually transmitted infections   \nAssess for major noncommunicable chronic diseases and comorbidities\n\nGeneral care activities recommended:\n Determine WHO clinical stage based on past and current HIV-related conditions\nPrepare for ART\nPrepare, assess and support adherence\nProvide family planning and contraception\nSupport disclosure and partner notification\nCounsel on risk reduction and combination HIV prevention approaches\nAssess, prevent and manage noncommunicable diseases\nScreen for and manage mental health problems\nScreen for and manage and substance use issues\nProvide psychosocial counselling and support\nManage pain and symptoms\nConduct a nutritional, growth and development assessment\n\nPreventing and treating coinfections: \nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nProvide isoniazid preventive therapy\nScreen for cryptococcal infection and fungal prophylaxis\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "484",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "486",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "487",
+                              "s" : [ {
+                                 "r" : "488",
+                                 "s" : [ {
+                                    "r" : "489",
+                                    "s" : [ {
+                                       "r" : "490",
+                                       "s" : [ {
+                                          "value" : [ "\"HIV testing services visit\"" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " and " ]
+                                    }, {
+                                       "r" : "491",
+                                       "s" : [ {
+                                          "value" : [ "\"HIV Positive test result\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "492",
+                                    "s" : [ {
+                                       "value" : [ "\"Not on ART\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "493",
+                                 "s" : [ {
+                                    "value" : [ "\"CD4 less than or equal to 100 cells/mm3\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "494",
+                              "s" : [ {
+                                 "value" : [ "'Desirable actions:\nCryptococcus antigen test'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "496",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "498",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "499",
+                              "s" : [ {
+                                 "r" : "500",
+                                 "s" : [ {
+                                    "r" : "501",
+                                    "s" : [ {
+                                       "r" : "502",
+                                       "s" : [ {
+                                          "value" : [ "\"HIV testing services visit\"" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " and " ]
+                                    }, {
+                                       "r" : "503",
+                                       "s" : [ {
+                                          "value" : [ "\"HIV Positive test result\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "504",
+                                    "s" : [ {
+                                       "value" : [ "\"Not on ART\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "505",
+                                 "s" : [ {
+                                    "value" : [ "\"Client is female\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "506",
+                              "s" : [ {
+                                 "value" : [ "'Desirable actions: \nPregnancy test'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "508",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "510",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "511",
+                              "s" : [ {
+                                 "r" : "512",
+                                 "s" : [ {
+                                    "value" : [ "\"ART initiation visit\"" ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "513",
+                                 "s" : [ {
+                                    "value" : [ "\"Not on ART\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "514",
+                              "s" : [ {
+                                 "value" : [ "'Recommended: \nBaseline CD4 cell count for identifying advanced HIV disease\nAge-appropriate TB symptom screening\n\nDesirable: \nBlood pressure measurement \n\nGeneral care activities recommended:\nPreparing people for ART\nWHO clinical staging, past and current HIV- related conditions\nPreparing, assessing and supporting adherence\nPregnancy status, family planning and contraception\nSupport for disclosure and partner notification\nRisk-reduction counselling and combination and HIV prevention approaches\nScreening for, preventing and managing noncommunicable diseases\nScreening for and managing mental health problems and substance use\nPsychosocial counselling and support\nManaging pain and symptoms\nNutritional assessment and counselling\nInfant and child feeding\nNutritional, growth and development assessment for children and adolescents\n\nPreventing and treating coinfections: \nCo-trimoxazole preventive therapy\nIntensified TB case- finding\nIsoniazid preventive therapy\nScreening for cryptococcal infection and fungal prophylaxis when appropriate\nScreening for hepatitis B and C\nMalaria prevention (insecticide-treated bed nets and prophylaxis)\nScreening for sexually transmitted infections\nPreventing and screening for cervical cancer\nAssessing for vaccine- preventable diseases other than HBV and HCV infection'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "516",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "518",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "519",
+                              "s" : [ {
+                                 "r" : "520",
+                                 "s" : [ {
+                                    "r" : "521",
+                                    "s" : [ {
+                                       "r" : "522",
+                                       "s" : [ {
+                                          "value" : [ "\"ART initiation visit\"" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " and " ]
+                                    }, {
+                                       "r" : "523",
+                                       "s" : [ {
+                                          "value" : [ "\"Age 10 or older\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "524",
+                                    "s" : [ {
+                                       "value" : [ "\"Not on ART\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "525",
+                                 "s" : [ {
+                                    "value" : [ "\"CD4 less than or equal to 200 cells/mm3\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "526",
+                              "s" : [ {
+                                 "value" : [ "'Perform a cryptococcal antigen for adults and adolescents'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "528",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "530",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "531",
+                              "s" : [ {
+                                 "r" : "532",
+                                 "s" : [ {
+                                    "r" : "533",
+                                    "s" : [ {
+                                       "value" : [ "\"ART initiation visit\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "534",
+                                    "s" : [ {
+                                       "value" : [ "\"Not on ART\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "535",
+                                 "s" : [ {
+                                    "value" : [ "\"On AZT\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "536",
+                              "s" : [ {
+                                 "value" : [ "'Desirable actions: \nHaemoglobin test'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "538",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "540",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "541",
+                              "s" : [ {
+                                 "r" : "542",
+                                 "s" : [ {
+                                    "r" : "543",
+                                    "s" : [ {
+                                       "value" : [ "\"ART initiation visit\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "544",
+                                    "s" : [ {
+                                       "value" : [ "\"Not on ART\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "545",
+                                 "s" : [ {
+                                    "value" : [ "\"On TDF\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "546",
+                              "s" : [ {
+                                 "value" : [ "'Desirable actions: \nSerum creatinine test\nEstimated glomerular filtration rate (eGFR)'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "548",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "550",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "551",
+                              "s" : [ {
+                                 "r" : "552",
+                                 "s" : [ {
+                                    "r" : "553",
+                                    "s" : [ {
+                                       "value" : [ "\"ART initiation visit\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "554",
+                                    "s" : [ {
+                                       "value" : [ "\"Not on ART\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "555",
+                                 "s" : [ {
+                                    "value" : [ "\"Client is female\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "556",
+                              "s" : [ {
+                                 "value" : [ "'Desirable actions: \nPregnancy test'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "558",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "560",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "561",
+                              "s" : [ {
+                                 "r" : "562",
+                                 "s" : [ {
+                                    "r" : "563",
+                                    "s" : [ {
+                                       "value" : [ "\"Clinical visit\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "564",
+                                    "s" : [ {
+                                       "value" : [ "\"Age 20 or older\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "565",
+                                 "s" : [ {
+                                    "value" : [ "\"On ART\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "566",
+                              "s" : [ {
+                                 "value" : [ "'Recommended actions:\nSchedule the following viral load tests: \nHIV viral load test ≤ (ART start date + 6 months)\nHIV viral load test ≤ (ART start date + 12 months)\nHIV viral load test every 12 months thereafter\nPerform a CD4 cell count every 6 months until \"\"Established on ART\"\" = TRUE\n\nDesirable actions:\nSerum creatinine and estimated glomerular filtration rate for TDF\n\nRecommended general care activities: \nAdherence support interventions should be provided to people on ART (p xxxix of source).\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional assessment and counsel on nutrition.\n\nPreventing and treating coinfections:\nProvide co-trimoxazole preventive therapy\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "568",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "570",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "571",
+                              "s" : [ {
+                                 "r" : "572",
+                                 "s" : [ {
+                                    "r" : "573",
+                                    "s" : [ {
+                                       "value" : [ "\"Clinical visit\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "574",
+                                    "s" : [ {
+                                       "value" : [ "\"Age under 20\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "575",
+                                 "s" : [ {
+                                    "value" : [ "\"On ART\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "576",
+                              "s" : [ {
+                                 "value" : [ "'Recommended actions: \nSchedule viral load tests on the following dates: \nHIV viral load test ≤ (ART start date + 6 months)\nHIV viral load test ≤ (ART start date + 12 months)\nHIV viral load test every 12 months thereafter\nCD4 cell count every 6 months until \"\"Established on ART\"\" = TRUE\n\nRecommended general care activities: \nPrepare, assess and support adherence.\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional, growth and development assessment.\n\nPreventing and treating coinfections:\nProvide co-trimoxazole preventive therapy\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "578",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "580",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "581",
+                              "s" : [ {
+                                 "r" : "582",
+                                 "s" : [ {
+                                    "r" : "583",
+                                    "s" : [ {
+                                       "value" : [ "\"Clinical visit\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "584",
+                                    "s" : [ {
+                                       "value" : [ "\"Age under 20\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "585",
+                                 "s" : [ {
+                                    "value" : [ "\"Client is female\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "586",
+                              "s" : [ {
+                                 "value" : [ "'Pregnancy test'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "588",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "590",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "591",
+                              "s" : [ {
+                                 "r" : "592",
+                                 "s" : [ {
+                                    "r" : "593",
+                                    "s" : [ {
+                                       "value" : [ "\"Clinical visit\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "594",
+                                    "s" : [ {
+                                       "value" : [ "\"On ART\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "595",
+                                 "s" : [ {
+                                    "value" : [ "\"On TDF\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "596",
+                              "s" : [ {
+                                 "value" : [ "'Desirable actions: \nSerum creatinine\nEstimated glomerular filtration rate for TDF'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "598",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "600",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "601",
+                              "s" : [ {
+                                 "r" : "602",
+                                 "s" : [ {
+                                    "r" : "603",
+                                    "s" : [ {
+                                       "value" : [ "\"Clinical visit\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "604",
+                                    "s" : [ {
+                                       "value" : [ "\"Age 20 or older\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "605",
+                                 "s" : [ {
+                                    "value" : [ "\"Suspicion of treatment failure or interruption\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "606",
+                              "s" : [ {
+                                 "value" : [ "'Desirable actions: \nHBV (HBsAg) serology (before switching ART regimen if this testing was not done or if the result was negative at baseline and the patient was not vaccinated thereafter) \n\nRecommended general care activities: \nPrepare, assess and support adherence.\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional assessment and counsel on nutrition.\n\nPreventing and treating coinfections: \nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "608",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "610",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "611",
+                              "s" : [ {
+                                 "r" : "612",
+                                 "s" : [ {
+                                    "r" : "613",
+                                    "s" : [ {
+                                       "value" : [ "\"Clinical visit\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " and " ]
+                                 }, {
+                                    "r" : "614",
+                                    "s" : [ {
+                                       "value" : [ "\"Age 20 or older\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " and " ]
+                              }, {
+                                 "r" : "615",
+                                 "s" : [ {
+                                    "value" : [ "\"Suspicion of treatment failure or interruption\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "616",
+                              "s" : [ {
+                                 "value" : [ "'Desirable actions: \nHBV (HBsAg) serology (before switching ART regimen if this testing was not done or if the result was negative at baseline and the patient was not vaccinated thereafter)\n\nRecommended general care activities:\nPrepare, assess and support adherence.\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional, growth and development assessment.\n\nPreventing and treating coinfections:\nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    else " ]
+                           }, {
+                              "r" : "618",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  }" ]
+                        } ]
+                     }, {
+                        "value" : [ ")" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "622",
+               "locator" : "170:3-410:4",
+               "type" : "Combine",
+               "signature" : [ ],
+               "source" : {
+                  "localId" : "461",
+                  "locator" : "170:11-410:3",
+                  "type" : "List",
+                  "element" : [ {
+                     "localId" : "462",
+                     "locator" : "171:5-204:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "463",
+                        "locator" : "171:8-171:105",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "464",
+                           "locator" : "171:8-171:88",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "465",
+                              "locator" : "171:8-171:57",
+                              "type" : "And",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "466",
+                                 "locator" : "171:8-171:35",
+                                 "name" : "HIV testing services visit",
+                                 "type" : "ExpressionRef"
+                              }, {
+                                 "localId" : "467",
+                                 "locator" : "171:41-171:57",
+                                 "name" : "Age 20 or older",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "localId" : "468",
+                              "locator" : "171:63-171:88",
+                              "name" : "HIV Positive test result",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "469",
+                           "locator" : "171:94-171:105",
+                           "name" : "Not on ART",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "470",
+                        "locator" : "172:12-172:1194",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Recommended actions:\nCD4 cell count\nTB symptom screening\n\nDesirable actions:\nHBV (HBsAg) serology\nHCV serology\nScreen for sexually transmitted infections   \nAssess for major noncommunicable chronic diseases and comorbidities\n\nGeneral care activities recommended: \nDetermine WHO clinical stage based on past and current HIV-related conditions\nPrepare for ART\nPrepare, assess and support adherence\nProvide family planning and contraception\nSupport disclosure and partner notification\nCounsel on risk reduction and combination HIV prevention approaches\nAssess, prevent and manage noncommunicable diseases\nScreen for and manage mental health problems\nScreen for and manage and substance use issues\nProvide psychosocial counselling and support\nManage pain and symptoms\nConduct a nutritional assessment and counsel on nutrition\n\nPreventing and treating coinfections: \nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nProvide isoniazid preventive therapy\nScreen for cryptococcal infection and fungal prophylaxis\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "472",
+                        "locator" : "204:10-204:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "474",
+                     "locator" : "205:5-238:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "475",
+                        "locator" : "205:8-205:102",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "476",
+                           "locator" : "205:8-205:85",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "477",
+                              "locator" : "205:8-205:54",
+                              "type" : "And",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "478",
+                                 "locator" : "205:8-205:35",
+                                 "name" : "HIV testing services visit",
+                                 "type" : "ExpressionRef"
+                              }, {
+                                 "localId" : "479",
+                                 "locator" : "205:41-205:54",
+                                 "name" : "Age under 20",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "localId" : "480",
+                              "locator" : "205:60-205:85",
+                              "name" : "HIV Positive test result",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "481",
+                           "locator" : "205:91-205:102",
+                           "name" : "Not on ART",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "482",
+                        "locator" : "206:12-206:1178",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Recommended:\nCD4 cell count\nTB symptom screening\n\nDesirable: \nHBV (HBsAg) serology\nHCV serology\nScreen for sexually transmitted infections   \nAssess for major noncommunicable chronic diseases and comorbidities\n\nGeneral care activities recommended:\n Determine WHO clinical stage based on past and current HIV-related conditions\nPrepare for ART\nPrepare, assess and support adherence\nProvide family planning and contraception\nSupport disclosure and partner notification\nCounsel on risk reduction and combination HIV prevention approaches\nAssess, prevent and manage noncommunicable diseases\nScreen for and manage mental health problems\nScreen for and manage and substance use issues\nProvide psychosocial counselling and support\nManage pain and symptoms\nConduct a nutritional, growth and development assessment\n\nPreventing and treating coinfections: \nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nProvide isoniazid preventive therapy\nScreen for cryptococcal infection and fungal prophylaxis\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "484",
+                        "locator" : "238:10-238:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "486",
+                     "locator" : "239:5-242:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "487",
+                        "locator" : "239:8-239:129",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "488",
+                           "locator" : "239:8-239:83",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "489",
+                              "locator" : "239:8-239:66",
+                              "type" : "And",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "490",
+                                 "locator" : "239:8-239:35",
+                                 "name" : "HIV testing services visit",
+                                 "type" : "ExpressionRef"
+                              }, {
+                                 "localId" : "491",
+                                 "locator" : "239:41-239:66",
+                                 "name" : "HIV Positive test result",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "localId" : "492",
+                              "locator" : "239:72-239:83",
+                              "name" : "Not on ART",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "493",
+                           "locator" : "239:89-239:129",
+                           "name" : "CD4 less than or equal to 100 cells/mm3",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "494",
+                        "locator" : "240:12-240:57",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Desirable actions:\nCryptococcus antigen test",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "496",
+                        "locator" : "242:10-242:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "498",
+                     "locator" : "243:5-246:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "499",
+                        "locator" : "243:8-243:106",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "500",
+                           "locator" : "243:8-243:83",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "501",
+                              "locator" : "243:8-243:66",
+                              "type" : "And",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "502",
+                                 "locator" : "243:8-243:35",
+                                 "name" : "HIV testing services visit",
+                                 "type" : "ExpressionRef"
+                              }, {
+                                 "localId" : "503",
+                                 "locator" : "243:41-243:66",
+                                 "name" : "HIV Positive test result",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "localId" : "504",
+                              "locator" : "243:72-243:83",
+                              "name" : "Not on ART",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "505",
+                           "locator" : "243:89-243:106",
+                           "name" : "Client is female",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "506",
+                        "locator" : "244:12-244:47",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Desirable actions: \nPregnancy test",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "508",
+                        "locator" : "246:10-246:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "510",
+                     "locator" : "247:5-280:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "511",
+                        "locator" : "247:8-247:46",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "512",
+                           "locator" : "247:8-247:29",
+                           "name" : "ART initiation visit",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "localId" : "513",
+                           "locator" : "247:35-247:46",
+                           "name" : "Not on ART",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "514",
+                        "locator" : "248:12-248:1321",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Recommended: \nBaseline CD4 cell count for identifying advanced HIV disease\nAge-appropriate TB symptom screening\n\nDesirable: \nBlood pressure measurement \n\nGeneral care activities recommended:\nPreparing people for ART\nWHO clinical staging, past and current HIV- related conditions\nPreparing, assessing and supporting adherence\nPregnancy status, family planning and contraception\nSupport for disclosure and partner notification\nRisk-reduction counselling and combination and HIV prevention approaches\nScreening for, preventing and managing noncommunicable diseases\nScreening for and managing mental health problems and substance use\nPsychosocial counselling and support\nManaging pain and symptoms\nNutritional assessment and counselling\nInfant and child feeding\nNutritional, growth and development assessment for children and adolescents\n\nPreventing and treating coinfections: \nCo-trimoxazole preventive therapy\nIntensified TB case- finding\nIsoniazid preventive therapy\nScreening for cryptococcal infection and fungal prophylaxis when appropriate\nScreening for hepatitis B and C\nMalaria prevention (insecticide-treated bed nets and prophylaxis)\nScreening for sexually transmitted infections\nPreventing and screening for cervical cancer\nAssessing for vaccine- preventable diseases other than HBV and HCV infection",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "516",
+                        "locator" : "280:10-280:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "518",
+                     "locator" : "281:5-283:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "519",
+                        "locator" : "281:8-281:114",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "520",
+                           "locator" : "281:8-281:68",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "521",
+                              "locator" : "281:8-281:51",
+                              "type" : "And",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "522",
+                                 "locator" : "281:8-281:29",
+                                 "name" : "ART initiation visit",
+                                 "type" : "ExpressionRef"
+                              }, {
+                                 "localId" : "523",
+                                 "locator" : "281:35-281:51",
+                                 "name" : "Age 10 or older",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "localId" : "524",
+                              "locator" : "281:57-281:68",
+                              "name" : "Not on ART",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "525",
+                           "locator" : "281:74-281:114",
+                           "name" : "CD4 less than or equal to 200 cells/mm3",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "526",
+                        "locator" : "282:12-282:70",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Perform a cryptococcal antigen for adults and adolescents",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "528",
+                        "locator" : "283:10-283:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "530",
+                     "locator" : "284:5-287:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "531",
+                        "locator" : "284:8-284:59",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "532",
+                           "locator" : "284:8-284:46",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "533",
+                              "locator" : "284:8-284:29",
+                              "name" : "ART initiation visit",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "534",
+                              "locator" : "284:35-284:46",
+                              "name" : "Not on ART",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "535",
+                           "locator" : "284:52-284:59",
+                           "name" : "On AZT",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "536",
+                        "locator" : "285:12-285:49",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Desirable actions: \nHaemoglobin test",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "538",
+                        "locator" : "287:10-287:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "540",
+                     "locator" : "288:5-292:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "541",
+                        "locator" : "288:8-288:59",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "542",
+                           "locator" : "288:8-288:46",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "543",
+                              "locator" : "288:8-288:29",
+                              "name" : "ART initiation visit",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "544",
+                              "locator" : "288:35-288:46",
+                              "name" : "Not on ART",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "545",
+                           "locator" : "288:52-288:59",
+                           "name" : "On TDF",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "546",
+                        "locator" : "289:12-289:98",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Desirable actions: \nSerum creatinine test\nEstimated glomerular filtration rate (eGFR)",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "548",
+                        "locator" : "292:10-292:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "550",
+                     "locator" : "293:5-296:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "551",
+                        "locator" : "293:8-293:69",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "552",
+                           "locator" : "293:8-293:46",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "553",
+                              "locator" : "293:8-293:29",
+                              "name" : "ART initiation visit",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "554",
+                              "locator" : "293:35-293:46",
+                              "name" : "Not on ART",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "555",
+                           "locator" : "293:52-293:69",
+                           "name" : "Client is female",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "556",
+                        "locator" : "294:12-294:47",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Desirable actions: \nPregnancy test",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "558",
+                        "locator" : "296:10-296:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "560",
+                     "locator" : "297:5-326:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "561",
+                        "locator" : "297:8-297:58",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "562",
+                           "locator" : "297:8-297:45",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "563",
+                              "locator" : "297:8-297:23",
+                              "name" : "Clinical visit",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "564",
+                              "locator" : "297:29-297:45",
+                              "name" : "Age 20 or older",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "565",
+                           "locator" : "297:51-297:58",
+                           "name" : "On ART",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "566",
+                        "locator" : "298:12-298:1205",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Recommended actions:\nSchedule the following viral load tests: \nHIV viral load test ≤ (ART start date + 6 months)\nHIV viral load test ≤ (ART start date + 12 months)\nHIV viral load test every 12 months thereafter\nPerform a CD4 cell count every 6 months until \"\"Established on ART\"\" = TRUE\n\nDesirable actions:\nSerum creatinine and estimated glomerular filtration rate for TDF\n\nRecommended general care activities: \nAdherence support interventions should be provided to people on ART (p xxxix of source).\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional assessment and counsel on nutrition.\n\nPreventing and treating coinfections:\nProvide co-trimoxazole preventive therapy\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "568",
+                        "locator" : "326:10-326:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "570",
+                     "locator" : "327:5-353:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "571",
+                        "locator" : "327:8-327:55",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "572",
+                           "locator" : "327:8-327:42",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "573",
+                              "locator" : "327:8-327:23",
+                              "name" : "Clinical visit",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "574",
+                              "locator" : "327:29-327:42",
+                              "name" : "Age under 20",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "575",
+                           "locator" : "327:48-327:55",
+                           "name" : "On ART",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "576",
+                        "locator" : "328:12-328:1068",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Recommended actions: \nSchedule viral load tests on the following dates: \nHIV viral load test ≤ (ART start date + 6 months)\nHIV viral load test ≤ (ART start date + 12 months)\nHIV viral load test every 12 months thereafter\nCD4 cell count every 6 months until \"\"Established on ART\"\" = TRUE\n\nRecommended general care activities: \nPrepare, assess and support adherence.\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional, growth and development assessment.\n\nPreventing and treating coinfections:\nProvide co-trimoxazole preventive therapy\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "578",
+                        "locator" : "353:10-353:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "580",
+                     "locator" : "354:5-356:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "581",
+                        "locator" : "354:8-354:65",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "582",
+                           "locator" : "354:8-354:42",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "583",
+                              "locator" : "354:8-354:23",
+                              "name" : "Clinical visit",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "584",
+                              "locator" : "354:29-354:42",
+                              "name" : "Age under 20",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "585",
+                           "locator" : "354:48-354:65",
+                           "name" : "Client is female",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "586",
+                        "locator" : "355:12-355:27",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Pregnancy test",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "588",
+                        "locator" : "356:10-356:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "590",
+                     "locator" : "357:5-361:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "591",
+                        "locator" : "357:8-357:49",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "592",
+                           "locator" : "357:8-357:36",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "593",
+                              "locator" : "357:8-357:23",
+                              "name" : "Clinical visit",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "594",
+                              "locator" : "357:29-357:36",
+                              "name" : "On ART",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "595",
+                           "locator" : "357:42-357:49",
+                           "name" : "On TDF",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "596",
+                        "locator" : "358:12-358:94",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Desirable actions: \nSerum creatinine\nEstimated glomerular filtration rate for TDF",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "598",
+                        "locator" : "361:10-361:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "600",
+                     "locator" : "362:5-385:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "601",
+                        "locator" : "362:8-362:98",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "602",
+                           "locator" : "362:8-362:45",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "603",
+                              "locator" : "362:8-362:23",
+                              "name" : "Clinical visit",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "604",
+                              "locator" : "362:29-362:45",
+                              "name" : "Age 20 or older",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "605",
+                           "locator" : "362:51-362:98",
+                           "name" : "Suspicion of treatment failure or interruption",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "606",
+                        "locator" : "363:12-363:1009",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Desirable actions: \nHBV (HBsAg) serology (before switching ART regimen if this testing was not done or if the result was negative at baseline and the patient was not vaccinated thereafter) \n\nRecommended general care activities: \nPrepare, assess and support adherence.\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional assessment and counsel on nutrition.\n\nPreventing and treating coinfections: \nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "608",
+                        "locator" : "385:10-385:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "610",
+                     "locator" : "386:5-409:11",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "611",
+                        "locator" : "386:8-386:98",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "612",
+                           "locator" : "386:8-386:45",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "613",
+                              "locator" : "386:8-386:23",
+                              "name" : "Clinical visit",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "614",
+                              "locator" : "386:29-386:45",
+                              "name" : "Age 20 or older",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "615",
+                           "locator" : "386:51-386:98",
+                           "name" : "Suspicion of treatment failure or interruption",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "then" : {
+                        "localId" : "616",
+                        "locator" : "387:12-387:1005",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Desirable actions: \nHBV (HBsAg) serology (before switching ART regimen if this testing was not done or if the result was negative at baseline and the patient was not vaccinated thereafter)\n\nRecommended general care activities:\nPrepare, assess and support adherence.\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional, growth and development assessment.\n\nPreventing and treating coinfections:\nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "618",
+                        "locator" : "409:10-409:11",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  } ]
+               }
+            }
+         } ]
+      }
+   }
+}

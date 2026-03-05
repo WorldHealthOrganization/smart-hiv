@@ -1,0 +1,317 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "LogicalModels Enumeration API",
+    "description": "API endpoint providing an enumeration of all available Logical Model schemas",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/LogicalModels.schema.json": {
+      "get": {
+        "summary": "Get enumeration of all Logical Model schemas",
+        "description": "Returns a list of all available Logical Model schemas with metadata",
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved logical_model enumeration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnumerationResponse"
+                },
+                "example": {
+                  "type": "logical_model",
+                  "count": 13,
+                  "schemas": [
+                    {
+                      "filename": "StructureDefinition-HIVConfiguration.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVConfiguration.schema.json",
+                      "title": "HIV.Configuration",
+                      "description": "This tab describes data about a facility or region that are used in workflows and decision logic (i.e. WHO recommendations depend upon these data elements), but are not specific to an individual (e.g. a high HIV burden setting)",
+                      "url": "./StructureDefinition-HIVConfiguration.schema.json",
+                      "propertyCount": 23
+                    },
+                    {
+                      "filename": "StructureDefinition-HIVIReferral.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVIReferral.schema.json",
+                      "title": "HIV.I Referral",
+                      "description": "This tab describes the data that are collected during the referral workflow (HIV.I)",
+                      "url": "./StructureDefinition-HIVIReferral.schema.json",
+                      "propertyCount": 15
+                    },
+                    {
+                      "filename": "StructureDefinition-HIVGDiagnostics.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVGDiagnostics.schema.json",
+                      "title": "HIV.G Diagnostics",
+                      "description": "This tab describes the data that are collected during the workflow for diagnostics for HIV (HIV.G)",
+                      "url": "./StructureDefinition-HIVGDiagnostics.schema.json",
+                      "propertyCount": 43
+                    },
+                    {
+                      "filename": "StructureDefinition-HIVBHTSvisit.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVBHTSvisit.schema.json",
+                      "title": "HIV.B HTS visit",
+                      "description": "This tab describes the data that are collected during the HIV Testing services visit workflow (HIV.B)",
+                      "url": "./StructureDefinition-HIVBHTSvisit.schema.json",
+                      "propertyCount": 125
+                    },
+                    {
+                      "filename": "StructureDefinition-HIVARegistration.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVARegistration.schema.json",
+                      "title": "HIV.A Registration",
+                      "description": "This tab describes the data that are collected during the registration workflow (HIV.A)",
+                      "url": "./StructureDefinition-HIVARegistration.schema.json",
+                      "propertyCount": 33
+                    },
+                    {
+                      "filename": "StructureDefinition-HIVDCareTreatment.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVDCareTreatment.schema.json",
+                      "title": "HIV.D Care-Treatment",
+                      "description": "This tab describes the data that may be collected during care and treatment clinical visit for HIV workflow (HIV.D)",
+                      "url": "./StructureDefinition-HIVDCareTreatment.schema.json",
+                      "propertyCount": 325
+                    },
+                    {
+                      "filename": "StructureDefinition-HIVHFollowup.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVHFollowup.schema.json",
+                      "title": "HIV.H Follow-up",
+                      "description": "This tab describes the data that are collected during the follow-up and contacting clients workflow (HIV.H)",
+                      "url": "./StructureDefinition-HIVHFollowup.schema.json",
+                      "propertyCount": 33
+                    },
+                    {
+                      "filename": "StructureDefinition-HIVDHIVTB.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVDHIVTB.schema.json",
+                      "title": "HIV.D HIV-TB",
+                      "description": "This tab describes the data that may be collected during care and treatment clinical visit for HIV/TB care (HIV.D)",
+                      "url": "./StructureDefinition-HIVDHIVTB.schema.json",
+                      "propertyCount": 41
+                    },
+                    {
+                      "filename": "StructureDefinition-HIVEPMTCT.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVEPMTCT.schema.json",
+                      "title": "HIV.E-F PMTCT",
+                      "description": "This tab describes the data that are collected relevant to HIV care and treatment of pregnant and postpartum women and their newborns during the delivery and postpartum care and the infant diagnosis and final HIV status workflows (HIV.E and HIV.F)",
+                      "url": "./StructureDefinition-HIVEPMTCT.schema.json",
+                      "propertyCount": 135
+                    },
+                    {
+                      "filename": "StructureDefinition-HIVCPrEPvisit.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVCPrEPvisit.schema.json",
+                      "title": "HIV.C PrEP visit",
+                      "description": "This tab describes the data that may be collected during the pre-exposure prophylaxis (PrEP) or post-exposure prophylaxis (PEP) workflow (HIV.C)",
+                      "url": "./StructureDefinition-HIVCPrEPvisit.schema.json",
+                      "propertyCount": 67
+                    },
+                    {
+                      "filename": "LogicalModels.schema.json",
+                      "id": "#/LogicalModels.schema.json",
+                      "title": "Logical Model Enumeration Schema",
+                      "description": "JSON Schema defining the structure of the Logical Model enumeration endpoint response",
+                      "url": "./LogicalModels.schema.json",
+                      "propertyCount": 3
+                    },
+                    {
+                      "filename": "StructureDefinition-HIVSurveillance.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVSurveillance.schema.json",
+                      "title": "HIV.Surveillance",
+                      "description": "This tab describes the data that are collected during case surveillance (these data elements are drawn from other tabs and do not include data element IDs).",
+                      "url": "./StructureDefinition-HIVSurveillance.schema.json",
+                      "propertyCount": 1
+                    },
+                    {
+                      "filename": "StructureDefinition-HIVPrevention.schema.json",
+                      "id": "http://smart.who.int/base/StructureDefinition-HIVPrevention.schema.json",
+                      "title": "HIV.Prevention",
+                      "description": "This tab describes the data that are collected during HIV prevention activities (not covered in the previous business processes)",
+                      "url": "./StructureDefinition-HIVPrevention.schema.json",
+                      "propertyCount": 22
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "EnumerationResponse": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "#/LogicalModels.schema.json",
+        "title": "Logical Model Enumeration Schema",
+        "description": "JSON Schema defining the structure of the Logical Model enumeration endpoint response",
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "logical_model",
+            "description": "The type of schemas enumerated (logical_model)"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Total number of schemas available"
+          },
+          "schemas": {
+            "type": "array",
+            "description": "Array of available schemas",
+            "items": {
+              "type": "object",
+              "properties": {
+                "filename": {
+                  "type": "string",
+                  "description": "Schema filename"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "Schema $id"
+                },
+                "title": {
+                  "type": "string",
+                  "description": "Schema title"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Schema description"
+                },
+                "url": {
+                  "type": "string",
+                  "description": "Relative URL to the schema file"
+                },
+                "logicalModelUrl": {
+                  "type": "string",
+                  "description": "FHIR canonical URL of the Logical Model"
+                },
+                "propertyCount": {
+                  "type": "integer",
+                  "description": "Number of properties in the Logical Model"
+                }
+              },
+              "required": [
+                "filename",
+                "title",
+                "url"
+              ]
+            }
+          }
+        },
+        "required": [
+          "type",
+          "count",
+          "schemas"
+        ],
+        "example": {
+          "type": "logical_model",
+          "count": 13,
+          "schemas": [
+            {
+              "filename": "StructureDefinition-HIVConfiguration.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVConfiguration.schema.json",
+              "title": "HIV.Configuration",
+              "description": "This tab describes data about a facility or region that are used in workflows and decision logic (i.e. WHO recommendations depend upon these data elements), but are not specific to an individual (e.g. a high HIV burden setting)",
+              "url": "./StructureDefinition-HIVConfiguration.schema.json",
+              "propertyCount": 23
+            },
+            {
+              "filename": "StructureDefinition-HIVIReferral.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVIReferral.schema.json",
+              "title": "HIV.I Referral",
+              "description": "This tab describes the data that are collected during the referral workflow (HIV.I)",
+              "url": "./StructureDefinition-HIVIReferral.schema.json",
+              "propertyCount": 15
+            },
+            {
+              "filename": "StructureDefinition-HIVGDiagnostics.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVGDiagnostics.schema.json",
+              "title": "HIV.G Diagnostics",
+              "description": "This tab describes the data that are collected during the workflow for diagnostics for HIV (HIV.G)",
+              "url": "./StructureDefinition-HIVGDiagnostics.schema.json",
+              "propertyCount": 43
+            },
+            {
+              "filename": "StructureDefinition-HIVBHTSvisit.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVBHTSvisit.schema.json",
+              "title": "HIV.B HTS visit",
+              "description": "This tab describes the data that are collected during the HIV Testing services visit workflow (HIV.B)",
+              "url": "./StructureDefinition-HIVBHTSvisit.schema.json",
+              "propertyCount": 125
+            },
+            {
+              "filename": "StructureDefinition-HIVARegistration.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVARegistration.schema.json",
+              "title": "HIV.A Registration",
+              "description": "This tab describes the data that are collected during the registration workflow (HIV.A)",
+              "url": "./StructureDefinition-HIVARegistration.schema.json",
+              "propertyCount": 33
+            },
+            {
+              "filename": "StructureDefinition-HIVDCareTreatment.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVDCareTreatment.schema.json",
+              "title": "HIV.D Care-Treatment",
+              "description": "This tab describes the data that may be collected during care and treatment clinical visit for HIV workflow (HIV.D)",
+              "url": "./StructureDefinition-HIVDCareTreatment.schema.json",
+              "propertyCount": 325
+            },
+            {
+              "filename": "StructureDefinition-HIVHFollowup.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVHFollowup.schema.json",
+              "title": "HIV.H Follow-up",
+              "description": "This tab describes the data that are collected during the follow-up and contacting clients workflow (HIV.H)",
+              "url": "./StructureDefinition-HIVHFollowup.schema.json",
+              "propertyCount": 33
+            },
+            {
+              "filename": "StructureDefinition-HIVDHIVTB.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVDHIVTB.schema.json",
+              "title": "HIV.D HIV-TB",
+              "description": "This tab describes the data that may be collected during care and treatment clinical visit for HIV/TB care (HIV.D)",
+              "url": "./StructureDefinition-HIVDHIVTB.schema.json",
+              "propertyCount": 41
+            },
+            {
+              "filename": "StructureDefinition-HIVEPMTCT.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVEPMTCT.schema.json",
+              "title": "HIV.E-F PMTCT",
+              "description": "This tab describes the data that are collected relevant to HIV care and treatment of pregnant and postpartum women and their newborns during the delivery and postpartum care and the infant diagnosis and final HIV status workflows (HIV.E and HIV.F)",
+              "url": "./StructureDefinition-HIVEPMTCT.schema.json",
+              "propertyCount": 135
+            },
+            {
+              "filename": "StructureDefinition-HIVCPrEPvisit.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVCPrEPvisit.schema.json",
+              "title": "HIV.C PrEP visit",
+              "description": "This tab describes the data that may be collected during the pre-exposure prophylaxis (PrEP) or post-exposure prophylaxis (PEP) workflow (HIV.C)",
+              "url": "./StructureDefinition-HIVCPrEPvisit.schema.json",
+              "propertyCount": 67
+            },
+            {
+              "filename": "LogicalModels.schema.json",
+              "id": "#/LogicalModels.schema.json",
+              "title": "Logical Model Enumeration Schema",
+              "description": "JSON Schema defining the structure of the Logical Model enumeration endpoint response",
+              "url": "./LogicalModels.schema.json",
+              "propertyCount": 3
+            },
+            {
+              "filename": "StructureDefinition-HIVSurveillance.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVSurveillance.schema.json",
+              "title": "HIV.Surveillance",
+              "description": "This tab describes the data that are collected during case surveillance (these data elements are drawn from other tabs and do not include data element IDs).",
+              "url": "./StructureDefinition-HIVSurveillance.schema.json",
+              "propertyCount": 1
+            },
+            {
+              "filename": "StructureDefinition-HIVPrevention.schema.json",
+              "id": "http://smart.who.int/base/StructureDefinition-HIVPrevention.schema.json",
+              "title": "HIV.Prevention",
+              "description": "This tab describes the data that are collected during HIV prevention activities (not covered in the previous business processes)",
+              "url": "./StructureDefinition-HIVPrevention.schema.json",
+              "propertyCount": 22
+            }
+          ]
+        }
+      }
+    }
+  }
+}

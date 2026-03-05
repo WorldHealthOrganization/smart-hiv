@@ -1,0 +1,2448 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "Overloads",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "446",
+            "s" : [ {
+               "value" : [ "/**\n * Library: HIV.IND.35 Logic\n * Ref No: ART.9\n * Short Name: ARV toxicity prevalence\n *\n * Definition: % of ART patients with treatment-limiting ARV toxicity\n *\n * Numerator: Number of ART patients who have stopped treatment or switched regimen due to toxicity in the reporting period\n * Numerator Calculation: COUNT of clients with \"HIV status\"='HIV-positive' with a \"Date ART stopped\" in the reporting period AND \"Reason ART stopped\"='Toxicity/side effects' | PLUS | COUNT of clients with \"HIV status\"='HIV-positive' AND \"On ART\"=True AND either \"Date of switch to second-line regimen\" OR \"Date of switch to third-line regimen\" in the reporting period with a \"Reason for regimen switch\"='Toxicity/side effects'  | PLUS | COUNT of clients with \"HIV status\"='HIV-positive' AND \"On ART\"=True AND either \"Date(s) of substitution within second-line regimen\" OR \"Date(s) of substitution within third-line regimen\" in the reporting period AND \"Reason for ARV drug regimen substitution\"='Toxicity/side effects'\n * Numerator Exclusions: \n *\n * Denominator: Number of ART patients in the reporting period\n * Denominator Calculation: COUNT of clients with \"HIV status\"='HIV-positive' AND \"On ART\"=True within the reporting period\n * Denominator Exclusions: \n *\n * Disaggregations:\n * • Gender (female, male, other*) \n *  • Age (<0–4, 5–9, 10–14, 15-19, >19 years)** \n *  • Key populations (men who have sex with men, people living in prisons and other closed settings, people who inject drugs, sex workers, trans and gender diverse people)*** \n *  • ART regimen \n *  • Pregnancy status \n *  • Type of toxicity (gastrointestinal, skin, peripheral neuropathy, central nervous system, weight gain, hepatic dysfunction, haematological, fatigue, headache, bone dysfunction, metabolic, kidney dysfunction) \n *  • Cities and other administrative regions of epidemiologic importance\n *\n * Disaggregation Elements: Gender | Age | Key population member type | Current ART regimen | Currently pregnant | Type of treatment-limiting toxicity\n *\n * Numerator and Denominator Elements:\n * Date ART stopped \n *  Date of switch to second-line regimen \n *  Date of switch to third-line regimen \n *  Date(s) of substitution within second-line regimen \n *  Date(s) of substitution within third-line regimen \n *  HIV status \n *  On ART \n *  Reason ART stopped \n *  Reason for ARV drug regimen substitution \n *  Reason for regimen switch\n *\n * Reference: Consolidated guidelines on person-centred HIV strategic information: strengthening routine data for impact. Geneva: World Health Organization; 2022\n * \n * Data Concepts:\n * HIV.A.DE17: Age | Calculated age (number of years) of the client based on date of birth\n * HIV.A.DE18: Gender* | Gender of the client*\n * HIV.A.DE19: Female | Client identifies as female\n * HIV.A.DE20: Male | Client identifies as male\n * HIV.A.DE21: Transgender male | Client identifies as transgender male\n * HIV.A.DE22: Transgender female | Client identifies as transgender female\n * HIV.A.DE23: Other | Additional category\n * HIV.B.DE29: Currently pregnant | Client is currently pregnant\n * HIV.B.DE50: Key population member type* | The type of key population that the client is included in\n * HIV.B.DE51: Sex worker | Client is a sex worker\n * HIV.B.DE52: Men who have sex with men | Client is a man who has sex with men\n * HIV.B.DE53: Trans and gender-diverse people | Client identifies as trans and gender-diverse\n * HIV.B.DE54: People who inject drugs | Client is a person who injects drugs\n * HIV.B.DE55: People living in prisons and other closed settings | Client lives in a prison or another closed setting\n * HIV.B.DE115: HIV status | HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.\n * HIV.B.DE116: HIV-positive | Client is HIV-positive\n * HIV.B.DE117: HIV-negative | Client is HIV-negative\n * HIV.B.DE118: Unknown | Client has unknown HIV status\n * HIV.D.DE31: Currently pregnant | Client is currently pregnant\n * HIV.D.DE38: On ART | Client is currently taking ART\n * HIV.D.DE41: Date ART stopped | Date on which client stopped ART\n * HIV.D.DE75: Current ART regimen | The current ART regimen the client is taking\n * HIV.D.DE217: Reason ART stopped | Reason client intentionally stopped ART\n * HIV.D.DE218: Toxicity/side effects | Client stopped ART because of toxicity/side effects\n * HIV.D.DE219: Severe illness, hospitalization | Client stopped ART because of severe illness, hospitalization\n * HIV.D.DE220: Drugs out of stock | Client stopped ART because drugs were out of stock\n * HIV.D.DE221: Client lacks finances | Client stopped ART because of lack of finances\n * HIV.D.DE222: Excluded HIV infection in infant | Client stopped ART because HIV infection in infant was excluded\n * HIV.D.DE223: Other reason for stopping ART | Client stopped ART because of other reason\n * HIV.D.DE418: Reason for ARV drug regimen substitution | Reason why a substitution was made to the antiretroviral (ARV) drug regimen\n * HIV.D.DE419: Toxicity/side effects | A substitution was made to the regimen because of toxicity/side effects\n * HIV.D.DE420: Drug-drug interaction | A substitution was made to the regimen because of a drug-drug interaction\n * HIV.D.DE421: Pregnancy | A substitution was made to the regimen because of pregnancy\n * HIV.D.DE422: New TB | A substitution was made to the regimen because of new tuberculosis (TB)\n * HIV.D.DE423: New drug available | A substitution was made to the regimen because a new drug was available\n * HIV.D.DE424: Drug out of stock | A substitution was made to the regimen because drug was out of stock\n * HIV.D.DE425: Other reason for regimen substitution | A substitution was made for another reason\n * HIV.D.DE466: Type of treatment-limiting toxicity | Type of treatment-limiting toxicity experienced by client. Treatment-limiting toxicity is defined as a serious adverse drug reaction that results in drug discontinuation or substitution. In addition, any reaction that leads to treatment interruption or requires changing the drug or regimen because of an adverse drug reaction is also considered a serious adverse drug reaction.\n * HIV.D.DE467: Gastrointestinal | Treatment-limiting toxicity due to GI issues (nausea, diarrhoea, abdominal pain, vomiting)\n * HIV.D.DE468: Skin issues | Treatment-limiting toxicity due to skin issues (rash, hypersensitivity reaction)\n * HIV.D.DE469: Peripheral neuropathy | Treatment-limiting toxicity due to peripheral neuropathy (burning/numbness/ tingling)\n * HIV.D.DE470: Central nervous system symptoms | Treatment-limiting toxicity due to central nervous system symptoms (dizzy, anxiety, nightmare, depression, seizures)\n * HIV.D.DE471: Weight gain | Treatment-limiting toxicity due to weight gain\n * HIV.D.DE472: Hepatic dysfunction | Treatment-limiting toxicity due to hepatic dysfunction (jaundice)\n * HIV.D.DE473: Haematological disorders | Treatment-limiting toxicity due to haematological (anaemia, neutropenia) disorders\n * HIV.D.DE474: Fatigue | Treatment-limiting toxicity due to fatigue\n * HIV.D.DE475: Headache | Treatment-limiting toxicity due to headache\n * HIV.D.DE476: Bone dysfunction | Treatment-limiting toxicity due to bone dysfunction (fractures, osteopenia)\n * HIV.D.DE477: Metabolic symptoms | Treatment-limiting toxicity due to metabolic symptoms (body fat changes, hyperglycaemia, dyslipidaemia)\n * HIV.D.DE478: Kidney dysfunction | Treatment-limiting toxicity due to kidney dysfunction (nephrolithiasis, renal insufficiency)\n * HIV.D.DE479: Unexpected adverse drug reaction | Client experienced an unexpected adverse drug reaction\n * HIV.D.DE487: Date(s) of substitution within second-line regimen | Date on which ARV drug regimen for client was changed within the second-line regimen (substitution)\n * HIV.D.DE493: Date(s) of substitution within third-line regimen | Date on which ARV drug regimen for client was changed within the third-line (substitution)\n * HIV.E.DE114: Key population member type* | The type of key population that the infant's mother is included in\n * HIV.E.DE115: Sex worker | Infant's mother is a sex worker\n * HIV.E.DE116: People who inject drugs | Infant's mother is a person who injects drugs\n * HIV.E.DE117: Trans and gender-diverse people | Infant's mother identifies as trans and gender-diverse\n * HIV.E.DE118: People living in prisons and other closed setting | Infant's mother is in a prison or closed setting\n * HIV.H.DE47: On ART | Client is currently taking ART \n * HIV.H.DE73: Date ART stopped | Date on which client stopped ART\n * HIV.H.DE74: Reason ART stopped | Reason why client intentionally stopped ART\n * HIV.H.DE75: Toxicity/side effects | Client stopped ART because of toxicity/side effects\n * HIV.H.DE76: Severe illness, hospitalization | Client stopped ART because of severe illness, hospitalization\n * HIV.H.DE77: Drugs out of stock  | Client stopped ART because of drugs being out of stock \n * HIV.H.DE78: Client lacks finances  | Client stopped ART because client lacked finances \n * HIV.H.DE79: Excluded HIV infection in infant | Client stopped ART because the infant was determined to not have HIV\n * HIV.H.DE80: Other reason for stopping ART | Client stopped ART for other reason\n * HIV.SRV.DE7: Currently pregnant | Client is currently pregnant\n *\n * Additional Context\n * - what it measures: Measures the incidence of serious ARV toxicities among ART patients.\n * - rationale: • As use of ARVs is scaled up, people living with HIV have the potential for prolonged exposure to ARVs and the potential to experience ARV-related toxicity. | • ARV-related toxicities are some of the most common reasons reported for ART non- adherence, treatment discontinuation or substitution of drugs and, thus, are important to monitor.\n * - method: For the numerator and denominator: HIV patient monitoring tools (ART registers, patient records/EMRs). To enable reporting codes for reasons for ART stop or switch are provided in patient monitoring tools (Web Annex H HIV patient card and Annex K ART register) |  | \"Treatment-limiting\" toxicity is defined as follows: A serious adverse drug reaction that results in drug discontinuation or substitution. In addition, any reaction that leads to treatment interruption or requires changing the drug or regimen because of an adverse drug reaction is also considered a serious adverse drug reaction.\n * \n * Suggested Scoring Method: proportion | http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm\n */\n\n","library HIVIND35Logic" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "HIVIND35Logic",
+         "system" : "http://smart.who.int/hiv"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1",
+            "version" : "1.0.0"
+         }, {
+            "localId" : "206",
+            "locator" : "122:1-122:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "// Included Libraries\n","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "124:1-124:44",
+            "localIdentifier" : "HIC",
+            "path" : "http://smart.who.int/hiv/HIVCommon",
+            "version" : "0.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'0.0.1'"," called ","HIC" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "125:1-125:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://hl7.org/fhir/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "126:1-126:29",
+            "localIdentifier" : "WCom",
+            "path" : "http://smart.who.int/hiv/WHOCommon",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "WHOCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","WCom" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "127:1-127:29",
+            "localIdentifier" : "HE",
+            "path" : "http://smart.who.int/hiv/HIVElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","HE" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "128:1-128:39",
+            "localIdentifier" : "HIE",
+            "path" : "http://smart.who.int/hiv/HIVIndicatorElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVIndicatorElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","HIE" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "parameters" : {
+         "def" : [ {
+            "localId" : "218",
+            "locator" : "131:1-131:88",
+            "name" : "Measurement Period",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "218",
+                  "s" : [ {
+                     "value" : [ "// Indicator Definition\n","parameter ","\"Measurement Period\""," " ]
+                  }, {
+                     "r" : "230",
+                     "s" : [ {
+                        "value" : [ "Interval<" ]
+                     }, {
+                        "r" : "231",
+                        "s" : [ {
+                           "value" : [ "Date" ]
+                        } ]
+                     }, {
+                        "value" : [ ">" ]
+                     } ]
+                  }, {
+                     "value" : [ " default " ]
+                  }, {
+                     "r" : "229",
+                     "s" : [ {
+                        "r" : "223",
+                        "value" : [ "Interval[","@2023-01-01",", ","@2023-01-30","]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "default" : {
+               "localId" : "229",
+               "locator" : "131:55-131:88",
+               "lowClosed" : true,
+               "highClosed" : true,
+               "type" : "Interval",
+               "low" : {
+                  "localId" : "223",
+                  "locator" : "131:64-131:74",
+                  "type" : "Date",
+                  "signature" : [ ],
+                  "year" : {
+                     "localId" : "220",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "2023",
+                     "type" : "Literal"
+                  },
+                  "month" : {
+                     "localId" : "221",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  },
+                  "day" : {
+                     "localId" : "222",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  }
+               },
+               "high" : {
+                  "localId" : "228",
+                  "locator" : "131:77-131:87",
+                  "type" : "Date",
+                  "signature" : [ ],
+                  "year" : {
+                     "localId" : "225",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "2023",
+                     "type" : "Literal"
+                  },
+                  "month" : {
+                     "localId" : "226",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  },
+                  "day" : {
+                     "localId" : "227",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "30",
+                     "type" : "Literal"
+                  }
+               }
+            },
+            "parameterTypeSpecifier" : {
+               "localId" : "230",
+               "locator" : "131:32-131:45",
+               "type" : "IntervalTypeSpecifier",
+               "pointType" : {
+                  "localId" : "231",
+                  "locator" : "131:41-131:44",
+                  "name" : "{urn:hl7-org:elm-types:r1}Date",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "localId" : "236",
+            "locator" : "133:1-133:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "234",
+            "locator" : "133:1-133:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "235",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "233",
+                  "locator" : "133:1-133:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "239",
+            "locator" : "140:1-141:6",
+            "name" : "Initial Population",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "239",
+                  "s" : [ {
+                     "r" : "240",
+                     "value" : [ "/* Populations */\n\n/*\n *Initial Population\n */\n\n","define ","\"Initial Population\"",":\n  ","true" ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "240",
+               "locator" : "141:3-141:6",
+               "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+               "value" : "true",
+               "type" : "Literal"
+            }
+         }, {
+            "localId" : "243",
+            "locator" : "150:1-193:3",
+            "name" : "Numerator",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "243",
+                  "s" : [ {
+                     "value" : [ "/**\n * Numerator\n * \n * Definition: Number of ART patients who have stopped treatment or switched regimen due to toxicity in the reporting period\n * Calculation: COUNT of clients with \"HIV status\"='HIV-positive' with a \"Date ART stopped\" in the reporting period AND \"Reason ART stopped\"='Toxicity/side effects' | PLUS | COUNT of clients with \"HIV status\"='HIV-positive' AND \"On ART\"=True AND either \"Date of switch to second-line regimen\" OR \"Date of switch to third-line regimen\" in the reporting period with a \"Reason for regimen switch\"='Toxicity/side effects'  | PLUS | COUNT of clients with \"HIV status\"='HIV-positive' AND \"On ART\"=True AND either \"Date(s) of substitution within second-line regimen\" OR \"Date(s) of substitution within third-line regimen\" in the reporting period AND \"Reason for ARV drug regimen substitution\"='Toxicity/side effects'\n */\n\n","define ","\"Numerator\"",":\n  " ]
+                  }, {
+                     "r" : "244",
+                     "s" : [ {
+                        "r" : "245",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "245",
+                           "s" : [ {
+                              "r" : "247",
+                              "s" : [ {
+                                 "r" : "246",
+                                 "s" : [ {
+                                    "value" : [ "HIE" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "247",
+                                 "s" : [ {
+                                    "value" : [ "\"Has HIV-positive Status\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n  and " ]
+                           }, {
+                              "r" : "249",
+                              "s" : [ {
+                                 "r" : "248",
+                                 "s" : [ {
+                                    "value" : [ "HIE" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "249",
+                                 "s" : [ {
+                                    "value" : [ "\"Toxicity/side effects H.DE75\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     }, {
+                        "value" : [ "\n  and " ]
+                     }, {
+                        "r" : "250",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "250",
+                           "s" : [ {
+                              "r" : "251",
+                              "s" : [ {
+                                 "value" : [ "(\n    " ]
+                              }, {
+                                 "r" : "251",
+                                 "s" : [ {
+                                    "r" : "252",
+                                    "s" : [ {
+                                       "r" : "254",
+                                       "s" : [ {
+                                          "r" : "253",
+                                          "s" : [ {
+                                             "value" : [ "HIE" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "254",
+                                          "s" : [ {
+                                             "value" : [ "\"Has HIV-positive Status\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " \n    and " ]
+                                    }, {
+                                       "r" : "256",
+                                       "s" : [ {
+                                          "r" : "255",
+                                          "s" : [ {
+                                             "value" : [ "HIE" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "256",
+                                          "s" : [ {
+                                             "value" : [ "\"On ART H.DE47\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n    and \n    " ]
+                                 }, {
+                                    "r" : "257",
+                                    "s" : [ {
+                                       "value" : [ "(" ]
+                                    }, {
+                                       "r" : "257",
+                                       "s" : [ {
+                                          "r" : "258",
+                                          "s" : [ {
+                                             "value" : [ "exists" ]
+                                          }, {
+                                             "r" : "291",
+                                             "s" : [ {
+                                                "value" : [ "(" ]
+                                             }, {
+                                                "r" : "291",
+                                                "s" : [ {
+                                                   "s" : [ {
+                                                      "r" : "259",
+                                                      "s" : [ {
+                                                         "r" : "261",
+                                                         "s" : [ {
+                                                            "s" : [ {
+                                                               "value" : [ "HE",".","\"New regimen after switch to second-line regimen\"" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ " ","R" ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "\n    " ]
+                                                }, {
+                                                   "r" : "273",
+                                                   "s" : [ {
+                                                      "value" : [ "with " ]
+                                                   }, {
+                                                      "r" : "263",
+                                                      "s" : [ {
+                                                         "r" : "265",
+                                                         "s" : [ {
+                                                            "s" : [ {
+                                                               "value" : [ "HE",".","\"Toxicity/side effects H.DE75\"" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ " ","T" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "\n    such that " ]
+                                                   }, {
+                                                      "r" : "269",
+                                                      "s" : [ {
+                                                         "r" : "267",
+                                                         "s" : [ {
+                                                            "r" : "266",
+                                                            "s" : [ {
+                                                               "value" : [ "R" ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "267",
+                                                            "s" : [ {
+                                                               "value" : [ "partOf" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "269",
+                                                         "s" : [ {
+                                                            "value" : [ "references","(" ]
+                                                         }, {
+                                                            "r" : "268",
+                                                            "s" : [ {
+                                                               "value" : [ "T" ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ ")" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "\n    " ]
+                                                }, {
+                                                   "r" : "278",
+                                                   "s" : [ {
+                                                      "value" : [ "where " ]
+                                                   }, {
+                                                      "r" : "278",
+                                                      "s" : [ {
+                                                         "r" : "276",
+                                                         "s" : [ {
+                                                            "r" : "275",
+                                                            "s" : [ {
+                                                               "r" : "274",
+                                                               "s" : [ {
+                                                                  "value" : [ "R" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "275",
+                                                               "s" : [ {
+                                                                  "value" : [ "effective" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "276",
+                                                            "s" : [ {
+                                                               "value" : [ "toInterval","()" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "r" : "278",
+                                                         "value" : [ " ","during"," " ]
+                                                      }, {
+                                                         "r" : "277",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Measurement Period\"" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "\n    )" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n    or \n    " ]
+                                       }, {
+                                          "r" : "292",
+                                          "s" : [ {
+                                             "value" : [ "(\n    " ]
+                                          }, {
+                                             "r" : "292",
+                                             "s" : [ {
+                                                "value" : [ "exists" ]
+                                             }, {
+                                                "r" : "325",
+                                                "s" : [ {
+                                                   "value" : [ "(" ]
+                                                }, {
+                                                   "r" : "325",
+                                                   "s" : [ {
+                                                      "s" : [ {
+                                                         "r" : "293",
+                                                         "s" : [ {
+                                                            "r" : "295",
+                                                            "s" : [ {
+                                                               "s" : [ {
+                                                                  "value" : [ "HE",".","\"New regimen after switch to third-line regimen\"" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ " ","R" ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "\n    " ]
+                                                   }, {
+                                                      "r" : "307",
+                                                      "s" : [ {
+                                                         "value" : [ "with " ]
+                                                      }, {
+                                                         "r" : "297",
+                                                         "s" : [ {
+                                                            "r" : "299",
+                                                            "s" : [ {
+                                                               "s" : [ {
+                                                                  "value" : [ "HE",".","\"Toxicity/side effects H.DE75\"" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ " ","T" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "\n    such that " ]
+                                                      }, {
+                                                         "r" : "303",
+                                                         "s" : [ {
+                                                            "r" : "301",
+                                                            "s" : [ {
+                                                               "r" : "300",
+                                                               "s" : [ {
+                                                                  "value" : [ "R" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "301",
+                                                               "s" : [ {
+                                                                  "value" : [ "partOf" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "303",
+                                                            "s" : [ {
+                                                               "value" : [ "references","(" ]
+                                                            }, {
+                                                               "r" : "302",
+                                                               "s" : [ {
+                                                                  "value" : [ "T" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ ")" ]
+                                                            } ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "\n    " ]
+                                                   }, {
+                                                      "r" : "312",
+                                                      "s" : [ {
+                                                         "value" : [ "where " ]
+                                                      }, {
+                                                         "r" : "312",
+                                                         "s" : [ {
+                                                            "r" : "310",
+                                                            "s" : [ {
+                                                               "r" : "309",
+                                                               "s" : [ {
+                                                                  "r" : "308",
+                                                                  "s" : [ {
+                                                                     "value" : [ "R" ]
+                                                                  } ]
+                                                               }, {
+                                                                  "value" : [ "." ]
+                                                               }, {
+                                                                  "r" : "309",
+                                                                  "s" : [ {
+                                                                     "value" : [ "effective" ]
+                                                                  } ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "310",
+                                                               "s" : [ {
+                                                                  "value" : [ "toInterval","()" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "r" : "312",
+                                                            "value" : [ " ","during"," " ]
+                                                         }, {
+                                                            "r" : "311",
+                                                            "s" : [ {
+                                                               "value" : [ "\"Measurement Period\"" ]
+                                                            } ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "  \n    )" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "\n    )" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n  )" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n  )" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n  or\n  " ]
+                           }, {
+                              "r" : "326",
+                              "s" : [ {
+                                 "value" : [ "(\n    " ]
+                              }, {
+                                 "r" : "326",
+                                 "s" : [ {
+                                    "r" : "327",
+                                    "s" : [ {
+                                       "r" : "329",
+                                       "s" : [ {
+                                          "r" : "328",
+                                          "s" : [ {
+                                             "value" : [ "HIE" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "329",
+                                          "s" : [ {
+                                             "value" : [ "\"Has HIV-positive Status\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n    and " ]
+                                    }, {
+                                       "r" : "331",
+                                       "s" : [ {
+                                          "r" : "330",
+                                          "s" : [ {
+                                             "value" : [ "HIE" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "331",
+                                          "s" : [ {
+                                             "value" : [ "\"On ART H.DE47\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n    and \n    " ]
+                                 }, {
+                                    "r" : "332",
+                                    "s" : [ {
+                                       "value" : [ "(" ]
+                                    }, {
+                                       "r" : "332",
+                                       "s" : [ {
+                                          "r" : "333",
+                                          "s" : [ {
+                                             "value" : [ "exists" ]
+                                          }, {
+                                             "r" : "366",
+                                             "s" : [ {
+                                                "value" : [ "(" ]
+                                             }, {
+                                                "r" : "366",
+                                                "s" : [ {
+                                                   "s" : [ {
+                                                      "r" : "334",
+                                                      "s" : [ {
+                                                         "r" : "336",
+                                                         "s" : [ {
+                                                            "s" : [ {
+                                                               "value" : [ "HE",".","\"New regimen after substitution within second-line regimen\"" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ " ","R" ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "\n    " ]
+                                                }, {
+                                                   "r" : "348",
+                                                   "s" : [ {
+                                                      "value" : [ "with " ]
+                                                   }, {
+                                                      "r" : "338",
+                                                      "s" : [ {
+                                                         "r" : "340",
+                                                         "s" : [ {
+                                                            "s" : [ {
+                                                               "value" : [ "HE",".","\"Toxicity/side effects H.DE75\"" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ " ","T" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "\n    such that " ]
+                                                   }, {
+                                                      "r" : "344",
+                                                      "s" : [ {
+                                                         "r" : "342",
+                                                         "s" : [ {
+                                                            "r" : "341",
+                                                            "s" : [ {
+                                                               "value" : [ "R" ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "342",
+                                                            "s" : [ {
+                                                               "value" : [ "partOf" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "344",
+                                                         "s" : [ {
+                                                            "value" : [ "references","(" ]
+                                                         }, {
+                                                            "r" : "343",
+                                                            "s" : [ {
+                                                               "value" : [ "T" ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ ")" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "\n    " ]
+                                                }, {
+                                                   "r" : "353",
+                                                   "s" : [ {
+                                                      "value" : [ "where " ]
+                                                   }, {
+                                                      "r" : "353",
+                                                      "s" : [ {
+                                                         "r" : "351",
+                                                         "s" : [ {
+                                                            "r" : "350",
+                                                            "s" : [ {
+                                                               "r" : "349",
+                                                               "s" : [ {
+                                                                  "value" : [ "R" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "350",
+                                                               "s" : [ {
+                                                                  "value" : [ "effective" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "351",
+                                                            "s" : [ {
+                                                               "value" : [ "toInterval","()" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "r" : "353",
+                                                         "value" : [ " ","during"," " ]
+                                                      }, {
+                                                         "r" : "352",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Measurement Period\"" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "\n    )" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n    or \n    " ]
+                                       }, {
+                                          "r" : "367",
+                                          "s" : [ {
+                                             "value" : [ "(\n    " ]
+                                          }, {
+                                             "r" : "367",
+                                             "s" : [ {
+                                                "value" : [ "exists" ]
+                                             }, {
+                                                "r" : "400",
+                                                "s" : [ {
+                                                   "value" : [ "(" ]
+                                                }, {
+                                                   "r" : "400",
+                                                   "s" : [ {
+                                                      "s" : [ {
+                                                         "r" : "368",
+                                                         "s" : [ {
+                                                            "r" : "370",
+                                                            "s" : [ {
+                                                               "s" : [ {
+                                                                  "value" : [ "HE",".","\"New regimen after substitution within third-line regimen\"" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ " ","R" ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "\n    " ]
+                                                   }, {
+                                                      "r" : "382",
+                                                      "s" : [ {
+                                                         "value" : [ "with " ]
+                                                      }, {
+                                                         "r" : "372",
+                                                         "s" : [ {
+                                                            "r" : "374",
+                                                            "s" : [ {
+                                                               "s" : [ {
+                                                                  "value" : [ "HE",".","\"Toxicity/side effects H.DE75\"" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ " ","T" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "\n    such that " ]
+                                                      }, {
+                                                         "r" : "378",
+                                                         "s" : [ {
+                                                            "r" : "376",
+                                                            "s" : [ {
+                                                               "r" : "375",
+                                                               "s" : [ {
+                                                                  "value" : [ "R" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "376",
+                                                               "s" : [ {
+                                                                  "value" : [ "partOf" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "378",
+                                                            "s" : [ {
+                                                               "value" : [ "references","(" ]
+                                                            }, {
+                                                               "r" : "377",
+                                                               "s" : [ {
+                                                                  "value" : [ "T" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ ")" ]
+                                                            } ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "\n    " ]
+                                                   }, {
+                                                      "r" : "387",
+                                                      "s" : [ {
+                                                         "value" : [ "where " ]
+                                                      }, {
+                                                         "r" : "387",
+                                                         "s" : [ {
+                                                            "r" : "385",
+                                                            "s" : [ {
+                                                               "r" : "384",
+                                                               "s" : [ {
+                                                                  "r" : "383",
+                                                                  "s" : [ {
+                                                                     "value" : [ "R" ]
+                                                                  } ]
+                                                               }, {
+                                                                  "value" : [ "." ]
+                                                               }, {
+                                                                  "r" : "384",
+                                                                  "s" : [ {
+                                                                     "value" : [ "effective" ]
+                                                                  } ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "385",
+                                                               "s" : [ {
+                                                                  "value" : [ "toInterval","()" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "r" : "387",
+                                                            "value" : [ " ","during"," " ]
+                                                         }, {
+                                                            "r" : "386",
+                                                            "s" : [ {
+                                                               "value" : [ "\"Measurement Period\"" ]
+                                                            } ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "  \n    )" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "\n    )" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n  )" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n  )" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "244",
+               "locator" : "151:3-193:3",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "245",
+                  "locator" : "151:3-152:41",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "247",
+                     "locator" : "151:4-151:32",
+                     "name" : "Has HIV-positive Status",
+                     "libraryName" : "HIE",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "localId" : "249",
+                     "locator" : "152:7-152:40",
+                     "name" : "Toxicity/side effects H.DE75",
+                     "libraryName" : "HIE",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "250",
+                  "locator" : "153:7-193:3",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "251",
+                     "locator" : "153:8-171:3",
+                     "type" : "And",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "252",
+                        "locator" : "154:5-155:27",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "254",
+                           "locator" : "154:5-154:33",
+                           "name" : "Has HIV-positive Status",
+                           "libraryName" : "HIE",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "localId" : "256",
+                           "locator" : "155:9-155:27",
+                           "name" : "On ART H.DE47",
+                           "libraryName" : "HIE",
+                           "type" : "ExpressionRef"
+                        } ]
+                     }, {
+                        "localId" : "257",
+                        "locator" : "157:5-170:3",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "258",
+                           "locator" : "157:6-161:5",
+                           "type" : "Exists",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "291",
+                              "locator" : "157:12-161:5",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "localId" : "259",
+                                 "locator" : "157:13-157:66",
+                                 "alias" : "R",
+                                 "expression" : {
+                                    "localId" : "261",
+                                    "locator" : "157:13-157:64",
+                                    "name" : "New regimen after switch to second-line regimen",
+                                    "libraryName" : "HE",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ],
+                              "let" : [ ],
+                              "relationship" : [ {
+                                 "localId" : "273",
+                                 "locator" : "158:5-159:36",
+                                 "alias" : "T",
+                                 "type" : "With",
+                                 "expression" : {
+                                    "localId" : "265",
+                                    "locator" : "158:10-158:42",
+                                    "name" : "Toxicity/side effects H.DE75",
+                                    "libraryName" : "HE",
+                                    "type" : "ExpressionRef"
+                                 },
+                                 "suchThat" : {
+                                    "localId" : "269",
+                                    "locator" : "159:15-159:36",
+                                    "name" : "references",
+                                    "libraryName" : "WCom",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ {
+                                       "localId" : "270",
+                                       "type" : "ListTypeSpecifier",
+                                       "elementType" : {
+                                          "localId" : "271",
+                                          "name" : "{http://hl7.org/fhir}Reference",
+                                          "type" : "NamedTypeSpecifier"
+                                       }
+                                    }, {
+                                       "localId" : "272",
+                                       "name" : "{http://hl7.org/fhir}Resource",
+                                       "type" : "NamedTypeSpecifier"
+                                    } ],
+                                    "operand" : [ {
+                                       "localId" : "267",
+                                       "locator" : "159:15-159:22",
+                                       "path" : "partOf",
+                                       "scope" : "R",
+                                       "type" : "Property"
+                                    }, {
+                                       "localId" : "268",
+                                       "locator" : "159:35",
+                                       "name" : "T",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              } ],
+                              "where" : {
+                                 "localId" : "278",
+                                 "locator" : "160:5-160:62",
+                                 "type" : "IncludedIn",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "276",
+                                    "locator" : "160:11-160:34",
+                                    "name" : "toInterval",
+                                    "libraryName" : "WCom",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "275",
+                                       "locator" : "160:11-160:21",
+                                       "path" : "effective",
+                                       "scope" : "R",
+                                       "type" : "Property"
+                                    } ]
+                                 }, {
+                                    "localId" : "279",
+                                    "type" : "Interval",
+                                    "low" : {
+                                       "localId" : "282",
+                                       "type" : "ToDateTime",
+                                       "signature" : [ {
+                                          "localId" : "283",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Date",
+                                          "type" : "NamedTypeSpecifier"
+                                       } ],
+                                       "operand" : {
+                                          "localId" : "280",
+                                          "path" : "low",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "localId" : "277",
+                                             "locator" : "160:43-160:62",
+                                             "name" : "Measurement Period",
+                                             "type" : "ParameterRef"
+                                          }
+                                       }
+                                    },
+                                    "lowClosedExpression" : {
+                                       "localId" : "284",
+                                       "path" : "lowClosed",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "localId" : "277",
+                                          "locator" : "160:43-160:62",
+                                          "name" : "Measurement Period",
+                                          "type" : "ParameterRef"
+                                       }
+                                    },
+                                    "high" : {
+                                       "localId" : "287",
+                                       "type" : "ToDateTime",
+                                       "signature" : [ {
+                                          "localId" : "288",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Date",
+                                          "type" : "NamedTypeSpecifier"
+                                       } ],
+                                       "operand" : {
+                                          "localId" : "285",
+                                          "path" : "high",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "localId" : "277",
+                                             "locator" : "160:43-160:62",
+                                             "name" : "Measurement Period",
+                                             "type" : "ParameterRef"
+                                          }
+                                       }
+                                    },
+                                    "highClosedExpression" : {
+                                       "localId" : "289",
+                                       "path" : "highClosed",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "localId" : "277",
+                                          "locator" : "160:43-160:62",
+                                          "name" : "Measurement Period",
+                                          "type" : "ParameterRef"
+                                       }
+                                    }
+                                 } ]
+                              }
+                           }
+                        }, {
+                           "localId" : "292",
+                           "locator" : "163:5-169:5",
+                           "type" : "Exists",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "325",
+                              "locator" : "164:11-168:5",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "localId" : "293",
+                                 "locator" : "164:12-164:64",
+                                 "alias" : "R",
+                                 "expression" : {
+                                    "localId" : "295",
+                                    "locator" : "164:12-164:62",
+                                    "name" : "New regimen after switch to third-line regimen",
+                                    "libraryName" : "HE",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ],
+                              "let" : [ ],
+                              "relationship" : [ {
+                                 "localId" : "307",
+                                 "locator" : "165:5-166:36",
+                                 "alias" : "T",
+                                 "type" : "With",
+                                 "expression" : {
+                                    "localId" : "299",
+                                    "locator" : "165:10-165:42",
+                                    "name" : "Toxicity/side effects H.DE75",
+                                    "libraryName" : "HE",
+                                    "type" : "ExpressionRef"
+                                 },
+                                 "suchThat" : {
+                                    "localId" : "303",
+                                    "locator" : "166:15-166:36",
+                                    "name" : "references",
+                                    "libraryName" : "WCom",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ {
+                                       "localId" : "304",
+                                       "type" : "ListTypeSpecifier",
+                                       "elementType" : {
+                                          "localId" : "305",
+                                          "name" : "{http://hl7.org/fhir}Reference",
+                                          "type" : "NamedTypeSpecifier"
+                                       }
+                                    }, {
+                                       "localId" : "306",
+                                       "name" : "{http://hl7.org/fhir}Resource",
+                                       "type" : "NamedTypeSpecifier"
+                                    } ],
+                                    "operand" : [ {
+                                       "localId" : "301",
+                                       "locator" : "166:15-166:22",
+                                       "path" : "partOf",
+                                       "scope" : "R",
+                                       "type" : "Property"
+                                    }, {
+                                       "localId" : "302",
+                                       "locator" : "166:35",
+                                       "name" : "T",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              } ],
+                              "where" : {
+                                 "localId" : "312",
+                                 "locator" : "167:5-167:62",
+                                 "type" : "IncludedIn",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "310",
+                                    "locator" : "167:11-167:34",
+                                    "name" : "toInterval",
+                                    "libraryName" : "WCom",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "309",
+                                       "locator" : "167:11-167:21",
+                                       "path" : "effective",
+                                       "scope" : "R",
+                                       "type" : "Property"
+                                    } ]
+                                 }, {
+                                    "localId" : "313",
+                                    "type" : "Interval",
+                                    "low" : {
+                                       "localId" : "316",
+                                       "type" : "ToDateTime",
+                                       "signature" : [ {
+                                          "localId" : "317",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Date",
+                                          "type" : "NamedTypeSpecifier"
+                                       } ],
+                                       "operand" : {
+                                          "localId" : "314",
+                                          "path" : "low",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "localId" : "311",
+                                             "locator" : "167:43-167:62",
+                                             "name" : "Measurement Period",
+                                             "type" : "ParameterRef"
+                                          }
+                                       }
+                                    },
+                                    "lowClosedExpression" : {
+                                       "localId" : "318",
+                                       "path" : "lowClosed",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "localId" : "311",
+                                          "locator" : "167:43-167:62",
+                                          "name" : "Measurement Period",
+                                          "type" : "ParameterRef"
+                                       }
+                                    },
+                                    "high" : {
+                                       "localId" : "321",
+                                       "type" : "ToDateTime",
+                                       "signature" : [ {
+                                          "localId" : "322",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Date",
+                                          "type" : "NamedTypeSpecifier"
+                                       } ],
+                                       "operand" : {
+                                          "localId" : "319",
+                                          "path" : "high",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "localId" : "311",
+                                             "locator" : "167:43-167:62",
+                                             "name" : "Measurement Period",
+                                             "type" : "ParameterRef"
+                                          }
+                                       }
+                                    },
+                                    "highClosedExpression" : {
+                                       "localId" : "323",
+                                       "path" : "highClosed",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "localId" : "311",
+                                          "locator" : "167:43-167:62",
+                                          "name" : "Measurement Period",
+                                          "type" : "ParameterRef"
+                                       }
+                                    }
+                                 } ]
+                              }
+                           }
+                        } ]
+                     } ]
+                  }, {
+                     "localId" : "326",
+                     "locator" : "173:3-191:3",
+                     "type" : "And",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "327",
+                        "locator" : "174:5-175:27",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "329",
+                           "locator" : "174:5-174:33",
+                           "name" : "Has HIV-positive Status",
+                           "libraryName" : "HIE",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "localId" : "331",
+                           "locator" : "175:9-175:27",
+                           "name" : "On ART H.DE47",
+                           "libraryName" : "HIE",
+                           "type" : "ExpressionRef"
+                        } ]
+                     }, {
+                        "localId" : "332",
+                        "locator" : "177:5-190:3",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "333",
+                           "locator" : "177:6-181:5",
+                           "type" : "Exists",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "366",
+                              "locator" : "177:12-181:5",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "localId" : "334",
+                                 "locator" : "177:13-177:76",
+                                 "alias" : "R",
+                                 "expression" : {
+                                    "localId" : "336",
+                                    "locator" : "177:13-177:74",
+                                    "name" : "New regimen after substitution within second-line regimen",
+                                    "libraryName" : "HE",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ],
+                              "let" : [ ],
+                              "relationship" : [ {
+                                 "localId" : "348",
+                                 "locator" : "178:5-179:36",
+                                 "alias" : "T",
+                                 "type" : "With",
+                                 "expression" : {
+                                    "localId" : "340",
+                                    "locator" : "178:10-178:42",
+                                    "name" : "Toxicity/side effects H.DE75",
+                                    "libraryName" : "HE",
+                                    "type" : "ExpressionRef"
+                                 },
+                                 "suchThat" : {
+                                    "localId" : "344",
+                                    "locator" : "179:15-179:36",
+                                    "name" : "references",
+                                    "libraryName" : "WCom",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ {
+                                       "localId" : "345",
+                                       "type" : "ListTypeSpecifier",
+                                       "elementType" : {
+                                          "localId" : "346",
+                                          "name" : "{http://hl7.org/fhir}Reference",
+                                          "type" : "NamedTypeSpecifier"
+                                       }
+                                    }, {
+                                       "localId" : "347",
+                                       "name" : "{http://hl7.org/fhir}Resource",
+                                       "type" : "NamedTypeSpecifier"
+                                    } ],
+                                    "operand" : [ {
+                                       "localId" : "342",
+                                       "locator" : "179:15-179:22",
+                                       "path" : "partOf",
+                                       "scope" : "R",
+                                       "type" : "Property"
+                                    }, {
+                                       "localId" : "343",
+                                       "locator" : "179:35",
+                                       "name" : "T",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              } ],
+                              "where" : {
+                                 "localId" : "353",
+                                 "locator" : "180:5-180:62",
+                                 "type" : "IncludedIn",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "351",
+                                    "locator" : "180:11-180:34",
+                                    "name" : "toInterval",
+                                    "libraryName" : "WCom",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "350",
+                                       "locator" : "180:11-180:21",
+                                       "path" : "effective",
+                                       "scope" : "R",
+                                       "type" : "Property"
+                                    } ]
+                                 }, {
+                                    "localId" : "354",
+                                    "type" : "Interval",
+                                    "low" : {
+                                       "localId" : "357",
+                                       "type" : "ToDateTime",
+                                       "signature" : [ {
+                                          "localId" : "358",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Date",
+                                          "type" : "NamedTypeSpecifier"
+                                       } ],
+                                       "operand" : {
+                                          "localId" : "355",
+                                          "path" : "low",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "localId" : "352",
+                                             "locator" : "180:43-180:62",
+                                             "name" : "Measurement Period",
+                                             "type" : "ParameterRef"
+                                          }
+                                       }
+                                    },
+                                    "lowClosedExpression" : {
+                                       "localId" : "359",
+                                       "path" : "lowClosed",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "localId" : "352",
+                                          "locator" : "180:43-180:62",
+                                          "name" : "Measurement Period",
+                                          "type" : "ParameterRef"
+                                       }
+                                    },
+                                    "high" : {
+                                       "localId" : "362",
+                                       "type" : "ToDateTime",
+                                       "signature" : [ {
+                                          "localId" : "363",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Date",
+                                          "type" : "NamedTypeSpecifier"
+                                       } ],
+                                       "operand" : {
+                                          "localId" : "360",
+                                          "path" : "high",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "localId" : "352",
+                                             "locator" : "180:43-180:62",
+                                             "name" : "Measurement Period",
+                                             "type" : "ParameterRef"
+                                          }
+                                       }
+                                    },
+                                    "highClosedExpression" : {
+                                       "localId" : "364",
+                                       "path" : "highClosed",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "localId" : "352",
+                                          "locator" : "180:43-180:62",
+                                          "name" : "Measurement Period",
+                                          "type" : "ParameterRef"
+                                       }
+                                    }
+                                 } ]
+                              }
+                           }
+                        }, {
+                           "localId" : "367",
+                           "locator" : "183:5-189:5",
+                           "type" : "Exists",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "400",
+                              "locator" : "184:11-188:5",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "localId" : "368",
+                                 "locator" : "184:12-184:74",
+                                 "alias" : "R",
+                                 "expression" : {
+                                    "localId" : "370",
+                                    "locator" : "184:12-184:72",
+                                    "name" : "New regimen after substitution within third-line regimen",
+                                    "libraryName" : "HE",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ],
+                              "let" : [ ],
+                              "relationship" : [ {
+                                 "localId" : "382",
+                                 "locator" : "185:5-186:36",
+                                 "alias" : "T",
+                                 "type" : "With",
+                                 "expression" : {
+                                    "localId" : "374",
+                                    "locator" : "185:10-185:42",
+                                    "name" : "Toxicity/side effects H.DE75",
+                                    "libraryName" : "HE",
+                                    "type" : "ExpressionRef"
+                                 },
+                                 "suchThat" : {
+                                    "localId" : "378",
+                                    "locator" : "186:15-186:36",
+                                    "name" : "references",
+                                    "libraryName" : "WCom",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ {
+                                       "localId" : "379",
+                                       "type" : "ListTypeSpecifier",
+                                       "elementType" : {
+                                          "localId" : "380",
+                                          "name" : "{http://hl7.org/fhir}Reference",
+                                          "type" : "NamedTypeSpecifier"
+                                       }
+                                    }, {
+                                       "localId" : "381",
+                                       "name" : "{http://hl7.org/fhir}Resource",
+                                       "type" : "NamedTypeSpecifier"
+                                    } ],
+                                    "operand" : [ {
+                                       "localId" : "376",
+                                       "locator" : "186:15-186:22",
+                                       "path" : "partOf",
+                                       "scope" : "R",
+                                       "type" : "Property"
+                                    }, {
+                                       "localId" : "377",
+                                       "locator" : "186:35",
+                                       "name" : "T",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              } ],
+                              "where" : {
+                                 "localId" : "387",
+                                 "locator" : "187:5-187:62",
+                                 "type" : "IncludedIn",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "385",
+                                    "locator" : "187:11-187:34",
+                                    "name" : "toInterval",
+                                    "libraryName" : "WCom",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "384",
+                                       "locator" : "187:11-187:21",
+                                       "path" : "effective",
+                                       "scope" : "R",
+                                       "type" : "Property"
+                                    } ]
+                                 }, {
+                                    "localId" : "388",
+                                    "type" : "Interval",
+                                    "low" : {
+                                       "localId" : "391",
+                                       "type" : "ToDateTime",
+                                       "signature" : [ {
+                                          "localId" : "392",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Date",
+                                          "type" : "NamedTypeSpecifier"
+                                       } ],
+                                       "operand" : {
+                                          "localId" : "389",
+                                          "path" : "low",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "localId" : "386",
+                                             "locator" : "187:43-187:62",
+                                             "name" : "Measurement Period",
+                                             "type" : "ParameterRef"
+                                          }
+                                       }
+                                    },
+                                    "lowClosedExpression" : {
+                                       "localId" : "393",
+                                       "path" : "lowClosed",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "localId" : "386",
+                                          "locator" : "187:43-187:62",
+                                          "name" : "Measurement Period",
+                                          "type" : "ParameterRef"
+                                       }
+                                    },
+                                    "high" : {
+                                       "localId" : "396",
+                                       "type" : "ToDateTime",
+                                       "signature" : [ {
+                                          "localId" : "397",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Date",
+                                          "type" : "NamedTypeSpecifier"
+                                       } ],
+                                       "operand" : {
+                                          "localId" : "394",
+                                          "path" : "high",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "localId" : "386",
+                                             "locator" : "187:43-187:62",
+                                             "name" : "Measurement Period",
+                                             "type" : "ParameterRef"
+                                          }
+                                       }
+                                    },
+                                    "highClosedExpression" : {
+                                       "localId" : "398",
+                                       "path" : "highClosed",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "localId" : "386",
+                                          "locator" : "187:43-187:62",
+                                          "name" : "Measurement Period",
+                                          "type" : "ParameterRef"
+                                       }
+                                    }
+                                 } ]
+                              }
+                           }
+                        } ]
+                     } ]
+                  } ]
+               } ]
+            }
+         }, {
+            "localId" : "403",
+            "locator" : "202:1-204:27",
+            "name" : "Denominator",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "403",
+                  "s" : [ {
+                     "value" : [ "/**\n * Denominator\n *\n * Definition: Number of ART patients in the reporting period\n * Calculation: COUNT of clients with \"HIV status\"='HIV-positive' AND \"On ART\"=True within the reporting period\n */\n\n","define ","\"Denominator\"",":\n  " ]
+                  }, {
+                     "r" : "404",
+                     "s" : [ {
+                        "r" : "406",
+                        "s" : [ {
+                           "r" : "405",
+                           "s" : [ {
+                              "value" : [ "HIE" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "406",
+                           "s" : [ {
+                              "value" : [ "\"Has HIV-positive Status\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    and " ]
+                     }, {
+                        "r" : "408",
+                        "s" : [ {
+                           "r" : "407",
+                           "s" : [ {
+                              "value" : [ "HIE" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "408",
+                           "s" : [ {
+                              "value" : [ "\"On ART H.DE47\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "404",
+               "locator" : "203:3-204:27",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "406",
+                  "locator" : "203:3-203:31",
+                  "name" : "Has HIV-positive Status",
+                  "libraryName" : "HIE",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "408",
+                  "locator" : "204:9-204:27",
+                  "name" : "On ART H.DE47",
+                  "libraryName" : "HIE",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "localId" : "411",
+            "locator" : "214:1-215:42",
+            "name" : "Administrative Gender Stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "411",
+                  "s" : [ {
+                     "value" : [ "/* end Populations */\n\n\n/*\n * Disaggregators\n */\n\n","define ","\"Administrative Gender Stratifier\"",":\n\t" ]
+                  }, {
+                     "r" : "413",
+                     "s" : [ {
+                        "r" : "412",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "413",
+                        "s" : [ {
+                           "value" : [ "\"By Administrative Gender Stratifier\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "413",
+               "locator" : "215:2-215:42",
+               "name" : "By Administrative Gender Stratifier",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "416",
+            "locator" : "217:1-218:26",
+            "name" : "Age Stratifier 6",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "416",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Age Stratifier 6\"",":\n\t" ]
+                  }, {
+                     "r" : "418",
+                     "s" : [ {
+                        "r" : "417",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "418",
+                        "s" : [ {
+                           "value" : [ "\"By Age Stratifier 6\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "418",
+               "locator" : "218:2-218:26",
+               "name" : "By Age Stratifier 6",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "421",
+            "locator" : "220:1-221:38",
+            "name" : "Geographic Region Stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "421",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Geographic Region Stratifier\"",":\n\t" ]
+                  }, {
+                     "r" : "423",
+                     "s" : [ {
+                        "r" : "422",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "423",
+                        "s" : [ {
+                           "value" : [ "\"By Geographic Region Stratifier\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "423",
+               "locator" : "221:2-221:38",
+               "name" : "By Geographic Region Stratifier",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "426",
+            "locator" : "223:1-224:20",
+            "name" : "patientGroups Stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "426",
+                  "s" : [ {
+                     "value" : [ "","define ","\"patientGroups Stratifier\"",":\n\t" ]
+                  }, {
+                     "r" : "428",
+                     "s" : [ {
+                        "r" : "427",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "428",
+                        "s" : [ {
+                           "value" : [ "\"patientGroups\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "428",
+               "locator" : "224:2-224:20",
+               "name" : "patientGroups",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "431",
+            "locator" : "226:1-227:27",
+            "name" : "Current ART regimen",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "431",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Current ART regimen\"",":\n  " ]
+                  }, {
+                     "r" : "433",
+                     "s" : [ {
+                        "r" : "432",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "433",
+                        "s" : [ {
+                           "value" : [ "\"Current ART regimen\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "433",
+               "locator" : "227:3-227:27",
+               "name" : "Current ART regimen",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "436",
+            "locator" : "229:1-230:28",
+            "name" : "pregnancy stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "436",
+                  "s" : [ {
+                     "value" : [ "","define ","\"pregnancy stratifier\"",":\n  " ]
+                  }, {
+                     "r" : "438",
+                     "s" : [ {
+                        "r" : "437",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "438",
+                        "s" : [ {
+                           "value" : [ "\"pregnancy stratifier\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "438",
+               "locator" : "230:3-230:28",
+               "name" : "pregnancy stratifier",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "441",
+            "locator" : "232:1-233:43",
+            "name" : "Type of treatment-limiting toxicity",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "441",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Type of treatment-limiting toxicity\"",":\n  " ]
+                  }, {
+                     "r" : "443",
+                     "s" : [ {
+                        "r" : "442",
+                        "s" : [ {
+                           "value" : [ "HIE" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "443",
+                        "s" : [ {
+                           "value" : [ "\"Type of treatment-limiting toxicity\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "443",
+               "locator" : "233:3-233:43",
+               "name" : "Type of treatment-limiting toxicity",
+               "libraryName" : "HIE",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "446",
+            "locator" : "235:1-242:33",
+            "name" : "Stratification",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "446",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Stratification\"",":\n " ]
+                  }, {
+                     "r" : "507",
+                     "s" : [ {
+                        "r" : "501",
+                        "s" : [ {
+                           "r" : "495",
+                           "s" : [ {
+                              "r" : "489",
+                              "s" : [ {
+                                 "r" : "479",
+                                 "s" : [ {
+                                    "r" : "472",
+                                    "s" : [ {
+                                       "r" : "467",
+                                       "s" : [ {
+                                          "r" : "462",
+                                          "s" : [ {
+                                             "r" : "457",
+                                             "s" : [ {
+                                                "r" : "456",
+                                                "s" : [ {
+                                                   "r" : "455",
+                                                   "s" : [ {
+                                                      "value" : [ "HIE" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "456",
+                                                   "s" : [ {
+                                                      "value" : [ "\"By Administrative Gender Stratifier\"" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "457",
+                                                "s" : [ {
+                                                   "value" : [ "code" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " \n  + " ]
+                                          }, {
+                                             "r" : "458",
+                                             "s" : [ {
+                                                "value" : [ "':'" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " + " ]
+                                       }, {
+                                          "r" : "464",
+                                          "s" : [ {
+                                             "r" : "463",
+                                             "s" : [ {
+                                                "value" : [ "HIE" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "464",
+                                             "s" : [ {
+                                                "value" : [ "\"By Age Stratifier 6\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n+ " ]
+                                    }, {
+                                       "r" : "468",
+                                       "s" : [ {
+                                          "value" : [ "':'" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " + " ]
+                                 }, {
+                                    "r" : "474",
+                                    "s" : [ {
+                                       "r" : "473",
+                                       "s" : [ {
+                                          "value" : [ "HIE" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "474",
+                                       "s" : [ {
+                                          "value" : [ "\"By Geographic Region Stratifier\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n+ " ]
+                              }, {
+                                 "r" : "486",
+                                 "s" : [ {
+                                    "value" : [ "Combine","(" ]
+                                 }, {
+                                    "r" : "481",
+                                    "s" : [ {
+                                       "r" : "480",
+                                       "s" : [ {
+                                          "value" : [ "HIE" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "481",
+                                       "s" : [ {
+                                          "value" : [ "patientGroups" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ", " ]
+                                 }, {
+                                    "r" : "482",
+                                    "s" : [ {
+                                       "value" : [ "':'" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n+ " ]
+                           }, {
+                              "r" : "492",
+                              "s" : [ {
+                                 "r" : "491",
+                                 "s" : [ {
+                                    "r" : "490",
+                                    "s" : [ {
+                                       "value" : [ "HIE" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "491",
+                                    "s" : [ {
+                                       "value" : [ "\"Current ART regimen\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "492",
+                                 "s" : [ {
+                                    "value" : [ "code" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " \n+ " ]
+                        }, {
+                           "r" : "498",
+                           "s" : [ {
+                              "r" : "497",
+                              "s" : [ {
+                                 "r" : "496",
+                                 "s" : [ {
+                                    "value" : [ "HIE" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "497",
+                                 "s" : [ {
+                                    "value" : [ "\"Type of treatment-limiting toxicity\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "498",
+                              "s" : [ {
+                                 "value" : [ "code" ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n+ " ]
+                     }, {
+                        "r" : "504",
+                        "s" : [ {
+                           "r" : "503",
+                           "s" : [ {
+                              "r" : "502",
+                              "s" : [ {
+                                 "value" : [ "HIE" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "503",
+                              "s" : [ {
+                                 "value" : [ "\"pregnancy stratifier\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "504",
+                           "s" : [ {
+                              "value" : [ "code" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "507",
+               "locator" : "236:2-242:33",
+               "type" : "Concatenate",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "501",
+                  "locator" : "236:2-241:48",
+                  "type" : "Concatenate",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "495",
+                     "locator" : "236:2-240:32",
+                     "type" : "Concatenate",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "489",
+                        "locator" : "236:2-239:33",
+                        "type" : "Concatenate",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "479",
+                           "locator" : "236:2-238:45",
+                           "type" : "Concatenate",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "472",
+                              "locator" : "236:2-238:5",
+                              "type" : "Concatenate",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "467",
+                                 "locator" : "236:2-237:35",
+                                 "type" : "Concatenate",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "462",
+                                    "locator" : "236:2-237:7",
+                                    "type" : "Concatenate",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "457",
+                                       "locator" : "236:2-236:47",
+                                       "path" : "code",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "localId" : "456",
+                                          "locator" : "236:2-236:42",
+                                          "name" : "By Administrative Gender Stratifier",
+                                          "libraryName" : "HIE",
+                                          "type" : "ExpressionRef"
+                                       }
+                                    }, {
+                                       "localId" : "458",
+                                       "locator" : "237:5-237:7",
+                                       "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                                       "value" : ":",
+                                       "type" : "Literal"
+                                    } ]
+                                 }, {
+                                    "localId" : "464",
+                                    "locator" : "237:11-237:35",
+                                    "name" : "By Age Stratifier 6",
+                                    "libraryName" : "HIE",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              }, {
+                                 "localId" : "468",
+                                 "locator" : "238:3-238:5",
+                                 "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                                 "value" : ":",
+                                 "type" : "Literal"
+                              } ]
+                           }, {
+                              "localId" : "475",
+                              "name" : "ToString",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ {
+                                 "localId" : "476",
+                                 "name" : "{http://hl7.org/fhir}string",
+                                 "type" : "NamedTypeSpecifier"
+                              } ],
+                              "operand" : [ {
+                                 "localId" : "474",
+                                 "locator" : "238:9-238:45",
+                                 "name" : "By Geographic Region Stratifier",
+                                 "libraryName" : "HIE",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           } ]
+                        }, {
+                           "localId" : "486",
+                           "locator" : "239:3-239:33",
+                           "type" : "Combine",
+                           "signature" : [ ],
+                           "source" : {
+                              "localId" : "481",
+                              "locator" : "239:11-239:27",
+                              "name" : "patientGroups",
+                              "libraryName" : "HIE",
+                              "type" : "ExpressionRef"
+                           },
+                           "separator" : {
+                              "localId" : "482",
+                              "locator" : "239:30-239:32",
+                              "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                              "value" : ":",
+                              "type" : "Literal"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "492",
+                        "locator" : "240:3-240:32",
+                        "path" : "code",
+                        "type" : "Property",
+                        "source" : {
+                           "localId" : "491",
+                           "locator" : "240:3-240:27",
+                           "name" : "Current ART regimen",
+                           "libraryName" : "HIE",
+                           "type" : "ExpressionRef"
+                        }
+                     } ]
+                  }, {
+                     "localId" : "498",
+                     "locator" : "241:3-241:48",
+                     "path" : "code",
+                     "type" : "Property",
+                     "source" : {
+                        "localId" : "497",
+                        "locator" : "241:3-241:43",
+                        "name" : "Type of treatment-limiting toxicity",
+                        "libraryName" : "HIE",
+                        "type" : "ExpressionRef"
+                     }
+                  } ]
+               }, {
+                  "localId" : "504",
+                  "locator" : "242:3-242:33",
+                  "path" : "code",
+                  "type" : "Property",
+                  "source" : {
+                     "localId" : "503",
+                     "locator" : "242:3-242:28",
+                     "name" : "pregnancy stratifier",
+                     "libraryName" : "HIE",
+                     "type" : "ExpressionRef"
+                  }
+               } ]
+            }
+         } ]
+      }
+   }
+}

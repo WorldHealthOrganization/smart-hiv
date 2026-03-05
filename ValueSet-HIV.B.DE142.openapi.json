@@ -1,0 +1,66 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Counselling provided ValueSet Schema API",
+    "description": "JSON Schema for Counselling provided ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/ValueSet-HIV.B.DE142.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the enumeration ValueSet-HIV.B.DE142",
+        "description": "This endpoint serves the JSON Schema definition for the enumeration ValueSet-HIV.B.DE142.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for ValueSet-HIV.B.DE142",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./ValueSet-HIV.B.DE142.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ValueSet-HIV.B.DE142": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/hiv/ValueSet-HIV.B.DE142.schema.json",
+        "title": "Counselling provided ValueSet Schema",
+        "description": "JSON Schema for Counselling provided ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+        "type": "object",
+        "required": [
+          "system",
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "system": {
+            "type": "string",
+            "const": "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "HIV.B.DE143",
+              "HIV.B.DE144",
+              "HIV.B.DE145",
+              "HIV.B.DE146",
+              "HIV.B.DE147",
+              "HIV.B.DE148"
+            ]
+          }
+        },
+        "narrative": "This schema validates Coding-shaped objects for the Counselling provided ValueSet ValueSet. Each value must be an object with 'system' (CodeSystem URI) and 'code' (fragment after '#') properties. Display values are available at http://smart.who.int/hiv/ValueSet-HIV.B.DE142.displays.json. The canonical IRI for a code can be reconstructed as system + '#' + code. For a complete listing of all ValueSets, see artifacts.html#terminology-value-sets.",
+        "fhir:displays": "http://smart.who.int/hiv/ValueSet-HIV.B.DE142.displays.json",
+        "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.B.DE142",
+        "fhir:version": "0.4.4",
+        "fhir:expansionTimestamp": "2026-03-05T13:16:26+00:00"
+      }
+    }
+  }
+}

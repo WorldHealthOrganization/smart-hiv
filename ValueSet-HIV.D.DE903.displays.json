@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE903.displays.json",
+  "title": "Medication/drug ValueSet Display Values",
+  "description": "Display values for Medication/drug ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.D.DE904": {
+      "en": "Rifampicin"
+    },
+    "HIV.D.DE905": {
+      "en": "Halofantrine"
+    },
+    "HIV.D.DE906": {
+      "en": "Lovastatin"
+    },
+    "HIV.D.DE907": {
+      "en": "Simvastatin"
+    },
+    "HIV.D.DE908": {
+      "en": "Hormonal contraception"
+    },
+    "HIV.D.DE909": {
+      "en": "Metformin"
+    },
+    "HIV.D.DE910": {
+      "en": "Astemizole"
+    },
+    "HIV.D.DE911": {
+      "en": "Terfenadine"
+    },
+    "HIV.D.DE912": {
+      "en": "TDF"
+    },
+    "HIV.D.DE913": {
+      "en": "Simeprevir"
+    },
+    "HIV.D.DE914": {
+      "en": "Ombitasvir + paritaprevir/ritonavir + dasabuvir"
+    },
+    "HIV.D.DE915": {
+      "en": "Methadone"
+    },
+    "HIV.D.DE916": {
+      "en": "Buprenorphine"
+    },
+    "HIV.D.DE917": {
+      "en": "Dofetilide"
+    },
+    "HIV.D.DE918": {
+      "en": "Carbamazepine"
+    },
+    "HIV.D.DE919": {
+      "en": "Phenobarbital"
+    },
+    "HIV.D.DE920": {
+      "en": "Phenytoin"
+    },
+    "HIV.D.DE921": {
+      "en": "Polyvalent cation products containing Mg, Al, Fe, Ca and Zn"
+    },
+    "HIV.D.DE922": {
+      "en": "Amodiaquine"
+    },
+    "HIV.D.DE923": {
+      "en": "Cisapride"
+    },
+    "HIV.D.DE924": {
+      "en": "Ergotamine"
+    },
+    "HIV.D.DE925": {
+      "en": "Dihydroergotamine"
+    },
+    "HIV.D.DE926": {
+      "en": "Midazolam"
+    },
+    "HIV.D.DE927": {
+      "en": "Triazolam"
+    },
+    "HIV.D.DE928": {
+      "en": "Estrogen-based hormonal contraception"
+    },
+    "HIV.D.DE929": {
+      "en": "Ribavirin"
+    },
+    "HIV.D.DE930": {
+      "en": "Peginterferon alfa-2a"
+    },
+    "HIV.D.DE931": {
+      "en": "Other"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE903",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:29+00:00"
+}

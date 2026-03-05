@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE17.displays.json",
+  "title": "Signs of serious illness ValueSet Display Values",
+  "description": "Display values for Signs of serious illness ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.D.DE18": {
+      "en": "Fever of 39 C or greater"
+    },
+    "HIV.D.DE19": {
+      "en": "Tachycardia"
+    },
+    "HIV.D.DE20": {
+      "en": "Tachypnea"
+    },
+    "HIV.D.DE21": {
+      "en": "Unable to walk unaided"
+    },
+    "HIV.D.DE22": {
+      "en": "Lethargy"
+    },
+    "HIV.D.DE23": {
+      "en": "Unconsciousness"
+    },
+    "HIV.D.DE24": {
+      "en": "Convulsions"
+    },
+    "HIV.D.DE25": {
+      "en": "Unable to drink"
+    },
+    "HIV.D.DE26": {
+      "en": "Unable to breastfeed"
+    },
+    "HIV.D.DE27": {
+      "en": "Repeated vomiting"
+    },
+    "HIV.D.DE28": {
+      "en": "Headache"
+    },
+    "HIV.D.DE29": {
+      "en": "Other sign of serious illness"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE17",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:28+00:00"
+}

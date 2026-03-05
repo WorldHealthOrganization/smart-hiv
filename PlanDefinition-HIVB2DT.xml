@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="HIVB2DT"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableplandefinition"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">HIVB2DT</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="PlanDefinition-HIVB2DT.html">HIV.B2.DT Check for signs of serious illness</a></td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.4.4</td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">HIV.B2.DT Check for signs of serious illness</td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">draft</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">true</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/6.1.0/CodeSystem-plan-definition-type.html">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2026-03-05 13:07:29+0000</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">WHO</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>Check for signs of serious illness</p>
+</div></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Related Artifacts: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p><b>References</b></p>
+                <ul>
+                    
+                    <li><div><p>Consolidated Guidelines on HIV Testing Services (2019)</p>
+</div><br/><a href="null"/></li>
+                    
+                </ul>
+                
+                
+                
+                
+                
+                
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Libraries: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td><a href="Library-HIVB2DTLogic.html">HIV.B2.DT Logic</a></td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Actions: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td>
+                            
+                            Check for signs of serious illness
+                            
+                            <br/>
+                            
+                            
+                            
+                            <b>Then:</b>
+                            <table class="grid-dict">
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        Take appropriate action for client showing signs of serious illness
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        <i>(Guidance)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        <b>Then:</b> <i>Definition:</i> <a href="ActivityDefinition-HIVGuidanceCommunicationRequestActivity.html">HIVGuidanceCommunicationRequestActivity</a><br/>
+                                        
+                                        <i>Dynamic Values:</i><br/>
+                                        
+                                        description: <i>(Guidance)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+    </table>
+</div>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE17"/>
+          <display value="Signs of serious illness"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE19"/>
+          <display value="Tachycardia"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE20"/>
+          <display value="Tachypnea"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE21"/>
+          <display value="Unable to walk unaided"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE22"/>
+          <display value="Lethargy"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE23"/>
+          <display value="Unconsciousness"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE24"/>
+          <display value="Convulsions"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE26"/>
+          <display value="Unable to breastfeed"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE25"/>
+          <display value="Unable to drink"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE27"/>
+          <display value="Repeated vomiting"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE18"/>
+          <display value="Fever of 39 C or greater"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.D.DE29"/>
+          <display value="Other sign of serious illness"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Current Patient Age In Years"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/**&#xA; * HIV Elements&#xA; */&#xA;&#xA;// Auto-generated Elements from DAK Data Dictionary&#xA;//   Entries based on DAK Data Dictionary for Data Elements marked as used&#xA;//   in at least one Decision Support Table or Aggregate Indicator&#xA;&#xA;/*&#xA;@dataElement: HIV.A.DE17 - Age&#xA;@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record&#xA;@description: Calculated age (number of years) of the client based on date of birth&#xA;*/&#xA;/** &#xA; * @dataElement Patient age in years&#xA; */&#xA;define &quot;Current Patient Age In Years&quot;:&#xA;  AgeInYearsAt(Today())"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="0"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVB2DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Age 10 or older"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;  @input: &quot;Age&quot;&#xA;  @pseudocode: 'Age' &gt;= 10 years&#xA;  */&#xA;define &quot;Age 10 or older&quot;:&#xA;  Elements.&quot;Current Patient Age In Years&quot; &gt;= 10"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="1"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Signs of serious illness Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Signs of serious illness Observation&quot;:&#xA;  [Observation: Concepts.&quot;Signs of serious illness&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="2"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Signs of serious illness Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Signs of serious illness Observation&quot;:&#xA;  Elements.&quot;Signs of serious illness Observation&quot; O&#xA;    where O.encounter.references(EncounterId)&#xA;      or O.effective.toInterval() starts on or before Today"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="3"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVB2DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Immediately take action or refer for care if a client is having this issue"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @output: &quot;Immediately take action or refer for care if a client is having this issue&quot;&#xA; */&#xA;define &quot;Immediately take action or refer for care if a client is having this issue&quot;:&#xA;  &quot;Age 10 or older&quot; and exists(&#xA;    Elements.&quot;Signs of serious illness Observation&quot; O&#xA;      where O.value ~ Concepts.&quot;Tachycardia&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="4"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVB2DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Signs of serious illness age 10 or older"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; Supporting Logic&#xA;*/&#xA;define &quot;Signs of serious illness age 10 or older&quot;:&#xA;  &quot;Age 10 or older&quot; and exists(&#xA;    Elements.&quot;Signs of serious illness Observation&quot; O&#xA;      where&#xA;        O.value ~ Concepts.&quot;Tachypnea&quot; or&#xA;        O.value ~ Concepts.&quot;Unable to walk unaided&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="5"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVB2DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Age under 10"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;  @input: &quot;Age&quot;&#xA;  @pseudocode: 'Age' &lt; 10 years&#xA;  */&#xA;define &quot;Age under 10&quot;:&#xA;  Elements.&quot;Current Patient Age In Years&quot; &lt; 10"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="6"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVB2DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Signs of serious illness age under 10"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Signs of serious illness age under 10&quot;:&#xA;  &quot;Age under 10&quot; and exists(&#xA;    Elements.&quot;Signs of serious illness Observation&quot; O&#xA;      where&#xA;        O.value ~ Concepts.&quot;Lethargy - HIV.D.DE22&quot; or&#xA;        O.value ~ Concepts.&quot;Unconsciousness&quot; or&#xA;        O.value ~ Concepts.&quot;Convulsions&quot; or&#xA;        O.value ~ Concepts.&quot;Unable to breastfeed&quot; or&#xA;        O.value ~ Concepts.&quot;Unable to drink&quot; or&#xA;        O.value ~ Concepts.&quot;Repeated vomiting&quot;&#xA;    )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="7"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVB2DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Immediately take action or refer for care if client is showing this sign of a serious illness"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @output &quot;Immediately take action or refer for care if client is showing this sign of a serious illness.&quot;&#xA; */&#xA;define &quot;Immediately take action or refer for care if client is showing this sign of a serious illness&quot;:&#xA;  &quot;Signs of serious illness age 10 or older&quot; or &quot;Signs of serious illness age under 10&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="8"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVB2DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Signs of serious illness requiring clinical judgement age 10 or older"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Signs of serious illness requiring clinical judgement age 10 or older&quot;:&#xA;  &quot;Age 10 or older&quot; and exists(&#xA;    Elements.&quot;Signs of serious illness Observation&quot; O&#xA;      where&#xA;        O.value ~ Concepts.&quot;Fever of 39 C or greater&quot; or&#xA;        O.value ~ Concepts.&quot;Other sign of serious illness&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="9"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVB2DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Signs of serious illness requiring clinical judgement age under 10"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Signs of serious illness requiring clinical judgement age under 10&quot;:&#xA;  &quot;Age under 10&quot; and exists(&#xA;    Elements.&quot;Signs of serious illness Observation&quot; O&#xA;      where&#xA;        O.value ~ Concepts.&quot;Fever of 39 C or greater&quot; or&#xA;        O.value ~ Concepts.&quot;Other sign of serious illness&quot;&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="10"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVB2DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @output &quot;Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill&quot;&#xA; */&#xA;define &quot;Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill&quot;:&#xA;  &quot;Signs of serious illness requiring clinical judgement age 10 or older&quot; or &quot;Signs of serious illness requiring clinical judgement age under 10&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="11"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVB2DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Guidance"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @dynamicValue: Guidance&#xA; */&#xA;define &quot;Guidance&quot;:&#xA;  Combine({ &#xA;    if &quot;Immediately take action or refer for care if a client is having this issue&quot; &#xA;      then 'Immediately take action or refer for care if a client is having this issue.'&#xA;      else '',&#xA;    if &quot;Immediately take action or refer for care if client is showing this sign of a serious illness&quot; and &quot;Age 10 or older&quot;&#xA;      then 'Immediately take action or refer for care if client is showing this sign of a serious illness.'&#xA;      else '',&#xA;    if &quot;Immediately take action or refer for care if client is showing this sign of a serious illness&quot; and &quot;Age under 10&quot;&#xA;      then 'This is a sign and/or symptom of a serious health condition.&#xA;    &#xA;  Immediately take action or refer for care if client is showing this sign of a serious illness.'&#xA;      else '',&#xA;    if &quot;Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill&quot;&#xA;      then 'Use clinical judgement and consider local epidemiology to determine if symptoms suggest client is seriously ill. '&#xA;      else ''&#xA;  })"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="12"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value ObservationStatus): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="13"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="WHOCommon"/>
+        </extension>
+        <extension url="name">
+          <valueString value="references"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;@description: Returns true if the given reference is to the given resourceId&#xA;@comment: Returns true if the `resourceId` parameter exactly equals the tail of the given reference.&#xA;NOTE: This function assumes resources from the same source server.&#xA;*/&#xA;define fluent function references(reference FHIR.Reference, resourceId String):&#xA;  resourceId = Last(Split(reference.reference, '/'))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="14"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value string): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="15"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToConcept"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToConcept(concept FHIR.CodeableConcept):&#xA;    if concept is null then&#xA;        null&#xA;    else&#xA;        System.Concept {&#xA;            codes: concept.coding C return ToCode(C),&#xA;            display: concept.text.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="16"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToCode"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToCode(coding FHIR.Coding):&#xA;    if coding is null then&#xA;        null&#xA;    else&#xA;        System.Code {&#xA;          code: coding.code.value,&#xA;          system: coding.system.value,&#xA;          version: coding.version.value,&#xA;          display: coding.display.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="17"/>
+        </extension>
+      </extension>
+      <name value="EffectiveDataRequirements"/>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="FHIR model information"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVEncounterElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts|0.0.2"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library WC"/>
+        <resource value="http://smart.who.int/hiv/Library/WHOCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system HIVConcepts"/>
+        <resource value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="EncounterId"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <parameter>
+        <name value="Today"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="date"/>
+      </parameter>
+      <parameter>
+        <name value="Guidance"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <dataRequirement>
+        <type value="Patient"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="effective"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.D.DE17"/>
+            <display value="Signs of serious illness"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability">
+    <valueCode value="computable"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
+    <valueCanonical value="#effective-data-requirements"/>
+  </extension>
+  <url value="http://smart.who.int/hiv/PlanDefinition/HIVB2DT"/>
+  <version value="0.4.4"/>
+  <name value="HIVB2DT"/>
+  <title value="HIV.B2.DT Check for signs of serious illness"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-03-05T13:07:29+00:00"/>
+  <publisher value="WHO"/>
+  <contact>
+    <name value="WHO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://who.int"/>
+    </telecom>
+  </contact>
+  <description value="Check for signs of serious illness"/>
+  <relatedArtifact>
+    <type value="citation"/>
+    <citation value="Consolidated Guidelines on HIV Testing Services (2019)"/>
+  </relatedArtifact>
+  <library value="http://smart.who.int/hiv/Library/HIVB2DTLogic"/>
+  <action>
+    <textEquivalent value="Check for signs of serious illness"/>
+    <action>
+      <textEquivalent value="Take appropriate action for client showing signs of serious illness"/>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <language value="text/cql-identifier"/>
+          <expression value="Guidance"/>
+        </expression>
+      </condition>
+      <definitionCanonical value="http://smart.who.int/hiv/ActivityDefinition/HIVGuidanceCommunicationRequestActivity"/>
+      <dynamicValue>
+        <path value="description"/>
+        <expression>
+          <language value="text/cql-identifier"/>
+          <expression value="Guidance"/>
+        </expression>
+      </dynamicValue>
+    </action>
+  </action>
+</PlanDefinition>

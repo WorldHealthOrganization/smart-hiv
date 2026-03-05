@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE956.displays.json",
+  "title": "TB screening algorithm ValueSet Display Values",
+  "description": "Display values for TB screening algorithm ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.D.DE957": {
+      "en": "Screening with cough"
+    },
+    "HIV.D.DE958": {
+      "en": "Screening with any TB symptom"
+    },
+    "HIV.D.DE959": {
+      "en": "W4SS single screening algorithm"
+    },
+    "HIV.D.DE960": {
+      "en": "CRP single screening algorithm"
+    },
+    "HIV.D.DE961": {
+      "en": "CXR single screening algorithm"
+    },
+    "HIV.D.DE962": {
+      "en": "Parallel screening algorithm with W4SS and CRP"
+    },
+    "HIV.D.DE963": {
+      "en": "Sequential positive screening algorithm with W4SS and CRP"
+    },
+    "HIV.D.DE964": {
+      "en": "Sequential negative screening algorithm with W4SS and CRP"
+    },
+    "HIV.D.DE965": {
+      "en": "Parallel screening algorithm with W4SS and CXR"
+    },
+    "HIV.D.DE966": {
+      "en": "Sequential positive screening algorithm with W4SS and CXR"
+    },
+    "HIV.D.DE967": {
+      "en": "Sequential negative screening algorithm with W4SS and CXR"
+    },
+    "HIV.D.DE968": {
+      "en": "Screening with mWRD"
+    },
+    "HIV.D.DE969": {
+      "en": "Clinical assessment"
+    },
+    "HIV.D.DE970": {
+      "en": "Other TB screening algorithm"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE956",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:29+00:00"
+}

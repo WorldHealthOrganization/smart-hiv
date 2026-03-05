@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.H.DE53.displays.json",
+  "title": "Reason(s) for adherence problem ValueSet Display Values",
+  "description": "Display values for Reason(s) for adherence problem ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.H.DE54": {
+      "en": "Forgot"
+    },
+    "HIV.H.DE55": {
+      "en": "Toxicity/side effects"
+    },
+    "HIV.H.DE56": {
+      "en": "Busy"
+    },
+    "HIV.H.DE57": {
+      "en": "Change of routine"
+    },
+    "HIV.H.DE58": {
+      "en": "Travel cost"
+    },
+    "HIV.H.DE59": {
+      "en": "Distance to clinic"
+    },
+    "HIV.H.DE60": {
+      "en": "Client lost/ran out of pills"
+    },
+    "HIV.H.DE61": {
+      "en": "Stock-out"
+    },
+    "HIV.H.DE62": {
+      "en": "Too ill"
+    },
+    "HIV.H.DE63": {
+      "en": "Pill burden"
+    },
+    "HIV.H.DE64": {
+      "en": "Felt well"
+    },
+    "HIV.H.DE65": {
+      "en": "Depression"
+    },
+    "HIV.H.DE66": {
+      "en": "Alcohol use"
+    },
+    "HIV.H.DE67": {
+      "en": "Substance use"
+    },
+    "HIV.H.DE68": {
+      "en": "Stigma/disclosure concerns"
+    },
+    "HIV.H.DE69": {
+      "en": "Lack of food"
+    },
+    "HIV.H.DE70": {
+      "en": "Poor palatability"
+    },
+    "HIV.H.DE71": {
+      "en": "Other"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.H.DE53",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:30+00:00"
+}

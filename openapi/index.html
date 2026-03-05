@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OpenAPI Documentation - SMART Base</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+          href="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui.css">
+    <style>
+      body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+      /* WHO-styled header bar */
+      .who-header {
+        background-color: #00477d;
+        color: #ffffff;
+        padding: 0.6rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+      }
+      .who-header a.home-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255,255,255,0.6);
+        padding: 0.25rem 0.75rem;
+        border-radius: 3px;
+        transition: background-color 0.2s ease;
+      }
+      .who-header a.home-link:hover {
+        background-color: rgba(255,255,255,0.15);
+        text-decoration: none;
+      }
+      .who-header .header-title {
+        flex: 1;
+      }
+      /* Definition selector bar below the header */
+      #definition-selector-bar {
+        background-color: #0070a1;
+        color: #ffffff;
+        padding: 0.5rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+      }
+      #definition-selector-bar label {
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      #definition-select {
+        font-size: 0.9rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 3px;
+        border: 1px solid rgba(255,255,255,0.6);
+        background-color: #ffffff;
+        color: #00477d;
+        min-width: 200px;
+        max-width: 100%;
+        flex: 1;
+      }
+      /* Hide Swagger UI topbar entirely */
+      .swagger-ui .topbar {
+        display: none;
+      }
+      .existing-api-content { padding: 1rem 2rem; }
+    </style>
+  </head>
+  <body>
+  <div class="who-header">
+    <a href="../index.html" class="home-link">&#8962; Home</a>
+    <span class="header-title">SMART Base &mdash; OpenAPI Documentation</span>
+  </div>
+
+  <div id="definition-selector-bar">
+    <label for="definition-select">Select a definition:</label>
+    <select id="definition-select" onchange="switchDefinition(this.value)">
+    </select>
+  </div>
+  <div id="swagger-ui"></div>
+  <script src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-bundle.js"></script>
+  <script>
+  var swaggerUrls = [
+  {
+    "url": "../ValueSet-HIV.E.DE212.openapi.json",
+    "name": "Test result of HIV assay 1 repeated ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE802.openapi.json",
+    "name": "Syphilis test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE107.openapi.json",
+    "name": "Sex factor for estimating creatinine clearance ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE942.openapi.json",
+    "name": "Method of TB diagnosis ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE828.openapi.json",
+    "name": "Neisseria gonorrhoeae test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE183.openapi.json",
+    "name": "EID test number ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE461.openapi.json",
+    "name": "Medications dispensed ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE111.openapi.json",
+    "name": "HIV test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE128.openapi.json",
+    "name": "ART regimen composition ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE15.openapi.json",
+    "name": "Testing entry point ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE1.openapi.json",
+    "name": "Reason for visit ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE146.openapi.json",
+    "name": "ART regimen drug class ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE789.openapi.json",
+    "name": "STI tested for ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE813.openapi.json",
+    "name": "Type of specimen ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE173.openapi.json",
+    "name": "Maternal and child health service visit ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE225.openapi.json",
+    "name": "Infant HIV status ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE399.openapi.json",
+    "name": "Monitoring examinations ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE156.openapi.json",
+    "name": "Sexual and reproductive health integrated services ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE606.openapi.json",
+    "name": "Vaccination location ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE673.openapi.json",
+    "name": "Cervical cytology screening test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE75.openapi.json",
+    "name": "Medications prescribed ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE55.openapi.json",
+    "name": "Syphilis test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE29.openapi.json",
+    "name": "Hepatitis B diagnosis ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE1010.openapi.json",
+    "name": "TB treatment regimen composition ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE858.openapi.json",
+    "name": "Mycoplasma genitalium test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.H.DE74.openapi.json",
+    "name": "Reason ART stopped ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE593.openapi.json",
+    "name": "Medication status ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE712.openapi.json",
+    "name": "Cervical cancer stage at diagnosis ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE127.openapi.json",
+    "name": "Infant feeding practice ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE306.openapi.json",
+    "name": "Mycoplasma genitalium test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE207.openapi.json",
+    "name": "Type of adverse VMMC event ValueSet Schema"
+  },
+  {
+    "url": "../ValueSets.openapi.json",
+    "name": "ValueSet Enumeration Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE986.openapi.json",
+    "name": "TB screening result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE808.openapi.json",
+    "name": "Gonorrhoea test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE746.openapi.json",
+    "name": "Entry point for facility-level testing ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE155.openapi.json",
+    "name": "Signs of substantial risk of HIV infection ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE112.openapi.json",
+    "name": "Contraindications to PrEP usage ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE264.openapi.json",
+    "name": "Type of hypertensive disorder ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE145.openapi.json",
+    "name": "Maternal HIV status at first ANC visit ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE992.openapi.json",
+    "name": "TB diagnostic test category ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE204.openapi.json",
+    "name": "Test result of HIV assay 2 ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE141.openapi.json",
+    "name": "Maternal HIV status ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE131.openapi.json",
+    "name": "Prevention services offered and referrals ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.A.DE30.openapi.json",
+    "name": "Marital Status ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE418.openapi.json",
+    "name": "Reason for ARV drug regimen substitution ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE51.openapi.json",
+    "name": "Hepatitis C diagnosis ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE136.openapi.json",
+    "name": "Type of iron supplement dosage provided ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE560.openapi.json",
+    "name": "Allergies ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE217.openapi.json",
+    "name": "Reason ART stopped ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE158.openapi.json",
+    "name": "Sexual and reproductive health integrated services ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE31.openapi.json",
+    "name": "PEP history ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE449.openapi.json",
+    "name": "Pregnant and breastfeeding status at ART start ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE90.openapi.json",
+    "name": "ART regimen ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE658.openapi.json",
+    "name": "Cervical cancer primary screening test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE200.openapi.json",
+    "name": "Test result of HIV assay 1 ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE83.openapi.json",
+    "name": "Current ART regimen (first-, second-, or third-line) ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE956.openapi.json",
+    "name": "TB screening algorithm ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE289.openapi.json",
+    "name": "WHO HIV clinical stage condition or symptom ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE312.openapi.json",
+    "name": "STI test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE1028.openapi.json",
+    "name": "TPT regimen type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE293.openapi.json",
+    "name": "Trichomonas vaginalis test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE706.openapi.json",
+    "name": "Cervical cancer screening outcome ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE75.openapi.json",
+    "name": "Cause of death of mother ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE204.openapi.json",
+    "name": "Timing of adverse event ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE864.openapi.json",
+    "name": "STI test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE149.openapi.json",
+    "name": "Sexual and reproductive health integrated services ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE234.openapi.json",
+    "name": "HIV-exposed infant reason for unknown final status ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE104.openapi.json",
+    "name": "Maternal HIV test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.Config.DE12.openapi.json",
+    "name": "HIV burden of the setting ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE197.openapi.json",
+    "name": "Reason(s) for adherence problem ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE50.openapi.json",
+    "name": "Key population member type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE229.openapi.json",
+    "name": "General care activities recommended ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE947.openapi.json",
+    "name": "TB treatment history ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE532.openapi.json",
+    "name": "Reason blood pressure reading not done ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE98.openapi.json",
+    "name": "Test result of HIV assay 2 ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE764.openapi.json",
+    "name": "DSD ART model(s) ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE6.openapi.json",
+    "name": "Source of gestational age ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.H.DE13.openapi.json",
+    "name": "Contact method ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE430.openapi.json",
+    "name": "Reason for regimen switch ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE179.openapi.json",
+    "name": "HCV viral load test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE240.openapi.json",
+    "name": "Cause of death of infant ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE114.openapi.json",
+    "name": "Key population member type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE255.openapi.json",
+    "name": "Asymptomatic bacteriuria (ASB) test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE845.openapi.json",
+    "name": "Trichomonas vaginalis test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.H.DE17.openapi.json",
+    "name": "Source of information ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE191.openapi.json",
+    "name": "Type of follow-up appointment ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE22.openapi.json",
+    "name": "Reason Hepatitis B test not conducted ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE709.openapi.json",
+    "name": "Cervical cancer diagnosis ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE63.openapi.json",
+    "name": "Screenings and diagnostics for PrEP users ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE52.openapi.json",
+    "name": "Delivery mode ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE537.openapi.json",
+    "name": "Current medications ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE358.openapi.json",
+    "name": "Clinical stage at start of ART ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE101.openapi.json",
+    "name": "Alternative third PEP drug ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE230.openapi.json",
+    "name": "Final diagnosis of HIV-exposed infant ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE22.openapi.json",
+    "name": "Entry point for facility-level testing ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE220.openapi.json",
+    "name": "Test result of syphilis assay 1 repeated ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE80.openapi.json",
+    "name": "PrEP product prescribed ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE35.openapi.json",
+    "name": "Reason Hepatitis C test not done ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.H.DE50.openapi.json",
+    "name": "Transfer to facility ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE41.openapi.json",
+    "name": "Timing of ART initiation ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE172.openapi.json",
+    "name": "Other support services ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE821.openapi.json",
+    "name": "Syphilis test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE778.openapi.json",
+    "name": "Syndrome/STI diagnosed ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE246.openapi.json",
+    "name": "Blood group and Rh factor ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE56.openapi.json",
+    "name": "Antiretroviral (ARV) drugs received prior to enrolment ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE138.openapi.json",
+    "name": "Condom type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE108.openapi.json",
+    "name": "Infant or child exposure to HIV ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE67.openapi.json",
+    "name": "Place of delivery ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE259.openapi.json",
+    "name": "Risk factors, comorbidities and coinfections signs and symptoms ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE247.openapi.json",
+    "name": "Preventing and treating coinfections ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE75.openapi.json",
+    "name": "Current ART regimen ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE81.openapi.json",
+    "name": "HIV test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE903.openapi.json",
+    "name": "Medication/drug ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE934.openapi.json",
+    "name": "WHO HIV clinical stage condition or symptom ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE132.openapi.json",
+    "name": "Partner HIV test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE276.openapi.json",
+    "name": "Neisseria gonorrhoeae test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE125.openapi.json",
+    "name": "Type of follow-up appointment ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE88.openapi.json",
+    "name": "Assay number in testing strategy ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE668.openapi.json",
+    "name": "VIA cervical cancer screening test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE519.openapi.json",
+    "name": "Other support services ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE897.openapi.json",
+    "name": "WHO functional status ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE70.openapi.json",
+    "name": "Syphilis test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE284.openapi.json",
+    "name": "Chlamydia trachomatis test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE152.openapi.json",
+    "name": "Prevention services offered and referrals ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE68.openapi.json",
+    "name": "HIV serotype ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE94.openapi.json",
+    "name": "Test result of HIV assay 1 ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE569.openapi.json",
+    "name": "Family planning method used ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE182.openapi.json",
+    "name": "HCV medicine type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE973.openapi.json",
+    "name": "Symptoms of TB ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE688.openapi.json",
+    "name": "HPV16/18 test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE1.openapi.json",
+    "name": "Reason for PrEP visit ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE190.openapi.json",
+    "name": "EID test number 2 test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.H.DE1.openapi.json",
+    "name": "Reason for follow-up ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE691.openapi.json",
+    "name": "Cervical cancer colposcopy result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE681.openapi.json",
+    "name": "Cervical cancer triage test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE446.openapi.json",
+    "name": "Coinfection status at ART start ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE457.openapi.json",
+    "name": "Medications prescribed ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.H.DE34.openapi.json",
+    "name": "HIV status of partner or contact ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE525.openapi.json",
+    "name": "Type of follow-up appointment ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE149.openapi.json",
+    "name": "Maternal syphilis test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE170.openapi.json",
+    "name": "HCV test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE179.openapi.json",
+    "name": "Intimate partner violence enquiry results ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE664.openapi.json",
+    "name": "HPV-DNA cervical cancer screening test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE13.openapi.json",
+    "name": "HIV viral load specimen type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE74.openapi.json",
+    "name": "Type of contact elicited ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE186.openapi.json",
+    "name": "HIV clinical stage ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE143.openapi.json",
+    "name": "HIV self-test distributed for use by ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE46.openapi.json",
+    "name": "Acute HIV infection symptoms ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.A.DE5.openapi.json",
+    "name": "Referred by ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE869.openapi.json",
+    "name": "Confirmatory syphilis test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE5.openapi.json",
+    "name": "Referred through partner services ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE466.openapi.json",
+    "name": "Type of treatment-limiting toxicity ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE62.openapi.json",
+    "name": "Preterm birth status ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE47.openapi.json",
+    "name": "Pregnancy outcome ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE17.openapi.json",
+    "name": "Current PrEP regimen ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE250.openapi.json",
+    "name": "Syphilis test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.H.DE41.openapi.json",
+    "name": "HIV treatment outcome ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE194.openapi.json",
+    "name": "Assay number in testing strategy ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE836.openapi.json",
+    "name": "Chlamydia trachomatis test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE201.openapi.json",
+    "name": "Adverse event severity ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE237.openapi.json",
+    "name": "STI tested for ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.A.DE18.openapi.json",
+    "name": "Gender ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE106.openapi.json",
+    "name": "Test result of HIV assay 1 repeated ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE1034.openapi.json",
+    "name": "TB preventive treatment (TPT) status ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE216.openapi.json",
+    "name": "Test result of syphilis assay 1 ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE91.openapi.json",
+    "name": "Preferred PEP backbone regimen ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE225.openapi.json",
+    "name": "Treatment failure ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE259.openapi.json",
+    "name": "Urine protein test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE180.openapi.json",
+    "name": "EID sample number ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE636.openapi.json",
+    "name": "Reason immunization was not provided ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE1002.openapi.json",
+    "name": "TB treatment outcome ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.I.DE2.openapi.json",
+    "name": "Reason for referral ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE95.openapi.json",
+    "name": "Alternative PEP backbone regimen ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE36.openapi.json",
+    "name": "Signs of substantial risk of HIV infection ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE165.openapi.json",
+    "name": "Offer other clinical services ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE168.openapi.json",
+    "name": "HIV test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE115.openapi.json",
+    "name": "HIV status ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE24.openapi.json",
+    "name": "Experience with PrEP ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.A.DE46.openapi.json",
+    "name": "Communication preference(s) ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE610.openapi.json",
+    "name": "Disease targeted ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE91.openapi.json",
+    "name": "Gender of infant ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE74.openapi.json",
+    "name": "Syphilis diagnosis ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE1.openapi.json",
+    "name": "Reason for visit ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE646.openapi.json",
+    "name": "Reason malaria prophylaxis not provided ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE65.openapi.json",
+    "name": "Existing chronic health conditions ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE383.openapi.json",
+    "name": "Time to start ART ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE877.openapi.json",
+    "name": "Confirmatory STI test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE62.openapi.json",
+    "name": "Reason syphilis test not done ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE186.openapi.json",
+    "name": "EID test number 1 test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE719.openapi.json",
+    "name": "Treatment method for cervical precancer lesions ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE731.openapi.json",
+    "name": "Invasive cervical cancer treatment method ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE939.openapi.json",
+    "name": "TB diagnosis result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE317.openapi.json",
+    "name": "Confirmatory syphilis test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE43.openapi.json",
+    "name": "ART start type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE102.openapi.json",
+    "name": "Test result of HIV assay 3 ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE370.openapi.json",
+    "name": "Reasons for delayed ART initiation ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE261.openapi.json",
+    "name": "Type of specimen ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE391.openapi.json",
+    "name": "Reason for HIV viral load test ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE55.openapi.json",
+    "name": "Sex partner's HIV treatment status ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE18.openapi.json",
+    "name": "HBsAg test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE61.openapi.json",
+    "name": "HIV exposure type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE325.openapi.json",
+    "name": "Confirmatory STI test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE11.openapi.json",
+    "name": "PrEP dosing type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE17.openapi.json",
+    "name": "Past pregnancy complications ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE269.openapi.json",
+    "name": "Syphilis test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE142.openapi.json",
+    "name": "Counselling provided ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE43.openapi.json",
+    "name": "HCV test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.PRV.DE11.openapi.json",
+    "name": "HIV status of contact ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.PRV.DE2.openapi.json",
+    "name": "HIV prevention intervention ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE162.openapi.json",
+    "name": "HBsAg test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE18.openapi.json",
+    "name": "Entry point for community-level testing ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE697.openapi.json",
+    "name": "Cervical cancer histopathology result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE149.openapi.json",
+    "name": "Prevention services offered and referrals ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE37.openapi.json",
+    "name": "Partner is from a key population ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.E.DE208.openapi.json",
+    "name": "Test result of HIV assay 3 ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.A.DE25.openapi.json",
+    "name": "Sex ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE99.openapi.json",
+    "name": "Preferred third PEP drug ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE226.openapi.json",
+    "name": "Syndrome/STI diagnosed ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE157.openapi.json",
+    "name": "Offer other clinical services ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.H.DE23.openapi.json",
+    "name": "Outcome from outreach attempt ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE753.openapi.json",
+    "name": "Offer other clinical services ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE17.openapi.json",
+    "name": "Signs of serious illness ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE853.openapi.json",
+    "name": "Herpes simplex virus (HSV) test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE44.openapi.json",
+    "name": "HIV self-test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE41.openapi.json",
+    "name": "Pregnancy intention in serodiscordant partnerships ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE301.openapi.json",
+    "name": "Herpes simplex virus (HSV) test type ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE136.openapi.json",
+    "name": "Partner HIV status (confirmed) ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE893.openapi.json",
+    "name": "Staging of liver disease ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE33.openapi.json",
+    "name": "Partner HIV status (reported) ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.C.DE164.openapi.json",
+    "name": "Other support services ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.D.DE1019.openapi.json",
+    "name": "TB status at ART start ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE8.openapi.json",
+    "name": "Type of contact or partner for partner services ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.H.DE53.openapi.json",
+    "name": "Reason(s) for adherence problem ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE256.openapi.json",
+    "name": "Gonorrhoea test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.G.DE48.openapi.json",
+    "name": "HCV viral load test result ValueSet Schema"
+  },
+  {
+    "url": "../ValueSet-HIV.B.DE121.openapi.json",
+    "name": "Probable route of transmission ValueSet Schema"
+  },
+  {
+    "url": "../StructureDefinition-HIVConfiguration.openapi.json",
+    "name": "HIV.Configuration"
+  },
+  {
+    "url": "../StructureDefinition-HIVIReferral.openapi.json",
+    "name": "HIV.I Referral"
+  },
+  {
+    "url": "../StructureDefinition-HIVGDiagnostics.openapi.json",
+    "name": "HIV.G Diagnostics"
+  },
+  {
+    "url": "../StructureDefinition-HIVBHTSvisit.openapi.json",
+    "name": "HIV.B HTS visit"
+  },
+  {
+    "url": "../StructureDefinition-HIVARegistration.openapi.json",
+    "name": "HIV.A Registration"
+  },
+  {
+    "url": "../StructureDefinition-HIVDCareTreatment.openapi.json",
+    "name": "HIV.D Care-Treatment"
+  },
+  {
+    "url": "../StructureDefinition-HIVHFollowup.openapi.json",
+    "name": "HIV.H Follow-up"
+  },
+  {
+    "url": "../StructureDefinition-HIVDHIVTB.openapi.json",
+    "name": "HIV.D HIV-TB"
+  },
+  {
+    "url": "../StructureDefinition-HIVEPMTCT.openapi.json",
+    "name": "HIV.E-F PMTCT"
+  },
+  {
+    "url": "../StructureDefinition-HIVCPrEPvisit.openapi.json",
+    "name": "HIV.C PrEP visit"
+  },
+  {
+    "url": "../LogicalModels.openapi.json",
+    "name": "Logical Model Enumeration Schema"
+  },
+  {
+    "url": "../StructureDefinition-HIVSurveillance.openapi.json",
+    "name": "HIV.Surveillance"
+  },
+  {
+    "url": "../StructureDefinition-HIVPrevention.openapi.json",
+    "name": "HIV.Prevention"
+  }
+];
+  var ui;
+  window.onload = function() {
+    var select = document.getElementById('definition-select');
+    swaggerUrls.forEach(function(item, idx) {
+      var opt = document.createElement('option');
+      opt.value = item.url;
+      opt.textContent = item.name;
+      select.appendChild(opt);
+    });
+    ui = SwaggerUIBundle({
+      url: "../ValueSet-HIV.E.DE212.openapi.json",
+      dom_id: '#swagger-ui',
+      presets: [SwaggerUIBundle.presets.apis],
+      layout: "BaseLayout"
+    });
+  };
+  function switchDefinition(url) {
+    ui.specActions.updateUrl(url);
+    ui.specActions.download(url);
+  }
+  </script>
+
+  </body>
+</html>

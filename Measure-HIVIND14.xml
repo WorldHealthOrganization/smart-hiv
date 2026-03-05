@@ -1,0 +1,1733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Measure xmlns="http://hl7.org/fhir">
+  <id value="HIVIND14"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablemeasure"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+  <table class="narrative-table">
+    <tbody>
+<tr>
+
+<th colspan="2" scope="row" class="row-header">Knowledge Artifact Metadata</th>
+
+</tr>
+
+<tr>
+
+<th scope="row" class="row-header">Name (machine-readable)</th>
+
+<td class="content-container">HIVIND14</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Title (human-readable)</th>
+
+<td class="content-container">HIV.IND.14 OAMT minimum dose</td>
+</tr>
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Status</th>
+
+<td class="content-container">Draft</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Experimental</th>
+
+<td class="content-container">true</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Description</th>
+
+<td class="content-container"><div><p>% of OAMT recipients receiving a maintenance dose greater than or equal to the recommended minimum dose</p>
+</div></td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Measure Steward</th>
+
+<td class="content-container">WHO</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Steward Contact Details</th>
+
+<td class="content-container">WHO: <a href="http://who.int">http://who.int</a></td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Metadata</th>
+
+</tr>
+
+
+
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Version Number</th>
+
+<td class="content-container">0.4.4</td>
+</tr>
+
+
+<tr>
+
+<th scope="row" class="row-header">Measure Scoring</th>
+
+<td class="content-container"><span title="Codes:{http://terminology.hl7.org/CodeSystem/measure-scoring proportion}">Proportion</span></td>
+</tr>
+
+
+
+
+
+
+
+
+<tr>
+
+<th scope="row" class="row-header">Improvement Notation</th>
+
+<td class="content-container"><span title="Codes:{http://terminology.hl7.org/CodeSystem/measure-improvement-notation increase}">Increased score indicates improvement</span></td>
+</tr>
+
+
+
+
+
+  
+<tr>
+
+<th scope="row" class="row-header">Population Basis</th>
+
+<td class="content-container">boolean</td>
+</tr>
+
+
+
+
+
+  
+    <tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Population Criteria</th>
+
+</tr>
+  
+  
+  
+  
+    <tr>
+      
+        
+<th scope="row" class="row-header">Initial Population</th>
+
+      
+      <td class="content-container">
+        
+        <em>ID</em>: HIV.IND.14.IP
+        <br/>
+        
+        
+          <em>Description</em>:
+          <p style="white-space: pre-line" class="tab-one">Initial Population</p>
+        
+        
+          
+            
+            <em>Logic Definition</em>: <a href="#hivind14logic-initial-population">Initial Population</a> 
+          
+        
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      
+        
+<th scope="row" class="row-header">Denominator</th>
+
+      
+      <td class="content-container">
+        
+        <em>ID</em>: HIV.IND.14.DEN
+        <br/>
+        
+        
+          <em>Description</em>:
+          <p style="white-space: pre-line" class="tab-one">Number of people receiving maintenance dose of methadone or buprenorphine at a specified date, excluding: a) individuals currently being inducted on OAMT and yet to reach the maintenance dose and b) individuals on reducing doses of OAMT.</p>
+        
+        
+          
+            
+            <em>Logic Definition</em>: <a href="#hivind14logic-denominator">Denominator</a> 
+          
+        
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      
+        
+<th scope="row" class="row-header">Numerator</th>
+
+      
+      <td class="content-container">
+        
+        <em>ID</em>: HIV.IND.14.NUM
+        <br/>
+        
+        
+          <em>Description</em>:
+          <p style="white-space: pre-line" class="tab-one">Number of people, at a specified date, maintained on methadone or buprenorphine receiving recommended minimum maintenance dose (WHO guidance recommends doses of &gt;=60 mg of methadone or &gt;=8 mg of buprenorphine)</p>
+        
+        
+          
+            
+            <em>Logic Definition</em>: <a href="#hivind14logic-numerator">Numerator</a> 
+          
+        
+      </td>
+    </tr>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Logic</th>
+
+</tr>
+
+<tr>
+
+<th scope="row" class="row-header">Primary Library</th>
+
+<td class="content-container"><a href="Library-HIVIND14Logic.html">HIV.IND.14 Logic</a></td>
+</tr>
+
+
+
+
+  
+  
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: FHIR model information
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIR-ModelInfo.html">http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library HIC
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <code>http://smart.who.int/hiv/Library/HIVCommon|0.0.1</code>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVCommon|0.0.1</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library FHIRHelpers
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="http://fhir.org/guides/cqf/common/4.0.1/4.0.1/Library-FHIRHelpers.html">http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library HIE
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="Library-HIVIndicatorElements.html">HIVIndicatorElements</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVIndicatorElements</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library Elements
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="Library-HIVElements.html">HIVElements</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVElements</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library ConceptsCustom
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <code>http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1</code>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Library Common
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <a href="Library-HIVCommon.html">HIVCommon</a>
+    <br/>
+    <em>Canonical URL</em>: <tt>http://smart.who.int/hiv/Library/HIVCommon</tt>
+    
+  </td>
+</tr>
+
+<tr>
+  
+  
+  
+  
+  
+<th scope="row" class="row-header">Dependency</th>
+
+  
+  <td class="content-container">
+    
+    <em>Description</em>: Code system missing concepts
+    
+    <br/>
+    
+    
+    
+    
+    
+    
+    <em>Resource</em>: <code>https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts</code>
+    <br/>
+    <em>Canonical URL</em>: <tt>https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts</tt>
+    
+  </td>
+</tr>
+
+
+  
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+      <em>Code</em>: methadone
+      <br/>
+      <em>System</em>: <tt>https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts</tt>
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      
+      <em>Code</em>: buprenorphine
+      <br/>
+      <em>System</em>: <tt>https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts</tt>
+    </td>
+  </tr>
+
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Measurement Period
+    <br/>
+    <em>Use</em>: In
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: Period
+  </td>
+</tr>
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Numerator
+    <br/>
+    <em>Use</em>: Out
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: boolean
+  </td>
+</tr>
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Denominator
+    <br/>
+    <em>Use</em>: Out
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: boolean
+  </td>
+</tr>
+  
+  <tr>
+  
+<th scope="row" class="row-header">Parameter</th>
+
+  <td class="content-container">
+    <em>Name</em>: Initial Population
+    <br/>
+    <em>Use</em>: Out
+    <br/>
+    <em>Min Cardinality</em>: 0
+    <br/>
+    <em>Max Cardinality</em>: 1
+    <br/>
+    <em>Type</em>: boolean
+  </td>
+</tr>
+  
+  
+  <tr>
+    <th colspan="2" scope="row" class="section-header"><a name="effective-data-requirements"> </a>Measure Logic Data Requirements</th>
+  </tr>
+  
+  
+<tr>
+  <th scope="row" class="row-header">Data Requirement</th>
+  <td class="content-container">
+    <em>Type</em>: MedicationRequest
+    <br/>
+  
+    <em>Profile(s)</em>: 
+  
+    <a href="http://hl7.org/fhir/R4/medicationrequest.html">MedicationRequest</a>
+    <br/>        
+  
+   
+   
+    <em>Must Support Elements</em>: intent, medication, dosageInstruction, dispenseRequest, dispenseRequest.quantity, dispenseRequest.expectedSupplyDuration, dispenseRequest.numberOfRepeatsAllowed, dispenseRequest.validityPeriod, authoredOn, status
+    <br/>
+   
+   
+  </td>
+</tr>
+
+  
+  <tr>
+
+<th colspan="2" scope="row" class="row-header">Measure Logic Definitions</th>
+
+</tr>
+  
+          
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivelements-methadone-d.de555"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define &quot;Methadone D.DE555&quot;:
+  [MedicationRequest] MR
+        where MR.intent = 'order'
+        and MR.medication ~ ConceptsCustom.&quot;methadone&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-methadone-d.de555"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/*
+@dataElement: HIV.D.DE555 - Methadone
+@activity: HIV.D8 Capture or update client history
+@description: Opioid substitution to treat opioid dependence
+*/
+define &quot;Methadone D.DE555&quot;:
+  Elements.&quot;Methadone D.DE555&quot; MR
+        where MR.status = 'completed'
+        and MR.MedicationRequestPeriod() during &quot;Measurement Period&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivelements-buprenorphine-d.de552"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define &quot;Buprenorphine D.DE552&quot;:
+  [MedicationRequest] MR
+        where MR.intent = 'order'
+        and MR.medication ~ ConceptsCustom.&quot;buprenorphine&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivindicatorelements-buprenorphine-d.de552"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIndicatorElements</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* End of Enhanced adherence counselling provided */
+
+/*
+@dataElement: HIV.D.DE552 - Buprenorphine
+@activity: HIV.D8 Capture or update client history
+@description: Opioid substitution to treat opioid dependence
+*/
+
+define &quot;Buprenorphine D.DE552&quot;:
+  Elements.&quot;Buprenorphine D.DE552&quot; MR
+        where MR.status = 'completed'
+        and MR.MedicationRequestPeriod() during &quot;Measurement Period&quot;</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivind14logic-numerator"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIND14Logic</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/**
+ * Numerator
+ * 
+ * Definition: Number of people, at a specified date, maintained on methadone or buprenorphine receiving recommended minimum maintenance dose (WHO guidance recommends doses of ≥60 mg of methadone or ≥8 mg of buprenorphine*)
+ * Calculation: COUNT of clients with (&quot;Medications prescribed&quot;='Methadone' AND &quot;Dose of medications prescribed&quot; GREATER THAN OR EQUAL TO 60mg) OR (&quot;Medications prescribed&quot;='Buprenorphine' AND &quot;Dose of medications prescribed&quot; GREATER THAN OR EQUAL TO 8mg) for a specified &quot;Reporting date&quot;
+ */
+
+define &quot;Numerator&quot;:
+  First(HIE.&quot;Methadone D.DE555&quot;).dailyDose() &gt;= System.Quantity{ value: 60, unit: 'mg' }
+  or First(HIE.&quot;Buprenorphine D.DE552&quot;).dailyDose() &gt;= System.Quantity{ value: 8, unit: 'mg' }</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivind14logic-denominator"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIND14Logic</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/**
+ * Denominator
+ *
+ * Definition: Number of people receiving maintenance dose of methadone or buprenorphine at a specified date, excluding: a) individuals currently being inducted on OAMT and yet to reach the maintenance dose and b) individuals on reducing doses of OAMT.
+ * Calculation: COUNT of clients with &quot;Medications prescribed&quot; IN 'Methadone', 'Buprenorphine' for a specified &quot;Reporting date&quot;
+ */
+
+define &quot;Denominator&quot;:
+  Exists(HIE.&quot;Methadone D.DE555&quot;) or Exists(HIE.&quot;Buprenorphine D.DE552&quot;)</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivind14logic-initial-population"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVIND14Logic</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">/* Populations */
+
+/*
+ *Initial Population
+ */
+
+define &quot;Initial Population&quot;:
+  true</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivcommon-dailydose"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVCommon</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">//define function &quot;GetMedicationDailyDose&quot;(dosage Quantity, dosesPerDay Decimal):
+  //dosage * Quantity { value: dosesPerDay, unit: '/d' }
+
+
+define fluent function dailyDose(Request &quot;MedicationRequest&quot;):
+  Request R
+    let
+      dosage: singleton from R.dosageInstruction,
+      doseAndRate: singleton from dosage.doseAndRate,
+      timing: dosage.timing,
+      frequency: Coalesce(timing.repeat.frequencyMax, timing.repeat.frequency),
+      period: System.Quantity { value: timing.repeat.period, unit: timing.repeat.periodUnit.value },
+      doseRange: doseAndRate.dose as Range,
+      doseQuantity: doseAndRate.dose as SimpleQuantity,
+      dose: Coalesce(doseRange.high, doseQuantity),
+      dosesPerDay: Coalesce(ToDaily(frequency, period), Count(timing.repeat.timeOfDay), 1.0),
+      quantity: R.dispenseRequest.quantity
+    return
+      quantity / (dose * dosesPerDay)</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-todecimal"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToDecimal(value decimal): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivcommon-todaily"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVCommon</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">//System.Integer
+define function ToDaily(frequency System.Integer, period System.Quantity):
+  case period.unit
+    when 'h' then frequency * (24.0 / period.value)
+    when 'min' then frequency * (24.0 / period.value) * 60
+    when 's' then frequency * (24.0 / period.value) * 60 * 60
+    when 'd' then frequency * (24.0 / period.value) / 24
+    when 'wk' then frequency * (24.0 / period.value) / (24 * 7)
+    when 'mo' then frequency * (24.0 / period.value) / (24 * 30) /* assuming 30 days in month */
+    when 'a' then frequency * (24.0 / period.value) / (24 * 365) /* assuming 365 days in year */
+    when 'hour' then frequency * (24.0 / period.value)
+    when 'minute' then frequency * (24.0 / period.value) * 60
+    when 'second' then frequency * (24.0 / period.value) * 60 * 60
+    when 'day' then frequency * (24.0 / period.value) / 24
+    when 'week' then frequency * (24.0 / period.value) / (24 * 7)
+    when 'month' then frequency * (24.0 / period.value) / (24 * 30) /* assuming 30 days in month */
+    when 'year' then frequency * (24.0 / period.value) / (24 * 365) /* assuming 365 days in year */
+    when 'hours' then frequency * (24.0 / period.value)
+    when 'minutes' then frequency * (24.0 / period.value) * 60
+    when 'seconds' then frequency * (24.0 / period.value) * 60 * 60
+    when 'days' then frequency * (24.0 / period.value) / 24
+    when 'weeks' then frequency * (24.0 / period.value) / (24 * 7)
+    when 'months' then frequency * (24.0 / period.value) / (24 * 30) /* assuming 30 days in month */
+    when 'years' then frequency * (24.0 / period.value) / (24 * 365) /* assuming 365 days in year */
+    else null
+  end</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tointeger"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToInteger(value integer): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-toquantity"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToQuantity(quantity FHIR.Quantity):
+    case
+        when quantity is null then null
+        when quantity.value is null then null
+        when quantity.comparator is not null then
+            Message(null, true, 'FHIRHelpers.ToQuantity.ComparatorQuantityNotSupported', 'Error', 'FHIR Quantity value has a comparator and cannot be converted to a System.Quantity value.')
+        when quantity.system is null or quantity.system.value = 'http://unitsofmeasure.org'
+              or quantity.system.value = 'http://hl7.org/fhirpath/CodeSystem/calendar-units' then
+            System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, '1')) }
+        else
+            Message(null, true, 'FHIRHelpers.ToQuantity.InvalidFHIRQuantity', 'Error', 'Invalid FHIR Quantity code: ' &amp; quantity.unit.value &amp; ' (' &amp; quantity.system.value &amp; '|' &amp; quantity.code.value &amp; ')')
+    end</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tocalendarunit"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToCalendarUnit(unit System.String):
+    case unit
+        when 'ms' then 'millisecond'
+        when 's' then 'second'
+        when 'min' then 'minute'
+        when 'h' then 'hour'
+        when 'd' then 'day'
+        when 'wk' then 'week'
+        when 'mo' then 'month'
+        when 'a' then 'year'
+        else unit
+    end</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tostring"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToString(value MedicationRequestIntent): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-toconcept"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToConcept(concept FHIR.CodeableConcept):
+    if concept is null then
+        null
+    else
+        System.Concept {
+            codes: concept.coding C return ToCode(C),
+            display: concept.text.value
+        }</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tocode"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToCode(coding FHIR.Coding):
+    if coding is null then
+        null
+    else
+        System.Code {
+          code: coding.code.value,
+          system: coding.system.value,
+          version: coding.version.value,
+          display: coding.display.value
+        }</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tostring"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToString(value MedicationRequestStatus): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivcommon-medicationrequestperiod"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVCommon</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define fluent function MedicationRequestPeriod(Request MedicationRequest):
+  Request R
+    let
+      dosage: singleton from R.dosageInstruction,
+      doseAndRate: singleton from dosage.doseAndRate,
+      doseRange: doseAndRate.dose as Range,
+      doseQuantity: doseAndRate.dose as SimpleQuantity,
+      dose: Coalesce(end of doseRange, doseQuantity),
+      timing: dosage.timing,
+      frequency: Coalesce(timing.repeat.frequencyMax, timing.repeat.frequency),
+      period: System.Quantity { value: timing.repeat.period, unit: timing.repeat.periodUnit.value },
+      dosesPerDay: Coalesce(ToDaily(FHIRHelpers.ToInteger(frequency), period), Count(timing.repeat.timeOfDay), 1.0),
+      boundsPeriod: timing.repeat.bounds as Period,
+      daysSupply: R.dispenseRequest.expectedSupplyDuration,
+      quantity: R.dispenseRequest.quantity,
+      refills: Coalesce(R.dispenseRequest.numberOfRepeatsAllowed, 0),
+      startDate:
+        Coalesce(
+          start of boundsPeriod,
+          start of R.dispenseRequest.validityPeriod,
+          R.authoredOn
+        )
+    return
+      if HasEnd(boundsPeriod) then
+        Interval[startDate, end of boundsPeriod]
+      else
+        (
+          Coalesce(daysSupply, quantity / (dose * dosesPerDay))
+            * (1 + refills)
+        ) durationInDays
+          return Interval[startDate, startDate + durationInDays]</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tointerval"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToInterval(range FHIR.Range):
+    if range is null then
+        null
+    else
+        Interval[ToQuantity(range.low), ToQuantity(range.high)]</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-tointerval"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToInterval(period FHIR.Period):
+    if period is null then
+        null
+    else
+        if period.&quot;start&quot; is null then
+            Interval(period.&quot;start&quot;.value, period.&quot;end&quot;.value]
+        else
+            Interval[period.&quot;start&quot;.value, period.&quot;end&quot;.value]</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="fhirhelpers-todatetime"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> FHIRHelpers</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function ToDateTime(value dateTime): value.value</code></pre>
+  </td>
+
+</tr>
+        
+<tr>
+  <th scope="row" rowspan="2" class="row-header">
+    
+      
+      <a name="hivcommon-hasend"> </a>
+    
+    Logic Definition
+  </th>
+
+  <td class="content-container"><em>Library Name:</em> HIVCommon</td>
+
+</tr>
+<tr>
+
+  <td>
+    <pre style="border: none;" class="content-container highlight language-cql"><code class="language-cql">define function &quot;HasEnd&quot;(period Interval&lt;DateTime&gt; ):
+  not (end of period is null
+    or end of period = maximum DateTime
+)</code></pre>
+  </td>
+
+</tr>
+
+  
+
+<tr>
+  <th colspan="2" scope="row" class="row-header">Generated using version 0.4.6 of the sample-content-ig Liquid templates</th>
+</tr>
+    </tbody>
+  </table>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts"/>
+          <code value="methadone"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts"/>
+          <code value="buprenorphine"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Methadone D.DE555"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Methadone D.DE555&quot;:&#xA;  [MedicationRequest] MR&#xA;        where MR.intent = 'order'&#xA;        and MR.medication ~ ConceptsCustom.&quot;methadone&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="0"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Methadone D.DE555"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;@dataElement: HIV.D.DE555 - Methadone&#xA;@activity: HIV.D8 Capture or update client history&#xA;@description: Opioid substitution to treat opioid dependence&#xA;*/&#xA;define &quot;Methadone D.DE555&quot;:&#xA;  Elements.&quot;Methadone D.DE555&quot; MR&#xA;        where MR.status = 'completed'&#xA;        and MR.MedicationRequestPeriod() during &quot;Measurement Period&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="1"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Buprenorphine D.DE552"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Buprenorphine D.DE552&quot;:&#xA;  [MedicationRequest] MR&#xA;        where MR.intent = 'order'&#xA;        and MR.medication ~ ConceptsCustom.&quot;buprenorphine&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="2"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIndicatorElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Buprenorphine D.DE552"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Enhanced adherence counselling provided */&#xA;&#xA;/*&#xA;@dataElement: HIV.D.DE552 - Buprenorphine&#xA;@activity: HIV.D8 Capture or update client history&#xA;@description: Opioid substitution to treat opioid dependence&#xA;*/&#xA;&#xA;define &quot;Buprenorphine D.DE552&quot;:&#xA;  Elements.&quot;Buprenorphine D.DE552&quot; MR&#xA;        where MR.status = 'completed'&#xA;        and MR.MedicationRequestPeriod() during &quot;Measurement Period&quot;"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="3"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIND14Logic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Numerator"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/**&#xA; * Numerator&#xA; * &#xA; * Definition: Number of people, at a specified date, maintained on methadone or buprenorphine receiving recommended minimum maintenance dose (WHO guidance recommends doses of ≥60 mg of methadone or ≥8 mg of buprenorphine*)&#xA; * Calculation: COUNT of clients with (&quot;Medications prescribed&quot;='Methadone' AND &quot;Dose of medications prescribed&quot; GREATER THAN OR EQUAL TO 60mg) OR (&quot;Medications prescribed&quot;='Buprenorphine' AND &quot;Dose of medications prescribed&quot; GREATER THAN OR EQUAL TO 8mg) for a specified &quot;Reporting date&quot;&#xA; */&#xA;&#xA;define &quot;Numerator&quot;:&#xA;  First(HIE.&quot;Methadone D.DE555&quot;).dailyDose() &gt;= System.Quantity{ value: 60, unit: 'mg' }&#xA;  or First(HIE.&quot;Buprenorphine D.DE552&quot;).dailyDose() &gt;= System.Quantity{ value: 8, unit: 'mg' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="4"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIND14Logic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Denominator"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/**&#xA; * Denominator&#xA; *&#xA; * Definition: Number of people receiving maintenance dose of methadone or buprenorphine at a specified date, excluding: a) individuals currently being inducted on OAMT and yet to reach the maintenance dose and b) individuals on reducing doses of OAMT.&#xA; * Calculation: COUNT of clients with &quot;Medications prescribed&quot; IN 'Methadone', 'Buprenorphine' for a specified &quot;Reporting date&quot;&#xA; */&#xA;&#xA;define &quot;Denominator&quot;:&#xA;  Exists(HIE.&quot;Methadone D.DE555&quot;) or Exists(HIE.&quot;Buprenorphine D.DE552&quot;)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="5"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVIND14Logic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Initial Population"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* Populations */&#xA;&#xA;/*&#xA; *Initial Population&#xA; */&#xA;&#xA;define &quot;Initial Population&quot;:&#xA;  true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="6"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVCommon"/>
+        </extension>
+        <extension url="name">
+          <valueString value="dailyDose"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="//define function &quot;GetMedicationDailyDose&quot;(dosage Quantity, dosesPerDay Decimal):&#xA;  //dosage * Quantity { value: dosesPerDay, unit: '/d' }&#xA;&#xA;&#xA;define fluent function dailyDose(Request &quot;MedicationRequest&quot;):&#xA;  Request R&#xA;    let&#xA;      dosage: singleton from R.dosageInstruction,&#xA;      doseAndRate: singleton from dosage.doseAndRate,&#xA;      timing: dosage.timing,&#xA;      frequency: Coalesce(timing.repeat.frequencyMax, timing.repeat.frequency),&#xA;      period: System.Quantity { value: timing.repeat.period, unit: timing.repeat.periodUnit.value },&#xA;      doseRange: doseAndRate.dose as Range,&#xA;      doseQuantity: doseAndRate.dose as SimpleQuantity,&#xA;      dose: Coalesce(doseRange.high, doseQuantity),&#xA;      dosesPerDay: Coalesce(ToDaily(frequency, period), Count(timing.repeat.timeOfDay), 1.0),&#xA;      quantity: R.dispenseRequest.quantity&#xA;    return&#xA;      quantity / (dose * dosesPerDay)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="7"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToDecimal"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToDecimal(value decimal): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="8"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVCommon"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToDaily"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="//System.Integer&#xA;define function ToDaily(frequency System.Integer, period System.Quantity):&#xA;  case period.unit&#xA;    when 'h' then frequency * (24.0 / period.value)&#xA;    when 'min' then frequency * (24.0 / period.value) * 60&#xA;    when 's' then frequency * (24.0 / period.value) * 60 * 60&#xA;    when 'd' then frequency * (24.0 / period.value) / 24&#xA;    when 'wk' then frequency * (24.0 / period.value) / (24 * 7)&#xA;    when 'mo' then frequency * (24.0 / period.value) / (24 * 30) /* assuming 30 days in month */&#xA;    when 'a' then frequency * (24.0 / period.value) / (24 * 365) /* assuming 365 days in year */&#xA;    when 'hour' then frequency * (24.0 / period.value)&#xA;    when 'minute' then frequency * (24.0 / period.value) * 60&#xA;    when 'second' then frequency * (24.0 / period.value) * 60 * 60&#xA;    when 'day' then frequency * (24.0 / period.value) / 24&#xA;    when 'week' then frequency * (24.0 / period.value) / (24 * 7)&#xA;    when 'month' then frequency * (24.0 / period.value) / (24 * 30) /* assuming 30 days in month */&#xA;    when 'year' then frequency * (24.0 / period.value) / (24 * 365) /* assuming 365 days in year */&#xA;    when 'hours' then frequency * (24.0 / period.value)&#xA;    when 'minutes' then frequency * (24.0 / period.value) * 60&#xA;    when 'seconds' then frequency * (24.0 / period.value) * 60 * 60&#xA;    when 'days' then frequency * (24.0 / period.value) / 24&#xA;    when 'weeks' then frequency * (24.0 / period.value) / (24 * 7)&#xA;    when 'months' then frequency * (24.0 / period.value) / (24 * 30) /* assuming 30 days in month */&#xA;    when 'years' then frequency * (24.0 / period.value) / (24 * 365) /* assuming 365 days in year */&#xA;    else null&#xA;  end"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="9"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToInteger"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToInteger(value integer): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="10"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToQuantity"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToQuantity(quantity FHIR.Quantity):&#xA;    case&#xA;        when quantity is null then null&#xA;        when quantity.value is null then null&#xA;        when quantity.comparator is not null then&#xA;            Message(null, true, 'FHIRHelpers.ToQuantity.ComparatorQuantityNotSupported', 'Error', 'FHIR Quantity value has a comparator and cannot be converted to a System.Quantity value.')&#xA;        when quantity.system is null or quantity.system.value = 'http://unitsofmeasure.org'&#xA;              or quantity.system.value = 'http://hl7.org/fhirpath/CodeSystem/calendar-units' then&#xA;            System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, '1')) }&#xA;        else&#xA;            Message(null, true, 'FHIRHelpers.ToQuantity.InvalidFHIRQuantity', 'Error', 'Invalid FHIR Quantity code: ' &amp; quantity.unit.value &amp; ' (' &amp; quantity.system.value &amp; '|' &amp; quantity.code.value &amp; ')')&#xA;    end"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="11"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToCalendarUnit"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToCalendarUnit(unit System.String):&#xA;    case unit&#xA;        when 'ms' then 'millisecond'&#xA;        when 's' then 'second'&#xA;        when 'min' then 'minute'&#xA;        when 'h' then 'hour'&#xA;        when 'd' then 'day'&#xA;        when 'wk' then 'week'&#xA;        when 'mo' then 'month'&#xA;        when 'a' then 'year'&#xA;        else unit&#xA;    end"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="12"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value MedicationRequestIntent): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="13"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToConcept"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToConcept(concept FHIR.CodeableConcept):&#xA;    if concept is null then&#xA;        null&#xA;    else&#xA;        System.Concept {&#xA;            codes: concept.coding C return ToCode(C),&#xA;            display: concept.text.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="14"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToCode"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToCode(coding FHIR.Coding):&#xA;    if coding is null then&#xA;        null&#xA;    else&#xA;        System.Code {&#xA;          code: coding.code.value,&#xA;          system: coding.system.value,&#xA;          version: coding.version.value,&#xA;          display: coding.display.value&#xA;        }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="15"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value MedicationRequestStatus): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="16"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVCommon"/>
+        </extension>
+        <extension url="name">
+          <valueString value="MedicationRequestPeriod"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define fluent function MedicationRequestPeriod(Request MedicationRequest):&#xA;  Request R&#xA;    let&#xA;      dosage: singleton from R.dosageInstruction,&#xA;      doseAndRate: singleton from dosage.doseAndRate,&#xA;      doseRange: doseAndRate.dose as Range,&#xA;      doseQuantity: doseAndRate.dose as SimpleQuantity,&#xA;      dose: Coalesce(end of doseRange, doseQuantity),&#xA;      timing: dosage.timing,&#xA;      frequency: Coalesce(timing.repeat.frequencyMax, timing.repeat.frequency),&#xA;      period: System.Quantity { value: timing.repeat.period, unit: timing.repeat.periodUnit.value },&#xA;      dosesPerDay: Coalesce(ToDaily(FHIRHelpers.ToInteger(frequency), period), Count(timing.repeat.timeOfDay), 1.0),&#xA;      boundsPeriod: timing.repeat.bounds as Period,&#xA;      daysSupply: R.dispenseRequest.expectedSupplyDuration,&#xA;      quantity: R.dispenseRequest.quantity,&#xA;      refills: Coalesce(R.dispenseRequest.numberOfRepeatsAllowed, 0),&#xA;      startDate:&#xA;        Coalesce(&#xA;          start of boundsPeriod,&#xA;          start of R.dispenseRequest.validityPeriod,&#xA;          R.authoredOn&#xA;        )&#xA;    return&#xA;      if HasEnd(boundsPeriod) then&#xA;        Interval[startDate, end of boundsPeriod]&#xA;      else&#xA;        (&#xA;          Coalesce(daysSupply, quantity / (dose * dosesPerDay))&#xA;            * (1 + refills)&#xA;        ) durationInDays&#xA;          return Interval[startDate, startDate + durationInDays]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="17"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToInterval"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToInterval(range FHIR.Range):&#xA;    if range is null then&#xA;        null&#xA;    else&#xA;        Interval[ToQuantity(range.low), ToQuantity(range.high)]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="18"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToInterval"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToInterval(period FHIR.Period):&#xA;    if period is null then&#xA;        null&#xA;    else&#xA;        if period.&quot;start&quot; is null then&#xA;            Interval(period.&quot;start&quot;.value, period.&quot;end&quot;.value]&#xA;        else&#xA;            Interval[period.&quot;start&quot;.value, period.&quot;end&quot;.value]"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="19"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToDateTime"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToDateTime(value dateTime): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="20"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVCommon"/>
+        </extension>
+        <extension url="name">
+          <valueString value="HasEnd"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function &quot;HasEnd&quot;(period Interval&lt;DateTime&gt; ):&#xA;  not (end of period is null&#xA;    or end of period = maximum DateTime&#xA;)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="21"/>
+        </extension>
+      </extension>
+      <name value="EffectiveDataRequirements"/>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="FHIR model information"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library HIC"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVCommon|0.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library HIE"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVIndicatorElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library ConceptsCustom"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConceptsCustom|0.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Common"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system missing concepts"/>
+        <resource value="https://worldhealthorganization.github.io/smart-hiv/CodeSystem/missing-concepts"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="Measurement Period"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="Period"/>
+      </parameter>
+      <parameter>
+        <name value="Numerator"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Denominator"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Initial Population"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <dataRequirement>
+        <type value="MedicationRequest"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationRequest"/>
+        <mustSupport value="intent"/>
+        <mustSupport value="medication"/>
+        <mustSupport value="dosageInstruction"/>
+        <mustSupport value="dispenseRequest"/>
+        <mustSupport value="dispenseRequest.quantity"/>
+        <mustSupport value="dispenseRequest.expectedSupplyDuration"/>
+        <mustSupport value="dispenseRequest.numberOfRepeatsAllowed"/>
+        <mustSupport value="dispenseRequest.validityPeriod"/>
+        <mustSupport value="authoredOn"/>
+        <mustSupport value="status"/>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis">
+    <valueCode value="boolean"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
+    <valueCanonical value="#effective-data-requirements"/>
+  </extension>
+  <url value="http://smart.who.int/hiv/Measure/HIVIND14"/>
+  <version value="0.4.4"/>
+  <name value="HIVIND14"/>
+  <title value="HIV.IND.14 OAMT minimum dose"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2024-08-18"/>
+  <publisher value="WHO"/>
+  <contact>
+    <name value="WHO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://who.int"/>
+    </telecom>
+  </contact>
+  <description value="% of OAMT recipients receiving a maintenance dose greater than or equal to the recommended minimum dose"/>
+  <library value="http://smart.who.int/hiv/Library/HIVIND14Logic"/>
+  <scoring>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"/>
+      <code value="proportion"/>
+      <display value="Proportion"/>
+    </coding>
+  </scoring>
+  <improvementNotation>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"/>
+      <code value="increase"/>
+    </coding>
+  </improvementNotation>
+  <group>
+    <population id="HIV.IND.14.IP">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="initial-population"/>
+          <display value="Initial Population"/>
+        </coding>
+      </code>
+      <description value="Initial Population"/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Initial Population"/>
+      </criteria>
+    </population>
+    <population id="HIV.IND.14.DEN">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="denominator"/>
+          <display value="Denominator"/>
+        </coding>
+      </code>
+      <description value="Number of people receiving maintenance dose of methadone or buprenorphine at a specified date, excluding: a) individuals currently being inducted on OAMT and yet to reach the maintenance dose and b) individuals on reducing doses of OAMT."/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Denominator"/>
+      </criteria>
+    </population>
+    <population id="HIV.IND.14.NUM">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="numerator"/>
+          <display value="Numerator"/>
+        </coding>
+      </code>
+      <description value="Number of people, at a specified date, maintained on methadone or buprenorphine receiving recommended minimum maintenance dose (WHO guidance recommends doses of &gt;=60 mg of methadone or &gt;=8 mg of buprenorphine)"/>
+      <criteria>
+        <language value="text/cql-identifier"/>
+        <expression value="Numerator"/>
+      </criteria>
+    </population>
+  </group>
+</Measure>

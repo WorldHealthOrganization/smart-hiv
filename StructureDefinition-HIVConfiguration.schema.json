@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/base/StructureDefinition-HIVConfiguration.schema.json",
+  "title": "HIV.Configuration",
+  "description": "This tab describes data about a facility or region that are used in workflows and decision logic (i.e. WHO recommendations depend upon these data elements), but are not specific to an individual (e.g. a high HIV burden setting)",
+  "type": "object",
+  "properties": {
+    "resourceType": {
+      "type": "string",
+      "const": "HIVConfiguration",
+      "description": "Resource type identifier for HIVConfiguration logical model"
+    },
+    "@context": {
+      "description": "JSON-LD context for this logical model with ValueSet vocabularies",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uri",
+          "description": "URI reference to external JSON-LD context"
+        },
+        {
+          "type": "object",
+          "description": "Inline JSON-LD context",
+          "properties": {
+            "@version": {
+              "type": "number",
+              "const": 1.1
+            },
+            "fhir": {
+              "type": "string",
+              "const": "http://hl7.org/fhir/"
+            }
+          },
+          "additionalProperties": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        {
+          "type": "array",
+          "description": "Array of JSON-LD context objects/URIs",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "object"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "JSON-LD type identifier for HIVConfiguration logical model",
+      "examples": [
+        "LogicalModel-HIVConfiguration"
+      ]
+    },
+    "populationPrevalenceOfTb": {
+      "type": "integer",
+      "description": "The tuberculosis prevalence in the general population in number of cases per 100 000 persons or greater."
+    },
+    "populationPrevalenceOfSoilTransmittedHelminthInfection": {
+      "type": "integer",
+      "description": "The percentage of individuals in the general population infected with at least one species of soil-transmitted helminths"
+    },
+    "populationIncidenceOfHivInTheAbsenceOfPrep": {
+      "type": "integer",
+      "description": "HIV incidence number of cases per 100 person–years in the absence of PrEP"
+    },
+    "populationPrevalenceOfHiv": {
+      "type": "integer",
+      "description": "The proportion of the population that are HIV-positive"
+    },
+    "prevalenceOfPretreatmentNnrtiDrugResistance": {
+      "type": "integer",
+      "description": "Prevalence of pretreatment HIV drug resistance to NNRTIs among people initiating first-line ART"
+    },
+    "malariaEndemicSetting": {
+      "type": "boolean",
+      "description": "Whether the setting is a malaria-endemic setting"
+    },
+    "populationPrevalenceOfSyphilis": {
+      "type": "integer",
+      "description": "The proportion of the population with syphilis"
+    },
+    "populationPrevalenceOfHepatitisB": {
+      "type": "integer",
+      "description": "The proportion of hepatitis B surface antigen (HBsAg) seroprevalence in the general population"
+    },
+    "populationPrevalenceOfHepatitisC": {
+      "type": "integer",
+      "description": "The proportion of hepatitis C virus (HCV) antibody seroprevalence in the general population"
+    },
+    "prevalenceOfHivInTheCatchmentArea": {
+      "type": "integer",
+      "description": "The proportion of the population from the health facility's catchment area that are HIV-positive (estimated)"
+    },
+    "ultrasoundAvailableAtTheHealthFacility": {
+      "type": "boolean",
+      "description": "Whether an ultrasound machine is available and functional in the facility and a trained health worker is available to use it"
+    },
+    "hivBurdenOfTheSetting": {
+      "$ref": "./ValueSet-HIV.Config.DE12.schema.json",
+      "description": "HIV burden of the setting (high or low) based on the national HIV prevalence or where the HIV prevalence and/or incidence in a geographical setting is higher than national prevalence and, therefore, needs priority in the HIV response"
+    },
+    "hpvDnaTestingOperationalAtTheHealthFacility": {
+      "type": "boolean",
+      "description": "Is HPV DNA testing operational at the health facility for cervical cancer screening?"
+    },
+    "routineViralLoadTestingIsAvailable": {
+      "type": "boolean",
+      "description": "Routine viral load testing is available in the facility"
+    },
+    "healthFacilityId": {
+      "type": "object",
+      "description": "Unique ID of the health facility that recorded the client. This ID could represent a universal health facility ID, if used in the country. Alternatively this ID can also be generated by the national surveillance system and assigned to reporting facility."
+    },
+    "tbTreatingFacilityId": {
+      "type": "object",
+      "description": "The facility where the client is receiving tuberculosis (TB) treatment"
+    },
+    "otherPriorityPopulations": {
+      "$ref": "./ValueSet-HIV.Config.DE19.schema.json",
+      "description": "Other populations of priority of HIV prevention and care in local context (provided during adaptation)"
+    },
+    "reportingPeriodEndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date of the reporting period"
+    },
+    "reportingPeriodStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date of the reporting period"
+    },
+    "reportingDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Reporting date, for surveys performed on a specific date"
+    }
+  },
+  "required": [
+    "resourceType",
+    "populationPrevalenceOfTb",
+    "populationPrevalenceOfSoilTransmittedHelminthInfection",
+    "populationIncidenceOfHivInTheAbsenceOfPrep",
+    "populationPrevalenceOfHiv",
+    "prevalenceOfPretreatmentNnrtiDrugResistance",
+    "malariaEndemicSetting",
+    "populationPrevalenceOfSyphilis",
+    "populationPrevalenceOfHepatitisB",
+    "populationPrevalenceOfHepatitisC",
+    "prevalenceOfHivInTheCatchmentArea",
+    "ultrasoundAvailableAtTheHealthFacility",
+    "hivBurdenOfTheSetting",
+    "hpvDnaTestingOperationalAtTheHealthFacility",
+    "routineViralLoadTestingIsAvailable",
+    "healthFacilityId"
+  ],
+  "allOf": [
+    {
+      "$ref": "./StructureDefinition-FHIRSchemaBase.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "resourceDefinition": {
+          "type": "string",
+          "format": "uri",
+          "const": "http://smart.who.int/hiv/StructureDefinition/HIVConfiguration"
+        },
+        "fhir:parent": {
+          "type": "string",
+          "const": "http://hl7.org/fhir/StructureDefinition/Base"
+        },
+        "jsonld:valuesets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "const": [
+            "HIV.Config.DE12",
+            "HIV.Config.DE19"
+          ]
+        },
+        "jsonld:contextTemplate": {
+          "type": "object",
+          "const": {
+            "@version": 1.1,
+            "fhir": "http://hl7.org/fhir/",
+            "HIV.Config.DE19": "http://smart.who.int/base/ValueSet-HIV.Config.DE19.jsonld",
+            "HIV.Config.DE12": "http://smart.who.int/base/ValueSet-HIV.Config.DE12.jsonld"
+          }
+        }
+      }
+    }
+  ]
+}

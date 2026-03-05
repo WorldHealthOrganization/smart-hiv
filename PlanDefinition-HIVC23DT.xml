@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="HIVC23DT"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableplandefinition"/>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">HIVC23DT</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="PlanDefinition-HIVC23DT.html">HIV.C23.DT Determine PEP or PrEP regimen</a></td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.4.4</td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">HIV.C23.DT Determine PEP or PrEP regimen</td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">draft</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">true</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/6.1.0/CodeSystem-plan-definition-type.html">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2026-03-05 13:07:29+0000</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">WHO</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>Determine PEP or PrEP regimen</p>
+</div></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Related Artifacts: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p><b>References</b></p>
+                <ul>
+                    
+                    <li><div><p>Consolidated Guidelines on HIV Testing Services (2019)</p>
+</div><br/><a href="null"/></li>
+                    
+                </ul>
+                
+                
+                
+                
+                
+                
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Libraries: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td><a href="Library-HIVC23DTLogic.html">HIV.C23.DT Logic</a></td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Actions: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td>
+                            
+                            Determine PEP or PrEP regimen
+                            
+                            <br/>
+                            
+                            
+                            
+                            <b>Then:</b>
+                            <table class="grid-dict">
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        Prescribe appropriate PrEP regimen
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        <i>(Recommended PrEP regimen)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        <b>Then:</b> <i>Definition:</i> <a href="ActivityDefinition-HIVGuidanceCommunicationRequestActivity.html">HIVGuidanceCommunicationRequestActivity</a><br/>
+                                        
+                                        <i>Dynamic Values:</i><br/>
+                                        
+                                        description: <i>(Guidance)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        Prescribe appropriate PEP regimen
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        <i>(Preferred PEP backbone regimen)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        <b>Then:</b> <i>Definition:</i> <a href="ActivityDefinition-HIVGuidanceCommunicationRequestActivity.html">HIVGuidanceCommunicationRequestActivity</a><br/>
+                                        
+                                        <i>Dynamic Values:</i><br/>
+                                        
+                                        description: <i>(Guidance)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+    </table>
+</div>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.B.DE14"/>
+          <display value="Date/time of suspected exposure to HIV"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE61"/>
+          <display value="Suitable for PrEP"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE18"/>
+          <display value="TDF + FTC"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE19"/>
+          <display value="TDF"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE20"/>
+          <display value="TDF + 3TC"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE21"/>
+          <display value="Other TDF-based regimen"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE22"/>
+          <display value="Dapivirine vaginal ring DVR"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE23"/>
+          <display value="CAB-LA"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode">
+        <valueCoding>
+          <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+          <code value="HIV.C.DE94"/>
+          <display value="AZT + 3TC"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Current Patient Age In Years"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/**&#xA; * HIV Elements&#xA; */&#xA;&#xA;// Auto-generated Elements from DAK Data Dictionary&#xA;//   Entries based on DAK Data Dictionary for Data Elements marked as used&#xA;//   in at least one Decision Support Table or Aggregate Indicator&#xA;&#xA;/*&#xA;@dataElement: HIV.A.DE17 - Age&#xA;@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record&#xA;@description: Calculated age (number of years) of the client based on date of birth&#xA;*/&#xA;/** &#xA; * @dataElement Patient age in years&#xA; */&#xA;define &quot;Current Patient Age In Years&quot;:&#xA;  AgeInYearsAt(Today())"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="0"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC23DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Age 10 or older"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;  @input: Age&#xA;  @pseudocode: &quot;Age&quot; &gt;= 10 years&#xA;  */&#xA;define &quot;Age 10 or older&quot;:&#xA;  Elements.&quot;Current Patient Age In Years&quot; &gt;= 10"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="1"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Date/time of suspected exposure to HIV B.DE14"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Social contact B.DE12 */&#xA;&#xA;/*&#xA;@dataElement: HIV.B.DE14 - Date/time of suspected exposure to HIV&#xA;@activity: HIV.B1 Determine reason for visit&#xA;@description: Date and time when the client had suspected exposure to HIV&#xA;*/&#xA;define &quot;Date/time of suspected exposure to HIV B.DE14&quot;:&#xA;  [Observation: Concepts.&quot;Date/time of suspected exposure to HIV - HIV.B.DE14&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="2"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Date/time of suspected exposure to HIV B.DE14"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Male */&#xA;&#xA;/*&#xA;@dataElement: HIV.B.DE14 - Date/time of suspected exposure to HIV&#xA;@activity: HIV.B1 Determine reason for visit&#xA;@description: Date and time when the client had suspected exposure to HIV&#xA;*/&#xA;define &quot;Date/time of suspected exposure to HIV B.DE14&quot;:&#xA;  Elements.&quot;Date/time of suspected exposure to HIV B.DE14&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="3"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC23DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Suspected exposure to HIV within 72 hours"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: Date/time of suscepted exposure to HIV&#xA; @pseudocode: &quot;Date/time of suspected exposure to HIV&quot; &lt; 72 hours from Current DateTime&#xA; */&#xA;define &quot;Suspected exposure to HIV within 72 hours&quot;:&#xA;  exists(&#xA;    Elements.&quot;Date/time of suspected exposure to HIV B.DE14&quot; O&#xA;      where FHIRHelpers.ToInteger(O.value) &lt; 72&#xA;        or O.value &lt; Today + 72 hours&#xA;        or O.value.end &lt; Today + 72 hours&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="4"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC23DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Age between 2 and 10"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;  @input: Age&#xA;  @pseudocode: 2 years &lt; &quot;Age&quot; &lt; 10 years&#xA;  */&#xA;define &quot;Age between 2 and 10&quot;:&#xA;  2 &lt; Elements.&quot;Current Patient Age In Years&quot; and Elements.&quot;Current Patient Age In Years&quot; &lt; 10"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="5"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Suitable for PrEP Observation"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define &quot;Suitable for PrEP Observation&quot;:&#xA;  [Observation: Concepts.&quot;Suitable for PrEP&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }&#xA;      and O.value is true"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="6"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVEncounterElements"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Suitable for PrEP"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/* End of Sex partners HIV treatment status */&#xA;&#xA;/*&#xA;@dataElement: HIV.C.DE61 - Suitable for PrEP&#xA;@activity: HIV.C8 Suitable for PrEP or PEP?&#xA;@description: The client is suitable for PrEP&#xA;*/&#xA;define &quot;Suitable for PrEP&quot;:&#xA;  Elements.&quot;Suitable for PrEP Observation&quot; O&#xA;    where O.encounter.references(EncounterId)"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="7"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC23DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Client is suitable for PrEP"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @input: Suitable for PrEP&#xA; @pseudocode: &quot;Suitable for PrEP&quot;=True&#xA; */&#xA;define &quot;Client is suitable for PrEP&quot;:&#xA;  exists(&#xA;    Elements.&quot;Suitable for PrEP&quot; O&#xA;      where O.value = true&#xA;  )"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="8"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC23DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Guidance"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @dynamicValue: Guidance&#xA; */&#xA;define &quot;Guidance&quot;:&#xA;  Combine({&#xA;    if &quot;Age 10 or older&quot; and &quot;Suspected exposure to HIV within 72 hours&quot;&#xA;      then 'An HIV post-exposure prophylaxis (PEP) regimen with two ARV drugs is effective, but three drugs are preferred.&#xA;&#xA;  TDF + 3TC (or FTC) is recommended as the preferred backbone regimen for HIV post-exposure prophylaxis for adults and adolescents. &#xA;&#xA;  DTG is recommended as the preferred third drug for HIV PEP.&#xA;&#xA;  When available, ATV/r, DRV/r, LPV/r and RAL may be considered as alternative third drug options for PEP.&#xA;&#xA;  NVP should not be used for PEP for adults, adolescents and older children because of the risk of life-threatening serious adverse events associated with HIV-negative adults using this drug.'&#xA;      else '',&#xA;    if &quot;Age between 2 and 10&quot; and &quot;Suspected exposure to HIV within 72 hours&quot;&#xA;      then 'An HIV PEP regimen with two ARV drugs is effective, but three drugs are preferred.&#xA;&#xA;  AZT + 3TC is recommended as the preferred backbone regimen for HIV PEP for children 10 years and younger. &#xA;&#xA;  ABC + 3TC or TDF + 3TC (or FTC) can be considered as alternative regimens.&#xA;&#xA;  DTG is recommended as the preferred third drug for HIV PEP with approved DTG dosing.&#xA;&#xA;  When available, ATV/r, DRV/r, LPV/r and RAL may be considered as alternative third drug options for PEP.&#xA;&#xA;  The choice of ARV drugs for children will depend on the availability of approved dosing and age-appropriate formulations.&#xA;  for children. &#xA;&#xA;  DTG was approved in June 2020 for all children older than 4 weeks weighing more than 3kg and available with dispersible tablets that can be easily administered for all children weighting less than 20 kg. For children weighting more than 20 kg, 50 mg adult film-coated tablets can be use.'&#xA;      else '',&#xA;    if &quot;Age 10 or older&quot; and &quot;Client is suitable for PrEP&quot;&#xA;      then 'If PrEP is suitable for client, prescribe one of the PrEP regimens: \'TDF + FTC\', \'TDF\',&#xA;  \'TDF + 3TC\', \'Other TDF-based regimen\', \'Dapivirine vaginal ring (DVR)\', \'CAB-LA\'.&#xA;&#xA;  The dapivirine vaginal ring may be offered as an additional prevention choice for women* at substantial risk of HIV infection as part of combination prevention approaches.&#xA;&#xA;  *For the recommendation on dapirivirine vaginal ring, the term women applies to cisgender women, meaning women assigned female at birth.  There is no research at this time to support the dapivirine vaginal ring for other populations.'&#xA;      else ''&#xA;  })"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="9"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC23DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Recommended PrEP regimen"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @dynamicValue: Recommended PrEP regimen&#xA; */&#xA;define &quot;Recommended PrEP regimen&quot;:&#xA;  case&#xA;  when &quot;Age 10 or older&quot; and &quot;Client is suitable for PrEP&quot;&#xA;    then {&#xA;      Concepts.&quot;TDF + FTC - HIV.C.DE18&quot;,&#xA;      Concepts.&quot;TDF - HIV.C.DE19&quot;,&#xA;      Concepts.&quot;TDF + 3TC - HIV.C.DE20&quot;,&#xA;      Concepts.&quot;Other TDF-based regimen&quot;,&#xA;      Concepts.&quot;Dapivirine vaginal ring DVR - HIV.C.DE22&quot;,&#xA;      Concepts.&quot;CAB-LA - HIV.C.DE23&quot;&#xA;    }&#xA;  else null&#xA;  end"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="10"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="HIVC23DTLogic"/>
+        </extension>
+        <extension url="name">
+          <valueString value="Preferred PEP backbone regimen"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA; @dynamicValue: Preferred PEP backbone regimen&#xA; */&#xA;define &quot;Preferred PEP backbone regimen&quot;:&#xA;  case&#xA;  when &quot;Suspected exposure to HIV within 72 hours&quot; and &quot;Age 10 or older&quot;&#xA;    then { Concepts.&quot;TDF + 3TC - HIV.C.DE20&quot;, Concepts.&quot;TDF + FTC - HIV.C.DE18&quot; }&#xA;  when &quot;Suspected exposure to HIV within 72 hours&quot; and &quot;Age between 2 and 10&quot;&#xA;    then { Concepts.&quot;AZT + 3TC&quot; }&#xA;  else null&#xA;  end"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="11"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value ObservationStatus): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="12"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="WHOCommon"/>
+        </extension>
+        <extension url="name">
+          <valueString value="references"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="/*&#xA;@description: Returns true if the given reference is to the given resourceId&#xA;@comment: Returns true if the `resourceId` parameter exactly equals the tail of the given reference.&#xA;NOTE: This function assumes resources from the same source server.&#xA;*/&#xA;define fluent function references(reference FHIR.Reference, resourceId String):&#xA;  resourceId = Last(Split(reference.reference, '/'))"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="13"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToString"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToString(value string): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="14"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToInteger"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToInteger(value integer): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="15"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToDateTime"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToDateTime(value dateTime): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="16"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+        <extension url="libraryName">
+          <valueString value="FHIRHelpers"/>
+        </extension>
+        <extension url="name">
+          <valueString value="ToBoolean"/>
+        </extension>
+        <extension url="statement">
+          <valueString value="define function ToBoolean(value boolean): value.value"/>
+        </extension>
+        <extension url="displaySequence">
+          <valueInteger value="17"/>
+        </extension>
+      </extension>
+      <name value="EffectiveDataRequirements"/>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="FHIR model information"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVEncounterElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Elements"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts|0.0.2"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library WC"/>
+        <resource value="http://smart.who.int/hiv/Library/WHOCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Concepts"/>
+        <resource value="http://smart.who.int/hiv/Library/HIVConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Code system HIVConcepts"/>
+        <resource value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="EncounterId"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <parameter>
+        <name value="Today"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="date"/>
+      </parameter>
+      <parameter>
+        <name value="Guidance"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <parameter>
+        <name value="Recommended PrEP regimen"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Coding"/>
+      </parameter>
+      <parameter>
+        <name value="Preferred PEP backbone regimen"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type value="Coding"/>
+      </parameter>
+      <dataRequirement>
+        <type value="Patient"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="value"/>
+        <mustSupport value="value.end"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.B.DE14"/>
+            <display value="Date/time of suspected exposure to HIV"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="value"/>
+        <mustSupport value="encounter"/>
+        <codeFilter>
+          <path value="code"/>
+          <code>
+            <system value="http://smart.who.int/hiv/CodeSystem/HIVConcepts"/>
+            <code value="HIV.C.DE61"/>
+            <display value="Suitable for PrEP"/>
+          </code>
+        </codeFilter>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability">
+    <valueCode value="computable"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
+    <valueCanonical value="#effective-data-requirements"/>
+  </extension>
+  <url value="http://smart.who.int/hiv/PlanDefinition/HIVC23DT"/>
+  <version value="0.4.4"/>
+  <name value="HIVC23DT"/>
+  <title value="HIV.C23.DT Determine PEP or PrEP regimen"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-03-05T13:07:29+00:00"/>
+  <publisher value="WHO"/>
+  <contact>
+    <name value="WHO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://who.int"/>
+    </telecom>
+  </contact>
+  <description value="Determine PEP or PrEP regimen"/>
+  <relatedArtifact>
+    <type value="citation"/>
+    <citation value="Consolidated Guidelines on HIV Testing Services (2019)"/>
+  </relatedArtifact>
+  <library value="http://smart.who.int/hiv/Library/HIVC23DTLogic"/>
+  <action>
+    <textEquivalent value="Determine PEP or PrEP regimen"/>
+    <action>
+      <textEquivalent value="Prescribe appropriate PrEP regimen"/>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <language value="text/cql-identifier"/>
+          <expression value="Recommended PrEP regimen"/>
+        </expression>
+      </condition>
+      <definitionCanonical value="http://smart.who.int/hiv/ActivityDefinition/HIVGuidanceCommunicationRequestActivity"/>
+      <dynamicValue>
+        <path value="description"/>
+        <expression>
+          <language value="text/cql-identifier"/>
+          <expression value="Guidance"/>
+        </expression>
+      </dynamicValue>
+    </action>
+    <action>
+      <textEquivalent value="Prescribe appropriate PEP regimen"/>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <language value="text/cql-identifier"/>
+          <expression value="Preferred PEP backbone regimen"/>
+        </expression>
+      </condition>
+      <definitionCanonical value="http://smart.who.int/hiv/ActivityDefinition/HIVGuidanceCommunicationRequestActivity"/>
+      <dynamicValue>
+        <path value="description"/>
+        <expression>
+          <language value="text/cql-identifier"/>
+          <expression value="Guidance"/>
+        </expression>
+      </dynamicValue>
+    </action>
+  </action>
+</PlanDefinition>

@@ -1,0 +1,2926 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "Overloads",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "An operand identifier reference is hiding another identifier of the same name.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "t" : [ {
+            "name" : "DecisionID",
+            "value" : "HIV.B9.DT.HIV Re-testing Recommendations"
+         }, {
+            "name" : "BusinessRule",
+            "value" : "HIV restesting recommendations"
+         }, {
+            "name" : "Trigger",
+            "value" : "HIV.B9 Determine recommended services"
+         }, {
+            "name" : "HitPolicy",
+            "value" : "Rule order"
+         }, {
+            "name" : "Description",
+            "value" : "Determine retest recommendation\n\nData Concepts:\nHIV.B.DE115: HIV status | HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.\nHIV.B.DE33: Partner HIV status (reported) | The HIV status of the client's partner.\nHIV.C.DE55: Sex partner's HIV treatment status | Treatment adherence of client's sex partner for partners that are HIV-positive\nHIV.Config.DE12: HIV burden of the setting | HIV burden of the setting (high or low) based on the national HIV prevalence or where the HIV prevalence and/or incidence in a geographical setting is higher than national prevalence and, therefore, needs priority in the HIV response\nHIV.B.DE49: Key population member | Client is a member of a key population that has an increased risk of HIV\nHIV.B.DE29: Currently pregnant | Client is currently pregnant\nHIV.D.DE939: TB diagnosis result | Final result of the TB investigation (bacteriological and/or clinical)\nHIV.D.DE282: Presumptive TB | Client's comorbidities or coinfections or symptoms of these include presumptive TB\nHIV.C.DE10: Currently on PrEP | The client is currently taking PrEP. Oral pre-exposure prophylaxis (PrEP) of HIV is the use of ARV drugs by people who are not infected with HIV to block the acquisition of HIV.\nHIV.B.DE225: At elevated risk for HIV acquisition | Client is at elevated risk for HIV acquisition"
+         } ],
+         "s" : {
+            "r" : "409",
+            "s" : [ {
+               "value" : [ "/*\nLibrary: HIV.B9.DT Logic\n\n@DecisionID: HIV.B9.DT.HIV Re-testing Recommendations\n@BusinessRule: HIV restesting recommendations\n@Trigger: HIV.B9 Determine recommended services\n@HitPolicy: Rule order\n@Description: Determine retest recommendation\n\nData Concepts:\n * HIV.B.DE115: HIV status | HIV status reported after applying the national HIV testing algorithm. No single HIV test can provide an HIV-positive diagnosis.\n * HIV.B.DE33: Partner HIV status (reported) | The HIV status of the client's partner.\n * HIV.C.DE55: Sex partner's HIV treatment status | Treatment adherence of client's sex partner for partners that are HIV-positive\n * HIV.Config.DE12: HIV burden of the setting | HIV burden of the setting (high or low) based on the national HIV prevalence or where the HIV prevalence and/or incidence in a geographical setting is higher than national prevalence and, therefore, needs priority in the HIV response\n * HIV.B.DE49: Key population member | Client is a member of a key population that has an increased risk of HIV\n * HIV.B.DE29: Currently pregnant | Client is currently pregnant\n * HIV.D.DE939: TB diagnosis result | Final result of the TB investigation (bacteriological and/or clinical)\n * HIV.D.DE282: Presumptive TB | Client's comorbidities or coinfections or symptoms of these include presumptive TB\n * HIV.C.DE10: Currently on PrEP | The client is currently taking PrEP. Oral pre-exposure prophylaxis (PrEP) of HIV is the use of ARV drugs by people who are not infected with HIV to block the acquisition of HIV.\n * HIV.B.DE225: At elevated risk for HIV acquisition | Client is at elevated risk for HIV acquisition\n*/\n","library HIVB9DTLogic" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "HIVB9DTLogic",
+         "system" : "http://smart.who.int/hiv"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1",
+            "version" : "1.0.0"
+         }, {
+            "localId" : "206",
+            "locator" : "25:1-25:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "// Included Libraries\n","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "27:1-27:47",
+            "localIdentifier" : "Common",
+            "path" : "http://smart.who.int/hiv/HIVCommon",
+            "version" : "0.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'0.0.1'"," called ","Common" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "28:1-28:35",
+            "localIdentifier" : "Concepts",
+            "path" : "http://smart.who.int/hiv/HIVConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Concepts" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "29:1-29:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/hiv/HIVConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "30:1-30:44",
+            "localIdentifier" : "Elements",
+            "path" : "http://smart.who.int/hiv/HIVEncounterElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "HIVEncounterElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Elements" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "31:1-31:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://hl7.org/fhir/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "218",
+            "locator" : "33:1-33:29",
+            "localIdentifier" : "WCom",
+            "path" : "http://smart.who.int/hiv/WHOCommon",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "218",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "WHOCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","WCom" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "220",
+            "locator" : "35:1-35:30",
+            "localIdentifier" : "WCx",
+            "path" : "http://smart.who.int/hiv/WHOConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "220",
+                  "s" : [ {
+                     "value" : [ "// Included for PlanDefinition\n","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "WHOConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","WCx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "222",
+            "locator" : "36:1-36:40",
+            "localIdentifier" : "WElm",
+            "path" : "http://smart.who.int/hiv/WHOEncounterElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "222",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "WHOEncounterElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","WElm" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "parameters" : {
+         "def" : [ {
+            "localId" : "224",
+            "locator" : "38:1-38:36",
+            "name" : "Today",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "","parameter ","Today"," " ]
+                  }, {
+                     "r" : "228",
+                     "s" : [ {
+                        "value" : [ "Date" ]
+                     } ]
+                  }, {
+                     "value" : [ " default " ]
+                  }, {
+                     "r" : "227",
+                     "s" : [ {
+                        "value" : [ "Today","()" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "default" : {
+               "localId" : "227",
+               "locator" : "38:30-38:36",
+               "type" : "Today",
+               "signature" : [ ]
+            },
+            "parameterTypeSpecifier" : {
+               "localId" : "228",
+               "locator" : "38:17-38:20",
+               "name" : "{urn:hl7-org:elm-types:r1}Date",
+               "type" : "NamedTypeSpecifier"
+            }
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "localId" : "233",
+            "locator" : "40:1-40:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "231",
+            "locator" : "40:1-40:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "232",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "230",
+                  "locator" : "40:1-40:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "236",
+            "locator" : "46:1-49:39",
+            "name" : "HIV status negative or unknown",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"HIV status negative or unknown\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"HIV status\" IN 'HIV-negative', 'Unknown'"
+               } ],
+               "s" : {
+                  "r" : "236",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"HIV status negative or unknown\"\n  @pseudocode: \"HIV status\" IN 'HIV-negative', 'Unknown'\n  */\n","define ","\"HIV status negative or unknown\"",":\n  " ]
+                  }, {
+                     "r" : "237",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "267",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "267",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "238",
+                                 "s" : [ {
+                                    "r" : "240",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"HIV Status Observation\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","S" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    " ]
+                           }, {
+                              "r" : "242",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "242",
+                                 "s" : [ {
+                                    "r" : "243",
+                                    "s" : [ {
+                                       "r" : "245",
+                                       "s" : [ {
+                                          "r" : "244",
+                                          "s" : [ {
+                                             "value" : [ "S" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "245",
+                                          "s" : [ {
+                                             "value" : [ "value" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","~"," " ]
+                                    }, {
+                                       "r" : "247",
+                                       "s" : [ {
+                                          "r" : "246",
+                                          "s" : [ {
+                                             "value" : [ "Concepts" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "247",
+                                          "s" : [ {
+                                             "value" : [ "\"HIV-negative\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n       or " ]
+                                 }, {
+                                    "r" : "255",
+                                    "s" : [ {
+                                       "r" : "257",
+                                       "s" : [ {
+                                          "r" : "256",
+                                          "s" : [ {
+                                             "value" : [ "S" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "257",
+                                          "s" : [ {
+                                             "value" : [ "value" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","~"," " ]
+                                    }, {
+                                       "r" : "259",
+                                       "s" : [ {
+                                          "r" : "258",
+                                          "s" : [ {
+                                             "value" : [ "Concepts" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "259",
+                                          "s" : [ {
+                                             "value" : [ "\"Unknown\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "237",
+               "locator" : "47:3-49:39",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "267",
+                  "locator" : "47:9-49:39",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "238",
+                     "locator" : "47:10-47:44",
+                     "alias" : "S",
+                     "expression" : {
+                        "localId" : "240",
+                        "locator" : "47:10-47:42",
+                        "name" : "HIV Status Observation",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "242",
+                     "locator" : "48:5-49:38",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "243",
+                        "locator" : "48:11-48:43",
+                        "type" : "Equivalent",
+                        "signature" : [ {
+                           "localId" : "253",
+                           "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                           "type" : "NamedTypeSpecifier"
+                        }, {
+                           "localId" : "254",
+                           "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : [ {
+                           "localId" : "249",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "248",
+                              "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                              "type" : "As",
+                              "signature" : [ ],
+                              "operand" : {
+                                 "localId" : "245",
+                                 "locator" : "48:11-48:17",
+                                 "path" : "value",
+                                 "scope" : "S",
+                                 "type" : "Property"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "251",
+                           "type" : "ToConcept",
+                           "signature" : [ {
+                              "localId" : "252",
+                              "name" : "{urn:hl7-org:elm-types:r1}Code",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : {
+                              "localId" : "247",
+                              "locator" : "48:21-48:43",
+                              "name" : "HIV-negative",
+                              "libraryName" : "Concepts",
+                              "type" : "CodeRef"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "255",
+                        "locator" : "49:11-49:38",
+                        "type" : "Equivalent",
+                        "signature" : [ {
+                           "localId" : "265",
+                           "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                           "type" : "NamedTypeSpecifier"
+                        }, {
+                           "localId" : "266",
+                           "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : [ {
+                           "localId" : "261",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "260",
+                              "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                              "type" : "As",
+                              "signature" : [ ],
+                              "operand" : {
+                                 "localId" : "257",
+                                 "locator" : "49:11-49:17",
+                                 "path" : "value",
+                                 "scope" : "S",
+                                 "type" : "Property"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "263",
+                           "type" : "ToConcept",
+                           "signature" : [ {
+                              "localId" : "264",
+                              "name" : "{urn:hl7-org:elm-types:r1}Code",
+                              "type" : "NamedTypeSpecifier"
+                           } ],
+                           "operand" : {
+                              "localId" : "259",
+                              "locator" : "49:21-49:38",
+                              "name" : "Unknown",
+                              "libraryName" : "Concepts",
+                              "type" : "CodeRef"
+                           }
+                        } ]
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "270",
+            "locator" : "55:1-57:44",
+            "name" : "Partner HIV positive",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Partner HIV reported positive\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Partner HIV status (reported)\"='HIV-positive'"
+               } ],
+               "s" : {
+                  "r" : "270",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"Partner HIV reported positive\"\n  @pseudocode: \"Partner HIV status (reported)\"='HIV-positive'\n  */\n","define ","\"Partner HIV positive\"",":\n  " ]
+                  }, {
+                     "r" : "271",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "288",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "288",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "272",
+                                 "s" : [ {
+                                    "r" : "274",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"Partner HIV status reported Observation\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    " ]
+                           }, {
+                              "r" : "276",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "276",
+                                 "s" : [ {
+                                    "r" : "278",
+                                    "s" : [ {
+                                       "r" : "277",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "278",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","~"," " ]
+                                 }, {
+                                    "r" : "280",
+                                    "s" : [ {
+                                       "r" : "279",
+                                       "s" : [ {
+                                          "value" : [ "Concepts" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "280",
+                                       "s" : [ {
+                                          "value" : [ "\"HIV-positive\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "271",
+               "locator" : "56:3-57:44",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "288",
+                  "locator" : "56:9-57:44",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "272",
+                     "locator" : "56:10-56:61",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "274",
+                        "locator" : "56:10-56:59",
+                        "name" : "Partner HIV status reported Observation",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "276",
+                     "locator" : "57:5-57:43",
+                     "type" : "Equivalent",
+                     "signature" : [ {
+                        "localId" : "286",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "287",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "282",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "281",
+                           "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "278",
+                              "locator" : "57:11-57:17",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "284",
+                        "type" : "ToConcept",
+                        "signature" : [ {
+                           "localId" : "285",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : {
+                           "localId" : "280",
+                           "locator" : "57:21-57:43",
+                           "name" : "HIV-positive",
+                           "libraryName" : "Concepts",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "291",
+            "locator" : "63:1-65:65",
+            "name" : "Sex partner's HIV treatment status is partner not virally suppressed",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Sex partner's HIV treatment status is partner not virally suppressed\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Sex partner's HIV treatment status\"='Partner is not virally suppressed'"
+               } ],
+               "s" : {
+                  "r" : "291",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"Sex partner's HIV treatment status is partner not virally suppressed\"\n  @pseudocode: \"Sex partner's HIV treatment status\"='Partner is not virally suppressed'\n  */\n","define ","\"Sex partner's HIV treatment status is partner not virally suppressed\"",":\n  " ]
+                  }, {
+                     "r" : "292",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "309",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "309",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "293",
+                                 "s" : [ {
+                                    "r" : "295",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"Sex partners HIV treatment status\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    " ]
+                           }, {
+                              "r" : "297",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "297",
+                                 "s" : [ {
+                                    "r" : "299",
+                                    "s" : [ {
+                                       "r" : "298",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "299",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","~"," " ]
+                                 }, {
+                                    "r" : "301",
+                                    "s" : [ {
+                                       "r" : "300",
+                                       "s" : [ {
+                                          "value" : [ "Concepts" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "301",
+                                       "s" : [ {
+                                          "value" : [ "\"Partner is not virally suppressed\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "292",
+               "locator" : "64:3-65:65",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "309",
+                  "locator" : "64:9-65:65",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "293",
+                     "locator" : "64:10-64:55",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "295",
+                        "locator" : "64:10-64:53",
+                        "name" : "Sex partners HIV treatment status",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "297",
+                     "locator" : "65:5-65:64",
+                     "type" : "Equivalent",
+                     "signature" : [ {
+                        "localId" : "307",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "308",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "303",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "302",
+                           "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "299",
+                              "locator" : "65:11-65:17",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "305",
+                        "type" : "ToConcept",
+                        "signature" : [ {
+                           "localId" : "306",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : {
+                           "localId" : "301",
+                           "locator" : "65:21-65:64",
+                           "name" : "Partner is not virally suppressed",
+                           "libraryName" : "Concepts",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "312",
+            "locator" : "71:1-72:69",
+            "name" : "HIV burden of setting is high HIV burden setting",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"HIV burden of setting is high HIV burden setting\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"HIV burden of the setting\"='High HIV burden setting'"
+               } ],
+               "s" : {
+                  "r" : "312",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"HIV burden of setting is high HIV burden setting\"\n  @pseudocode: \"HIV burden of the setting\"='High HIV burden setting'\n  */\n","define ","\"HIV burden of setting is high HIV burden setting\"",":\n  " ]
+                  }, {
+                     "r" : "313",
+                     "s" : [ {
+                        "r" : "315",
+                        "s" : [ {
+                           "r" : "314",
+                           "s" : [ {
+                              "value" : [ "Config" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "315",
+                           "s" : [ {
+                              "value" : [ "\"HIV burden of setting\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " ","~"," " ]
+                     }, {
+                        "r" : "317",
+                        "s" : [ {
+                           "r" : "316",
+                           "s" : [ {
+                              "value" : [ "Concepts" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "317",
+                           "s" : [ {
+                              "value" : [ "\"High HIV burden setting\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "313",
+               "locator" : "72:3-72:69",
+               "type" : "Equivalent",
+               "signature" : [ {
+                  "localId" : "318",
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }, {
+                  "localId" : "319",
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "315",
+                  "locator" : "72:3-72:32",
+                  "name" : "HIV burden of setting",
+                  "libraryName" : "Config",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "317",
+                  "locator" : "72:36-72:69",
+                  "name" : "High HIV burden setting",
+                  "libraryName" : "Concepts",
+                  "type" : "CodeRef"
+               } ]
+            }
+         }, {
+            "localId" : "322",
+            "locator" : "78:1-79:68",
+            "name" : "HIV burden of setting is low HIV burden setting",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"HIV burden of setting is low HIV burden setting\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"HIV burden of the setting\"='Low HIV burden setting'"
+               } ],
+               "s" : {
+                  "r" : "322",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"HIV burden of setting is low HIV burden setting\"\n  @pseudocode: \"HIV burden of the setting\"='Low HIV burden setting'\n  */\n","define ","\"HIV burden of setting is low HIV burden setting\"",":\n  " ]
+                  }, {
+                     "r" : "323",
+                     "s" : [ {
+                        "r" : "325",
+                        "s" : [ {
+                           "r" : "324",
+                           "s" : [ {
+                              "value" : [ "Config" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "325",
+                           "s" : [ {
+                              "value" : [ "\"HIV burden of setting\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " ","~"," " ]
+                     }, {
+                        "r" : "327",
+                        "s" : [ {
+                           "r" : "326",
+                           "s" : [ {
+                              "value" : [ "Concepts" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "327",
+                           "s" : [ {
+                              "value" : [ "\"Low HIV burden setting\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "323",
+               "locator" : "79:3-79:68",
+               "type" : "Equivalent",
+               "signature" : [ {
+                  "localId" : "328",
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }, {
+                  "localId" : "329",
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "325",
+                  "locator" : "79:3-79:32",
+                  "name" : "HIV burden of setting",
+                  "libraryName" : "Config",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "327",
+                  "locator" : "79:36-79:68",
+                  "name" : "Low HIV burden setting",
+                  "libraryName" : "Concepts",
+                  "type" : "CodeRef"
+               } ]
+            }
+         }, {
+            "localId" : "332",
+            "locator" : "85:1-86:37",
+            "name" : "Key population member",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Key population member\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Key population member\" = TRUE"
+               } ],
+               "s" : {
+                  "r" : "332",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"Key population member\"\n  @pseudocode: \"Key population member\" = TRUE\n  */\n","define ","\"Key population member\"",":\n  " ]
+                  }, {
+                     "r" : "334",
+                     "s" : [ {
+                        "r" : "333",
+                        "s" : [ {
+                           "value" : [ "Elements" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "334",
+                        "s" : [ {
+                           "value" : [ "\"Is Key population member\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "334",
+               "locator" : "86:3-86:37",
+               "name" : "Is Key population member",
+               "libraryName" : "Elements",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "337",
+            "locator" : "92:1-93:37",
+            "name" : "Currently pregnant",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Currently pregnant\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Currently pregnant\"=True"
+               } ],
+               "s" : {
+                  "r" : "337",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"Currently pregnant\"\n  @pseudocode: \"Currently pregnant\"=True\n  */\n","define ","\"Currently pregnant\"",":\n  " ]
+                  }, {
+                     "r" : "338",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "340",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "340",
+                           "s" : [ {
+                              "r" : "339",
+                              "s" : [ {
+                                 "value" : [ "WElm" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "340",
+                              "s" : [ {
+                                 "value" : [ "\"Pregnant Observation\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "338",
+               "locator" : "93:3-93:37",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "340",
+                  "locator" : "93:9-93:37",
+                  "name" : "Pregnant Observation",
+                  "libraryName" : "WElm",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
+            "localId" : "343",
+            "locator" : "99:1-101:44",
+            "name" : "TB diagnosis result is diagnosed TB",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"TB diagnosis result is diagnosed TB\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Currently pregnant\"=True"
+               } ],
+               "s" : {
+                  "r" : "343",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"TB diagnosis result is diagnosed TB\"\n  @pseudocode: \"Currently pregnant\"=True\n  */\n","define ","\"TB diagnosis result is diagnosed TB\"",":\n  " ]
+                  }, {
+                     "r" : "344",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "361",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "361",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "345",
+                                 "s" : [ {
+                                    "r" : "347",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"TB diagnosis result\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    " ]
+                           }, {
+                              "r" : "349",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "349",
+                                 "s" : [ {
+                                    "r" : "351",
+                                    "s" : [ {
+                                       "r" : "350",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "351",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","~"," " ]
+                                 }, {
+                                    "r" : "353",
+                                    "s" : [ {
+                                       "r" : "352",
+                                       "s" : [ {
+                                          "value" : [ "Concepts" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "353",
+                                       "s" : [ {
+                                          "value" : [ "\"Diagnosed TB\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "344",
+               "locator" : "100:3-101:44",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "361",
+                  "locator" : "100:9-101:44",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "345",
+                     "locator" : "100:10-100:41",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "347",
+                        "locator" : "100:10-100:39",
+                        "name" : "TB diagnosis result",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "349",
+                     "locator" : "101:5-101:43",
+                     "type" : "Equivalent",
+                     "signature" : [ {
+                        "localId" : "359",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "360",
+                        "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "355",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "354",
+                           "asType" : "{http://hl7.org/fhir}CodeableConcept",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "351",
+                              "locator" : "101:11-101:17",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "357",
+                        "type" : "ToConcept",
+                        "signature" : [ {
+                           "localId" : "358",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        } ],
+                        "operand" : {
+                           "localId" : "353",
+                           "locator" : "101:21-101:43",
+                           "name" : "Diagnosed TB",
+                           "libraryName" : "Concepts",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "364",
+            "locator" : "107:1-109:26",
+            "name" : "Presumptive TB",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Presumptive TB\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Presumptive TB\"=True"
+               } ],
+               "s" : {
+                  "r" : "364",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"Presumptive TB\"\n  @pseudocode: \"Presumptive TB\"=True\n  */\n","define ","\"Presumptive TB\"",":\n  " ]
+                  }, {
+                     "r" : "365",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "375",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "375",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "366",
+                                 "s" : [ {
+                                    "r" : "368",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"Presumptive TB D.DE282 Observation\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    " ]
+                           }, {
+                              "r" : "372",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "372",
+                                 "s" : [ {
+                                    "r" : "371",
+                                    "s" : [ {
+                                       "r" : "370",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "371",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " is true" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "365",
+               "locator" : "108:3-109:26",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "375",
+                  "locator" : "108:9-109:26",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "366",
+                     "locator" : "108:10-108:56",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "368",
+                        "locator" : "108:10-108:54",
+                        "name" : "Presumptive TB D.DE282 Observation",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "372",
+                     "locator" : "109:5-109:25",
+                     "type" : "IsTrue",
+                     "signature" : [ ],
+                     "operand" : {
+                        "localId" : "374",
+                        "name" : "ToBoolean",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "373",
+                           "asType" : "{http://hl7.org/fhir}boolean",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "371",
+                              "locator" : "109:11-109:17",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }
+                  }
+               }
+            }
+         }, {
+            "localId" : "378",
+            "locator" : "115:1-116:38",
+            "name" : "Currently on PrEP",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"Currently on PrEP\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Currently on PrEP\"=True"
+               } ],
+               "s" : {
+                  "r" : "378",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"Currently on PrEP\"\n  @pseudocode: \"Currently on PrEP\"=True\n  */\n","define ","\"Currently on PrEP\"",":\n  " ]
+                  }, {
+                     "r" : "379",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "381",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "381",
+                           "s" : [ {
+                              "r" : "380",
+                              "s" : [ {
+                                 "value" : [ "Elements" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "381",
+                              "s" : [ {
+                                 "value" : [ "\"Currently on PrEP\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "379",
+               "locator" : "116:3-116:38",
+               "type" : "Exists",
+               "signature" : [ {
+                  "localId" : "382",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "localId" : "383",
+                     "name" : "{http://hl7.org/fhir}MedicationStatement",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ],
+               "operand" : {
+                  "localId" : "381",
+                  "locator" : "116:9-116:38",
+                  "name" : "Currently on PrEP",
+                  "libraryName" : "Elements",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
+            "localId" : "386",
+            "locator" : "122:1-124:26",
+            "name" : "At elevated risk for HIV acquisition",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "input",
+                  "value" : "\"At elevated risk for HIV acquisition\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"At elevated risk for HIV acquisition\"=True"
+               } ],
+               "s" : {
+                  "r" : "386",
+                  "s" : [ {
+                     "value" : [ "/*\n  @input: \"At elevated risk for HIV acquisition\"\n  @pseudocode: \"At elevated risk for HIV acquisition\"=True\n  */\n","define ","\"At elevated risk for HIV acquisition\"",":\n  " ]
+                  }, {
+                     "r" : "387",
+                     "s" : [ {
+                        "value" : [ "exists" ]
+                     }, {
+                        "r" : "397",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "397",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "388",
+                                 "s" : [ {
+                                    "r" : "390",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "Elements",".","\"At elevated risk for HIV acquisition PRV.DE1 Observation\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    " ]
+                           }, {
+                              "r" : "394",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "394",
+                                 "s" : [ {
+                                    "r" : "393",
+                                    "s" : [ {
+                                       "r" : "392",
+                                       "s" : [ {
+                                          "value" : [ "O" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "393",
+                                       "s" : [ {
+                                          "value" : [ "value" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " is true" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "387",
+               "locator" : "123:3-124:26",
+               "type" : "Exists",
+               "signature" : [ {
+                  "localId" : "398",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "localId" : "399",
+                     "name" : "{http://hl7.org/fhir}Observation",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ],
+               "operand" : {
+                  "localId" : "397",
+                  "locator" : "123:9-124:26",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "388",
+                     "locator" : "123:10-123:78",
+                     "alias" : "O",
+                     "expression" : {
+                        "localId" : "390",
+                        "locator" : "123:10-123:76",
+                        "name" : "At elevated risk for HIV acquisition PRV.DE1 Observation",
+                        "libraryName" : "Elements",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "394",
+                     "locator" : "124:5-124:25",
+                     "type" : "IsTrue",
+                     "signature" : [ ],
+                     "operand" : {
+                        "localId" : "396",
+                        "name" : "ToBoolean",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "395",
+                           "asType" : "{http://hl7.org/fhir}boolean",
+                           "type" : "As",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "393",
+                              "locator" : "124:11-124:17",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }
+                  }
+               }
+            }
+         }, {
+            "localId" : "409",
+            "locator" : "249:1-250:99",
+            "name" : "Partner has HIV and is not virally suppressed",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "409",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Partner has HIV and is not virally suppressed\"",":\n  " ]
+                  }, {
+                     "r" : "410",
+                     "s" : [ {
+                        "r" : "411",
+                        "s" : [ {
+                           "value" : [ "\"Partner HIV positive\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " and " ]
+                     }, {
+                        "r" : "412",
+                        "s" : [ {
+                           "value" : [ "\"Sex partner's HIV treatment status is partner not virally suppressed\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "410",
+               "locator" : "250:3-250:99",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "411",
+                  "locator" : "250:3-250:24",
+                  "name" : "Partner HIV positive",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "412",
+                  "locator" : "250:30-250:99",
+                  "name" : "Sex partner's HIV treatment status is partner not virally suppressed",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "localId" : "402",
+            "locator" : "130:1-142:7",
+            "name" : "Schedule an annual follow-up test",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "output",
+                  "value" : "\"Schedule an annual follow-up test\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "\"Follow-up test recommended date\" = \"Visit date\" + 1 year"
+               } ],
+               "s" : {
+                  "r" : "402",
+                  "s" : [ {
+                     "value" : [ "/*\n  @output: \"Schedule an annual follow-up test\"\n  @pseudocode: \"Follow-up test recommended date\" = \"Visit date\" + 1 year\n  */\n","define ","\"Schedule an annual follow-up test\"",":\n  " ]
+                  }, {
+                     "r" : "403",
+                     "s" : [ {
+                        "r" : "404",
+                        "s" : [ {
+                           "value" : [ "\"HIV status negative or unknown\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " and\n    " ]
+                     }, {
+                        "r" : "405",
+                        "s" : [ {
+                           "value" : [ "case\n    " ]
+                        }, {
+                           "r" : "406",
+                           "s" : [ {
+                              "value" : [ "when " ]
+                           }, {
+                              "r" : "413",
+                              "s" : [ {
+                                 "value" : [ "\"Partner has HIV and is not virally suppressed\"" ]
+                              } ]
+                           }, {
+                              "r" : "414",
+                              "value" : [ "\n      then ","true" ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    " ]
+                        }, {
+                           "r" : "415",
+                           "s" : [ {
+                              "value" : [ "when " ]
+                           }, {
+                              "r" : "416",
+                              "s" : [ {
+                                 "value" : [ "\"HIV burden of setting is high HIV burden setting\"" ]
+                              } ]
+                           }, {
+                              "r" : "417",
+                              "value" : [ "\n      then ","true" ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    " ]
+                        }, {
+                           "r" : "418",
+                           "s" : [ {
+                              "value" : [ "when " ]
+                           }, {
+                              "r" : "419",
+                              "s" : [ {
+                                 "value" : [ "\"Key population member\"" ]
+                              } ]
+                           }, {
+                              "r" : "420",
+                              "value" : [ "\n      then ","true" ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    " ]
+                        }, {
+                           "r" : "421",
+                           "s" : [ {
+                              "value" : [ "when " ]
+                           }, {
+                              "r" : "422",
+                              "s" : [ {
+                                 "value" : [ "\"At elevated risk for HIV acquisition\"" ]
+                              } ]
+                           }, {
+                              "r" : "423",
+                              "value" : [ "\n      then ","true" ]
+                           } ]
+                        }, {
+                           "r" : "424",
+                           "value" : [ "\n    else ","false","\n    end" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "403",
+               "locator" : "131:3-142:7",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "404",
+                  "locator" : "131:3-131:34",
+                  "name" : "HIV status negative or unknown",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "405",
+                  "locator" : "132:5-142:7",
+                  "type" : "Case",
+                  "caseItem" : [ {
+                     "localId" : "406",
+                     "locator" : "133:5-134:15",
+                     "when" : {
+                        "localId" : "413",
+                        "locator" : "133:10-133:56",
+                        "name" : "Partner has HIV and is not virally suppressed",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "414",
+                        "locator" : "134:12-134:15",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "value" : "true",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "415",
+                     "locator" : "135:5-136:15",
+                     "when" : {
+                        "localId" : "416",
+                        "locator" : "135:10-135:59",
+                        "name" : "HIV burden of setting is high HIV burden setting",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "417",
+                        "locator" : "136:12-136:15",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "value" : "true",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "418",
+                     "locator" : "137:5-138:15",
+                     "when" : {
+                        "localId" : "419",
+                        "locator" : "137:10-137:32",
+                        "name" : "Key population member",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "420",
+                        "locator" : "138:12-138:15",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "value" : "true",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "421",
+                     "locator" : "139:5-140:15",
+                     "when" : {
+                        "localId" : "422",
+                        "locator" : "139:10-139:47",
+                        "name" : "At elevated risk for HIV acquisition",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "423",
+                        "locator" : "140:12-140:15",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "value" : "true",
+                        "type" : "Literal"
+                     }
+                  } ],
+                  "else" : {
+                     "localId" : "424",
+                     "locator" : "141:10-141:14",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "value" : "false",
+                     "type" : "Literal"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "427",
+            "locator" : "148:1-156:5",
+            "name" : "Follow-up test recommended",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "output",
+                  "value" : "\"Follow-up test recommended\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "N/A"
+               } ],
+               "s" : {
+                  "r" : "427",
+                  "s" : [ {
+                     "value" : [ "/*\n @output: \"Follow-up test recommended\"\n @pseudocode: N/A\n */\n","define ","\"Follow-up test recommended\"",":\n  " ]
+                  }, {
+                     "r" : "428",
+                     "s" : [ {
+                        "r" : "429",
+                        "s" : [ {
+                           "value" : [ "\"HIV status negative or unknown\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " and\n  " ]
+                     }, {
+                        "r" : "430",
+                        "s" : [ {
+                           "value" : [ "case\n  " ]
+                        }, {
+                           "r" : "431",
+                           "s" : [ {
+                              "value" : [ "when " ]
+                           }, {
+                              "r" : "432",
+                              "s" : [ {
+                                 "value" : [ "\"TB diagnosis result is diagnosed TB\"" ]
+                              } ]
+                           }, {
+                              "r" : "433",
+                              "value" : [ "\n    then ","true" ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  " ]
+                        }, {
+                           "r" : "434",
+                           "s" : [ {
+                              "value" : [ "when " ]
+                           }, {
+                              "r" : "435",
+                              "s" : [ {
+                                 "value" : [ "\"Presumptive TB\"" ]
+                              } ]
+                           }, {
+                              "r" : "436",
+                              "value" : [ "\n    then ","true" ]
+                           } ]
+                        }, {
+                           "r" : "437",
+                           "value" : [ "\n  else ","false","\n  end" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "428",
+               "locator" : "149:3-156:5",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "429",
+                  "locator" : "149:3-149:34",
+                  "name" : "HIV status negative or unknown",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "430",
+                  "locator" : "150:3-156:5",
+                  "type" : "Case",
+                  "caseItem" : [ {
+                     "localId" : "431",
+                     "locator" : "151:3-152:13",
+                     "when" : {
+                        "localId" : "432",
+                        "locator" : "151:8-151:44",
+                        "name" : "TB diagnosis result is diagnosed TB",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "433",
+                        "locator" : "152:10-152:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "value" : "true",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "434",
+                     "locator" : "153:3-154:13",
+                     "when" : {
+                        "localId" : "435",
+                        "locator" : "153:8-153:23",
+                        "name" : "Presumptive TB",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "436",
+                        "locator" : "154:10-154:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "value" : "true",
+                        "type" : "Literal"
+                     }
+                  } ],
+                  "else" : {
+                     "localId" : "437",
+                     "locator" : "155:8-155:12",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "value" : "false",
+                     "type" : "Literal"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "440",
+            "locator" : "162:1-163:58",
+            "name" : "Schedule quarterly retesting for PrEP users",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "output",
+                  "value" : "\"Schedule quarterly retesting for PrEP users\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "N/A"
+               } ],
+               "s" : {
+                  "r" : "440",
+                  "s" : [ {
+                     "value" : [ "/*\n @output: \"Schedule quarterly retesting for PrEP users\"\n @pseudocode: N/A\n */\n","define ","\"Schedule quarterly retesting for PrEP users\"",":\n  " ]
+                  }, {
+                     "r" : "441",
+                     "s" : [ {
+                        "r" : "442",
+                        "s" : [ {
+                           "value" : [ "\"HIV status negative or unknown\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " and " ]
+                     }, {
+                        "r" : "443",
+                        "s" : [ {
+                           "value" : [ "\"Currently on PrEP\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "441",
+               "locator" : "163:3-163:58",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "442",
+                  "locator" : "163:3-163:34",
+                  "name" : "HIV status negative or unknown",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "443",
+                  "locator" : "163:40-163:58",
+                  "name" : "Currently on PrEP",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "localId" : "449",
+            "locator" : "239:1-242:22",
+            "name" : "Pregnant in high HIV burden setting",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "449",
+                  "s" : [ {
+                     "value" : [ "// Helper Logic\n","define ","\"Pregnant in high HIV burden setting\"",":\n  " ]
+                  }, {
+                     "r" : "450",
+                     "s" : [ {
+                        "r" : "451",
+                        "s" : [ {
+                           "r" : "452",
+                           "s" : [ {
+                              "value" : [ "\"HIV status negative or unknown\"" ]
+                           } ]
+                        }, {
+                           "value" : [ " and\n  " ]
+                        }, {
+                           "r" : "453",
+                           "s" : [ {
+                              "value" : [ "\"HIV burden of setting is high HIV burden setting\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " and\n  " ]
+                     }, {
+                        "r" : "454",
+                        "s" : [ {
+                           "value" : [ "\"Currently pregnant\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "450",
+               "locator" : "240:3-242:22",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "451",
+                  "locator" : "240:3-241:52",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "452",
+                     "locator" : "240:3-240:34",
+                     "name" : "HIV status negative or unknown",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "localId" : "453",
+                     "locator" : "241:3-241:52",
+                     "name" : "HIV burden of setting is high HIV burden setting",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "454",
+                  "locator" : "242:3-242:22",
+                  "name" : "Currently pregnant",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "localId" : "446",
+            "locator" : "169:1-170:39",
+            "name" : "Schedule an HIV test, syphilis test, hepatitis B test as early as possible during this pregnancy",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "output",
+                  "value" : "\"Schedule an HIV test, syphilis test, hepatitis B test as early as possible during this pregnancy\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "N/A"
+               } ],
+               "s" : {
+                  "r" : "446",
+                  "s" : [ {
+                     "value" : [ "/*\n @output: \"Schedule an HIV test, syphilis test, hepatitis B test as early as possible during this pregnancy\"\n @pseudocode: N/A\n */\n","define ","\"Schedule an HIV test, syphilis test, hepatitis B test as early as possible during this pregnancy\"",":\n  " ]
+                  }, {
+                     "r" : "455",
+                     "s" : [ {
+                        "value" : [ "\"Pregnant in high HIV burden setting\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "455",
+               "locator" : "170:3-170:39",
+               "name" : "Pregnant in high HIV burden setting",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "458",
+            "locator" : "176:1-177:39",
+            "name" : "Schedule a 'Follow-up test recommended date' during a third trimester visit",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "output",
+                  "value" : "\"Schedule a 'Follow-up test recommended date during a third trimester visit\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "N/A"
+               } ],
+               "s" : {
+                  "r" : "458",
+                  "s" : [ {
+                     "value" : [ "/*\n @output: \"Schedule a 'Follow-up test recommended date during a third trimester visit\"\n @pseudocode: N/A\n */\n","define ","\"Schedule a 'Follow-up test recommended date' during a third trimester visit\"",":\n  " ]
+                  }, {
+                     "r" : "459",
+                     "s" : [ {
+                        "value" : [ "\"Pregnant in high HIV burden setting\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "459",
+               "locator" : "177:3-177:39",
+               "name" : "Pregnant in high HIV burden setting",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "466",
+            "locator" : "244:1-247:22",
+            "name" : "Pregnant in low HIV burden setting",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "466",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Pregnant in low HIV burden setting\"",":\n  " ]
+                  }, {
+                     "r" : "467",
+                     "s" : [ {
+                        "r" : "468",
+                        "s" : [ {
+                           "r" : "469",
+                           "s" : [ {
+                              "value" : [ "\"HIV status negative or unknown\"" ]
+                           } ]
+                        }, {
+                           "value" : [ " and\n  " ]
+                        }, {
+                           "r" : "470",
+                           "s" : [ {
+                              "value" : [ "\"HIV burden of setting is low HIV burden setting\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " and\n  " ]
+                     }, {
+                        "r" : "471",
+                        "s" : [ {
+                           "value" : [ "\"Currently pregnant\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "467",
+               "locator" : "245:3-247:22",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "468",
+                  "locator" : "245:3-246:51",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "469",
+                     "locator" : "245:3-245:34",
+                     "name" : "HIV status negative or unknown",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "localId" : "470",
+                     "locator" : "246:3-246:51",
+                     "name" : "HIV burden of setting is low HIV burden setting",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "471",
+                  "locator" : "247:3-247:22",
+                  "name" : "Currently pregnant",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "localId" : "462",
+            "locator" : "183:1-193:5",
+            "name" : "Schedule a 'Follow-up test recommended date' at first ANC contact date",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "output",
+                  "value" : "\"Schedule a 'Follow-up test recommended date during a third trimester visit\""
+               }, {
+                  "name" : "pseudocode",
+                  "value" : "N/A"
+               } ],
+               "s" : {
+                  "r" : "462",
+                  "s" : [ {
+                     "value" : [ "/*\n @output: \"Schedule a 'Follow-up test recommended date during a third trimester visit\"\n @pseudocode: N/A\n */\n","define ","\"Schedule a 'Follow-up test recommended date' at first ANC contact date\"",":\n  " ]
+                  }, {
+                     "r" : "463",
+                     "s" : [ {
+                        "r" : "472",
+                        "s" : [ {
+                           "value" : [ "\"Pregnant in low HIV burden setting\"" ]
+                        } ]
+                     }, {
+                        "value" : [ " and \n  " ]
+                     }, {
+                        "r" : "473",
+                        "s" : [ {
+                           "value" : [ "case\n  " ]
+                        }, {
+                           "r" : "474",
+                           "s" : [ {
+                              "value" : [ "when " ]
+                           }, {
+                              "r" : "475",
+                              "s" : [ {
+                                 "value" : [ "\"Key population member\"" ]
+                              } ]
+                           }, {
+                              "r" : "476",
+                              "value" : [ "\n    then ","true" ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  " ]
+                        }, {
+                           "r" : "477",
+                           "s" : [ {
+                              "value" : [ "when " ]
+                           }, {
+                              "r" : "478",
+                              "s" : [ {
+                                 "value" : [ "\"Partner has HIV and is not virally suppressed\"" ]
+                              } ]
+                           }, {
+                              "r" : "479",
+                              "value" : [ "\n    then ","true" ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  " ]
+                        }, {
+                           "r" : "480",
+                           "s" : [ {
+                              "value" : [ "when " ]
+                           }, {
+                              "r" : "481",
+                              "s" : [ {
+                                 "value" : [ "\"At elevated risk for HIV acquisition\"" ]
+                              } ]
+                           }, {
+                              "r" : "482",
+                              "value" : [ "\n    then ","true" ]
+                           } ]
+                        }, {
+                           "r" : "483",
+                           "value" : [ "\n  else ","false","\n  end" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "463",
+               "locator" : "184:3-193:5",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "472",
+                  "locator" : "184:3-184:38",
+                  "name" : "Pregnant in low HIV burden setting",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "473",
+                  "locator" : "185:3-193:5",
+                  "type" : "Case",
+                  "caseItem" : [ {
+                     "localId" : "474",
+                     "locator" : "186:3-187:13",
+                     "when" : {
+                        "localId" : "475",
+                        "locator" : "186:8-186:30",
+                        "name" : "Key population member",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "476",
+                        "locator" : "187:10-187:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "value" : "true",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "477",
+                     "locator" : "188:3-189:13",
+                     "when" : {
+                        "localId" : "478",
+                        "locator" : "188:8-188:54",
+                        "name" : "Partner has HIV and is not virally suppressed",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "479",
+                        "locator" : "189:10-189:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "value" : "true",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "480",
+                     "locator" : "190:3-191:13",
+                     "when" : {
+                        "localId" : "481",
+                        "locator" : "190:8-190:45",
+                        "name" : "At elevated risk for HIV acquisition",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "482",
+                        "locator" : "191:10-191:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "value" : "true",
+                        "type" : "Literal"
+                     }
+                  } ],
+                  "else" : {
+                     "localId" : "483",
+                     "locator" : "192:8-192:12",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "value" : "false",
+                     "type" : "Literal"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "486",
+            "locator" : "198:1-224:4",
+            "name" : "Guidance",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "dynamicValue",
+                  "value" : "Guidance"
+               } ],
+               "s" : {
+                  "r" : "486",
+                  "s" : [ {
+                     "value" : [ "/*\n @dynamicValue: Guidance\n */\n","define ","\"Guidance\"",":\n  " ]
+                  }, {
+                     "r" : "520",
+                     "s" : [ {
+                        "value" : [ "Combine","(" ]
+                     }, {
+                        "r" : "487",
+                        "s" : [ {
+                           "value" : [ "{\n    " ]
+                        }, {
+                           "r" : "488",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "489",
+                              "s" : [ {
+                                 "value" : [ "\"Schedule an annual follow-up test\"" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "490",
+                              "s" : [ {
+                                 "value" : [ "'Schedule an annual follow-up test.  \n\n  WHO guidance recommends annual retesting for people who have ongoing HIV-related risks in all settings. These include people with a known HIV-positive partner who is not virally suppressed on ART.'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      else " ]
+                           }, {
+                              "r" : "492",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "494",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "495",
+                              "s" : [ {
+                                 "value" : [ "\"Follow-up test recommended\"" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "496",
+                              "s" : [ {
+                                 "value" : [ "'Recommend a follow-up test.  \n\n  In certain conditions and situations, individuals who have been tested for HIV in the past can be advised to retest. These include: \n  * Individuals presenting with a diagnosis or receiving treatment for STIs or viral hepatitis, \n  * Individuals with a confirmed or presumptive TB diagnosis, \n  * Outpatients presenting with clinical conditions or symptoms indicative of HIV, individuals with recent HIV risk exposure.'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      else " ]
+                           }, {
+                              "r" : "498",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "500",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "501",
+                              "s" : [ {
+                                 "value" : [ "\"Schedule quarterly retesting for PrEP users\"" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "502",
+                              "s" : [ {
+                                 "value" : [ "'Schedule quarterly retesting for PrEP users.'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      else " ]
+                           }, {
+                              "r" : "504",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "506",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "507",
+                              "s" : [ {
+                                 "value" : [ "\"Schedule an HIV test, syphilis test, hepatitis B test as early as possible during this pregnancy\"" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "508",
+                              "s" : [ {
+                                 "value" : [ "'Schedule an HIV test, syphilis test, hepatitis B test as early as possible during this pregnancy\n\n  All pregnant women should be tested for HIV as well as syphilis and hepatitis B virus at least once and as early as possible during pregnancy.'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      else " ]
+                           }, {
+                              "r" : "510",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "512",
+                           "s" : [ {
+                              "value" : [ "if " ]
+                           }, {
+                              "r" : "513",
+                              "s" : [ {
+                                 "value" : [ "\"Schedule a 'Follow-up test recommended date' at first ANC contact date\"" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      then " ]
+                           }, {
+                              "r" : "514",
+                              "s" : [ {
+                                 "value" : [ "'In low HIV burden settings, retesting all pregnant women is not warranted unless focused among women from key populations or at high ongoing risk, such as those from key populations or with partners with HIV who are not virally suppressed. Countries could consider one additional retest in the post-partum period, such as at 14 weeks, six months or nine months for women in high HIV burden or incidence districts or provinces, key populations or women with partners with HIV who are not virally suppressed.'" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      else " ]
+                           }, {
+                              "r" : "516",
+                              "s" : [ {
+                                 "value" : [ "''" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  }" ]
+                        } ]
+                     }, {
+                        "value" : [ ")" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "520",
+               "locator" : "199:3-224:4",
+               "type" : "Combine",
+               "signature" : [ ],
+               "source" : {
+                  "localId" : "487",
+                  "locator" : "199:11-224:3",
+                  "type" : "List",
+                  "element" : [ {
+                     "localId" : "488",
+                     "locator" : "200:5-204:13",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "489",
+                        "locator" : "200:8-200:42",
+                        "name" : "Schedule an annual follow-up test",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "490",
+                        "locator" : "201:12-201:249",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Schedule an annual follow-up test.  \n\n  WHO guidance recommends annual retesting for people who have ongoing HIV-related risks in all settings. These include people with a known HIV-positive partner who is not virally suppressed on ART.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "492",
+                        "locator" : "204:12-204:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "494",
+                     "locator" : "205:5-212:13",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "495",
+                        "locator" : "205:8-205:35",
+                        "name" : "Follow-up test recommended",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "496",
+                        "locator" : "206:12-206:464",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Recommend a follow-up test.  \n\n  In certain conditions and situations, individuals who have been tested for HIV in the past can be advised to retest. These include: \n  * Individuals presenting with a diagnosis or receiving treatment for STIs or viral hepatitis, \n  * Individuals with a confirmed or presumptive TB diagnosis, \n  * Outpatients presenting with clinical conditions or symptoms indicative of HIV, individuals with recent HIV risk exposure.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "498",
+                        "locator" : "212:12-212:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "500",
+                     "locator" : "213:5-215:13",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "501",
+                        "locator" : "213:8-213:52",
+                        "name" : "Schedule quarterly retesting for PrEP users",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "502",
+                        "locator" : "214:12-214:57",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Schedule quarterly retesting for PrEP users.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "504",
+                        "locator" : "215:12-215:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "506",
+                     "locator" : "216:5-220:13",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "507",
+                        "locator" : "216:8-216:105",
+                        "name" : "Schedule an HIV test, syphilis test, hepatitis B test as early as possible during this pregnancy",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "508",
+                        "locator" : "217:12-217:255",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "Schedule an HIV test, syphilis test, hepatitis B test as early as possible during this pregnancy\n\n  All pregnant women should be tested for HIV as well as syphilis and hepatitis B virus at least once and as early as possible during pregnancy.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "510",
+                        "locator" : "220:12-220:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  }, {
+                     "localId" : "512",
+                     "locator" : "221:5-223:13",
+                     "type" : "If",
+                     "condition" : {
+                        "localId" : "513",
+                        "locator" : "221:8-221:79",
+                        "name" : "Schedule a 'Follow-up test recommended date' at first ANC contact date",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "localId" : "514",
+                        "locator" : "222:12-222:519",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "In low HIV burden settings, retesting all pregnant women is not warranted unless focused among women from key populations or at high ongoing risk, such as those from key populations or with partners with HIV who are not virally suppressed. Countries could consider one additional retest in the post-partum period, such as at 14 weeks, six months or nine months for women in high HIV burden or incidence districts or provinces, key populations or women with partners with HIV who are not virally suppressed.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "localId" : "516",
+                        "locator" : "223:12-223:13",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "",
+                        "type" : "Literal"
+                     }
+                  } ]
+               }
+            }
+         }, {
+            "localId" : "523",
+            "locator" : "229:1-236:5",
+            "name" : "Schedule Follow-up Date",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "t" : [ {
+                  "name" : "dynamicValue",
+                  "value" : "\"Date to schedule\""
+               } ],
+               "s" : {
+                  "r" : "523",
+                  "s" : [ {
+                     "value" : [ "/*\n @dynamicValue: \"Date to schedule\"\n */\n","define ","\"Schedule Follow-up Date\"",":\n  " ]
+                  }, {
+                     "r" : "524",
+                     "s" : [ {
+                        "value" : [ "case\n  " ]
+                     }, {
+                        "r" : "525",
+                        "s" : [ {
+                           "value" : [ "when " ]
+                        }, {
+                           "r" : "526",
+                           "s" : [ {
+                              "value" : [ "\"Schedule an annual follow-up test\"" ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    then " ]
+                        }, {
+                           "r" : "527",
+                           "s" : [ {
+                              "r" : "528",
+                              "s" : [ {
+                                 "value" : [ "Today" ]
+                              } ]
+                           }, {
+                              "value" : [ " + " ]
+                           }, {
+                              "r" : "529",
+                              "s" : [ {
+                                 "value" : [ "1 ","years" ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n  " ]
+                     }, {
+                        "r" : "532",
+                        "s" : [ {
+                           "value" : [ "when " ]
+                        }, {
+                           "r" : "533",
+                           "s" : [ {
+                              "value" : [ "\"Schedule quarterly retesting for PrEP users\"" ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    then " ]
+                        }, {
+                           "r" : "534",
+                           "s" : [ {
+                              "r" : "535",
+                              "s" : [ {
+                                 "value" : [ "Today" ]
+                              } ]
+                           }, {
+                              "value" : [ " + " ]
+                           }, {
+                              "r" : "536",
+                              "s" : [ {
+                                 "value" : [ "3 ","months" ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "r" : "539",
+                        "value" : [ "\n  else ","null","\n  end" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "524",
+               "locator" : "230:3-236:5",
+               "type" : "Case",
+               "caseItem" : [ {
+                  "localId" : "525",
+                  "locator" : "231:3-232:24",
+                  "when" : {
+                     "localId" : "526",
+                     "locator" : "231:8-231:42",
+                     "name" : "Schedule an annual follow-up test",
+                     "type" : "ExpressionRef"
+                  },
+                  "then" : {
+                     "localId" : "527",
+                     "locator" : "232:10-232:24",
+                     "type" : "Add",
+                     "signature" : [ {
+                        "localId" : "530",
+                        "name" : "{urn:hl7-org:elm-types:r1}Date",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "531",
+                        "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "528",
+                        "locator" : "232:10-232:14",
+                        "name" : "Today",
+                        "type" : "ParameterRef"
+                     }, {
+                        "localId" : "529",
+                        "locator" : "232:18-232:24",
+                        "value" : 1,
+                        "unit" : "years",
+                        "type" : "Quantity"
+                     } ]
+                  }
+               }, {
+                  "localId" : "532",
+                  "locator" : "233:3-234:25",
+                  "when" : {
+                     "localId" : "533",
+                     "locator" : "233:8-233:52",
+                     "name" : "Schedule quarterly retesting for PrEP users",
+                     "type" : "ExpressionRef"
+                  },
+                  "then" : {
+                     "localId" : "534",
+                     "locator" : "234:10-234:25",
+                     "type" : "Add",
+                     "signature" : [ {
+                        "localId" : "537",
+                        "name" : "{urn:hl7-org:elm-types:r1}Date",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "538",
+                        "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "535",
+                        "locator" : "234:10-234:14",
+                        "name" : "Today",
+                        "type" : "ParameterRef"
+                     }, {
+                        "localId" : "536",
+                        "locator" : "234:18-234:25",
+                        "value" : 3,
+                        "unit" : "months",
+                        "type" : "Quantity"
+                     } ]
+                  }
+               } ],
+               "else" : {
+                  "localId" : "540",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Date",
+                  "type" : "As",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "539",
+                     "locator" : "235:8-235:11",
+                     "type" : "Null"
+                  }
+               }
+            }
+         } ]
+      }
+   }
+}

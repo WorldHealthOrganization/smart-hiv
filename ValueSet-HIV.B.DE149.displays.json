@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.B.DE149.displays.json",
+  "title": "Prevention services offered and referrals ValueSet Display Values",
+  "description": "Display values for Prevention services offered and referrals ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.B.DE150": {
+      "en": "Offer male and female condoms and condom-compatible lubricants"
+    },
+    "HIV.B.DE151": {
+      "en": "Offer pre-exposure prophylaxis (PrEP) for people at elevated risk for HIV acquisition"
+    },
+    "HIV.B.DE152": {
+      "en": "Offer post-exposure prophylaxis (PEP) following suspected exposure"
+    },
+    "HIV.B.DE153": {
+      "en": "Voluntary medical male circumcision (VMMC)"
+    },
+    "HIV.B.DE154": {
+      "en": "Harm reduction for people who inject drugs"
+    },
+    "HIV.B.DE155": {
+      "en": "Behavioural interventions to support risk reduction, particularly for people with HIV and members of key populations"
+    },
+    "HIV.B.DE156": {
+      "en": "HIV testing for partners and biological children"
+    },
+    "HIV.B.DE157": {
+      "en": "HIV testing for partners and social contacts of people from key populations, where appropriate"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.B.DE149",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:26+00:00"
+}

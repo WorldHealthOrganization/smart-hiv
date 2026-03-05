@@ -1,0 +1,118 @@
+# Resource HIV.I.Referral (Basic)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Basic",
+  "id" : "HIV.I.Referral",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.url",
+    "valueUri" : "http://smart.who.int/hiv/Requirements/HIV.I.Referral"
+  },
+  {
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.version",
+    "valueString" : "0.4.4"
+  },
+  {
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.status",
+    "valueCode" : "active"
+  },
+  {
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.date",
+    "valueDateTime" : "2026-03-05T13:07:29+00:00"
+  },
+  {
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.publisher",
+    "valueString" : "WHO"
+  },
+  {
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.contact",
+    "valueContactDetail" : {
+      "name" : "WHO",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "http://who.int"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.jurisdiction"
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.key",
+      "valueId" : "HIV.FXNREQ.050"
+    },
+    {
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement",
+      "valueMarkdown" : "As a Facility staff member\nI want to bypass the standard flow at any point if there are signs of serious illness or emergency care is needed; urgent cases should be flagged and seen promptly\nSo that the client can be referred, if needed."
+    }],
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement"
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.key",
+      "valueId" : "HIV.FXNREQ.051"
+    },
+    {
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement",
+      "valueMarkdown" : "As a Health worker\nI want to be able to find out where the required service may be available\nSo that I can refer my client to another facility to receive the appropriate services"
+    }],
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement"
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.key",
+      "valueId" : "HIV.FXNREQ.052"
+    },
+    {
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement",
+      "valueMarkdown" : "As a Health worker\nI want  to have the ability to find facilities that can provide the service or method that mine cannot provide\nSo that the client does not travel to a facility that cannot help them"
+    }],
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement"
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.key",
+      "valueId" : "HIV.FXNREQ.053"
+    },
+    {
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement",
+      "valueMarkdown" : "As a Health worker\nI want to have a list of the contact information for referral facilities\nSo that I can easily contact the facility when making the referral arrangements"
+    }],
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement"
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.key",
+      "valueId" : "HIV.FXNREQ.054"
+    },
+    {
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement",
+      "valueMarkdown" : "As a Health worker\nI want to be able to share the client’s health records with the referral facility staff\nSo that they can provide the care that the client needs"
+    }],
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement"
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.key",
+      "valueId" : "HIV.FXNREQ.055"
+    },
+    {
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement",
+      "valueMarkdown" : "As a Health worker\nI want to know what care and treatment the client received at the referral facility\nSo that I can provide appropriate care if the client comes back to my facility"
+    }],
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/fhir-types",
+      "code" : "Requirements"
+    }]
+  }
+}
+
+```

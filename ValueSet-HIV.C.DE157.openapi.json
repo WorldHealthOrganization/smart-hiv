@@ -1,0 +1,66 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Offer other clinical services ValueSet Schema API",
+    "description": "JSON Schema for Offer other clinical services ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/ValueSet-HIV.C.DE157.schema.json": {
+      "get": {
+        "summary": "JSON Schema definition for the enumeration ValueSet-HIV.C.DE157",
+        "description": "This endpoint serves the JSON Schema definition for the enumeration ValueSet-HIV.C.DE157.",
+        "responses": {
+          "200": {
+            "description": "The JSON Schema for ValueSet-HIV.C.DE157",
+            "content": {
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "./ValueSet-HIV.C.DE157.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ValueSet-HIV.C.DE157": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "http://smart.who.int/hiv/ValueSet-HIV.C.DE157.schema.json",
+        "title": "Offer other clinical services ValueSet Schema",
+        "description": "JSON Schema for Offer other clinical services ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+        "type": "object",
+        "required": [
+          "system",
+          "code"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "system": {
+            "type": "string",
+            "const": "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "HIV.C.DE158",
+              "HIV.C.DE159",
+              "HIV.C.DE160",
+              "HIV.C.DE161",
+              "HIV.C.DE162",
+              "HIV.C.DE163"
+            ]
+          }
+        },
+        "narrative": "This schema validates Coding-shaped objects for the Offer other clinical services ValueSet ValueSet. Each value must be an object with 'system' (CodeSystem URI) and 'code' (fragment after '#') properties. Display values are available at http://smart.who.int/hiv/ValueSet-HIV.C.DE157.displays.json. The canonical IRI for a code can be reconstructed as system + '#' + code. For a complete listing of all ValueSets, see artifacts.html#terminology-value-sets.",
+        "fhir:displays": "http://smart.who.int/hiv/ValueSet-HIV.C.DE157.displays.json",
+        "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.C.DE157",
+        "fhir:version": "0.4.4",
+        "fhir:expansionTimestamp": "2026-03-05T13:16:27+00:00"
+      }
+    }
+  }
+}

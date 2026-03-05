@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.B.DE158.schema.json",
+  "title": "Sexual and reproductive health integrated services ValueSet Schema",
+  "description": "JSON Schema for Sexual and reproductive health integrated services ValueSet ValueSet codes. Values are represented as Coding objects with 'system' and 'code' properties.",
+  "type": "object",
+  "required": [
+    "system",
+    "code"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "system": {
+      "type": "string",
+      "const": "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+    },
+    "code": {
+      "type": "string",
+      "enum": [
+        "HIV.B.DE159",
+        "HIV.B.DE160",
+        "HIV.B.DE161",
+        "HIV.B.DE162",
+        "HIV.B.DE163",
+        "HIV.B.DE164"
+      ]
+    }
+  },
+  "narrative": "This schema validates Coding-shaped objects for the Sexual and reproductive health integrated services ValueSet ValueSet. Each value must be an object with 'system' (CodeSystem URI) and 'code' (fragment after '#') properties. Display values are available at http://smart.who.int/hiv/ValueSet-HIV.B.DE158.displays.json. The canonical IRI for a code can be reconstructed as system + '#' + code. For a complete listing of all ValueSets, see artifacts.html#terminology-value-sets.",
+  "fhir:displays": "http://smart.who.int/hiv/ValueSet-HIV.B.DE158.displays.json",
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.B.DE158",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:26+00:00"
+}

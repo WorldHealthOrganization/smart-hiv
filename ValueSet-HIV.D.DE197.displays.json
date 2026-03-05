@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/hiv/ValueSet-HIV.D.DE197.displays.json",
+  "title": "Reason(s) for adherence problem ValueSet Display Values",
+  "description": "Display values for Reason(s) for adherence problem ValueSet ValueSet codes. Generated from FHIR expansions. Keys are code fragments (the part after '#' in the canonical IRI). The full IRI can be reconstructed as system + '#' + code.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes keyed by code fragment",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "description": "Display values for a specific code fragment by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "HIV.D.DE198": {
+      "en": "Forgot"
+    },
+    "HIV.D.DE199": {
+      "en": "Toxicity/side effects"
+    },
+    "HIV.D.DE200": {
+      "en": "Busy"
+    },
+    "HIV.D.DE201": {
+      "en": "Change of routine"
+    },
+    "HIV.D.DE202": {
+      "en": "Travel cost"
+    },
+    "HIV.D.DE203": {
+      "en": "Distance to clinic"
+    },
+    "HIV.D.DE204": {
+      "en": "Client lost/ran out of pills"
+    },
+    "HIV.D.DE205": {
+      "en": "Stock-out"
+    },
+    "HIV.D.DE206": {
+      "en": "Too ill"
+    },
+    "HIV.D.DE207": {
+      "en": "Pill burden"
+    },
+    "HIV.D.DE208": {
+      "en": "Felt well"
+    },
+    "HIV.D.DE209": {
+      "en": "Depression"
+    },
+    "HIV.D.DE210": {
+      "en": "Alcohol use"
+    },
+    "HIV.D.DE211": {
+      "en": "Substance use"
+    },
+    "HIV.D.DE212": {
+      "en": "Stigma/disclosure concerns"
+    },
+    "HIV.D.DE213": {
+      "en": "Lack of food"
+    },
+    "HIV.D.DE214": {
+      "en": "Poor palatability"
+    },
+    "HIV.D.DE215": {
+      "en": "Other reason for nonadherence"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/hiv/ValueSet/HIV.D.DE197",
+  "fhir:version": "0.4.4",
+  "fhir:expansionTimestamp": "2026-03-05T13:16:28+00:00"
+}

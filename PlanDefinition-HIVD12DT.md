@@ -1,0 +1,1032 @@
+# HIV.D12.Determine recommended screenings and tests - WHO SMART Guidelines - HIV v0.4.4
+
+* [**Table of Contents**](toc.md)
+* [**Indices**](indices.md)
+* [**Artifact Index**](artifacts.md)
+* **HIV.D12.Determine recommended screenings and tests**
+
+## PlanDefinition: HIV.D12.Determine recommended screenings and tests (Experimental) 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://smart.who.int/hiv/PlanDefinition/HIVD12DT | *Version*:0.4.4 |
+| Draft as of 2026-03-05 | *Computable Name*:HIVD4DT |
+
+ 
+Determine recommended screenings and tests 
+
+* **Actions: **: **Url: **
+  * : [HIV.D12.Determine recommended screenings and tests](PlanDefinition-HIVD12DT.md)
+* **Actions: **: **Version: **
+  * : 0.4.4
+* **Actions: **: **Title: **
+  * : HIV.D12.Determine recommended screenings and tests
+* **Actions: **: **Status: **
+  * : draft
+* **Actions: **: **Experimental: **
+  * : true
+* **Actions: **: **Date: **
+  * : 2026-03-05 13:07:29+0000
+* **Actions: **: **Publisher: **
+  * : WHO
+* **Actions: **: **Description: **
+  * : Determine recommended screenings and tests
+* **Actions: **: **Libraries: **
+  * : 
+| |
+| :--- |
+| [HIV.D12.DT Logic](Library-HIVD12DTLogic.md) |
+
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "HIVD12DT",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableplandefinition",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition"]
+  },
+  "contained" : [{
+    "resourceType" : "Library",
+    "id" : "effective-data-requirements",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.D.DE1",
+        "display" : "Reason for visit"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE4",
+        "display" : "HIV testing services visit"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.B.DE34",
+        "display" : "HIV-positive"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.D.DE38",
+        "display" : "On ART"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.D.DE364",
+        "display" : "CD4 count"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.D.DE4",
+        "display" : "ART initiation"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.D.DE132",
+        "display" : "AZT"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.D.DE135",
+        "display" : "TDF"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.D.DE3",
+        "display" : "Clinical visit"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+      "valueCoding" : {
+        "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+        "code" : "HIV.D.DE443",
+        "display" : "Suspicion of treatment failure or interruption"
+      }
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Reason for visit D.DE1"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Services for responding to violence against women C.DE169 */\n\n/*\n@dataElement: HIV.D.DE1 - Reason for visit\n@activity: HIV.D1 Determine reason for visit\n@description: Whether visit was scheduled or unscheduled, clinical only, or for ARV drug pick-up\n*/\ndefine \"Reason for visit D.DE1\":\n  [Observation: Concepts.\"Reason for visit - HIV.D.DE1\"] O\n    where O.status in { 'final', 'amended', 'corrected' }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 0
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVEncounterElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Reason for visit D.DE1"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Services for responding to violence against women C.DE169 */\n\n/*\n@dataElement: HIV.D.DE1 - Reason for visit\n@activity: HIV.D1 Determine reason for visit\n@description: Whether visit was scheduled or unscheduled, clinical only, or for ARV drug pick-up\n*/\ndefine \"Reason for visit D.DE1\":\n  Elements.\"Reason for visit D.DE1\" O\n    where O.encounter.references(EncounterId)"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 1
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV testing services visit"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"Reason for Visit\"\n @pseudocode: \"Reason for visit\"='HIV testing services visit'\n */\ndefine \"HIV testing services visit\":\n  exists(\n    Elements.\"Reason for visit D.DE1\" O\n      where O.value ~ Concepts.\"HIV testing services visit\"\n  )"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 2
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVEncounterElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Current Patient Age In Years"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/**\n * HIV Elements\n */\n\n// Auto-generated Elements from DAK Data Dictionary\n//   Entries based on DAK Data Dictionary for Data Elements marked as used\n//   in at least one Decision Support Table or Aggregate Indicator\n\n/*\n@dataElement: HIV.A.DE17 - Age\n@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record\n@description: Calculated age (number of years) of the client based on date of birth\n*/\n/** \n * @dataElement Patient age in years\n */\ndefine \"Current Patient Age In Years\":\n  AgeInYearsAt(Today())"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 3
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Age 20 or older"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"Age\"\n @pseudocode: \"Age\" ≥ 20 years\n */\ndefine \"Age 20 or older\":\n  Elements.\"Current Patient Age In Years\" >= 20"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 4
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV test"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Date informed of HIV-positive diagnosis */\n\n/*\n@activity: HIV.B7 Test for HIV using testing algorithm\n*/\ndefine \"HIV test\":\n  [Observation: Concepts.\"HIV test type - HIV.B.DE81 Choices\"] O\n  where O.status in { 'final', 'amended', 'corrected' }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 5
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV test result Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of HIV test date B.DE110 */\n\n/*\n@dataElement: HIV.B.DE111 - HIV test result\n@activity: HIV.B7 Test for HIV using testing algorithm\n@description: The result from HIV testing after applying the testing algorithm\n*/\n// Same as test - see profile\ndefine \"HIV test result Observation\":\n  \"HIV test\" O"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 6
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVEncounterElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV test result"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Invalid B.DE109 */\n\n/*\n@dataElement: HIV.B.DE111 - HIV test result\n@activity: HIV.B7 Test for HIV using testing algorithm\n@description: The result from HIV testing after applying the testing algorithm\n*/\ndefine \"HIV test result\":\n  Elements.\"HIV test result Observation\" O\n    where O.encounter.references(EncounterId)"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 7
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "HIV Positive test result"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"HIV test result\"\n @pseudocode: \"HIV test result\"='HIV-positive'\n */\ndefine \"HIV Positive test result\":\n  exists(\n    Elements.\"HIV test result\" O\n      where O.value ~ Concepts.\"HIV-positive\"\n  )"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 8
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "On ART D.DE38"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Serodiscordant partner D.DE37 */\n\n/*\n@dataElement: HIV.D.DE38 - On ART\n@activity: HIV.D8 Capture or update client history\n@description: Client is currently taking ART\n*/\n\ndefine \"On ART D.DE38\":\n    [MedicationStatement] MS\n    where exists(MS.reasonCode C where C ~ Concepts.\"On ART - HIV.D.DE38\")\n    sort by start of effective.toInterval()"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 9
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVEncounterElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "On ART D.DE38"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Serodiscordant partner D.DE37 */\n\n/*\n@dataElement: HIV.D.DE38 - On ART\n@activity: HIV.D8 Capture or update client history\n@description: Client is currently taking ART\n*/\ndefine \"On ART D.DE38\":\n  Elements.\"On ART D.DE38\" MS\n    where MS.context.references(EncounterId)"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 10
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Not on ART"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"On ART\"\n @pseudocode: \"On ART\"=False\n */\ndefine \"Not on ART\":\n  not(exists(\n    Elements.\"On ART D.DE38\"\n  ))"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 11
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Age under 20"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"Age\"\n @pseudocode: \"\"Age\"<20 years\n */\ndefine \"Age under 20\":\n  Elements.\"Current Patient Age In Years\" < 20"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 12
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "CD4 count D.DE364"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Neutropenia */\n\n/*\n@dataElement: HIV.D.DE364 - CD4 count\n@activity: HIV.D20 Diagnostics\n@description: CD4 cell count in cells/mm^3\n*/\n// TODO: Replace placeholder with relevant CQL logic\ndefine \"CD4 count D.DE364\":\n  [Observation: Concepts.\"CD4 count - HIV.D.DE364\"] O\n    where O.status in { 'final', 'amended', 'corrected' }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 13
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVEncounterElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "CD4 count D.DE364"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of WHO HIV clinical stage condition or symptom D.DE289 */\n\n/*\n@dataElement: HIV.D.DE364 - CD4 count\n@activity: HIV.D20 Diagnostics\n@description: CD4 cell count in cells/mm^3\n*/\ndefine \"CD4 count D.DE364\":\n  Elements.\"CD4 count D.DE364\" O\n    where O.encounter.references(EncounterId)"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 14
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "CD4 less than or equal to 100 cells/mm3"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"CD4 count\"\n @pseudocode: \"CD4 count\" ≤ 100 cells/mm3\n */\ndefine \"CD4 less than or equal to 100 cells/mm3\":\n  exists(\n    Elements.\"CD4 count D.DE364\" O\n      where O.value <= 100\n  )"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 15
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVEncounterElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Gender"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Age */\n\n/*\n@dataElement: HIV.A.DE18 - Gender\n@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record\n@description: Gender of the client\n*/\n// TODO: Replace placeholder with relevant CQL logic\ndefine \"Gender\":\n  Patient.gender"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 16
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVEncounterElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Female"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Gender */\n\n/*\n@dataElement: HIV.A.DE19 - Female\n@activity: HIV.A6.1 Review sociodemographic data with client | HIV.A5 Create new client record\n@description: Client identifies as female\n*/\ndefine \"Female\":\n  \"Gender\" ~ 'female'"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 17
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Client is female"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"Gender\"\n @pseudocode: \"Gender\"='Female'\n */\ndefine \"Client is female\":\n  Elements.\"Female\""
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 18
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ART initiation visit"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"Reason for Visit\"\n @pseudocode: \"Reason for visit\"='ART initiation'\n */\ndefine \"ART initiation visit\":\n  exists(\n    Elements.\"Reason for visit D.DE1\" O\n      where O.value ~ Concepts.\"ART initiation\"\n  )"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 19
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Age 10 or older"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n  @input: \"Age\"\n  @pseudocode: 'Age' ≥ 10 years\n  */\ndefine \"Age 10 or older\":\n  Elements.\"Current Patient Age In Years\" >= 10"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 20
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "CD4 less than or equal to 200 cells/mm3"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"CD4 count\"\n @pseudocode: \"CD4 count\" ≤ 200 cells/mm3\n */\ndefine \"CD4 less than or equal to 200 cells/mm3\":\n  exists(\n    Elements.\"CD4 count D.DE364\" O\n      where O.value <= 200\n  )"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 21
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "On AZT"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"Current medications\"\n @pseudocode: \"Current medications\"='AZT'\n */\ndefine \"On AZT\":\n  exists(\n    Elements.\"On ART D.DE38\" MS\n      where MS.medication ~ Concepts.\"AZT\"\n  )"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 22
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "On TDF"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"Current medications\"\n @pseudocode: \"Current medications\"='TDF'\n */\ndefine \"On TDF\":\n  exists(\n    Elements.\"On ART D.DE38\" MS\n      where MS.medication ~ Concepts.\"TDF - HIV.D.DE135\"\n  )"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 23
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Clinical visit"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"Reason for Visit\"\n @pseudocode: \"Reason for visit\"='Clinical visit\n */\ndefine \"Clinical visit\":\n  exists(\n    Elements.\"Reason for visit D.DE1\" O\n      where O.value ~ Concepts.\"Clinical visit - HIV.D.DE3\"\n  )"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 24
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "On ART"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"On ART\"\n @pseudocode: \"On ART\"=True\n */\ndefine \"On ART\":\n  exists(\n    Elements.\"On ART D.DE38\"\n  )"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 25
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Suspicion of treatment failure or interruption Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define \"Suspicion of treatment failure or interruption Observation\":\n  [Observation: Concepts.\"Suspicion of treatment failure or interruption\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and O.value is true"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 26
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVEncounterElements"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Suspicion of treatment failure or interruption Observation"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/* End of Dose adjustment recommended */\n\n/*\n@dataElement: HIV.D.DE443 - Suspicion of treatment failure or interruption\n@activity: HIV.D23 Prescribe\n@description: Client has been on ART, but has stopped taking it or a treatment failure is suspected\n*/\ndefine \"Suspicion of treatment failure or interruption Observation\":\n  Elements.\"Suspicion of treatment failure or interruption Observation\" O\n    where O.encounter.references(EncounterId)"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 27
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Suspicion of treatment failure or interruption"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @input: \"Suspicion of treatment failure or interruption\"\n @pseudocode: \"Suspicion of treatment failure or interruption\"=True\n */\ndefine \"Suspicion of treatment failure or interruption\":\n  exists(\n    Elements.\"Suspicion of treatment failure or interruption Observation\" O\n      where O.value = true\n  )"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 28
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "HIVD12DTLogic"
+      },
+      {
+        "url" : "name",
+        "valueString" : "Guidance"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n @dynamicValue: Guidance\n */\ndefine \"Guidance\":\n  Combine({\n    if \"HIV testing services visit\" and \"Age 20 or older\" and \"HIV Positive test result\" and \"Not on ART\"\n      then 'Recommended actions:\nCD4 cell count\nTB symptom screening\n\nDesirable actions:\nHBV (HBsAg) serology\nHCV serology\nScreen for sexually transmitted infections   \nAssess for major noncommunicable chronic diseases and comorbidities\n\nGeneral care activities recommended: \nDetermine WHO clinical stage based on past and current HIV-related conditions\nPrepare for ART\nPrepare, assess and support adherence\nProvide family planning and contraception\nSupport disclosure and partner notification\nCounsel on risk reduction and combination HIV prevention approaches\nAssess, prevent and manage noncommunicable diseases\nScreen for and manage mental health problems\nScreen for and manage and substance use issues\nProvide psychosocial counselling and support\nManage pain and symptoms\nConduct a nutritional assessment and counsel on nutrition\n\nPreventing and treating coinfections: \nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nProvide isoniazid preventive therapy\nScreen for cryptococcal infection and fungal prophylaxis\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'\n    else '',\n    if \"HIV testing services visit\" and \"Age under 20\" and \"HIV Positive test result\" and \"Not on ART\"\n      then 'Recommended:\nCD4 cell count\nTB symptom screening\n\nDesirable: \nHBV (HBsAg) serology\nHCV serology\nScreen for sexually transmitted infections   \nAssess for major noncommunicable chronic diseases and comorbidities\n\nGeneral care activities recommended:\n Determine WHO clinical stage based on past and current HIV-related conditions\nPrepare for ART\nPrepare, assess and support adherence\nProvide family planning and contraception\nSupport disclosure and partner notification\nCounsel on risk reduction and combination HIV prevention approaches\nAssess, prevent and manage noncommunicable diseases\nScreen for and manage mental health problems\nScreen for and manage and substance use issues\nProvide psychosocial counselling and support\nManage pain and symptoms\nConduct a nutritional, growth and development assessment\n\nPreventing and treating coinfections: \nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nProvide isoniazid preventive therapy\nScreen for cryptococcal infection and fungal prophylaxis\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'\n    else '',\n    if \"HIV testing services visit\" and \"HIV Positive test result\" and \"Not on ART\" and \"CD4 less than or equal to 100 cells/mm3\"\n      then 'Desirable actions:\nCryptococcus antigen test'\n    else '',\n    if \"HIV testing services visit\" and \"HIV Positive test result\" and \"Not on ART\" and \"Client is female\"\n      then 'Desirable actions: \nPregnancy test'\n    else '',\n    if \"ART initiation visit\" and \"Not on ART\"\n      then 'Recommended: \nBaseline CD4 cell count for identifying advanced HIV disease\nAge-appropriate TB symptom screening\n\nDesirable: \nBlood pressure measurement \n\nGeneral care activities recommended:\nPreparing people for ART\nWHO clinical staging, past and current HIV- related conditions\nPreparing, assessing and supporting adherence\nPregnancy status, family planning and contraception\nSupport for disclosure and partner notification\nRisk-reduction counselling and combination and HIV prevention approaches\nScreening for, preventing and managing noncommunicable diseases\nScreening for and managing mental health problems and substance use\nPsychosocial counselling and support\nManaging pain and symptoms\nNutritional assessment and counselling\nInfant and child feeding\nNutritional, growth and development assessment for children and adolescents\n\nPreventing and treating coinfections: \nCo-trimoxazole preventive therapy\nIntensified TB case- finding\nIsoniazid preventive therapy\nScreening for cryptococcal infection and fungal prophylaxis when appropriate\nScreening for hepatitis B and C\nMalaria prevention (insecticide-treated bed nets and prophylaxis)\nScreening for sexually transmitted infections\nPreventing and screening for cervical cancer\nAssessing for vaccine- preventable diseases other than HBV and HCV infection'\n    else '',\n    if \"ART initiation visit\" and \"Age 10 or older\" and \"Not on ART\" and \"CD4 less than or equal to 200 cells/mm3\"\n      then 'Perform a cryptococcal antigen for adults and adolescents'\n    else '',\n    if \"ART initiation visit\" and \"Not on ART\" and \"On AZT\"\n      then 'Desirable actions: \nHaemoglobin test'\n    else '',\n    if \"ART initiation visit\" and \"Not on ART\" and \"On TDF\"\n      then 'Desirable actions: \nSerum creatinine test\nEstimated glomerular filtration rate (eGFR)'\n    else '',\n    if \"ART initiation visit\" and \"Not on ART\" and \"Client is female\"\n      then 'Desirable actions: \nPregnancy test'\n    else '',\n    if \"Clinical visit\" and \"Age 20 or older\" and \"On ART\"\n      then 'Recommended actions:\nSchedule the following viral load tests: \nHIV viral load test ≤ (ART start date + 6 months)\nHIV viral load test ≤ (ART start date + 12 months)\nHIV viral load test every 12 months thereafter\nPerform a CD4 cell count every 6 months until \"\"Established on ART\"\" = TRUE\n\nDesirable actions:\nSerum creatinine and estimated glomerular filtration rate for TDF\n\nRecommended general care activities: \nAdherence support interventions should be provided to people on ART (p xxxix of source).\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional assessment and counsel on nutrition.\n\nPreventing and treating coinfections:\nProvide co-trimoxazole preventive therapy\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'\n    else '',\n    if \"Clinical visit\" and \"Age under 20\" and \"On ART\"\n      then 'Recommended actions: \nSchedule viral load tests on the following dates: \nHIV viral load test ≤ (ART start date + 6 months)\nHIV viral load test ≤ (ART start date + 12 months)\nHIV viral load test every 12 months thereafter\nCD4 cell count every 6 months until \"\"Established on ART\"\" = TRUE\n\nRecommended general care activities: \nPrepare, assess and support adherence.\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional, growth and development assessment.\n\nPreventing and treating coinfections:\nProvide co-trimoxazole preventive therapy\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'\n    else '',\n    if \"Clinical visit\" and \"Age under 20\" and \"Client is female\"\n      then 'Pregnancy test'\n    else '',\n    if \"Clinical visit\" and \"On ART\" and \"On TDF\"\n      then 'Desirable actions: \nSerum creatinine\nEstimated glomerular filtration rate for TDF'\n    else '',\n    if \"Clinical visit\" and \"Age 20 or older\" and \"Suspicion of treatment failure or interruption\"\n      then 'Desirable actions: \nHBV (HBsAg) serology (before switching ART regimen if this testing was not done or if the result was negative at baseline and the patient was not vaccinated thereafter) \n\nRecommended general care activities: \nPrepare, assess and support adherence.\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional assessment and counsel on nutrition.\n\nPreventing and treating coinfections: \nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'\n    else '',\n    if \"Clinical visit\" and \"Age 20 or older\" and \"Suspicion of treatment failure or interruption\"\n      then 'Desirable actions: \nHBV (HBsAg) serology (before switching ART regimen if this testing was not done or if the result was negative at baseline and the patient was not vaccinated thereafter)\n\nRecommended general care activities:\nPrepare, assess and support adherence.\nManage current medications.\nProvide family planning and contraception.\nSupport disclosure and partner notification.\nCounsel on risk reduction and combination HIV prevention approaches.\nAssess, prevent and manage noncommunicable diseases.\nScreen for and manage mental health problems.\nScreen for and manage and substance use issues.\nProvide psychosocial counselling and support.\nManage pain and symptoms.\nConduct a nutritional, growth and development assessment.\n\nPreventing and treating coinfections:\nProvide co-trimoxazole preventive therapy\nConduct intensified TB case-finding\nPrevent malaria (insecticide- treated  bed-nets and prophylaxis)\nScreen for sexually transmitted infections\nAssess for vaccine-preventable diseases'\n    else ''\n  })"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 29
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value ObservationStatus): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 30
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "WHOCommon"
+      },
+      {
+        "url" : "name",
+        "valueString" : "references"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "/*\n@description: Returns true if the given reference is to the given resourceId\n@comment: Returns true if the `resourceId` parameter exactly equals the tail of the given reference.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(reference FHIR.Reference, resourceId String):\n  resourceId = Last(Split(reference.reference, '/'))"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 31
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value string): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 32
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToConcept"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 33
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToCode"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 34
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToInteger"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToInteger(value integer): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 35
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToString"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToString(value AdministrativeGender): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 36
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    },
+    {
+      "extension" : [{
+        "url" : "libraryName",
+        "valueString" : "FHIRHelpers"
+      },
+      {
+        "url" : "name",
+        "valueString" : "ToBoolean"
+      },
+      {
+        "url" : "statement",
+        "valueString" : "define function ToBoolean(value boolean): value.value"
+      },
+      {
+        "url" : "displaySequence",
+        "valueInteger" : 37
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+    }],
+    "name" : "EffectiveDataRequirements",
+    "status" : "active",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/library-type",
+        "code" : "module-definition"
+      }]
+    },
+    "relatedArtifact" : [{
+      "type" : "depends-on",
+      "display" : "FHIR model information",
+      "resource" : "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library Elements",
+      "resource" : "http://smart.who.int/hiv/Library/HIVEncounterElements"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library Elements",
+      "resource" : "http://smart.who.int/hiv/Library/HIVElements"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library Concepts",
+      "resource" : "http://smart.who.int/hiv/Library/HIVConcepts|0.0.2"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library FHIRHelpers",
+      "resource" : "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library WC",
+      "resource" : "http://smart.who.int/hiv/Library/WHOCommon"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Library Concepts",
+      "resource" : "http://smart.who.int/hiv/Library/HIVConcepts"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Code system HIVConcepts",
+      "resource" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts"
+    },
+    {
+      "type" : "depends-on",
+      "display" : "Value set HIV test type - HIV.B.DE81 Choices",
+      "resource" : "http://smart.who.int/hiv/ValueSet/HIV.B.DE81"
+    }],
+    "parameter" : [{
+      "name" : "EncounterId",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "string"
+    },
+    {
+      "name" : "Guidance",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "string"
+    }],
+    "dataRequirement" : [{
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code", "status", "encounter", "value"],
+      "codeFilter" : [{
+        "path" : "code",
+        "valueSet" : "http://smart.who.int/hiv/ValueSet/HIV.B.DE81"
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code", "status", "encounter", "value"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.D.DE364",
+          "display" : "CD4 count"
+        }]
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code", "status", "encounter", "value"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.D.DE1",
+          "display" : "Reason for visit"
+        }]
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Observation"],
+      "mustSupport" : ["code", "status", "value", "encounter"],
+      "codeFilter" : [{
+        "path" : "code",
+        "code" : [{
+          "system" : "http://smart.who.int/hiv/CodeSystem/HIVConcepts",
+          "code" : "HIV.D.DE443",
+          "display" : "Suspicion of treatment failure or interruption"
+        }]
+      }]
+    },
+    {
+      "type" : "Patient",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/Patient"]
+    },
+    {
+      "type" : "MedicationStatement",
+      "profile" : ["http://hl7.org/fhir/StructureDefinition/MedicationStatement"],
+      "mustSupport" : ["reasonCode", "context", "medication"]
+    }]
+  }],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode" : "computable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
+    "valueCanonical" : "#effective-data-requirements"
+  }],
+  "url" : "http://smart.who.int/hiv/PlanDefinition/HIVD12DT",
+  "version" : "0.4.4",
+  "name" : "HIVD4DT",
+  "title" : "HIV.D12.Determine recommended screenings and tests",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code" : "eca-rule"
+    }]
+  },
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2026-03-05T13:07:29+00:00",
+  "publisher" : "WHO",
+  "contact" : [{
+    "name" : "WHO",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://who.int"
+    }]
+  }],
+  "description" : "Determine recommended screenings and tests",
+  "relatedArtifact" : [{
+    "type" : "citation",
+    "citation" : "Consolidated Guidelines on HIV Testing Services (2019)"
+  }],
+  "library" : ["http://smart.who.int/hiv/Library/HIVD12DTLogic"],
+  "action" : [{
+    "textEquivalent" : "Recommended screenings and tests",
+    "definitionCanonical" : "http://smart.who.int/hiv/ActivityDefinition/HIVGuidanceCommunicationRequestActivity",
+    "dynamicValue" : [{
+      "path" : "payload[+].contentString",
+      "expression" : {
+        "language" : "text/cql-identifier",
+        "expression" : "Guidance"
+      }
+    }]
+  }]
+}
+
+```
