@@ -2,15 +2,10 @@
 
 name: Trigger HL7 FHIR Autobuild
 run-name: ${{ github.actor }} triggered a GitHub Action
-on: 
-  workflow_call: # Reusable by other workflows
-  push:
-    branches-ignore:    
-      - 'gh-pages'
-  pull_request:
-    branches-ignore:    
-      - 'gh-pages'
-  workflow_dispatch:  
+on:
+  # By hand only (owner, 2026-10-10): the harnessed site replaces the
+  # IG Publisher gh-pages pipeline; this only triggers the HL7 auto-build.
+  workflow_dispatch:
 
 jobs:
   Explore-GitHub-Actions:
